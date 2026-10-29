@@ -5,7 +5,9 @@ import type { EnemyKind, MapKind, TowerKind } from "./game/content";
 import { Simulation } from "./game/simulation";
 import type { Snapshot } from "./game/simulation";
 import { AudioBus } from "./audio";
-import type { ArtManifest } from "./battlefield";
+import type { Battlefield } from "./battlefield";
+import type { ArtManifest, ArtStyle } from "./assets";
+import { coverage, crewDetails } from "./guidance";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 const simulation = new Simulation();
@@ -15,7 +17,14 @@ const base = import.meta.env.BASE_URL;
 let selected: TowerKind | "salvage" | null = "astro";
 let cursor: { row: number; col: number } | null = null;
 let reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-let destroyBattlefield: (() => void) | undefined;
+let battlefield: Battlefield | undefined;
+let assetBusy = false;
+let assetRequest: {
+  map: MapKind;
+  style: ArtStyle;
+  apply: () => void;
+  resume: boolean;
+} | null = null;
 let lastPhase = "";
 let lastWave = 0;
 let lastMap = "";
@@ -41,22 +50,22 @@ const helmet =
   '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 29v-8a13 13 0 0 1 26 0v8l-5 10H16Z" fill="currentColor"/><rect x="15" y="15" width="18" height="13" rx="5" fill="#18303a"/><path d="M19 35h10" stroke="#f5a47d" stroke-width="3"/></svg>';
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.2</span></span></span></a>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.3</span></span></span></a>
     <nav aria-label="Main"><span class="nav-active">The mission</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
   <main id="mission">
     <section class="mission-heading" aria-labelledby="mission-title"><div><p class="eyebrow"><span class="signal-dot"></span> EXPEDITION 001 <span class="eyebrow-line"></span> ORBITAL DEFENSE</p><h1 id="mission-title">A little space.<br class="mobile-break"> A lot to defend<span>.</span></h1></div><p class="mission-intro">A familiar crew. An unfamiliar frontier.<br>Build your defenses and hold the line.</p></section>
-    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Field guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
+    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
     <p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
-        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
-        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
-        <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap a crew card, then an empty tile. All six lanes stay in view.</span></p>
+        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><details id="mission-receipt" hidden><summary>Mission economy</summary><p id="receipt-summary"></p><p id="receipt-sources"></p></details><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
+        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
+        <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
-      <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span>Keys 1–9 · +30 supply / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
+      <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span id="supply-status">Supply +30 / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
         .map((kind, i) => {
           const tower = TOWERS[kind];
           return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" data-art-tower="${kind}" style="background-image:url('${base}art/${tower.sprite}-idle.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price">◈ ${tower.cost}<kbd>${i + 1}</kbd></span></button>`;
@@ -78,17 +87,18 @@ app.innerHTML = `
     .join(
       "",
     )}</div><button class="primary-button" data-close>Back to the frontier ↗</button></dialog>
-  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork adds AI-generated Canyon scenery, an astronaut, a utility robot, and three alien cutouts, with procedural motion. Use the art switch to compare them with the originals.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
+  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork adds AI-generated Canyon scenery, an astronaut, a utility robot, and all six alien types, with procedural motion. Use the art switch to compare them with the originals.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
   <dialog id="map-dialog" aria-labelledby="map-title"><button class="dialog-close" data-close aria-label="Close destinations">×</button><span class="eyebrow">THREE ORIGINAL FRONTIERS</span><h2 id="map-title">Choose your destination.</h2><p id="map-warning">Each destination has four waves and the full original roster.</p><div class="destination-list">${(
     Object.keys(MAPS) as MapKind[]
   )
     .map((kind) => {
       const map = MAPS[kind];
-      return `<button class="destination-card" data-map="${kind}" aria-label="Choose ${map.name}"><img src="${base}art/${map.background}.webp" alt="" width="144" height="81"><span><span class="micro-label">${map.number} / ${map.tag}</span><strong>${map.name}</strong><span>${map.description}</span></span><span aria-hidden="true">↗</span></button>`;
+      return `<button class="destination-card" data-map="${kind}" aria-label="Choose ${map.name}"><img loading="lazy" decoding="async" src="${base}art/${map.background}.webp" alt="" width="144" height="81"><span><span class="micro-label">${map.number} / ${map.tag}</span><strong>${map.name}</strong><span>${map.description}</span></span><span aria-hidden="true">↗</span></button>`;
     })
     .join(
       "",
     )}</div><button class="secondary-button" data-close>Keep current destination</button></dialog>
+  <dialog id="asset-dialog" aria-labelledby="asset-title"><span class="eyebrow">MISSION RESOURCES</span><h2 id="asset-title">Preparing artwork…</h2><p id="asset-message" role="status">Your mission is paused while artwork loads.</p><progress id="asset-progress" aria-label="Loading artwork"></progress><div class="dialog-actions"><button id="asset-retry" class="primary-button" hidden>Retry artwork</button><button id="asset-cancel" class="secondary-button" hidden>Keep current mission</button></div></dialog>
   <dialog id="restart-dialog" aria-labelledby="restart-title"><span class="eyebrow">MISSION CONTROL</span><h2 id="restart-title">Start a fresh mission?</h2><p>Your current deployment and progress will be reset.</p><div class="dialog-actions"><button id="restart-cancel" class="secondary-button">Keep playing</button><button id="restart-confirm" class="primary-button">Restart mission ↗</button></div></dialog>
 `;
 
@@ -125,23 +135,7 @@ function select(kind: TowerKind | "salvage" | null): void {
             card.offsetLeft + card.offsetWidth - roster.clientWidth;
       }
     });
-  const detail = get("selected-detail");
-  detail.replaceChildren();
-  const label = document.createElement("strong");
-  const description = document.createElement("span");
-  label.textContent =
-    kind === "salvage"
-      ? "Salvage · 40% refund"
-      : kind
-        ? `${TOWERS[kind].name} · ${TOWERS[kind].cost} credits`
-        : "Choose a defender";
-  description.textContent =
-    kind === "salvage"
-      ? "Choose a deployed defender to recover part of its cost."
-      : kind
-        ? TOWERS[kind].description
-        : "Select a crew card or use keys 1–9.";
-  detail.append(label, description);
+  renderSelection(simulation.snapshot());
   get("salvage").setAttribute("aria-pressed", String(kind === "salvage"));
   announce(
     kind === "salvage"
@@ -152,6 +146,22 @@ function select(kind: TowerKind | "salvage" | null): void {
   );
 }
 
+function renderSelection(state: Snapshot): void {
+  const detail = get("selected-detail");
+  const lines = crewDetails(selected, state, cursor);
+  const signature = lines.join("|");
+  if (detail.dataset.signature === signature) return;
+  detail.dataset.signature = signature;
+  detail.replaceChildren(
+    ...lines.map((line, index) => {
+      const element = document.createElement(
+        index === 0 ? "strong" : index === 1 ? "span" : "small",
+      );
+      element.textContent = line;
+      return element;
+    }),
+  );
+}
 for (let row = 0; row < ROWS; row++) {
   const gridRow = document.createElement("div");
   gridRow.setAttribute("role", "row");
@@ -171,15 +181,19 @@ for (let row = 0; row < ROWS; row++) {
       focusIndex = index;
       button.tabIndex = 0;
       cursor = { row, col };
+      renderSelection(simulation.snapshot());
     });
     button.addEventListener("pointerenter", () => {
       cursor = { row, col };
+      renderSelection(simulation.snapshot());
     });
     button.addEventListener("pointerleave", () => {
       if (document.activeElement !== button) cursor = null;
+      renderSelection(simulation.snapshot());
     });
     button.addEventListener("blur", () => {
       cursor = null;
+      renderSelection(simulation.snapshot());
     });
     button.addEventListener("click", () => {
       if (!selected) {
@@ -218,6 +232,7 @@ for (let row = 0; row < ROWS; row++) {
 function render(state: Snapshot): void {
   const signature = JSON.stringify([
     ready,
+    assetBusy,
     focused,
     zoomed,
     state.incoming.map((item) => [
@@ -247,6 +262,10 @@ function render(state: Snapshot): void {
   ]);
   if (signature === lastUiSignature) return;
   lastUiSignature = signature;
+  renderSelection(state);
+  const growers = state.towers.filter((x) => TOWERS[x.kind].income > 0).length;
+  get("supply-status").textContent =
+    `Supply +30 in ${state.economy.supplyIn}s · ${growers} income ${growers === 1 ? "unit" : "units"}`;
   const map = MAPS[state.map];
   document.body.classList.toggle("focused-play", focused);
   document.body.classList.toggle("zoomed-field", zoomed);
@@ -270,7 +289,7 @@ function render(state: Snapshot): void {
     ? [...counts].map(([name, count]) => `${count} ${name}`).join(" / ")
     : "";
   const call = get<HTMLButtonElement>("call-wave");
-  call.disabled = !upcoming?.canLaunch;
+  call.disabled = assetBusy || !upcoming?.canLaunch;
   call.querySelector("span")!.textContent = upcoming?.canLaunch
     ? `+${upcoming.reward} credits`
     : "N";
@@ -301,7 +320,7 @@ function render(state: Snapshot): void {
         .join(", ")}`
     : "";
   document.title = `Astronauts vs Aliens — ${map.name}`;
-  grid.inert = state.phase !== "playing";
+  grid.inert = assetBusy || state.phase !== "playing";
   get("location-name").textContent = map.name;
   get("location-number").textContent = map.number;
   get("location-tag").textContent = map.tag;
@@ -328,7 +347,8 @@ function render(state: Snapshot): void {
     .forEach((item) =>
       item.classList.toggle("filled", Number(item.dataset.wave) <= state.wave),
     );
-  pause.disabled = state.phase !== "playing" && state.phase !== "paused";
+  pause.disabled =
+    assetBusy || (state.phase !== "playing" && state.phase !== "paused");
   pause.innerHTML =
     state.phase === "paused" ? "▷ <span>Resume</span>" : "Ⅱ <span>Pause</span>";
   pause.setAttribute(
@@ -365,6 +385,8 @@ function render(state: Snapshot): void {
     lost: "Signal lost",
   };
   get("status").textContent = phaseLabels[state.phase];
+  get("coverage-status").textContent =
+    state.phase === "playing" ? coverage(state) : "";
   get("countdown").textContent =
     state.phase === "playing"
       ? state.nextWaveIn !== null
@@ -384,9 +406,13 @@ function render(state: Snapshot): void {
     const title = get("overlay-title");
     const body = get("overlay-body");
     const note = get("overlay-note");
+    const receipt = get<HTMLDetailsElement>("mission-receipt");
+    receipt.hidden = state.phase !== "won" && state.phase !== "lost";
+    receipt.open = false;
     if (state.phase === "ready") {
       title.innerHTML = "Home is behind you.<br>Hold the line.";
-      body.textContent = `${map.name} · ${map.waves.length} incoming waves. ${map.description}`;
+      body.textContent =
+        "Choose a crew card, then an empty tile. Cover all six lanes with firing defenders and protect three shields through four waves.";
       start.innerHTML =
         '<span>Begin mission</span><span aria-hidden="true">↗</span>';
       note.textContent =
@@ -405,6 +431,11 @@ function render(state: Snapshot): void {
           ? `${map.name} secured.<br>Nice work, commander.`
           : "The signal went quiet.<br>Try a new formation.";
       body.textContent = `${state.kills} hostiles cleared · ${Math.floor(state.elapsed / 60)}m ${Math.floor(state.elapsed % 60)}s elapsed · ${state.integrity} shields remaining`;
+      const economy = state.economy;
+      get("receipt-summary").textContent =
+        `${economy.purchases} deployed · ${economy.losses} lost · ${economy.spent} spent · ${state.credits} remaining`;
+      get("receipt-sources").textContent =
+        `Started with 230. Earned ${economy.supply} supply, ${economy.growth} income, ${economy.bounties} bounties, ${economy.calls} wave bonuses; recovered ${economy.salvage} through salvage.`;
       start.innerHTML =
         '<span>Play again</span><span aria-hidden="true">↗</span>';
       note.textContent =
@@ -422,7 +453,7 @@ function render(state: Snapshot): void {
 }
 
 start.addEventListener("click", () => {
-  if (!ready) return;
+  if (!ready || assetBusy) return;
   const { phase } = simulation.snapshot();
   if (phase === "paused") simulation.resume();
   else {
@@ -459,26 +490,35 @@ get("focus-toggle").addEventListener("click", () => {
   window.scrollTo({ top: 0 });
 });
 get("art-toggle").addEventListener("click", () => {
-  artStyle = artStyle === "expedition" ? "original" : "expedition";
-  document.documentElement.classList.toggle(
-    "original-art",
-    artStyle === "original",
-  );
-  applyArtwork();
-  get("art-toggle").setAttribute(
-    "aria-pressed",
-    String(artStyle === "original"),
-  );
-  get("art-toggle").setAttribute(
-    "aria-label",
-    artStyle === "original" ? "Show expedition art" : "Show original art",
-  );
-  get("art-toggle").querySelector("span")!.textContent =
-    artStyle === "original" ? "Original art" : "Expedition art";
-  announce(
-    artStyle === "original"
-      ? "Original school project art selected. Combat rules are unchanged."
-      : "Expedition art selected: illustrated Canyon, Astro Joe, TARS, scouts, Grunts, and Tanks.",
+  const nextStyle: ArtStyle =
+    artStyle === "expedition" ? "original" : "expedition";
+  requestArtwork(
+    simulation.snapshot().map,
+    nextStyle,
+    () => {
+      artStyle = nextStyle;
+      document.documentElement.classList.toggle(
+        "original-art",
+        artStyle === "original",
+      );
+      applyArtwork();
+      get("art-toggle").setAttribute(
+        "aria-pressed",
+        String(artStyle === "original"),
+      );
+      get("art-toggle").setAttribute(
+        "aria-label",
+        artStyle === "original" ? "Show expedition art" : "Show original art",
+      );
+      get("art-toggle").querySelector("span")!.textContent =
+        artStyle === "original" ? "Original art" : "Expedition art";
+      announce(
+        artStyle === "original"
+          ? "Original school project art selected. Combat rules are unchanged."
+          : "Expedition art selected: illustrated Canyon, Astro Joe, TARS, and all six alien types.",
+      );
+    },
+    simulation.snapshot().phase === "playing",
   );
 });
 get("field-zoom").addEventListener("click", () => {
@@ -498,6 +538,66 @@ function callNextWave(): void {
   if (result.ok) cells[focusIndex].focus();
 }
 get("call-wave").addEventListener("click", callNextWave);
+function requestArtwork(
+  map: MapKind,
+  style: ArtStyle,
+  apply: () => void,
+  resume: boolean,
+): void {
+  if (assetBusy || !battlefield || !ready) return;
+  assetRequest = { map, style, apply, resume };
+  simulation.pause();
+  get<HTMLDialogElement>("asset-dialog").showModal();
+  void loadArtwork();
+}
+async function loadArtwork(): Promise<void> {
+  const request = assetRequest;
+  if (!request || !battlefield) return;
+  assetBusy = true;
+  get("asset-title").textContent =
+    request.map !== simulation.snapshot().map
+      ? `Preparing ${MAPS[request.map].name}…`
+      : `Preparing ${request.style === "original" ? "original" : "Expedition"} artwork…`;
+  get("asset-message").textContent =
+    "Your mission is paused. Only missing artwork will download.";
+  get("asset-progress").hidden = false;
+  get("asset-retry").hidden = true;
+  get("asset-cancel").hidden = true;
+  render(simulation.snapshot());
+  try {
+    await battlefield.prepare(request.map, request.style);
+    request.apply();
+    finishArtwork();
+  } catch {
+    // Successfully loaded textures remain cached; retry only fetches missing files.
+    get("asset-title").textContent = "Artwork did not arrive.";
+    get("asset-message").textContent =
+      "Your current mission is safe and paused. Retry, or keep its current artwork and destination.";
+    get("asset-progress").hidden = true;
+    get("asset-retry").hidden = false;
+    get("asset-cancel").hidden = false;
+    get("asset-retry").focus();
+  }
+}
+function finishArtwork(): void {
+  const request = assetRequest;
+  assetRequest = null;
+  assetBusy = false;
+  get<HTMLDialogElement>("asset-dialog").close();
+  if (request?.resume && !document.hidden) simulation.resume();
+  render(simulation.snapshot());
+  if (simulation.snapshot().phase === "playing") cells[focusIndex].focus();
+  else start.focus();
+}
+get("asset-retry").addEventListener("click", () => void loadArtwork());
+get("asset-cancel").addEventListener("click", () => {
+  finishArtwork();
+  announce("Kept the current mission and artwork.");
+});
+get("asset-dialog").addEventListener("cancel", (event) => {
+  event.preventDefault();
+  if (!get("asset-cancel").hidden) finishArtwork();
+});
 function applyArtwork(): void {
   document
     .querySelectorAll<HTMLElement>("[data-art-tower]")
@@ -590,15 +690,22 @@ get("map-open").addEventListener("click", () => {
 });
 document.querySelectorAll<HTMLButtonElement>("[data-map]").forEach((card) => {
   card.addEventListener("click", () => {
+    const map = card.dataset.map as MapKind;
+    const resume = resumeAfterDialog;
     resumeAfterDialog = false;
-    if (simulation.snapshot().phase !== "ready") simulation.restart();
-    const result = simulation.chooseMap(card.dataset.map as MapKind);
-    lastWave = 0;
-    select("astro");
     closeDialog(get("map-dialog"));
-    render(simulation.snapshot());
-    announce(result.message);
-    start.focus();
+    requestArtwork(
+      map,
+      artStyle,
+      () => {
+        if (simulation.snapshot().phase !== "ready") simulation.restart();
+        const result = simulation.chooseMap(map);
+        lastWave = 0;
+        select("astro");
+        announce(result.message);
+      },
+      resume,
+    );
   });
 });
 get("guide-open").addEventListener("click", () => openDialog("guide-dialog"));
@@ -628,6 +735,7 @@ document.addEventListener("keydown", (event) => {
     event.altKey ||
     event.ctrlKey ||
     event.metaKey ||
+    assetBusy ||
     document.querySelector("dialog[open]")
   )
     return;
@@ -668,7 +776,7 @@ async function initialize(): Promise<void> {
     )
       throw new Error("Invalid asset manifest");
     const { mountBattlefield } = await import("./battlefield");
-    destroyBattlefield = mountBattlefield({
+    battlefield = mountBattlefield({
       parent: get("phaser"),
       simulation,
       art,
@@ -716,6 +824,6 @@ grid.inert = true;
 void initialize();
 if (import.meta.hot)
   import.meta.hot.dispose(() => {
-    destroyBattlefield?.();
+    battlefield?.destroy();
     audio.destroy();
   });

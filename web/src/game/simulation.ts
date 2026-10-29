@@ -56,6 +56,29 @@ export interface NextWave {
   secondsSaved: number;
   reason: string;
 }
+export interface MissionEconomy {
+  supply: number;
+  growth: number;
+  bounties: number;
+  calls: number;
+  salvage: number;
+  spent: number;
+  purchases: number;
+  losses: number;
+  supplyIn: number;
+}
+function emptyEconomy() {
+  return {
+    supply: 0,
+    growth: 0,
+    bounties: 0,
+    calls: 0,
+    salvage: 0,
+    spent: 0,
+    purchases: 0,
+    losses: 0,
+  };
+}
 export interface Snapshot {
   map: MapKind;
   phase: Phase;
@@ -73,6 +96,7 @@ export interface Snapshot {
   nextWave: NextWave | null;
   incoming: SpawnWarning[];
   earlyLaunches: number;
+  economy: MissionEconomy;
 }
 export type GameEvent = {
   type:
@@ -123,6 +147,7 @@ export class Simulation {
   // IDs stay unique across restarts so the renderer cannot reuse a previous unit's sprite.
   private nextId = 1;
   private bankClock = 0;
+  private economy = emptyEconomy();
   private wave = 0;
   private events: GameEvent[] = [];
 
@@ -159,6 +184,10 @@ export class Simulation {
           ? spawnWarnings(this.spawns, this.spawnIndex, elapsed)
           : [],
       earlyLaunches: this.calledWaves.size,
+      economy: {
+        ...this.economy,
+        supplyIn: Math.max(0, Math.ceil(5 - this.bankClock - 1e-9)),
+      },
     };
   }
 
@@ -212,6 +241,7 @@ export class Simulation {
     this.calledWaves.clear();
     this.spawnIndex = 0;
     this.bankClock = 0;
+    this.economy = emptyEconomy();
     this.wave = 0;
     this.events = [];
   }
@@ -230,6 +260,7 @@ export class Simulation {
         Math.round((this.spawns[index].at - delta) / STEP) * STEP;
     this.calledWaves.add(next.number);
     this.credits += next.reward;
+    this.economy.calls += next.reward;
     this.events.push({
       type: "wave-called",
       row: 0,
@@ -304,6 +335,8 @@ export class Simulation {
         message: `Need ${definition.cost - this.credits} more credits for ${definition.name}.`,
       };
     this.credits -= definition.cost;
+    this.economy.spent += definition.cost;
+    this.economy.purchases++;
     this.towers.push({
       id: this.nextId++,
       kind,
@@ -335,6 +368,7 @@ export class Simulation {
     const [tower] = this.towers.splice(index, 1);
     const refund = Math.floor(TOWERS[tower.kind].cost * 0.4);
     this.credits += refund;
+    this.economy.salvage += refund;
     this.events.push({ type: "removed", row, x: col + 0.5, amount: refund });
     return {
       ok: true,
@@ -382,6 +416,7 @@ export class Simulation {
     if (this.bankClock >= 5 - 1e-9) {
       this.bankClock -= 5;
       this.credits += 30;
+      this.economy.supply += 30;
     }
 
     while (
@@ -412,6 +447,7 @@ export class Simulation {
         if (tower.incomeClock >= definition.incomeInterval - 1e-9) {
           tower.incomeClock -= definition.incomeInterval;
           this.credits += definition.income;
+          this.economy.growth += definition.income;
           this.events.push({
             type: "income",
             row: tower.row,
@@ -527,6 +563,7 @@ export class Simulation {
       if (enemy.health <= 0) {
         this.kills++;
         this.credits += ENEMIES[enemy.kind].reward;
+        this.economy.bounties += ENEMIES[enemy.kind].reward;
         this.events.push({
           type: "kill",
           row: enemy.row,
@@ -561,7 +598,8 @@ export class Simulation {
             kind: blocker.kind,
             amount: definition.damage,
           });
-          if (blocker.health <= 0)
+          if (blocker.health <= 0) {
+            this.economy.losses++;
             this.events.push({
               type: "defender-lost",
               row: blocker.row,
@@ -569,6 +607,7 @@ export class Simulation {
               entityId: blocker.id,
               kind: blocker.kind,
             });
+          }
           enemy.cooldown = definition.cooldown;
         }
       } else enemy.x -= definition.speed * STEP;

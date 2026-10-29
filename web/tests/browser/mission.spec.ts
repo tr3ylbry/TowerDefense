@@ -102,7 +102,7 @@ test("fits a narrow viewport and persists reduced motion", async ({ page }) => {
 });
 
 test("offers retry when an art resource fails to load", async ({ page }) => {
-  await page.route("**/art/astro-joe-idle.png", (route) => route.abort());
+  await page.route("**/art/money-bush-idle.png", (route) => route.abort());
   await page.goto("/");
   await expect(
     page.getByRole("heading", { name: "We lost the transmission." }),

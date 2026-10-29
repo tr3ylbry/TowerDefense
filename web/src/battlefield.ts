@@ -10,7 +10,10 @@ import {
   TOWERS,
 } from "./game/content";
 import { BIOMES, EXPEDITION_ENEMIES, EXPEDITION_TOWERS } from "./game/art";
-import type { TowerKind } from "./game/content";
+import type { EnemyKind, MapKind, TowerKind } from "./game/content";
+import { assetsFor, backgroundKey } from "./assets";
+import type { ArtManifest, ArtStyle, AssetPlan } from "./assets";
+export type { ArtManifest } from "./assets";
 import type { GameEvent, Simulation, Snapshot } from "./game/simulation";
 
 export const FIELD = {
@@ -21,17 +24,17 @@ export const FIELD = {
   cellWidth: 100,
   cellHeight: 74,
 };
-export interface ArtManifest {
-  backgrounds: { key: string; file: string }[];
-  images: { key: string; file: string }[];
-  sprites: {
-    key: string;
-    file: string;
-    frameWidth: number;
-    frameHeight: number;
-    frames: number;
-    fps: number;
-  }[];
+const DEFAULT_GAIT = [12, 1.2, 0] as const;
+const ENEMY_GAITS: Partial<
+  Record<EnemyKind, readonly [number, number, number]>
+> = {
+  sprinter: [18, 1.8, 1.2],
+  manhunter: [7, 1, 1.6],
+  gargantua: [4, 0.7, 0.6],
+};
+export interface Battlefield {
+  destroy(): void;
+  prepare(map: MapKind, style: ArtStyle): Promise<void>;
 }
 interface Options {
   parent: HTMLElement;
@@ -47,43 +50,9 @@ interface Options {
   onError: () => void;
 }
 
-export function mountBattlefield(options: Options): () => void {
+export function mountBattlefield(options: Options): Battlefield {
   const { simulation, art } = options;
-  const usedKeys = new Set([
-    ...Object.values(TOWERS).flatMap((tower) => [
-      `${tower.sprite}-idle`,
-      `${tower.sprite}-fire`,
-    ]),
-    ...Object.values(ENEMIES).flatMap((enemy) =>
-      ["walk", "attack", "die"].map((state) => `${enemy.sprite}-${state}`),
-    ),
-  ]);
-  const sprites = art.sprites.filter((sprite) => usedKeys.has(sprite.key));
-  const backgroundKeys = new Set<string>(
-    Object.values(MAPS).map((map) => map.background),
-  );
-  const backgrounds = art.backgrounds.filter((image) =>
-    backgroundKeys.has(image.key),
-  );
-  const imageKeys = new Set([
-    "acid-pool",
-    ...Object.values(AMMO).map((ammo) => ammo.sprite),
-  ]);
-  const images = art.images.filter((image) => imageKeys.has(image.key));
-  const requiredSprites = [
-    ...Object.values(TOWERS).map((tower) => `${tower.sprite}-idle`),
-    ...Object.values(ENEMIES).flatMap((enemy) =>
-      ["walk", "attack", "die"].map((state) => `${enemy.sprite}-${state}`),
-    ),
-  ];
-  if (
-    backgrounds.length !== backgroundKeys.size ||
-    images.length !== imageKeys.size ||
-    requiredSprites.some((key) => !sprites.some((sprite) => sprite.key === key))
-  ) {
-    options.onError();
-    return () => {};
-  }
+  const initial = assetsFor(art, simulation.snapshot().map, options.artStyle());
   const towerSprites = new Map<number, Phaser.GameObjects.Sprite>();
   const enemySprites = new Map<number, Phaser.GameObjects.Sprite>();
   const bulletSprites = new Map<number, Phaser.GameObjects.Image>();
@@ -113,32 +82,32 @@ export function mountBattlefield(options: Options): () => void {
       super("Battlefield");
     }
 
-    preload(): void {
-      this.load.on("loaderror", () => {
-        loaded = false;
-      });
+    private queue(plan: AssetPlan): void {
       const base = `${import.meta.env.BASE_URL}art/`;
-      for (const image of [...backgrounds, ...images])
-        this.load.image(image.key, base + image.file);
-      this.load.image("expedition-canyon", `${base}expedition/canyon.webp`);
-      for (const image of [
-        ...Object.values(EXPEDITION_TOWERS),
-        ...Object.values(EXPEDITION_ENEMIES),
-      ])
-        this.load.image(image.key, base + image.file);
-      for (const sprite of sprites)
-        this.load.spritesheet(sprite.key, base + sprite.file, {
-          frameWidth: sprite.frameWidth,
-          frameHeight: sprite.frameHeight,
-        });
-    }
-
-    create(): void {
-      if (!loaded) {
-        options.onError();
-        return;
+      for (const image of plan.images) {
+        if (!this.textures.exists(image.key))
+          this.load.image({
+            key: image.key,
+            url: base + image.file,
+            xhrSettings: { responseType: "blob", timeout: 15000 },
+          });
       }
-      for (const sprite of sprites)
+      for (const sprite of plan.sprites) {
+        if (!this.textures.exists(sprite.key))
+          this.load.spritesheet({
+            key: sprite.key,
+            url: base + sprite.file,
+            frameConfig: {
+              frameWidth: sprite.frameWidth,
+              frameHeight: sprite.frameHeight,
+            },
+            xhrSettings: { responseType: "blob", timeout: 15000 },
+          });
+      }
+    }
+    private animations(plan: AssetPlan): void {
+      for (const sprite of plan.sprites) {
+        if (this.anims.exists(sprite.key)) continue;
         this.anims.create({
           key: sprite.key,
           frames: this.anims.generateFrameNumbers(sprite.key, {
@@ -151,10 +120,67 @@ export function mountBattlefield(options: Options): () => void {
               ? 0
               : -1,
         });
-
+      }
+    }
+    async prepare(map: MapKind, style: ArtStyle): Promise<void> {
+      const plan = assetsFor(art, map, style);
+      if (
+        [...plan.images, ...plan.sprites].every((asset) =>
+          this.textures.exists(asset.key),
+        )
+      ) {
+        this.animations(plan);
+        return;
+      }
+      await new Promise<void>((resolve, reject) => {
+        let failed = false;
+        const onError = () => {
+          failed = true;
+        };
+        const cleanup = () => {
+          this.load.off("loaderror", onError);
+          this.events.off("shutdown", onShutdown);
+        };
+        const onShutdown = () => {
+          cleanup();
+          this.load.off("complete", onComplete);
+          reject(Error("Mission view closed"));
+        };
+        const onComplete = () => {
+          cleanup();
+          if (failed) reject(Error("Some artwork did not load"));
+          else {
+            this.animations(plan);
+            resolve();
+          }
+        };
+        this.load.on("loaderror", onError);
+        this.load.once("complete", onComplete);
+        this.events.once("shutdown", onShutdown);
+        this.queue(plan);
+        this.load.start();
+      });
+    }
+    preload(): void {
+      this.load.on("loaderror", () => {
+        loaded = false;
+      });
+      this.queue(initial);
+    }
+    create(): void {
+      this.load.removeAllListeners("loaderror");
+      if (!loaded) {
+        options.onError();
+        return;
+      }
+      this.animations(initial);
       this.add.rectangle(540, 330, 1080, 660, 0x101f2a);
       this.background = this.add
-        .image(540, 330, MAPS[simulation.snapshot().map].background)
+        .image(
+          540,
+          330,
+          backgroundKey(simulation.snapshot().map, options.artStyle()),
+        )
         .setDisplaySize(1080, 660)
         .setAlpha(0.24);
       this.shade = this.add.rectangle(540, 330, 1080, 660, 0x102330, 0.47);
@@ -415,23 +441,23 @@ export function mountBattlefield(options: Options): () => void {
         }
       for (const tower of state.towers) {
         const definition = TOWERS[tower.kind];
+        const artwork = expedition ? EXPEDITION_TOWERS[tower.kind] : undefined;
         let sprite = towerSprites.get(tower.id);
         if (!sprite) {
           sprite = this.add
             .sprite(
               worldX(tower.col + 0.5),
               worldY(tower.row) - 4,
-              `${definition.sprite}-idle`,
+              artwork?.key ?? `${definition.sprite}-idle`,
             )
             .setDisplaySize(84, 84)
             .setDepth(4);
-          sprite.play(`${definition.sprite}-idle`);
+          if (!artwork) sprite.play(`${definition.sprite}-idle`);
           sprite.on("animationcomplete", () => {
             if (sprite?.active) sprite.play(`${definition.sprite}-idle`);
           });
           towerSprites.set(tower.id, sprite);
         }
-        const artwork = expedition ? EXPEDITION_TOWERS[tower.kind] : undefined;
         const prototype = Boolean(artwork);
         if (sprite.getData("prototype") !== prototype) {
           sprite.setData("prototype", prototype);
@@ -509,7 +535,7 @@ export function mountBattlefield(options: Options): () => void {
         if (tower.health < definition.health)
           this.healthBar(
             sprite.x,
-            worldY(tower.row) + 27,
+            worldY(tower.row) + 32,
             tower.health / definition.health,
             0x64cfb2,
           );
@@ -541,6 +567,7 @@ export function mountBattlefield(options: Options): () => void {
         }
       for (const enemy of state.enemies) {
         const definition = ENEMIES[enemy.kind];
+        const artwork = expedition ? EXPEDITION_ENEMIES[enemy.kind] : undefined;
         const animation = `${definition.sprite}-${enemy.attacking ? "attack" : "walk"}`;
         let sprite = enemySprites.get(enemy.id);
         if (!sprite) {
@@ -548,14 +575,13 @@ export function mountBattlefield(options: Options): () => void {
             .sprite(
               worldX(enemy.x),
               worldY(enemy.row) - 4,
-              `${definition.sprite}-walk`,
+              artwork?.key ?? `${definition.sprite}-walk`,
             )
             .setDepth(5)
             .setData("kind", definition.sprite);
           sprite.setDisplaySize(definition.size, definition.size);
           enemySprites.set(enemy.id, sprite);
         }
-        const artwork = expedition ? EXPEDITION_ENEMIES[enemy.kind] : undefined;
         const prototype = Boolean(artwork);
         if (sprite.getData("prototype") !== prototype) {
           sprite.setData("prototype", prototype);
@@ -564,9 +590,20 @@ export function mountBattlefield(options: Options): () => void {
           else sprite.play(animation);
         }
         const x = enemy.previousX + (enemy.x - enemy.previousX) * alpha;
-        const stride =
-          prototype && animate && !enemy.attacking
-            ? Math.sin(visualTime * 12 + enemy.id) * 1.2
+        // Per-role movement reads game time; it never changes simulation positions.
+        const gait = ENEMY_GAITS[enemy.kind] ?? DEFAULT_GAIT;
+        const motion = prototype && animate && !enemy.attacking;
+        const stride = motion
+          ? Math.sin(visualTime * gait[0] + enemy.id) * gait[1]
+          : 0;
+        const lean = motion
+          ? Math.cos(visualTime * gait[0] + enemy.id) * gait[2]
+          : 0;
+        const strike =
+          prototype && enemy.kind === "gargantua" && enemy.attacking
+            ? animate
+              ? Math.max(0, 1 - enemy.cooldown / 0.3)
+              : 1
             : 0;
         const hit = animate
           ? Math.max(0, (sprite.getData("hitUntil") ?? 0) - visualTime) / 0.14
@@ -577,7 +614,11 @@ export function mountBattlefield(options: Options): () => void {
             worldX(x) + hit * (sprite.getData("resisted") ? 1.5 : 5),
             worldY(enemy.row) + 29 + stride,
           )
-          .setAngle(hit * (enemy.id % 2 ? 3 : -3));
+          .setAngle(lean + hit * (enemy.id % 2 ? 3 : -3));
+        if (strike > 0)
+          this.bars
+            .lineStyle(2, 0xf1be8f, 0.85)
+            .strokeCircle(sprite.x - 34, worldY(enemy.row) + 3, 5 + strike * 6);
         if (artwork)
           sprite.setDisplaySize(artwork.width, artwork.height - hit * 2);
         else {
@@ -593,13 +634,7 @@ export function mountBattlefield(options: Options): () => void {
         if (definition.armor) {
           this.bars
             .lineStyle(2, 0xaad1e2, 0.9)
-            .strokeRoundedRect(
-              sprite.x - 24,
-              worldY(enemy.row) + 23,
-              48,
-              11,
-              3,
-            );
+            .strokeRoundedRect(sprite.x - 24, worldY(enemy.row) + 30, 48, 8, 3);
         }
         sprite.anims.timeScale = state.speed;
         if (!artwork) {
@@ -608,7 +643,7 @@ export function mountBattlefield(options: Options): () => void {
         }
         this.healthBar(
           sprite.x,
-          worldY(enemy.row) + 27,
+          worldY(enemy.row) + 32,
           enemy.health / definition.health,
           enemy.kind === "tank" || enemy.kind === "gargantua"
             ? 0xffba7c
@@ -902,10 +937,14 @@ export function mountBattlefield(options: Options): () => void {
     loader: { timeout: 15000, maxRetries: 1 },
     input: { keyboard: false, mouse: false, touch: false },
   });
-  return () => {
-    towerSprites.clear();
-    enemySprites.clear();
-    bulletSprites.clear();
-    game.destroy(true);
+  return {
+    prepare: (map, style) =>
+      (game.scene.getScene("Battlefield") as BattleScene).prepare(map, style),
+    destroy: () => {
+      towerSprites.clear();
+      enemySprites.clear();
+      bulletSprites.clear();
+      game.destroy(true);
+    },
   };
 }

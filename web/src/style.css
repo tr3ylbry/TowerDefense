@@ -2124,3 +2124,109 @@ dialog li {
     display: none;
   }
 }
+
+/* Expedition 0.3: readable decisions and touch-safe controls without another toolbar. */
+#asset-dialog [hidden],
+#mission-receipt[hidden] {
+  display: none !important;
+}
+#asset-progress {
+  width: 100%;
+  accent-color: #93d7bd;
+  margin: 15px 0;
+}
+#selected-detail small {
+  display: block;
+  flex-basis: 100%;
+  color: #c3d9d2;
+  font-size: 11px;
+  line-height: 1.5;
+}
+#mission-receipt {
+  font: 11px/1.6 var(--mono);
+  color: #c6dcd4;
+  margin: 8px auto;
+  max-width: 460px;
+}
+#mission-receipt summary {
+  cursor: pointer;
+  padding: 7px 10px;
+  min-height: 32px;
+}
+#mission-receipt p {
+  font: inherit;
+  margin: 4px 0;
+}
+.mission-tools .tool,
+.time-controls button,
+#field-zoom,
+.crew-details .salvage-button,
+.dialog-close,
+.destination-button,
+.nav-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.coverage-status {
+  color: #c6dbcf;
+  font-size: 11px;
+}
+.coverage-status:empty {
+  display: none;
+}
+@media (min-width: 701px) {
+  .focused-play .board-stack {
+    max-width: calc((100svh - 460px) * 1080 / 660);
+  }
+}
+@media (max-width: 700px) {
+  .mission-tools {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .crew-heading > span {
+    font-size: 10px;
+  }
+  .crew-details {
+    min-height: 80px;
+  }
+  .focused-play .crew-details {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .focused-play #focus-toggle span {
+    display: none;
+  }
+  #status {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  #mission-receipt {
+    font-size: 10px;
+  }
+  #mission-receipt summary,
+  .overlay-card .primary-button {
+    min-height: 44px;
+  }
+  .zoomed-field .board-stack {
+    min-width: 660px;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .focused-play .board-stack {
+    max-width: 640px;
+  }
+  .mission-bar {
+    flex-wrap: wrap;
+  }
+  .focused-play .mission-tools {
+    margin-left: auto;
+  }
+  .battle-scroll {
+    max-height: 340px;
+    overflow: auto;
+  }
+  .mission-overlay {
+    min-height: 240px;
+  }
+}
