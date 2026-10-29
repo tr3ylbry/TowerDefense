@@ -117,7 +117,7 @@ node scripts/research/economy-0.3.cjs
 
 CI installs all three engines and keeps the Firefox project enabled. The local profile-launch failure is not hidden by skipping Firefox globally or disabling browser security.
 
-The first Linux run exposed a Firefox-specific phone fit issue: TARS details ended at 852.95 pixels in the 844-pixel viewport. The noninteractive phone hint had enough unused vertical padding to recover 12 pixels. Reducing that padding preserves full text, battlefield dimensions, and 44-pixel controls; the existing viewport assertion remains unchanged. The follow-up pushed revision reruns the complete three-engine suite.
+The first Linux run passed 64 of 66 scenarios and exposed the same phone fit issue under different system-font metrics: TARS details ended at 852.95 pixels in Firefox and 844.94 pixels in WebKit, against the 844-pixel viewport. The noninteractive phone hint had enough unused vertical padding to recover 12 pixels. Reducing that padding preserves full text, battlefield dimensions, and 44-pixel controls; the existing viewport assertion remains unchanged. The follow-up pushed revision reruns the complete three-engine suite.
 
 ## Git delivery and preservation
 
