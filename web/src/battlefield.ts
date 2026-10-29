@@ -6,6 +6,7 @@ import {
   isBlocked,
   MAPS,
   ROWS,
+  STEP,
   TOWERS,
 } from "./game/content";
 import type { TowerKind } from "./game/content";
@@ -37,6 +38,7 @@ interface Options {
   art: ArtManifest;
   selection: () => TowerKind | "salvage" | null;
   reducedMotion: () => boolean;
+  artStyle: () => "expedition" | "original";
   cursor: () => { row: number; col: number } | null;
   onState: (state: Snapshot) => void;
   onEvent: (event: GameEvent) => void;
@@ -93,6 +95,8 @@ export function mountBattlefield(options: Options): () => void {
     private bars!: Phaser.GameObjects.Graphics;
     private hover!: Phaser.GameObjects.Graphics;
     private background!: Phaser.GameObjects.Image;
+    private shade!: Phaser.GameObjects.Rectangle;
+    private ghost!: Phaser.GameObjects.Image;
     private mapTitle!: Phaser.GameObjects.Text;
     private sector!: Phaser.GameObjects.Text;
     private terrain!: Phaser.GameObjects.Container;
@@ -112,6 +116,12 @@ export function mountBattlefield(options: Options): () => void {
       const base = `${import.meta.env.BASE_URL}art/`;
       for (const image of [...backgrounds, ...images])
         this.load.image(image.key, base + image.file);
+      for (const [key, file] of [
+        ["expedition-canyon", "canyon.webp"],
+        ["expedition-ranger", "ranger.png"],
+        ["expedition-plated-crawler", "plated-crawler.png"],
+      ])
+        this.load.image(key, `${base}expedition/${file}`);
       for (const sprite of sprites)
         this.load.spritesheet(sprite.key, base + sprite.file, {
           frameWidth: sprite.frameWidth,
@@ -143,7 +153,7 @@ export function mountBattlefield(options: Options): () => void {
         .image(540, 330, MAPS[simulation.snapshot().map].background)
         .setDisplaySize(1080, 660)
         .setAlpha(0.24);
-      this.add.rectangle(540, 330, 1080, 660, 0x102330, 0.47);
+      this.shade = this.add.rectangle(540, 330, 1080, 660, 0x102330, 0.47);
       for (let i = 0; i < 32; i++) {
         const star = this.add.circle(
           (i * 137.5 + 37) % 1080,
@@ -255,6 +265,11 @@ export function mountBattlefield(options: Options): () => void {
       this.renderMap(simulation.snapshot());
       this.hover = this.add.graphics().setDepth(2);
       this.bars = this.add.graphics().setDepth(8);
+      this.ghost = this.add
+        .image(0, 0, "expedition-ranger")
+        .setDepth(3)
+        .setAlpha(0.45)
+        .setVisible(false);
       options.onReady();
     }
 
@@ -297,10 +312,17 @@ export function mountBattlefield(options: Options): () => void {
     }
 
     private renderMap(state: Snapshot): void {
-      if (this.activeMap === state.map) return;
-      this.activeMap = state.map;
+      const style = options.artStyle();
+      const mapKey = `${state.map}-${style}`;
+      if (this.activeMap === mapKey) return;
+      this.activeMap = mapKey;
       const map = MAPS[state.map];
-      this.background.setTexture(map.background);
+      const expedition = state.map === "canyon" && style === "expedition";
+      this.background
+        .setTexture(expedition ? "expedition-canyon" : map.background)
+        .setDisplaySize(1080, 660)
+        .setAlpha(expedition ? 0.85 : 0.24);
+      this.shade.setAlpha(expedition ? 0.2 : 0.47);
       this.mapTitle.setText(`${map.name.toUpperCase()} PERIMETER`);
       this.sector.setText(`SECTOR / 0${map.number}`);
       this.terrain.removeAll(true);
@@ -324,6 +346,10 @@ export function mountBattlefield(options: Options): () => void {
 
     private renderEntities(state: Snapshot, moving: boolean): void {
       this.bars.clear();
+      const alpha = simulation.interpolationAlpha();
+      const visualTime = state.elapsed + alpha * STEP;
+      const animate = !options.reducedMotion();
+      const expedition = options.artStyle() === "expedition";
       const activeTowers = new Set(state.towers.map((tower) => tower.id));
       for (const [id, sprite] of towerSprites)
         if (!activeTowers.has(id)) {
@@ -348,7 +374,47 @@ export function mountBattlefield(options: Options): () => void {
           });
           towerSprites.set(tower.id, sprite);
         }
-        sprite.anims.timeScale = state.speed;
+        const prototype = expedition && tower.kind === "astro";
+        if (sprite.getData("prototype") !== prototype) {
+          sprite.setData("prototype", prototype);
+          sprite.anims.stop();
+          if (prototype) sprite.setTexture("expedition-ranger");
+          else {
+            sprite.play(`${definition.sprite}-idle`);
+            sprite.setDisplaySize(84, 84);
+          }
+        }
+        const recoil = animate
+          ? Math.max(0, (sprite.getData("recoilUntil") ?? 0) - visualTime) /
+            0.12
+          : 0;
+        sprite.setX(worldX(tower.col + 0.5) - recoil * 5);
+        if (prototype) {
+          const breath = animate
+            ? Math.sin(visualTime * 3 + tower.id) * 0.8
+            : 0;
+          sprite.setDisplaySize(83, 77 + breath);
+        } else {
+          const duration = sprite.anims.currentAnim?.duration ?? 0;
+          sprite.anims.timeScale =
+            state.speed *
+            (sprite.anims.currentAnim?.key.endsWith("-fire")
+              ? Math.max(1, duration / (definition.cooldown * 800))
+              : 1);
+        }
+        if (tower.windup > 0) {
+          this.bars
+            .lineStyle(2, 0xa3ead7, 0.9)
+            .lineBetween(
+              sprite.x + 22,
+              worldY(tower.row) - 16,
+              sprite.x + 34,
+              worldY(tower.row) - 16,
+            );
+          this.bars
+            .fillStyle(0xa3ead7)
+            .fillCircle(sprite.x + 34, worldY(tower.row) - 16, 3);
+        }
         if (!moving || options.reducedMotion()) sprite.anims.pause();
         else sprite.anims.resume();
         if (tower.health < definition.health)
@@ -369,8 +435,18 @@ export function mountBattlefield(options: Options): () => void {
             !options.reducedMotion()
           ) {
             this.effects.add(sprite);
-            sprite.play(`${sprite.getData("kind")}-die`);
-            sprite.once("animationcomplete", () => sprite.destroy());
+            if (sprite.getData("prototype")) {
+              this.tweens.add({
+                targets: sprite,
+                alpha: 0,
+                y: sprite.y + 12,
+                duration: 220,
+                onComplete: () => sprite.destroy(),
+              });
+            } else {
+              sprite.play(`${sprite.getData("kind")}-die`);
+              sprite.once("animationcomplete", () => sprite.destroy());
+            }
           } else sprite.destroy();
         }
       for (const enemy of state.enemies) {
@@ -389,8 +465,38 @@ export function mountBattlefield(options: Options): () => void {
           sprite.setDisplaySize(definition.size, definition.size);
           enemySprites.set(enemy.id, sprite);
         }
-        sprite.setPosition(worldX(enemy.x), worldY(enemy.row) - 4);
-        if (sprite.anims.currentAnim?.key !== animation) sprite.play(animation);
+        const prototype = expedition && enemy.kind === "tank";
+        if (sprite.getData("prototype") !== prototype) {
+          sprite.setData("prototype", prototype);
+          sprite.anims.stop();
+          if (prototype) sprite.setTexture("expedition-plated-crawler");
+        }
+        const x = enemy.previousX + (enemy.x - enemy.previousX) * alpha;
+        const stride =
+          prototype && animate && !enemy.attacking
+            ? Math.sin(visualTime * 12 + enemy.id) * 1.5
+            : 0;
+        sprite.setPosition(worldX(x), worldY(enemy.row) - 4 + stride);
+        if (prototype) sprite.setDisplaySize(108, 72);
+        else {
+          if (sprite.anims.currentAnim?.key !== animation)
+            sprite.play(animation);
+          sprite.setDisplaySize(definition.size, definition.size);
+        }
+        if (animate && (sprite.getData("hitUntil") ?? 0) > visualTime)
+          sprite.setTint(0xffdec1);
+        else sprite.clearTint();
+        if (definition.armor) {
+          this.bars
+            .lineStyle(2, 0xaad1e2, 0.9)
+            .strokeRoundedRect(
+              sprite.x - 24,
+              worldY(enemy.row) + 23,
+              48,
+              11,
+              3,
+            );
+        }
         sprite.anims.timeScale = state.speed;
         if (!moving || options.reducedMotion()) sprite.anims.pause();
         else sprite.anims.resume();
@@ -421,9 +527,20 @@ export function mountBattlefield(options: Options): () => void {
           bulletSprites.set(projectile.id, sprite);
         }
         sprite.setPosition(
-          worldX(projectile.x),
+          worldX(
+            projectile.previousX +
+              (projectile.x - projectile.previousX) * alpha,
+          ),
           worldY(projectile.row) - 9 + projectile.offset,
         );
+        if (animate)
+          this.bars
+            .lineStyle(
+              projectile.ammo === "tars" ? 3 : 2,
+              projectile.ammo === "tars" ? 0xa3ead7 : 0xffc28e,
+              0.55,
+            )
+            .lineBetween(sprite.x - 17, sprite.y, sprite.x - 4, sprite.y);
       }
     }
 
@@ -441,6 +558,7 @@ export function mountBattlefield(options: Options): () => void {
 
     private renderHover(state: Snapshot): void {
       this.hover.clear();
+      this.ghost.setVisible(false);
       const cursor = options.cursor();
       const selection = options.selection();
       if (!cursor || !selection || state.phase !== "playing") return;
@@ -453,6 +571,17 @@ export function mountBattlefield(options: Options): () => void {
           : !occupied &&
             !isBlocked(state.map, cursor.row, cursor.col) &&
             state.credits >= TOWERS[selection].cost;
+      if (valid && selection !== "salvage") {
+        const texture =
+          options.artStyle() === "expedition" && selection === "astro"
+            ? "expedition-ranger"
+            : `${TOWERS[selection].sprite}-idle`;
+        this.ghost
+          .setTexture(texture, 0)
+          .setDisplaySize(78, 78)
+          .setPosition(worldX(cursor.col + 0.5), worldY(cursor.row) - 4)
+          .setVisible(true);
+      }
       const color = valid ? 0x6edcc0 : 0xe78871;
       const x = FIELD.x + cursor.col * FIELD.cellWidth;
       const y = FIELD.y + cursor.row * FIELD.cellHeight;
@@ -479,16 +608,35 @@ export function mountBattlefield(options: Options): () => void {
     private effect(event: GameEvent, state: Snapshot): void {
       const x = worldX(event.x);
       const y = worldY(event.row);
-      if (event.type === "shot" && event.kind) {
-        const tower = state.towers.find(
-          (tower) =>
-            tower.row === event.row && tower.col === Math.floor(event.x),
-        );
+      if (event.type === "hit" && event.entityId !== undefined) {
+        enemySprites
+          .get(event.entityId)
+          ?.setData("hitUntil", state.elapsed + 0.09);
+      }
+      if (event.type === "shot" && event.kind && event.entityId !== undefined) {
+        const sprite = towerSprites.get(event.entityId);
         const key = `${TOWERS[event.kind].sprite}-fire`;
-        if (tower && this.anims.exists(key) && !options.reducedMotion())
-          towerSprites.get(tower.id)?.play(key, true);
+        sprite?.setData("recoilUntil", state.elapsed + 0.12);
+        if (
+          sprite &&
+          !sprite.getData("prototype") &&
+          this.anims.exists(key) &&
+          !options.reducedMotion()
+        )
+          sprite.play(key); // Each real release restarts a short attack, including rapid-fire units.
       }
       if (options.reducedMotion()) return;
+      if (event.type === "shot") {
+        const flash = this.add.circle(x + 35, y - 12, 7, 0xb7f2db).setDepth(9);
+        this.effects.add(flash);
+        this.tweens.add({
+          targets: flash,
+          alpha: 0,
+          scale: 0.2,
+          duration: 100,
+          onComplete: () => flash.destroy(),
+        });
+      }
       if (
         event.type === "hit" ||
         event.type === "placed" ||

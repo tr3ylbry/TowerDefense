@@ -279,3 +279,86 @@ test("restored roster and destinations fit a narrow screen", async ({
     ),
   ).toBe(true);
 });
+
+test("focused desktop controls fit the viewport and the art comparison preserves play", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Begin mission", exact: true })
+    .click();
+  await expect(page.locator("body")).toHaveClass(/focused-play/);
+  await expect(page.locator(".site-header")).toBeHidden();
+  await expect(page.locator("#wave-forecast")).toContainText(
+    "6 Little Green Men",
+  );
+  const layout = await page.evaluate(() => {
+    const deck = document
+      .querySelector(".crew-details")!
+      .getBoundingClientRect();
+    const roster = document.querySelector(".crew-list")!;
+    return {
+      bottom: deck.bottom,
+      height: innerHeight,
+      allCrewVisible: roster.scrollWidth <= roster.clientWidth + 1,
+    };
+  });
+  expect(layout.bottom).toBeLessThanOrEqual(layout.height);
+  expect(layout.allCrewVisible).toBe(true);
+  await page
+    .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Show original art", exact: true })
+    .click();
+  await expect(page.locator("html")).toHaveClass(/original-art/);
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, Astro Joe/ }),
+  ).toBeVisible();
+  await expect(page.locator("#credits")).toHaveText("180");
+  await page
+    .getByRole("button", { name: "Show expedition art", exact: true })
+    .click();
+  await expect(page.locator("html")).not.toHaveClass(/original-art/);
+  await page.getByRole("button", { name: "Field guide", exact: true }).click();
+  await expect(page.locator(".alien-guide")).toContainText(
+    "Plating absorbs 80%",
+  );
+  await page.getByRole("button", { name: "Back to the frontier" }).click();
+  await page
+    .getByRole("button", { name: "Leave focused view", exact: true })
+    .click();
+  await expect(page.locator(".site-header")).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test("phone overview shows the entire field and scrolls the crew to keyboard selection", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Begin mission", exact: true })
+    .click();
+  const bounds = await page.locator(".board-stack").boundingBox();
+  expect(bounds!.x).toBeGreaterThanOrEqual(0);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(390);
+  await page.keyboard.press("7");
+  await expect(page.locator("#selected-detail")).toContainText(
+    "Piercing rounds ignore Tank plating",
+  );
+  const crew = await page.locator('[data-tower="tars"]').boundingBox();
+  expect(crew!.x).toBeGreaterThanOrEqual(0);
+  expect(crew!.x + crew!.width).toBeLessThanOrEqual(390);
+  const details = await page.locator(".crew-details").boundingBox();
+  expect(details!.y + details!.height).toBeLessThanOrEqual(844);
+  await page
+    .getByRole("gridcell", { name: "Lane 6, tile 9, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 6, tile 9, TARS/ }),
+  ).toBeVisible();
+});

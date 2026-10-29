@@ -1631,3 +1631,325 @@ dialog li {
     font-size: 8px;
   }
 }
+
+/* Expedition control deck: one visible battlefield and a compact, scrollable roster. */
+.play-layout {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+.board-stack {
+  min-width: 0;
+  width: 100%;
+  margin: auto;
+}
+.battle-scroll {
+  background: #101f29;
+}
+.crew-panel {
+  min-width: 0;
+}
+.crew-heading {
+  padding: 0;
+  margin: 0 0 7px;
+  border: 0;
+}
+.crew-heading h2 {
+  margin: 0;
+  font-size: 14px;
+}
+.crew-heading > span {
+  font: 10px var(--mono);
+  color: #a5bcb9;
+}
+.crew-list {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(94px, 1fr));
+  gap: 6px;
+  max-height: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 3px;
+  position: relative;
+}
+.crew-card {
+  min-height: 90px;
+  padding: 7px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-rows: 35px 1fr;
+  gap: 4px;
+  align-items: center;
+}
+.crew-card .portrait {
+  width: 34px;
+  height: 35px;
+  background-size: auto 35px;
+}
+.crew-info {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+.crew-info strong {
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: normal;
+}
+.crew-role,
+.crew-description {
+  display: none;
+}
+.crew-price {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  gap: 3px;
+}
+.crew-price kbd {
+  min-width: 17px;
+  min-height: 17px;
+  font-size: 9px;
+}
+.crew-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 7px 3px;
+}
+#selected-detail {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+#selected-detail strong {
+  color: #e8ede3;
+  font-weight: 600;
+}
+#selected-detail > span {
+  color: #a9c2bd;
+}
+.crew-details .salvage-button {
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0 0 0 auto;
+  padding: 7px 10px;
+  min-height: 36px;
+  gap: 7px;
+  font-size: 12px;
+}
+.wave-forecast {
+  padding: 10px 16px;
+  border-top: 1px solid #3c5058;
+  color: #c5d9d0;
+  font: 11px/1.5 var(--mono);
+  background: #162a32;
+}
+[data-tower="astro"] .portrait {
+  background-size: contain;
+  background-position: center;
+  image-rendering: auto;
+}
+.original-art [data-tower="astro"] .portrait {
+  background-size: auto 35px;
+  background-position: left center;
+  image-rendering: pixelated;
+}
+#play-guide {
+  display: none;
+}
+.focused-play .site-header,
+.focused-play .mission-heading,
+.focused-play footer,
+.focused-play #terrain-note {
+  display: none;
+}
+.focused-play main {
+  max-width: 1180px;
+  padding: 12px 16px 0;
+}
+.focused-play .mission-bar {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+}
+.focused-play .location-number,
+.focused-play .location .micro-label,
+.focused-play .location-tag {
+  display: none;
+}
+.focused-play .location h2 {
+  font-size: 16px;
+  margin: 0;
+}
+.focused-play .mission-tools {
+  gap: 14px;
+}
+.focused-play #play-guide {
+  display: flex;
+}
+.focused-play .telemetry {
+  padding: 10px 16px;
+}
+.focused-play .telemetry-item {
+  gap: 3px;
+}
+.focused-play .board-stack {
+  max-width: calc((100svh - 345px) * 1080 / 660);
+  min-width: 320px;
+}
+.focused-play .field-status {
+  padding: 8px 16px;
+}
+.focused-play .grid-help {
+  padding: 7px;
+}
+.focused-play .wave-forecast {
+  padding: 7px 16px;
+}
+.focused-play .dispatch {
+  padding: 6px 3px;
+  min-height: 26px;
+  font-size: 12px;
+}
+.mission-tools .tool {
+  min-height: 32px;
+}
+@media (max-width: 700px) {
+  main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .mission-tools {
+    gap: 15px;
+  }
+  .mission-tools .tool {
+    min-width: 30px;
+    justify-content: center;
+  }
+  .mission-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+  }
+  .overlay-orbit,
+  .overlay-card .overline,
+  .overlay-note {
+    display: none;
+  }
+  .overlay-card h2 {
+    font-size: 23px;
+  }
+  .overlay-card > p:not(.overlay-note) {
+    margin: 8px 0 12px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .overlay-card .primary-button {
+    min-height: 40px;
+    padding: 9px 16px;
+  }
+  .crew-list {
+    grid-template-columns: repeat(9, 104px);
+    gap: 6px;
+  }
+  .crew-card {
+    min-height: 82px;
+  }
+  .crew-heading > span {
+    font-size: 9px;
+  }
+  #selected-detail {
+    font-size: 13px;
+    display: block;
+  }
+  #selected-detail > span {
+    display: block;
+    margin-top: 2px;
+  }
+  .crew-details {
+    align-items: flex-start;
+    min-height: 82px;
+  }
+  .crew-details .salvage-button {
+    min-height: 40px;
+  }
+  .crew-details .salvage-button kbd {
+    display: none;
+  }
+  .wave-forecast {
+    font-size: 10px;
+    padding: 9px 12px;
+  }
+  .focused-play main {
+    padding: 10px 12px 0;
+  }
+  .focused-play .mission-bar {
+    gap: 8px;
+  }
+  .focused-play .mission-tools {
+    gap: 8px;
+    margin: 0;
+  }
+  .focused-play .board-stack {
+    max-width: none;
+    min-width: 0;
+  }
+  .focused-play .grid-help {
+    padding: 8px;
+  }
+  .focused-play .telemetry {
+    padding: 10px;
+    gap: 12px;
+  }
+  .focused-play .wave-forecast {
+    padding: 8px 10px;
+  }
+  .focused-play .location {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .focused-play .mission-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .focused-play .mission-tools .tool span {
+    display: inline;
+    font-size: 10px;
+  }
+  .focused-play #motion-toggle span,
+  .focused-play #sound-toggle span,
+  .focused-play #restart span {
+    display: none;
+  }
+  .focused-play #art-toggle {
+    font-size: 15px;
+  }
+  .focused-play .dispatch {
+    font-size: 11px;
+  }
+}
+@media (min-width: 701px) {
+  .focused-play main {
+    max-width: 1050px;
+  }
+  .focused-play .crew-heading,
+  .focused-play .grid-help {
+    display: none;
+  }
+  .focused-play .crew-card {
+    min-height: 76px;
+  }
+  .focused-play .crew-details {
+    min-height: 40px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .focused-play .board-stack {
+    max-width: calc((100svh - 365px) * 1080 / 660);
+  }
+}

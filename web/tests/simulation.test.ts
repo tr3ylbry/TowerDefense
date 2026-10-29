@@ -10,7 +10,7 @@ import {
   TOWERS,
 } from "../src/game/content";
 import type { MapKind, TowerKind } from "../src/game/content";
-import { Simulation } from "../src/game/simulation";
+import { damageAgainstArmor, Simulation } from "../src/game/simulation";
 
 describe("mission lifecycle", () => {
   it("does not advance or accept deployment before start", () => {
@@ -168,7 +168,7 @@ describe("mission lifecycle", () => {
     expect(game.snapshot().phase).toBe("won");
     expect(game.snapshot().wave).toBe(4);
     expect(game.snapshot().pendingSpawns).toBe(0);
-    expect(earliestWin).toBeGreaterThan(117);
+    expect(earliestWin).toBeGreaterThan(makeSpawns(3352019).at(-1)!.at);
   });
 
   it("creates reproducible but distinct seeded lanes", () => {
@@ -228,7 +228,7 @@ describe("complete original roster", () => {
     if (TOWERS[kind].cost > 230) game.advance(5);
     const row = makeSpawns(3352019)[0].row;
     game.place(kind, row, 0);
-    game.advance(7.1 - game.snapshot().elapsed);
+    game.advance(7 + TOWERS[kind].windup - game.snapshot().elapsed);
     const shots = game.snapshot().projectiles;
     expect(shots.map((shot) => shot.ammo)).toEqual(TOWERS[kind].ammo);
     expect(
@@ -388,4 +388,165 @@ describe("cluster damage", () => {
       expect(damaged).toHaveLength(kind === "astro" ? 1 : group.length);
     },
   );
+});
+
+describe("combat presentation clock", () => {
+  it("interpolates without changing rules, and holds its position while paused", () => {
+    const game = new Simulation();
+    game.start();
+    game.advance(7.075);
+    const before = game.snapshot();
+    expect(game.interpolationAlpha()).toBeCloseTo(0.5);
+    expect(before.enemies[0].previousX).toBeGreaterThan(before.enemies[0].x);
+    game.advance(0.01);
+    expect(game.snapshot()).toEqual(before);
+    expect(game.interpolationAlpha()).toBeCloseTo(0.7);
+    game.pause();
+    const alpha = game.interpolationAlpha();
+    game.advance(3);
+    expect(game.interpolationAlpha()).toBe(alpha);
+    game.restart();
+    expect(game.interpolationAlpha()).toBe(0);
+  });
+
+  it.each([
+    "astro",
+    "startrell",
+    "tars",
+    "zeus",
+    "explosive",
+    "falcon",
+  ] as TowerKind[])("releases %s once after a pausable wind-up", (kind) => {
+    const game = new Simulation();
+    game.start();
+    game.advance(5);
+    game.place(kind, makeSpawns(3352019)[0].row, 0);
+    game.drainEvents();
+    game.advance(2);
+    const aim = game.drainEvents().filter((event) => event.type === "aim");
+    expect(aim).toHaveLength(1);
+    expect(game.snapshot().projectiles).toHaveLength(0);
+    game.pause();
+    const paused = game.snapshot();
+    game.advance(5);
+    expect(game.snapshot()).toEqual(paused);
+    game.resume();
+    game.advance(TOWERS[kind].windup);
+    expect(
+      game.drainEvents().filter((event) => event.type === "shot"),
+    ).toHaveLength(1);
+    expect(game.snapshot().projectiles).toHaveLength(TOWERS[kind].ammo.length);
+    game.advance(0.05);
+    expect(
+      game.drainEvents().filter((event) => event.type === "shot"),
+    ).toHaveLength(0);
+    expect(game.snapshot().projectiles).toHaveLength(TOWERS[kind].ammo.length);
+  });
+
+  it("cancels a pending shot when its defender is salvaged", () => {
+    const game = new Simulation();
+    game.start();
+    const row = makeSpawns(3352019)[0].row;
+    game.place("zeus", row, 0);
+    game.advance(7);
+    expect(game.snapshot().towers[0].windup).toBeGreaterThan(0);
+    game.remove(row, 0);
+    game.drainEvents();
+    game.advance(1);
+    expect(game.snapshot().projectiles).toHaveLength(0);
+    expect(game.drainEvents().some((event) => event.type === "shot")).toBe(
+      false,
+    );
+  });
+});
+
+describe("armor counters", () => {
+  it("preserves ordinary damage on unarmored enemies and gives specialists different plating penetration", () => {
+    expect(damageAgainstArmor(26, 0, 0)).toBe(26);
+    expect(
+      damageAgainstArmor(
+        TOWERS.astro.damage,
+        ENEMIES.tank.armor,
+        TOWERS.astro.armorPierce,
+      ),
+    ).toBeCloseTo(5.2);
+    expect(
+      damageAgainstArmor(
+        TOWERS.tars.damage,
+        ENEMIES.tank.armor,
+        TOWERS.tars.armorPierce,
+      ),
+    ).toBe(48);
+    expect(
+      damageAgainstArmor(
+        TOWERS.zeus.damage,
+        ENEMIES.tank.armor,
+        TOWERS.zeus.armorPierce,
+      ),
+    ).toBeCloseTo(46.8);
+    expect(
+      damageAgainstArmor(
+        TOWERS.explosive.damage,
+        ENEMIES.tank.armor,
+        TOWERS.explosive.armorPierce,
+      ),
+    ).toBeCloseTo(23.4);
+  });
+});
+
+it("applies plating to actual impacts and reports the damage against the primary target", () => {
+  const game = new Simulation();
+  const tankSpawn = makeSpawns(3352019).find((spawn) => spawn.kind === "tank")!;
+  const observed = new Set<TowerKind>();
+  game.start();
+  for (let tick = 0; tick < 1600; tick++) {
+    for (let row = 0; row < ROWS; row++)
+      if (
+        !game
+          .snapshot()
+          .towers.some((tower) => tower.row === row && tower.col === 0)
+      )
+        game.place("astro", row, 0);
+    if (game.snapshot().elapsed >= tankSpawn.at - 1) {
+      if (
+        !game
+          .snapshot()
+          .towers.some(
+            (tower) => tower.row === tankSpawn.row && tower.col === 8,
+          )
+      )
+        game.place("wall", tankSpawn.row, 8);
+      if (
+        !game
+          .snapshot()
+          .towers.some(
+            (tower) => tower.row === tankSpawn.row && tower.col === 7,
+          )
+      )
+        game.place("tars", tankSpawn.row, 7);
+    }
+    const before = game.snapshot();
+    game.advance(0.05);
+    const impacts = game
+      .drainEvents()
+      .filter((event) => event.type === "hit" && event.armored);
+    for (const hit of impacts) {
+      observed.add(hit.kind!);
+      expect(hit.amount).toBeCloseTo(hit.kind === "tars" ? 48 : 5.2);
+      const targetBefore = before.enemies.find(
+        (enemy) => enemy.id === hit.entityId,
+      );
+      const targetAfter = game
+        .snapshot()
+        .enemies.find((enemy) => enemy.id === hit.entityId);
+      if (targetBefore && targetAfter) {
+        const total = impacts
+          .filter((event) => event.entityId === hit.entityId)
+          .reduce((sum, event) => sum + event.amount!, 0);
+        expect(targetBefore.health - targetAfter.health).toBeCloseTo(total);
+      }
+    }
+    if (observed.has("astro") && observed.has("tars")) break;
+  }
+  expect(observed).toEqual(new Set(["astro", "tars"]));
 });

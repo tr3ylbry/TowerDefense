@@ -20,12 +20,14 @@ export interface Tower {
   health: number;
   cooldown: number;
   incomeClock: number;
+  windup: number;
 }
 export interface Enemy {
   id: number;
   kind: EnemyKind;
   row: number;
   x: number;
+  previousX: number;
   health: number;
   cooldown: number;
   attacking: boolean;
@@ -37,6 +39,7 @@ export interface Projectile {
   kind: TowerKind;
   row: number;
   x: number;
+  previousX: number;
   damage: number;
 }
 export interface Snapshot {
@@ -56,6 +59,7 @@ export interface Snapshot {
 }
 export type GameEvent = {
   type:
+    | "aim"
     | "shot"
     | "hit"
     | "kill"
@@ -69,6 +73,8 @@ export type GameEvent = {
   x: number;
   kind?: TowerKind;
   amount?: number;
+  entityId?: number;
+  armored?: boolean;
 };
 export interface ActionResult {
   ok: boolean;
@@ -205,6 +211,7 @@ export class Simulation {
       health: definition.health,
       cooldown: 0.1,
       incomeClock: 0,
+      windup: 0,
     });
     this.events.push({ type: "placed", row, x: col + 0.5, kind });
     return {
@@ -242,6 +249,11 @@ export class Simulation {
       this.accumulator = Math.max(0, this.accumulator - STEP);
       this.tick();
     }
+  }
+
+  /** Draw between the last two rule updates; never feed interpolated positions into combat. */
+  interpolationAlpha(): number {
+    return Math.min(1, Math.max(0, this.accumulator / STEP));
   }
 
   drainEvents(): GameEvent[] {
@@ -284,6 +296,7 @@ export class Simulation {
         kind: spawn.kind,
         row: spawn.row,
         x: COLS + 0.5,
+        previousX: COLS + 0.5,
         health: ENEMIES[spawn.kind].health,
         cooldown: 0,
         attacking: false,
@@ -306,38 +319,53 @@ export class Simulation {
         }
       }
       tower.cooldown = Math.max(0, tower.cooldown - STEP);
-      if (
-        definition.damage &&
-        tower.cooldown < 1e-9 &&
-        this.enemies.some(
-          (enemy) =>
-            enemy.row === tower.row &&
-            enemy.x > tower.col + 0.2 &&
-            enemy.health > 0,
-        )
-      ) {
-        tower.cooldown = definition.cooldown;
-        definition.ammo.forEach((ammo, index) => {
-          this.projectiles.push({
-            id: this.nextId++,
-            kind: tower.kind,
-            ammo,
-            offset: (index - (definition.ammo.length - 1) / 2) * 10,
-            row: tower.row,
-            x: tower.col + 0.85,
-            damage: definition.damage,
+      if (!definition.damage) continue;
+      const hasTarget = this.enemies.some(
+        (enemy) =>
+          enemy.row === tower.row &&
+          enemy.x > tower.col + 0.2 &&
+          enemy.health > 0,
+      );
+      if (tower.windup > 0) {
+        tower.windup = Math.max(0, tower.windup - STEP);
+        if (tower.windup < 1e-9) tower.windup = 0;
+        if (tower.windup === 0 && hasTarget) {
+          definition.ammo.forEach((ammo, index) => {
+            const x = tower.col + 0.85;
+            this.projectiles.push({
+              id: this.nextId++,
+              kind: tower.kind,
+              ammo,
+              offset: (index - (definition.ammo.length - 1) / 2) * 10,
+              row: tower.row,
+              x,
+              previousX: x,
+              damage: definition.damage,
+            });
           });
-        });
+          this.events.push({
+            type: "shot",
+            row: tower.row,
+            x: tower.col + 0.5,
+            kind: tower.kind,
+            entityId: tower.id,
+          });
+        }
+      } else if (definition.damage && tower.cooldown < 1e-9 && hasTarget) {
+        tower.cooldown = definition.cooldown;
+        tower.windup = definition.windup;
         this.events.push({
-          type: "shot",
+          type: "aim",
           row: tower.row,
           x: tower.col + 0.5,
           kind: tower.kind,
+          entityId: tower.id,
         });
       }
     }
 
     for (const projectile of this.projectiles) {
+      projectile.previousX = projectile.x;
       const nextX = projectile.x + AMMO[projectile.ammo].speed * STEP;
       const target = this.enemies
         .filter(
@@ -356,14 +384,30 @@ export class Simulation {
               enemy.row === projectile.row &&
               Math.abs(enemy.x - target.x) <= radius
             )
-              enemy.health -= projectile.damage;
-        } else target.health -= projectile.damage;
+              enemy.health -= damageAgainstArmor(
+                projectile.damage,
+                ENEMIES[enemy.kind].armor,
+                TOWERS[projectile.kind].armorPierce,
+              );
+        } else
+          target.health -= damageAgainstArmor(
+            projectile.damage,
+            ENEMIES[target.kind].armor,
+            TOWERS[projectile.kind].armorPierce,
+          );
         projectile.x = COLS + 2;
         this.events.push({
           type: "hit",
           row: target.row,
           x: target.x,
           kind: projectile.kind,
+          entityId: target.id,
+          armored: ENEMIES[target.kind].armor > 0,
+          amount: damageAgainstArmor(
+            projectile.damage,
+            ENEMIES[target.kind].armor,
+            TOWERS[projectile.kind].armorPierce,
+          ),
         });
       } else projectile.x = nextX;
     }
@@ -372,6 +416,7 @@ export class Simulation {
     );
 
     for (const enemy of this.enemies) {
+      enemy.previousX = enemy.x;
       if (enemy.health <= 0) {
         this.kills++;
         this.credits += ENEMIES[enemy.kind].reward;
@@ -422,4 +467,13 @@ export class Simulation {
       this.events.push({ type: "end", row: 0, x: 0 });
     }
   }
+}
+
+/** Piercing bypasses a fraction of plating; unarmored targets take normal damage. */
+export function damageAgainstArmor(
+  damage: number,
+  armor: number,
+  piercing: number,
+): number {
+  return damage * (1 - armor * (1 - piercing));
 }

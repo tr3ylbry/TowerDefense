@@ -19,6 +19,8 @@ interface TowerDefinition {
   health: number;
   damage: number;
   cooldown: number;
+  windup: number;
+  armorPierce: number;
   income: number;
   incomeInterval: number;
   sprite: string;
@@ -36,6 +38,8 @@ export const TOWERS = {
     health: 260,
     damage: 26,
     cooldown: 0.85,
+    windup: 0.1,
+    armorPierce: 0,
     income: 0,
     incomeInterval: 6,
     sprite: "astro-joe",
@@ -50,6 +54,8 @@ export const TOWERS = {
     health: 180,
     damage: 0,
     cooldown: 1,
+    windup: 0,
+    armorPierce: 0,
     income: 25,
     incomeInterval: 6,
     sprite: "money-bush",
@@ -64,6 +70,8 @@ export const TOWERS = {
     health: 1100,
     damage: 0,
     cooldown: 1,
+    windup: 0,
+    armorPierce: 0,
     income: 0,
     incomeInterval: 6,
     sprite: "asteroid",
@@ -73,11 +81,13 @@ export const TOWERS = {
   zeus: {
     name: "Moon Zeus",
     role: "Heavy support",
-    description: "Heavy plasma with a small blast radius.",
+    description: "Plasma partially pierces plating and hits nearby aliens.",
     cost: 125,
     health: 320,
     damage: 65,
     cooldown: 1.5,
+    windup: 0.2,
+    armorPierce: 0.65,
     income: 0,
     incomeInterval: 6,
     sprite: "moon-zeus",
@@ -87,11 +97,13 @@ export const TOWERS = {
   explosive: {
     name: "Explosive Astro Joe",
     role: "Demolitions",
-    description: "Slower shells hit a wide cluster in one lane.",
+    description: "Shells partially pierce plating and hit a wide cluster.",
     cost: 85,
     health: 350,
     damage: 45,
     cooldown: 1.7,
+    windup: 0.15,
+    armorPierce: 0.4,
     income: 0,
     incomeInterval: 6,
     sprite: "explosive-astro-joe",
@@ -106,6 +118,8 @@ export const TOWERS = {
     health: 300,
     damage: 12,
     cooldown: 0.3,
+    windup: 0.05,
+    armorPierce: 0,
     income: 0,
     incomeInterval: 6,
     sprite: "startrell-cluggins",
@@ -114,12 +128,14 @@ export const TOWERS = {
   },
   tars: {
     name: "TARS",
-    role: "Assault robot",
-    description: "A sturdy shooter with a hard-hitting round.",
+    role: "Armor piercing",
+    description: "Piercing rounds ignore Tank plating.",
     cost: 100,
     health: 450,
     damage: 48,
     cooldown: 0.95,
+    windup: 0.15,
+    armorPierce: 1,
     income: 0,
     incomeInterval: 6,
     sprite: "tars",
@@ -134,6 +150,8 @@ export const TOWERS = {
     health: 220,
     damage: 0,
     cooldown: 1,
+    windup: 0,
+    armorPierce: 0,
     income: 60,
     incomeInterval: 8,
     sprite: "money-tree",
@@ -143,11 +161,13 @@ export const TOWERS = {
   falcon: {
     name: "Millennium Falcon",
     role: "Flagship",
-    description: "Three powerful rounds per volley. One lane.",
+    description: "Three piercing rounds per volley. One lane.",
     cost: 250,
     health: 1200,
     damage: 70,
     cooldown: 1.4,
+    windup: 0.25,
+    armorPierce: 0.75,
     income: 0,
     incomeInterval: 6,
     sprite: "millennium-falcon",
@@ -161,6 +181,7 @@ export const ENEMIES = {
   scout: {
     name: "Little Green Men",
     description: "Light scouts. A single Astro Joe can hold them off.",
+    armor: 0,
     health: 100,
     speed: 0.28,
     damage: 18,
@@ -172,6 +193,7 @@ export const ENEMIES = {
   grunt: {
     name: "Grunt",
     description: "Steady infantry with more health and a stronger bite.",
+    armor: 0,
     health: 230,
     speed: 0.2,
     damage: 32,
@@ -183,6 +205,7 @@ export const ENEMIES = {
   sprinter: {
     name: "Sprinter",
     description: "Fast and fragile. Cover every lane before it arrives.",
+    armor: 0,
     health: 140,
     speed: 0.43,
     damage: 22,
@@ -194,6 +217,7 @@ export const ENEMIES = {
   manhunter: {
     name: "ManHunter",
     description: "A mobile bruiser that tears through exposed defenders.",
+    armor: 0,
     health: 330,
     speed: 0.3,
     damage: 65,
@@ -204,9 +228,11 @@ export const ENEMIES = {
   },
   tank: {
     name: "Tank",
-    description: "Slow, massive health. Concentrate fire behind a barrier.",
-    health: 850,
-    speed: 0.12,
+    description:
+      "Plating absorbs 80% of ordinary fire. TARS ignores it; plasma and explosives partially pierce it.",
+    armor: 0.8,
+    health: 650,
+    speed: 0.26,
     damage: 20,
     cooldown: 1.5,
     reward: 35,
@@ -217,6 +243,7 @@ export const ENEMIES = {
     name: "Gargantua",
     description:
       "The heaviest invader. Bring sustained fire and a strong economy.",
+    armor: 0,
     health: 1200,
     speed: 0.18,
     damage: 100,
@@ -257,7 +284,7 @@ export const MAPS = {
     number: "01",
     tag: "FIRST CONTACT",
     description:
-      "Open terrain. Build a foundation, then face the entire alien roster.",
+      "Open terrain. Cover six lanes, invest in income, and prepare armor-piercing support for Tank waves.",
     background: "stage-one",
     blocked: [[], [], [], [], [], []],
     waves: [
@@ -267,7 +294,7 @@ export const MAPS = {
         enemies: ["scout", "scout", "scout", "scout", "scout", "scout"],
       },
       {
-        start: 36,
+        start: 29,
         title: "Fast company",
         enemies: [
           "scout",
@@ -281,13 +308,13 @@ export const MAPS = {
         ],
       },
       {
-        start: 72,
-        title: "Heavy footsteps",
+        start: 56,
+        title: "Plated advance",
         enemies: [
           "grunt",
           "manhunter",
           "tank",
-          "scout",
+          "tank",
           "grunt",
           "sprinter",
           "grunt",
@@ -296,7 +323,7 @@ export const MAPS = {
         ],
       },
       {
-        start: 112,
+        start: 87,
         title: "The last stand",
         enemies: [
           "grunt",
@@ -305,9 +332,9 @@ export const MAPS = {
           "manhunter",
           "scout",
           "gargantua",
-          "grunt",
+          "tank",
           "sprinter",
-          "grunt",
+          "tank",
           "manhunter",
         ],
       },

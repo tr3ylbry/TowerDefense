@@ -2,7 +2,7 @@
 export class AudioBus {
   private context: AudioContext | null = null;
   private enabled = false;
-  private lastTone = 0;
+  private lastTone: Partial<Record<"shot" | "income" | "breach", number>> = {};
 
   async setEnabled(enabled: boolean): Promise<void> {
     this.enabled = enabled;
@@ -21,10 +21,11 @@ export class AudioBus {
       !this.enabled ||
       !context ||
       context.state !== "running" ||
-      context.currentTime - this.lastTone < 0.075
+      context.currentTime - (this.lastTone[type] ?? -Infinity) <
+        (type === "shot" ? 0.075 : 0.15)
     )
       return;
-    this.lastTone = context.currentTime;
+    this.lastTone[type] = context.currentTime;
     const oscillator = context.createOscillator();
     const gain = context.createGain();
     const now = context.currentTime;

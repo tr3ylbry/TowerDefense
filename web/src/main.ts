@@ -21,6 +21,8 @@ let lastMap = "";
 let ready = false;
 let loadError = false;
 let lastUiSignature = "";
+let artStyle: "expedition" | "original" = "expedition";
+let focused = false;
 
 let storedMotion: boolean | null = null;
 try {
@@ -43,28 +45,28 @@ app.innerHTML = `
   </header>
   <main id="mission">
     <section class="mission-heading" aria-labelledby="mission-title"><div><p class="eyebrow"><span class="signal-dot"></span> EXPEDITION 001 <span class="eyebrow-line"></span> ORBITAL DEFENSE</p><h1 id="mission-title">A little space.<br class="mobile-break"> A lot to defend<span>.</span></h1></div><p class="mission-intro">A familiar crew. An unfamiliar frontier.<br>Build your defenses and hold the line.</p></section>
-    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
+    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Field guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
     <p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
         <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
-        <div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
-        <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Swipe the field or rotate for a wider view.</span></p>
+        <div id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"></div><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
+        <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap a crew card, then an empty tile. All six lanes stay in view.</span></p>
       </section>
-      <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><div><span class="micro-label">BUILD YOUR DEFENSE</span><h2 id="crew-title">Meet your crew<span> / 09</span></h2></div><span class="tiny-cross">✳</span></div><div class="roster-hint">9 defenders · scroll to explore · keys 1–9</div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
+      <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span>Keys 1–9 · +30 supply / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
         .map((kind, i) => {
           const tower = TOWERS[kind];
-          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" style="background-image:url('${base}art/${tower.sprite}-idle.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price">◈ ${tower.cost}<kbd>${i + 1}</kbd></span></button>`;
+          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" style="background-image:url('${base}art/${kind === "astro" ? "expedition/ranger" : `${tower.sprite}-idle`}.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price">◈ ${tower.cost}<kbd>${i + 1}</kbd></span></button>`;
         })
         .join(
           "",
-        )}</div><button id="salvage" class="salvage-button" aria-pressed="false"><span>⌁</span><span>Salvage a defender<small>Recover 40% of its cost</small></span><kbd>X</kbd></button><div class="field-tip"><span class="micro-label">A NOTE FROM MISSION CONTROL</span><p>Build your economy early.<br><strong>Bushes and Trees keep the crew growing.</strong></p><span class="tip-line"></span><span class="income-note">Outpost supply: +30 credits / 5 sec</span></div></aside>
+        )}</div><div class="crew-details"><p id="selected-detail"><strong>Astro Joe · 50 credits</strong><span>Steady fire. Your first line of defense.</span></p><button id="salvage" class="salvage-button" aria-pressed="false" aria-label="Salvage a defender, recover 40% of its cost">⌁ Salvage <kbd>X</kbd></button></div></aside>
     </div>
     <div class="dispatch" id="announcement" role="status" aria-live="polite" aria-atomic="true">Select a crew member to get started.</div>
     <footer><span><span class="footer-dot"></span> MADE FOR THE JOY OF BUILDING.</span><span>A school project, reimagined. <button id="credits-open">Meet the original team ↗</button></span></footer>
   </main>
-  <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Explosive Astro Joe and Moon Zeus hit clusters; the Falcon fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.values(
+  <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Tanks absorb 80% of ordinary fire: TARS ignores plating; plasma and explosives partially pierce it. Explosive Astro Joe and Moon Zeus hit clusters; the Falcon fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.values(
     ENEMIES,
   )
     .map(
@@ -74,7 +76,7 @@ app.innerHTML = `
     .join(
       "",
     )}</div><button class="primary-button" data-close>Back to the frontier ↗</button></dialog>
-  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
+  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. The Expedition art prototype adds AI-generated Canyon scenery, an astronaut, and a plated alien, with procedural motion. Use the art switch to compare them with the originals.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
   <dialog id="map-dialog" aria-labelledby="map-title"><button class="dialog-close" data-close aria-label="Close destinations">×</button><span class="eyebrow">THREE ORIGINAL FRONTIERS</span><h2 id="map-title">Choose your destination.</h2><p id="map-warning">Each destination has four waves and the full original roster.</p><div class="destination-list">${(
     Object.keys(MAPS) as MapKind[]
   )
@@ -111,16 +113,33 @@ function select(kind: TowerKind | "salvage" | null): void {
       card.setAttribute("aria-pressed", String(active));
       if (active) {
         const roster = card.parentElement!;
-        if (card.offsetTop < roster.scrollTop)
-          roster.scrollTop = card.offsetTop;
+        if (card.offsetLeft < roster.scrollLeft)
+          roster.scrollLeft = card.offsetLeft;
         else if (
-          card.offsetTop + card.offsetHeight >
-          roster.scrollTop + roster.clientHeight
+          card.offsetLeft + card.offsetWidth >
+          roster.scrollLeft + roster.clientWidth
         )
-          roster.scrollTop =
-            card.offsetTop + card.offsetHeight - roster.clientHeight;
+          roster.scrollLeft =
+            card.offsetLeft + card.offsetWidth - roster.clientWidth;
       }
     });
+  const detail = get("selected-detail");
+  detail.replaceChildren();
+  const label = document.createElement("strong");
+  const description = document.createElement("span");
+  label.textContent =
+    kind === "salvage"
+      ? "Salvage · 40% refund"
+      : kind
+        ? `${TOWERS[kind].name} · ${TOWERS[kind].cost} credits`
+        : "Choose a defender";
+  description.textContent =
+    kind === "salvage"
+      ? "Choose a deployed defender to recover part of its cost."
+      : kind
+        ? TOWERS[kind].description
+        : "Select a crew card or use keys 1–9.";
+  detail.append(label, description);
   get("salvage").setAttribute("aria-pressed", String(kind === "salvage"));
   announce(
     kind === "salvage"
@@ -197,6 +216,7 @@ for (let row = 0; row < ROWS; row++) {
 function render(state: Snapshot): void {
   const signature = JSON.stringify([
     ready,
+    focused,
     state.map,
     state.phase,
     Math.floor(state.elapsed),
@@ -217,6 +237,19 @@ function render(state: Snapshot): void {
   if (signature === lastUiSignature) return;
   lastUiSignature = signature;
   const map = MAPS[state.map];
+  document.body.classList.toggle("focused-play", focused);
+  get("focus-toggle").setAttribute("aria-pressed", String(focused));
+  get("focus-toggle").setAttribute(
+    "aria-label",
+    focused ? "Leave focused view" : "Enter focused view",
+  );
+  const upcoming = map.waves.find((wave) => wave.start > state.elapsed + 0.001);
+  const counts = new Map<string, number>();
+  for (const kind of upcoming?.enemies ?? [])
+    counts.set(ENEMIES[kind].name, (counts.get(ENEMIES[kind].name) ?? 0) + 1);
+  get("wave-forecast").textContent = upcoming
+    ? `UP NEXT · ${upcoming.title} · ${[...counts].map(([name, count]) => `${count} ${name}`).join(" / ")}${upcoming.enemies.some((kind) => kind === "tank") ? " · Plating: bring TARS or plasma." : ""}`
+    : "FINAL WAVE · Hold every lane until the last hostile is cleared.";
   document.title = `Astronauts vs Aliens — ${map.name}`;
   grid.inert = state.phase !== "playing";
   get("location-name").textContent = map.name;
@@ -323,7 +356,7 @@ function render(state: Snapshot): void {
       note.textContent =
         state.phase === "won"
           ? "Same frontier. A new strategy."
-          : "Try placing Astro Joe in each lane and keeping income units behind the line.";
+          : "Cover every lane, then add TARS or plasma before the plated wave.";
       announce(
         state.phase === "won"
           ? "Mission complete. The outpost is safe."
@@ -342,6 +375,8 @@ start.addEventListener("click", () => {
     if (phase === "won" || phase === "lost") simulation.restart();
     simulation.start();
   }
+  focused = true;
+  window.scrollTo({ top: 0 });
   render(simulation.snapshot());
   cells[focusIndex].focus();
   announce("Mission started. Deploy your crew and protect all six lanes.");
@@ -363,6 +398,37 @@ pause.addEventListener("click", () => {
 get("speed").addEventListener("click", () => {
   simulation.setSpeed(simulation.snapshot().speed === 1 ? 2 : 1);
   render(simulation.snapshot());
+});
+get("focus-toggle").addEventListener("click", () => {
+  focused = !focused;
+  render(simulation.snapshot());
+  window.scrollTo({ top: 0 });
+});
+get("art-toggle").addEventListener("click", () => {
+  artStyle = artStyle === "expedition" ? "original" : "expedition";
+  document.documentElement.classList.toggle(
+    "original-art",
+    artStyle === "original",
+  );
+  get("mission").querySelector<HTMLElement>(
+    '[data-tower="astro"] .portrait',
+  )!.style.backgroundImage =
+    `url("${base}art/${artStyle === "original" ? "astro-joe-idle.png" : "expedition/ranger.png"}")`;
+  get("art-toggle").setAttribute(
+    "aria-pressed",
+    String(artStyle === "original"),
+  );
+  get("art-toggle").setAttribute(
+    "aria-label",
+    artStyle === "original" ? "Show expedition art" : "Show original art",
+  );
+  get("art-toggle").querySelector("span")!.textContent =
+    artStyle === "original" ? "Original art" : "Expedition art";
+  announce(
+    artStyle === "original"
+      ? "Original school project art selected. Combat rules are unchanged."
+      : "Expedition prototype selected: new Canyon, Astro Joe, and Tank art.",
+  );
 });
 let sound = false;
 get("sound-toggle").addEventListener("click", () => {
@@ -445,6 +511,7 @@ document.querySelectorAll<HTMLButtonElement>("[data-map]").forEach((card) => {
   });
 });
 get("guide-open").addEventListener("click", () => openDialog("guide-dialog"));
+get("play-guide").addEventListener("click", () => openDialog("guide-dialog"));
 get("credits-open").addEventListener("click", () =>
   openDialog("credits-dialog"),
 );
@@ -512,6 +579,7 @@ async function initialize(): Promise<void> {
       art,
       selection: () => selected,
       reducedMotion: () => reducedMotion,
+      artStyle: () => artStyle,
       cursor: () => cursor,
       onState: render,
       onEvent: (event) => {

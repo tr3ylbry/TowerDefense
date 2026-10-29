@@ -2,7 +2,7 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). It includes all nine original defenders, six alien types, and all three maps, each with four waves. It includes original map restrictions, currency and income units, animated combat with original ammunition, pause/speed controls, win/loss, restart, keyboard and touch placement, optional sound, and reduced motion.
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). It includes all nine original defenders, six alien types, and all three maps, each with four waves. The first Expedition milestone adds an illustrated Canyon, new astronaut and plated-alien art, smooth movement, synchronized attacks, armor counters, wave briefings, and a compact focused control deck. An art switch keeps the original look available for comparison. It includes original map restrictions, currency and income units, animated combat with original ammunition, pause/speed controls, win/loss, restart, keyboard and touch placement, optional sound, and reduced motion.
 
 ```sh
 cd web
