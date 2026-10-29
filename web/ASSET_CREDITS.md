@@ -17,3 +17,7 @@ The browser interface, geometric field markings, helmet icon, effects, and synth
 ## Expedition prototype (2026-10-29)
 
 The new Canyon environment, Astro Joe ranger cutout, and plated Tank crawler are original AI-generated illustrations made with the built-in OpenAI image generation tool. No school artwork or third-party references were supplied to those generations. Served assets, full prompts, and conversion notes are documented in [the Expedition provenance record](public/art/expedition/README.md); untouched selected sources live in `art-source/expedition/`. The cutouts are static images animated procedurally in Phaser. The art comparison switch changes presentation only.
+
+## Expedition 0.2
+
+Three additional original AI-generated transparent cutouts—Scout, Grunt, and TARS—form a small matched combat group. [Complete prompts, hashes, generation sources, alpha inspection, and conversion notes](public/art/expedition/README-0.2.md) are preserved. Their unchanged full-resolution sources live in `art-source/expedition-0.2/`, outside the public build. School assets are not overwritten. All five Expedition character cutouts use proportional display bounds and explicit foot anchors; these remain static artwork with procedural motion, not generated animation sheets. Bridge/Nest perimeter effects are code-drawn presentation applied over retained backgrounds.
