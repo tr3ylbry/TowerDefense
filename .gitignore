@@ -53,3 +53,9 @@ nb-configuration.xml
 release.properties
 pom.xml.releaseBackup
 pom.xml.tag
+
+# Browser edition
+web/node_modules/
+web/dist/
+web/test-results/
+web/playwright-report/

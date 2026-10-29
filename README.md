@@ -1,4 +1,22 @@
-# Astronauts VS Aliens
+# Astronauts vs Aliens
+
+## Browser modernization
+
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). It includes a complete four-wave canyon encounter, four defender types, currency, animated combat, pause/speed controls, win/loss, restart, keyboard and touch placement, optional sound, and reduced motion.
+
+```sh
+cd web
+npm ci
+npm run dev
+```
+
+Run `npm run check` inside `web/` for simulation tests, TypeScript checking, and a production build. See the [browser README](web/README.md) for browser tests and hosting details.
+
+Active browser development uses **`modernization`**. The original school version is preserved by the annotated **[`school-project-2019`](https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019)** tag and the **`master`** comparison branch. Original Java source and assets remain intact.
+
+This is Trey Bryant's independent continuation of the team project below. Original author credits are retained. [Asset provenance notes](web/ASSET_CREDITS.md) distinguish the retained school artwork from new browser work.
+
+## Original Java edition
 
 This is a tower defense game with a gameplay similar to Plants vs Zombies. The main objective is to survive the attack of the aliens by generating income and placing astronauts to destroy the aliens.
 
