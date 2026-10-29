@@ -2194,6 +2194,10 @@ dialog li {
     padding-top: 4px;
     padding-bottom: 4px;
   }
+  .focused-play .grid-help {
+    /* Reserve room for full crew details with different system-font metrics. */
+    padding: 2px 8px;
+  }
   .focused-play #focus-toggle span {
     display: none;
   }

@@ -91,6 +91,8 @@ Screenshots are actual browser captures, outside public build assets. They show 
 
 [New ManHunter in combat](../reports/expedition-0.3/visual/bridge-combat.png), [enlarged phone heavy encounter](../reports/expedition-0.3/visual/nest-heavy-pan-phone.png), and the [Canyon](../reports/expedition-0.3/visual/canyon-victory-receipt.png), [Bridge](../reports/expedition-0.3/visual/bridge-victory-receipt.png), and [Nest](../reports/expedition-0.3/visual/nest-victory-receipt.png) outcomes provide additional context. The heavy-encounter capture catches an existing hit flash; it is not a separate Gargantua skin.
 
+A separate built-production smoke check verified placement, art switching, and destination transitions without browser errors. A [larger production encounter](../reports/expedition-0.3/visual/production-heavy-combat.png) shows Sprinter, ManHunter, and Gargantua together without hit flashes. This additional presentation run deliberately kept only six Astros and ended in defeat (23 cleared, 1m 52s); it is distinct from the complete specialist victories above and illustrates the need for plated-enemy counters.
+
 ## Browser/device matrix and automated verification
 
 | Environment                                    | Scope                                                                                                   | Result / limit                                                                           |
@@ -114,6 +116,8 @@ node scripts/research/economy-0.3.cjs
 ```
 
 CI installs all three engines and keeps the Firefox project enabled. The local profile-launch failure is not hidden by skipping Firefox globally or disabling browser security.
+
+The first Linux run exposed a Firefox-specific phone fit issue: TARS details ended at 852.95 pixels in the 844-pixel viewport. The noninteractive phone hint had enough unused vertical padding to recover 12 pixels. Reducing that padding preserves full text, battlefield dimensions, and 44-pixel controls; the existing viewport assertion remains unchanged. The follow-up pushed revision reruns the complete three-engine suite.
 
 ## Git delivery and preservation
 
