@@ -1,5 +1,20 @@
 import { test, expect } from "@playwright/test";
 
+test.afterEach(async ({ page }, info) => {
+  if (info.status !== info.expectedStatus && !page.isClosed()) {
+    console.info(
+      "Mission failure context",
+      await page.evaluate(() => ({
+        status: document.querySelector("#status")?.textContent,
+        announcement: document.querySelector("#announcement")?.textContent,
+        overlay: document.querySelector("#overlay-title")?.textContent,
+        gridInert: document.querySelector<HTMLElement>("#battle-grid")?.inert,
+        visibility: document.visibilityState,
+      })),
+    );
+  }
+});
+
 test("deploy, pause without income, salvage, and restart through real controls", async ({
   page,
 }) => {
@@ -166,6 +181,23 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
   ).toHaveCount(0);
   await page.getByRole("button", { name: "Begin mission" }).click();
   await expect(page.locator(".blocked-cell")).toHaveCount(16);
+  expect(errors).toEqual([]);
+});
+
+test("deploys the expanded crew and selects the Falcon on The Nest", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await expect(
+    page.getByRole("button", { name: "Begin mission" }),
+  ).toBeEnabled();
+  await page.getByRole("button", { name: "Change destination" }).click();
+  await page
+    .getByRole("button", { name: "Choose The Nest", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Begin mission" }).click();
   await page.keyboard.press("8");
   await page
     .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
@@ -185,6 +217,7 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
     "aria-pressed",
     "true",
   );
+  await expect(page.locator("#status")).toHaveText("Mission in progress");
   await page
     .getByRole("gridcell", { name: "Lane 3, tile 1, empty", exact: true })
     .click();
