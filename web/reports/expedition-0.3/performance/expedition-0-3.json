@@ -1,0 +1,136 @@
+{
+  "label": "expedition-0-3",
+  "engine": "Playwright Chromium",
+  "conditions": "Local macOS ARM64, headless, 1280x800, no network/CPU throttling; cold browser contexts. Frame sampling includes controller overhead. This is not a physical-phone FPS claim. Byte counts are decoded HTTP image payloads, excluding JS/CSS/manifest.",
+  "startup": [
+    {
+      "run": 0,
+      "firstPlayableMs": 870,
+      "initialImages": 24,
+      "initialImageBytes": 1778361,
+      "initialFiles": [
+        "/art/asteroid-idle.png",
+        "/art/expedition/canyon.webp",
+        "/art/expedition/gargantua.png",
+        "/art/expedition/grunt.png",
+        "/art/expedition/manhunter.png",
+        "/art/expedition/plated-crawler.png",
+        "/art/expedition/ranger.png",
+        "/art/expedition/scout.png",
+        "/art/expedition/sprinter.png",
+        "/art/expedition/tars.png",
+        "/art/explosive-astro-joe-idle.png",
+        "/art/millennium-falcon-fire.png",
+        "/art/millennium-falcon-idle.png",
+        "/art/money-bush-idle.png",
+        "/art/money-tree-idle.png",
+        "/art/moon-zeus-fire.png",
+        "/art/moon-zeus-idle.png",
+        "/art/projectile-astro-joe-ammo.png",
+        "/art/projectile-explosive-astro-joe-ammo.png",
+        "/art/projectile-moon-zeus-ammo.png",
+        "/art/projectile-startrell-cluggins-ammo.png",
+        "/art/projectile-tars-ammo.png",
+        "/art/startrell-cluggins-fire.png",
+        "/art/startrell-cluggins-idle.png"
+      ]
+    },
+    {
+      "run": 1,
+      "firstPlayableMs": 703,
+      "initialImages": 24,
+      "initialImageBytes": 1778361,
+      "initialFiles": [
+        "/art/asteroid-idle.png",
+        "/art/expedition/canyon.webp",
+        "/art/expedition/gargantua.png",
+        "/art/expedition/grunt.png",
+        "/art/expedition/manhunter.png",
+        "/art/expedition/plated-crawler.png",
+        "/art/expedition/ranger.png",
+        "/art/expedition/scout.png",
+        "/art/expedition/sprinter.png",
+        "/art/expedition/tars.png",
+        "/art/explosive-astro-joe-idle.png",
+        "/art/millennium-falcon-fire.png",
+        "/art/millennium-falcon-idle.png",
+        "/art/money-bush-idle.png",
+        "/art/money-tree-idle.png",
+        "/art/moon-zeus-fire.png",
+        "/art/moon-zeus-idle.png",
+        "/art/projectile-astro-joe-ammo.png",
+        "/art/projectile-explosive-astro-joe-ammo.png",
+        "/art/projectile-moon-zeus-ammo.png",
+        "/art/projectile-startrell-cluggins-ammo.png",
+        "/art/projectile-tars-ammo.png",
+        "/art/startrell-cluggins-fire.png",
+        "/art/startrell-cluggins-idle.png"
+      ]
+    },
+    {
+      "run": 2,
+      "firstPlayableMs": 587,
+      "initialImages": 24,
+      "initialImageBytes": 1778361,
+      "initialFiles": [
+        "/art/asteroid-idle.png",
+        "/art/expedition/canyon.webp",
+        "/art/expedition/gargantua.png",
+        "/art/expedition/grunt.png",
+        "/art/expedition/manhunter.png",
+        "/art/expedition/plated-crawler.png",
+        "/art/expedition/ranger.png",
+        "/art/expedition/scout.png",
+        "/art/expedition/sprinter.png",
+        "/art/expedition/tars.png",
+        "/art/explosive-astro-joe-idle.png",
+        "/art/millennium-falcon-fire.png",
+        "/art/millennium-falcon-idle.png",
+        "/art/money-bush-idle.png",
+        "/art/money-tree-idle.png",
+        "/art/moon-zeus-fire.png",
+        "/art/moon-zeus-idle.png",
+        "/art/projectile-astro-joe-ammo.png",
+        "/art/projectile-explosive-astro-joe-ammo.png",
+        "/art/projectile-moon-zeus-ammo.png",
+        "/art/projectile-startrell-cluggins-ammo.png",
+        "/art/projectile-tars-ammo.png",
+        "/art/startrell-cluggins-fire.png",
+        "/art/startrell-cluggins-idle.png"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "map": "bridge",
+      "newFiles": [
+        "/art/stage-two.webp",
+        "/art/stage-three.webp",
+        "/art/acid-pool.png"
+      ],
+      "newImageBytes": 133663
+    },
+    {
+      "map": "nest",
+      "newFiles": [],
+      "newImageBytes": 0
+    },
+    {
+      "map": "canyon",
+      "newFiles": [],
+      "newImageBytes": 0
+    }
+  ],
+  "combat": {
+    "wallWindowMs": 45000,
+    "purchased": 14,
+    "frameSamples": 2476,
+    "medianFrameMs": 16.7,
+    "p95FrameMs": 33.3,
+    "gapsOver50ms": 15,
+    "jsHeapUsed": 28902976,
+    "status": "Mission in progress",
+    "errors": [],
+    "canvasesAfterFiveRestarts": 1
+  }
+}

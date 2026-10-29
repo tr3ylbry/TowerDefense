@@ -2,7 +2,7 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). It includes all nine original defenders, six alien types, and all three maps, each with four waves. Expedition 0.2 adds optional early-wave calls with capped rewards, schedule-driven lane warnings, clearer armor/impact/defender feedback, an illustrated combat group, biome treatments, and phone zoom. Smooth movement, synchronized attacks, armor counters, wave briefings, and the focused control deck remain. An art switch keeps the original look available for comparison. It includes original map restrictions, currency and income units, animated combat with original ammunition, pause/speed controls, win/loss, restart, keyboard and touch placement, optional sound, and reduced motion.
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). It includes all nine original defenders, six alien types, and all three maps, each with four waves. Expedition 0.3 completes the illustrated alien roster, adds role-specific movement and a heavy-enemy contact cue, improves lane/economy/refund guidance, and introduces mission economy receipts. On-demand cached artwork reduces initial image payload by 57% while preserving recoverable art comparison and destination changes. All combat rules remain deterministic. Early-wave calls, enemy warnings, the focused control deck, original map restrictions, nine defenders, keyboard/touch controls, optional sound, and reduced motion remain available. See the [0.3 report](web/docs/EXPEDITION_0_3.md) for measurements, economy research, browser coverage, and limitations.
 
 ```sh
 cd web

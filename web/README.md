@@ -2,7 +2,9 @@
 
 The full original character and map roster, built with TypeScript, Phaser, and Vite. This is Trey Bryant's independent continuation of the original CSC 335 team project by Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.
 
-Expedition 0.2 adds player-controlled early wave calls, schedule-driven lane warnings, clearer hit/armor/defender-pressure feedback, three cohesive new character cutouts, distinct biome treatments, and phone zoom/full-width crew details. See the [milestone report](docs/EXPEDITION_0_2.md), [art direction](docs/ART_DIRECTION.md), and [reproducible balance research](reports/expedition-0.2/README.md). Expanded campaigns, an editor, upgrades, saves, and replays remain later game milestones. Publication is handled separately by Treydmark Tech.
+Expedition 0.3 completes the illustrated alien roster, differentiates enemy movement, explains lane coverage and income, previews exact salvage refunds, and adds factual mission economy receipts. Cached artwork loads on demand with pause/retry/cancel recovery. Initial gameplay image payload falls from 4.16 MB to 1.78 MB in repeatable local measurements. No prices, payouts, combat statistics, or wave schedules change in this milestone.
+
+See the [0.3 milestone report](docs/EXPEDITION_0_3.md), [art direction](docs/ART_DIRECTION.md), [economy study](reports/expedition-0.3/economy/README.md), [performance evidence](reports/expedition-0.3/performance/README.md), and [independent playtest protocol](docs/PLAYTEST_PROTOCOL.md). The [0.2 report](docs/EXPEDITION_0_2.md) preserves the earlier wave-call and combat-feedback work. Campaigns, upgrades, saves, and an editor remain future milestones. Publication is handled separately by Treydmark Tech.
 
 ## Run locally
 
@@ -56,11 +58,11 @@ Starting credits: 230. The outpost supplies 30 every five game seconds. Each act
 
 ```sh
 npm run check
-npx playwright install chromium
+npx playwright install chromium firefox webkit
 npm run test:e2e
 ```
 
-`check` runs deterministic simulation tests, strict TypeScript checking, and a production build. Browser tests cover deployment, economy while paused, salvage, restart, nine-key crew selection, both restored maps, acid-tile rejection, safe destination changes, the alien field guide, narrow viewports, saved motion preferences, and asset-load failures. They also check desktop focus controls, phone overview/zoom, all nine crew cards, automatic crew scrolling, plating guidance, live art comparison, keyboard wave calls, warning updates, and loading failure for new artwork. On a local machine with Chrome already installed, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e` uses that browser instead.
+`check` runs deterministic simulation tests, strict TypeScript checking, and a production build. There are 88 rule tests and 22 browser scenarios per engine (Chromium, Firefox, WebKit). New checks cover deferred/cached artwork, slow and failed transitions, preserved mission state, economy guidance and receipts, touch targets, landscape, audio gestures, and repeated lifecycles. Browser tests also cover deployment, economy while paused, salvage, restart, nine-key crew selection, both restored maps, acid-tile rejection, safe destination changes, the alien field guide, narrow viewports, saved motion preferences, and asset-load failures. They also check desktop focus controls, phone overview/zoom, all nine crew cards, automatic crew scrolling, plating guidance, live art comparison, keyboard wave calls, warning updates, and loading failure for new artwork. On a local machine with Chrome already installed, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e -- --project=chromium` uses that browser instead. Desktop WebKit tests are not physical Safari/iOS testing. See the milestone report for local engine availability and CI results.
 
 The simulation tests include a full four-wave victory on every map using only earned credits, plus undefended losses. They also check every defender's price and health, original ammunition and three-shot volleys, projectile speeds, actual cluster damage, both income units, map restrictions and selection, frame-size independence, speed changes, input bounds, snapshot isolation, and restart cleanup. New checks verify wind-up/release timing (including pause and salvage), interpolation state, actual armored impacts, and 108 winning specialist/economy runs across twelve seeds and three maps. Twelve fixed twelve-Astro Canyon runs now lose, preventing the old unattended opening from remaining a guaranteed win. An additional 36 clear-field early-call specialist runs win across the same maps/seeds and finish earlier than their automatic-schedule counterparts. Tests cover capped/duplicate/near-deadline rewards, schedule spacing and lane order, pause and speed changes, warning boundaries, pressure/destruction events, and cleanup. These synthetic strategies are regression checks, not exhaustive balance proof.
 
@@ -71,7 +73,9 @@ src/game/content.ts      Typed unit definitions and reproducible wave schedules
 src/game/simulation.ts   Fixed-step rules and mutable wave timeline; no browser/Phaser
 src/game/waves.ts        Early-call reward and short-horizon warning rules
 src/game/art.ts          Cutout dimensions, foot anchors, and biome palette
-src/battlefield.ts       Phaser sprites, health bars, projectiles, and effects
+src/assets.ts            Pure required map/style asset plans
+src/guidance.ts          Contextual coverage, economy, and refund descriptions
+src/battlefield.ts       Phaser loading/cache, sprites, health bars, and effects
 src/main.ts              Accessible HTML controls and mission lifecycle
 src/audio.ts             Opt-in synthesized sound effects
 public/art/              Optimized school art and Expedition prototype
@@ -93,7 +97,9 @@ npm run preview
 
 The deployable static site is `web/dist`. Its relative asset base supports hosting under a subsection such as a Treydmark Labs game path. Hosting, portfolio presentation, domains, and publication are owned separately by Treydmark Tech. The simulation can also be mounted behind a future React wrapper; the game loop does not require React renders.
 
-Phaser is an isolated dynamic chunk, about 357 KB compressed in the initial build. The 32 active animation sheets, three map backgrounds, five projectile images, and acid-pool image are preloaded once (2,999,641 bytes of image files in total), so switching destinations needs no further combat-art download. The six Expedition images add 1,159,714 bytes (about 1.11 MiB); full-resolution originals stay outside the deployable public directory. Their [prototype prompts](public/art/expedition/README.md) and [0.2 prompts/provenance](public/art/expedition/README-0.2.md) are recorded. Ranger, TARS, Scout, Grunt, and Tank use Expedition cutouts; the remaining roster and two other backgrounds retain school artwork. Bridge and Nest have new procedural palette/perimeter treatments. All fonts are local system fonts. No analytics or remote runtime APIs are used.
+Phaser is an isolated dynamic chunk, about 357 KB gzip. The first Canyon mission requests 24 unique image assets totaling 1,778,361 payload bytes, including all six illustrated aliens, two illustrated defenders, the remaining seven school defenders, projectiles, and the Canyon. Other backgrounds, acid terrain, and school comparison sheets load when needed. Opening the destination selector also loads its map thumbnails. Successful textures and animations remain cached across destinations and restarts. Failed transitions keep the current mission paused and offer retry or cancellation.
+
+The new three-alien group totals 568,457 bytes. Full-resolution sources and the rejected alternate-stride experiment stay outside `public/` and the deployable build. [Prototype prompts](public/art/expedition/README.md), [0.2 provenance](public/art/expedition/README-0.2.md), and [0.3 prompts and evaluation](public/art/expedition/README-0.3.md) record their origins. Seven defenders and Bridge/Nest scenery retain school artwork. All fonts are local system fonts; no analytics or remote runtime APIs are used.
 
 ## Original version and content
 
