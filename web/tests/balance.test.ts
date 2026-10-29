@@ -9,6 +9,7 @@ function playFormation(
   seed: number,
   formation: TowerKind[],
   replace = true,
+  early = false,
 ) {
   const game = new Simulation(seed, map);
   const deployed = new Set<string>();
@@ -41,6 +42,8 @@ function playFormation(
           deployed.add(cell);
         }
       }
+    if (early && state.enemies.length === 0 && state.nextWave?.canLaunch)
+      game.launchNextWave();
     game.advance(0.05);
     game.drainEvents();
   }
@@ -73,6 +76,23 @@ describe("Canyon tactical balance", () => {
           expect(state.integrity).toBeGreaterThan(0);
           expect(state.pendingSpawns).toBe(0);
         }
+    },
+  );
+});
+
+describe("optional clear-field wave calls", () => {
+  it.each(["canyon", "bridge", "nest"] as MapKind[])(
+    "keeps %s viable across twelve seeds while shortening specialist missions",
+    (map) => {
+      for (let seed = 3352019; seed < 3352031; seed++) {
+        const ordinary = playFormation(map, seed, ["astro", "tars"]);
+        const called = playFormation(map, seed, ["astro", "tars"], true, true);
+        expect(called.phase, `${map} seed ${seed}`).toBe("won");
+        expect(called.integrity).toBeGreaterThan(0);
+        expect(called.earlyLaunches).toBeGreaterThan(0);
+        expect(called.elapsed).toBeLessThan(ordinary.elapsed);
+        expect(called.pendingSpawns).toBe(0);
+      }
     },
   );
 });

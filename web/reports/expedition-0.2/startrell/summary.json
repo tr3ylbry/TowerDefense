@@ -1,0 +1,1519 @@
+{
+  "baselineCommit": "c786396f2f6921f029f2871024045a0f17413e30",
+  "candidateChange": "Only Startrell cooldown 0.30 -> 0.25. Original automatic wave times and all other rules unchanged.",
+  "assumptions": [
+    "Twelve seeds 3352019..3352030, three maps; fixed greedy rank/lane order; no seed-aware choices.",
+    "Allocate leftmost legal cells, skipping acid. Buy all affordable missing slots each step. Save for first unaffordable slot; replace deaths first except unattended companion. No salvage or direct state mutation.",
+    "Sprinter duel: one defender at column zero, deployed at t=0, enemy spawns t=1 at normal x=9.5; same seed/lane for all; real movement/projectile rules. Shooter begins with its initial cooldown, which has expired before the spawn.",
+    "DPS is ideal steady state, not observed sustained mission damage. Duels include actual travel, wind-up, and overkill.",
+    "Outcomes do not measure enjoyment or prove global balance."
+  ],
+  "policies": {
+    "astro-2": "Two Astro ranks, twelve desired slots; replace destroyed units.",
+    "astro-fill": "All legal slots Astro; replace destroyed units.",
+    "astro-startrell": "One Astro rank then one Startrell rank, twelve desired slots; replace destroyed units.",
+    "startrell-fill": "All legal slots Startrell; replace destroyed units.",
+    "startrell-2": "Two Startrell ranks, twelve desired slots; replace destroyed units.",
+    "astro-startrell-unattended": "Same twelve Astro/Startrell slots; buy each once, never replace."
+  },
+  "dps": [
+    {
+      "variant": "baseline",
+      "kind": "astro",
+      "cost": 50,
+      "cooldown": 0.85,
+      "health": 260,
+      "ordinaryDps": 30.59,
+      "tankDps": 6.12,
+      "ordinaryDpsPer100Credits": 61.18,
+      "tankDpsPer100Credits": 12.24
+    },
+    {
+      "variant": "baseline",
+      "kind": "startrell",
+      "cost": 75,
+      "cooldown": 0.3,
+      "health": 300,
+      "ordinaryDps": 40,
+      "tankDps": 8,
+      "ordinaryDpsPer100Credits": 53.33,
+      "tankDpsPer100Credits": 10.67
+    },
+    {
+      "variant": "baseline",
+      "kind": "tars",
+      "cost": 100,
+      "cooldown": 0.95,
+      "health": 450,
+      "ordinaryDps": 50.53,
+      "tankDps": 50.53,
+      "ordinaryDpsPer100Credits": 50.53,
+      "tankDpsPer100Credits": 50.53
+    },
+    {
+      "variant": "candidate",
+      "kind": "astro",
+      "cost": 50,
+      "cooldown": 0.85,
+      "health": 260,
+      "ordinaryDps": 30.59,
+      "tankDps": 6.12,
+      "ordinaryDpsPer100Credits": 61.18,
+      "tankDpsPer100Credits": 12.24
+    },
+    {
+      "variant": "candidate",
+      "kind": "startrell",
+      "cost": 75,
+      "cooldown": 0.25,
+      "health": 300,
+      "ordinaryDps": 48,
+      "tankDps": 9.6,
+      "ordinaryDpsPer100Credits": 64,
+      "tankDpsPer100Credits": 12.8
+    },
+    {
+      "variant": "candidate",
+      "kind": "tars",
+      "cost": 100,
+      "cooldown": 0.95,
+      "health": 450,
+      "ordinaryDps": 50.53,
+      "tankDps": 50.53,
+      "ordinaryDpsPer100Credits": 50.53,
+      "tankDpsPer100Credits": 50.53
+    }
+  ],
+  "duels": [
+    {
+      "variant": "baseline",
+      "kind": "astro",
+      "target": "sprinter",
+      "spawnTime": 1,
+      "column": 0,
+      "row": 2,
+      "firstShot": 1.1,
+      "firstHit": 2.2,
+      "killTime": 6.2,
+      "secondsAfterSpawn": 5.2,
+      "shots": 7,
+      "hits": 6,
+      "result": "won",
+      "shields": 3
+    },
+    {
+      "variant": "baseline",
+      "kind": "startrell",
+      "target": "sprinter",
+      "spawnTime": 1,
+      "column": 0,
+      "row": 2,
+      "firstShot": 1.05,
+      "firstHit": 1.7,
+      "killTime": 4.9,
+      "secondsAfterSpawn": 3.9,
+      "shots": 13,
+      "hits": 12,
+      "result": "won",
+      "shields": 3
+    },
+    {
+      "variant": "baseline",
+      "kind": "tars",
+      "target": "sprinter",
+      "spawnTime": 1,
+      "column": 0,
+      "row": 2,
+      "firstShot": 1.15,
+      "firstHit": 2.1,
+      "killTime": 3.9,
+      "secondsAfterSpawn": 2.9,
+      "shots": 3,
+      "hits": 3,
+      "result": "won",
+      "shields": 3
+    },
+    {
+      "variant": "candidate",
+      "kind": "astro",
+      "target": "sprinter",
+      "spawnTime": 1,
+      "column": 0,
+      "row": 2,
+      "firstShot": 1.1,
+      "firstHit": 2.2,
+      "killTime": 6.2,
+      "secondsAfterSpawn": 5.2,
+      "shots": 7,
+      "hits": 6,
+      "result": "won",
+      "shields": 3
+    },
+    {
+      "variant": "candidate",
+      "kind": "startrell",
+      "target": "sprinter",
+      "spawnTime": 1,
+      "column": 0,
+      "row": 2,
+      "firstShot": 1.05,
+      "firstHit": 1.7,
+      "killTime": 4.35,
+      "secondsAfterSpawn": 3.35,
+      "shots": 14,
+      "hits": 12,
+      "result": "won",
+      "shields": 3
+    },
+    {
+      "variant": "candidate",
+      "kind": "tars",
+      "target": "sprinter",
+      "spawnTime": 1,
+      "column": 0,
+      "row": 2,
+      "firstShot": 1.15,
+      "firstHit": 2.1,
+      "killTime": 3.9,
+      "secondsAfterSpawn": 2.9,
+      "shots": 3,
+      "hits": 3,
+      "result": "won",
+      "shields": 3
+    }
+  ],
+  "summaries": [
+    {
+      "variant": "baseline",
+      "policy": "astro-2",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 154.25,
+        "mean": 168.53,
+        "max": 172.85
+      },
+      "credits": {
+        "min": 525,
+        "mean": 585,
+        "max": 675
+      },
+      "purchases": {
+        "min": 24,
+        "mean": 25.25,
+        "max": 27
+      },
+      "replacements": {
+        "min": 12,
+        "mean": 13.25,
+        "max": 15
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-2",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 191.45,
+        "mean": 194.75,
+        "max": 201.7
+      },
+      "credits": {
+        "min": 970,
+        "mean": 1028.33,
+        "max": 1150
+      },
+      "purchases": {
+        "min": 19,
+        "mean": 20.58,
+        "max": 22
+      },
+      "replacements": {
+        "min": 7,
+        "mean": 8.58,
+        "max": 10
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-2",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 243.55,
+        "mean": 253,
+        "max": 264.65
+      },
+      "credits": {
+        "min": 1065,
+        "mean": 1189.17,
+        "max": 1285
+      },
+      "purchases": {
+        "min": 25,
+        "mean": 26.67,
+        "max": 28
+      },
+      "replacements": {
+        "min": 13,
+        "mean": 14.67,
+        "max": 16
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-fill",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 124,
+        "mean": 127.07,
+        "max": 129.8
+      },
+      "credits": {
+        "min": 55,
+        "mean": 58.33,
+        "max": 75
+      },
+      "purchases": {
+        "min": 30,
+        "mean": 30.83,
+        "max": 31
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.58,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-fill",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 157.45,
+        "mean": 158.83,
+        "max": 159.9
+      },
+      "credits": {
+        "min": 80,
+        "mean": 80,
+        "max": 80
+      },
+      "purchases": {
+        "min": 35,
+        "mean": 35,
+        "max": 35
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.17,
+        "max": 2
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-fill",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 175.5,
+        "mean": 181.23,
+        "max": 187.3
+      },
+      "credits": {
+        "min": 35,
+        "mean": 56.67,
+        "max": 75
+      },
+      "purchases": {
+        "min": 40,
+        "mean": 40.92,
+        "max": 42
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 3.33,
+        "max": 5
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-startrell",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 147.35,
+        "mean": 155.88,
+        "max": 159.65
+      },
+      "credits": {
+        "min": 135,
+        "mean": 393.75,
+        "max": 525
+      },
+      "purchases": {
+        "min": 18,
+        "mean": 20.42,
+        "max": 24
+      },
+      "replacements": {
+        "min": 6,
+        "mean": 8.42,
+        "max": 12
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-startrell",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 184.55,
+        "mean": 185.41,
+        "max": 187.9
+      },
+      "credits": {
+        "min": 735,
+        "mean": 856.25,
+        "max": 930
+      },
+      "purchases": {
+        "min": 16,
+        "mean": 17.08,
+        "max": 19
+      },
+      "replacements": {
+        "min": 4,
+        "mean": 5.08,
+        "max": 7
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-startrell",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 229.95,
+        "mean": 234.78,
+        "max": 244.25
+      },
+      "credits": {
+        "min": 935,
+        "mean": 1027.5,
+        "max": 1130
+      },
+      "purchases": {
+        "min": 19,
+        "mean": 20.5,
+        "max": 22
+      },
+      "replacements": {
+        "min": 7,
+        "mean": 8.5,
+        "max": 10
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "startrell-fill",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 1,
+        "mean": 2.67,
+        "max": 3
+      },
+      "duration": {
+        "min": 131.25,
+        "mean": 139.02,
+        "max": 176.45
+      },
+      "credits": {
+        "min": 40,
+        "mean": 64.17,
+        "max": 90
+      },
+      "purchases": {
+        "min": 20,
+        "mean": 21.33,
+        "max": 24
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 2.5,
+        "max": 6
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "startrell-fill",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 158.9,
+        "mean": 161.14,
+        "max": 165.65
+      },
+      "credits": {
+        "min": 60,
+        "mean": 83.75,
+        "max": 105
+      },
+      "purchases": {
+        "min": 23,
+        "mean": 23.58,
+        "max": 24
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0.33,
+        "max": 1
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "startrell-fill",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 183,
+        "mean": 184.98,
+        "max": 192.4
+      },
+      "credits": {
+        "min": 35,
+        "mean": 63.75,
+        "max": 80
+      },
+      "purchases": {
+        "min": 27,
+        "mean": 27.42,
+        "max": 28
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 2,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "startrell-2",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 141.95,
+        "mean": 146.71,
+        "max": 150.65
+      },
+      "credits": {
+        "min": 225,
+        "mean": 457.5,
+        "max": 570
+      },
+      "purchases": {
+        "min": 15,
+        "mean": 16.83,
+        "max": 20
+      },
+      "replacements": {
+        "min": 3,
+        "mean": 4.83,
+        "max": 8
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "startrell-2",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 179.15,
+        "mean": 179.15,
+        "max": 179.15
+      },
+      "credits": {
+        "min": 825,
+        "mean": 856.25,
+        "max": 900
+      },
+      "purchases": {
+        "min": 14,
+        "mean": 14.58,
+        "max": 15
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 2.58,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "startrell-2",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 219,
+        "mean": 220.85,
+        "max": 227.9
+      },
+      "credits": {
+        "min": 920,
+        "mean": 1007.5,
+        "max": 1115
+      },
+      "purchases": {
+        "min": 16,
+        "mean": 17.67,
+        "max": 19
+      },
+      "replacements": {
+        "min": 4,
+        "mean": 5.67,
+        "max": 7
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-startrell-unattended",
+      "map": "canyon",
+      "wins": 0,
+      "runs": 12,
+      "shields": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "duration": {
+        "min": 112.65,
+        "mean": 125.39,
+        "max": 134.3
+      },
+      "credits": {
+        "min": 510,
+        "mean": 617.5,
+        "max": 705
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-startrell-unattended",
+      "map": "bridge",
+      "wins": 8,
+      "runs": 12,
+      "shields": {
+        "min": 0,
+        "mean": 0.67,
+        "max": 1
+      },
+      "duration": {
+        "min": 184.55,
+        "mean": 188.06,
+        "max": 196.2
+      },
+      "credits": {
+        "min": 1170,
+        "mean": 1180.83,
+        "max": 1225
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "baseline",
+      "policy": "astro-startrell-unattended",
+      "map": "nest",
+      "wins": 0,
+      "runs": 12,
+      "shields": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "duration": {
+        "min": 178.85,
+        "mean": 185.88,
+        "max": 191.2
+      },
+      "credits": {
+        "min": 1105,
+        "mean": 1184.17,
+        "max": 1280
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-2",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 154.25,
+        "mean": 168.53,
+        "max": 172.85
+      },
+      "credits": {
+        "min": 525,
+        "mean": 585,
+        "max": 675
+      },
+      "purchases": {
+        "min": 24,
+        "mean": 25.25,
+        "max": 27
+      },
+      "replacements": {
+        "min": 12,
+        "mean": 13.25,
+        "max": 15
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-2",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 191.45,
+        "mean": 194.75,
+        "max": 201.7
+      },
+      "credits": {
+        "min": 970,
+        "mean": 1028.33,
+        "max": 1150
+      },
+      "purchases": {
+        "min": 19,
+        "mean": 20.58,
+        "max": 22
+      },
+      "replacements": {
+        "min": 7,
+        "mean": 8.58,
+        "max": 10
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-2",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 243.55,
+        "mean": 253,
+        "max": 264.65
+      },
+      "credits": {
+        "min": 1065,
+        "mean": 1189.17,
+        "max": 1285
+      },
+      "purchases": {
+        "min": 25,
+        "mean": 26.67,
+        "max": 28
+      },
+      "replacements": {
+        "min": 13,
+        "mean": 14.67,
+        "max": 16
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-fill",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 124,
+        "mean": 127.07,
+        "max": 129.8
+      },
+      "credits": {
+        "min": 55,
+        "mean": 58.33,
+        "max": 75
+      },
+      "purchases": {
+        "min": 30,
+        "mean": 30.83,
+        "max": 31
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.58,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-fill",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 157.45,
+        "mean": 158.83,
+        "max": 159.9
+      },
+      "credits": {
+        "min": 80,
+        "mean": 80,
+        "max": 80
+      },
+      "purchases": {
+        "min": 35,
+        "mean": 35,
+        "max": 35
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.17,
+        "max": 2
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-fill",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 175.5,
+        "mean": 181.23,
+        "max": 187.3
+      },
+      "credits": {
+        "min": 35,
+        "mean": 56.67,
+        "max": 75
+      },
+      "purchases": {
+        "min": 40,
+        "mean": 40.92,
+        "max": 42
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 3.33,
+        "max": 5
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-startrell",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 142.45,
+        "mean": 146.78,
+        "max": 149.65
+      },
+      "credits": {
+        "min": 450,
+        "mean": 563.75,
+        "max": 645
+      },
+      "purchases": {
+        "min": 16,
+        "mean": 17.42,
+        "max": 19
+      },
+      "replacements": {
+        "min": 4,
+        "mean": 5.42,
+        "max": 7
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-startrell",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 179.65,
+        "mean": 179.67,
+        "max": 179.7
+      },
+      "credits": {
+        "min": 900,
+        "mean": 987.5,
+        "max": 1050
+      },
+      "purchases": {
+        "min": 14,
+        "mean": 14.83,
+        "max": 16
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 2.83,
+        "max": 4
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-startrell",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 220.6,
+        "mean": 222.82,
+        "max": 230.6
+      },
+      "credits": {
+        "min": 1070,
+        "mean": 1161.25,
+        "max": 1295
+      },
+      "purchases": {
+        "min": 16,
+        "mean": 17.92,
+        "max": 19
+      },
+      "replacements": {
+        "min": 4,
+        "mean": 5.92,
+        "max": 7
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "startrell-fill",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 1,
+        "mean": 2.83,
+        "max": 3
+      },
+      "duration": {
+        "min": 123.65,
+        "mean": 124.8,
+        "max": 127.05
+      },
+      "credits": {
+        "min": 75,
+        "mean": 88.75,
+        "max": 105
+      },
+      "purchases": {
+        "min": 19,
+        "mean": 19.92,
+        "max": 20
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0.33,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "startrell-fill",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 155.6,
+        "mean": 157.48,
+        "max": 161.15
+      },
+      "credits": {
+        "min": 60,
+        "mean": 97.5,
+        "max": 105
+      },
+      "purchases": {
+        "min": 23,
+        "mean": 23.17,
+        "max": 24
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "startrell-fill",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 169.9,
+        "mean": 174.95,
+        "max": 177.8
+      },
+      "credits": {
+        "min": 50,
+        "mean": 55,
+        "max": 95
+      },
+      "purchases": {
+        "min": 26,
+        "mean": 26.83,
+        "max": 27
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 1.08,
+        "max": 2
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "startrell-2",
+      "map": "canyon",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 134.95,
+        "mean": 135.3,
+        "max": 135.95
+      },
+      "credits": {
+        "min": 540,
+        "mean": 656.25,
+        "max": 690
+      },
+      "purchases": {
+        "min": 13,
+        "mean": 13.42,
+        "max": 15
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.42,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "startrell-2",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 172.4,
+        "mean": 172.4,
+        "max": 172.4
+      },
+      "credits": {
+        "min": 1020,
+        "mean": 1020,
+        "max": 1020
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "startrell-2",
+      "map": "nest",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 205.5,
+        "mean": 205.9,
+        "max": 207.85
+      },
+      "credits": {
+        "min": 1130,
+        "mean": 1148.75,
+        "max": 1205
+      },
+      "purchases": {
+        "min": 14,
+        "mean": 14.75,
+        "max": 15
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 2.75,
+        "max": 3
+      },
+      "firstSixLanes": {
+        "min": 30,
+        "mean": 30,
+        "max": 30
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-startrell-unattended",
+      "map": "canyon",
+      "wins": 0,
+      "runs": 12,
+      "shields": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "duration": {
+        "min": 112.65,
+        "mean": 125.39,
+        "max": 134.3
+      },
+      "credits": {
+        "min": 570,
+        "mean": 632.5,
+        "max": 705
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 10.65,
+        "mean": 10.65,
+        "max": 10.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-startrell-unattended",
+      "map": "bridge",
+      "wins": 12,
+      "runs": 12,
+      "shields": {
+        "min": 1,
+        "mean": 1,
+        "max": 1
+      },
+      "duration": {
+        "min": 179.65,
+        "mean": 182.86,
+        "max": 189.7
+      },
+      "credits": {
+        "min": 1140,
+        "mean": 1160,
+        "max": 1200
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 13.65,
+        "mean": 13.65,
+        "max": 13.65
+      }
+    },
+    {
+      "variant": "candidate",
+      "policy": "astro-startrell-unattended",
+      "map": "nest",
+      "wins": 0,
+      "runs": 12,
+      "shields": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "duration": {
+        "min": 185.1,
+        "mean": 190.1,
+        "max": 197.75
+      },
+      "credits": {
+        "min": 1200,
+        "mean": 1247.92,
+        "max": 1290
+      },
+      "purchases": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "firstSixLanes": {
+        "min": 15,
+        "mean": 15,
+        "max": 15
+      }
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import {
   STEP,
   TOWERS,
 } from "./game/content";
+import { BIOMES, EXPEDITION_ENEMIES, EXPEDITION_TOWERS } from "./game/art";
 import type { TowerKind } from "./game/content";
 import type { GameEvent, Simulation, Snapshot } from "./game/simulation";
 
@@ -97,6 +98,9 @@ export function mountBattlefield(options: Options): () => void {
     private background!: Phaser.GameObjects.Image;
     private shade!: Phaser.GameObjects.Rectangle;
     private ghost!: Phaser.GameObjects.Image;
+    private ambience!: Phaser.GameObjects.Graphics;
+    private laneWarnings: Phaser.GameObjects.Text[] = [];
+    private lastReducedMotion = false;
     private mapTitle!: Phaser.GameObjects.Text;
     private sector!: Phaser.GameObjects.Text;
     private terrain!: Phaser.GameObjects.Container;
@@ -116,12 +120,12 @@ export function mountBattlefield(options: Options): () => void {
       const base = `${import.meta.env.BASE_URL}art/`;
       for (const image of [...backgrounds, ...images])
         this.load.image(image.key, base + image.file);
-      for (const [key, file] of [
-        ["expedition-canyon", "canyon.webp"],
-        ["expedition-ranger", "ranger.png"],
-        ["expedition-plated-crawler", "plated-crawler.png"],
+      this.load.image("expedition-canyon", `${base}expedition/canyon.webp`);
+      for (const image of [
+        ...Object.values(EXPEDITION_TOWERS),
+        ...Object.values(EXPEDITION_ENEMIES),
       ])
-        this.load.image(key, `${base}expedition/${file}`);
+        this.load.image(image.key, base + image.file);
       for (const sprite of sprites)
         this.load.spritesheet(sprite.key, base + sprite.file, {
           frameWidth: sprite.frameWidth,
@@ -260,7 +264,23 @@ export function mountBattlefield(options: Options): () => void {
           letterSpacing: 1,
         })
         .setOrigin(1, 0);
+      this.ambience = this.add.graphics().setDepth(0.5);
       this.terrain = this.add.container(0, 0).setDepth(1);
+      for (let row = 0; row < ROWS; row++)
+        this.laneWarnings.push(
+          this.add
+            .text(worldX(9.1), worldY(row), "", {
+              fontFamily: "monospace",
+              fontSize: "15px",
+              fontStyle: "bold",
+              color: "#e8e5ce",
+              backgroundColor: "#172b38",
+            })
+            .setOrigin(0.5)
+            .setDepth(8)
+            .setPadding(5, 4)
+            .setVisible(false),
+        );
       this.effects = this.add.container(0, 0).setDepth(9);
       this.renderMap(simulation.snapshot());
       this.hover = this.add.graphics().setDepth(2);
@@ -281,6 +301,11 @@ export function mountBattlefield(options: Options): () => void {
         this.tweens.killAll();
         this.effects.removeAll(true);
       }
+      if (options.reducedMotion() && !this.lastReducedMotion) {
+        this.tweens.killAll();
+        this.effects.removeAll(true);
+      }
+      this.lastReducedMotion = options.reducedMotion();
       this.lastElapsed = state.elapsed;
       this.renderMap(state);
       const moving = state.phase === "playing";
@@ -290,7 +315,7 @@ export function mountBattlefield(options: Options): () => void {
         this.effect(event, state);
         options.onEvent(event);
       }
-      if (options.reducedMotion())
+      if (options.reducedMotion() || !moving)
         this.stars.forEach((star) => star.setAlpha(0.35));
       else
         this.stars.forEach((star, i) =>
@@ -318,11 +343,43 @@ export function mountBattlefield(options: Options): () => void {
       this.activeMap = mapKey;
       const map = MAPS[state.map];
       const expedition = state.map === "canyon" && style === "expedition";
+      const biome = BIOMES[state.map];
       this.background
         .setTexture(expedition ? "expedition-canyon" : map.background)
         .setDisplaySize(1080, 660)
-        .setAlpha(expedition ? 0.85 : 0.24);
-      this.shade.setAlpha(expedition ? 0.2 : 0.47);
+        .setAlpha(style === "expedition" ? biome.backgroundAlpha : 0.24);
+      this.shade
+        .setFillStyle(style === "expedition" ? biome.shadow : 0x102330)
+        .setAlpha(style === "expedition" ? biome.shadeAlpha : 0.47);
+      this.ambience.clear();
+      if (style === "expedition") {
+        this.ambience
+          .lineStyle(2, biome.accent, 0.4)
+          .lineBetween(86, 142, 86, 586)
+          .lineBetween(1008, 142, 1008, 586);
+        if (state.map === "bridge") {
+          this.ambience
+            .lineStyle(2, biome.accent, 0.32)
+            .lineBetween(22, 132, 1058, 132)
+            .lineBetween(22, 600, 1058, 600);
+          for (let index = 0; index < 14; index++)
+            this.ambience
+              .fillStyle(biome.accent, 0.3)
+              .fillRect(30 + index * 78, 125, 20, 3)
+              .fillRect(30 + index * 78, 605, 20, 3);
+        } else if (state.map === "nest") {
+          for (let index = 0; index < 16; index++) {
+            const x = 22 + (index % 2) * 1028,
+              y = 145 + Math.floor(index / 2) * 60;
+            this.ambience
+              .fillStyle(biome.accent, 0.14)
+              .fillEllipse(x, y, 35, 22);
+            this.ambience
+              .lineStyle(1, biome.accent, 0.32)
+              .lineBetween(x, y, index % 2 ? 1020 : 60, y + 24);
+          }
+        }
+      }
       this.mapTitle.setText(`${map.name.toUpperCase()} PERIMETER`);
       this.sector.setText(`SECTOR / 0${map.number}`);
       this.terrain.removeAll(true);
@@ -374,26 +431,28 @@ export function mountBattlefield(options: Options): () => void {
           });
           towerSprites.set(tower.id, sprite);
         }
-        const prototype = expedition && tower.kind === "astro";
+        const artwork = expedition ? EXPEDITION_TOWERS[tower.kind] : undefined;
+        const prototype = Boolean(artwork);
         if (sprite.getData("prototype") !== prototype) {
           sprite.setData("prototype", prototype);
           sprite.anims.stop();
-          if (prototype) sprite.setTexture("expedition-ranger");
+          if (artwork) sprite.setTexture(artwork.key);
           else {
             sprite.play(`${definition.sprite}-idle`);
             sprite.setDisplaySize(84, 84);
           }
         }
+        sprite.setOrigin(0.5, artwork?.foot ?? 1).setY(worldY(tower.row) + 29);
         const recoil = animate
           ? Math.max(0, (sprite.getData("recoilUntil") ?? 0) - visualTime) /
             0.12
           : 0;
         sprite.setX(worldX(tower.col + 0.5) - recoil * 5);
-        if (prototype) {
+        if (artwork) {
           const breath = animate
             ? Math.sin(visualTime * 3 + tower.id) * 0.8
             : 0;
-          sprite.setDisplaySize(83, 77 + breath);
+          sprite.setDisplaySize(artwork.width, artwork.height + breath);
         } else {
           const duration = sprite.anims.currentAnim?.duration ?? 0;
           sprite.anims.timeScale =
@@ -415,8 +474,38 @@ export function mountBattlefield(options: Options): () => void {
             .fillStyle(0xa3ead7)
             .fillCircle(sprite.x + 34, worldY(tower.row) - 16, 3);
         }
-        if (!moving || options.reducedMotion()) sprite.anims.pause();
-        else sprite.anims.resume();
+        // A stopped school animation must never resume over a static cutout.
+        if (!artwork) {
+          if (!moving || options.reducedMotion()) sprite.anims.pause();
+          else sprite.anims.resume();
+        }
+        const danger = tower.health / definition.health < 0.3;
+        const damaged = state.elapsed - tower.lastHitAt < 0.6;
+        if (state.elapsed - tower.lastHitAt < 0.12 && animate)
+          sprite.setTint(0xffbd9e).setTintMode(Phaser.TintModes.FILL);
+        else sprite.clearTint();
+        if (danger || damaged) {
+          this.bars
+            .lineStyle(danger ? 3 : 2, danger ? 0xff9c79 : 0xe4ba8d, 0.95)
+            .strokeRoundedRect(
+              worldX(tower.col + 0.5) - 37,
+              worldY(tower.row) - 31,
+              74,
+              63,
+              6,
+            );
+          if (danger)
+            this.bars
+              .fillStyle(0xffd2a8)
+              .fillTriangle(
+                sprite.x - 4,
+                worldY(tower.row) - 42,
+                sprite.x + 4,
+                worldY(tower.row) - 42,
+                sprite.x,
+                worldY(tower.row) - 34,
+              );
+        }
         if (tower.health < definition.health)
           this.healthBar(
             sprite.x,
@@ -435,11 +524,12 @@ export function mountBattlefield(options: Options): () => void {
             !options.reducedMotion()
           ) {
             this.effects.add(sprite);
+            sprite.clearTint().setAngle(0);
             if (sprite.getData("prototype")) {
               this.tweens.add({
                 targets: sprite,
                 alpha: 0,
-                y: sprite.y + 12,
+                y: sprite.y + 5,
                 duration: 220,
                 onComplete: () => sprite.destroy(),
               });
@@ -465,26 +555,40 @@ export function mountBattlefield(options: Options): () => void {
           sprite.setDisplaySize(definition.size, definition.size);
           enemySprites.set(enemy.id, sprite);
         }
-        const prototype = expedition && enemy.kind === "tank";
+        const artwork = expedition ? EXPEDITION_ENEMIES[enemy.kind] : undefined;
+        const prototype = Boolean(artwork);
         if (sprite.getData("prototype") !== prototype) {
           sprite.setData("prototype", prototype);
           sprite.anims.stop();
-          if (prototype) sprite.setTexture("expedition-plated-crawler");
+          if (artwork) sprite.setTexture(artwork.key);
+          else sprite.play(animation);
         }
         const x = enemy.previousX + (enemy.x - enemy.previousX) * alpha;
         const stride =
           prototype && animate && !enemy.attacking
-            ? Math.sin(visualTime * 12 + enemy.id) * 1.5
+            ? Math.sin(visualTime * 12 + enemy.id) * 1.2
             : 0;
-        sprite.setPosition(worldX(x), worldY(enemy.row) - 4 + stride);
-        if (prototype) sprite.setDisplaySize(108, 72);
+        const hit = animate
+          ? Math.max(0, (sprite.getData("hitUntil") ?? 0) - visualTime) / 0.14
+          : 0;
+        sprite
+          .setOrigin(0.5, artwork?.foot ?? 1)
+          .setPosition(
+            worldX(x) + hit * (sprite.getData("resisted") ? 1.5 : 5),
+            worldY(enemy.row) + 29 + stride,
+          )
+          .setAngle(hit * (enemy.id % 2 ? 3 : -3));
+        if (artwork)
+          sprite.setDisplaySize(artwork.width, artwork.height - hit * 2);
         else {
           if (sprite.anims.currentAnim?.key !== animation)
             sprite.play(animation);
-          sprite.setDisplaySize(definition.size, definition.size);
+          sprite.setDisplaySize(definition.size, definition.size - hit * 2);
         }
-        if (animate && (sprite.getData("hitUntil") ?? 0) > visualTime)
-          sprite.setTint(0xffdec1);
+        if (hit > 0)
+          sprite
+            .setTint(sprite.getData("resisted") ? 0xbed5e4 : 0xffdbaf)
+            .setTintMode(Phaser.TintModes.FILL);
         else sprite.clearTint();
         if (definition.armor) {
           this.bars
@@ -498,8 +602,10 @@ export function mountBattlefield(options: Options): () => void {
             );
         }
         sprite.anims.timeScale = state.speed;
-        if (!moving || options.reducedMotion()) sprite.anims.pause();
-        else sprite.anims.resume();
+        if (!artwork) {
+          if (!moving || options.reducedMotion()) sprite.anims.pause();
+          else sprite.anims.resume();
+        }
         this.healthBar(
           sprite.x,
           worldY(enemy.row) + 27,
@@ -508,6 +614,35 @@ export function mountBattlefield(options: Options): () => void {
             ? 0xffba7c
             : 0xee8e76,
         );
+      }
+      for (let row = 0; row < ROWS; row++) {
+        const warning = state.incoming.find((item) => item.row === row);
+        const label = this.laneWarnings[row];
+        label.setVisible(Boolean(warning));
+        if (!warning) continue;
+        const marker =
+          warning.threat === "heavy"
+            ? "!!"
+            : warning.threat === "armored"
+              ? "◇"
+              : "›";
+        const color =
+          warning.threat === "heavy"
+            ? 0xf5a483
+            : warning.threat === "armored"
+              ? 0xb8d9e8
+              : 0xa9dbc9;
+        label
+          .setText(`${marker} ${Math.ceil(warning.in)}s`)
+          .setColor(`#${color.toString(16).padStart(6, "0")}`);
+        this.bars
+          .lineStyle(warning.threat === "standard" ? 2 : 3, color, 0.9)
+          .lineBetween(
+            worldX(8.95),
+            worldY(row) - 28,
+            worldX(8.95),
+            worldY(row) + 28,
+          );
       }
       const activeBullets = new Set(
         state.projectiles.map((projectile) => projectile.id),
@@ -537,7 +672,7 @@ export function mountBattlefield(options: Options): () => void {
           this.bars
             .lineStyle(
               projectile.ammo === "tars" ? 3 : 2,
-              projectile.ammo === "tars" ? 0xa3ead7 : 0xffc28e,
+              AMMO[projectile.ammo].color,
               0.55,
             )
             .lineBetween(sprite.x - 17, sprite.y, sprite.x - 4, sprite.y);
@@ -572,14 +707,16 @@ export function mountBattlefield(options: Options): () => void {
             !isBlocked(state.map, cursor.row, cursor.col) &&
             state.credits >= TOWERS[selection].cost;
       if (valid && selection !== "salvage") {
-        const texture =
-          options.artStyle() === "expedition" && selection === "astro"
-            ? "expedition-ranger"
-            : `${TOWERS[selection].sprite}-idle`;
+        const artwork =
+          options.artStyle() === "expedition"
+            ? EXPEDITION_TOWERS[selection]
+            : undefined;
+        const texture = artwork?.key ?? `${TOWERS[selection].sprite}-idle`;
         this.ghost
           .setTexture(texture, 0)
-          .setDisplaySize(78, 78)
-          .setPosition(worldX(cursor.col + 0.5), worldY(cursor.row) - 4)
+          .setDisplaySize(artwork?.width ?? 78, artwork?.height ?? 78)
+          .setOrigin(0.5, artwork?.foot ?? 1)
+          .setPosition(worldX(cursor.col + 0.5), worldY(cursor.row) + 29)
           .setVisible(true);
       }
       const color = valid ? 0x6edcc0 : 0xe78871;
@@ -611,7 +748,8 @@ export function mountBattlefield(options: Options): () => void {
       if (event.type === "hit" && event.entityId !== undefined) {
         enemySprites
           .get(event.entityId)
-          ?.setData("hitUntil", state.elapsed + 0.09);
+          ?.setData("hitUntil", state.elapsed + 0.14)
+          .setData("resisted", Boolean(event.resisted));
       }
       if (event.type === "shot" && event.kind && event.entityId !== undefined) {
         const sprite = towerSprites.get(event.entityId);
@@ -625,7 +763,62 @@ export function mountBattlefield(options: Options): () => void {
         )
           sprite.play(key); // Each real release restarts a short attack, including rapid-fire units.
       }
-      if (options.reducedMotion()) return;
+      if (options.reducedMotion() || this.effects.length > 96) return;
+      if (event.type === "hit" && (event.armored || (event.radius ?? 0) > 0)) {
+        const ring = this.add
+          .ellipse(
+            x,
+            y - 4,
+            event.radius ? 2 * event.radius * FIELD.cellWidth : 20,
+            event.radius ? FIELD.cellHeight * 0.6 : 13,
+          )
+          .setStrokeStyle(
+            event.resisted ? 3 : 2,
+            event.resisted ? 0xb8d9e8 : 0xa4e4c9,
+          )
+          .setDepth(9);
+        this.effects.add(ring);
+        this.tweens.add({
+          targets: ring,
+          scaleX: event.radius ? 1.04 : 1.8,
+          scaleY: event.radius ? 1.04 : 1.8,
+          alpha: 0,
+          duration: 200,
+          onComplete: () => ring.destroy(),
+        });
+        if (event.resisted) {
+          const plate = this.add
+            .text(x, y - 38, "PLATED", {
+              fontFamily: "monospace",
+              fontSize: "12px",
+              color: "#c5dfed",
+            })
+            .setOrigin(0.5)
+            .setDepth(9);
+          this.effects.add(plate);
+          this.tweens.add({
+            targets: plate,
+            alpha: 0,
+            y: y - 48,
+            duration: 350,
+            onComplete: () => plate.destroy(),
+          });
+        }
+      }
+      if (event.type === "defender-lost") {
+        const ring = this.add
+          .circle(x, y, 13)
+          .setStrokeStyle(3, 0xf2aa81)
+          .setDepth(9);
+        this.effects.add(ring);
+        this.tweens.add({
+          targets: ring,
+          scale: 2.4,
+          alpha: 0,
+          duration: 250,
+          onComplete: () => ring.destroy(),
+        });
+      }
       if (event.type === "shot") {
         const flash = this.add.circle(x + 35, y - 12, 7, 0xb7f2db).setDepth(9);
         this.effects.add(flash);
@@ -647,10 +840,12 @@ export function mountBattlefield(options: Options): () => void {
             ? 0x8cddc6
             : event.type === "breach"
               ? 0xff8f70
-              : event.kind === "zeus"
-                ? 0x9be7ef
-                : 0xffc28e;
-        const count = event.type === "hit" ? 5 : 8;
+              : event.resisted
+                ? 0xb8d9e8
+                : event.kind === "zeus"
+                  ? 0x9be7ef
+                  : 0xffc28e;
+        const count = event.type === "hit" ? 3 : 6;
         for (let i = 0; i < count; i++) {
           const angle = (i / count) * Math.PI * 2;
           const spark = this.add

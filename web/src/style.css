@@ -1953,3 +1953,174 @@ dialog li {
     max-width: calc((100svh - 365px) * 1080 / 660);
   }
 }
+
+/* Expedition 0.2: wave decisions, a short threat horizon, and full-width crew details. */
+.crew-panel {
+  display: block;
+}
+.crew-card .expedition-portrait,
+.alien-portrait.expedition-portrait {
+  background-size: contain;
+  background-position: center;
+  image-rendering: auto;
+}
+.wave-control {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  border-top: 1px solid #3c5058;
+  background: #162a32;
+}
+.wave-copy {
+  min-width: 0;
+  flex: 1;
+}
+.wave-control .wave-forecast {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.wave-risk {
+  color: #afc6c4;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.call-wave {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 0 0 auto;
+  min-height: 44px;
+  min-width: 130px;
+  padding: 7px 12px;
+  border: 1px solid #90c8b6;
+  border-radius: 5px;
+  background: #28493f;
+  color: #ecf2de;
+  font-size: 12px;
+  font-weight: 650;
+  align-items: center;
+}
+.call-wave span {
+  color: #b9ead1;
+  font: 11px var(--mono);
+}
+.call-wave:disabled {
+  background: #21333b;
+  border-color: #485e67;
+  color: #b3c0bf;
+  opacity: 0.8;
+  cursor: default;
+}
+.threat-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 16px;
+  background: #11232e;
+  border-top: 1px solid #344a55;
+}
+#incoming-summary {
+  font: 11px/1.5 var(--mono);
+  color: #c5dbe0;
+  min-height: 17px;
+}
+.defense-alert {
+  color: #ffd0a9;
+  font-size: 11px;
+}
+.defense-alert:empty {
+  display: none;
+}
+.field-status {
+  flex-wrap: wrap;
+}
+.critical-cell {
+  box-shadow: inset 0 0 0 2px #f2ae80;
+}
+#field-zoom {
+  display: none;
+  border: 1px solid #607d85;
+  border-radius: 4px;
+  background: #233b45;
+  color: #d1e3df;
+  min-height: 32px;
+  padding: 5px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+@media (min-width: 701px) {
+  .focused-play .board-stack {
+    max-width: calc((100svh - 425px) * 1080 / 660);
+  }
+  .crew-heading {
+    display: flex;
+  }
+}
+@media (max-width: 700px) {
+  .wave-control {
+    padding: 9px 10px;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .wave-control .wave-forecast {
+    font-size: 10px;
+  }
+  .wave-risk {
+    font-size: 11px;
+  }
+  .call-wave {
+    min-width: 104px;
+    width: 104px;
+    justify-content: center;
+    padding: 6px;
+  }
+  .threat-strip {
+    padding: 7px 10px;
+  }
+  #incoming-summary {
+    font-size: 10px;
+  }
+  #field-zoom {
+    display: inline-block;
+  }
+  .crew-details {
+    min-height: 64px;
+  }
+  #selected-detail {
+    flex: 1;
+  }
+  .zoomed-field .board-stack {
+    min-width: 560px;
+  }
+  .zoomed-field .mission-overlay {
+    position: sticky;
+    left: 0;
+    width: calc(100vw - 26px);
+    min-height: 240px;
+  }
+}
+#wave-title {
+  display: block;
+  font-weight: 650;
+  color: #e0e7d9;
+}
+#wave-composition {
+  display: block;
+  color: #b7cdc8;
+  font-size: 10px;
+  margin-top: 3px;
+}
+#wave-composition:empty {
+  display: none;
+}
+@media (max-width: 700px) {
+  #wave-composition {
+    display: none;
+  }
+}

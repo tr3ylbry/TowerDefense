@@ -1,6 +1,7 @@
 import "./style.css";
 import { COLS, ENEMIES, isBlocked, MAPS, ROWS, TOWERS } from "./game/content";
-import type { MapKind, TowerKind } from "./game/content";
+import { EXPEDITION_ENEMIES, EXPEDITION_TOWERS } from "./game/art";
+import type { EnemyKind, MapKind, TowerKind } from "./game/content";
 import { Simulation } from "./game/simulation";
 import type { Snapshot } from "./game/simulation";
 import { AudioBus } from "./audio";
@@ -23,6 +24,7 @@ let loadError = false;
 let lastUiSignature = "";
 let artStyle: "expedition" | "original" = "expedition";
 let focused = false;
+let zoomed = false;
 
 let storedMotion: boolean | null = null;
 try {
@@ -39,7 +41,7 @@ const helmet =
   '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 29v-8a13 13 0 0 1 26 0v8l-5 10H16Z" fill="currentColor"/><rect x="15" y="15" width="18" height="13" rx="5" fill="#18303a"/><path d="M19 35h10" stroke="#f5a47d" stroke-width="3"/></svg>';
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> BROWSER EDITION</span></span></span></a>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.2</span></span></span></a>
     <nav aria-label="Main"><span class="nav-active">The mission</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
@@ -51,13 +53,13 @@ app.innerHTML = `
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
         <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
-        <div id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"></div><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
+        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap a crew card, then an empty tile. All six lanes stay in view.</span></p>
       </section>
       <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span>Keys 1–9 · +30 supply / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
         .map((kind, i) => {
           const tower = TOWERS[kind];
-          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" style="background-image:url('${base}art/${kind === "astro" ? "expedition/ranger" : `${tower.sprite}-idle`}.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price">◈ ${tower.cost}<kbd>${i + 1}</kbd></span></button>`;
+          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" data-art-tower="${kind}" style="background-image:url('${base}art/${tower.sprite}-idle.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price">◈ ${tower.cost}<kbd>${i + 1}</kbd></span></button>`;
         })
         .join(
           "",
@@ -66,17 +68,17 @@ app.innerHTML = `
     <div class="dispatch" id="announcement" role="status" aria-live="polite" aria-atomic="true">Select a crew member to get started.</div>
     <footer><span><span class="footer-dot"></span> MADE FOR THE JOY OF BUILDING.</span><span>A school project, reimagined. <button id="credits-open">Meet the original team ↗</button></span></footer>
   </main>
-  <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Tanks absorb 80% of ordinary fire: TARS ignores plating; plasma and explosives partially pierce it. Explosive Astro Joe and Moon Zeus hit clusters; the Falcon fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.values(
+  <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Tanks absorb 80% of ordinary fire: TARS ignores plating; plasma and explosives partially pierce it. Explosive Astro Joe and Moon Zeus hit clusters; the Falcon fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission. N calls an eligible wave early.</p><p><strong>Choose your pace.</strong> After a wave finishes entering, Call next wave brings the next arrival to three game seconds from now. Gain two credits per whole second saved, up to 40 per wave. Later waves move earlier by the same amount; surviving aliens stay on the field. Each wave can pay once. Lane warnings show actual arrivals in the next five game seconds: an arrow for ordinary enemies, a diamond for plated Tanks, and !! for Gargantua.</p><p><strong>Read the field.</strong> Blue plate sparks mean armor resisted most of a hit. A mint impact means a piercing hit. An orange outline marks a defender taking damage; a triangle and critical label mark health below 30%. On phones, Enlarge field gives a closer view you can pan; Overview restores the whole field.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.entries(
     ENEMIES,
   )
     .map(
-      (enemy) =>
-        `<article><span class="alien-portrait" style="background-image:url('${base}art/${enemy.sprite}-walk.png')" aria-hidden="true"></span><div><h4>${enemy.name}</h4><p>${enemy.description}</p><small>${enemy.health} health · ${enemy.reward} credit bounty</small></div></article>`,
+      ([kind, enemy]) =>
+        `<article><span class="alien-portrait" data-art-enemy="${kind}" style="background-image:url('${base}art/${enemy.sprite}-walk.png')" aria-hidden="true"></span><div><h4>${enemy.name}</h4><p>${enemy.description}</p><small>${enemy.health} health · ${enemy.reward} credit bounty</small></div></article>`,
     )
     .join(
       "",
     )}</div><button class="primary-button" data-close>Back to the frontier ↗</button></dialog>
-  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. The Expedition art prototype adds AI-generated Canyon scenery, an astronaut, and a plated alien, with procedural motion. Use the art switch to compare them with the originals.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
+  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork adds AI-generated Canyon scenery, an astronaut, a utility robot, and three alien cutouts, with procedural motion. Use the art switch to compare them with the originals.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
   <dialog id="map-dialog" aria-labelledby="map-title"><button class="dialog-close" data-close aria-label="Close destinations">×</button><span class="eyebrow">THREE ORIGINAL FRONTIERS</span><h2 id="map-title">Choose your destination.</h2><p id="map-warning">Each destination has four waves and the full original roster.</p><div class="destination-list">${(
     Object.keys(MAPS) as MapKind[]
   )
@@ -217,6 +219,15 @@ function render(state: Snapshot): void {
   const signature = JSON.stringify([
     ready,
     focused,
+    zoomed,
+    state.incoming.map((item) => [
+      item.row,
+      item.threat,
+      item.count,
+      Math.ceil(item.in),
+    ]),
+    state.nextWave?.canLaunch,
+    state.nextWave?.reward,
     state.map,
     state.phase,
     Math.floor(state.elapsed),
@@ -238,18 +249,57 @@ function render(state: Snapshot): void {
   lastUiSignature = signature;
   const map = MAPS[state.map];
   document.body.classList.toggle("focused-play", focused);
+  document.body.classList.toggle("zoomed-field", zoomed);
   get("focus-toggle").setAttribute("aria-pressed", String(focused));
   get("focus-toggle").setAttribute(
     "aria-label",
     focused ? "Leave focused view" : "Enter focused view",
   );
-  const upcoming = map.waves.find((wave) => wave.start > state.elapsed + 0.001);
+  const upcoming = state.nextWave;
   const counts = new Map<string, number>();
   for (const kind of upcoming?.enemies ?? [])
     counts.set(ENEMIES[kind].name, (counts.get(ENEMIES[kind].name) ?? 0) + 1);
-  get("wave-forecast").textContent = upcoming
-    ? `UP NEXT · ${upcoming.title} · ${[...counts].map(([name, count]) => `${count} ${name}`).join(" / ")}${upcoming.enemies.some((kind) => kind === "tank") ? " · Plating: bring TARS or plasma." : ""}`
-    : "FINAL WAVE · Hold every lane until the last hostile is cleared.";
+  get("wave-title").textContent = upcoming
+    ? `UP NEXT · ${upcoming.title} · ${upcoming.enemies.length} hostiles${upcoming.enemies.includes("tank") ? ` · ${upcoming.enemies.filter((kind) => kind === "tank").length} plated` : ""}`
+    : state.phase === "won"
+      ? "OUTPOST SECURED · All waves cleared."
+      : state.phase === "lost"
+        ? "MISSION ENDED · Try a new formation."
+        : "FINAL WAVE · Clear every remaining hostile.";
+  get("wave-composition").textContent = upcoming
+    ? [...counts].map(([name, count]) => `${count} ${name}`).join(" / ")
+    : "";
+  const call = get<HTMLButtonElement>("call-wave");
+  call.disabled = !upcoming?.canLaunch;
+  call.querySelector("span")!.textContent = upcoming?.canLaunch
+    ? `+${upcoming.reward} credits`
+    : "N";
+  call.setAttribute(
+    "aria-label",
+    upcoming?.canLaunch
+      ? `Call wave ${upcoming.number} early for ${upcoming.reward} credits`
+      : "Call next wave early",
+  );
+  get("wave-risk").textContent = upcoming?.canLaunch
+    ? `3s lead · ${state.enemies.length} still on field. Later waves shift too.`
+    : (upcoming?.reason ?? "No further wave to call.");
+  get("incoming-summary").textContent = state.incoming.length
+    ? state.incoming
+        .map(
+          (item) =>
+            `L${item.row + 1} ${item.threat === "heavy" ? "!!" : item.threat === "armored" ? "◇" : "›"} ${item.kinds.map((kind) => (kind === "scout" ? "Scout" : ENEMIES[kind].name)).join(" + ")} in ${Math.ceil(item.in)}s`,
+        )
+        .join(" · ")
+    : "Watching the approaches · next 5 seconds";
+  const critical = state.towers.filter(
+    (tower) => tower.health / TOWERS[tower.kind].health < 0.3,
+  );
+  get("defense-alert").textContent = critical.length
+    ? `⚠ ${critical.length} critical · ${critical
+        .slice(0, 2)
+        .map((tower) => `L${tower.row + 1} ${TOWERS[tower.kind].name}`)
+        .join(", ")}`
+    : "";
   document.title = `Astronauts vs Aliens — ${map.name}`;
   grid.inert = state.phase !== "playing";
   get("location-name").textContent = map.name;
@@ -299,7 +349,11 @@ function render(state: Snapshot): void {
     );
     const blocked = isBlocked(state.map, Math.floor(i / COLS), i % COLS);
     cell.classList.toggle("blocked-cell", blocked);
-    const label = `Lane ${Math.floor(i / COLS) + 1}, tile ${(i % COLS) + 1}, ${blocked ? "acid pool, deployment blocked" : tower ? `${TOWERS[tower.kind].name}, ${Math.ceil(tower.health)} health` : "empty"}`;
+    const critical = Boolean(
+      tower && tower.health / TOWERS[tower.kind].health < 0.3,
+    );
+    cell.classList.toggle("critical-cell", critical);
+    const label = `Lane ${Math.floor(i / COLS) + 1}, tile ${(i % COLS) + 1}, ${blocked ? "acid pool, deployment blocked" : tower ? `${TOWERS[tower.kind].name}, ${Math.ceil(tower.health)} health${critical ? ", critical" : ""}` : "empty"}`;
     if (cell.getAttribute("aria-label") !== label)
       cell.setAttribute("aria-label", label);
   });
@@ -410,10 +464,7 @@ get("art-toggle").addEventListener("click", () => {
     "original-art",
     artStyle === "original",
   );
-  get("mission").querySelector<HTMLElement>(
-    '[data-tower="astro"] .portrait',
-  )!.style.backgroundImage =
-    `url("${base}art/${artStyle === "original" ? "astro-joe-idle.png" : "expedition/ranger.png"}")`;
+  applyArtwork();
   get("art-toggle").setAttribute(
     "aria-pressed",
     String(artStyle === "original"),
@@ -427,9 +478,49 @@ get("art-toggle").addEventListener("click", () => {
   announce(
     artStyle === "original"
       ? "Original school project art selected. Combat rules are unchanged."
-      : "Expedition prototype selected: new Canyon, Astro Joe, and Tank art.",
+      : "Expedition art selected: illustrated Canyon, Astro Joe, TARS, scouts, Grunts, and Tanks.",
   );
 });
+get("field-zoom").addEventListener("click", () => {
+  zoomed = !zoomed;
+  get("field-zoom").setAttribute("aria-pressed", String(zoomed));
+  get("field-zoom").setAttribute(
+    "aria-label",
+    zoomed ? "Show battlefield overview" : "Enlarge battlefield",
+  );
+  get("field-zoom").textContent = zoomed ? "⊖ Overview" : "⊕ Enlarge field";
+  render(simulation.snapshot());
+});
+function callNextWave(): void {
+  const result = simulation.launchNextWave();
+  render(simulation.snapshot());
+  announce(result.message);
+  if (result.ok) cells[focusIndex].focus();
+}
+get("call-wave").addEventListener("click", callNextWave);
+function applyArtwork(): void {
+  document
+    .querySelectorAll<HTMLElement>("[data-art-tower]")
+    .forEach((portrait) => {
+      const kind = portrait.dataset.artTower as TowerKind;
+      const artwork =
+        artStyle === "expedition" ? EXPEDITION_TOWERS[kind] : undefined;
+      portrait.style.backgroundImage = `url("${base}art/${artwork?.file ?? `${TOWERS[kind].sprite}-idle.png`}")`;
+      portrait.classList.toggle("expedition-portrait", Boolean(artwork));
+    });
+  document
+    .querySelectorAll<HTMLElement>("[data-art-enemy]")
+    .forEach((portrait) => {
+      const kind = portrait.dataset.artEnemy as EnemyKind;
+      const artwork =
+        artStyle === "expedition" ? EXPEDITION_ENEMIES[kind] : undefined;
+      portrait.style.backgroundImage = `url("${base}art/${artwork?.file ?? `${ENEMIES[kind].sprite}-walk.png`}")`;
+      portrait.classList.toggle("expedition-portrait", Boolean(artwork));
+    });
+  document.querySelector<HTMLImageElement>('[data-map="canyon"] img')!.src =
+    `${base}art/${artStyle === "expedition" ? "expedition/canyon.webp" : "stage-one.webp"}`;
+}
+applyArtwork();
 let sound = false;
 get("sound-toggle").addEventListener("click", () => {
   sound = !sound;
@@ -541,6 +632,7 @@ document.addEventListener("keydown", (event) => {
   )
     return;
   const key = event.key.toLowerCase();
+  if (event.repeat && ["n", "p", "x"].includes(key)) return;
   if (/^[1-9]$/.test(key)) {
     event.preventDefault();
     select(towerKinds[Number(key) - 1]);
@@ -548,6 +640,9 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
     simulation.togglePause();
     render(simulation.snapshot());
+  } else if (key === "n") {
+    event.preventDefault();
+    callNextWave();
   } else if (key === "x") {
     event.preventDefault();
     select(selected === "salvage" ? null : "salvage");
@@ -584,7 +679,10 @@ async function initialize(): Promise<void> {
       onState: render,
       onEvent: (event) => {
         if (event.type === "shot") audio.play("shot", event.kind === "zeus");
-        else if (event.type === "income") audio.play("income");
+        else if (event.type === "income" || event.type === "wave-called")
+          audio.play("income");
+        else if (event.type === "defender-lost" && event.kind)
+          announce(`${TOWERS[event.kind].name} lost in lane ${event.row + 1}.`);
         else if (event.type === "breach") audio.play("breach");
       },
       onReady: () => {

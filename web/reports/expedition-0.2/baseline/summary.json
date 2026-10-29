@@ -1,0 +1,1743 @@
+{
+  "baselineCommit": "c786396f2f6921f029f2871024045a0f17413e30",
+  "roles": [
+    {
+      "kind": "astro",
+      "name": "Astro Joe",
+      "cost": 50,
+      "health": 260,
+      "shotsPerVolley": 1,
+      "ordinaryDps": 30.59,
+      "tankDps": 6.12,
+      "ordinaryDpsPer100Credits": 61.18,
+      "tankDpsPer100Credits": 12.24,
+      "armorPierce": 0,
+      "splashRadius": 0,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 5.2,
+      "steadyPeriod": 0.8500000000000001
+    },
+    {
+      "kind": "bush",
+      "name": "Money Bush",
+      "cost": 60,
+      "health": 180,
+      "shotsPerVolley": 0,
+      "ordinaryDps": 0,
+      "tankDps": 0,
+      "ordinaryDpsPer100Credits": 0,
+      "tankDpsPer100Credits": 0,
+      "armorPierce": 0,
+      "splashRadius": 0,
+      "incomePerSecond": 4.17,
+      "incomePerSecondPer100Credits": 6.94,
+      "firstFullPayback": 18,
+      "healthPerCredit": 3,
+      "steadyPeriod": 1
+    },
+    {
+      "kind": "wall",
+      "name": "Asteroid",
+      "cost": 35,
+      "health": 1100,
+      "shotsPerVolley": 0,
+      "ordinaryDps": 0,
+      "tankDps": 0,
+      "ordinaryDpsPer100Credits": 0,
+      "tankDpsPer100Credits": 0,
+      "armorPierce": 0,
+      "splashRadius": 0,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 31.43,
+      "steadyPeriod": 1
+    },
+    {
+      "kind": "zeus",
+      "name": "Moon Zeus",
+      "cost": 125,
+      "health": 320,
+      "shotsPerVolley": 1,
+      "ordinaryDps": 43.33,
+      "tankDps": 31.2,
+      "ordinaryDpsPer100Credits": 34.67,
+      "tankDpsPer100Credits": 24.96,
+      "armorPierce": 0.65,
+      "splashRadius": 0.7,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 2.56,
+      "steadyPeriod": 1.5
+    },
+    {
+      "kind": "explosive",
+      "name": "Explosive Astro Joe",
+      "cost": 85,
+      "health": 350,
+      "shotsPerVolley": 1,
+      "ordinaryDps": 26.47,
+      "tankDps": 13.76,
+      "ordinaryDpsPer100Credits": 31.14,
+      "tankDpsPer100Credits": 16.19,
+      "armorPierce": 0.4,
+      "splashRadius": 1,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 4.12,
+      "steadyPeriod": 1.7000000000000002
+    },
+    {
+      "kind": "startrell",
+      "name": "Startrell Cluggins",
+      "cost": 75,
+      "health": 300,
+      "shotsPerVolley": 1,
+      "ordinaryDps": 40,
+      "tankDps": 8,
+      "ordinaryDpsPer100Credits": 53.33,
+      "tankDpsPer100Credits": 10.67,
+      "armorPierce": 0,
+      "splashRadius": 0,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 4,
+      "steadyPeriod": 0.30000000000000004
+    },
+    {
+      "kind": "tars",
+      "name": "TARS",
+      "cost": 100,
+      "health": 450,
+      "shotsPerVolley": 1,
+      "ordinaryDps": 50.53,
+      "tankDps": 50.53,
+      "ordinaryDpsPer100Credits": 50.53,
+      "tankDpsPer100Credits": 50.53,
+      "armorPierce": 1,
+      "splashRadius": 0,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 4.5,
+      "steadyPeriod": 0.9500000000000001
+    },
+    {
+      "kind": "tree",
+      "name": "Money Tree",
+      "cost": 150,
+      "health": 220,
+      "shotsPerVolley": 0,
+      "ordinaryDps": 0,
+      "tankDps": 0,
+      "ordinaryDpsPer100Credits": 0,
+      "tankDpsPer100Credits": 0,
+      "armorPierce": 0,
+      "splashRadius": 0,
+      "incomePerSecond": 7.5,
+      "incomePerSecondPer100Credits": 5,
+      "firstFullPayback": 24,
+      "healthPerCredit": 1.47,
+      "steadyPeriod": 1
+    },
+    {
+      "kind": "falcon",
+      "name": "Millennium Falcon",
+      "cost": 250,
+      "health": 1200,
+      "shotsPerVolley": 3,
+      "ordinaryDps": 150,
+      "tankDps": 120,
+      "ordinaryDpsPer100Credits": 60,
+      "tankDpsPer100Credits": 48,
+      "armorPierce": 0.75,
+      "splashRadius": 0,
+      "incomePerSecond": 0,
+      "incomePerSecondPer100Credits": 0,
+      "firstFullPayback": null,
+      "healthPerCredit": 4.8,
+      "steadyPeriod": 1.4000000000000001
+    }
+  ],
+  "barriers": [
+    {
+      "enemy": "scout",
+      "damage": 18,
+      "period": 1,
+      "wallHits": 62,
+      "wallHoldSeconds": 61
+    },
+    {
+      "enemy": "grunt",
+      "damage": 32,
+      "period": 1.1,
+      "wallHits": 35,
+      "wallHoldSeconds": 37.4
+    },
+    {
+      "enemy": "sprinter",
+      "damage": 22,
+      "period": 0.75,
+      "wallHits": 50,
+      "wallHoldSeconds": 36.75
+    },
+    {
+      "enemy": "manhunter",
+      "damage": 65,
+      "period": 0.9,
+      "wallHits": 17,
+      "wallHoldSeconds": 14.4
+    },
+    {
+      "enemy": "tank",
+      "damage": 20,
+      "period": 1.5,
+      "wallHits": 55,
+      "wallHoldSeconds": 81
+    },
+    {
+      "enemy": "gargantua",
+      "damage": 100,
+      "period": 1.2,
+      "wallHits": 11,
+      "wallHoldSeconds": 12
+    }
+  ],
+  "summaries": [
+    {
+      "policy": "astro-2",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 154.25,
+        "mean": 168.53,
+        "max": 172.85
+      },
+      "finalCredits": {
+        "min": 525,
+        "mean": 585,
+        "max": 675
+      },
+      "purchased": {
+        "min": 24,
+        "mean": 25.25,
+        "max": 27
+      },
+      "replacements": {
+        "min": 12,
+        "mean": 13.25,
+        "max": 15
+      },
+      "lastDeployment": {
+        "min": 148.1,
+        "mean": 158.9,
+        "max": 164.6
+      },
+      "timeAfterLastDeployment": {
+        "min": 4.95,
+        "mean": 9.63,
+        "max": 13.8
+      },
+      "idleWithFutureSpawns": {
+        "min": 26.35,
+        "mean": 26.35,
+        "max": 26.35
+      },
+      "longestIdle": {
+        "min": 10,
+        "mean": 10,
+        "max": 10
+      }
+    },
+    {
+      "policy": "astro-2",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 191.45,
+        "mean": 194.75,
+        "max": 201.7
+      },
+      "finalCredits": {
+        "min": 970,
+        "mean": 1028.33,
+        "max": 1150
+      },
+      "purchased": {
+        "min": 19,
+        "mean": 20.58,
+        "max": 22
+      },
+      "replacements": {
+        "min": 7,
+        "mean": 8.58,
+        "max": 10
+      },
+      "lastDeployment": {
+        "min": 185.05,
+        "mean": 189.49,
+        "max": 198.8
+      },
+      "timeAfterLastDeployment": {
+        "min": 2.9,
+        "mean": 5.27,
+        "max": 6.8
+      },
+      "idleWithFutureSpawns": {
+        "min": 53.35,
+        "mean": 53.68,
+        "max": 54.65
+      },
+      "longestIdle": {
+        "min": 24.6,
+        "mean": 24.6,
+        "max": 24.6
+      }
+    },
+    {
+      "policy": "astro-2",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 243.55,
+        "mean": 253,
+        "max": 264.65
+      },
+      "finalCredits": {
+        "min": 1065,
+        "mean": 1189.17,
+        "max": 1285
+      },
+      "purchased": {
+        "min": 25,
+        "mean": 26.67,
+        "max": 28
+      },
+      "replacements": {
+        "min": 13,
+        "mean": 14.67,
+        "max": 16
+      },
+      "lastDeployment": {
+        "min": 231.1,
+        "mean": 241.09,
+        "max": 252.65
+      },
+      "timeAfterLastDeployment": {
+        "min": 4.45,
+        "mean": 11.91,
+        "max": 18.4
+      },
+      "idleWithFutureSpawns": {
+        "min": 56.5,
+        "mean": 57.13,
+        "max": 59.05
+      },
+      "longestIdle": {
+        "min": 25.55,
+        "mean": 25.58,
+        "max": 25.7
+      }
+    },
+    {
+      "policy": "astro-2-unattended",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 0,
+      "shields": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "duration": {
+        "min": 112.65,
+        "mean": 124.59,
+        "max": 134.3
+      },
+      "finalCredits": {
+        "min": 610,
+        "mean": 744.17,
+        "max": 855
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 40.8,
+        "mean": 41.2,
+        "max": 41.85
+      },
+      "timeAfterLastDeployment": {
+        "min": 71.25,
+        "mean": 83.39,
+        "max": 93.5
+      },
+      "idleWithFutureSpawns": {
+        "min": 26.35,
+        "mean": 26.35,
+        "max": 26.35
+      },
+      "longestIdle": {
+        "min": 10,
+        "mean": 10,
+        "max": 10
+      }
+    },
+    {
+      "policy": "astro-2-unattended",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 6,
+      "shields": {
+        "min": 0,
+        "mean": 0.5,
+        "max": 1
+      },
+      "duration": {
+        "min": 175.1,
+        "mean": 187.45,
+        "max": 197.35
+      },
+      "finalCredits": {
+        "min": 1180,
+        "mean": 1312.08,
+        "max": 1410
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 48.4,
+        "mean": 48.85,
+        "max": 49.45
+      },
+      "timeAfterLastDeployment": {
+        "min": 125.65,
+        "mean": 138.61,
+        "max": 148.95
+      },
+      "idleWithFutureSpawns": {
+        "min": 53.35,
+        "mean": 53.68,
+        "max": 54.65
+      },
+      "longestIdle": {
+        "min": 24.6,
+        "mean": 24.6,
+        "max": 24.6
+      }
+    },
+    {
+      "policy": "astro-2-unattended",
+      "map": "nest",
+      "runs": 12,
+      "wins": 0,
+      "shields": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "duration": {
+        "min": 164.8,
+        "mean": 170.67,
+        "max": 174.3
+      },
+      "finalCredits": {
+        "min": 1010,
+        "mean": 1137.92,
+        "max": 1235
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 50,
+        "mean": 50,
+        "max": 50
+      },
+      "timeAfterLastDeployment": {
+        "min": 114.8,
+        "mean": 120.67,
+        "max": 124.3
+      },
+      "idleWithFutureSpawns": {
+        "min": 56.5,
+        "mean": 57.13,
+        "max": 59.05
+      },
+      "longestIdle": {
+        "min": 25.55,
+        "mean": 25.58,
+        "max": 25.7
+      }
+    },
+    {
+      "policy": "astro-fill",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 124,
+        "mean": 127.07,
+        "max": 129.8
+      },
+      "finalCredits": {
+        "min": 55,
+        "mean": 58.33,
+        "max": 75
+      },
+      "purchased": {
+        "min": 30,
+        "mean": 30.83,
+        "max": 31
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.58,
+        "max": 3
+      },
+      "lastDeployment": {
+        "min": 120,
+        "mean": 124.34,
+        "max": 126.05
+      },
+      "timeAfterLastDeployment": {
+        "min": 0.3,
+        "mean": 2.73,
+        "max": 4.75
+      },
+      "idleWithFutureSpawns": {
+        "min": 26.35,
+        "mean": 26.36,
+        "max": 26.4
+      },
+      "longestIdle": {
+        "min": 10,
+        "mean": 10.01,
+        "max": 10.05
+      }
+    },
+    {
+      "policy": "astro-fill",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 157.45,
+        "mean": 158.83,
+        "max": 159.9
+      },
+      "finalCredits": {
+        "min": 80,
+        "mean": 80,
+        "max": 80
+      },
+      "purchased": {
+        "min": 35,
+        "mean": 35,
+        "max": 35
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 1.17,
+        "max": 2
+      },
+      "lastDeployment": {
+        "min": 151.65,
+        "mean": 152.87,
+        "max": 154.45
+      },
+      "timeAfterLastDeployment": {
+        "min": 3.15,
+        "mean": 5.96,
+        "max": 8.25
+      },
+      "idleWithFutureSpawns": {
+        "min": 53.35,
+        "mean": 59.5,
+        "max": 63.65
+      },
+      "longestIdle": {
+        "min": 24.6,
+        "mean": 24.79,
+        "max": 25.05
+      }
+    },
+    {
+      "policy": "astro-fill",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 175.5,
+        "mean": 181.23,
+        "max": 187.3
+      },
+      "finalCredits": {
+        "min": 35,
+        "mean": 56.67,
+        "max": 75
+      },
+      "purchased": {
+        "min": 40,
+        "mean": 40.92,
+        "max": 42
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 3.33,
+        "max": 5
+      },
+      "lastDeployment": {
+        "min": 170,
+        "mean": 177.5,
+        "max": 185
+      },
+      "timeAfterLastDeployment": {
+        "min": 1.55,
+        "mean": 3.72,
+        "max": 6.75
+      },
+      "idleWithFutureSpawns": {
+        "min": 58.75,
+        "mean": 60.86,
+        "max": 62.3
+      },
+      "longestIdle": {
+        "min": 25.55,
+        "mean": 26.57,
+        "max": 27.5
+      }
+    },
+    {
+      "policy": "bush-astro-tars",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 113.35,
+        "mean": 113.42,
+        "max": 113.45
+      },
+      "finalCredits": {
+        "min": 1395,
+        "mean": 1395,
+        "max": 1395
+      },
+      "purchased": {
+        "min": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 48,
+        "mean": 48,
+        "max": 48
+      },
+      "timeAfterLastDeployment": {
+        "min": 65.35,
+        "mean": 65.42,
+        "max": 65.45
+      },
+      "idleWithFutureSpawns": {
+        "min": 33.95,
+        "mean": 37.14,
+        "max": 37.85
+      },
+      "longestIdle": {
+        "min": 10.45,
+        "mean": 10.73,
+        "max": 10.85
+      }
+    },
+    {
+      "policy": "bush-astro-tars",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 150.55,
+        "mean": 150.64,
+        "max": 150.65
+      },
+      "finalCredits": {
+        "min": 2030,
+        "mean": 2030,
+        "max": 2030
+      },
+      "purchased": {
+        "min": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 49.2,
+        "mean": 49.63,
+        "max": 50
+      },
+      "timeAfterLastDeployment": {
+        "min": 100.55,
+        "mean": 101.01,
+        "max": 101.45
+      },
+      "idleWithFutureSpawns": {
+        "min": 77.1,
+        "mean": 77.37,
+        "max": 78.05
+      },
+      "longestIdle": {
+        "min": 25.4,
+        "mean": 25.46,
+        "max": 25.55
+      }
+    },
+    {
+      "policy": "bush-astro-tars",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 164.3,
+        "mean": 164.49,
+        "max": 164.6
+      },
+      "finalCredits": {
+        "min": 2315,
+        "mean": 2315,
+        "max": 2315
+      },
+      "purchased": {
+        "min": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 52.1,
+        "mean": 52.37,
+        "max": 53.25
+      },
+      "timeAfterLastDeployment": {
+        "min": 111.2,
+        "mean": 112.12,
+        "max": 112.5
+      },
+      "idleWithFutureSpawns": {
+        "min": 75.65,
+        "mean": 76.55,
+        "max": 78.95
+      },
+      "longestIdle": {
+        "min": 26.85,
+        "mean": 26.96,
+        "max": 27.1
+      }
+    },
+    {
+      "policy": "tree-astro-tars",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 113.35,
+        "mean": 113.42,
+        "max": 113.45
+      },
+      "finalCredits": {
+        "min": 1935,
+        "mean": 1935,
+        "max": 1935
+      },
+      "purchased": {
+        "min": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 45.15,
+        "mean": 45.69,
+        "max": 48
+      },
+      "timeAfterLastDeployment": {
+        "min": 65.45,
+        "mean": 67.73,
+        "max": 68.3
+      },
+      "idleWithFutureSpawns": {
+        "min": 26.25,
+        "mean": 29.4,
+        "max": 30.15
+      },
+      "longestIdle": {
+        "min": 10.45,
+        "mean": 10.73,
+        "max": 10.85
+      }
+    },
+    {
+      "policy": "tree-astro-tars",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 150.55,
+        "mean": 150.64,
+        "max": 150.65
+      },
+      "finalCredits": {
+        "min": 2700,
+        "mean": 2700,
+        "max": 2700
+      },
+      "purchased": {
+        "min": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 48,
+        "mean": 48,
+        "max": 48
+      },
+      "timeAfterLastDeployment": {
+        "min": 102.55,
+        "mean": 102.64,
+        "max": 102.65
+      },
+      "idleWithFutureSpawns": {
+        "min": 68.65,
+        "mean": 71.92,
+        "max": 73.15
+      },
+      "longestIdle": {
+        "min": 25.4,
+        "mean": 25.46,
+        "max": 25.55
+      }
+    },
+    {
+      "policy": "tree-astro-tars",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 164.3,
+        "mean": 164.49,
+        "max": 164.6
+      },
+      "finalCredits": {
+        "min": 3125,
+        "mean": 3125,
+        "max": 3125
+      },
+      "purchased": {
+        "min": 14,
+        "mean": 14,
+        "max": 14
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 48,
+        "mean": 48,
+        "max": 48
+      },
+      "timeAfterLastDeployment": {
+        "min": 116.3,
+        "mean": 116.49,
+        "max": 116.6
+      },
+      "idleWithFutureSpawns": {
+        "min": 71.2,
+        "mean": 73.38,
+        "max": 75.45
+      },
+      "longestIdle": {
+        "min": 26.85,
+        "mean": 26.96,
+        "max": 27.1
+      }
+    },
+    {
+      "policy": "astro-tars",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 113.45,
+        "mean": 113.45,
+        "max": 113.45
+      },
+      "finalCredits": {
+        "min": 615,
+        "mean": 615,
+        "max": 615
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 70.5,
+        "mean": 70.64,
+        "max": 71.65
+      },
+      "timeAfterLastDeployment": {
+        "min": 41.8,
+        "mean": 42.81,
+        "max": 42.95
+      },
+      "idleWithFutureSpawns": {
+        "min": 25,
+        "mean": 33.44,
+        "max": 37.5
+      },
+      "longestIdle": {
+        "min": 9.35,
+        "mean": 10.41,
+        "max": 10.7
+      }
+    },
+    {
+      "policy": "astro-tars",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 150.65,
+        "mean": 150.65,
+        "max": 150.65
+      },
+      "finalCredits": {
+        "min": 900,
+        "mean": 900,
+        "max": 900
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 85,
+        "mean": 85,
+        "max": 85
+      },
+      "timeAfterLastDeployment": {
+        "min": 65.65,
+        "mean": 65.65,
+        "max": 65.65
+      },
+      "idleWithFutureSpawns": {
+        "min": 71.7,
+        "mean": 74.52,
+        "max": 76.75
+      },
+      "longestIdle": {
+        "min": 22.95,
+        "mean": 23.75,
+        "max": 25.05
+      }
+    },
+    {
+      "policy": "astro-tars",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 164.45,
+        "mean": 164.56,
+        "max": 164.6
+      },
+      "finalCredits": {
+        "min": 1085,
+        "mean": 1085,
+        "max": 1085
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 80,
+        "mean": 80,
+        "max": 80
+      },
+      "timeAfterLastDeployment": {
+        "min": 84.45,
+        "mean": 84.56,
+        "max": 84.6
+      },
+      "idleWithFutureSpawns": {
+        "min": 68.95,
+        "mean": 73.99,
+        "max": 77.35
+      },
+      "longestIdle": {
+        "min": 20.15,
+        "mean": 24.8,
+        "max": 27
+      }
+    },
+    {
+      "policy": "astro-zeus",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 1,
+        "mean": 2.83,
+        "max": 3
+      },
+      "duration": {
+        "min": 118.5,
+        "mean": 119.98,
+        "max": 136
+      },
+      "finalCredits": {
+        "min": 30,
+        "mean": 456.25,
+        "max": 495
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12.75,
+        "max": 21
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0.75,
+        "max": 9
+      },
+      "lastDeployment": {
+        "min": 82.05,
+        "mean": 87.75,
+        "max": 130.75
+      },
+      "timeAfterLastDeployment": {
+        "min": 5.25,
+        "mean": 32.22,
+        "max": 36.45
+      },
+      "idleWithFutureSpawns": {
+        "min": 22.9,
+        "mean": 27.1,
+        "max": 32
+      },
+      "longestIdle": {
+        "min": 9.35,
+        "mean": 9.91,
+        "max": 10.7
+      }
+    },
+    {
+      "policy": "astro-zeus",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 155.7,
+        "mean": 155.7,
+        "max": 155.7
+      },
+      "finalCredits": {
+        "min": 780,
+        "mean": 780,
+        "max": 780
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 95,
+        "mean": 95.3,
+        "max": 97.05
+      },
+      "timeAfterLastDeployment": {
+        "min": 58.65,
+        "mean": 60.4,
+        "max": 60.7
+      },
+      "idleWithFutureSpawns": {
+        "min": 62.7,
+        "mean": 67.26,
+        "max": 71.25
+      },
+      "longestIdle": {
+        "min": 20,
+        "mean": 21.62,
+        "max": 24.6
+      }
+    },
+    {
+      "policy": "astro-zeus",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 172.5,
+        "mean": 172.5,
+        "max": 172.5
+      },
+      "finalCredits": {
+        "min": 995,
+        "mean": 995,
+        "max": 995
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 12,
+        "max": 12
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 97.3,
+        "mean": 98.02,
+        "max": 100
+      },
+      "timeAfterLastDeployment": {
+        "min": 72.5,
+        "mean": 74.48,
+        "max": 75.2
+      },
+      "idleWithFutureSpawns": {
+        "min": 63.95,
+        "mean": 67.85,
+        "max": 71.05
+      },
+      "longestIdle": {
+        "min": 20.15,
+        "mean": 23.79,
+        "max": 26.2
+      }
+    },
+    {
+      "policy": "mixed",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 1,
+        "mean": 2.83,
+        "max": 3
+      },
+      "duration": {
+        "min": 122.15,
+        "mean": 133.56,
+        "max": 161.75
+      },
+      "finalCredits": {
+        "min": 45,
+        "mean": 89.17,
+        "max": 140
+      },
+      "purchased": {
+        "min": 18,
+        "mean": 18.92,
+        "max": 22
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 1.25,
+        "max": 6
+      },
+      "lastDeployment": {
+        "min": 115,
+        "mean": 125.77,
+        "max": 155
+      },
+      "timeAfterLastDeployment": {
+        "min": 2.55,
+        "mean": 7.79,
+        "max": 12.45
+      },
+      "idleWithFutureSpawns": {
+        "min": 22.9,
+        "mean": 25.65,
+        "max": 27.05
+      },
+      "longestIdle": {
+        "min": 9.35,
+        "mean": 10.23,
+        "max": 10.7
+      }
+    },
+    {
+      "policy": "mixed",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 152.65,
+        "mean": 152.65,
+        "max": 152.65
+      },
+      "finalCredits": {
+        "min": 50,
+        "mean": 50,
+        "max": 50
+      },
+      "purchased": {
+        "min": 19,
+        "mean": 19,
+        "max": 19
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 0,
+        "max": 0
+      },
+      "lastDeployment": {
+        "min": 150,
+        "mean": 150.41,
+        "max": 152.45
+      },
+      "timeAfterLastDeployment": {
+        "min": 0.2,
+        "mean": 2.24,
+        "max": 2.65
+      },
+      "idleWithFutureSpawns": {
+        "min": 49.55,
+        "mean": 57.01,
+        "max": 70
+      },
+      "longestIdle": {
+        "min": 20.8,
+        "mean": 23.33,
+        "max": 24.75
+      }
+    },
+    {
+      "policy": "mixed",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 166.5,
+        "mean": 168.35,
+        "max": 177.5
+      },
+      "finalCredits": {
+        "min": 50,
+        "mean": 153.75,
+        "max": 265
+      },
+      "purchased": {
+        "min": 19,
+        "mean": 20.42,
+        "max": 22
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 1.42,
+        "max": 3
+      },
+      "lastDeployment": {
+        "min": 151.7,
+        "mean": 158.9,
+        "max": 175
+      },
+      "timeAfterLastDeployment": {
+        "min": 2.5,
+        "mean": 9.45,
+        "max": 16.95
+      },
+      "idleWithFutureSpawns": {
+        "min": 56.25,
+        "mean": 58.99,
+        "max": 70.55
+      },
+      "longestIdle": {
+        "min": 25.3,
+        "mean": 26.06,
+        "max": 26.25
+      }
+    },
+    {
+      "policy": "barrier-splash",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 133.95,
+        "mean": 134.78,
+        "max": 134.95
+      },
+      "finalCredits": {
+        "min": 460,
+        "mean": 529.17,
+        "max": 580
+      },
+      "purchased": {
+        "min": 19,
+        "mean": 20.33,
+        "max": 21
+      },
+      "replacements": {
+        "min": 1,
+        "mean": 2.33,
+        "max": 3
+      },
+      "lastDeployment": {
+        "min": 110.5,
+        "mean": 110.5,
+        "max": 110.5
+      },
+      "timeAfterLastDeployment": {
+        "min": 23.45,
+        "mean": 24.28,
+        "max": 24.45
+      },
+      "idleWithFutureSpawns": {
+        "min": 22.9,
+        "mean": 24.92,
+        "max": 26.15
+      },
+      "longestIdle": {
+        "min": 9.35,
+        "mean": 9.61,
+        "max": 9.8
+      }
+    },
+    {
+      "policy": "barrier-splash",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 172.15,
+        "mean": 172.15,
+        "max": 172.15
+      },
+      "finalCredits": {
+        "min": 795,
+        "mean": 812.5,
+        "max": 830
+      },
+      "purchased": {
+        "min": 20,
+        "mean": 20.5,
+        "max": 21
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 2.5,
+        "max": 3
+      },
+      "lastDeployment": {
+        "min": 147.3,
+        "mean": 149.71,
+        "max": 151.8
+      },
+      "timeAfterLastDeployment": {
+        "min": 20.35,
+        "mean": 22.44,
+        "max": 24.85
+      },
+      "idleWithFutureSpawns": {
+        "min": 50.2,
+        "mean": 53.3,
+        "max": 55.4
+      },
+      "longestIdle": {
+        "min": 20,
+        "mean": 22.95,
+        "max": 24.55
+      }
+    },
+    {
+      "policy": "barrier-splash",
+      "map": "nest",
+      "runs": 12,
+      "wins": 12,
+      "shields": {
+        "min": 3,
+        "mean": 3,
+        "max": 3
+      },
+      "duration": {
+        "min": 187.2,
+        "mean": 187.98,
+        "max": 188.2
+      },
+      "finalCredits": {
+        "min": 905,
+        "mean": 945.83,
+        "max": 975
+      },
+      "purchased": {
+        "min": 22,
+        "mean": 22.83,
+        "max": 24
+      },
+      "replacements": {
+        "min": 4,
+        "mean": 4.83,
+        "max": 6
+      },
+      "lastDeployment": {
+        "min": 163.1,
+        "mean": 166.7,
+        "max": 168.35
+      },
+      "timeAfterLastDeployment": {
+        "min": 19.15,
+        "mean": 21.29,
+        "max": 24.95
+      },
+      "idleWithFutureSpawns": {
+        "min": 53.4,
+        "mean": 56.19,
+        "max": 58.75
+      },
+      "longestIdle": {
+        "min": 22.45,
+        "mean": 24.8,
+        "max": 25.6
+      }
+    },
+    {
+      "policy": "astro-falcon",
+      "map": "canyon",
+      "runs": 12,
+      "wins": 7,
+      "shields": {
+        "min": 0,
+        "mean": 0.92,
+        "max": 3
+      },
+      "duration": {
+        "min": 127.85,
+        "mean": 162.7,
+        "max": 202.85
+      },
+      "finalCredits": {
+        "min": 0,
+        "mean": 52.08,
+        "max": 145
+      },
+      "purchased": {
+        "min": 13,
+        "mean": 15.92,
+        "max": 22
+      },
+      "replacements": {
+        "min": 2,
+        "mean": 5.5,
+        "max": 12
+      },
+      "lastDeployment": {
+        "min": 125,
+        "mean": 154.33,
+        "max": 195
+      },
+      "timeAfterLastDeployment": {
+        "min": 0.95,
+        "mean": 8.38,
+        "max": 15.5
+      },
+      "idleWithFutureSpawns": {
+        "min": 22.9,
+        "mean": 24.47,
+        "max": 28.9
+      },
+      "longestIdle": {
+        "min": 9.35,
+        "mean": 10.15,
+        "max": 12.55
+      }
+    },
+    {
+      "policy": "astro-falcon",
+      "map": "bridge",
+      "runs": 12,
+      "wins": 9,
+      "shields": {
+        "min": 0,
+        "mean": 1.75,
+        "max": 3
+      },
+      "duration": {
+        "min": 150.15,
+        "mean": 172.83,
+        "max": 210.05
+      },
+      "finalCredits": {
+        "min": 15,
+        "mean": 90.83,
+        "max": 250
+      },
+      "purchased": {
+        "min": 11,
+        "mean": 14.92,
+        "max": 24
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 3.67,
+        "max": 14
+      },
+      "lastDeployment": {
+        "min": 135,
+        "mean": 167.75,
+        "max": 203.05
+      },
+      "timeAfterLastDeployment": {
+        "min": 0.15,
+        "mean": 5.08,
+        "max": 16
+      },
+      "idleWithFutureSpawns": {
+        "min": 48.75,
+        "mean": 54.91,
+        "max": 71.35
+      },
+      "longestIdle": {
+        "min": 20,
+        "mean": 20.62,
+        "max": 22.2
+      }
+    },
+    {
+      "policy": "astro-falcon",
+      "map": "nest",
+      "runs": 12,
+      "wins": 10,
+      "shields": {
+        "min": 0,
+        "mean": 2.17,
+        "max": 3
+      },
+      "duration": {
+        "min": 158,
+        "mean": 200.88,
+        "max": 212.1
+      },
+      "finalCredits": {
+        "min": 20,
+        "mean": 184.58,
+        "max": 335
+      },
+      "purchased": {
+        "min": 12,
+        "mean": 17.58,
+        "max": 24
+      },
+      "replacements": {
+        "min": 0,
+        "mean": 6,
+        "max": 14
+      },
+      "lastDeployment": {
+        "min": 151.5,
+        "mean": 191.07,
+        "max": 206.25
+      },
+      "timeAfterLastDeployment": {
+        "min": 0.2,
+        "mean": 9.81,
+        "max": 18.9
+      },
+      "idleWithFutureSpawns": {
+        "min": 51.1,
+        "mean": 55.1,
+        "max": 73.05
+      },
+      "longestIdle": {
+        "min": 20.15,
+        "mean": 22.32,
+        "max": 25.95
+      }
+    }
+  ]
+}

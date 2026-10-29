@@ -282,7 +282,7 @@ test("restored roster and destinations fit a narrow screen", async ({
 
 test("focused desktop controls fit the viewport and the art comparison preserves play", async ({
   page,
-}) => {
+}, testInfo) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
@@ -319,10 +319,39 @@ test("focused desktop controls fit the viewport and the art comparison preserves
     page.getByRole("gridcell", { name: /Lane 1, tile 1, Astro Joe/ }),
   ).toBeVisible();
   await expect(page.locator("#credits")).toHaveText("180");
+  await testInfo.attach("original-art", {
+    body: await page.screenshot({
+      path: testInfo.outputPath("original-art.png"),
+    }),
+    contentType: "image/png",
+  });
   await page
     .getByRole("button", { name: "Show expedition art", exact: true })
     .click();
   await expect(page.locator("html")).not.toHaveClass(/original-art/);
+  await page
+    .getByRole("button", { name: "Pause mission", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Show original art", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Show expedition art", exact: true })
+    .click();
+  await page.locator("#pause").click();
+  await expect(
+    page.getByRole("button", { name: "Pause mission", exact: true }),
+  ).toBeEnabled();
+  await expect(page.locator('[data-art-tower="astro"]')).toHaveCSS(
+    "background-image",
+    /expedition\/ranger\.png/,
+  );
+  await testInfo.attach("expedition-art", {
+    body: await page.screenshot({
+      path: testInfo.outputPath("expedition-art.png"),
+    }),
+    contentType: "image/png",
+  });
   await page.getByRole("button", { name: "Field guide", exact: true }).click();
   await expect(page.locator(".alien-guide")).toContainText(
     "Plating absorbs 80%",
@@ -360,5 +389,125 @@ test("phone overview shows the entire field and scrolls the crew to keyboard sel
     .click();
   await expect(
     page.getByRole("gridcell", { name: /Lane 6, tile 9, TARS/ }),
+  ).toBeVisible();
+});
+
+test("keyboard wave call awards once, warns from the changed schedule, and pauses safely", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Begin mission", exact: true })
+    .click();
+  await expect(page.locator("#call-wave")).toBeDisabled();
+  await page.keyboard.press("n");
+  await expect(page.locator("#announcement")).toContainText("First contact");
+  for (let lane = 1; lane <= 4; lane++)
+    await page
+      .getByRole("gridcell", {
+        name: `Lane ${lane}, tile 1, empty`,
+        exact: true,
+      })
+      .click();
+  await page
+    .getByRole("button", { name: "Switch to double speed", exact: true })
+    .click();
+  await expect(page.locator("#call-wave")).toBeEnabled({ timeout: 15000 });
+  const before = Number(await page.locator("#credits").textContent());
+  await page.keyboard.press("n");
+  await expect(page.locator("#announcement")).toContainText("Wave 2 called.");
+  await expect(page.locator("#call-wave")).toBeDisabled();
+  await expect(page.locator("#incoming-summary")).toContainText(/L[1-6]/);
+  expect(Number(await page.locator("#credits").textContent())).toBeGreaterThan(
+    before,
+  );
+  await page
+    .getByRole("button", { name: "Pause mission", exact: true })
+    .click();
+  const bank = await page.locator("#credits").textContent();
+  const warnings = await page.locator("#incoming-summary").textContent();
+  await page.keyboard.press("n");
+  await page.waitForTimeout(500);
+  await expect(page.locator("#credits")).toHaveText(bank!);
+  await expect(page.locator("#incoming-summary")).toHaveText(warnings!);
+  await page
+    .getByRole("button", { name: "Resume mission", exact: true })
+    .last()
+    .click();
+  await expect(page.locator("#wave-number")).toHaveText("2");
+  await page.getByRole("button", { name: "Restart", exact: true }).click();
+  await page.getByRole("button", { name: "Restart mission" }).click();
+  await expect(page.locator("#credits")).toHaveText("230");
+  await expect(page.locator("#wave-number")).toHaveText("0");
+  await expect(page.locator("#incoming-summary")).toContainText(
+    "Watching the approaches",
+  );
+  await expect(page.locator("#call-wave")).toBeDisabled();
+});
+
+test("phone zoom and every crew card remain usable with complete unit details", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Begin mission", exact: true })
+    .click();
+  for (const kind of [
+    "astro",
+    "bush",
+    "wall",
+    "zeus",
+    "explosive",
+    "startrell",
+    "tars",
+    "tree",
+    "falcon",
+  ]) {
+    await page.locator(`[data-tower="${kind}"]`).click();
+    await expect(page.locator(`[data-tower="${kind}"]`)).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+  }
+  await page.locator('[data-tower="tree"]').click();
+  const detail = await page.locator("#selected-detail").boundingBox();
+  expect(detail!.width).toBeGreaterThan(200);
+  await page
+    .getByRole("button", { name: "Enlarge battlefield", exact: true })
+    .click();
+  expect(
+    (await page.locator(".board-stack").boundingBox())!.width,
+  ).toBeGreaterThan(390);
+  await page.keyboard.press("1");
+  await page
+    .getByRole("gridcell", { name: "Lane 1, tile 9, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 1, tile 9, Astro Joe/ }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Show battlefield overview", exact: true })
+    .click();
+  expect(
+    (await page.locator(".board-stack").boundingBox())!.width,
+  ).toBeLessThanOrEqual(390);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+
+test("missing Expedition artwork uses the same recoverable loading failure", async ({
+  page,
+}) => {
+  await page.route("**/art/expedition/scout.png", (route) => route.abort());
+  await page.goto("/");
+  await expect(
+    page.getByRole("button", { name: "Retry loading", exact: true }),
+  ).toBeEnabled();
+  await expect(
+    page.getByRole("heading", { name: "We lost the transmission." }),
   ).toBeVisible();
 });

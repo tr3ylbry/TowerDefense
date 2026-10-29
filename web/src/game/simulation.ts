@@ -11,6 +11,9 @@ import {
 } from "./content";
 import type { AmmoKind, EnemyKind, MapKind, Spawn, TowerKind } from "./content";
 
+import { EARLY_WAVE_LEAD, earlyWaveReward, spawnWarnings } from "./waves";
+import type { SpawnWarning } from "./waves";
+
 export type Phase = "ready" | "playing" | "paused" | "won" | "lost";
 export interface Tower {
   id: number;
@@ -21,6 +24,7 @@ export interface Tower {
   cooldown: number;
   incomeClock: number;
   windup: number;
+  lastHitAt: number;
 }
 export interface Enemy {
   id: number;
@@ -42,6 +46,16 @@ export interface Projectile {
   previousX: number;
   damage: number;
 }
+export interface NextWave {
+  number: number;
+  title: string;
+  startAt: number;
+  enemies: EnemyKind[];
+  canLaunch: boolean;
+  reward: number;
+  secondsSaved: number;
+  reason: string;
+}
 export interface Snapshot {
   map: MapKind;
   phase: Phase;
@@ -56,9 +70,15 @@ export interface Snapshot {
   projectiles: Projectile[];
   nextWaveIn: number | null;
   pendingSpawns: number;
+  nextWave: NextWave | null;
+  incoming: SpawnWarning[];
+  earlyLaunches: number;
 }
 export type GameEvent = {
   type:
+    | "wave-called"
+    | "defender-hit"
+    | "defender-lost"
     | "aim"
     | "shot"
     | "hit"
@@ -75,6 +95,9 @@ export type GameEvent = {
   amount?: number;
   entityId?: number;
   armored?: boolean;
+  resisted?: boolean;
+  radius?: number;
+  enemyKind?: EnemyKind;
 };
 export interface ActionResult {
   ok: boolean;
@@ -94,6 +117,8 @@ export class Simulation {
   private enemies: Enemy[] = [];
   private projectiles: Projectile[] = [];
   private spawns: Spawn[];
+  private waveStarts: number[];
+  private calledWaves = new Set<number>();
   private spawnIndex = 0;
   // IDs stay unique across restarts so the renderer cannot reuse a previous unit's sprite.
   private nextId = 1;
@@ -106,13 +131,12 @@ export class Simulation {
     private map: MapKind = "canyon",
   ) {
     this.spawns = makeSpawns(seed, map);
+    this.waveStarts = MAPS[map].waves.map((wave) => wave.start);
   }
 
   snapshot(): Snapshot {
     const elapsed = this.ticks * STEP;
-    const nextWave = MAPS[this.map].waves.find(
-      (wave) => wave.start > elapsed + 0.001,
-    );
+    const nextWave = this.nextWave();
     return {
       map: this.map,
       phase: this.phase,
@@ -125,8 +149,16 @@ export class Simulation {
       towers: this.towers.map((tower) => ({ ...tower })),
       enemies: this.enemies.map((enemy) => ({ ...enemy })),
       projectiles: this.projectiles.map((projectile) => ({ ...projectile })),
-      nextWaveIn: nextWave ? Math.ceil(nextWave.start - elapsed) : null,
+      nextWaveIn: nextWave
+        ? Math.max(0, Math.ceil(nextWave.startAt - elapsed - 1e-9))
+        : null,
       pendingSpawns: this.spawns.length - this.spawnIndex,
+      nextWave,
+      incoming:
+        this.phase === "playing" || this.phase === "paused"
+          ? spawnWarnings(this.spawns, this.spawnIndex, elapsed)
+          : [],
+      earlyLaunches: this.calledWaves.size,
     };
   }
 
@@ -176,10 +208,79 @@ export class Simulation {
     this.enemies = [];
     this.projectiles = [];
     this.spawns = makeSpawns(this.seed, this.map);
+    this.waveStarts = MAPS[this.map].waves.map((wave) => wave.start);
+    this.calledWaves.clear();
     this.spawnIndex = 0;
     this.bankClock = 0;
     this.wave = 0;
     this.events = [];
+  }
+
+  /** A command changes the same schedule consumed by spawning and warnings. */
+  launchNextWave(): ActionResult {
+    const next = this.nextWave();
+    if (!next?.canLaunch)
+      return { ok: false, message: next?.reason ?? "No further wave to call." };
+    const delta = next.secondsSaved;
+    for (let index = this.wave; index < this.waveStarts.length; index++)
+      this.waveStarts[index] =
+        Math.round((this.waveStarts[index] - delta) / STEP) * STEP;
+    for (let index = this.spawnIndex; index < this.spawns.length; index++)
+      this.spawns[index].at =
+        Math.round((this.spawns[index].at - delta) / STEP) * STEP;
+    this.calledWaves.add(next.number);
+    this.credits += next.reward;
+    this.events.push({
+      type: "wave-called",
+      row: 0,
+      x: 0,
+      amount: next.reward,
+    });
+    return {
+      ok: true,
+      message: `Wave ${next.number} called. +${next.reward} credits. Arrivals in ${EARLY_WAVE_LEAD} seconds; existing hostiles remain.`,
+    };
+  }
+
+  private nextWave(): NextWave | null {
+    const definition = MAPS[this.map].waves[this.wave];
+    if (!definition || this.phase === "won" || this.phase === "lost")
+      return null;
+    const startAt = this.waveStarts[this.wave];
+    const secondsSaved = Math.max(
+      0,
+      startAt - this.ticks * STEP - EARLY_WAVE_LEAD,
+    );
+    const reward = earlyWaveReward(secondsSaved);
+    const currentEntering = this.spawns[this.spawnIndex]?.wave === this.wave;
+    const reason =
+      this.phase !== "playing"
+        ? "Resume or begin the mission to call a wave."
+        : this.wave === 0
+          ? "First contact keeps its preparation period."
+          : this.calledWaves.has(this.wave + 1)
+            ? "This wave has already been called."
+            : currentEntering
+              ? "Wait until the current wave finishes entering."
+              : reward === 0
+                ? "The next wave is already arriving soon."
+                : "Calling overlaps any surviving hostiles. Later waves move earlier by the same amount.";
+    const canLaunch =
+      this.phase === "playing" &&
+      this.wave > 0 &&
+      !currentEntering &&
+      !this.calledWaves.has(this.wave + 1) &&
+      reward > 0;
+    return {
+      number: this.wave + 1,
+      title: definition.title,
+      startAt,
+      enemies: [...definition.enemies],
+      canLaunch,
+      reward: canLaunch ? reward : 0,
+      secondsSaved,
+      reason,
+    };
   }
 
   place(kind: TowerKind, row: number, col: number): ActionResult {
@@ -212,6 +313,7 @@ export class Simulation {
       cooldown: 0.1,
       incomeClock: 0,
       windup: 0,
+      lastHitAt: -1000,
     });
     this.events.push({ type: "placed", row, x: col + 0.5, kind });
     return {
@@ -403,6 +505,11 @@ export class Simulation {
           kind: projectile.kind,
           entityId: target.id,
           armored: ENEMIES[target.kind].armor > 0,
+          resisted:
+            ENEMIES[target.kind].armor *
+              (1 - TOWERS[projectile.kind].armorPierce) >=
+            0.5,
+          radius,
           amount: damageAgainstArmor(
             projectile.damage,
             ENEMIES[target.kind].armor,
@@ -425,6 +532,8 @@ export class Simulation {
           row: enemy.row,
           x: enemy.x,
           amount: ENEMIES[enemy.kind].reward,
+          entityId: enemy.id,
+          enemyKind: enemy.kind,
         });
         continue;
       }
@@ -443,6 +552,23 @@ export class Simulation {
       if (blocker) {
         if (enemy.cooldown < 1e-9) {
           blocker.health -= definition.damage;
+          blocker.lastHitAt = elapsed;
+          this.events.push({
+            type: "defender-hit",
+            row: blocker.row,
+            x: blocker.col + 0.5,
+            entityId: blocker.id,
+            kind: blocker.kind,
+            amount: definition.damage,
+          });
+          if (blocker.health <= 0)
+            this.events.push({
+              type: "defender-lost",
+              row: blocker.row,
+              x: blocker.col + 0.5,
+              entityId: blocker.id,
+              kind: blocker.kind,
+            });
           enemy.cooldown = definition.cooldown;
         }
       } else enemy.x -= definition.speed * STEP;

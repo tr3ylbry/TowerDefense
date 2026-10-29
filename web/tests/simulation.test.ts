@@ -533,6 +533,7 @@ it("applies plating to actual impacts and reports the damage against the primary
     for (const hit of impacts) {
       observed.add(hit.kind!);
       expect(hit.amount).toBeCloseTo(hit.kind === "tars" ? 48 : 5.2);
+      expect(hit.resisted).toBe(hit.kind !== "tars");
       const targetBefore = before.enemies.find(
         (enemy) => enemy.id === hit.entityId,
       );
@@ -549,4 +550,31 @@ it("applies plating to actual impacts and reports the damage against the primary
     if (observed.has("astro") && observed.has("tars")) break;
   }
   expect(observed).toEqual(new Set(["astro", "tars"]));
+});
+
+it("reports defender pressure and destruction once, and freezes damage timing while paused", () => {
+  const game = new Simulation();
+  const row = makeSpawns(3352019)[0].row;
+  game.start();
+  game.place("bush", row, 8);
+  game.advance(10);
+  const hit = game
+    .drainEvents()
+    .filter((event) => event.type === "defender-hit");
+  expect(hit.length).toBeGreaterThan(0);
+  const damaged = game.snapshot().towers[0];
+  expect(damaged.lastHitAt).toBeGreaterThan(7);
+  expect(damaged.health).toBeLessThan(TOWERS.bush.health);
+  game.pause();
+  const paused = game.snapshot();
+  game.advance(10);
+  expect(game.snapshot()).toEqual(paused);
+  game.resume();
+  game.advance(10);
+  expect(game.snapshot().towers).toHaveLength(0);
+  const lost = game
+    .drainEvents()
+    .filter((event) => event.type === "defender-lost");
+  expect(lost).toHaveLength(1);
+  expect(lost[0]).toMatchObject({ entityId: damaged.id, kind: "bush", row });
 });

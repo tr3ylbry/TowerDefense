@@ -3,11 +3,19 @@ export const COLS = 9;
 export const STEP = 0.05;
 
 export const AMMO = {
-  astro: { sprite: "projectile-astro-joe-ammo", speed: 7 },
-  explosive: { sprite: "projectile-explosive-astro-joe-ammo", speed: 6 },
-  startrell: { sprite: "projectile-startrell-cluggins-ammo", speed: 12 },
-  tars: { sprite: "projectile-tars-ammo", speed: 8 },
-  zeus: { sprite: "projectile-moon-zeus-ammo", speed: 7 },
+  astro: { sprite: "projectile-astro-joe-ammo", speed: 7, color: 0xf5c18e },
+  explosive: {
+    sprite: "projectile-explosive-astro-joe-ammo",
+    speed: 6,
+    color: 0xefa181,
+  },
+  startrell: {
+    sprite: "projectile-startrell-cluggins-ammo",
+    speed: 12,
+    color: 0xb6e6c8,
+  },
+  tars: { sprite: "projectile-tars-ammo", speed: 8, color: 0xbadce8 },
+  zeus: { sprite: "projectile-moon-zeus-ammo", speed: 7, color: 0xaadfea },
 } as const;
 export type AmmoKind = keyof typeof AMMO;
 
@@ -117,7 +125,7 @@ export const TOWERS = {
     cost: 75,
     health: 300,
     damage: 12,
-    cooldown: 0.3,
+    cooldown: 0.25,
     windup: 0.05,
     armorPierce: 0,
     income: 0,
