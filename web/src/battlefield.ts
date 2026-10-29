@@ -1,5 +1,13 @@
 import Phaser from "phaser";
-import { COLS, ENEMIES, ROWS, TOWERS } from "./game/content";
+import {
+  AMMO,
+  COLS,
+  ENEMIES,
+  isBlocked,
+  MAPS,
+  ROWS,
+  TOWERS,
+} from "./game/content";
 import type { TowerKind } from "./game/content";
 import type { GameEvent, Simulation, Snapshot } from "./game/simulation";
 
@@ -12,7 +20,8 @@ export const FIELD = {
   cellHeight: 74,
 };
 export interface ArtManifest {
-  background: { key: string; file: string };
+  backgrounds: { key: string; file: string }[];
+  images: { key: string; file: string }[];
   sprites: {
     key: string;
     file: string;
@@ -47,9 +56,34 @@ export function mountBattlefield(options: Options): () => void {
     ),
   ]);
   const sprites = art.sprites.filter((sprite) => usedKeys.has(sprite.key));
+  const backgroundKeys = new Set<string>(
+    Object.values(MAPS).map((map) => map.background),
+  );
+  const backgrounds = art.backgrounds.filter((image) =>
+    backgroundKeys.has(image.key),
+  );
+  const imageKeys = new Set([
+    "acid-pool",
+    ...Object.values(AMMO).map((ammo) => ammo.sprite),
+  ]);
+  const images = art.images.filter((image) => imageKeys.has(image.key));
+  const requiredSprites = [
+    ...Object.values(TOWERS).map((tower) => `${tower.sprite}-idle`),
+    ...Object.values(ENEMIES).flatMap((enemy) =>
+      ["walk", "attack", "die"].map((state) => `${enemy.sprite}-${state}`),
+    ),
+  ];
+  if (
+    backgrounds.length !== backgroundKeys.size ||
+    images.length !== imageKeys.size ||
+    requiredSprites.some((key) => !sprites.some((sprite) => sprite.key === key))
+  ) {
+    options.onError();
+    return () => {};
+  }
   const towerSprites = new Map<number, Phaser.GameObjects.Sprite>();
   const enemySprites = new Map<number, Phaser.GameObjects.Sprite>();
-  const bulletSprites = new Map<number, Phaser.GameObjects.Arc>();
+  const bulletSprites = new Map<number, Phaser.GameObjects.Image>();
   const worldX = (x: number) => FIELD.x + x * FIELD.cellWidth;
   const worldY = (row: number) => FIELD.y + (row + 0.5) * FIELD.cellHeight;
   let lastUiUpdate = 0;
@@ -58,10 +92,17 @@ export function mountBattlefield(options: Options): () => void {
   class BattleScene extends Phaser.Scene {
     private bars!: Phaser.GameObjects.Graphics;
     private hover!: Phaser.GameObjects.Graphics;
+    private background!: Phaser.GameObjects.Image;
+    private mapTitle!: Phaser.GameObjects.Text;
+    private sector!: Phaser.GameObjects.Text;
+    private terrain!: Phaser.GameObjects.Container;
+    private activeMap = "";
+    private lastElapsed = 0;
+    private effects!: Phaser.GameObjects.Container;
     private stars: Phaser.GameObjects.Arc[] = [];
 
     constructor() {
-      super("Canyon");
+      super("Battlefield");
     }
 
     preload(): void {
@@ -69,7 +110,8 @@ export function mountBattlefield(options: Options): () => void {
         loaded = false;
       });
       const base = `${import.meta.env.BASE_URL}art/`;
-      this.load.image(art.background.key, base + art.background.file);
+      for (const image of [...backgrounds, ...images])
+        this.load.image(image.key, base + image.file);
       for (const sprite of sprites)
         this.load.spritesheet(sprite.key, base + sprite.file, {
           frameWidth: sprite.frameWidth,
@@ -97,8 +139,8 @@ export function mountBattlefield(options: Options): () => void {
         });
 
       this.add.rectangle(540, 330, 1080, 660, 0x101f2a);
-      this.add
-        .image(540, 330, art.background.key)
+      this.background = this.add
+        .image(540, 330, MAPS[simulation.snapshot().map].background)
         .setDisplaySize(1080, 660)
         .setAlpha(0.24);
       this.add.rectangle(540, 330, 1080, 660, 0x102330, 0.47);
@@ -120,7 +162,7 @@ export function mountBattlefield(options: Options): () => void {
         color: "#9cb8bd",
         letterSpacing: 3,
       });
-      this.add.text(34, 54, "CANYON PERIMETER", {
+      this.mapTitle = this.add.text(34, 54, "", {
         fontFamily: "sans-serif",
         fontSize: "17px",
         fontStyle: "bold",
@@ -200,15 +242,18 @@ export function mountBattlefield(options: Options): () => void {
         color: "#92afb4",
         letterSpacing: 1,
       });
-      this.add
-        .text(995, 617, "SECTOR / 001", {
+      this.sector = this.add
+        .text(995, 617, "", {
           fontFamily: "monospace",
           fontSize: "10px",
           color: "#718f9a",
           letterSpacing: 1,
         })
         .setOrigin(1, 0);
-      this.hover = this.add.graphics().setDepth(1);
+      this.terrain = this.add.container(0, 0).setDepth(1);
+      this.effects = this.add.container(0, 0).setDepth(9);
+      this.renderMap(simulation.snapshot());
+      this.hover = this.add.graphics().setDepth(2);
       this.bars = this.add.graphics().setDepth(8);
       options.onReady();
     }
@@ -217,6 +262,12 @@ export function mountBattlefield(options: Options): () => void {
       if (!loaded || !this.bars) return;
       simulation.advance(Math.min(delta / 1000, 0.1));
       const state = simulation.snapshot();
+      if (state.elapsed < this.lastElapsed) {
+        this.tweens.killAll();
+        this.effects.removeAll(true);
+      }
+      this.lastElapsed = state.elapsed;
+      this.renderMap(state);
       const moving = state.phase === "playing";
       this.renderEntities(state, moving);
       this.renderHover(state);
@@ -230,6 +281,12 @@ export function mountBattlefield(options: Options): () => void {
         this.stars.forEach((star, i) =>
           star.setAlpha(0.3 + Math.sin(time / 1700 + i) * 0.15),
         );
+      for (const child of this.effects.list) {
+        if (!(child instanceof Phaser.GameObjects.Sprite)) continue;
+        child.anims.timeScale = state.speed;
+        if (!moving || options.reducedMotion()) child.anims.pause();
+        else child.anims.resume();
+      }
       this.tweens.timeScale = state.speed;
       if (state.phase === "paused") this.tweens.pauseAll();
       else this.tweens.resumeAll();
@@ -237,6 +294,32 @@ export function mountBattlefield(options: Options): () => void {
         options.onState(state);
         lastUiUpdate = time;
       }
+    }
+
+    private renderMap(state: Snapshot): void {
+      if (this.activeMap === state.map) return;
+      this.activeMap = state.map;
+      const map = MAPS[state.map];
+      this.background.setTexture(map.background);
+      this.mapTitle.setText(`${map.name.toUpperCase()} PERIMETER`);
+      this.sector.setText(`SECTOR / 0${map.number}`);
+      this.terrain.removeAll(true);
+      for (let row = 0; row < ROWS; row++)
+        for (let col = 0; col < COLS; col++) {
+          if (!isBlocked(state.map, row, col)) continue;
+          const pool = this.add
+            .image(worldX(col + 0.5), worldY(row), "acid-pool")
+            .setDisplaySize(FIELD.cellWidth - 10, FIELD.cellHeight - 10)
+            .setAlpha(0.8);
+          const mark = this.add
+            .text(worldX(col + 0.5), worldY(row), "×", {
+              fontFamily: "monospace",
+              fontSize: "19px",
+              color: "#d9edb4",
+            })
+            .setOrigin(0.5);
+          this.terrain.add([pool, mark]);
+        }
     }
 
     private renderEntities(state: Snapshot, moving: boolean): void {
@@ -285,6 +368,7 @@ export function mountBattlefield(options: Options): () => void {
             sprite.x > FIELD.x &&
             !options.reducedMotion()
           ) {
+            this.effects.add(sprite);
             sprite.play(`${sprite.getData("kind")}-die`);
             sprite.once("animationcomplete", () => sprite.destroy());
           } else sprite.destroy();
@@ -302,11 +386,7 @@ export function mountBattlefield(options: Options): () => void {
             )
             .setDepth(5)
             .setData("kind", definition.sprite);
-          sprite.setDisplaySize(
-            enemy.kind === "brute" ? 104 : 92,
-            enemy.kind === "brute" ? 104 : 92,
-          );
-          if (enemy.kind === "brute") sprite.setTint(0xffa47d);
+          sprite.setDisplaySize(definition.size, definition.size);
           enemySprites.set(enemy.id, sprite);
         }
         sprite.setPosition(worldX(enemy.x), worldY(enemy.row) - 4);
@@ -318,7 +398,9 @@ export function mountBattlefield(options: Options): () => void {
           sprite.x,
           worldY(enemy.row) + 27,
           enemy.health / definition.health,
-          enemy.kind === "brute" ? 0xffba7c : 0xee8e76,
+          enemy.kind === "tank" || enemy.kind === "gargantua"
+            ? 0xffba7c
+            : 0xee8e76,
         );
       }
       const activeBullets = new Set(
@@ -333,16 +415,15 @@ export function mountBattlefield(options: Options): () => void {
         let sprite = bulletSprites.get(projectile.id);
         if (!sprite) {
           sprite = this.add
-            .circle(
-              0,
-              0,
-              projectile.kind === "zeus" ? 6 : 3,
-              projectile.kind === "zeus" ? 0x83e4ed : 0xffc48d,
-            )
+            .image(0, 0, AMMO[projectile.ammo].sprite)
+            .setDisplaySize(27, 27)
             .setDepth(6);
           bulletSprites.set(projectile.id, sprite);
         }
-        sprite.setPosition(worldX(projectile.x), worldY(projectile.row) - 9);
+        sprite.setPosition(
+          worldX(projectile.x),
+          worldY(projectile.row) - 9 + projectile.offset,
+        );
       }
     }
 
@@ -369,7 +450,9 @@ export function mountBattlefield(options: Options): () => void {
       const valid =
         selection === "salvage"
           ? occupied
-          : !occupied && state.credits >= TOWERS[selection].cost;
+          : !occupied &&
+            !isBlocked(state.map, cursor.row, cursor.col) &&
+            state.credits >= TOWERS[selection].cost;
       const color = valid ? 0x6edcc0 : 0xe78871;
       const x = FIELD.x + cursor.col * FIELD.cellWidth;
       const y = FIELD.y + cursor.row * FIELD.cellHeight;
@@ -425,6 +508,7 @@ export function mountBattlefield(options: Options): () => void {
           const spark = this.add
             .circle(x, y - 4, (i % 2) + 1.5, color)
             .setDepth(9);
+          this.effects.add(spark);
           this.tweens.add({
             targets: spark,
             x: x + Math.cos(angle) * 25,
@@ -449,6 +533,7 @@ export function mountBattlefield(options: Options): () => void {
           })
           .setOrigin(0.5)
           .setDepth(10);
+        this.effects.add(text);
         this.tweens.add({
           targets: text,
           y: y - 65,

@@ -1,6 +1,6 @@
 # Astronauts vs Aliens — browser edition
 
-A complete first browser encounter, built with TypeScript, Phaser, and Vite. This is Trey Bryant's independent continuation of the original CSC 335 team project by Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.
+The full original character and map roster, built with TypeScript, Phaser, and Vite. This is Trey Bryant's independent continuation of the original CSC 335 team project by Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.
 
 ## Run locally
 
@@ -16,9 +16,23 @@ Open the Local URL printed by Vite. No API keys, account, database, or backend s
 
 ## Play
 
-Defend six lanes through four waves in The Canyon. The first playable roster is Astro Joe (50 credits), Money Bush (60), Asteroid (35), and Moon Zeus (125). Scouts, grunts, and armored grunts attack from the right. Each breach costs one of three outpost shields. Clear every scheduled enemy with a shield remaining to win.
+Choose **The Canyon**, **Sky Bridge**, or **The Nest** using Change destination. Each mission has six lanes, nine columns, four distinct waves, and all nine original defenders. All six original alien types appear in every mission: Little Green Men, Grunt, Sprinter, ManHunter, Tank, and Gargantua. Each breach costs one of three outpost shields. Clear every scheduled enemy with a shield remaining to win.
 
-- Click/tap a crew card and then a tile to deploy. Number keys 1–4 also select crew.
+| Key | Defender            | Cost | Browser role                                  |
+| --- | ------------------- | ---- | --------------------------------------------- |
+| 1   | Astro Joe           | 50   | Steady single-target fire                     |
+| 2   | Money Bush          | 60   | 25 credits every 6 seconds                    |
+| 3   | Asteroid            | 35   | Durable barrier                               |
+| 4   | Moon Zeus           | 125  | Heavy plasma; small splash radius             |
+| 5   | Explosive Astro Joe | 85   | Slower shells; wider splash radius            |
+| 6   | Startrell Cluggins  | 75   | Rapid fire and fast projectiles               |
+| 7   | TARS                | 100  | Durable assault robot                         |
+| 8   | Money Tree          | 150  | 60 credits every 8 seconds                    |
+| 9   | Millennium Falcon   | 250  | Three ammunition types per volley in one lane |
+
+Sky Bridge has 12 restricted acid tiles; The Nest has 16. Their positions match the original Java maps. Defenders cannot be placed there, and aliens cross them normally. A mid-mission destination change explains that it will reset progress; closing the selector resumes the existing mission. Restart keeps the chosen map.
+
+- Click/tap a crew card and then a tile to deploy. Number keys 1–9 also select crew.
 - Tab to the battlefield; arrow keys move between tiles; Enter or Space deploys.
 - P pauses/resumes the entire simulation. Changing tabs automatically pauses it.
 - X selects salvage, returning 40% of the unit's cost. Escape clears selection.
@@ -26,7 +40,7 @@ Defend six lanes through four waves in The Canyon. The first playable roster is 
 - Sound is off by default and uses original synthesized effects. Reduced motion defaults to the OS preference and can be changed and saved locally.
 - Narrow screens can scroll the battlefield horizontally. Landscape provides a wider field.
 
-Starting credits: 230. The outpost supplies 30 every five game seconds. Each active Money Bush generates 25 every six game seconds; selling or losing it stops that income immediately. Defeated aliens award additional credits.
+Starting credits: 230. The outpost supplies 30 every five game seconds. Each active Money Bush generates 25 every six game seconds and each Money Tree generates 60 every eight; selling or losing it stops that income immediately. Defeated aliens award additional credits.
 
 ## Verify
 
@@ -36,9 +50,9 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-`check` runs deterministic simulation tests, strict TypeScript checking, and a production build. Browser tests cover deployment, economy while paused, salvage, restart, keyboard input, a narrow viewport, saved motion preferences, and an asset-load failure. On a local machine with Chrome already installed, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e` uses that browser instead.
+`check` runs deterministic simulation tests, strict TypeScript checking, and a production build. Browser tests cover deployment, economy while paused, salvage, restart, nine-key crew selection, both restored maps, acid-tile rejection, safe destination changes, the alien field guide, narrow viewports, saved motion preferences, and an asset-load failure. On a local machine with Chrome already installed, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e` uses that browser instead.
 
-The simulation tests include a full four-wave victory with a simple strategy and an undefended loss. They also check frame-size independence, speed changes, input bounds, snapshot isolation, restart cleanup, and income-unit removal.
+The simulation tests include a full four-wave victory on every map using only earned credits, plus undefended losses. They also check every defender's price and health, original ammunition and three-shot volleys, projectile speeds, actual cluster damage, both income units, map restrictions and selection, frame-size independence, speed changes, input bounds, snapshot isolation, and restart cleanup.
 
 ## Structure
 
@@ -64,13 +78,13 @@ npm run preview
 
 The deployable static site is `web/dist`. Its relative asset base supports hosting under a subsection such as a Treydmark Labs game path. This first version does not modify or deploy the Treydmark marketing site. The simulation can also be mounted behind a future React wrapper; the game loop does not require React renders.
 
-Phaser is an isolated dynamic chunk, about 357 KB compressed in the initial build. Only the first encounter's art is preloaded; the larger converted collection remains available for subsequent encounters. All fonts are local system fonts. No analytics or remote runtime APIs are used.
+Phaser is an isolated dynamic chunk, about 357 KB compressed in the initial build. The 32 active animation sheets, three map backgrounds, five projectile images, and acid-pool image are preloaded once (2,999,641 bytes of image files in total), so switching destinations needs no further combat-art download. All fonts are local system fonts. No analytics or remote runtime APIs are used.
 
 ## Original version and content
 
 The original Java source, assets, generated documentation, and school presentation remain unchanged in the repository. The original commit is preserved by the annotated `school-project-2019` tag and the `master` comparison branch. Browser work belongs to `modernization`.
 
-The converted collection includes additional characters and artwork beyond the first playable roster. Preparing those assets does not mean their game behavior has already been ported. See [asset credits](ASSET_CREDITS.md) before publishing reused artwork.
+All original defenders, alien types, and maps are playable. This is a browser adaptation: the existing nine-column browser field remains, statistics and wave schedules are balanced for its simulation clock, splash damage is explicit, and the Falcon retains its original three ammunition types. It does not reproduce the Java timer/collision bugs or claim exact numerical parity. The original Double Cost mode, drag-and-drop interaction, menu art, and recorded music have not been ported. See [asset credits](ASSET_CREDITS.md) before publishing reused artwork.
 
 Rebuild the browser art from the repository root with Python and Pillow:
 

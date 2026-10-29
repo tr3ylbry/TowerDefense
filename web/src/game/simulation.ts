@@ -1,13 +1,15 @@
 import {
+  AMMO,
   COLS,
   ENEMIES,
   makeSpawns,
+  isBlocked,
+  MAPS,
   ROWS,
   STEP,
   TOWERS,
-  WAVES,
 } from "./content";
-import type { EnemyKind, Spawn, TowerKind } from "./content";
+import type { AmmoKind, EnemyKind, MapKind, Spawn, TowerKind } from "./content";
 
 export type Phase = "ready" | "playing" | "paused" | "won" | "lost";
 export interface Tower {
@@ -29,6 +31,8 @@ export interface Enemy {
   attacking: boolean;
 }
 export interface Projectile {
+  ammo: AmmoKind;
+  offset: number;
   id: number;
   kind: TowerKind;
   row: number;
@@ -36,6 +40,7 @@ export interface Projectile {
   damage: number;
 }
 export interface Snapshot {
+  map: MapKind;
   phase: Phase;
   elapsed: number;
   credits: number;
@@ -84,19 +89,26 @@ export class Simulation {
   private projectiles: Projectile[] = [];
   private spawns: Spawn[];
   private spawnIndex = 0;
+  // IDs stay unique across restarts so the renderer cannot reuse a previous unit's sprite.
   private nextId = 1;
   private bankClock = 0;
   private wave = 0;
   private events: GameEvent[] = [];
 
-  constructor(private readonly seed = 3352019) {
-    this.spawns = makeSpawns(seed);
+  constructor(
+    private readonly seed = 3352019,
+    private map: MapKind = "canyon",
+  ) {
+    this.spawns = makeSpawns(seed, map);
   }
 
   snapshot(): Snapshot {
     const elapsed = this.ticks * STEP;
-    const nextWave = WAVES.find((wave) => wave.start > elapsed + 0.001);
+    const nextWave = MAPS[this.map].waves.find(
+      (wave) => wave.start > elapsed + 0.001,
+    );
     return {
+      map: this.map,
       phase: this.phase,
       elapsed,
       credits: this.credits,
@@ -129,6 +141,23 @@ export class Simulation {
     if (speed === 1 || speed === 2) this.speed = speed;
   }
 
+  /** Mission selection never silently discards an active deployment. */
+  chooseMap(map: MapKind): ActionResult {
+    if (!Object.hasOwn(MAPS, map))
+      return { ok: false, message: "Choose an available destination." };
+    if (this.phase !== "ready")
+      return {
+        ok: false,
+        message: "Restart the mission before changing destination.",
+      };
+    this.map = map;
+    this.restart();
+    return {
+      ok: true,
+      message: `${MAPS[map].name} selected. ${MAPS[map].description}`,
+    };
+  }
+
   restart(): void {
     this.phase = "ready";
     this.ticks = 0;
@@ -140,9 +169,8 @@ export class Simulation {
     this.towers = [];
     this.enemies = [];
     this.projectiles = [];
-    this.spawns = makeSpawns(this.seed);
+    this.spawns = makeSpawns(this.seed, this.map);
     this.spawnIndex = 0;
-    this.nextId = 1;
     this.bankClock = 0;
     this.wave = 0;
     this.events = [];
@@ -153,6 +181,11 @@ export class Simulation {
       return { ok: false, message: "Begin or resume the mission to deploy." };
     if (!this.validCell(row, col))
       return { ok: false, message: "Choose a tile inside the battlefield." };
+    if (isBlocked(this.map, row, col))
+      return {
+        ok: false,
+        message: "Acid pool. Defenders cannot deploy on this tile.",
+      };
     if (!Object.hasOwn(TOWERS, kind))
       return { ok: false, message: "Choose a crew member." };
     if (this.towers.some((tower) => tower.row === row && tower.col === col))
@@ -284,12 +317,16 @@ export class Simulation {
         )
       ) {
         tower.cooldown = definition.cooldown;
-        this.projectiles.push({
-          id: this.nextId++,
-          kind: tower.kind,
-          row: tower.row,
-          x: tower.col + 0.85,
-          damage: definition.damage,
+        definition.ammo.forEach((ammo, index) => {
+          this.projectiles.push({
+            id: this.nextId++,
+            kind: tower.kind,
+            ammo,
+            offset: (index - (definition.ammo.length - 1) / 2) * 10,
+            row: tower.row,
+            x: tower.col + 0.85,
+            damage: definition.damage,
+          });
         });
         this.events.push({
           type: "shot",
@@ -301,7 +338,7 @@ export class Simulation {
     }
 
     for (const projectile of this.projectiles) {
-      const nextX = projectile.x + 7 * STEP;
+      const nextX = projectile.x + AMMO[projectile.ammo].speed * STEP;
       const target = this.enemies
         .filter(
           (enemy) =>
@@ -312,11 +349,12 @@ export class Simulation {
         )
         .sort((a, b) => a.x - b.x)[0];
       if (target) {
-        if (projectile.kind === "zeus") {
+        const radius = TOWERS[projectile.kind].splashRadius;
+        if (radius > 0) {
           for (const enemy of this.enemies)
             if (
               enemy.row === projectile.row &&
-              Math.abs(enemy.x - target.x) <= 0.7
+              Math.abs(enemy.x - target.x) <= radius
             )
               enemy.health -= projectile.damage;
         } else target.health -= projectile.damage;

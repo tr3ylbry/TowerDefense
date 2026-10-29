@@ -1462,3 +1462,172 @@ dialog li {
     scroll-behavior: auto !important;
   }
 }
+
+/* Expanded original roster and destination selection. */
+.mission-bar {
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.location {
+  flex-shrink: 0;
+}
+.location h2,
+.location-tag {
+  white-space: nowrap;
+}
+.mission-tools {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.destination-button {
+  border: 1px solid #506c73;
+  border-radius: 5px;
+  padding: 8px 10px;
+  background: #1b3039;
+  color: #c5e3dc;
+  font: 10px var(--mono);
+  white-space: nowrap;
+}
+.terrain-note {
+  color: #a6c2c0;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: -6px 0 18px;
+}
+.roster-hint {
+  color: #b0c9c3;
+  font: 9px var(--mono);
+  margin-bottom: 12px;
+}
+.crew-info strong {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.crew-list {
+  position: relative;
+  max-height: 514px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #71998e #182b34;
+  scrollbar-width: thin;
+  padding: 2px 5px 2px 2px;
+}
+.crew-card {
+  flex-shrink: 0;
+}
+.blocked-cell {
+  cursor: not-allowed;
+}
+.destination-list {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+.destination-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+  border: 1px solid #4d686a;
+  border-radius: 8px;
+  background: #1a3039;
+  text-align: left;
+}
+.destination-card[aria-pressed="true"] {
+  border-color: var(--orange);
+}
+.destination-card:hover {
+  background: #25404a;
+}
+.destination-card img {
+  width: 90px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.destination-card > span:first-of-type {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+.destination-card strong {
+  font-size: 19px;
+}
+.destination-card > span > span:last-child {
+  color: #b5ccca;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.guide-subtitle {
+  margin: 28px 0 16px;
+  font-size: 22px;
+}
+.alien-guide {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.alien-guide article {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.alien-portrait {
+  flex: 0 0 64px;
+  height: 64px;
+  background-size: auto 64px;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+.alien-guide h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+.alien-guide p {
+  margin: 0;
+  font-size: 13px;
+}
+.alien-guide small {
+  color: #a5c5b4;
+  font: 10px var(--mono);
+}
+@media (max-width: 1000px) {
+  .roster-hint {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .crew-list {
+    max-height: none;
+    overflow-y: visible;
+    padding: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .location {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .destination-button {
+    font-size: 9px;
+  }
+  .terrain-note {
+    font-size: 11px;
+    margin-top: 0;
+  }
+  .destination-card {
+    gap: 10px;
+    padding: 10px;
+  }
+  .destination-card img {
+    width: 60px;
+    height: 80px;
+  }
+  .destination-card strong {
+    font-size: 17px;
+  }
+  .destination-card .micro-label {
+    font-size: 8px;
+  }
+}

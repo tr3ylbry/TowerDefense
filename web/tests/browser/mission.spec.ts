@@ -95,4 +95,154 @@ test("offers retry when an art resource fails to load", async ({ page }) => {
   await expect(
     page.getByRole("button", { name: "Retry loading" }),
   ).toBeEnabled();
+  await page.getByRole("button", { name: "Switch to double speed" }).click();
+  await expect(
+    page.getByRole("heading", { name: "We lost the transmission." }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Change destination" }).click();
+  await page
+    .getByRole("button", { name: "Choose Sky Bridge", exact: true })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "Retry loading" }),
+  ).toBeEnabled();
+});
+
+test("plays both restored maps, blocks acid placement, and resets a live mission safely", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await expect(
+    page.getByRole("button", { name: "Begin mission" }),
+  ).toBeEnabled();
+  await expect(page.locator("[data-tower]")).toHaveCount(9);
+  await page.getByRole("button", { name: "Change destination" }).click();
+  await page
+    .getByRole("button", { name: "Choose Sky Bridge", exact: true })
+    .click();
+  await expect(page.locator("#location-name")).toHaveText("Sky Bridge");
+  await page.getByRole("button", { name: "Begin mission" }).click();
+  await expect(page.locator(".blocked-cell")).toHaveCount(12);
+  await page
+    .getByRole("gridcell", {
+      name: "Lane 1, tile 4, acid pool, deployment blocked",
+      exact: true,
+    })
+    .click();
+  await expect(page.locator("#announcement")).toContainText("Acid pool");
+  await expect(page.locator("#credits")).toHaveText("230");
+  await page.keyboard.press("7");
+  await page
+    .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, TARS/ }),
+  ).toBeVisible();
+  await page.keyboard.press("5");
+  await page
+    .getByRole("gridcell", { name: "Lane 2, tile 1, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 2, tile 1, Explosive Astro Joe/ }),
+  ).toBeVisible();
+  await expect(page.locator("#credits")).toHaveText("45");
+  await page.getByRole("button", { name: "Change destination" }).click();
+  await expect(page.locator("#map-warning")).toContainText(
+    "resets your current deployment",
+  );
+  await page.getByRole("button", { name: "Keep current destination" }).click();
+  await expect(page.locator("#overlay")).toBeHidden();
+  await expect(page.locator("#credits")).toHaveText("45");
+  await page.getByRole("button", { name: "Change destination" }).click();
+  await page
+    .getByRole("button", { name: "Choose The Nest", exact: true })
+    .click();
+  await expect(page.locator("#location-name")).toHaveText("The Nest");
+  await expect(page.locator("#credits")).toHaveText("230");
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, TARS/ }),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "Begin mission" }).click();
+  await expect(page.locator(".blocked-cell")).toHaveCount(16);
+  await page.keyboard.press("8");
+  await page
+    .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, Money Tree/ }),
+  ).toBeVisible();
+  await page.keyboard.press("6");
+  await page
+    .getByRole("gridcell", { name: "Lane 2, tile 1, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 2, tile 1, Startrell Cluggins/ }),
+  ).toBeVisible();
+  await page.keyboard.press("9");
+  await expect(page.locator('[data-tower="falcon"]')).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await page
+    .getByRole("gridcell", { name: "Lane 3, tile 1, empty", exact: true })
+    .click();
+  await expect(page.locator("#announcement")).toContainText(
+    "more credits for Millennium Falcon",
+  );
+  await page.getByRole("button", { name: "Restart", exact: true }).click();
+  await page.getByRole("button", { name: "Restart mission" }).click();
+  await expect(page.locator("#location-name")).toHaveText("The Nest");
+  await expect(page.locator("#credits")).toHaveText("230");
+  expect(errors).toEqual([]);
+});
+
+test("field guide documents all six original invaders and resumes the game", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Begin mission" }).click();
+  await page.getByRole("button", { name: "Field guide" }).click();
+  await expect(page.locator(".alien-guide article")).toHaveCount(6);
+  for (const name of [
+    "Little Green Men",
+    "Grunt",
+    "Sprinter",
+    "ManHunter",
+    "Tank",
+    "Gargantua",
+  ])
+    await expect(
+      page.getByRole("heading", { name, exact: true }),
+    ).toBeVisible();
+  await page.getByRole("button", { name: "Back to the frontier" }).click();
+  await expect(page.locator("#overlay")).toBeHidden();
+});
+
+test("restored roster and destinations fit a narrow screen", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await expect(
+    page.getByRole("button", { name: "Begin mission" }),
+  ).toBeEnabled();
+  await page.getByRole("button", { name: "Change destination" }).click();
+  await page
+    .getByRole("button", { name: "Choose The Nest", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Begin mission" }).click();
+  await page.locator('[data-tower="startrell"]').click();
+  await page
+    .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, Startrell Cluggins/ }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
 });
