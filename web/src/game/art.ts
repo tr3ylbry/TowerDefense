@@ -26,6 +26,27 @@ export const EXPEDITION_TOWERS: Partial<Record<TowerKind, ExpeditionArt>> = {
   },
 };
 export const EXPEDITION_ENEMIES: Partial<Record<EnemyKind, ExpeditionArt>> = {
+  sprinter: {
+    key: "expedition-sprinter",
+    file: "expedition/sprinter.png",
+    width: 102,
+    height: 67.9336,
+    foot: 310 / 341,
+  },
+  manhunter: {
+    key: "expedition-manhunter",
+    file: "expedition/manhunter.png",
+    width: 96,
+    height: 87.75,
+    foot: 459 / 468,
+  },
+  gargantua: {
+    key: "expedition-gargantua",
+    file: "expedition/gargantua.png",
+    width: 122,
+    height: 88.8789,
+    foot: 363 / 373,
+  },
   scout: {
     key: "expedition-scout",
     file: "expedition/scout.png",

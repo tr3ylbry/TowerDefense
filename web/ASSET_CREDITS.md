@@ -21,3 +21,7 @@ The new Canyon environment, Astro Joe ranger cutout, and plated Tank crawler are
 ## Expedition 0.2
 
 Three additional original AI-generated transparent cutouts—Scout, Grunt, and TARS—form a small matched combat group. [Complete prompts, hashes, generation sources, alpha inspection, and conversion notes](public/art/expedition/README-0.2.md) are preserved. Their unchanged full-resolution sources live in `art-source/expedition-0.2/`, outside the public build. School assets are not overwritten. All five Expedition character cutouts use proportional display bounds and explicit foot anchors; these remain static artwork with procedural motion, not generated animation sheets. Bridge/Nest perimeter effects are code-drawn presentation applied over retained backgrounds.
+
+## Expedition 0.3
+
+Sprinter, ManHunter, and Gargantua complete the illustrated alien roster. These original AI-generated transparent cutouts use the built-in image tool; [prompts, exact alpha-derived foot anchors, source IDs, conversion and integrity hashes](public/art/expedition/README-0.3.md) are recorded. Unchanged full-resolution sources and one rejected authored-stride experiment live in `art-source/expedition-0.3/`, outside the public build. The experiment is not a shipped animation frame. All school sheets remain intact and load when original-art comparison needs them. Seven defenders and Bridge/Nest scenery continue to use retained school art with the provenance limitations above.
