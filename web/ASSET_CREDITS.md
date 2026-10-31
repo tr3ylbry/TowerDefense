@@ -29,3 +29,11 @@ Sprinter, ManHunter, and Gargantua complete the illustrated alien roster. These 
 ## Expedition 0.4
 
 Money Bush, Asteroid, and Moon Zeus add three original AI-generated transparent illustrations using the built-in image tool. [Prompts, untouched source hashes, alpha measurements, proportional conversion, and field review](public/art/expedition/README-0.4.md) document the group. Full-resolution sources live in `art-source/expedition-0.4/`, outside the public build. These remain static cutouts with event-driven procedural feedback. Four defenders (Explosive Astro Joe, Startrell Cluggins, Money Tree, Millennium Falcon) and Bridge/Nest scenery retain school art; the external provenance limits above still apply. Original assets and contributor credits are preserved.
+
+## Expedition 0.5
+
+Explosive Astro Joe, Startrell Cluggins, Money Tree and the original **Frontier Flagship** complete all nine illustrated defenders. Sky Bridge, Nest and a small acid decal complete the new environment treatment. [Prompts, selected sources, rejected wide flagship, alpha/conversion details and hashes](public/art/expedition/README-0.5.md) are preserved. The compact flagship is one targeted edit of the new wide prototype; no school/franchise artwork was supplied as an edit target. All high-resolution outputs remain outside `public/`.
+
+All fifteen Expedition characters now serve proportionate WebP derivatives; Canyon receives a smaller WebP derivative of the existing illustration. Old PNGs, source originals, all school sheets/backgrounds, historical names and contributor credits remain intact. Original comparison loads them on demand. Five retained small projectile images remain part of the Expedition renderer; retained-art rights still need resolution before publication.
+
+The school unit named Millennium Falcon is publicly presented as Frontier Flagship with an original non-franchise lander silhouette. Its internal `falcon` key and combat statistics do not change. [The primary-source identity review](reports/expedition-0.5/assessment/FLAGSHIP_IDENTITY.md) explains the naming/design choice and remaining clearance limits. Attribution preserves history and does not by itself establish third-party permission. No hosting or public release is part of 0.5.

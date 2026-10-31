@@ -1,0 +1,20 @@
+{
+  "baseline": "Frozen 0.4 candidate sources; unchanged game code at 96f8297",
+  "unchangedGameSourceHashes": {
+    "simulation.ts": "f43d1b6cb08abf5c8a6b6b777c170269b4ed517e279d21ff220229e494e8991c",
+    "combat.ts": "adca35274cd4ebe99ebdf5e093a7c33e19dff13d3836be1203449fd29653d0d3",
+    "waves.ts": "6eb58de1f8431e53fb54a4922164e47e73c0cb84a604a48c33ec5f3f8b7b54fe"
+  },
+  "equalExports": [
+    "ROWS",
+    "COLS",
+    "STEP",
+    "AMMO",
+    "ENEMIES",
+    "MAPS",
+    "TOWERS except falcon display name"
+  ],
+  "spawnComparisons": 36,
+  "onlyContentDifference": "Millennium Falcon → Frontier Flagship display name",
+  "conclusion": "No rule/balance change; the existing matched 0.4 policy research remains applicable, not a new human finding."
+}

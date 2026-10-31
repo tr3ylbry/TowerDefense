@@ -2,9 +2,9 @@
 
 The full original character and map roster, built with TypeScript, Phaser, and Vite. This is Trey Bryant's independent continuation of the original CSC 335 team project by Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.
 
-Expedition 0.4 adds contextual passed-enemy warnings and legal placement advice, illustrates Money Bush/Asteroid/Moon Zeus, and gives The Nest paired late-wave lane relays. All unit statistics and economy values remain unchanged. Cached artwork still loads on demand with pause/retry/cancel recovery; backgrounding during a transition now requires explicit resume.
+Expedition 0.5 completes the illustrated nine-defender roster and all three environments, introduces the original Frontier Flagship interpretation, and reduces initial image payload by 74.7% in matched production measurements. Constrained readiness improves from 14.8 s to 6.0 s under the same desktop emulation profile; normal startup and sampled combat frame times remain effectively unchanged. All prices, combat statistics, acid coordinates and wave schedules remain unchanged. Backgrounded dialogs now require explicit resume, and enlarged phone content reflows its controls.
 
-See the [0.4 milestone report](docs/EXPEDITION_0_4.md), [art direction](docs/ART_DIRECTION.md), [matched tactical/economy research](reports/expedition-0.4/research/README.md), [performance evidence](reports/expedition-0.4/performance/README.md), and [five-player testing kit](playtest/README.md). The [0.3 report](docs/EXPEDITION_0_3.md) preserves the earlier loading and economy measurements. Campaigns, upgrades, saves, and an editor remain future milestones. Hosting is separate.
+See the [0.5 milestone report](docs/EXPEDITION_0_5.md), [art direction](docs/ART_DIRECTION.md), [art provenance](public/art/expedition/README-0.5.md), [current performance evidence](reports/expedition-0.5/performance/README.md), [preserved tactical/economy research](reports/expedition-0.4/research/README.md), and [five-player testing kit](playtest/README.md). The [0.4 report](docs/EXPEDITION_0_4.md) preserves the prior baseline. Independent human, physical-device and native Safari validation remain pending. Campaigns, upgrades, saves and an editor remain future work; hosting is separate.
 
 ## Run locally
 
@@ -32,7 +32,7 @@ Choose **The Canyon**, **Sky Bridge**, or **The Nest** using Change destination.
 | 6   | Startrell Cluggins  | 75   | Rapid fire and fast projectiles               |
 | 7   | TARS                | 100  | Piercing rounds ignore Tank plating           |
 | 8   | Money Tree          | 150  | 60 credits every 8 seconds                    |
-| 9   | Millennium Falcon   | 250  | Three ammunition types per volley in one lane |
+| 9   | Frontier Flagship   | 250  | Three ammunition types per volley in one lane |
 
 Sky Bridge has 12 restricted acid tiles; The Nest has 16. Their positions match the original Java maps. Defenders cannot be placed there, and aliens cross them normally. A mid-mission destination change explains that it will reset progress; closing the selector resumes the existing mission. Restart keeps the chosen map.
 
@@ -46,7 +46,7 @@ Sky Bridge has 12 restricted acid tiles; The Nest has 16. Their positions match 
 - Sound is off by default and uses original synthesized effects. Reduced motion defaults to the OS preference and can be changed and saved locally.
 - The entire battlefield fits narrow screens. **Enlarge field** provides a pannable closer view; **Overview** restores the whole board. The crew bar scrolls horizontally; keyboard selection scrolls its active card into view.
 
-Tanks have 650 health, move at 0.26 tiles/second, and absorb 80% of ordinary projectile damage. TARS ignores plating; Moon Zeus bypasses 65% of it, Explosive Astro Joe 40%, and the Falcon 75%. This is per-impact penetration, not a lasting debuff. The wave briefing lists the next group and flags armored arrivals. Canyon waves start at 7, 29, 56, and 87 game seconds. Bridge’s schedule and every original acid coordinate remain unchanged. Nest waves 3–4 pair existing enemies across three seeded lanes before shifting to the other three; its briefing and lane warnings describe the actual schedule.
+Tanks have 650 health, move at 0.26 tiles/second, and absorb 80% of ordinary projectile damage. TARS ignores plating; Moon Zeus bypasses 65% of it, Explosive Astro Joe 40%, and the Frontier Flagship 75%. This is per-impact penetration, not a lasting debuff. The wave briefing lists the next group and flags armored arrivals. Canyon waves start at 7, 29, 56, and 87 game seconds. Bridge’s schedule and every original acid coordinate remain unchanged. Nest waves 3–4 pair existing enemies across three seeded lanes before shifting to the other three; its briefing and lane warnings describe the actual schedule.
 
 Calling a wave saves `scheduled next start − current game time − 3` seconds and awards `min(40, 2 × floor(seconds saved))` credits once. It becomes available after every current-wave entry has spawned, with at least a whole second to save. All remaining spawns shift by the same amount, preserving lane order and spacing. Living enemies remain on the field. Pause blocks calls and freezes the adjusted schedule; restart/destination changes restore the baseline. Lane warnings derive from actual arrivals within five game seconds, including rescheduled entries.
 

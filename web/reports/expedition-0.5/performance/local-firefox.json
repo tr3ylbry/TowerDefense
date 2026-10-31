@@ -1,0 +1,10 @@
+{
+  "engine": "Playwright Firefox",
+  "date": "2026-10-31T22:14:52.557Z",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "executable": "/private/tmp/ava-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox",
+  "securitySettingsChanged": false,
+  "outcome": "failed before page creation",
+  "diagnostic": "Could not find profile folder."
+}

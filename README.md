@@ -2,7 +2,8 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md), with all nine original defenders, six alien types, and three four-wave maps. **Expedition 0.4** adds actionable forward-firing threat feedback, illustrated Money Bush/Asteroid/Moon Zeus defenders, and paired lane relays in The Nest’s later waves. Unit prices and combat statistics remain unchanged. On-demand art comparison, keyboard/touch controls, reduced motion, mission receipts, optional early-wave calls, and deterministic gameplay are retained. See the [0.4 report](web/docs/EXPEDITION_0_4.md) for evidence, verification, and remaining external playtesting.
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md), with nine defenders, six alien types and three four-wave maps. **Expedition 0.5** completes the illustrated roster/environments, adds the original Frontier Flagship interpretation, and improves constrained production startup from 14.8 s to 6.0 s in matched desktop emulation. Core prices, combat rules, restrictions and schedules are unchanged. Original-art comparison, keyboard/touch controls, reduced motion, mission terminals, early-wave calls and deterministic gameplay remain. See the [0.5 report](web/docs/EXPEDITION_0_5.md) for measured results, verification and outstanding external playtesting. Original school source/assets and history remain preserved; no hosting is included.
+
 ```sh
 cd web
 npm ci
