@@ -8,6 +8,7 @@ import { AudioBus } from "./audio";
 import type { Battlefield } from "./battlefield";
 import type { ArtManifest, ArtStyle } from "./assets";
 import { coverage, crewDetails } from "./guidance";
+import { laneThreats, placementWarning, threatAdvice } from "./game/threats";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 const simulation = new Simulation();
@@ -31,6 +32,7 @@ let lastMap = "";
 let ready = false;
 let loadError = false;
 let lastUiSignature = "";
+let directionExplained = false;
 let artStyle: "expedition" | "original" = "expedition";
 let focused = false;
 let zoomed = false;
@@ -50,19 +52,19 @@ const helmet =
   '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 29v-8a13 13 0 0 1 26 0v8l-5 10H16Z" fill="currentColor"/><rect x="15" y="15" width="18" height="13" rx="5" fill="#18303a"/><path d="M19 35h10" stroke="#f5a47d" stroke-width="3"/></svg>';
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.3</span></span></span></a>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.4</span></span></span></a>
     <nav aria-label="Main"><span class="nav-active">The mission</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
   <main id="mission">
     <section class="mission-heading" aria-labelledby="mission-title"><div><p class="eyebrow"><span class="signal-dot"></span> EXPEDITION 001 <span class="eyebrow-line"></span> ORBITAL DEFENSE</p><h1 id="mission-title">A little space.<br class="mobile-break"> A lot to defend<span>.</span></h1></div><p class="mission-intro">A familiar crew. An unfamiliar frontier.<br>Build your defenses and hold the line.</p></section>
-    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
+    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" disabled class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" disabled class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
     <p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
         <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><details id="mission-receipt" hidden><summary>Mission economy</summary><p id="receipt-summary"></p><p id="receipt-sources"></p></details><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
-        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
+        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. Place a gun in an empty tile to its left, check its armor, or salvage blockers if no firing tile remains. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
       <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span id="supply-status">Supply +30 / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
@@ -200,11 +202,17 @@ for (let row = 0; row < ROWS; row++) {
         announce("Choose a defender from your crew first.");
         return;
       }
+      const caution =
+        selected === "salvage"
+          ? null
+          : placementWarning(selected, simulation.snapshot(), row, col);
       const result =
         selected === "salvage"
           ? simulation.remove(row, col)
           : simulation.place(selected, row, col);
-      announce(result.message);
+      announce(
+        result.ok && caution ? `${result.message} ${caution}` : result.message,
+      );
       button.classList.toggle("invalid-cell", !result.ok);
       setTimeout(() => button.classList.remove("invalid-cell"), 400);
       render(simulation.snapshot());
@@ -230,6 +238,7 @@ for (let row = 0; row < ROWS; row++) {
 }
 
 function render(state: Snapshot): void {
+  const passed = laneThreats(state).filter((t) => t.passed);
   const signature = JSON.stringify([
     ready,
     assetBusy,
@@ -252,6 +261,7 @@ function render(state: Snapshot): void {
     state.wave,
     state.speed,
     state.enemies.length,
+    passed.map((t) => [t.row, t.enemy.id, t.rescueCol]),
     state.towers.map(({ id, kind, row, col, health }) => ({
       id,
       kind,
@@ -262,7 +272,24 @@ function render(state: Snapshot): void {
   ]);
   if (signature === lastUiSignature) return;
   lastUiSignature = signature;
+  get<HTMLButtonElement>("map-open").disabled =
+    (!ready && !loadError) || assetBusy;
+  get<HTMLButtonElement>("art-toggle").disabled = !ready || assetBusy;
   renderSelection(state);
+  const threatBox = get("passed-threat");
+  const help = get<HTMLDetailsElement>("direction-help");
+  if (state.phase === "ready") {
+    directionExplained = false;
+    help.open = false;
+  }
+  threatBox.hidden = passed.length === 0;
+  const advice = passed.map(threatAdvice).join(" ");
+  if (get("passed-summary").textContent !== advice)
+    get("passed-summary").textContent = advice;
+  if (passed.length && !directionExplained) {
+    help.open = true;
+    directionExplained = true;
+  }
   const growers = state.towers.filter((x) => TOWERS[x.kind].income > 0).length;
   get("supply-status").textContent =
     `Supply +30 in ${state.economy.supplyIn}s · ${growers} income ${growers === 1 ? "unit" : "units"}`;
@@ -288,6 +315,13 @@ function render(state: Snapshot): void {
   get("wave-composition").textContent = upcoming
     ? [...counts].map(([name, count]) => `${count} ${name}`).join(" / ")
     : "";
+  get("wave-tactic").textContent =
+    upcoming?.briefing ??
+    (state.pendingSpawns > 0
+      ? (map.waves[state.wave - 1] as import("./game/content").Wave | undefined)
+          ?.briefing
+      : "") ??
+    "";
   const call = get<HTMLButtonElement>("call-wave");
   call.disabled = assetBusy || !upcoming?.canLaunch;
   call.querySelector("span")!.textContent = upcoming?.canLaunch
@@ -457,7 +491,10 @@ start.addEventListener("click", () => {
   const { phase } = simulation.snapshot();
   if (phase === "paused") simulation.resume();
   else {
-    if (phase === "won" || phase === "lost") simulation.restart();
+    if (phase === "won" || phase === "lost") {
+      simulation.restart();
+      directionExplained = false;
+    }
     simulation.start();
   }
   focused = true;
@@ -515,7 +552,7 @@ get("art-toggle").addEventListener("click", () => {
       announce(
         artStyle === "original"
           ? "Original school project art selected. Combat rules are unchanged."
-          : "Expedition art selected: illustrated Canyon, Astro Joe, TARS, and all six alien types.",
+          : "Expedition art selected: illustrated Canyon, five defenders, and all six alien types.",
       );
     },
     simulation.snapshot().phase === "playing",
@@ -723,6 +760,7 @@ get("restart-cancel").addEventListener("click", () =>
 get("restart-confirm").addEventListener("click", () => {
   resumeAfterDialog = false;
   simulation.restart();
+  directionExplained = false;
   lastWave = 0;
   select("astro");
   closeDialog(get("restart-dialog"));
@@ -757,6 +795,8 @@ document.addEventListener("keydown", (event) => {
   } else if (key === "escape") select(null);
 });
 document.addEventListener("visibilitychange", () => {
+  // A transition that ever went into the background requires explicit resume.
+  if (document.hidden && assetRequest) assetRequest.resume = false;
   if (document.hidden && simulation.snapshot().phase === "playing") {
     simulation.pause();
     render(simulation.snapshot());
@@ -810,6 +850,7 @@ async function initialize(): Promise<void> {
 function loadFailed(): void {
   loadError = true;
   ready = false;
+  render(simulation.snapshot());
   overlay.hidden = false;
   grid.inert = true;
   start.disabled = false;

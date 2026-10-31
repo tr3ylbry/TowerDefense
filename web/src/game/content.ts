@@ -273,6 +273,8 @@ export interface Wave {
   start: number;
   title: string;
   enemies: readonly EnemyKind[];
+  entries?: readonly { offset: number; laneSlot: number }[];
+  briefing?: string;
 }
 interface MissionDefinition {
   name: string;
@@ -424,7 +426,7 @@ export const MAPS = {
     number: "03",
     tag: "HOSTILE TERRITORY",
     description:
-      "Sixteen acid pools scatter your formation. Leave room for income and heavy support.",
+      "Sixteen acid pools constrain your formation. Late waves arrive in paired lane relays; keep a reserve for the second group.",
     background: "stage-three",
     blocked: [
       [1, 3, 6],
@@ -458,6 +460,21 @@ export const MAPS = {
       {
         start: 90,
         title: "The inner guard",
+        briefing:
+          "Paired lane relay: three lanes first, then the other three. Splash and barriers help; hold a reserve.",
+        entries: [
+          { offset: 0, laneSlot: 0 },
+          { offset: 0.6, laneSlot: 0 },
+          { offset: 2.4, laneSlot: 1 },
+          { offset: 3, laneSlot: 1 },
+          { offset: 4.8, laneSlot: 2 },
+          { offset: 5.4, laneSlot: 2 },
+          { offset: 12, laneSlot: 3 },
+          { offset: 12.6, laneSlot: 3 },
+          { offset: 14.4, laneSlot: 4 },
+          { offset: 15, laneSlot: 4 },
+          { offset: 16.8, laneSlot: 5 },
+        ],
         enemies: [
           "tank",
           "manhunter",
@@ -475,19 +492,35 @@ export const MAPS = {
       {
         start: 136,
         title: "Heart of the swarm",
+        briefing:
+          "Paired lane relay: three lanes first, then the other three. Splash and barriers help; hold a reserve.",
+        entries: [
+          { offset: 0, laneSlot: 0 },
+          { offset: 0.6, laneSlot: 0 },
+          { offset: 2.4, laneSlot: 1 },
+          { offset: 3, laneSlot: 1 },
+          { offset: 4.8, laneSlot: 2 },
+          { offset: 5.4, laneSlot: 2 },
+          { offset: 12, laneSlot: 3 },
+          { offset: 12.6, laneSlot: 3 },
+          { offset: 14.4, laneSlot: 4 },
+          { offset: 15, laneSlot: 4 },
+          { offset: 16.8, laneSlot: 5 },
+          { offset: 17.4, laneSlot: 5 },
+        ],
         enemies: [
           "gargantua",
-          "tank",
-          "sprinter",
           "manhunter",
+          "tank",
           "grunt",
+          "manhunter",
+          "sprinter",
           "gargantua",
-          "sprinter",
-          "tank",
-          "manhunter",
           "grunt",
+          "tank",
           "sprinter",
           "manhunter",
+          "sprinter",
         ],
       },
     ],
@@ -512,9 +545,10 @@ export function makeSpawns(seed: number, map: MapKind = "canyon"): Spawn[] {
       const j = Math.floor(random() * (i + 1));
       [lanes[i], lanes[j]] = [lanes[j], lanes[i]];
     }
+    const entries = (wave as Wave).entries;
     return wave.enemies.map((kind, i) => ({
-      at: wave.start + i * 1.8,
-      row: lanes[i % ROWS],
+      at: wave.start + (entries?.[i].offset ?? i * 1.8),
+      row: lanes[entries?.[i].laneSlot ?? i % ROWS],
       kind,
       wave: index + 1,
     }));

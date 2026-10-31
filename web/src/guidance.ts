@@ -1,13 +1,19 @@
 import { ROWS, TOWERS } from "./game/content";
 import type { TowerKind } from "./game/content";
 import type { Snapshot } from "./game/simulation";
+import { laneThreats, placementWarning } from "./game/threats";
 export function coverage(state: Snapshot): string {
   const covered = new Set(
-    state.towers.filter((x) => TOWERS[x.kind].damage > 0).map((x) => x.row),
+    state.towers
+      .filter((x) => x.health > 0 && TOWERS[x.kind].damage > 0)
+      .map((x) => x.row),
   );
   const missing = Array.from({ length: ROWS }, (_, row) => row).filter(
     (row) => !covered.has(row),
   );
+  const passed = laneThreats(state).filter((t) => t.passed);
+  if (passed.length)
+    return `${covered.size}/6 lanes armed · Past guns: ${passed.map((t) => `L${t.row + 1}`).join(", ")}`;
   return missing.length
     ? `${covered.size}/6 lanes firing · Cover ${missing.map((row) => `L${row + 1}`).join(", ")}`
     : "6/6 lanes firing · Your crew fires right";
@@ -50,9 +56,11 @@ export function crewDetails(
     : unit.damage
       ? `${Math.round(unit.armorPierce * 100)}% plating bypass · Fires right`
       : "Barrier · Put ahead of firing defenders";
+  const caution =
+    cursor && placementWarning(kind, state, cursor.row, cursor.col);
   return [
     `${unit.name} · ${unit.cost} credits`,
     unit.description,
-    `${budget} · ${unit.health} health · ${role}`,
+    caution ?? `${budget} · ${unit.health} health · ${role}`,
   ];
 }

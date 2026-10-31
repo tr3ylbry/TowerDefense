@@ -280,6 +280,41 @@ h1 > span {
 .tool[aria-pressed="true"] {
   color: var(--mint);
 }
+
+/* Contextual 0.4 advice appears only while an actual hostile has passed the guns. */
+#passed-threat[hidden],
+#wave-tactic:empty {
+  display: none;
+}
+#passed-threat {
+  border-top: 1px solid #9c7960;
+  padding: 8px 12px;
+  background: #322b29;
+  color: #ffe0bf;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#passed-summary {
+  margin: 0;
+}
+#direction-help summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: list-item;
+  padding: 10px 0;
+  margin-left: 16px;
+  text-decoration: underline;
+}
+#direction-help p {
+  margin: 0 0 6px;
+}
+#wave-tactic {
+  display: block;
+  color: #ddc2ef;
+  font-size: 10px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
 .play-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 282px;

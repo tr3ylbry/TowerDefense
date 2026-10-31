@@ -13,6 +13,7 @@ import type { AmmoKind, EnemyKind, MapKind, Spawn, TowerKind } from "./content";
 
 import { EARLY_WAVE_LEAD, earlyWaveReward, spawnWarnings } from "./waves";
 import type { SpawnWarning } from "./waves";
+import { canAimForward, HIT_RADIUS, MUZZLE_OFFSET } from "./combat";
 
 export type Phase = "ready" | "playing" | "paused" | "won" | "lost";
 export interface Tower {
@@ -51,6 +52,7 @@ export interface NextWave {
   title: string;
   startAt: number;
   enemies: EnemyKind[];
+  briefing?: string;
   canLaunch: boolean;
   reward: number;
   secondsSaved: number;
@@ -307,6 +309,7 @@ export class Simulation {
       title: definition.title,
       startAt,
       enemies: [...definition.enemies],
+      briefing: (definition as import("./content").Wave).briefing,
       canLaunch,
       reward: canLaunch ? reward : 0,
       secondsSaved,
@@ -461,7 +464,7 @@ export class Simulation {
       const hasTarget = this.enemies.some(
         (enemy) =>
           enemy.row === tower.row &&
-          enemy.x > tower.col + 0.2 &&
+          canAimForward(tower.col, enemy.x) &&
           enemy.health > 0,
       );
       if (tower.windup > 0) {
@@ -469,7 +472,7 @@ export class Simulation {
         if (tower.windup < 1e-9) tower.windup = 0;
         if (tower.windup === 0 && hasTarget) {
           definition.ammo.forEach((ammo, index) => {
-            const x = tower.col + 0.85;
+            const x = tower.col + MUZZLE_OFFSET;
             this.projectiles.push({
               id: this.nextId++,
               kind: tower.kind,
@@ -510,8 +513,8 @@ export class Simulation {
           (enemy) =>
             enemy.health > 0 &&
             enemy.row === projectile.row &&
-            enemy.x >= projectile.x - 0.35 &&
-            enemy.x <= nextX + 0.35,
+            enemy.x >= projectile.x - HIT_RADIUS &&
+            enemy.x <= nextX + HIT_RADIUS,
         )
         .sort((a, b) => a.x - b.x)[0];
       if (target) {

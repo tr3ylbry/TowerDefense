@@ -15,6 +15,7 @@ import { assetsFor, backgroundKey } from "./assets";
 import type { ArtManifest, ArtStyle, AssetPlan } from "./assets";
 export type { ArtManifest } from "./assets";
 import type { GameEvent, Simulation, Snapshot } from "./game/simulation";
+import { laneThreats } from "./game/threats";
 
 export const FIELD = {
   width: 1080,
@@ -429,6 +430,16 @@ export function mountBattlefield(options: Options): Battlefield {
 
     private renderEntities(state: Snapshot, moving: boolean): void {
       this.bars.clear();
+      for (const threat of laneThreats(state)) {
+        if (!threat.passed) continue;
+        const x = worldX(threat.enemy.x),
+          y = worldY(threat.row);
+        this.bars
+          .lineStyle(2, 0xffbc8e, 0.95)
+          .strokeCircle(x, y + 22, 12)
+          .lineBetween(x - 22, y + 22, x - 14, y + 17)
+          .lineBetween(x - 22, y + 22, x - 14, y + 27);
+      }
       const alpha = simulation.interpolationAlpha();
       const visualTime = state.elapsed + alpha * STEP;
       const animate = !options.reducedMotion();
@@ -473,12 +484,26 @@ export function mountBattlefield(options: Options): Battlefield {
           ? Math.max(0, (sprite.getData("recoilUntil") ?? 0) - visualTime) /
             0.12
           : 0;
-        sprite.setX(worldX(tower.col + 0.5) - recoil * 5);
+        sprite.setX(
+          worldX(tower.col + 0.5) - recoil * (tower.kind === "zeus" ? 8 : 5),
+        );
         if (artwork) {
-          const breath = animate
-            ? Math.sin(visualTime * 3 + tower.id) * 0.8
-            : 0;
-          sprite.setDisplaySize(artwork.width, artwork.height + breath);
+          const breath =
+            animate && tower.kind !== "wall"
+              ? Math.sin(visualTime * 3 + tower.id) * 0.8
+              : 0;
+          const production =
+            animate && tower.kind === "bush"
+              ? Math.max(
+                  0,
+                  (sprite.getData("produceUntil") ?? 0) - visualTime,
+                ) / 0.45
+              : 0;
+          const growth = Math.sin(production * Math.PI) * 0.05;
+          sprite.setDisplaySize(
+            artwork.width * (1 + growth),
+            (artwork.height + breath) * (1 + growth),
+          );
         } else {
           const duration = sprite.anims.currentAnim?.duration ?? 0;
           sprite.anims.timeScale =
@@ -488,6 +513,16 @@ export function mountBattlefield(options: Options): Battlefield {
               : 1);
         }
         if (tower.windup > 0) {
+          if (artwork && tower.kind === "zeus") {
+            const charge = animate ? 1 - tower.windup / definition.windup : 0.5;
+            this.bars
+              .fillStyle(0xaadfea, 0.35 + charge * 0.3)
+              .fillCircle(
+                sprite.x + 28,
+                worldY(tower.row) - 22,
+                3 + charge * 4,
+              );
+          }
           this.bars
             .lineStyle(2, 0xa3ead7, 0.9)
             .lineBetween(
@@ -510,6 +545,22 @@ export function mountBattlefield(options: Options): Battlefield {
         if (state.elapsed - tower.lastHitAt < 0.12 && animate)
           sprite.setTint(0xffbd9e).setTintMode(Phaser.TintModes.FILL);
         else sprite.clearTint();
+        if (artwork && tower.kind === "wall") {
+          const fraction = tower.health / definition.health;
+          // Static damage tiers remain readable under reduced motion and pause.
+          if (fraction <= 0.65) {
+            const x = sprite.x,
+              y = worldY(tower.row);
+            this.bars
+              .lineStyle(2, 0x28353a, 0.95)
+              .lineBetween(x - 13, y - 14, x - 3, y - 4)
+              .lineBetween(x - 3, y - 4, x - 8, y + 7);
+            if (fraction <= 0.3)
+              this.bars
+                .lineBetween(x + 9, y - 20, x + 3, y + 4)
+                .lineBetween(x + 3, y + 4, x + 16, y + 13);
+          }
+        }
         if (danger || damaged) {
           this.bars
             .lineStyle(danger ? 3 : 2, danger ? 0xff9c79 : 0xe4ba8d, 0.95)
@@ -780,6 +831,15 @@ export function mountBattlefield(options: Options): Battlefield {
     private effect(event: GameEvent, state: Snapshot): void {
       const x = worldX(event.x);
       const y = worldY(event.row);
+      if (event.type === "income") {
+        const tower = state.towers.find(
+          (t) => t.row === event.row && t.col + 0.5 === event.x,
+        );
+        if (tower?.kind === "bush")
+          towerSprites
+            .get(tower.id)
+            ?.setData("produceUntil", state.elapsed + 0.45);
+      }
       if (event.type === "hit" && event.entityId !== undefined) {
         enemySprites
           .get(event.entityId)
@@ -855,7 +915,14 @@ export function mountBattlefield(options: Options): Battlefield {
         });
       }
       if (event.type === "shot") {
-        const flash = this.add.circle(x + 35, y - 12, 7, 0xb7f2db).setDepth(9);
+        const flash = this.add
+          .circle(
+            x + 35,
+            y - 12,
+            event.kind === "zeus" ? 12 : 7,
+            event.kind === "zeus" ? 0xaadfea : 0xb7f2db,
+          )
+          .setDepth(9);
         this.effects.add(flash);
         this.tweens.add({
           targets: flash,
