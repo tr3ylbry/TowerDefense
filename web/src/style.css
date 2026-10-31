@@ -1171,8 +1171,10 @@ dialog li {
 }
 @media (max-width: 560px) {
   .site-header {
-    padding: 0 5%;
-    height: 77px;
+    padding: 10px 5%;
+    height: auto;
+    min-height: 77px;
+    flex-wrap: wrap;
     gap: 10px;
   }
   .wordmark {
@@ -2340,8 +2342,24 @@ dialog li {
 @media (max-width: 700px) {
   /* Let enlarged page content reflow instead of clipping destination/pause controls. */
   .location,
-  .telemetry {
+  .telemetry,
+  .threat-strip {
     flex-wrap: wrap;
+  }
+  #field-zoom {
+    flex-shrink: 0;
+    max-width: 100%;
+    white-space: normal;
+  }
+  /* Instructions and resume controls need room; the outcome ledger keeps its scroll frame. */
+  body:not(.zoomed-field)
+    .board-stack:has(.mission-overlay:not([hidden]) #mission-receipt[hidden]) {
+    aspect-ratio: auto;
+  }
+  body:not(.zoomed-field) .mission-overlay:has(#mission-receipt[hidden]) {
+    position: relative;
+    height: auto;
+    min-height: 240px;
   }
   .location {
     min-width: 0;

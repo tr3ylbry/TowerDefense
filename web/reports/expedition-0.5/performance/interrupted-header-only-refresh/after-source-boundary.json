@@ -1,0 +1,28 @@
+{
+  "baseCommit": "7657f6a4e59482516bfcd9677cd8c91d1e89af36",
+  "boundary": "Final Expedition0.5 working tree including the max560px wrapping phone header fix. The previous0.5 build measurements are retained under prior-to-phone-header-fix; later source-preserving commits do not change this runtime.",
+  "sourceHashes": {
+    "src/battlefield.ts": "b47dc4461224af26d16bb494e193430d5c035008fa02cf5e8e784d3a83681f96",
+    "src/guidance.ts": "68f41b53b8334743b40da607f107f621d749437fbf6c2be8378c933ea99c4e97",
+    "src/main.ts": "7d85a89a43551f30eb5afcc9a51f810b8aff2a869c980aeb70479d9a6698dd9e",
+    "src/audio.ts": "9c4bfcda01ad39429fdcb42fcc7f1cbb3541c4aa0e7e5f6326e3f9d07e607cb1",
+    "src/assets.ts": "caaf6d86ef16a1345a52dbc38cb48b237c258ce052cf046fd4ed93a8f6505d77",
+    "src/game/waves.ts": "6eb58de1f8431e53fb54a4922164e47e73c0cb84a604a48c33ec5f3f8b7b54fe",
+    "src/game/art.ts": "307eb2ddcbecb954907fb2d3349a1a23e3f5f3acefd096f5f510a1d75a7076f5",
+    "src/game/threats.ts": "8148737f1bb20265c84e6707694b02f18c1e7e365da9a1e6cc5fa5346fbe92cd",
+    "src/game/content.ts": "48f55682d4f55c0f900c551ef52b1fc1c0ee712ef994b4d513a5283b7f4664cd",
+    "src/game/combat.ts": "adca35274cd4ebe99ebdf5e093a7c33e19dff13d3836be1203449fd29653d0d3",
+    "src/game/simulation.ts": "f43d1b6cb08abf5c8a6b6b777c170269b4ed517e279d21ff220229e494e8991c",
+    "src/style.css": "f5f7881c6dbf49d96014d38aaf5d95834c2ec9e8c16672d54fe81108a628af16",
+    "vite.config.ts": "868cb3264cc46afc2f02256166f0f8255c09fcf2295d9db76b54edfe748e93e5",
+    "index.html": "8816f1a02113469bfa91062f49f446f61518082126f0c4b359ec088dd4ec9cff",
+    "package.json": "f740afd80f0c96717c9254ec757fa7eef53657c3825fca441acd3914537ea328",
+    "package-lock.json": "106fe0de67621897a8cce7378390c4728cc875fda7cc77d8fbab8c92ab3bf83b"
+  },
+  "bundleHashes": {
+    "assets/battlefield-zPbLC9cy.js": "5d86c903b72286f9fbc1c4bb30ac1d7e4bf86761afd87fd4a17140f4b525b1d8",
+    "assets/index-CnqFGrkw.css": "e03715ea03b48f1c56947759f84a958dc770a66c8010a037a018635e8410653d",
+    "assets/index-K5miAJCz.js": "ed8b2569347564b0fa43325434e36d33b35c3d4a06f88cdb2274b222b2a8d364",
+    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+  }
+}

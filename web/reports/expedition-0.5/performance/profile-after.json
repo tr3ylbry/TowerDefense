@@ -5,356 +5,362 @@
     {
       "condition": "local-control",
       "ready": {
-        "readyMs": 140.09999990463257,
+        "readyMs": 154.80000007152557,
         "webgl": {
           "created": 64,
           "deleted": 19,
           "active": 45,
           "uploadCalls": 78,
-          "uploadDispatchMs": 28.100000023841858
+          "uploadDispatchMs": 27.799999952316284
         },
         "decode": {
           "calls": 0,
           "wallMs": 0
         }
       },
-      "traceEvents": 8274,
+      "traceEvents": 8321,
       "traceDurationGroups": [
         {
           "name": "RunTask",
-          "count": 5481,
-          "totalMs": 228.02400000000412,
-          "maxMs": 25.598
-        },
-        {
-          "name": "v8.callFunction",
-          "count": 110,
-          "totalMs": 64.09800000000001,
-          "maxMs": 18.698
+          "count": 5461,
+          "totalMs": 261.4730000000023,
+          "maxMs": 28.402
         },
         {
           "name": "RasterTask",
-          "count": 52,
-          "totalMs": 63.62300000000001,
-          "maxMs": 11.571
+          "count": 54,
+          "totalMs": 65.73199999999999,
+          "maxMs": 11.706
+        },
+        {
+          "name": "v8.callFunction",
+          "count": 112,
+          "totalMs": 65.06700000000001,
+          "maxMs": 17.323
         },
         {
           "name": "FunctionCall",
-          "count": 110,
-          "totalMs": 62.865,
-          "maxMs": 18.693
+          "count": 112,
+          "totalMs": 63.78899999999999,
+          "maxMs": 17.319
         },
         {
           "name": "EventDispatch",
-          "count": 39,
-          "totalMs": 40.81500000000001,
-          "maxMs": 9.253
+          "count": 41,
+          "totalMs": 43.337,
+          "maxMs": 10.46
         },
         {
           "name": "Layout",
-          "count": 5,
-          "totalMs": 28.485,
-          "maxMs": 25.405
+          "count": 7,
+          "totalMs": 31.11,
+          "maxMs": 27.729
         },
         {
           "name": "Decode Image",
           "count": 26,
-          "totalMs": 24.462999999999994,
-          "maxMs": 4.791
-        },
-        {
-          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
-          "count": 3,
-          "totalMs": 22.753,
-          "maxMs": 21.712
-        },
-        {
-          "name": "v8.parseOnBackground",
-          "count": 3,
-          "totalMs": 22.739,
-          "maxMs": 21.71
-        },
-        {
-          "name": "GPUTask",
-          "count": 122,
-          "totalMs": 21.944000000000003,
-          "maxMs": 3.473
+          "totalMs": 25.040999999999997,
+          "maxMs": 4.936
         },
         {
           "name": "v8.evaluateModule",
           "count": 2,
-          "totalMs": 20.114,
-          "maxMs": 16.931
+          "totalMs": 22.897,
+          "maxMs": 19.575
+        },
+        {
+          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
+          "count": 3,
+          "totalMs": 21.999,
+          "maxMs": 20.994
+        },
+        {
+          "name": "v8.parseOnBackground",
+          "count": 3,
+          "totalMs": 21.974999999999998,
+          "maxMs": 20.993
+        },
+        {
+          "name": "GPUTask",
+          "count": 123,
+          "totalMs": 21.469999999999995,
+          "maxMs": 3.261
         },
         {
           "name": "FireAnimationFrame",
-          "count": 8,
-          "totalMs": 20.087,
-          "maxMs": 18.704
-        },
-        {
-          "name": "v8.parseOnBackgroundParsing",
-          "count": 26,
-          "totalMs": 13.319999999999997,
-          "maxMs": 2.351
+          "count": 10,
+          "totalMs": 18.442,
+          "maxMs": 17.331
         },
         {
           "name": "Commit",
-          "count": 10,
-          "totalMs": 9.744,
-          "maxMs": 3.647
+          "count": 11,
+          "totalMs": 15.65,
+          "maxMs": 7.025
+        },
+        {
+          "name": "v8.parseOnBackgroundParsing",
+          "count": 24,
+          "totalMs": 13.08,
+          "maxMs": 1.87
         },
         {
           "name": "v8.parseOnBackgroundWaiting",
-          "count": 23,
-          "totalMs": 9.390000000000002,
-          "maxMs": 0.857
+          "count": 21,
+          "totalMs": 8.874,
+          "maxMs": 1.018
         },
         {
           "name": "EvaluateScript",
           "count": 2,
-          "totalMs": 3.292,
-          "maxMs": 3.086
+          "totalMs": 3.233,
+          "maxMs": 2.968
         },
         {
           "name": "XHRLoad",
           "count": 21,
-          "totalMs": 2.8260000000000005,
-          "maxMs": 0.444
-        },
-        {
-          "name": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
-          "count": 17,
-          "totalMs": 2.538,
-          "maxMs": 0.397
-        },
-        {
-          "name": "MinorGC",
-          "count": 7,
-          "totalMs": 2.4400000000000004,
-          "maxMs": 0.614
-        },
-        {
-          "name": "V8.GCScavenger",
-          "count": 7,
-          "totalMs": 2.3190000000000004,
-          "maxMs": 0.574
-        },
-        {
-          "name": "V8.GC_SCAVENGER",
-          "count": 7,
-          "totalMs": 2.136,
-          "maxMs": 0.516
-        },
-        {
-          "name": "V8.GC_SCAVENGER_SCAVENGE",
-          "count": 7,
-          "totalMs": 2.101,
-          "maxMs": 0.51
+          "totalMs": 3.003,
+          "maxMs": 0.312
         },
         {
           "name": "UpdateLayoutTree",
           "count": 14,
-          "totalMs": 2.072,
-          "maxMs": 1.147
+          "totalMs": 2.6379999999999995,
+          "maxMs": 1.608
+        },
+        {
+          "name": "MinorGC",
+          "count": 7,
+          "totalMs": 2.5400000000000005,
+          "maxMs": 0.773
+        },
+        {
+          "name": "V8.GCScavenger",
+          "count": 7,
+          "totalMs": 2.428,
+          "maxMs": 0.733
+        },
+        {
+          "name": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+          "count": 15,
+          "totalMs": 2.391,
+          "maxMs": 0.457
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "count": 7,
+          "totalMs": 2.2990000000000004,
+          "maxMs": 0.681
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "count": 7,
+          "totalMs": 2.2620000000000005,
+          "maxMs": 0.673
         },
         {
           "name": "LocalWindowProxy::Initialize",
           "count": 2,
-          "totalMs": 2.052,
-          "maxMs": 1.846
+          "totalMs": 1.833,
+          "maxMs": 1.644
         },
         {
-          "name": "PrePaint",
-          "count": 8,
-          "totalMs": 1.5210000000000001,
-          "maxMs": 1.084
+          "name": "V8.GC_BACKGROUND_SAFEPOINT",
+          "count": 5,
+          "totalMs": 1.7010000000000003,
+          "maxMs": 0.719
+        },
+        {
+          "name": "Paint",
+          "count": 16,
+          "totalMs": 1.6940000000000002,
+          "maxMs": 0.908
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
           "count": 7,
-          "totalMs": 1.486,
-          "maxMs": 0.425
+          "totalMs": 1.684,
+          "maxMs": 0.471
+        },
+        {
+          "name": "PrePaint",
+          "count": 9,
+          "totalMs": 1.6030000000000002,
+          "maxMs": 1.067
         },
         {
           "name": "ParseHTML",
-          "count": 11,
-          "totalMs": 1.4489999999999996,
-          "maxMs": 0.793
-        },
-        {
-          "name": "Paint",
-          "count": 12,
-          "totalMs": 1.34,
-          "maxMs": 0.795
-        },
-        {
-          "name": "V8.GC_BACKGROUND_SAFEPOINT",
-          "count": 4,
-          "totalMs": 1.2920000000000003,
-          "maxMs": 0.555
+          "count": 10,
+          "totalMs": 1.3509999999999998,
+          "maxMs": 0.804
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
-          "count": 4,
-          "totalMs": 0.6060000000000001,
-          "maxMs": 0.391
+          "count": 5,
+          "totalMs": 0.78,
+          "maxMs": 0.312
         },
         {
           "name": "V8.GC_BACKGROUND_UNPARK",
-          "count": 2,
-          "totalMs": 0.395,
-          "maxMs": 0.298
+          "count": 1,
+          "totalMs": 0.477,
+          "maxMs": 0.477
+        },
+        {
+          "name": "Layerize",
+          "count": 9,
+          "totalMs": 0.40900000000000003,
+          "maxMs": 0.079
         },
         {
           "name": "LocalWindowProxy::CreateContext",
           "count": 2,
-          "totalMs": 0.376,
-          "maxMs": 0.225
-        },
-        {
-          "name": "Layerize",
-          "count": 8,
-          "totalMs": 0.323,
-          "maxMs": 0.084
+          "totalMs": 0.34,
+          "maxMs": 0.201
         },
         {
           "name": "V8.DeserializeContext",
           "count": 2,
-          "totalMs": 0.32,
-          "maxMs": 0.183
-        },
-        {
-          "name": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
-          "count": 1,
-          "totalMs": 0.165,
-          "maxMs": 0.165
-        },
-        {
-          "name": "ParseAuthorStyleSheet",
-          "count": 1,
-          "totalMs": 0.164,
-          "maxMs": 0.164
+          "totalMs": 0.29200000000000004,
+          "maxMs": 0.166
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_ROOTS",
           "count": 7,
-          "totalMs": 0.132,
-          "maxMs": 0.037
-        },
-        {
-          "name": "V8.GC_TIME_TO_SAFEPOINT",
-          "count": 5,
-          "totalMs": 0.128,
-          "maxMs": 0.075
-        },
-        {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_FINALIZE",
-          "count": 7,
-          "totalMs": 0.11800000000000001,
-          "maxMs": 0.026
-        },
-        {
-          "name": "InstallConditionalFeatures",
-          "count": 2,
-          "totalMs": 0.11599999999999999,
-          "maxMs": 0.076
-        },
-        {
-          "name": "XHRReadyStateChange",
-          "count": 59,
-          "totalMs": 0.09200000000000004,
-          "maxMs": 0.01
-        },
-        {
-          "name": "BackgroundJSStreamManager::OnDataPipeReadable",
-          "count": 3,
-          "totalMs": 0.081,
-          "maxMs": 0.046
-        },
-        {
-          "name": "BackgroundJSStreamManager::TryStartStreamingTask",
-          "count": 3,
-          "totalMs": 0.079,
-          "maxMs": 0.045
+          "totalMs": 0.26,
+          "maxMs": 0.169
         },
         {
           "name": "PaintImage",
           "count": 11,
-          "totalMs": 0.07400000000000002,
-          "maxMs": 0.041
+          "totalMs": 0.19800000000000004,
+          "maxMs": 0.165
+        },
+        {
+          "name": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+          "count": 1,
+          "totalMs": 0.156,
+          "maxMs": 0.156
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "count": 1,
+          "totalMs": 0.156,
+          "maxMs": 0.156
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_FINALIZE",
+          "count": 7,
+          "totalMs": 0.11,
+          "maxMs": 0.032
+        },
+        {
+          "name": "InstallConditionalFeatures",
+          "count": 2,
+          "totalMs": 0.10400000000000001,
+          "maxMs": 0.067
+        },
+        {
+          "name": "XHRReadyStateChange",
+          "count": 49,
+          "totalMs": 0.08300000000000003,
+          "maxMs": 0.012
+        },
+        {
+          "name": "V8.GC_TIME_TO_SAFEPOINT",
+          "count": 7,
+          "totalMs": 0.07800000000000001,
+          "maxMs": 0.029
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
           "count": 7,
-          "totalMs": 0.07100000000000001,
-          "maxMs": 0.016
-        },
-        {
-          "name": "v8.newInstance",
-          "count": 47,
-          "totalMs": 0.06300000000000004,
-          "maxMs": 0.005
+          "totalMs": 0.07600000000000001,
+          "maxMs": 0.021
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS",
           "count": 7,
-          "totalMs": 0.062,
-          "maxMs": 0.014
+          "totalMs": 0.07200000000000001,
+          "maxMs": 0.028
+        },
+        {
+          "name": "v8.newInstance",
+          "count": 41,
+          "totalMs": 0.05200000000000003,
+          "maxMs": 0.003
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnDataPipeReadable",
+          "count": 3,
+          "totalMs": 0.045,
+          "maxMs": 0.017
+        },
+        {
+          "name": "BackgroundJSStreamManager::TryStartStreamingTask",
+          "count": 3,
+          "totalMs": 0.042,
+          "maxMs": 0.016
         },
         {
           "name": "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL",
           "count": 7,
-          "totalMs": 0.038000000000000006,
-          "maxMs": 0.012
-        },
-        {
-          "name": "V8.GC_SCAVENGER_FREE_REMEMBERED_SET",
-          "count": 6,
-          "totalMs": 0.036000000000000004,
-          "maxMs": 0.011
+          "totalMs": 0.041,
+          "maxMs": 0.013
         },
         {
           "name": "v8.compileModule",
           "count": 3,
-          "totalMs": 0.034,
-          "maxMs": 0.021
-        },
-        {
-          "name": "HitTest",
-          "count": 1,
-          "totalMs": 0.034,
-          "maxMs": 0.034
-        },
-        {
-          "name": "ContextCreatedNotification",
-          "count": 2,
-          "totalMs": 0.032,
-          "maxMs": 0.023
+          "totalMs": 0.037,
+          "maxMs": 0.02
         },
         {
           "name": "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL",
           "count": 7,
-          "totalMs": 0.031,
+          "totalMs": 0.035,
+          "maxMs": 0.014
+        },
+        {
+          "name": "HitTest",
+          "count": 1,
+          "totalMs": 0.032,
+          "maxMs": 0.032
+        },
+        {
+          "name": "V8.GC_SCAVENGER_FREE_REMEMBERED_SET",
+          "count": 7,
+          "totalMs": 0.031000000000000003,
           "maxMs": 0.012
+        },
+        {
+          "name": "UpdateLayer",
+          "count": 21,
+          "totalMs": 0.029000000000000012,
+          "maxMs": 0.004
+        },
+        {
+          "name": "ContextCreatedNotification",
+          "count": 2,
+          "totalMs": 0.028999999999999998,
+          "maxMs": 0.02
+        },
+        {
+          "name": "IntersectionObserverController::computeIntersections",
+          "count": 13,
+          "totalMs": 0.027000000000000003,
+          "maxMs": 0.005
         },
         {
           "name": "Decode LazyPixelRef",
           "count": 2,
-          "totalMs": 0.025,
-          "maxMs": 0.019
+          "totalMs": 0.027,
+          "maxMs": 0.022
         },
         {
           "name": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
           "count": 7,
-          "totalMs": 0.024999999999999998,
+          "totalMs": 0.025,
           "maxMs": 0.005
-        },
-        {
-          "name": "BackgroundProcessor::MaybeStartProcessingResponse",
-          "count": 3,
-          "totalMs": 0.024,
-          "maxMs": 0.017
         },
         {
           "name": "V8.DeoptimizeCode",
@@ -363,64 +369,58 @@
           "maxMs": 0.005
         },
         {
-          "name": "IntersectionObserverController::computeIntersections",
-          "count": 11,
-          "totalMs": 0.021000000000000005,
-          "maxMs": 0.005
-        },
-        {
-          "name": "UpdateLayer",
-          "count": 15,
-          "totalMs": 0.020000000000000004,
-          "maxMs": 0.002
-        },
-        {
-          "name": "V8.GC_HEAP_EPILOGUE",
-          "count": 6,
-          "totalMs": 0.018000000000000002,
-          "maxMs": 0.01
-        },
-        {
-          "name": "v8.produceModuleCache",
+          "name": "BackgroundProcessor::MaybeStartProcessingResponse",
           "count": 3,
-          "totalMs": 0.016,
-          "maxMs": 0.007
+          "totalMs": 0.023,
+          "maxMs": 0.016
         },
         {
           "name": "V8.GC_SCAVENGER_SWEEP_ARRAY_BUFFERS",
           "count": 6,
-          "totalMs": 0.014000000000000002,
-          "maxMs": 0.005
+          "totalMs": 0.020000000000000004,
+          "maxMs": 0.011
         },
         {
-          "name": "BackgroundJSStreamManager::OnFinishStreaming",
-          "count": 3,
-          "totalMs": 0.013000000000000001,
-          "maxMs": 0.007
+          "name": "V8.GC_BACKGROUND_YOUNG_ARRAY_BUFFER_SWEEP",
+          "count": 6,
+          "totalMs": 0.017,
+          "maxMs": 0.01
+        },
+        {
+          "name": "V8.GC_HEAP_EPILOGUE",
+          "count": 7,
+          "totalMs": 0.016000000000000004,
+          "maxMs": 0.01
         },
         {
           "name": "V8.GC_MINOR_MS_BACKGROUND_SWEEPING",
           "count": 6,
-          "totalMs": 0.013000000000000001,
+          "totalMs": 0.016,
+          "maxMs": 0.009
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES",
+          "count": 6,
+          "totalMs": 0.015000000000000003,
+          "maxMs": 0.008
+        },
+        {
+          "name": "v8.produceModuleCache",
+          "count": 3,
+          "totalMs": 0.014000000000000002,
           "maxMs": 0.007
         },
         {
           "name": "CommitLoad",
           "count": 1,
-          "totalMs": 0.013,
-          "maxMs": 0.013
+          "totalMs": 0.014,
+          "maxMs": 0.014
         },
         {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES",
-          "count": 6,
-          "totalMs": 0.012,
-          "maxMs": 0.003
-        },
-        {
-          "name": "V8.GC_BACKGROUND_YOUNG_ARRAY_BUFFER_SWEEP",
-          "count": 6,
-          "totalMs": 0.010000000000000002,
-          "maxMs": 0.002
+          "name": "BackgroundJSStreamManager::OnFinishStreaming",
+          "count": 3,
+          "totalMs": 0.009000000000000001,
+          "maxMs": 0.004
         },
         {
           "name": "V8.GC_HEAP_EXTERNAL_PROLOGUE",
@@ -429,14 +429,8 @@
           "maxMs": 0.003
         },
         {
-          "name": "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS",
-          "count": 4,
-          "totalMs": 0.009000000000000001,
-          "maxMs": 0.003
-        },
-        {
           "name": "V8.GC_HEAP_EPILOGUE_SAFEPOINT",
-          "count": 6,
+          "count": 7,
           "totalMs": 0.008,
           "maxMs": 0.002
         },
@@ -448,12 +442,18 @@
         },
         {
           "name": "V8.GC_SCAVENGER_RESIZE_NEW_SPACE",
-          "count": 3,
+          "count": 5,
           "totalMs": 0.005,
-          "maxMs": 0.003
+          "maxMs": 0.001
         },
         {
-          "name": "ComputeWeaknessProcessor start",
+          "name": "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS",
+          "count": 3,
+          "totalMs": 0.005,
+          "maxMs": 0.002
+        },
+        {
+          "name": "Parallel scavenge started",
           "count": 4,
           "totalMs": 0.004,
           "maxMs": 0.001
@@ -465,25 +465,19 @@
           "maxMs": 0.002
         },
         {
-          "name": "V8.GC_HEAP_PROLOGUE_SAFEPOINT",
-          "count": 3,
-          "totalMs": 0.003,
-          "maxMs": 0.001
-        },
-        {
-          "name": "Parallel scavenge started",
-          "count": 3,
-          "totalMs": 0.003,
-          "maxMs": 0.001
-        },
-        {
-          "name": "ArrayBufferSweeper Finished",
+          "name": "ComputeWeaknessProcessor start",
           "count": 3,
           "totalMs": 0.003,
           "maxMs": 0.001
         },
         {
           "name": "ClearWeaknessProcessor start",
+          "count": 2,
+          "totalMs": 0.002,
+          "maxMs": 0.001
+        },
+        {
+          "name": "ArrayBufferSweeper Finished",
           "count": 2,
           "totalMs": 0.002,
           "maxMs": 0.001
@@ -505,50 +499,50 @@
       "retention": [
         {
           "operation": "initial-ready",
-          "heapUsedBytes": 10801264,
+          "heapUsedBytes": 10063800,
           "canvases": 1,
           "counters": {
             "created": 64,
             "deleted": 19,
             "active": 45,
             "uploadCalls": 78,
-            "uploadDispatchMs": 28.100000023841858
+            "uploadDispatchMs": 27.799999952316284
           }
         },
         {
           "operation": "all-maps-and-style-cycle-1",
-          "heapUsedBytes": 12668132,
+          "heapUsedBytes": 11140056,
           "canvases": 1,
           "counters": {
             "created": 156,
             "deleted": 75,
             "active": 81,
             "uploadCalls": 204,
-            "uploadDispatchMs": 90
+            "uploadDispatchMs": 86.09999990463257
           }
         },
         {
           "operation": "all-maps-and-style-cycle-2",
-          "heapUsedBytes": 16081564,
+          "heapUsedBytes": 9798056,
           "canvases": 1,
           "counters": {
             "created": 212,
             "deleted": 131,
             "active": 81,
             "uploadCalls": 294,
-            "uploadDispatchMs": 90.59999978542328
+            "uploadDispatchMs": 86.69999992847443
           }
         },
         {
           "operation": "all-maps-and-style-cycle-3",
-          "heapUsedBytes": 15105788,
+          "heapUsedBytes": 9723544,
           "canvases": 1,
           "counters": {
             "created": 268,
             "deleted": 187,
             "active": 81,
             "uploadCalls": 384,
-            "uploadDispatchMs": 90.99999976158142
+            "uploadDispatchMs": 87.39999997615814
           }
         }
       ]
@@ -556,410 +550,428 @@
     {
       "condition": "constrained",
       "ready": {
-        "readyMs": 6004.5,
+        "readyMs": 5995.199999928474,
         "webgl": {
           "created": 64,
           "deleted": 19,
           "active": 45,
           "uploadCalls": 78,
-          "uploadDispatchMs": 112.4000004529953
+          "uploadDispatchMs": 109.59999990463257
         },
         "decode": {
           "calls": 0,
           "wallMs": 0
         }
       },
-      "traceEvents": 28253,
+      "traceEvents": 28256,
       "traceDurationGroups": [
         {
           "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
           "count": 3,
-          "totalMs": 3708.349,
-          "maxMs": 3481.145
+          "totalMs": 3709.225,
+          "maxMs": 3482.038
         },
         {
           "name": "v8.parseOnBackground",
           "count": 3,
-          "totalMs": 3708.331,
-          "maxMs": 3481.141
+          "totalMs": 3709.2019999999998,
+          "maxMs": 3482.035
         },
         {
           "name": "v8.parseOnBackgroundWaiting",
           "count": 250,
-          "totalMs": 3689.644000000002,
-          "maxMs": 47.275
+          "totalMs": 3690.5790000000015,
+          "maxMs": 46.844
         },
         {
           "name": "RunTask",
-          "count": 16759,
-          "totalMs": 3113.761000000165,
-          "maxMs": 107.785
+          "count": 16685,
+          "totalMs": 3091.4400000001224,
+          "maxMs": 112.513
         },
         {
           "name": "Commit",
-          "count": 205,
-          "totalMs": 269.50399999999996,
-          "maxMs": 4.689
+          "count": 202,
+          "totalMs": 262.094,
+          "maxMs": 6.021
         },
         {
           "name": "v8.callFunction",
-          "count": 470,
-          "totalMs": 217.59299999999993,
-          "maxMs": 40.384
+          "count": 471,
+          "totalMs": 222.9579999999999,
+          "maxMs": 47.625
         },
         {
           "name": "FunctionCall",
-          "count": 470,
-          "totalMs": 209.09500000000003,
-          "maxMs": 40.36
+          "count": 471,
+          "totalMs": 214.85100000000017,
+          "maxMs": 47.592
         },
         {
           "name": "EventDispatch",
-          "count": 39,
-          "totalMs": 171.255,
-          "maxMs": 40.39
-        },
-        {
-          "name": "GPUTask",
-          "count": 331,
-          "totalMs": 121.12399999999997,
-          "maxMs": 2.076
+          "count": 41,
+          "totalMs": 178.50799999999998,
+          "maxMs": 47.761
         },
         {
           "name": "Layout",
           "count": 20,
-          "totalMs": 118.88600000000001,
-          "maxMs": 98.579
+          "totalMs": 123.66,
+          "maxMs": 103.164
+        },
+        {
+          "name": "GPUTask",
+          "count": 334,
+          "totalMs": 115.99900000000002,
+          "maxMs": 3.13
         },
         {
           "name": "Decode Image",
           "count": 26,
-          "totalMs": 97.03,
-          "maxMs": 19.227
+          "totalMs": 98.23100000000001,
+          "maxMs": 18.945
         },
         {
           "name": "v8.evaluateModule",
           "count": 2,
-          "totalMs": 78.77,
-          "maxMs": 63.931
+          "totalMs": 82.089,
+          "maxMs": 62.249
         },
         {
           "name": "RasterTask",
           "count": 67,
-          "totalMs": 75.46800000000002,
-          "maxMs": 12.891
+          "totalMs": 66.17899999999997,
+          "maxMs": 11.504
         },
         {
           "name": "PrePaint",
-          "count": 201,
-          "totalMs": 36.75799999999998,
-          "maxMs": 4.835
+          "count": 199,
+          "totalMs": 40.298999999999985,
+          "maxMs": 4.437
         },
         {
           "name": "FireAnimationFrame",
           "count": 278,
-          "totalMs": 30.767999999999983,
-          "maxMs": 2.605
+          "totalMs": 30.227,
+          "maxMs": 2.216
         },
         {
           "name": "UpdateLayoutTree",
-          "count": 205,
-          "totalMs": 29.232,
-          "maxMs": 5.373
-        },
-        {
-          "name": "Paint",
-          "count": 78,
-          "totalMs": 24.792,
-          "maxMs": 2.531
+          "count": 203,
+          "totalMs": 26.52000000000003,
+          "maxMs": 4.289
         },
         {
           "name": "v8.parseOnBackgroundParsing",
           "count": 253,
-          "totalMs": 18.439999999999994,
-          "maxMs": 0.903
+          "totalMs": 18.373000000000005,
+          "maxMs": 0.919
+        },
+        {
+          "name": "Paint",
+          "count": 74,
+          "totalMs": 16.804,
+          "maxMs": 2.558
         },
         {
           "name": "XHRLoad",
           "count": 21,
-          "totalMs": 16.407,
-          "maxMs": 1.309
+          "totalMs": 16.549000000000003,
+          "maxMs": 1.302
         },
         {
           "name": "EvaluateScript",
           "count": 2,
-          "totalMs": 11.982999999999999,
-          "maxMs": 11.27
+          "totalMs": 12.127,
+          "maxMs": 11.281
+        },
+        {
+          "name": "ParseHTML",
+          "count": 12,
+          "totalMs": 10.899999999999999,
+          "maxMs": 8.73
         },
         {
           "name": "LocalWindowProxy::Initialize",
           "count": 2,
-          "totalMs": 9.123,
-          "maxMs": 8.524
-        },
-        {
-          "name": "ParseHTML",
-          "count": 10,
-          "totalMs": 6.926,
-          "maxMs": 4.381
+          "totalMs": 10.123000000000001,
+          "maxMs": 9.217
         },
         {
           "name": "Layerize",
-          "count": 134,
-          "totalMs": 3.88999999999999,
-          "maxMs": 0.78
+          "count": 130,
+          "totalMs": 5.234000000000003,
+          "maxMs": 0.906
         },
         {
           "name": "MinorGC",
           "count": 4,
-          "totalMs": 3.876,
-          "maxMs": 1.283
+          "totalMs": 4.836,
+          "maxMs": 1.89
         },
         {
           "name": "V8.GCScavenger",
           "count": 4,
-          "totalMs": 3.7859999999999996,
-          "maxMs": 1.263
+          "totalMs": 4.6419999999999995,
+          "maxMs": 1.772
         },
         {
           "name": "V8.GC_SCAVENGER",
           "count": 4,
-          "totalMs": 3.724,
-          "maxMs": 1.237
+          "totalMs": 4.588,
+          "maxMs": 1.758
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE",
           "count": 4,
-          "totalMs": 3.699,
-          "maxMs": 1.229
-        },
-        {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
-          "count": 4,
-          "totalMs": 3.1839999999999997,
+          "totalMs": 3.991,
           "maxMs": 1.181
         },
         {
           "name": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
-          "count": 11,
-          "totalMs": 2.573,
-          "maxMs": 0.468
+          "count": 9,
+          "totalMs": 2.6239999999999997,
+          "maxMs": 0.372
         },
         {
-          "name": "UpdateLayer",
-          "count": 259,
-          "totalMs": 1.8909999999999916,
-          "maxMs": 0.765
-        },
-        {
-          "name": "HitTest",
-          "count": 6,
-          "totalMs": 1.637,
-          "maxMs": 0.673
-        },
-        {
-          "name": "IntersectionObserverController::computeIntersections",
-          "count": 351,
-          "totalMs": 1.4579999999999886,
-          "maxMs": 0.386
-        },
-        {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_ROOTS",
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
           "count": 4,
-          "totalMs": 1.3159999999999998,
-          "maxMs": 1.145
-        },
-        {
-          "name": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
-          "count": 1,
-          "totalMs": 1.277,
-          "maxMs": 1.277
-        },
-        {
-          "name": "V8.GC_BACKGROUND_SAFEPOINT",
-          "count": 1,
-          "totalMs": 1.262,
-          "maxMs": 1.262
-        },
-        {
-          "name": "PaintImage",
-          "count": 21,
-          "totalMs": 1.1379999999999997,
-          "maxMs": 0.677
-        },
-        {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
-          "count": 3,
-          "totalMs": 1.132,
-          "maxMs": 1.109
+          "totalMs": 2.59,
+          "maxMs": 0.94
         },
         {
           "name": "LocalWindowProxy::CreateContext",
           "count": 2,
-          "totalMs": 1.127,
-          "maxMs": 0.593
+          "totalMs": 1.901,
+          "maxMs": 1.066
+        },
+        {
+          "name": "V8.GC_BACKGROUND_SAFEPOINT",
+          "count": 1,
+          "totalMs": 1.773,
+          "maxMs": 1.773
+        },
+        {
+          "name": "V8.GC_BACKGROUND_UNPARK",
+          "count": 1,
+          "totalMs": 1.768,
+          "maxMs": 1.768
         },
         {
           "name": "V8.DeserializeContext",
           "count": 2,
-          "totalMs": 1.062,
-          "maxMs": 0.547
+          "totalMs": 1.046,
+          "maxMs": 0.815
         },
         {
-          "name": "InstallConditionalFeatures",
-          "count": 2,
-          "totalMs": 0.9460000000000001,
-          "maxMs": 0.899
+          "name": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+          "count": 1,
+          "totalMs": 1.035,
+          "maxMs": 1.035
         },
         {
-          "name": "Decode LazyPixelRef",
-          "count": 2,
-          "totalMs": 0.357,
-          "maxMs": 0.352
-        },
-        {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
-          "count": 4,
-          "totalMs": 0.329,
-          "maxMs": 0.284
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+          "count": 1,
+          "totalMs": 0.912,
+          "maxMs": 0.912
         },
         {
           "name": "ParseAuthorStyleSheet",
           "count": 1,
-          "totalMs": 0.317,
-          "maxMs": 0.317
+          "totalMs": 0.861,
+          "maxMs": 0.861
+        },
+        {
+          "name": "HitTest",
+          "count": 6,
+          "totalMs": 0.753,
+          "maxMs": 0.671
+        },
+        {
+          "name": "PaintImage",
+          "count": 21,
+          "totalMs": 0.7230000000000001,
+          "maxMs": 0.405
         },
         {
           "name": "XHRReadyStateChange",
-          "count": 140,
-          "totalMs": 0.30600000000000016,
-          "maxMs": 0.02
+          "count": 150,
+          "totalMs": 0.6850000000000002,
+          "maxMs": 0.291
         },
         {
-          "name": "V8.GC_SCAVENGER_SCAVENGE_FINALIZE",
-          "count": 4,
-          "totalMs": 0.066,
-          "maxMs": 0.028
+          "name": "UpdateLayer",
+          "count": 266,
+          "totalMs": 0.6130000000000002,
+          "maxMs": 0.29
         },
         {
-          "name": "v8.newInstance",
-          "count": 35,
-          "totalMs": 0.05500000000000003,
-          "maxMs": 0.007
+          "name": "InstallConditionalFeatures",
+          "count": 2,
+          "totalMs": 0.549,
+          "maxMs": 0.499
         },
         {
-          "name": "BackgroundJSStreamManager::OnDataPipeReadable",
+          "name": "CommitLoad",
+          "count": 1,
+          "totalMs": 0.482,
+          "maxMs": 0.482
+        },
+        {
+          "name": "IntersectionObserverController::computeIntersections",
+          "count": 343,
+          "totalMs": 0.45600000000000035,
+          "maxMs": 0.006
+        },
+        {
+          "name": "V8.GC_SCAVENGER_FREE_REMEMBERED_SET",
           "count": 3,
-          "totalMs": 0.048,
-          "maxMs": 0.025
+          "totalMs": 0.243,
+          "maxMs": 0.235
         },
         {
           "name": "v8.compileModule",
           "count": 3,
-          "totalMs": 0.046,
-          "maxMs": 0.022
+          "totalMs": 0.10900000000000001,
+          "maxMs": 0.07
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_ROOTS",
+          "count": 4,
+          "totalMs": 0.097,
+          "maxMs": 0.041
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_FINALIZE",
+          "count": 4,
+          "totalMs": 0.091,
+          "maxMs": 0.044
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
+          "count": 4,
+          "totalMs": 0.062,
+          "maxMs": 0.019
+        },
+        {
+          "name": "v8.newInstance",
+          "count": 41,
+          "totalMs": 0.059000000000000025,
+          "maxMs": 0.005
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnDataPipeReadable",
+          "count": 3,
+          "totalMs": 0.056,
+          "maxMs": 0.031
         },
         {
           "name": "BackgroundJSStreamManager::TryStartStreamingTask",
           "count": 3,
-          "totalMs": 0.043000000000000003,
-          "maxMs": 0.023
-        },
-        {
-          "name": "ContextCreatedNotification",
-          "count": 2,
-          "totalMs": 0.042,
+          "totalMs": 0.051000000000000004,
           "maxMs": 0.029
         },
         {
           "name": "BackgroundProcessor::MaybeStartProcessingResponse",
           "count": 3,
-          "totalMs": 0.036,
+          "totalMs": 0.046,
           "maxMs": 0.022
         },
         {
-          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL",
-          "count": 4,
-          "totalMs": 0.033,
-          "maxMs": 0.014
+          "name": "ContextCreatedNotification",
+          "count": 2,
+          "totalMs": 0.043000000000000003,
+          "maxMs": 0.029
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS",
           "count": 4,
-          "totalMs": 0.029000000000000005,
+          "totalMs": 0.038,
+          "maxMs": 0.017
+        },
+        {
+          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL",
+          "count": 4,
+          "totalMs": 0.032,
           "maxMs": 0.012
         },
         {
-          "name": "V8.GC_SCAVENGER_FREE_REMEMBERED_SET",
-          "count": 3,
-          "totalMs": 0.023,
-          "maxMs": 0.011
-        },
-        {
-          "name": "V8.GC_TIME_TO_SAFEPOINT",
-          "count": 1,
-          "totalMs": 0.021,
-          "maxMs": 0.021
-        },
-        {
-          "name": "BackgroundJSStreamManager::OnFinishStreaming",
-          "count": 3,
-          "totalMs": 0.02,
-          "maxMs": 0.01
-        },
-        {
-          "name": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
-          "count": 4,
-          "totalMs": 0.018000000000000002,
-          "maxMs": 0.005
-        },
-        {
-          "name": "CommitLoad",
-          "count": 1,
-          "totalMs": 0.017,
-          "maxMs": 0.017
+          "name": "Decode LazyPixelRef",
+          "count": 2,
+          "totalMs": 0.03,
+          "maxMs": 0.024
         },
         {
           "name": "v8.produceModuleCache",
           "count": 3,
-          "totalMs": 0.016,
-          "maxMs": 0.008
-        },
-        {
-          "name": "V8.GC_HEAP_EPILOGUE",
-          "count": 4,
-          "totalMs": 0.016,
-          "maxMs": 0.01
-        },
-        {
-          "name": "V8.DeoptimizeCode",
-          "count": 6,
-          "totalMs": 0.016,
-          "maxMs": 0.004
+          "totalMs": 0.018000000000000002,
+          "maxMs": 0.009
         },
         {
           "name": "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL",
           "count": 4,
-          "totalMs": 0.015,
+          "totalMs": 0.018000000000000002,
+          "maxMs": 0.008
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnFinishStreaming",
+          "count": 3,
+          "totalMs": 0.016,
           "maxMs": 0.006
+        },
+        {
+          "name": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
+          "count": 4,
+          "totalMs": 0.015,
+          "maxMs": 0.005
+        },
+        {
+          "name": "V8.GC_HEAP_EPILOGUE",
+          "count": 4,
+          "totalMs": 0.014,
+          "maxMs": 0.008
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "count": 5,
+          "totalMs": 0.014,
+          "maxMs": 0.004
+        },
+        {
+          "name": "V8.GC_TIME_TO_SAFEPOINT",
+          "count": 3,
+          "totalMs": 0.012999999999999998,
+          "maxMs": 0.009
         },
         {
           "name": "V8.GC_HEAP_EXTERNAL_PROLOGUE",
           "count": 4,
-          "totalMs": 0.012,
-          "maxMs": 0.005
+          "totalMs": 0.011,
+          "maxMs": 0.004
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES",
           "count": 4,
-          "totalMs": 0.01,
+          "totalMs": 0.009000000000000001,
           "maxMs": 0.003
         },
         {
           "name": "V8.GC_SCAVENGER_SWEEP_ARRAY_BUFFERS",
           "count": 3,
-          "totalMs": 0.007,
+          "totalMs": 0.009000000000000001,
+          "maxMs": 0.005
+        },
+        {
+          "name": "V8.GC_BACKGROUND_YOUNG_ARRAY_BUFFER_SWEEP",
+          "count": 3,
+          "totalMs": 0.009000000000000001,
           "maxMs": 0.004
+        },
+        {
+          "name": "V8.GC_MINOR_MS_BACKGROUND_SWEEPING",
+          "count": 3,
+          "totalMs": 0.006,
+          "maxMs": 0.003
         },
         {
           "name": "V8.GC_HEAP_EPILOGUE_SAFEPOINT",
@@ -968,40 +980,28 @@
           "maxMs": 0.002
         },
         {
-          "name": "V8.GC_BACKGROUND_YOUNG_ARRAY_BUFFER_SWEEP",
-          "count": 3,
-          "totalMs": 0.005,
-          "maxMs": 0.002
+          "name": "LocalWindowProxy::SetupWindowPrototypeChain",
+          "count": 2,
+          "totalMs": 0.004,
+          "maxMs": 0.003
         },
         {
-          "name": "ComputeWeaknessProcessor start",
+          "name": "ClearWeaknessProcessor start",
           "count": 4,
           "totalMs": 0.004,
           "maxMs": 0.001
         },
         {
-          "name": "Parallel scavenge started",
+          "name": "V8.GC_HEAP_PROLOGUE",
           "count": 3,
           "totalMs": 0.004,
           "maxMs": 0.002
         },
         {
-          "name": "V8.GC_MINOR_MS_BACKGROUND_SWEEPING",
-          "count": 3,
+          "name": "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS",
+          "count": 1,
           "totalMs": 0.004,
-          "maxMs": 0.002
-        },
-        {
-          "name": "LocalWindowProxy::SetupWindowPrototypeChain",
-          "count": 2,
-          "totalMs": 0.003,
-          "maxMs": 0.002
-        },
-        {
-          "name": "ClearWeaknessProcessor start",
-          "count": 3,
-          "totalMs": 0.003,
-          "maxMs": 0.001
+          "maxMs": 0.004
         },
         {
           "name": "V8.GC_SCAVENGER_SCAVENGE_RESTORE_AND_QUARANTINE_PINNED",
@@ -1016,31 +1016,31 @@
           "maxMs": 0.002
         },
         {
-          "name": "V8.GC_HEAP_PROLOGUE",
-          "count": 2,
-          "totalMs": 0.003,
-          "maxMs": 0.002
-        },
-        {
-          "name": "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS",
-          "count": 1,
-          "totalMs": 0.003,
-          "maxMs": 0.003
-        },
-        {
           "name": "LocalWindowProxy::UpdateDocumentProperty",
           "count": 1,
           "totalMs": 0.002,
           "maxMs": 0.002
         },
         {
-          "name": "V8.GC_HEAP_PROLOGUE_SAFEPOINT",
-          "count": 1,
-          "totalMs": 0.001,
+          "name": "ComputeWeaknessProcessor start",
+          "count": 2,
+          "totalMs": 0.002,
+          "maxMs": 0.001
+        },
+        {
+          "name": "Parallel scavenge started",
+          "count": 2,
+          "totalMs": 0.002,
           "maxMs": 0.001
         },
         {
           "name": "ArrayBufferSweeper Finished",
+          "count": 2,
+          "totalMs": 0.002,
+          "maxMs": 0.001
+        },
+        {
+          "name": "V8.GC_HEAP_PROLOGUE_SAFEPOINT",
           "count": 1,
           "totalMs": 0.001,
           "maxMs": 0.001
@@ -1050,50 +1050,50 @@
       "retention": [
         {
           "operation": "initial-ready",
-          "heapUsedBytes": 10210448,
+          "heapUsedBytes": 10768468,
           "canvases": 1,
           "counters": {
             "created": 64,
             "deleted": 19,
             "active": 45,
             "uploadCalls": 78,
-            "uploadDispatchMs": 112.4000004529953
+            "uploadDispatchMs": 109.59999990463257
           }
         },
         {
           "operation": "all-maps-and-style-cycle-1",
-          "heapUsedBytes": 10333828,
+          "heapUsedBytes": 15291868,
           "canvases": 1,
           "counters": {
             "created": 156,
             "deleted": 75,
             "active": 81,
             "uploadCalls": 204,
-            "uploadDispatchMs": 357.50000035762787
+            "uploadDispatchMs": 339.7999995946884
           }
         },
         {
           "operation": "all-maps-and-style-cycle-2",
-          "heapUsedBytes": 16316672,
+          "heapUsedBytes": 8802120,
           "canvases": 1,
           "counters": {
             "created": 212,
             "deleted": 131,
             "active": 81,
             "uploadCalls": 294,
-            "uploadDispatchMs": 359.50000047683716
+            "uploadDispatchMs": 341.5999995470047
           }
         },
         {
           "operation": "all-maps-and-style-cycle-3",
-          "heapUsedBytes": 15430820,
+          "heapUsedBytes": 14521260,
           "canvases": 1,
           "counters": {
             "created": 268,
             "deleted": 187,
             "active": 81,
             "uploadCalls": 384,
-            "uploadDispatchMs": 360.80000054836273
+            "uploadDispatchMs": 343.7999994754791
           }
         }
       ]

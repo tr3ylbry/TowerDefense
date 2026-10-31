@@ -1,0 +1,1102 @@
+{
+  "label": "after",
+  "complete": true,
+  "diagnostics": [
+    {
+      "condition": "local-control",
+      "ready": {
+        "readyMs": 140.09999990463257,
+        "webgl": {
+          "created": 64,
+          "deleted": 19,
+          "active": 45,
+          "uploadCalls": 78,
+          "uploadDispatchMs": 28.100000023841858
+        },
+        "decode": {
+          "calls": 0,
+          "wallMs": 0
+        }
+      },
+      "traceEvents": 8274,
+      "traceDurationGroups": [
+        {
+          "name": "RunTask",
+          "count": 5481,
+          "totalMs": 228.02400000000412,
+          "maxMs": 25.598
+        },
+        {
+          "name": "v8.callFunction",
+          "count": 110,
+          "totalMs": 64.09800000000001,
+          "maxMs": 18.698
+        },
+        {
+          "name": "RasterTask",
+          "count": 52,
+          "totalMs": 63.62300000000001,
+          "maxMs": 11.571
+        },
+        {
+          "name": "FunctionCall",
+          "count": 110,
+          "totalMs": 62.865,
+          "maxMs": 18.693
+        },
+        {
+          "name": "EventDispatch",
+          "count": 39,
+          "totalMs": 40.81500000000001,
+          "maxMs": 9.253
+        },
+        {
+          "name": "Layout",
+          "count": 5,
+          "totalMs": 28.485,
+          "maxMs": 25.405
+        },
+        {
+          "name": "Decode Image",
+          "count": 26,
+          "totalMs": 24.462999999999994,
+          "maxMs": 4.791
+        },
+        {
+          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
+          "count": 3,
+          "totalMs": 22.753,
+          "maxMs": 21.712
+        },
+        {
+          "name": "v8.parseOnBackground",
+          "count": 3,
+          "totalMs": 22.739,
+          "maxMs": 21.71
+        },
+        {
+          "name": "GPUTask",
+          "count": 122,
+          "totalMs": 21.944000000000003,
+          "maxMs": 3.473
+        },
+        {
+          "name": "v8.evaluateModule",
+          "count": 2,
+          "totalMs": 20.114,
+          "maxMs": 16.931
+        },
+        {
+          "name": "FireAnimationFrame",
+          "count": 8,
+          "totalMs": 20.087,
+          "maxMs": 18.704
+        },
+        {
+          "name": "v8.parseOnBackgroundParsing",
+          "count": 26,
+          "totalMs": 13.319999999999997,
+          "maxMs": 2.351
+        },
+        {
+          "name": "Commit",
+          "count": 10,
+          "totalMs": 9.744,
+          "maxMs": 3.647
+        },
+        {
+          "name": "v8.parseOnBackgroundWaiting",
+          "count": 23,
+          "totalMs": 9.390000000000002,
+          "maxMs": 0.857
+        },
+        {
+          "name": "EvaluateScript",
+          "count": 2,
+          "totalMs": 3.292,
+          "maxMs": 3.086
+        },
+        {
+          "name": "XHRLoad",
+          "count": 21,
+          "totalMs": 2.8260000000000005,
+          "maxMs": 0.444
+        },
+        {
+          "name": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+          "count": 17,
+          "totalMs": 2.538,
+          "maxMs": 0.397
+        },
+        {
+          "name": "MinorGC",
+          "count": 7,
+          "totalMs": 2.4400000000000004,
+          "maxMs": 0.614
+        },
+        {
+          "name": "V8.GCScavenger",
+          "count": 7,
+          "totalMs": 2.3190000000000004,
+          "maxMs": 0.574
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "count": 7,
+          "totalMs": 2.136,
+          "maxMs": 0.516
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "count": 7,
+          "totalMs": 2.101,
+          "maxMs": 0.51
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "count": 14,
+          "totalMs": 2.072,
+          "maxMs": 1.147
+        },
+        {
+          "name": "LocalWindowProxy::Initialize",
+          "count": 2,
+          "totalMs": 2.052,
+          "maxMs": 1.846
+        },
+        {
+          "name": "PrePaint",
+          "count": 8,
+          "totalMs": 1.5210000000000001,
+          "maxMs": 1.084
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+          "count": 7,
+          "totalMs": 1.486,
+          "maxMs": 0.425
+        },
+        {
+          "name": "ParseHTML",
+          "count": 11,
+          "totalMs": 1.4489999999999996,
+          "maxMs": 0.793
+        },
+        {
+          "name": "Paint",
+          "count": 12,
+          "totalMs": 1.34,
+          "maxMs": 0.795
+        },
+        {
+          "name": "V8.GC_BACKGROUND_SAFEPOINT",
+          "count": 4,
+          "totalMs": 1.2920000000000003,
+          "maxMs": 0.555
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+          "count": 4,
+          "totalMs": 0.6060000000000001,
+          "maxMs": 0.391
+        },
+        {
+          "name": "V8.GC_BACKGROUND_UNPARK",
+          "count": 2,
+          "totalMs": 0.395,
+          "maxMs": 0.298
+        },
+        {
+          "name": "LocalWindowProxy::CreateContext",
+          "count": 2,
+          "totalMs": 0.376,
+          "maxMs": 0.225
+        },
+        {
+          "name": "Layerize",
+          "count": 8,
+          "totalMs": 0.323,
+          "maxMs": 0.084
+        },
+        {
+          "name": "V8.DeserializeContext",
+          "count": 2,
+          "totalMs": 0.32,
+          "maxMs": 0.183
+        },
+        {
+          "name": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+          "count": 1,
+          "totalMs": 0.165,
+          "maxMs": 0.165
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "count": 1,
+          "totalMs": 0.164,
+          "maxMs": 0.164
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_ROOTS",
+          "count": 7,
+          "totalMs": 0.132,
+          "maxMs": 0.037
+        },
+        {
+          "name": "V8.GC_TIME_TO_SAFEPOINT",
+          "count": 5,
+          "totalMs": 0.128,
+          "maxMs": 0.075
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_FINALIZE",
+          "count": 7,
+          "totalMs": 0.11800000000000001,
+          "maxMs": 0.026
+        },
+        {
+          "name": "InstallConditionalFeatures",
+          "count": 2,
+          "totalMs": 0.11599999999999999,
+          "maxMs": 0.076
+        },
+        {
+          "name": "XHRReadyStateChange",
+          "count": 59,
+          "totalMs": 0.09200000000000004,
+          "maxMs": 0.01
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnDataPipeReadable",
+          "count": 3,
+          "totalMs": 0.081,
+          "maxMs": 0.046
+        },
+        {
+          "name": "BackgroundJSStreamManager::TryStartStreamingTask",
+          "count": 3,
+          "totalMs": 0.079,
+          "maxMs": 0.045
+        },
+        {
+          "name": "PaintImage",
+          "count": 11,
+          "totalMs": 0.07400000000000002,
+          "maxMs": 0.041
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
+          "count": 7,
+          "totalMs": 0.07100000000000001,
+          "maxMs": 0.016
+        },
+        {
+          "name": "v8.newInstance",
+          "count": 47,
+          "totalMs": 0.06300000000000004,
+          "maxMs": 0.005
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS",
+          "count": 7,
+          "totalMs": 0.062,
+          "maxMs": 0.014
+        },
+        {
+          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL",
+          "count": 7,
+          "totalMs": 0.038000000000000006,
+          "maxMs": 0.012
+        },
+        {
+          "name": "V8.GC_SCAVENGER_FREE_REMEMBERED_SET",
+          "count": 6,
+          "totalMs": 0.036000000000000004,
+          "maxMs": 0.011
+        },
+        {
+          "name": "v8.compileModule",
+          "count": 3,
+          "totalMs": 0.034,
+          "maxMs": 0.021
+        },
+        {
+          "name": "HitTest",
+          "count": 1,
+          "totalMs": 0.034,
+          "maxMs": 0.034
+        },
+        {
+          "name": "ContextCreatedNotification",
+          "count": 2,
+          "totalMs": 0.032,
+          "maxMs": 0.023
+        },
+        {
+          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL",
+          "count": 7,
+          "totalMs": 0.031,
+          "maxMs": 0.012
+        },
+        {
+          "name": "Decode LazyPixelRef",
+          "count": 2,
+          "totalMs": 0.025,
+          "maxMs": 0.019
+        },
+        {
+          "name": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
+          "count": 7,
+          "totalMs": 0.024999999999999998,
+          "maxMs": 0.005
+        },
+        {
+          "name": "BackgroundProcessor::MaybeStartProcessingResponse",
+          "count": 3,
+          "totalMs": 0.024,
+          "maxMs": 0.017
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "count": 11,
+          "totalMs": 0.023000000000000007,
+          "maxMs": 0.005
+        },
+        {
+          "name": "IntersectionObserverController::computeIntersections",
+          "count": 11,
+          "totalMs": 0.021000000000000005,
+          "maxMs": 0.005
+        },
+        {
+          "name": "UpdateLayer",
+          "count": 15,
+          "totalMs": 0.020000000000000004,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_HEAP_EPILOGUE",
+          "count": 6,
+          "totalMs": 0.018000000000000002,
+          "maxMs": 0.01
+        },
+        {
+          "name": "v8.produceModuleCache",
+          "count": 3,
+          "totalMs": 0.016,
+          "maxMs": 0.007
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SWEEP_ARRAY_BUFFERS",
+          "count": 6,
+          "totalMs": 0.014000000000000002,
+          "maxMs": 0.005
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnFinishStreaming",
+          "count": 3,
+          "totalMs": 0.013000000000000001,
+          "maxMs": 0.007
+        },
+        {
+          "name": "V8.GC_MINOR_MS_BACKGROUND_SWEEPING",
+          "count": 6,
+          "totalMs": 0.013000000000000001,
+          "maxMs": 0.007
+        },
+        {
+          "name": "CommitLoad",
+          "count": 1,
+          "totalMs": 0.013,
+          "maxMs": 0.013
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES",
+          "count": 6,
+          "totalMs": 0.012,
+          "maxMs": 0.003
+        },
+        {
+          "name": "V8.GC_BACKGROUND_YOUNG_ARRAY_BUFFER_SWEEP",
+          "count": 6,
+          "totalMs": 0.010000000000000002,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+          "count": 6,
+          "totalMs": 0.009000000000000001,
+          "maxMs": 0.003
+        },
+        {
+          "name": "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS",
+          "count": 4,
+          "totalMs": 0.009000000000000001,
+          "maxMs": 0.003
+        },
+        {
+          "name": "V8.GC_HEAP_EPILOGUE_SAFEPOINT",
+          "count": 6,
+          "totalMs": 0.008,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_HEAP_PROLOGUE",
+          "count": 5,
+          "totalMs": 0.005,
+          "maxMs": 0.001
+        },
+        {
+          "name": "V8.GC_SCAVENGER_RESIZE_NEW_SPACE",
+          "count": 3,
+          "totalMs": 0.005,
+          "maxMs": 0.003
+        },
+        {
+          "name": "ComputeWeaknessProcessor start",
+          "count": 4,
+          "totalMs": 0.004,
+          "maxMs": 0.001
+        },
+        {
+          "name": "LocalWindowProxy::SetupWindowPrototypeChain",
+          "count": 2,
+          "totalMs": 0.003,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_HEAP_PROLOGUE_SAFEPOINT",
+          "count": 3,
+          "totalMs": 0.003,
+          "maxMs": 0.001
+        },
+        {
+          "name": "Parallel scavenge started",
+          "count": 3,
+          "totalMs": 0.003,
+          "maxMs": 0.001
+        },
+        {
+          "name": "ArrayBufferSweeper Finished",
+          "count": 3,
+          "totalMs": 0.003,
+          "maxMs": 0.001
+        },
+        {
+          "name": "ClearWeaknessProcessor start",
+          "count": 2,
+          "totalMs": 0.002,
+          "maxMs": 0.001
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_RESTORE_AND_QUARANTINE_PINNED",
+          "count": 2,
+          "totalMs": 0.002,
+          "maxMs": 0.001
+        },
+        {
+          "name": "LocalWindowProxy::UpdateDocumentProperty",
+          "count": 1,
+          "totalMs": 0.001,
+          "maxMs": 0.001
+        }
+      ],
+      "traceNotes": "Diagnostic run separate from three startup samples. Totals overlap/nest and span renderer/compositor threads; not exclusive wall-time shares. WebGL upload duration is synchronous JS dispatch, not GPU completion. Decode wrapper only counts explicit HTMLImageElement.decode; browser/Phaser implicit decodes appear in trace when exposed.",
+      "retention": [
+        {
+          "operation": "initial-ready",
+          "heapUsedBytes": 10801264,
+          "canvases": 1,
+          "counters": {
+            "created": 64,
+            "deleted": 19,
+            "active": 45,
+            "uploadCalls": 78,
+            "uploadDispatchMs": 28.100000023841858
+          }
+        },
+        {
+          "operation": "all-maps-and-style-cycle-1",
+          "heapUsedBytes": 12668132,
+          "canvases": 1,
+          "counters": {
+            "created": 156,
+            "deleted": 75,
+            "active": 81,
+            "uploadCalls": 204,
+            "uploadDispatchMs": 90
+          }
+        },
+        {
+          "operation": "all-maps-and-style-cycle-2",
+          "heapUsedBytes": 16081564,
+          "canvases": 1,
+          "counters": {
+            "created": 212,
+            "deleted": 131,
+            "active": 81,
+            "uploadCalls": 294,
+            "uploadDispatchMs": 90.59999978542328
+          }
+        },
+        {
+          "operation": "all-maps-and-style-cycle-3",
+          "heapUsedBytes": 15105788,
+          "canvases": 1,
+          "counters": {
+            "created": 268,
+            "deleted": 187,
+            "active": 81,
+            "uploadCalls": 384,
+            "uploadDispatchMs": 90.99999976158142
+          }
+        }
+      ]
+    },
+    {
+      "condition": "constrained",
+      "ready": {
+        "readyMs": 6004.5,
+        "webgl": {
+          "created": 64,
+          "deleted": 19,
+          "active": 45,
+          "uploadCalls": 78,
+          "uploadDispatchMs": 112.4000004529953
+        },
+        "decode": {
+          "calls": 0,
+          "wallMs": 0
+        }
+      },
+      "traceEvents": 28253,
+      "traceDurationGroups": [
+        {
+          "name": "BackgroundJSStreamManager::RunScriptStreamingTask",
+          "count": 3,
+          "totalMs": 3708.349,
+          "maxMs": 3481.145
+        },
+        {
+          "name": "v8.parseOnBackground",
+          "count": 3,
+          "totalMs": 3708.331,
+          "maxMs": 3481.141
+        },
+        {
+          "name": "v8.parseOnBackgroundWaiting",
+          "count": 250,
+          "totalMs": 3689.644000000002,
+          "maxMs": 47.275
+        },
+        {
+          "name": "RunTask",
+          "count": 16759,
+          "totalMs": 3113.761000000165,
+          "maxMs": 107.785
+        },
+        {
+          "name": "Commit",
+          "count": 205,
+          "totalMs": 269.50399999999996,
+          "maxMs": 4.689
+        },
+        {
+          "name": "v8.callFunction",
+          "count": 470,
+          "totalMs": 217.59299999999993,
+          "maxMs": 40.384
+        },
+        {
+          "name": "FunctionCall",
+          "count": 470,
+          "totalMs": 209.09500000000003,
+          "maxMs": 40.36
+        },
+        {
+          "name": "EventDispatch",
+          "count": 39,
+          "totalMs": 171.255,
+          "maxMs": 40.39
+        },
+        {
+          "name": "GPUTask",
+          "count": 331,
+          "totalMs": 121.12399999999997,
+          "maxMs": 2.076
+        },
+        {
+          "name": "Layout",
+          "count": 20,
+          "totalMs": 118.88600000000001,
+          "maxMs": 98.579
+        },
+        {
+          "name": "Decode Image",
+          "count": 26,
+          "totalMs": 97.03,
+          "maxMs": 19.227
+        },
+        {
+          "name": "v8.evaluateModule",
+          "count": 2,
+          "totalMs": 78.77,
+          "maxMs": 63.931
+        },
+        {
+          "name": "RasterTask",
+          "count": 67,
+          "totalMs": 75.46800000000002,
+          "maxMs": 12.891
+        },
+        {
+          "name": "PrePaint",
+          "count": 201,
+          "totalMs": 36.75799999999998,
+          "maxMs": 4.835
+        },
+        {
+          "name": "FireAnimationFrame",
+          "count": 278,
+          "totalMs": 30.767999999999983,
+          "maxMs": 2.605
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "count": 205,
+          "totalMs": 29.232,
+          "maxMs": 5.373
+        },
+        {
+          "name": "Paint",
+          "count": 78,
+          "totalMs": 24.792,
+          "maxMs": 2.531
+        },
+        {
+          "name": "v8.parseOnBackgroundParsing",
+          "count": 253,
+          "totalMs": 18.439999999999994,
+          "maxMs": 0.903
+        },
+        {
+          "name": "XHRLoad",
+          "count": 21,
+          "totalMs": 16.407,
+          "maxMs": 1.309
+        },
+        {
+          "name": "EvaluateScript",
+          "count": 2,
+          "totalMs": 11.982999999999999,
+          "maxMs": 11.27
+        },
+        {
+          "name": "LocalWindowProxy::Initialize",
+          "count": 2,
+          "totalMs": 9.123,
+          "maxMs": 8.524
+        },
+        {
+          "name": "ParseHTML",
+          "count": 10,
+          "totalMs": 6.926,
+          "maxMs": 4.381
+        },
+        {
+          "name": "Layerize",
+          "count": 134,
+          "totalMs": 3.88999999999999,
+          "maxMs": 0.78
+        },
+        {
+          "name": "MinorGC",
+          "count": 4,
+          "totalMs": 3.876,
+          "maxMs": 1.283
+        },
+        {
+          "name": "V8.GCScavenger",
+          "count": 4,
+          "totalMs": 3.7859999999999996,
+          "maxMs": 1.263
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "count": 4,
+          "totalMs": 3.724,
+          "maxMs": 1.237
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "count": 4,
+          "totalMs": 3.699,
+          "maxMs": 1.229
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+          "count": 4,
+          "totalMs": 3.1839999999999997,
+          "maxMs": 1.181
+        },
+        {
+          "name": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+          "count": 11,
+          "totalMs": 2.573,
+          "maxMs": 0.468
+        },
+        {
+          "name": "UpdateLayer",
+          "count": 259,
+          "totalMs": 1.8909999999999916,
+          "maxMs": 0.765
+        },
+        {
+          "name": "HitTest",
+          "count": 6,
+          "totalMs": 1.637,
+          "maxMs": 0.673
+        },
+        {
+          "name": "IntersectionObserverController::computeIntersections",
+          "count": 351,
+          "totalMs": 1.4579999999999886,
+          "maxMs": 0.386
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_ROOTS",
+          "count": 4,
+          "totalMs": 1.3159999999999998,
+          "maxMs": 1.145
+        },
+        {
+          "name": "HTMLDocumentParser::MaybeFetchQueuedPreloads",
+          "count": 1,
+          "totalMs": 1.277,
+          "maxMs": 1.277
+        },
+        {
+          "name": "V8.GC_BACKGROUND_SAFEPOINT",
+          "count": 1,
+          "totalMs": 1.262,
+          "maxMs": 1.262
+        },
+        {
+          "name": "PaintImage",
+          "count": 21,
+          "totalMs": 1.1379999999999997,
+          "maxMs": 0.677
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+          "count": 3,
+          "totalMs": 1.132,
+          "maxMs": 1.109
+        },
+        {
+          "name": "LocalWindowProxy::CreateContext",
+          "count": 2,
+          "totalMs": 1.127,
+          "maxMs": 0.593
+        },
+        {
+          "name": "V8.DeserializeContext",
+          "count": 2,
+          "totalMs": 1.062,
+          "maxMs": 0.547
+        },
+        {
+          "name": "InstallConditionalFeatures",
+          "count": 2,
+          "totalMs": 0.9460000000000001,
+          "maxMs": 0.899
+        },
+        {
+          "name": "Decode LazyPixelRef",
+          "count": 2,
+          "totalMs": 0.357,
+          "maxMs": 0.352
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
+          "count": 4,
+          "totalMs": 0.329,
+          "maxMs": 0.284
+        },
+        {
+          "name": "ParseAuthorStyleSheet",
+          "count": 1,
+          "totalMs": 0.317,
+          "maxMs": 0.317
+        },
+        {
+          "name": "XHRReadyStateChange",
+          "count": 140,
+          "totalMs": 0.30600000000000016,
+          "maxMs": 0.02
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_FINALIZE",
+          "count": 4,
+          "totalMs": 0.066,
+          "maxMs": 0.028
+        },
+        {
+          "name": "v8.newInstance",
+          "count": 35,
+          "totalMs": 0.05500000000000003,
+          "maxMs": 0.007
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnDataPipeReadable",
+          "count": 3,
+          "totalMs": 0.048,
+          "maxMs": 0.025
+        },
+        {
+          "name": "v8.compileModule",
+          "count": 3,
+          "totalMs": 0.046,
+          "maxMs": 0.022
+        },
+        {
+          "name": "BackgroundJSStreamManager::TryStartStreamingTask",
+          "count": 3,
+          "totalMs": 0.043000000000000003,
+          "maxMs": 0.023
+        },
+        {
+          "name": "ContextCreatedNotification",
+          "count": 2,
+          "totalMs": 0.042,
+          "maxMs": 0.029
+        },
+        {
+          "name": "BackgroundProcessor::MaybeStartProcessingResponse",
+          "count": 3,
+          "totalMs": 0.036,
+          "maxMs": 0.022
+        },
+        {
+          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL",
+          "count": 4,
+          "totalMs": 0.033,
+          "maxMs": 0.014
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS",
+          "count": 4,
+          "totalMs": 0.029000000000000005,
+          "maxMs": 0.012
+        },
+        {
+          "name": "V8.GC_SCAVENGER_FREE_REMEMBERED_SET",
+          "count": 3,
+          "totalMs": 0.023,
+          "maxMs": 0.011
+        },
+        {
+          "name": "V8.GC_TIME_TO_SAFEPOINT",
+          "count": 1,
+          "totalMs": 0.021,
+          "maxMs": 0.021
+        },
+        {
+          "name": "BackgroundJSStreamManager::OnFinishStreaming",
+          "count": 3,
+          "totalMs": 0.02,
+          "maxMs": 0.01
+        },
+        {
+          "name": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
+          "count": 4,
+          "totalMs": 0.018000000000000002,
+          "maxMs": 0.005
+        },
+        {
+          "name": "CommitLoad",
+          "count": 1,
+          "totalMs": 0.017,
+          "maxMs": 0.017
+        },
+        {
+          "name": "v8.produceModuleCache",
+          "count": 3,
+          "totalMs": 0.016,
+          "maxMs": 0.008
+        },
+        {
+          "name": "V8.GC_HEAP_EPILOGUE",
+          "count": 4,
+          "totalMs": 0.016,
+          "maxMs": 0.01
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "count": 6,
+          "totalMs": 0.016,
+          "maxMs": 0.004
+        },
+        {
+          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL",
+          "count": 4,
+          "totalMs": 0.015,
+          "maxMs": 0.006
+        },
+        {
+          "name": "V8.GC_HEAP_EXTERNAL_PROLOGUE",
+          "count": 4,
+          "totalMs": 0.012,
+          "maxMs": 0.005
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES",
+          "count": 4,
+          "totalMs": 0.01,
+          "maxMs": 0.003
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SWEEP_ARRAY_BUFFERS",
+          "count": 3,
+          "totalMs": 0.007,
+          "maxMs": 0.004
+        },
+        {
+          "name": "V8.GC_HEAP_EPILOGUE_SAFEPOINT",
+          "count": 4,
+          "totalMs": 0.005,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_BACKGROUND_YOUNG_ARRAY_BUFFER_SWEEP",
+          "count": 3,
+          "totalMs": 0.005,
+          "maxMs": 0.002
+        },
+        {
+          "name": "ComputeWeaknessProcessor start",
+          "count": 4,
+          "totalMs": 0.004,
+          "maxMs": 0.001
+        },
+        {
+          "name": "Parallel scavenge started",
+          "count": 3,
+          "totalMs": 0.004,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_MINOR_MS_BACKGROUND_SWEEPING",
+          "count": 3,
+          "totalMs": 0.004,
+          "maxMs": 0.002
+        },
+        {
+          "name": "LocalWindowProxy::SetupWindowPrototypeChain",
+          "count": 2,
+          "totalMs": 0.003,
+          "maxMs": 0.002
+        },
+        {
+          "name": "ClearWeaknessProcessor start",
+          "count": 3,
+          "totalMs": 0.003,
+          "maxMs": 0.001
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_RESTORE_AND_QUARANTINE_PINNED",
+          "count": 3,
+          "totalMs": 0.003,
+          "maxMs": 0.001
+        },
+        {
+          "name": "V8.GC_SCAVENGER_RESIZE_NEW_SPACE",
+          "count": 2,
+          "totalMs": 0.003,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_HEAP_PROLOGUE",
+          "count": 2,
+          "totalMs": 0.003,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS",
+          "count": 1,
+          "totalMs": 0.003,
+          "maxMs": 0.003
+        },
+        {
+          "name": "LocalWindowProxy::UpdateDocumentProperty",
+          "count": 1,
+          "totalMs": 0.002,
+          "maxMs": 0.002
+        },
+        {
+          "name": "V8.GC_HEAP_PROLOGUE_SAFEPOINT",
+          "count": 1,
+          "totalMs": 0.001,
+          "maxMs": 0.001
+        },
+        {
+          "name": "ArrayBufferSweeper Finished",
+          "count": 1,
+          "totalMs": 0.001,
+          "maxMs": 0.001
+        }
+      ],
+      "traceNotes": "Diagnostic run separate from three startup samples. Totals overlap/nest and span renderer/compositor threads; not exclusive wall-time shares. WebGL upload duration is synchronous JS dispatch, not GPU completion. Decode wrapper only counts explicit HTMLImageElement.decode; browser/Phaser implicit decodes appear in trace when exposed.",
+      "retention": [
+        {
+          "operation": "initial-ready",
+          "heapUsedBytes": 10210448,
+          "canvases": 1,
+          "counters": {
+            "created": 64,
+            "deleted": 19,
+            "active": 45,
+            "uploadCalls": 78,
+            "uploadDispatchMs": 112.4000004529953
+          }
+        },
+        {
+          "operation": "all-maps-and-style-cycle-1",
+          "heapUsedBytes": 10333828,
+          "canvases": 1,
+          "counters": {
+            "created": 156,
+            "deleted": 75,
+            "active": 81,
+            "uploadCalls": 204,
+            "uploadDispatchMs": 357.50000035762787
+          }
+        },
+        {
+          "operation": "all-maps-and-style-cycle-2",
+          "heapUsedBytes": 16316672,
+          "canvases": 1,
+          "counters": {
+            "created": 212,
+            "deleted": 131,
+            "active": 81,
+            "uploadCalls": 294,
+            "uploadDispatchMs": 359.50000047683716
+          }
+        },
+        {
+          "operation": "all-maps-and-style-cycle-3",
+          "heapUsedBytes": 15430820,
+          "canvases": 1,
+          "counters": {
+            "created": 268,
+            "deleted": 187,
+            "active": 81,
+            "uploadCalls": 384,
+            "uploadDispatchMs": 360.80000054836273
+          }
+        }
+      ]
+    }
+  ]
+}

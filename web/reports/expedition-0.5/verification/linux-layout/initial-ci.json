@@ -1,0 +1,19 @@
+{
+  "initialHead": "7657f6a4e59482516bfcd9677cd8c91d1e89af36",
+  "run": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41248928146",
+  "chromium": {
+    "passed": 33,
+    "failed": 0
+  },
+  "firefox": {
+    "passed": 32,
+    "failed": 1
+  },
+  "webkit": {
+    "passed": 32,
+    "failed": 1
+  },
+  "failedScenario": "phone controls and the complete roster remain reachable under enlarged page content",
+  "reproduction": "Official Playwright1.64.1-noble Linux ARM64 image + fonts-dejavu-core; both exact Firefox/WebKit tests failed before header wrapping and passed after",
+  "fix": "Mobile header wraps with automatic height and a preserved minimum height. Overflow assertion remains, with direct numeric width diagnostics."
+}

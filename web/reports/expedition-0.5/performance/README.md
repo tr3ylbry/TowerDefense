@@ -90,47 +90,49 @@ Recommended candidate for field review is 384 px q90: it retains ample source re
 
 Completed evidence: [after.json](after.json), [profile-after.json](profile-after.json), [normal final-wave capture](combat-after-local-control.png), and [constrained final-wave capture](combat-after-constrained.png). Both captures were visually inspected: the mixed formation, barriers, acid restrictions, enemy health and projectiles remain legible against the new Nest scenery.
 
-The final runtime was frozen at `/private/tmp/ava-expedition-05-after/dist`. Its [source boundary](after-source-boundary.json) records 16 runtime/configuration source hashes and four built bundle hashes. All 16 source hashes matched the working runtime before measurement. The measurement JSON also records every frozen production-file hash. `sourceCommitAtCapture` remains the 0.4 base commit because 0.5 app changes were uncommitted during capture; it is not a claim that this dirty build equals that commit. The source boundary and bundle hashes identify the measured 0.5 implementation. Later documentation, tests or Git commits do not alter these measurements; any subsequent runtime change must be checked against the boundary or measured again.
+The final runtime was frozen at `/private/tmp/ava-expedition-05-after-mobile-layout-fix/dist`. Its [source boundary](after-source-boundary.json) records 16 runtime/configuration source hashes and four built bundle hashes. All 16 source hashes matched the working runtime before measurement. The measurement JSON also records every frozen production-file hash. `sourceCommitAtCapture` is `7657f6a4e59482516bfcd9677cd8c91d1e89af36`, the committed 0.5 base with the final mobile CSS fixes still uncommitted at capture. This is not a claim that the measured working build equals that base commit. The source boundary and bundle hashes identify the measured implementation. The final [capture-integrity check](capture-integrity.json) matched all 16 source files, four frozen bundles and 99 production artwork/manifest files to the working tree, with no mismatches. Later documentation, tests or source-preserving Git commits do not alter these measurements; any subsequent runtime change must be checked against the boundary or measured again.
 
-The after build includes all nine defenders and six aliens, three Expedition environments, new acid art, 384 px q90 WebP cutouts, 1080 px q85 scenery, concurrent manifest/renderer initialization, actual file-progress loading feedback, the ordinary-dialog visibility guard and enlarged-field layout repair. No gameplay stat or schedule change is part of this comparison.
+The [first complete after capture](prior-to-phone-header-fix/README.md) is retained unchanged under its earlier source boundary. A [header-only refresh](interrupted-header-only-refresh/README.md) was deliberately interrupted when actual Linux text-scaling screenshots revealed additional mobile clipping; its partial data and runner closed-page diagnostic are historical evidence, not final metrics or a product loading failure. The main-directory after files were regenerated from the final inspected mobile layout. The clean 0.4 before data remains unchanged.
+
+The after build includes all nine defenders and six aliens, three Expedition environments, new acid art, 384 px q90 WebP cutouts, 1080 px q85 scenery, concurrent manifest/renderer initialization, actual file-progress loading feedback, the ordinary-dialog visibility guard, enlarged-field layout repair, wrapping phone header/help controls and content-height mobile ready/pause panels. No gameplay stat or schedule change is part of this comparison. Measurements retain the original 1280×900 viewport; separate browser assertions and screenshots validate the mobile-only corrections.
 
 | Startup/transfer measure              |                    Before |                  After | Interpretation                                                |
 | ------------------------------------- | ------------------------: | ---------------------: | ------------------------------------------------------------- |
-| Normal readiness samples              |          171 /156 /147 ms |       173 /155 /151 ms | Same practical range                                          |
-| Normal median readiness               |                    156 ms |                 155 ms | No meaningful fast-host improvement claim                     |
-| Constrained readiness samples         | 14,798 /14,803 /14,804 ms | 5,974 /5,997 /5,982 ms | Same profile and observer                                     |
-| Constrained median readiness          |                 14,803 ms |               5,982 ms | **59.6% less time**                                           |
+| Normal readiness samples              |          171 /156 /147 ms |       210 /158 /151 ms | Same practical range                                          |
+| Normal median readiness               |                    156 ms |                 158 ms | No meaningful fast-host improvement claim                     |
+| Constrained readiness samples         | 14,798 /14,803 /14,804 ms | 5,987 /5,991 /5,983 ms | Same profile and observer                                     |
+| Constrained median readiness          |                 14,803 ms |               5,987 ms | **59.6% less time**                                           |
 | Unique initial images                 |                        23 |                     21 | Complete roster replaces deferred school strips in Expedition |
 | Initial image response-body bytes     |               2,369,834 B |              600,697 B | **74.7% smaller** despite completed visual scope              |
-| Total reported initial transfer       |               2,772,199 B |            1,002,991 B | **63.8% smaller**                                             |
+| Total reported initial transfer       |               2,772,199 B |            1,003,054 B | **63.8% smaller**                                             |
 | Resource entries including navigation |                        38 |                     36 | Includes cached/revalidated duplicate image URLs              |
-| JS reported transfer                  |                 381,000 B |              381,513 B | Phaser bundle hash unchanged                                  |
-| Normal TaskDuration samples           |          513 /473 /458 ms |       495 /472 /473 ms | Cumulative browser counter                                    |
-| Constrained TaskDuration samples      |    1,850 /1,900 /1,798 ms |       837 /930 /856 ms | Shorter startup window, not isolated initialization CPU       |
+| JS reported transfer                  |                 381,000 B |              381,512 B | Phaser bundle hash unchanged                                  |
+| Normal TaskDuration samples           |          513 /473 /458 ms |       543 /479 /469 ms | Cumulative browser counter                                    |
+| Constrained TaskDuration samples      |    1,850 /1,900 /1,798 ms |       888 /883 /897 ms | Shorter startup window, not isolated initialization CPU       |
 
-The first after constrained run finishes its last JS response at 4,178 ms, last image at 5,934 ms and reaches the DOM readiness marker at 5,974 ms. The before comparison was 7,710 /14,753 /14,798 ms. The large readiness reduction is consistent with substantially fewer image-transfer bytes and reduced competition between portraits and Phaser delivery. Concurrent import also removes the manifest-before-renderer dependency; this combined measurement does not isolate a separate causal percentage for that change.
+The first after constrained run finishes its last JS response at 4,186 ms, last image at 5,941 ms and reaches the DOM readiness marker at 5,987 ms. The before comparison was 7,710 /14,753 /14,798 ms. The large readiness reduction is consistent with substantially fewer image-transfer bytes and reduced competition between portraits and Phaser delivery. Concurrent import also removes the manifest-before-renderer dependency; this combined measurement does not isolate a separate causal percentage for that change.
 
-Image decoding is **not faster** in these bounded diagnostics: trace totals are 24.5 ms normal /97.0 ms constrained after, versus 21.2 /84.9 ms before. WebGL upload-dispatch totals are 28.1 /112.4 ms after, versus 27.9 /109.5 ms before. Module evaluation is 20.1 /78.8 ms after, versus 21.3 /81.4 ms before. These overlapping/threaded trace totals reinforce that the major measured improvement is network delivery and readiness, rather than a claim of faster decoding, GPU processing or initialization. The normal first-ready state is essentially unchanged.
+Image decoding is **not faster** in these bounded diagnostics: trace totals are 25.0 ms normal /98.2 ms constrained after, versus 21.2 /84.9 ms before. WebGL upload-dispatch totals are 27.8 /109.6 ms after, versus 27.9 /109.5 ms before. Module evaluation is 22.9 /82.1 ms after, versus 21.3 /81.4 ms before. These overlapping/threaded trace totals reinforce that the major measured improvement is network delivery and readiness, rather than a claim of faster decoding, GPU processing or initialization. The normal first-ready state is essentially unchanged.
 
 | Dense mission/lifecycle measure | Before normal /constrained | After normal /constrained |
 | ------------------------------- | -------------------------: | ------------------------: |
 | Purchased defenders             |                     20 /20 |                    20 /20 |
 | Outcome                         |           Victory /victory |          Victory /victory |
-| Combat wall duration            |            83.879 /84.112s |           83.917 /83.820s |
-| Late-wave RAF samples           |               1,994 /1,391 |              2,019 /1,289 |
+| Combat wall duration            |            83.879 /84.112s |           83.988 /83.848s |
+| Late-wave RAF samples           |               1,994 /1,391 |              1,976 /1,283 |
 | Median frame gap                |              16.7 /33.3 ms |             16.7 /33.3 ms |
 | p95 frame gap                   |              33.4 /33.4 ms |             33.4 /33.4 ms |
-| Gaps above 50 ms                |                       5 /6 |                      1 /1 |
-| Heap before five restarts       |   42,422,828 /27,316,048 B |  45,530,984 /15,233,080 B |
-| Heap after five restarts        |   36,381,276 /29,098,636 B |  41,781,188 /15,550,640 B |
+| Gaps above 50 ms                |                       5 /6 |                      2 /3 |
+| Heap before five restarts       |   42,422,828 /27,316,048 B |  36,839,316 /36,581,796 B |
+| Heap after five restarts        |   36,381,276 /29,098,636 B |  15,869,004 /14,905,600 B |
 | Canvases after five restarts    |                       1 /1 |                      1 /1 |
 | Uncaught page errors            |                       0 /0 |                      0 /0 |
 
 These single mission samples show retained playability with similar sampled frame gaps. They do not establish a statistically meaningful FPS improvement, maximum-density guarantee, physical-device improvement or heap reduction. Different late-wave sample counts and unforced-GC heap values are retained rather than normalized away. The new four defenders are loaded/available, but this measured formation specifically uses Bush, Astro, Zeus and Asteroid; the separate art/browser reviews cover the complete roster.
 
-The first Original comparison remains a substantial optional download:372 ms normal /15,395 ms constrained, with 33 newly requested unique school images (previously 296 ms /14,905 ms and 27 images). Six more school images are now genuinely deferred because all nine Expedition defenders have illustrated replacements. This historical comparison is not included in initial-play payload and its slow-network cost is not presented as improved. All four paused art switches preserve the bank. The next three cached switches request zero new unique images and take 128 /67 /100 ms normal or 304 /303 /301 ms constrained.
+The first Original comparison remains a substantial optional download: 363 ms normal /15,475 ms constrained, with 33 newly requested unique school images (previously 296 ms /14,905 ms and 27 images). Six more school images are now genuinely deferred because all nine Expedition defenders have illustrated replacements. This historical comparison is not included in initial-play payload and its slow-network cost is not presented as improved. All four paused art switches preserve the bank. The next three cached switches request zero new unique images and take 172 /99 /67 ms normal or 309 /306 /388 ms constrained.
 
-After opening the selector, Bridge adds three unique images (the new environment previews and acid) and takes 281 ms normal /1,447 ms constrained; Nest then adds zero unique images and takes 202 /576 ms. Returning through Canyon and Nest remains cached. Every destination returns a ready 230-credit state. Selector preview requests can occur before the selected-destination timer, so these are public-control transition samples rather than exclusive download times.
+After opening the selector, Bridge adds three unique images (the new environment previews and acid) and takes 246 ms normal /1,435 ms constrained; Nest then adds zero unique images and takes 91 /510 ms. Returning through Canyon and Nest remains cached. Every destination returns a ready 230-credit state. Selector preview requests can occur before the selected-destination timer, so these are public-control transition samples rather than exclusive download times.
 
 ## Texture retention, environment limits and next steps
 

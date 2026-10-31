@@ -1,0 +1,22 @@
+# Enlarged phone layout: Linux reproduction
+
+The initial [exact-commit CI run](https://github.com/tr3ylbry/TowerDefense/actions/runs/41248928146) at `7657f6a` passed all 33 Chromium scenarios and 32 of 33 in each of Firefox/WebKit. Both failures were the new enlarged-phone overflow assertion. No browser was skipped and no security settings or assertions were weakened.
+
+The native macOS Firefox launch still fails before a page with a missing-profile error. The existing Docker installation supplied an isolated alternative. Its official Playwright 1.64.1 Noble image on Linux ARM64 initially passed the exact tests; `fc-match sans-serif` selected WenQuanYi. Adding Ubuntu's `fonts-dejavu-core` reproduced the exact Firefox and WebKit failures. This reproduces a font-metric condition; it does not claim the container is identical to GitHub's Ubuntu 24.04 AMD64 runner or directly identify every runner font.
+
+At 390×844 with `html { zoom: 1.5 }`, the [before geometry](before.json) shows a 396-pixel document and header navigation ending at 396.38 pixels. [The before capture](before.png) retains that overflow. The mobile header now wraps and grows while preserving its normal minimum height.
+
+Reviewing the header-only fix also exposed a clipped mission-start panel and truncated Enlarge label. A new Start-inside-board assertion reproduced the former in both engines. The final layout lets the ready/pause instructions determine panel height in mobile overview, permits the threat row to wrap, and protects the full Enlarge label. Active battlefield geometry and the outcome ledger's bounded scrolling remain unchanged. The [final geometry](after.json) has a 390-pixel document/viewport with no visible root overflow; [the final capture](after.png) shows the complete Start button and Enlarge label.
+
+The same existing browser scenario now asserts numeric document width, Start containment, Enlarge containment and label fit, then selects all nine units, deploys, pauses and restarts. Both Linux DejaVu Firefox/WebKit cases pass after the fix. Twelve related local Chromium/WebKit phone, pan, zoom and terminal-scroll checks also pass. The final full three-engine CI result is linked at handoff.
+
+## Reproduction boundaries
+
+- [Official Playwright image guidance](https://playwright.dev/docs/docker); image `mcr.microsoft.com/playwright:v1.64.1-noble`, pulled digest `sha256:47b510dd9230bf0b9bfc9b20102241e577ea7a99334ab4c3ca19f19770e9b8ea`.
+- [The small test-image Dockerfile](Dockerfile) adds only DejaVu 2.37-8 and its Mono package to that test image; no app dependency or host font setting changes.
+- Node 24.22.1 in the container; Playwright 1.64.1 tooling copied from the existing installation into a task-owned temporary directory. Browsers ran as the non-root `pwuser` without changed preferences or security flags. Containers exited after each run.
+- The protected Documents directory was not mountable through Docker, so tests used temporary copies of tooling/test sources, reading the existing local preview through Docker's allowed gateway IP. No `allowedHosts` expansion, public port or service was added.
+- [The bounded probe](probe.mjs) can also run from `web/` with the existing dependencies: `node reports/expedition-0.5/verification/linux-layout/probe.mjs firefox`. It defaults to the local preview and a temporary output directory; `AVA_TEST_URL` and `AVA_LAYOUT_OUTPUT` select other owned test/output paths. The same probe captured the final records; the before record predates the additional Start/Enlarge measurements.
+- [Initial CI summary](initial-ci.json) records the original failure boundary. Final source/bundle boundaries and refreshed production measurements are in the [performance report](../../performance/README.md).
+
+This is desktop layout stress evidence. It is not native OS font enlargement, a physical phone, a screen-reader session or native Safari validation.

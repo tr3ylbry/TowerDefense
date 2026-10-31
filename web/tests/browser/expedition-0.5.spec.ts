@@ -147,11 +147,32 @@ test("phone controls and the complete roster remain reachable under enlarged pag
   // CSS zoom is a repeatable layout stress test, not a native mobile text-size claim.
   await page.addStyleTag({ content: "html { zoom: 1.5; }" });
   await expect(page.locator("#start")).toBeEnabled();
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
+  const widths = await page.evaluate(() => ({
+    document: document.documentElement.scrollWidth,
+    viewport: innerWidth,
+  }));
+  expect(widths.document).toBeLessThanOrEqual(widths.viewport);
+  const controlsFit = await page.evaluate(() => {
+    const board = document
+      .querySelector(".board-stack")!
+      .getBoundingClientRect();
+    const start = document.querySelector("#start")!.getBoundingClientRect();
+    const strip = document
+      .querySelector(".threat-strip")!
+      .getBoundingClientRect();
+    const zoomButton = document.querySelector("#field-zoom")!;
+    const zoom = zoomButton.getBoundingClientRect();
+    return {
+      start: start.top >= board.top && start.bottom <= board.bottom,
+      enlarge: zoom.left >= strip.left && zoom.right <= strip.right,
+      enlargeLabel: zoomButton.scrollWidth <= zoomButton.clientWidth,
+    };
+  });
+  expect(controlsFit).toEqual({
+    start: true,
+    enlarge: true,
+    enlargeLabel: true,
+  });
   for (const [kind, unit] of Object.entries(TOWERS)) {
     await page.locator(`[data-tower="${kind}"]`).click();
     await expect(page.locator("#selected-detail")).toContainText(unit.name);

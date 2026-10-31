@@ -1,10 +1,10 @@
 {
   "label": "after",
-  "sourceCommitAtCapture": "96f8297cc88be416d4e5d49270b7f623f44881b3",
-  "sourceStatusAtCapture": "M docs/PLAYTEST_PROTOCOL.md\n M package-lock.json\n M package.json\n M playtest/README.md\n M src/assets.ts\n M src/battlefield.ts\n M src/game/art.ts\n M src/game/content.ts\n M src/main.ts\n M src/style.css\n M tests/assets.test.ts\n M tests/browser/expedition-0.3.spec.ts\n M tests/browser/expedition-0.4.spec.ts\n M tests/browser/mission.spec.ts\n?? art-source/expedition-0.5/\n?? public/art/expedition/acid-pool.webp\n?? public/art/expedition/asteroid.webp\n?? public/art/expedition/canyon-0.5.webp\n?? public/art/expedition/explosive-astro-joe.webp\n?? public/art/expedition/frontier-flagship-compact.webp\n?? public/art/expedition/gargantua.webp\n?? public/art/expedition/grunt.webp\n?? public/art/expedition/manhunter.webp\n?? public/art/expedition/money-bush.webp\n?? public/art/expedition/money-tree.webp\n?? public/art/expedition/moon-zeus.webp\n?? public/art/expedition/nest.webp\n?? public/art/expedition/plated-crawler.webp\n?? public/art/expedition/ranger.webp\n?? public/art/expedition/scout.webp\n?? public/art/expedition/sky-bridge.webp\n?? public/art/expedition/sprinter.webp\n?? public/art/expedition/startrell-cluggins.webp\n?? public/art/expedition/tars.webp\n?? reports/expedition-0.5/\n?? scripts/prepare-expedition-0.5.py\n?? scripts/research/compression-0.5.py\n?? scripts/research/profile-0.5.mjs\n?? scripts/research/reliability-0.5.mjs\n?? tests/browser/expedition-0.5.spec.ts",
-  "measuredAtUTC": "2026-10-31T22:09:30.888Z",
+  "sourceCommitAtCapture": "7657f6a4e59482516bfcd9677cd8c91d1e89af36",
+  "sourceStatusAtCapture": "M reports/expedition-0.5/performance/after-source-boundary.json\n D reports/expedition-0.5/performance/after.json\n D reports/expedition-0.5/performance/combat-after-constrained.png\n D reports/expedition-0.5/performance/combat-after-local-control.png\n D reports/expedition-0.5/performance/profile-after.json\n M src/style.css\n M tests/browser/expedition-0.5.spec.ts\n?? reports/expedition-0.5/performance/interrupted-header-only-refresh/\n?? reports/expedition-0.5/performance/prior-to-phone-header-fix/\n?? reports/expedition-0.5/verification/linux-layout/",
+  "measuredAtUTC": "2026-10-31T23:03:54.772Z",
   "baseURL": "http://127.0.0.1:4174/",
-  "buildDir": "/private/tmp/ava-expedition-05-after/dist",
+  "buildDir": "/private/tmp/ava-expedition-05-after-mobile-layout-fix/dist",
   "frozenFiles": {
     "art/acid-pool.png": {
       "bytes": 69109,
@@ -133,6 +133,10 @@
     "art/expedition/README-0.4.md": {
       "bytes": 15233,
       "sha256": "8f3b617b8b7f95cb5c4fe427608af1ca141db3600029b12e01a9a06c3c5c5cce"
+    },
+    "art/expedition/README-0.5.md": {
+      "bytes": 6834,
+      "sha256": "2fb8d8e56da9cf2765f050f1922c559a32acb03da0aba572e2c25583c19ee08b"
     },
     "art/expedition/README.md": {
       "bytes": 10862,
@@ -418,17 +422,17 @@
       "bytes": 18528,
       "sha256": "37d6a83187fb6bf694a70b6494a9fa34869e2b48801160b90aaeb3ceb52b49a2"
     },
-    "assets/battlefield-CUze8qCG.js": {
+    "assets/battlefield-BiZ5bc8S.js": {
       "bytes": 17044,
-      "sha256": "570c1ef60dc2523f8dab50d1aef1c7cbc78c51d248e922cc71c86fed712fe2b9"
+      "sha256": "32cd8b7b607bd2bcd096b34168ee61ccfa997beebbbc89e2b7599d4c73d429fb"
     },
-    "assets/index-C4kOWVjh.js": {
+    "assets/index-Conhk4v9.css": {
+      "bytes": 32590,
+      "sha256": "62f6b60a59ba28ad34f9070091ebf2108871adbf5e9d8682179d22b3163c8f34"
+    },
+    "assets/index-CpdPJc_j.js": {
       "bytes": 55481,
-      "sha256": "1fad354f69237ca2dcfb49d57b5e84c9989f4e50a47ee441d4c50efa3e89839c"
-    },
-    "assets/index-C95nE9JH.css": {
-      "bytes": 32248,
-      "sha256": "d50a72fd10560df3d8aeadb77ceacf7171f92647a673c02bfc9e027bd2ab87c3"
+      "sha256": "d516976924cc3480c33a6cd96fe236ab9b90c274c5ed51583ca6916095da3ed1"
     },
     "assets/phaser-B_vcVLyb.js": {
       "bytes": 1367089,
@@ -440,7 +444,7 @@
     },
     "index.html": {
       "bytes": 780,
-      "sha256": "2706d4003b8660d9aca4769e2199943dc094076433894d72cee62217547187e9"
+      "sha256": "4326fdfe931d41f01ce23f3d077f173bf3483a732965b460654878eed7342b27"
     }
   },
   "browserVersion": "156.0.8078.4",
@@ -457,941 +461,141 @@
       "cpuRate": 1,
       "startups": [
         {
-          "firstPlayableMs": 173.39999997615814,
+          "firstPlayableMs": 209.80000007152557,
           "navigation": {
-            "responseEndMs": 6.699999928474426,
-            "domInteractiveMs": 13,
-            "loadEndMs": 69.69999992847443,
+            "responseEndMs": 8.200000047683716,
+            "domInteractiveMs": 22.899999976158142,
+            "loadEndMs": 83.30000007152557,
             "transferBytes": 1080,
             "encodedBodyBytes": 780
           },
           "resources": [
             {
-              "path": "/assets/index-C4kOWVjh.js",
+              "path": "/assets/index-CpdPJc_j.js",
               "initiator": "script",
-              "startMs": 9.399999976158142,
-              "responseStartMs": 14.799999952316284,
-              "endMs": 15.599999904632568,
-              "transferBytes": 19159,
-              "encodedBodyBytes": 18859,
-              "decodedBodyBytes": 55481
-            },
-            {
-              "path": "/assets/index-C95nE9JH.css",
-              "initiator": "link",
-              "startMs": 9.5,
-              "responseStartMs": 14.599999904632568,
-              "endMs": 15,
-              "transferBytes": 8184,
-              "encodedBodyBytes": 7884,
-              "decodedBodyBytes": 32248
-            },
-            {
-              "path": "/art/manifest.json",
-              "initiator": "fetch",
-              "startMs": 28.09999990463257,
-              "responseStartMs": 29.5,
-              "endMs": 29.59999990463257,
-              "transferBytes": 2517,
-              "encodedBodyBytes": 2217,
-              "decodedBodyBytes": 16356
-            },
-            {
-              "path": "/assets/battlefield-CUze8qCG.js",
-              "initiator": "script",
-              "startMs": 29.199999928474426,
-              "responseStartMs": 30.5,
-              "endMs": 30.699999928474426,
-              "transferBytes": 6728,
-              "encodedBodyBytes": 6428,
-              "decodedBodyBytes": 17044
-            },
-            {
-              "path": "/assets/phaser-B_vcVLyb.js",
-              "initiator": "script",
-              "startMs": 29.199999928474426,
-              "responseStartMs": 32.09999990463257,
-              "endMs": 53.5,
-              "transferBytes": 355626,
-              "encodedBodyBytes": 355326,
-              "decodedBodyBytes": 1367089
-            },
-            {
-              "path": "/art/expedition/ranger.webp",
-              "initiator": "css",
-              "startMs": 30.799999952316284,
-              "responseStartMs": 32.59999990463257,
-              "endMs": 32.699999928474426,
-              "transferBytes": 38306,
-              "encodedBodyBytes": 38006,
-              "decodedBodyBytes": 38006
-            },
-            {
-              "path": "/art/expedition/money-bush.webp",
-              "initiator": "css",
-              "startMs": 31,
-              "responseStartMs": 33.09999990463257,
-              "endMs": 33.09999990463257,
-              "transferBytes": 35248,
-              "encodedBodyBytes": 34948,
-              "decodedBodyBytes": 34948
-            },
-            {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "css",
-              "startMs": 31,
-              "responseStartMs": 34.199999928474426,
-              "endMs": 34.39999997615814,
-              "transferBytes": 33376,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
-              "path": "/art/expedition/startrell-cluggins.webp",
-              "initiator": "css",
-              "startMs": 31,
-              "responseStartMs": 34.89999997615814,
-              "endMs": 35,
-              "transferBytes": 32374,
-              "encodedBodyBytes": 32074,
-              "decodedBodyBytes": 32074
-            },
-            {
-              "path": "/art/expedition/moon-zeus.webp",
-              "initiator": "css",
-              "startMs": 31,
-              "responseStartMs": 35.199999928474426,
-              "endMs": 35.299999952316284,
-              "transferBytes": 37704,
-              "encodedBodyBytes": 37404,
-              "decodedBodyBytes": 37404
-            },
-            {
-              "path": "/art/expedition/tars.webp",
-              "initiator": "css",
-              "startMs": 31,
-              "responseStartMs": 35.5,
-              "endMs": 35.59999990463257,
-              "transferBytes": 26758,
-              "encodedBodyBytes": 26458,
-              "decodedBodyBytes": 26458
-            },
-            {
-              "path": "/art/expedition/explosive-astro-joe.webp",
-              "initiator": "css",
-              "startMs": 31,
-              "responseStartMs": 35.89999997615814,
-              "endMs": 35.89999997615814,
-              "transferBytes": 45774,
-              "encodedBodyBytes": 45474,
-              "decodedBodyBytes": 45474
-            },
-            {
-              "path": "/art/expedition/money-tree.webp",
-              "initiator": "css",
-              "startMs": 31.09999990463257,
-              "responseStartMs": 36.199999928474426,
-              "endMs": 36.299999952316284,
-              "transferBytes": 46716,
-              "encodedBodyBytes": 46416,
-              "decodedBodyBytes": 46416
-            },
-            {
-              "path": "/art/expedition/frontier-flagship-compact.webp",
-              "initiator": "css",
-              "startMs": 31.09999990463257,
-              "responseStartMs": 36.39999997615814,
-              "endMs": 36.5,
-              "transferBytes": 38814,
-              "encodedBodyBytes": 38514,
-              "decodedBodyBytes": 38514
-            },
-            {
-              "path": "/art/projectile-astro-joe-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.09999990463257,
-              "responseStartMs": 118.5,
-              "endMs": 118.89999997615814,
-              "transferBytes": 650,
-              "encodedBodyBytes": 350,
-              "decodedBodyBytes": 350
-            },
-            {
-              "path": "/art/expedition/canyon-0.5.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.09999990463257,
-              "responseStartMs": 118.79999995231628,
-              "endMs": 119.5,
-              "transferBytes": 87706,
-              "encodedBodyBytes": 87406,
-              "decodedBodyBytes": 87406
-            },
-            {
-              "path": "/art/projectile-explosive-astro-joe-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.29999995231628,
-              "responseStartMs": 118.69999992847443,
-              "endMs": 119,
-              "transferBytes": 1872,
-              "encodedBodyBytes": 1572,
-              "decodedBodyBytes": 1572
-            },
-            {
-              "path": "/art/projectile-startrell-cluggins-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.29999995231628,
-              "responseStartMs": 119.09999990463257,
-              "endMs": 119.29999995231628,
-              "transferBytes": 1074,
-              "encodedBodyBytes": 774,
-              "decodedBodyBytes": 774
-            },
-            {
-              "path": "/art/projectile-tars-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.29999995231628,
-              "responseStartMs": 119.19999992847443,
-              "endMs": 119.29999995231628,
-              "transferBytes": 956,
-              "encodedBodyBytes": 656,
-              "decodedBodyBytes": 656
-            },
-            {
-              "path": "/art/projectile-moon-zeus-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.29999995231628,
-              "responseStartMs": 119.19999992847443,
-              "endMs": 119.29999995231628,
-              "transferBytes": 1877,
-              "encodedBodyBytes": 1577,
-              "decodedBodyBytes": 1577
-            },
-            {
-              "path": "/art/expedition/ranger.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.39999997615814,
-              "responseStartMs": 119.79999995231628,
-              "endMs": 119.89999997615814,
-              "transferBytes": 300,
-              "encodedBodyBytes": 38006,
-              "decodedBodyBytes": 38006
-            },
-            {
-              "path": "/art/expedition/money-bush.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.39999997615814,
-              "responseStartMs": 120.09999990463257,
-              "endMs": 120.19999992847443,
-              "transferBytes": 300,
-              "encodedBodyBytes": 34948,
-              "decodedBodyBytes": 34948
-            },
-            {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.39999997615814,
-              "responseStartMs": 120.69999992847443,
-              "endMs": 120.79999995231628,
-              "transferBytes": 300,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
-              "path": "/art/expedition/moon-zeus.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.59999990463257,
-              "responseStartMs": 120.89999997615814,
-              "endMs": 121,
-              "transferBytes": 300,
-              "encodedBodyBytes": 37404,
-              "decodedBodyBytes": 37404
-            },
-            {
-              "path": "/art/expedition/explosive-astro-joe.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.59999990463257,
-              "responseStartMs": 121.29999995231628,
-              "endMs": 121.5,
-              "transferBytes": 300,
-              "encodedBodyBytes": 45474,
-              "decodedBodyBytes": 45474
-            },
-            {
-              "path": "/art/expedition/startrell-cluggins.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.59999990463257,
-              "responseStartMs": 121.69999992847443,
-              "endMs": 122,
-              "transferBytes": 300,
-              "encodedBodyBytes": 32074,
-              "decodedBodyBytes": 32074
-            },
-            {
-              "path": "/art/expedition/tars.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.69999992847443,
-              "responseStartMs": 120.39999997615814,
-              "endMs": 120.5,
-              "transferBytes": 300,
-              "encodedBodyBytes": 26458,
-              "decodedBodyBytes": 26458
-            },
-            {
-              "path": "/art/expedition/frontier-flagship-compact.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.69999992847443,
-              "responseStartMs": 122.19999992847443,
-              "endMs": 122.39999997615814,
-              "transferBytes": 300,
-              "encodedBodyBytes": 38514,
-              "decodedBodyBytes": 38514
-            },
-            {
-              "path": "/art/expedition/money-tree.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.69999992847443,
-              "responseStartMs": 123.29999995231628,
-              "endMs": 123.69999992847443,
-              "transferBytes": 300,
-              "encodedBodyBytes": 46416,
-              "decodedBodyBytes": 46416
-            },
-            {
-              "path": "/art/expedition/scout.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.79999995231628,
-              "responseStartMs": 124.59999990463257,
-              "endMs": 124.79999995231628,
-              "transferBytes": 24516,
-              "encodedBodyBytes": 24216,
-              "decodedBodyBytes": 24216
-            },
-            {
-              "path": "/art/expedition/sprinter.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.89999997615814,
-              "responseStartMs": 124.69999992847443,
-              "endMs": 124.89999997615814,
-              "transferBytes": 21420,
-              "encodedBodyBytes": 21120,
-              "decodedBodyBytes": 21120
-            },
-            {
-              "path": "/art/expedition/grunt.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.89999997615814,
-              "responseStartMs": 124.89999997615814,
-              "endMs": 125,
-              "transferBytes": 28722,
-              "encodedBodyBytes": 28422,
-              "decodedBodyBytes": 28422
-            },
-            {
-              "path": "/art/expedition/manhunter.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 115.89999997615814,
-              "responseStartMs": 125.19999992847443,
-              "endMs": 125.5,
-              "transferBytes": 34702,
-              "encodedBodyBytes": 34402,
-              "decodedBodyBytes": 34402
-            },
-            {
-              "path": "/art/expedition/plated-crawler.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 116,
-              "responseStartMs": 125,
-              "endMs": 125.39999997615814,
-              "transferBytes": 33852,
-              "encodedBodyBytes": 33552,
-              "decodedBodyBytes": 33552
-            },
-            {
-              "path": "/art/expedition/gargantua.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 116.09999990463257,
-              "responseStartMs": 125.5,
-              "endMs": 125.69999992847443,
-              "transferBytes": 34580,
-              "encodedBodyBytes": 34280,
-              "decodedBodyBytes": 34280
-            }
-          ],
-          "longTasks": [
-            {
-              "start": 173.39999997615814,
-              "duration": 332
-            }
-          ],
-          "resourceGroups": {
-            "javascript": {
-              "requests": 3,
-              "transferBytes": 381513,
-              "encodedBodyBytes": 380613,
-              "lastEndMs": 53.5
-            },
-            "images": {
-              "requests": 30,
-              "transferBytes": 609697,
-              "encodedBodyBytes": 933067,
-              "lastEndMs": 125.69999992847443
-            },
-            "other": {
-              "requests": 2,
-              "transferBytes": 10701,
-              "encodedBodyBytes": 10101,
-              "lastEndMs": 29.59999990463257
-            }
-          },
-          "cdpMetrics": {
-            "Documents": 4,
-            "Nodes": 908,
-            "LayoutDuration": 0.03952,
-            "RecalcStyleDuration": 0.003551,
-            "ScriptDuration": 0.100958,
-            "TaskDuration": 0.494741,
-            "JSHeapUsedSize": 7684980
-          },
-          "initialImages": 21,
-          "initialImagePayload": 600697,
-          "errors": []
-        },
-        {
-          "firstPlayableMs": 154.60000002384186,
-          "navigation": {
-            "responseEndMs": 1.5,
-            "domInteractiveMs": 5,
-            "loadEndMs": 53.10000002384186,
-            "transferBytes": 1080,
-            "encodedBodyBytes": 780
-          },
-          "resources": [
-            {
-              "path": "/assets/index-C4kOWVjh.js",
-              "initiator": "script",
-              "startMs": 3.1999999284744263,
-              "responseStartMs": 7.600000023841858,
-              "endMs": 7.899999976158142,
-              "transferBytes": 19159,
-              "encodedBodyBytes": 18859,
-              "decodedBodyBytes": 55481
-            },
-            {
-              "path": "/assets/index-C95nE9JH.css",
-              "initiator": "link",
-              "startMs": 3.299999952316284,
-              "responseStartMs": 7.299999952316284,
-              "endMs": 7.5,
-              "transferBytes": 8184,
-              "encodedBodyBytes": 7884,
-              "decodedBodyBytes": 32248
-            },
-            {
-              "path": "/art/manifest.json",
-              "initiator": "fetch",
-              "startMs": 14.899999976158142,
-              "responseStartMs": 16.600000023841858,
-              "endMs": 17.100000023841858,
-              "transferBytes": 2517,
-              "encodedBodyBytes": 2217,
-              "decodedBodyBytes": 16356
-            },
-            {
-              "path": "/assets/battlefield-CUze8qCG.js",
-              "initiator": "script",
-              "startMs": 15.299999952316284,
-              "responseStartMs": 17.199999928474426,
-              "endMs": 17.699999928474426,
-              "transferBytes": 6728,
-              "encodedBodyBytes": 6428,
-              "decodedBodyBytes": 17044
-            },
-            {
-              "path": "/assets/phaser-B_vcVLyb.js",
-              "initiator": "script",
-              "startMs": 15.299999952316284,
-              "responseStartMs": 18.699999928474426,
-              "endMs": 44.199999928474426,
-              "transferBytes": 355626,
-              "encodedBodyBytes": 355326,
-              "decodedBodyBytes": 1367089
-            },
-            {
-              "path": "/art/expedition/ranger.webp",
-              "initiator": "css",
-              "startMs": 16.199999928474426,
-              "responseStartMs": 18.799999952316284,
-              "endMs": 18.899999976158142,
-              "transferBytes": 38306,
-              "encodedBodyBytes": 38006,
-              "decodedBodyBytes": 38006
-            },
-            {
-              "path": "/art/expedition/moon-zeus.webp",
-              "initiator": "css",
-              "startMs": 16.299999952316284,
-              "responseStartMs": 19.699999928474426,
-              "endMs": 19.799999952316284,
-              "transferBytes": 37704,
-              "encodedBodyBytes": 37404,
-              "decodedBodyBytes": 37404
-            },
-            {
-              "path": "/art/expedition/money-bush.webp",
-              "initiator": "css",
-              "startMs": 16.299999952316284,
-              "responseStartMs": 20.399999976158142,
-              "endMs": 20.5,
-              "transferBytes": 35248,
-              "encodedBodyBytes": 34948,
-              "decodedBodyBytes": 34948
-            },
-            {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "css",
-              "startMs": 16.299999952316284,
-              "responseStartMs": 21.100000023841858,
-              "endMs": 21.199999928474426,
-              "transferBytes": 33376,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
-              "path": "/art/expedition/explosive-astro-joe.webp",
-              "initiator": "css",
-              "startMs": 16.399999976158142,
-              "responseStartMs": 20.699999928474426,
-              "endMs": 20.799999952316284,
-              "transferBytes": 45774,
-              "encodedBodyBytes": 45474,
-              "decodedBodyBytes": 45474
-            },
-            {
-              "path": "/art/expedition/startrell-cluggins.webp",
-              "initiator": "css",
-              "startMs": 16.399999976158142,
-              "responseStartMs": 21.899999976158142,
-              "endMs": 22.100000023841858,
-              "transferBytes": 32374,
-              "encodedBodyBytes": 32074,
-              "decodedBodyBytes": 32074
-            },
-            {
-              "path": "/art/expedition/tars.webp",
-              "initiator": "css",
-              "startMs": 16.399999976158142,
-              "responseStartMs": 22.399999976158142,
-              "endMs": 22.5,
-              "transferBytes": 26758,
-              "encodedBodyBytes": 26458,
-              "decodedBodyBytes": 26458
-            },
-            {
-              "path": "/art/expedition/money-tree.webp",
-              "initiator": "css",
-              "startMs": 16.399999976158142,
-              "responseStartMs": 22.5,
-              "endMs": 22.699999928474426,
-              "transferBytes": 46716,
-              "encodedBodyBytes": 46416,
-              "decodedBodyBytes": 46416
-            },
-            {
-              "path": "/art/expedition/frontier-flagship-compact.webp",
-              "initiator": "css",
-              "startMs": 16.5,
-              "responseStartMs": 22.799999952316284,
-              "endMs": 22.899999976158142,
-              "transferBytes": 38814,
-              "encodedBodyBytes": 38514,
-              "decodedBodyBytes": 38514
-            },
-            {
-              "path": "/art/expedition/canyon-0.5.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.60000002384186,
-              "responseStartMs": 97,
-              "endMs": 97.29999995231628,
-              "transferBytes": 87706,
-              "encodedBodyBytes": 87406,
-              "decodedBodyBytes": 87406
-            },
-            {
-              "path": "/art/projectile-astro-joe-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.69999992847443,
-              "responseStartMs": 96.60000002384186,
-              "endMs": 96.69999992847443,
-              "transferBytes": 650,
-              "encodedBodyBytes": 350,
-              "decodedBodyBytes": 350
-            },
-            {
-              "path": "/art/projectile-explosive-astro-joe-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.69999992847443,
-              "responseStartMs": 96.60000002384186,
-              "endMs": 96.79999995231628,
-              "transferBytes": 1872,
-              "encodedBodyBytes": 1572,
-              "decodedBodyBytes": 1572
-            },
-            {
-              "path": "/art/projectile-startrell-cluggins-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.79999995231628,
-              "responseStartMs": 96.39999997615814,
-              "endMs": 96.69999992847443,
-              "transferBytes": 1074,
-              "encodedBodyBytes": 774,
-              "decodedBodyBytes": 774
-            },
-            {
-              "path": "/art/projectile-tars-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.79999995231628,
-              "responseStartMs": 97,
-              "endMs": 97.19999992847443,
-              "transferBytes": 956,
-              "encodedBodyBytes": 656,
-              "decodedBodyBytes": 656
-            },
-            {
-              "path": "/art/projectile-moon-zeus-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.79999995231628,
-              "responseStartMs": 97.10000002384186,
-              "endMs": 97.19999992847443,
-              "transferBytes": 1877,
-              "encodedBodyBytes": 1577,
-              "decodedBodyBytes": 1577
-            },
-            {
-              "path": "/art/expedition/ranger.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.89999997615814,
-              "responseStartMs": 97.60000002384186,
-              "endMs": 97.69999992847443,
-              "transferBytes": 300,
-              "encodedBodyBytes": 38006,
-              "decodedBodyBytes": 38006
-            },
-            {
-              "path": "/art/expedition/money-bush.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.89999997615814,
-              "responseStartMs": 97.89999997615814,
-              "endMs": 98,
-              "transferBytes": 300,
-              "encodedBodyBytes": 34948,
-              "decodedBodyBytes": 34948
-            },
-            {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 93.89999997615814,
-              "responseStartMs": 98.10000002384186,
-              "endMs": 98.29999995231628,
-              "transferBytes": 300,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
-              "path": "/art/expedition/moon-zeus.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94,
-              "responseStartMs": 98.39999997615814,
-              "endMs": 98.5,
-              "transferBytes": 300,
-              "encodedBodyBytes": 37404,
-              "decodedBodyBytes": 37404
-            },
-            {
-              "path": "/art/expedition/explosive-astro-joe.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94,
-              "responseStartMs": 98.60000002384186,
-              "endMs": 98.79999995231628,
-              "transferBytes": 300,
-              "encodedBodyBytes": 45474,
-              "decodedBodyBytes": 45474
-            },
-            {
-              "path": "/art/expedition/startrell-cluggins.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.10000002384186,
-              "responseStartMs": 98.89999997615814,
-              "endMs": 99,
-              "transferBytes": 300,
-              "encodedBodyBytes": 32074,
-              "decodedBodyBytes": 32074
-            },
-            {
-              "path": "/art/expedition/tars.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.10000002384186,
-              "responseStartMs": 99.89999997615814,
-              "endMs": 100,
-              "transferBytes": 300,
-              "encodedBodyBytes": 26458,
-              "decodedBodyBytes": 26458
-            },
-            {
-              "path": "/art/expedition/money-tree.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.19999992847443,
-              "responseStartMs": 99.10000002384186,
-              "endMs": 99.19999992847443,
-              "transferBytes": 300,
-              "encodedBodyBytes": 46416,
-              "decodedBodyBytes": 46416
-            },
-            {
-              "path": "/art/expedition/frontier-flagship-compact.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.19999992847443,
-              "responseStartMs": 99.39999997615814,
-              "endMs": 99.39999997615814,
-              "transferBytes": 300,
-              "encodedBodyBytes": 38514,
-              "decodedBodyBytes": 38514
-            },
-            {
-              "path": "/art/expedition/scout.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.29999995231628,
-              "responseStartMs": 101.39999997615814,
-              "endMs": 101.5,
-              "transferBytes": 24516,
-              "encodedBodyBytes": 24216,
-              "decodedBodyBytes": 24216
-            },
-            {
-              "path": "/art/expedition/grunt.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.29999995231628,
-              "responseStartMs": 101.60000002384186,
-              "endMs": 101.79999995231628,
-              "transferBytes": 28722,
-              "encodedBodyBytes": 28422,
-              "decodedBodyBytes": 28422
-            },
-            {
-              "path": "/art/expedition/sprinter.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.39999997615814,
-              "responseStartMs": 101.89999997615814,
-              "endMs": 102,
-              "transferBytes": 21420,
-              "encodedBodyBytes": 21120,
-              "decodedBodyBytes": 21120
-            },
-            {
-              "path": "/art/expedition/manhunter.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.39999997615814,
-              "responseStartMs": 102.10000002384186,
-              "endMs": 102.10000002384186,
-              "transferBytes": 34702,
-              "encodedBodyBytes": 34402,
-              "decodedBodyBytes": 34402
-            },
-            {
-              "path": "/art/expedition/plated-crawler.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.39999997615814,
-              "responseStartMs": 102.10000002384186,
-              "endMs": 102.39999997615814,
-              "transferBytes": 33852,
-              "encodedBodyBytes": 33552,
-              "decodedBodyBytes": 33552
-            },
-            {
-              "path": "/art/expedition/gargantua.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 94.5,
-              "responseStartMs": 102.19999992847443,
-              "endMs": 102.5,
-              "transferBytes": 34580,
-              "encodedBodyBytes": 34280,
-              "decodedBodyBytes": 34280
-            }
-          ],
-          "longTasks": [
-            {
-              "start": 154.60000002384186,
-              "duration": 328
-            }
-          ],
-          "resourceGroups": {
-            "javascript": {
-              "requests": 3,
-              "transferBytes": 381513,
-              "encodedBodyBytes": 380613,
-              "lastEndMs": 44.199999928474426
-            },
-            "images": {
-              "requests": 30,
-              "transferBytes": 609697,
-              "encodedBodyBytes": 933067,
-              "lastEndMs": 102.5
-            },
-            "other": {
-              "requests": 2,
-              "transferBytes": 10701,
-              "encodedBodyBytes": 10101,
-              "lastEndMs": 17.100000023841858
-            }
-          },
-          "cdpMetrics": {
-            "Documents": 4,
-            "Nodes": 908,
-            "LayoutDuration": 0.033441,
-            "RecalcStyleDuration": 0.002219,
-            "ScriptDuration": 0.093774,
-            "TaskDuration": 0.472385,
-            "JSHeapUsedSize": 10885060
-          },
-          "initialImages": 21,
-          "initialImagePayload": 600697,
-          "errors": []
-        },
-        {
-          "firstPlayableMs": 151.10000002384186,
-          "navigation": {
-            "responseEndMs": 1.2000000476837158,
-            "domInteractiveMs": 4.100000023841858,
-            "loadEndMs": 20,
-            "transferBytes": 1080,
-            "encodedBodyBytes": 780
-          },
-          "resources": [
-            {
-              "path": "/assets/index-C95nE9JH.css",
-              "initiator": "link",
-              "startMs": 2.700000047683716,
-              "responseStartMs": 6.5,
-              "endMs": 6.799999952316284,
-              "transferBytes": 8184,
-              "encodedBodyBytes": 7884,
-              "decodedBodyBytes": 32248
-            },
-            {
-              "path": "/assets/index-C4kOWVjh.js",
-              "initiator": "script",
-              "startMs": 2.700000047683716,
-              "responseStartMs": 6.899999976158142,
-              "endMs": 7.399999976158142,
-              "transferBytes": 19159,
-              "encodedBodyBytes": 18859,
-              "decodedBodyBytes": 55481
-            },
-            {
-              "path": "/art/manifest.json",
-              "initiator": "fetch",
-              "startMs": 14.100000023841858,
-              "responseStartMs": 15.299999952316284,
-              "endMs": 15.600000023841858,
-              "transferBytes": 2517,
-              "encodedBodyBytes": 2217,
-              "decodedBodyBytes": 16356
-            },
-            {
-              "path": "/assets/battlefield-CUze8qCG.js",
-              "initiator": "script",
-              "startMs": 14.299999952316284,
-              "responseStartMs": 15.700000047683716,
-              "endMs": 15.899999976158142,
-              "transferBytes": 6728,
-              "encodedBodyBytes": 6428,
-              "decodedBodyBytes": 17044
-            },
-            {
-              "path": "/assets/phaser-B_vcVLyb.js",
-              "initiator": "script",
-              "startMs": 14.299999952316284,
-              "responseStartMs": 17,
-              "endMs": 41.60000002384186,
-              "transferBytes": 355626,
-              "encodedBodyBytes": 355326,
-              "decodedBodyBytes": 1367089
-            },
-            {
-              "path": "/art/expedition/ranger.webp",
-              "initiator": "css",
-              "startMs": 15.299999952316284,
-              "responseStartMs": 17,
-              "endMs": 17.100000023841858,
-              "transferBytes": 38306,
-              "encodedBodyBytes": 38006,
-              "decodedBodyBytes": 38006
-            },
-            {
-              "path": "/art/expedition/money-bush.webp",
-              "initiator": "css",
-              "startMs": 15.399999976158142,
-              "responseStartMs": 17.399999976158142,
-              "endMs": 17.5,
-              "transferBytes": 35248,
-              "encodedBodyBytes": 34948,
-              "decodedBodyBytes": 34948
-            },
-            {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "css",
-              "startMs": 15.399999976158142,
-              "responseStartMs": 17.5,
-              "endMs": 17.600000023841858,
-              "transferBytes": 33376,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
-              "path": "/art/expedition/moon-zeus.webp",
-              "initiator": "css",
-              "startMs": 15.399999976158142,
-              "responseStartMs": 18,
-              "endMs": 18.100000023841858,
-              "transferBytes": 37704,
-              "encodedBodyBytes": 37404,
-              "decodedBodyBytes": 37404
-            },
-            {
-              "path": "/art/expedition/explosive-astro-joe.webp",
-              "initiator": "css",
-              "startMs": 15.5,
-              "responseStartMs": 18.700000047683716,
-              "endMs": 18.899999976158142,
-              "transferBytes": 45774,
-              "encodedBodyBytes": 45474,
-              "decodedBodyBytes": 45474
-            },
-            {
-              "path": "/art/expedition/startrell-cluggins.webp",
-              "initiator": "css",
-              "startMs": 15.5,
-              "responseStartMs": 19.200000047683716,
-              "endMs": 19.200000047683716,
-              "transferBytes": 32374,
-              "encodedBodyBytes": 32074,
-              "decodedBodyBytes": 32074
-            },
-            {
-              "path": "/art/expedition/tars.webp",
-              "initiator": "css",
-              "startMs": 15.5,
-              "responseStartMs": 19.399999976158142,
-              "endMs": 19.5,
-              "transferBytes": 26758,
-              "encodedBodyBytes": 26458,
-              "decodedBodyBytes": 26458
-            },
-            {
-              "path": "/art/expedition/money-tree.webp",
-              "initiator": "css",
-              "startMs": 15.600000023841858,
-              "responseStartMs": 19.5,
+              "startMs": 13.200000047683716,
+              "responseStartMs": 19,
               "endMs": 19.600000023841858,
+              "transferBytes": 19158,
+              "encodedBodyBytes": 18858,
+              "decodedBodyBytes": 55481
+            },
+            {
+              "path": "/assets/index-Conhk4v9.css",
+              "initiator": "link",
+              "startMs": 13.600000023841858,
+              "responseStartMs": 18.800000071525574,
+              "endMs": 19.100000023841858,
+              "transferBytes": 8248,
+              "encodedBodyBytes": 7948,
+              "decodedBodyBytes": 32590
+            },
+            {
+              "path": "/art/manifest.json",
+              "initiator": "fetch",
+              "startMs": 38.10000002384186,
+              "responseStartMs": 39.10000002384186,
+              "endMs": 39.200000047683716,
+              "transferBytes": 2517,
+              "encodedBodyBytes": 2217,
+              "decodedBodyBytes": 16356
+            },
+            {
+              "path": "/assets/battlefield-BiZ5bc8S.js",
+              "initiator": "script",
+              "startMs": 40.39999997615814,
+              "responseStartMs": 41.5,
+              "endMs": 41.800000071525574,
+              "transferBytes": 6728,
+              "encodedBodyBytes": 6428,
+              "decodedBodyBytes": 17044
+            },
+            {
+              "path": "/assets/phaser-B_vcVLyb.js",
+              "initiator": "script",
+              "startMs": 40.39999997615814,
+              "responseStartMs": 42.300000071525574,
+              "endMs": 64.10000002384186,
+              "transferBytes": 355626,
+              "encodedBodyBytes": 355326,
+              "decodedBodyBytes": 1367089
+            },
+            {
+              "path": "/art/expedition/ranger.webp",
+              "initiator": "css",
+              "startMs": 44.5,
+              "responseStartMs": 46.200000047683716,
+              "endMs": 46.300000071525574,
+              "transferBytes": 38306,
+              "encodedBodyBytes": 38006,
+              "decodedBodyBytes": 38006
+            },
+            {
+              "path": "/art/expedition/money-bush.webp",
+              "initiator": "css",
+              "startMs": 44.60000002384186,
+              "responseStartMs": 46.89999997615814,
+              "endMs": 47,
+              "transferBytes": 35248,
+              "encodedBodyBytes": 34948,
+              "decodedBodyBytes": 34948
+            },
+            {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "css",
+              "startMs": 44.700000047683716,
+              "responseStartMs": 47.60000002384186,
+              "endMs": 47.700000047683716,
+              "transferBytes": 33376,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
+              "path": "/art/expedition/startrell-cluggins.webp",
+              "initiator": "css",
+              "startMs": 44.700000047683716,
+              "responseStartMs": 48.200000047683716,
+              "endMs": 48.200000047683716,
+              "transferBytes": 32374,
+              "encodedBodyBytes": 32074,
+              "decodedBodyBytes": 32074
+            },
+            {
+              "path": "/art/expedition/moon-zeus.webp",
+              "initiator": "css",
+              "startMs": 44.700000047683716,
+              "responseStartMs": 48.60000002384186,
+              "endMs": 48.700000047683716,
+              "transferBytes": 37704,
+              "encodedBodyBytes": 37404,
+              "decodedBodyBytes": 37404
+            },
+            {
+              "path": "/art/expedition/tars.webp",
+              "initiator": "css",
+              "startMs": 44.700000047683716,
+              "responseStartMs": 48.800000071525574,
+              "endMs": 48.800000071525574,
+              "transferBytes": 26758,
+              "encodedBodyBytes": 26458,
+              "decodedBodyBytes": 26458
+            },
+            {
+              "path": "/art/expedition/explosive-astro-joe.webp",
+              "initiator": "css",
+              "startMs": 44.700000047683716,
+              "responseStartMs": 49.10000002384186,
+              "endMs": 49.10000002384186,
+              "transferBytes": 45774,
+              "encodedBodyBytes": 45474,
+              "decodedBodyBytes": 45474
+            },
+            {
+              "path": "/art/expedition/money-tree.webp",
+              "initiator": "css",
+              "startMs": 44.700000047683716,
+              "responseStartMs": 49.39999997615814,
+              "endMs": 49.5,
               "transferBytes": 46716,
               "encodedBodyBytes": 46416,
               "decodedBodyBytes": 46416
@@ -1399,9 +603,9 @@
             {
               "path": "/art/expedition/frontier-flagship-compact.webp",
               "initiator": "css",
-              "startMs": 15.600000023841858,
-              "responseStartMs": 19.700000047683716,
-              "endMs": 19.799999952316284,
+              "startMs": 44.800000071525574,
+              "responseStartMs": 49.60000002384186,
+              "endMs": 49.700000047683716,
               "transferBytes": 38814,
               "encodedBodyBytes": 38514,
               "decodedBodyBytes": 38514
@@ -1409,9 +613,9 @@
             {
               "path": "/art/expedition/canyon-0.5.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 90.70000004768372,
-              "responseStartMs": 94.10000002384186,
-              "endMs": 94.70000004768372,
+              "startMs": 150.70000004768372,
+              "responseStartMs": 154,
+              "endMs": 155.39999997615814,
               "transferBytes": 87706,
               "encodedBodyBytes": 87406,
               "decodedBodyBytes": 87406
@@ -1419,9 +623,9 @@
             {
               "path": "/art/projectile-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 90.79999995231628,
-              "responseStartMs": 94.29999995231628,
-              "endMs": 94.5,
+              "startMs": 150.70000004768372,
+              "responseStartMs": 154.30000007152557,
+              "endMs": 154.39999997615814,
               "transferBytes": 650,
               "encodedBodyBytes": 350,
               "decodedBodyBytes": 350
@@ -1429,9 +633,9 @@
             {
               "path": "/art/projectile-explosive-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 90.89999997615814,
-              "responseStartMs": 94.89999997615814,
-              "endMs": 95.29999995231628,
+              "startMs": 150.80000007152557,
+              "responseStartMs": 154.60000002384186,
+              "endMs": 155,
               "transferBytes": 1872,
               "encodedBodyBytes": 1572,
               "decodedBodyBytes": 1572
@@ -1439,9 +643,9 @@
             {
               "path": "/art/projectile-startrell-cluggins-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 90.89999997615814,
-              "responseStartMs": 95,
-              "endMs": 95.29999995231628,
+              "startMs": 150.80000007152557,
+              "responseStartMs": 154.70000004768372,
+              "endMs": 155.20000004768372,
               "transferBytes": 1074,
               "encodedBodyBytes": 774,
               "decodedBodyBytes": 774
@@ -1449,9 +653,9 @@
             {
               "path": "/art/projectile-tars-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 90.89999997615814,
-              "responseStartMs": 95.10000002384186,
-              "endMs": 95.29999995231628,
+              "startMs": 150.80000007152557,
+              "responseStartMs": 154.89999997615814,
+              "endMs": 155.20000004768372,
               "transferBytes": 956,
               "encodedBodyBytes": 656,
               "decodedBodyBytes": 656
@@ -1459,9 +663,9 @@
             {
               "path": "/art/projectile-moon-zeus-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 91,
-              "responseStartMs": 95.10000002384186,
-              "endMs": 95.39999997615814,
+              "startMs": 150.89999997615814,
+              "responseStartMs": 155.39999997615814,
+              "endMs": 155.39999997615814,
               "transferBytes": 1877,
               "encodedBodyBytes": 1577,
               "decodedBodyBytes": 1577
@@ -1469,9 +673,9 @@
             {
               "path": "/art/expedition/ranger.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.10000002384186,
-              "responseStartMs": 95.70000004768372,
-              "endMs": 95.79999995231628,
+              "startMs": 150.89999997615814,
+              "responseStartMs": 155.89999997615814,
+              "endMs": 156,
               "transferBytes": 300,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
@@ -1479,9 +683,9 @@
             {
               "path": "/art/expedition/money-bush.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.10000002384186,
-              "responseStartMs": 95.89999997615814,
-              "endMs": 96,
+              "startMs": 150.89999997615814,
+              "responseStartMs": 156.20000004768372,
+              "endMs": 156.30000007152557,
               "transferBytes": 300,
               "encodedBodyBytes": 34948,
               "decodedBodyBytes": 34948
@@ -1489,9 +693,9 @@
             {
               "path": "/art/expedition/asteroid.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.10000002384186,
-              "responseStartMs": 96.29999995231628,
-              "endMs": 96.29999995231628,
+              "startMs": 151,
+              "responseStartMs": 156.5,
+              "endMs": 156.60000002384186,
               "transferBytes": 300,
               "encodedBodyBytes": 33076,
               "decodedBodyBytes": 33076
@@ -1499,9 +703,9 @@
             {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.20000004768372,
-              "responseStartMs": 96.60000002384186,
-              "endMs": 96.70000004768372,
+              "startMs": 151,
+              "responseStartMs": 156.80000007152557,
+              "endMs": 156.89999997615814,
               "transferBytes": 300,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -1509,9 +713,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.20000004768372,
-              "responseStartMs": 96.89999997615814,
-              "endMs": 97,
+              "startMs": 151.10000002384186,
+              "responseStartMs": 157,
+              "endMs": 157.20000004768372,
               "transferBytes": 300,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -1519,49 +723,49 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.29999995231628,
-              "responseStartMs": 97.20000004768372,
-              "endMs": 97.29999995231628,
+              "startMs": 151.10000002384186,
+              "responseStartMs": 157.39999997615814,
+              "endMs": 157.5,
               "transferBytes": 300,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
             },
             {
-              "path": "/art/expedition/tars.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 91.29999995231628,
-              "responseStartMs": 97.70000004768372,
-              "endMs": 98,
-              "transferBytes": 300,
-              "encodedBodyBytes": 26458,
-              "decodedBodyBytes": 26458
-            },
-            {
-              "path": "/art/expedition/frontier-flagship-compact.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 91.39999997615814,
-              "responseStartMs": 98.20000004768372,
-              "endMs": 98.39999997615814,
-              "transferBytes": 300,
-              "encodedBodyBytes": 38514,
-              "decodedBodyBytes": 38514
-            },
-            {
               "path": "/art/expedition/money-tree.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.39999997615814,
-              "responseStartMs": 99.5,
-              "endMs": 99.60000002384186,
+              "startMs": 151.20000004768372,
+              "responseStartMs": 157.70000004768372,
+              "endMs": 157.80000007152557,
               "transferBytes": 300,
               "encodedBodyBytes": 46416,
               "decodedBodyBytes": 46416
             },
             {
+              "path": "/art/expedition/frontier-flagship-compact.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 151.20000004768372,
+              "responseStartMs": 157.89999997615814,
+              "endMs": 158,
+              "transferBytes": 300,
+              "encodedBodyBytes": 38514,
+              "decodedBodyBytes": 38514
+            },
+            {
+              "path": "/art/expedition/tars.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 151.20000004768372,
+              "responseStartMs": 158.5,
+              "endMs": 158.70000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 26458,
+              "decodedBodyBytes": 26458
+            },
+            {
               "path": "/art/expedition/scout.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.39999997615814,
-              "responseStartMs": 100.89999997615814,
-              "endMs": 101,
+              "startMs": 151.30000007152557,
+              "responseStartMs": 159.30000007152557,
+              "endMs": 159.5,
               "transferBytes": 24516,
               "encodedBodyBytes": 24216,
               "decodedBodyBytes": 24216
@@ -1569,9 +773,9 @@
             {
               "path": "/art/expedition/grunt.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.60000002384186,
-              "responseStartMs": 101,
-              "endMs": 101.5,
+              "startMs": 151.30000007152557,
+              "responseStartMs": 159.30000007152557,
+              "endMs": 159.5,
               "transferBytes": 28722,
               "encodedBodyBytes": 28422,
               "decodedBodyBytes": 28422
@@ -1579,39 +783,39 @@
             {
               "path": "/art/expedition/sprinter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.60000002384186,
-              "responseStartMs": 101.10000002384186,
-              "endMs": 101.5,
+              "startMs": 151.30000007152557,
+              "responseStartMs": 159.70000004768372,
+              "endMs": 159.80000007152557,
               "transferBytes": 21420,
               "encodedBodyBytes": 21120,
               "decodedBodyBytes": 21120
             },
             {
-              "path": "/art/expedition/plated-crawler.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 91.70000004768372,
-              "responseStartMs": 101.20000004768372,
-              "endMs": 101.60000002384186,
-              "transferBytes": 33852,
-              "encodedBodyBytes": 33552,
-              "decodedBodyBytes": 33552
-            },
-            {
               "path": "/art/expedition/manhunter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.70000004768372,
-              "responseStartMs": 101.79999995231628,
-              "endMs": 102.10000002384186,
+              "startMs": 151.39999997615814,
+              "responseStartMs": 159.5,
+              "endMs": 159.60000002384186,
               "transferBytes": 34702,
               "encodedBodyBytes": 34402,
               "decodedBodyBytes": 34402
             },
             {
+              "path": "/art/expedition/plated-crawler.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 151.39999997615814,
+              "responseStartMs": 159.60000002384186,
+              "endMs": 159.70000004768372,
+              "transferBytes": 33852,
+              "encodedBodyBytes": 33552,
+              "decodedBodyBytes": 33552
+            },
+            {
               "path": "/art/expedition/gargantua.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 91.70000004768372,
-              "responseStartMs": 102,
-              "endMs": 102.20000004768372,
+              "startMs": 151.39999997615814,
+              "responseStartMs": 160,
+              "endMs": 160.10000002384186,
               "transferBytes": 34580,
               "encodedBodyBytes": 34280,
               "decodedBodyBytes": 34280
@@ -1621,31 +825,821 @@
           "resourceGroups": {
             "javascript": {
               "requests": 3,
-              "transferBytes": 381513,
-              "encodedBodyBytes": 380613,
-              "lastEndMs": 41.60000002384186
+              "transferBytes": 381512,
+              "encodedBodyBytes": 380612,
+              "lastEndMs": 64.10000002384186
             },
             "images": {
               "requests": 30,
               "transferBytes": 609697,
               "encodedBodyBytes": 933067,
-              "lastEndMs": 102.20000004768372
+              "lastEndMs": 160.10000002384186
             },
             "other": {
               "requests": 2,
-              "transferBytes": 10701,
-              "encodedBodyBytes": 10101,
+              "transferBytes": 10765,
+              "encodedBodyBytes": 10165,
+              "lastEndMs": 39.200000047683716
+            }
+          },
+          "cdpMetrics": {
+            "Documents": 4,
+            "Nodes": 908,
+            "LayoutDuration": 0.035116,
+            "RecalcStyleDuration": 0.006577,
+            "ScriptDuration": 0.126338,
+            "TaskDuration": 0.543031,
+            "JSHeapUsedSize": 8852936
+          },
+          "initialImages": 21,
+          "initialImagePayload": 600697,
+          "errors": []
+        },
+        {
+          "firstPlayableMs": 157.5,
+          "navigation": {
+            "responseEndMs": 1.600000023841858,
+            "domInteractiveMs": 5.299999952316284,
+            "loadEndMs": 55.89999997615814,
+            "transferBytes": 1080,
+            "encodedBodyBytes": 780
+          },
+          "resources": [
+            {
+              "path": "/assets/index-CpdPJc_j.js",
+              "initiator": "script",
+              "startMs": 3.399999976158142,
+              "responseStartMs": 7.600000023841858,
+              "endMs": 7.899999976158142,
+              "transferBytes": 19158,
+              "encodedBodyBytes": 18858,
+              "decodedBodyBytes": 55481
+            },
+            {
+              "path": "/assets/index-Conhk4v9.css",
+              "initiator": "link",
+              "startMs": 3.5,
+              "responseStartMs": 7.299999952316284,
+              "endMs": 7.399999976158142,
+              "transferBytes": 8248,
+              "encodedBodyBytes": 7948,
+              "decodedBodyBytes": 32590
+            },
+            {
+              "path": "/art/manifest.json",
+              "initiator": "fetch",
+              "startMs": 15.799999952316284,
+              "responseStartMs": 17.100000023841858,
+              "endMs": 17.399999976158142,
+              "transferBytes": 2517,
+              "encodedBodyBytes": 2217,
+              "decodedBodyBytes": 16356
+            },
+            {
+              "path": "/assets/battlefield-BiZ5bc8S.js",
+              "initiator": "script",
+              "startMs": 16.399999976158142,
+              "responseStartMs": 18.100000023841858,
+              "endMs": 18.600000023841858,
+              "transferBytes": 6728,
+              "encodedBodyBytes": 6428,
+              "decodedBodyBytes": 17044
+            },
+            {
+              "path": "/assets/phaser-B_vcVLyb.js",
+              "initiator": "script",
+              "startMs": 16.399999976158142,
+              "responseStartMs": 20,
+              "endMs": 46,
+              "transferBytes": 355626,
+              "encodedBodyBytes": 355326,
+              "decodedBodyBytes": 1367089
+            },
+            {
+              "path": "/art/expedition/ranger.webp",
+              "initiator": "css",
+              "startMs": 17.399999976158142,
+              "responseStartMs": 19.5,
+              "endMs": 19.600000023841858,
+              "transferBytes": 38306,
+              "encodedBodyBytes": 38006,
+              "decodedBodyBytes": 38006
+            },
+            {
+              "path": "/art/expedition/money-bush.webp",
+              "initiator": "css",
+              "startMs": 17.5,
+              "responseStartMs": 20.100000023841858,
+              "endMs": 20.200000047683716,
+              "transferBytes": 35248,
+              "encodedBodyBytes": 34948,
+              "decodedBodyBytes": 34948
+            },
+            {
+              "path": "/art/expedition/explosive-astro-joe.webp",
+              "initiator": "css",
+              "startMs": 17.5,
+              "responseStartMs": 21,
+              "endMs": 21.100000023841858,
+              "transferBytes": 45774,
+              "encodedBodyBytes": 45474,
+              "decodedBodyBytes": 45474
+            },
+            {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "css",
+              "startMs": 17.5,
+              "responseStartMs": 21.799999952316284,
+              "endMs": 22.100000023841858,
+              "transferBytes": 33376,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
+              "path": "/art/expedition/moon-zeus.webp",
+              "initiator": "css",
+              "startMs": 17.5,
+              "responseStartMs": 22.399999976158142,
+              "endMs": 22.5,
+              "transferBytes": 37704,
+              "encodedBodyBytes": 37404,
+              "decodedBodyBytes": 37404
+            },
+            {
+              "path": "/art/expedition/startrell-cluggins.webp",
+              "initiator": "css",
+              "startMs": 17.700000047683716,
+              "responseStartMs": 21.799999952316284,
+              "endMs": 22.100000023841858,
+              "transferBytes": 32374,
+              "encodedBodyBytes": 32074,
+              "decodedBodyBytes": 32074
+            },
+            {
+              "path": "/art/expedition/tars.webp",
+              "initiator": "css",
+              "startMs": 17.700000047683716,
+              "responseStartMs": 22.899999976158142,
+              "endMs": 23,
+              "transferBytes": 26758,
+              "encodedBodyBytes": 26458,
+              "decodedBodyBytes": 26458
+            },
+            {
+              "path": "/art/expedition/money-tree.webp",
+              "initiator": "css",
+              "startMs": 17.700000047683716,
+              "responseStartMs": 22.899999976158142,
+              "endMs": 23,
+              "transferBytes": 46716,
+              "encodedBodyBytes": 46416,
+              "decodedBodyBytes": 46416
+            },
+            {
+              "path": "/art/expedition/frontier-flagship-compact.webp",
+              "initiator": "css",
+              "startMs": 17.700000047683716,
+              "responseStartMs": 23.299999952316284,
+              "endMs": 23.299999952316284,
+              "transferBytes": 38814,
+              "encodedBodyBytes": 38514,
+              "decodedBodyBytes": 38514
+            },
+            {
+              "path": "/art/expedition/canyon-0.5.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 97.89999997615814,
+              "responseStartMs": 101.39999997615814,
+              "endMs": 102,
+              "transferBytes": 87706,
+              "encodedBodyBytes": 87406,
+              "decodedBodyBytes": 87406
+            },
+            {
+              "path": "/art/projectile-astro-joe-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 98,
+              "responseStartMs": 100.89999997615814,
+              "endMs": 101.10000002384186,
+              "transferBytes": 650,
+              "encodedBodyBytes": 350,
+              "decodedBodyBytes": 350
+            },
+            {
+              "path": "/art/projectile-explosive-astro-joe-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.10000002384186,
+              "responseStartMs": 100.79999995231628,
+              "endMs": 101,
+              "transferBytes": 1872,
+              "encodedBodyBytes": 1572,
+              "decodedBodyBytes": 1572
+            },
+            {
+              "path": "/art/projectile-startrell-cluggins-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.10000002384186,
+              "responseStartMs": 101.29999995231628,
+              "endMs": 101.60000002384186,
+              "transferBytes": 1074,
+              "encodedBodyBytes": 774,
+              "decodedBodyBytes": 774
+            },
+            {
+              "path": "/art/projectile-tars-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.10000002384186,
+              "responseStartMs": 101.5,
+              "endMs": 101.70000004768372,
+              "transferBytes": 956,
+              "encodedBodyBytes": 656,
+              "decodedBodyBytes": 656
+            },
+            {
+              "path": "/art/projectile-moon-zeus-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.20000004768372,
+              "responseStartMs": 102.20000004768372,
+              "endMs": 102.39999997615814,
+              "transferBytes": 1877,
+              "encodedBodyBytes": 1577,
+              "decodedBodyBytes": 1577
+            },
+            {
+              "path": "/art/expedition/ranger.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.20000004768372,
+              "responseStartMs": 102.29999995231628,
+              "endMs": 102.60000002384186,
+              "transferBytes": 300,
+              "encodedBodyBytes": 38006,
+              "decodedBodyBytes": 38006
+            },
+            {
+              "path": "/art/expedition/money-bush.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.29999995231628,
+              "responseStartMs": 102.79999995231628,
+              "endMs": 103.20000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 34948,
+              "decodedBodyBytes": 34948
+            },
+            {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.29999995231628,
+              "responseStartMs": 103.29999995231628,
+              "endMs": 103.5,
+              "transferBytes": 300,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
+              "path": "/art/expedition/moon-zeus.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.39999997615814,
+              "responseStartMs": 103.5,
+              "endMs": 103.79999995231628,
+              "transferBytes": 300,
+              "encodedBodyBytes": 37404,
+              "decodedBodyBytes": 37404
+            },
+            {
+              "path": "/art/expedition/explosive-astro-joe.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.5,
+              "responseStartMs": 103.89999997615814,
+              "endMs": 104,
+              "transferBytes": 300,
+              "encodedBodyBytes": 45474,
+              "decodedBodyBytes": 45474
+            },
+            {
+              "path": "/art/expedition/startrell-cluggins.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.60000002384186,
+              "responseStartMs": 104.10000002384186,
+              "endMs": 104.20000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 32074,
+              "decodedBodyBytes": 32074
+            },
+            {
+              "path": "/art/expedition/tars.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.60000002384186,
+              "responseStartMs": 104.60000002384186,
+              "endMs": 104.70000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 26458,
+              "decodedBodyBytes": 26458
+            },
+            {
+              "path": "/art/expedition/money-tree.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.60000002384186,
+              "responseStartMs": 105.60000002384186,
+              "endMs": 105.70000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 46416,
+              "decodedBodyBytes": 46416
+            },
+            {
+              "path": "/art/expedition/frontier-flagship-compact.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.70000004768372,
+              "responseStartMs": 105.89999997615814,
+              "endMs": 106,
+              "transferBytes": 300,
+              "encodedBodyBytes": 38514,
+              "decodedBodyBytes": 38514
+            },
+            {
+              "path": "/art/expedition/scout.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.70000004768372,
+              "responseStartMs": 106.70000004768372,
+              "endMs": 107,
+              "transferBytes": 24516,
+              "encodedBodyBytes": 24216,
+              "decodedBodyBytes": 24216
+            },
+            {
+              "path": "/art/expedition/plated-crawler.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.89999997615814,
+              "responseStartMs": 107,
+              "endMs": 107.29999995231628,
+              "transferBytes": 33852,
+              "encodedBodyBytes": 33552,
+              "decodedBodyBytes": 33552
+            },
+            {
+              "path": "/art/expedition/sprinter.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.89999997615814,
+              "responseStartMs": 107.10000002384186,
+              "endMs": 107.29999995231628,
+              "transferBytes": 21420,
+              "encodedBodyBytes": 21120,
+              "decodedBodyBytes": 21120
+            },
+            {
+              "path": "/art/expedition/grunt.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.89999997615814,
+              "responseStartMs": 107.39999997615814,
+              "endMs": 107.60000002384186,
+              "transferBytes": 28722,
+              "encodedBodyBytes": 28422,
+              "decodedBodyBytes": 28422
+            },
+            {
+              "path": "/art/expedition/manhunter.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 98.89999997615814,
+              "responseStartMs": 107.39999997615814,
+              "endMs": 107.70000004768372,
+              "transferBytes": 34702,
+              "encodedBodyBytes": 34402,
+              "decodedBodyBytes": 34402
+            },
+            {
+              "path": "/art/expedition/gargantua.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 99,
+              "responseStartMs": 107.70000004768372,
+              "endMs": 107.79999995231628,
+              "transferBytes": 34580,
+              "encodedBodyBytes": 34280,
+              "decodedBodyBytes": 34280
+            }
+          ],
+          "longTasks": [],
+          "resourceGroups": {
+            "javascript": {
+              "requests": 3,
+              "transferBytes": 381512,
+              "encodedBodyBytes": 380612,
+              "lastEndMs": 46
+            },
+            "images": {
+              "requests": 30,
+              "transferBytes": 609697,
+              "encodedBodyBytes": 933067,
+              "lastEndMs": 107.79999995231628
+            },
+            "other": {
+              "requests": 2,
+              "transferBytes": 10765,
+              "encodedBodyBytes": 10165,
+              "lastEndMs": 17.399999976158142
+            }
+          },
+          "cdpMetrics": {
+            "Documents": 4,
+            "Nodes": 908,
+            "LayoutDuration": 0.036448,
+            "RecalcStyleDuration": 0.002323,
+            "ScriptDuration": 0.097418,
+            "TaskDuration": 0.479456,
+            "JSHeapUsedSize": 11197364
+          },
+          "initialImages": 21,
+          "initialImagePayload": 600697,
+          "errors": []
+        },
+        {
+          "firstPlayableMs": 151.39999997615814,
+          "navigation": {
+            "responseEndMs": 1.2000000476837158,
+            "domInteractiveMs": 4,
+            "loadEndMs": 51.200000047683716,
+            "transferBytes": 1080,
+            "encodedBodyBytes": 780
+          },
+          "resources": [
+            {
+              "path": "/assets/index-CpdPJc_j.js",
+              "initiator": "script",
+              "startMs": 2.600000023841858,
+              "responseStartMs": 6.100000023841858,
+              "endMs": 6.399999976158142,
+              "transferBytes": 19158,
+              "encodedBodyBytes": 18858,
+              "decodedBodyBytes": 55481
+            },
+            {
+              "path": "/assets/index-Conhk4v9.css",
+              "initiator": "link",
+              "startMs": 2.700000047683716,
+              "responseStartMs": 6,
+              "endMs": 6.200000047683716,
+              "transferBytes": 8248,
+              "encodedBodyBytes": 7948,
+              "decodedBodyBytes": 32590
+            },
+            {
+              "path": "/art/manifest.json",
+              "initiator": "fetch",
+              "startMs": 13.100000023841858,
+              "responseStartMs": 15.399999976158142,
+              "endMs": 15.600000023841858,
+              "transferBytes": 2517,
+              "encodedBodyBytes": 2217,
+              "decodedBodyBytes": 16356
+            },
+            {
+              "path": "/assets/battlefield-BiZ5bc8S.js",
+              "initiator": "script",
+              "startMs": 13.5,
+              "responseStartMs": 15.5,
+              "endMs": 16.200000047683716,
+              "transferBytes": 6728,
+              "encodedBodyBytes": 6428,
+              "decodedBodyBytes": 17044
+            },
+            {
+              "path": "/assets/phaser-B_vcVLyb.js",
+              "initiator": "script",
+              "startMs": 13.5,
+              "responseStartMs": 16.799999952316284,
+              "endMs": 41.700000047683716,
+              "transferBytes": 355626,
+              "encodedBodyBytes": 355326,
+              "decodedBodyBytes": 1367089
+            },
+            {
+              "path": "/art/expedition/ranger.webp",
+              "initiator": "css",
+              "startMs": 14.399999976158142,
+              "responseStartMs": 16.700000047683716,
+              "endMs": 16.899999976158142,
+              "transferBytes": 38306,
+              "encodedBodyBytes": 38006,
+              "decodedBodyBytes": 38006
+            },
+            {
+              "path": "/art/expedition/money-bush.webp",
+              "initiator": "css",
+              "startMs": 14.5,
+              "responseStartMs": 17.600000023841858,
+              "endMs": 17.600000023841858,
+              "transferBytes": 35248,
+              "encodedBodyBytes": 34948,
+              "decodedBodyBytes": 34948
+            },
+            {
+              "path": "/art/expedition/moon-zeus.webp",
+              "initiator": "css",
+              "startMs": 14.600000023841858,
+              "responseStartMs": 17.5,
+              "endMs": 17.600000023841858,
+              "transferBytes": 37704,
+              "encodedBodyBytes": 37404,
+              "decodedBodyBytes": 37404
+            },
+            {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "css",
+              "startMs": 14.600000023841858,
+              "responseStartMs": 18.299999952316284,
+              "endMs": 18.5,
+              "transferBytes": 33376,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
+              "path": "/art/expedition/explosive-astro-joe.webp",
+              "initiator": "css",
+              "startMs": 14.700000047683716,
+              "responseStartMs": 18.100000023841858,
+              "endMs": 18.200000047683716,
+              "transferBytes": 45774,
+              "encodedBodyBytes": 45474,
+              "decodedBodyBytes": 45474
+            },
+            {
+              "path": "/art/expedition/startrell-cluggins.webp",
+              "initiator": "css",
+              "startMs": 14.700000047683716,
+              "responseStartMs": 18.899999976158142,
+              "endMs": 19,
+              "transferBytes": 32374,
+              "encodedBodyBytes": 32074,
+              "decodedBodyBytes": 32074
+            },
+            {
+              "path": "/art/expedition/tars.webp",
+              "initiator": "css",
+              "startMs": 14.700000047683716,
+              "responseStartMs": 19.5,
+              "endMs": 19.700000047683716,
+              "transferBytes": 26758,
+              "encodedBodyBytes": 26458,
+              "decodedBodyBytes": 26458
+            },
+            {
+              "path": "/art/expedition/money-tree.webp",
+              "initiator": "css",
+              "startMs": 14.700000047683716,
+              "responseStartMs": 19.700000047683716,
+              "endMs": 19.899999976158142,
+              "transferBytes": 46716,
+              "encodedBodyBytes": 46416,
+              "decodedBodyBytes": 46416
+            },
+            {
+              "path": "/art/expedition/frontier-flagship-compact.webp",
+              "initiator": "css",
+              "startMs": 14.700000047683716,
+              "responseStartMs": 19.899999976158142,
+              "endMs": 20,
+              "transferBytes": 38814,
+              "encodedBodyBytes": 38514,
+              "decodedBodyBytes": 38514
+            },
+            {
+              "path": "/art/expedition/canyon-0.5.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.5,
+              "responseStartMs": 93.10000002384186,
+              "endMs": 94.10000002384186,
+              "transferBytes": 87706,
+              "encodedBodyBytes": 87406,
+              "decodedBodyBytes": 87406
+            },
+            {
+              "path": "/art/projectile-astro-joe-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.60000002384186,
+              "responseStartMs": 93.20000004768372,
+              "endMs": 93.70000004768372,
+              "transferBytes": 650,
+              "encodedBodyBytes": 350,
+              "decodedBodyBytes": 350
+            },
+            {
+              "path": "/art/projectile-explosive-astro-joe-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.60000002384186,
+              "responseStartMs": 93.29999995231628,
+              "endMs": 93.70000004768372,
+              "transferBytes": 1872,
+              "encodedBodyBytes": 1572,
+              "decodedBodyBytes": 1572
+            },
+            {
+              "path": "/art/projectile-startrell-cluggins-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.60000002384186,
+              "responseStartMs": 93.39999997615814,
+              "endMs": 93.79999995231628,
+              "transferBytes": 1074,
+              "encodedBodyBytes": 774,
+              "decodedBodyBytes": 774
+            },
+            {
+              "path": "/art/projectile-tars-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.70000004768372,
+              "responseStartMs": 93.60000002384186,
+              "endMs": 93.89999997615814,
+              "transferBytes": 956,
+              "encodedBodyBytes": 656,
+              "decodedBodyBytes": 656
+            },
+            {
+              "path": "/art/projectile-moon-zeus-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.70000004768372,
+              "responseStartMs": 94,
+              "endMs": 94.10000002384186,
+              "transferBytes": 1877,
+              "encodedBodyBytes": 1577,
+              "decodedBodyBytes": 1577
+            },
+            {
+              "path": "/art/expedition/ranger.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.79999995231628,
+              "responseStartMs": 94.39999997615814,
+              "endMs": 94.60000002384186,
+              "transferBytes": 300,
+              "encodedBodyBytes": 38006,
+              "decodedBodyBytes": 38006
+            },
+            {
+              "path": "/art/expedition/money-bush.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.79999995231628,
+              "responseStartMs": 95,
+              "endMs": 95.20000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 34948,
+              "decodedBodyBytes": 34948
+            },
+            {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.89999997615814,
+              "responseStartMs": 95.29999995231628,
+              "endMs": 95.5,
+              "transferBytes": 300,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
+              "path": "/art/expedition/moon-zeus.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 90.89999997615814,
+              "responseStartMs": 95.60000002384186,
+              "endMs": 95.70000004768372,
+              "transferBytes": 300,
+              "encodedBodyBytes": 37404,
+              "decodedBodyBytes": 37404
+            },
+            {
+              "path": "/art/expedition/explosive-astro-joe.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91,
+              "responseStartMs": 95.89999997615814,
+              "endMs": 96,
+              "transferBytes": 300,
+              "encodedBodyBytes": 45474,
+              "decodedBodyBytes": 45474
+            },
+            {
+              "path": "/art/expedition/startrell-cluggins.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.10000002384186,
+              "responseStartMs": 96.29999995231628,
+              "endMs": 96.5,
+              "transferBytes": 300,
+              "encodedBodyBytes": 32074,
+              "decodedBodyBytes": 32074
+            },
+            {
+              "path": "/art/expedition/money-tree.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.10000002384186,
+              "responseStartMs": 96.60000002384186,
+              "endMs": 96.79999995231628,
+              "transferBytes": 300,
+              "encodedBodyBytes": 46416,
+              "decodedBodyBytes": 46416
+            },
+            {
+              "path": "/art/expedition/frontier-flagship-compact.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.10000002384186,
+              "responseStartMs": 96.89999997615814,
+              "endMs": 97,
+              "transferBytes": 300,
+              "encodedBodyBytes": 38514,
+              "decodedBodyBytes": 38514
+            },
+            {
+              "path": "/art/expedition/tars.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.10000002384186,
+              "responseStartMs": 97.70000004768372,
+              "endMs": 97.79999995231628,
+              "transferBytes": 300,
+              "encodedBodyBytes": 26458,
+              "decodedBodyBytes": 26458
+            },
+            {
+              "path": "/art/expedition/scout.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.20000004768372,
+              "responseStartMs": 99.29999995231628,
+              "endMs": 99.60000002384186,
+              "transferBytes": 24516,
+              "encodedBodyBytes": 24216,
+              "decodedBodyBytes": 24216
+            },
+            {
+              "path": "/art/expedition/grunt.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.29999995231628,
+              "responseStartMs": 99.39999997615814,
+              "endMs": 99.70000004768372,
+              "transferBytes": 28722,
+              "encodedBodyBytes": 28422,
+              "decodedBodyBytes": 28422
+            },
+            {
+              "path": "/art/expedition/sprinter.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.29999995231628,
+              "responseStartMs": 100.20000004768372,
+              "endMs": 100.39999997615814,
+              "transferBytes": 21420,
+              "encodedBodyBytes": 21120,
+              "decodedBodyBytes": 21120
+            },
+            {
+              "path": "/art/expedition/plated-crawler.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.39999997615814,
+              "responseStartMs": 99.70000004768372,
+              "endMs": 100.10000002384186,
+              "transferBytes": 33852,
+              "encodedBodyBytes": 33552,
+              "decodedBodyBytes": 33552
+            },
+            {
+              "path": "/art/expedition/manhunter.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.39999997615814,
+              "responseStartMs": 99.89999997615814,
+              "endMs": 100.10000002384186,
+              "transferBytes": 34702,
+              "encodedBodyBytes": 34402,
+              "decodedBodyBytes": 34402
+            },
+            {
+              "path": "/art/expedition/gargantua.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 91.39999997615814,
+              "responseStartMs": 100.29999995231628,
+              "endMs": 100.5,
+              "transferBytes": 34580,
+              "encodedBodyBytes": 34280,
+              "decodedBodyBytes": 34280
+            }
+          ],
+          "longTasks": [],
+          "resourceGroups": {
+            "javascript": {
+              "requests": 3,
+              "transferBytes": 381512,
+              "encodedBodyBytes": 380612,
+              "lastEndMs": 41.700000047683716
+            },
+            "images": {
+              "requests": 30,
+              "transferBytes": 609697,
+              "encodedBodyBytes": 933067,
+              "lastEndMs": 100.5
+            },
+            "other": {
+              "requests": 2,
+              "transferBytes": 10765,
+              "encodedBodyBytes": 10165,
               "lastEndMs": 15.600000023841858
             }
           },
           "cdpMetrics": {
             "Documents": 4,
             "Nodes": 908,
-            "LayoutDuration": 0.034187,
-            "RecalcStyleDuration": 0.002285,
-            "ScriptDuration": 0.091974,
-            "TaskDuration": 0.473211,
-            "JSHeapUsedSize": 7742776
+            "LayoutDuration": 0.033303,
+            "RecalcStyleDuration": 0.002331,
+            "ScriptDuration": 0.091358,
+            "TaskDuration": 0.469142,
+            "JSHeapUsedSize": 7476628
           },
           "initialImages": 21,
           "initialImagePayload": 600697,
@@ -1655,61 +1649,61 @@
       "transitions": [
         {
           "style": "original",
-          "wallMs": 372,
+          "wallMs": 363,
           "newUniqueImages": 33,
           "creditsPreserved": true
         },
         {
           "style": "expedition",
-          "wallMs": 128,
+          "wallMs": 172,
           "newUniqueImages": 0,
           "creditsPreserved": true
         },
         {
           "style": "original",
-          "wallMs": 67,
+          "wallMs": 99,
           "newUniqueImages": 0,
           "creditsPreserved": true
         },
         {
           "style": "expedition",
-          "wallMs": 100,
+          "wallMs": 67,
           "newUniqueImages": 0,
           "creditsPreserved": true
         },
         {
           "map": "bridge",
-          "wallMs": 281,
+          "wallMs": 246,
           "newUniqueImages": 3,
           "readyCredits": "230"
         },
         {
           "map": "nest",
-          "wallMs": 202,
+          "wallMs": 91,
           "newUniqueImages": 0,
           "readyCredits": "230"
         },
         {
           "map": "canyon",
-          "wallMs": 116,
+          "wallMs": 133,
           "newUniqueImages": 0,
           "readyCredits": "230"
         },
         {
           "map": "nest",
-          "wallMs": 111,
+          "wallMs": 148,
           "newUniqueImages": 0,
           "readyCredits": "230"
         }
       ],
       "combat": {
         "purchased": 20,
-        "wallMs": 83917,
+        "wallMs": 83988,
         "phase": "Outpost secured",
-        "lateWaveFrameSamples": 2019,
+        "lateWaveFrameSamples": 1976,
         "medianFrameGapMs": 16.7,
         "p95FrameGapMs": 33.4,
-        "gapsOver50ms": 1,
+        "gapsOver50ms": 2,
         "frameGapsMs": [
           16.5,
           16.5,
@@ -1720,7 +1714,6 @@
           16.5,
           16.5,
           16.5,
-          16.5,
           16.59999999999127,
           16.59999999999127,
           16.59999999999127,
@@ -1875,24 +1868,6 @@
           16.59999999999127,
           16.59999999999127,
           16.59999999999127,
-          16.59999999999127,
-          16.59999999999127,
-          16.59999999999127,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
           16.599999999998545,
           16.599999999998545,
           16.599999999998545,
@@ -2109,15 +2084,6 @@
           16.599999999998545,
           16.599999999998545,
           16.599999999998545,
-          16.599999999998545,
-          16.599999999998545,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
           16.60000000000582,
           16.60000000000582,
           16.60000000000582,
@@ -2368,15 +2334,6 @@
           16.60000000000582,
           16.60000000000582,
           16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.60000000000582,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
           16.69999999999709,
           16.69999999999709,
           16.69999999999709,
@@ -3030,42 +2987,6 @@
           16.69999999999709,
           16.69999999999709,
           16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
-          16.700000000004366,
           16.700000000004366,
           16.700000000004366,
           16.700000000004366,
@@ -3227,15 +3148,6 @@
           16.700000000004366,
           16.700000000004366,
           16.700000000004366,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
           16.70000000001164,
           16.70000000001164,
           16.70000000001164,
@@ -3346,6 +3258,11 @@
           16.79999999998836,
           16.79999999998836,
           16.79999999998836,
+          16.79999999998836,
+          16.79999999998836,
+          16.79999999998836,
+          16.79999999998836,
+          16.79999999998836,
           16.799999999995634,
           16.799999999995634,
           16.799999999995634,
@@ -3359,15 +3276,6 @@
           16.799999999995634,
           16.799999999995634,
           16.799999999995634,
-          16.799999999995634,
-          16.799999999995634,
-          16.799999999995634,
-          16.80000000000291,
-          16.80000000000291,
-          16.80000000000291,
-          16.80000000000291,
-          16.80000000000291,
-          16.80000000000291,
           16.80000000000291,
           16.80000000000291,
           16.80000000000291,
@@ -3434,6 +3342,12 @@
           33.19999999999709,
           33.19999999999709,
           33.200000000004366,
+          33.200000000004366,
+          33.200000000004366,
+          33.200000000004366,
+          33.20000000001164,
+          33.20000000001164,
+          33.20000000001164,
           33.29999999998836,
           33.29999999998836,
           33.29999999998836,
@@ -3448,12 +3362,6 @@
           33.29999999998836,
           33.29999999998836,
           33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
           33.299999999995634,
           33.299999999995634,
           33.299999999995634,
@@ -3484,6 +3392,12 @@
           33.299999999995634,
           33.299999999995634,
           33.299999999995634,
+          33.299999999995634,
+          33.299999999995634,
+          33.299999999995634,
+          33.299999999995634,
+          33.299999999995634,
+          33.299999999995634,
           33.30000000000291,
           33.30000000000291,
           33.30000000000291,
@@ -3608,6 +3522,36 @@
           33.30000000000291,
           33.30000000000291,
           33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.30000000000291,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
           33.39999999999418,
           33.39999999999418,
           33.39999999999418,
@@ -3693,8 +3637,12 @@
           33.400000000001455,
           33.400000000001455,
           33.400000000001455,
-          33.400000000001455,
-          33.400000000001455,
+          33.40000000000873,
+          33.40000000000873,
+          33.40000000000873,
+          33.40000000000873,
+          33.40000000000873,
+          33.40000000000873,
           33.40000000000873,
           33.40000000000873,
           33.40000000000873,
@@ -3729,10 +3677,13 @@
           33.40000000000873,
           33.40000000000873,
           33.5,
-          100
+          33.5,
+          33.5,
+          50.099999999998545,
+          116.60000000000582
         ],
-        "jsHeapUsedBytes": 45530984,
-        "jsHeapAfterFiveRestartsBytes": 41781188,
+        "jsHeapUsedBytes": 36839316,
+        "jsHeapAfterFiveRestartsBytes": 15869004,
         "canvasesAfterFiveRestarts": 1,
         "errors": []
       }
@@ -3747,51 +3698,51 @@
       "cpuRate": 4,
       "startups": [
         {
-          "firstPlayableMs": 5974.299999952316,
+          "firstPlayableMs": 5986.5,
           "navigation": {
-            "responseEndMs": 166.39999997615814,
-            "domInteractiveMs": 177.19999992847443,
-            "loadEndMs": 2867.1999999284744,
+            "responseEndMs": 167.5,
+            "domInteractiveMs": 179.30000007152557,
+            "loadEndMs": 2874.8000000715256,
             "transferBytes": 1080,
             "encodedBodyBytes": 780
           },
           "resources": [
             {
-              "path": "/assets/index-C4kOWVjh.js",
+              "path": "/assets/index-CpdPJc_j.js",
               "initiator": "script",
-              "startMs": 171.60000002384186,
-              "responseStartMs": 174.60000002384186,
-              "endMs": 464.39999997615814,
-              "transferBytes": 19159,
-              "encodedBodyBytes": 18859,
+              "startMs": 172.60000002384186,
+              "responseStartMs": 176.80000007152557,
+              "endMs": 472.3000000715256,
+              "transferBytes": 19158,
+              "encodedBodyBytes": 18858,
               "decodedBodyBytes": 55481
             },
             {
-              "path": "/assets/index-C95nE9JH.css",
+              "path": "/assets/index-Conhk4v9.css",
               "initiator": "link",
-              "startMs": 171.69999992847443,
-              "responseStartMs": 174.39999997615814,
-              "endMs": 405.6999999284744,
-              "transferBytes": 8184,
-              "encodedBodyBytes": 7884,
-              "decodedBodyBytes": 32248
+              "startMs": 173.30000007152557,
+              "responseStartMs": 176.5,
+              "endMs": 413.5,
+              "transferBytes": 8248,
+              "encodedBodyBytes": 7948,
+              "decodedBodyBytes": 32590
             },
             {
               "path": "/art/manifest.json",
               "initiator": "fetch",
-              "startMs": 476.39999997615814,
-              "responseStartMs": 477.60000002384186,
-              "endMs": 684.6000000238419,
+              "startMs": 485.2000000476837,
+              "responseStartMs": 486.10000002384186,
+              "endMs": 691.8000000715256,
               "transferBytes": 2517,
               "encodedBodyBytes": 2217,
               "decodedBodyBytes": 16356
             },
             {
-              "path": "/assets/battlefield-CUze8qCG.js",
+              "path": "/assets/battlefield-BiZ5bc8S.js",
               "initiator": "script",
-              "startMs": 477.7999999523163,
-              "responseStartMs": 479.1999999284744,
-              "endMs": 804.6999999284744,
+              "startMs": 486.8000000715256,
+              "responseStartMs": 487.7000000476837,
+              "endMs": 812.8000000715256,
               "transferBytes": 6728,
               "encodedBodyBytes": 6428,
               "decodedBodyBytes": 17044
@@ -3799,9 +3750,9 @@
             {
               "path": "/assets/phaser-B_vcVLyb.js",
               "initiator": "script",
-              "startMs": 477.89999997615814,
-              "responseStartMs": 479.6999999284744,
-              "endMs": 4178.199999928474,
+              "startMs": 486.89999997615814,
+              "responseStartMs": 488.2000000476837,
+              "endMs": 4185.5,
               "transferBytes": 355626,
               "encodedBodyBytes": 355326,
               "decodedBodyBytes": 1367089
@@ -3809,39 +3760,39 @@
             {
               "path": "/art/expedition/ranger.webp",
               "initiator": "css",
-              "startMs": 481.5,
-              "responseStartMs": 483.39999997615814,
-              "endMs": 1705.1999999284744,
+              "startMs": 490.2000000476837,
+              "responseStartMs": 492.5,
+              "endMs": 1712.8999999761581,
               "transferBytes": 38306,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
             },
             {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "css",
-              "startMs": 482.5,
-              "responseStartMs": 483.5,
-              "endMs": 1605.8999999761581,
-              "transferBytes": 33376,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
               "path": "/art/expedition/money-bush.webp",
               "initiator": "css",
-              "startMs": 482.5,
-              "responseStartMs": 483.39999997615814,
-              "endMs": 1642.2999999523163,
+              "startMs": 490.3000000715256,
+              "responseStartMs": 492.5,
+              "endMs": 1652.7000000476837,
               "transferBytes": 35248,
               "encodedBodyBytes": 34948,
               "decodedBodyBytes": 34948
             },
             {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "css",
+              "startMs": 490.39999997615814,
+              "responseStartMs": 492.60000002384186,
+              "endMs": 1613.5,
+              "transferBytes": 33376,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "css",
-              "startMs": 482.60000002384186,
-              "responseStartMs": 685.3999999761581,
-              "endMs": 1844.7999999523163,
+              "startMs": 490.39999997615814,
+              "responseStartMs": 692.6000000238419,
+              "endMs": 1854.6000000238419,
               "transferBytes": 37704,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -3849,9 +3800,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "css",
-              "startMs": 482.60000002384186,
-              "responseStartMs": 805.3999999761581,
-              "endMs": 2204.899999976158,
+              "startMs": 490.39999997615814,
+              "responseStartMs": 813.6000000238419,
+              "endMs": 2213.5,
               "transferBytes": 45774,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -3859,9 +3810,9 @@
             {
               "path": "/art/expedition/tars.webp",
               "initiator": "css",
-              "startMs": 482.60000002384186,
-              "responseStartMs": 1643.6999999284744,
-              "endMs": 2499.399999976158,
+              "startMs": 491.2000000476837,
+              "responseStartMs": 1653.3999999761581,
+              "endMs": 2513.600000023842,
               "transferBytes": 26758,
               "encodedBodyBytes": 26458,
               "decodedBodyBytes": 26458
@@ -3869,79 +3820,79 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "css",
-              "startMs": 482.60000002384186,
-              "responseStartMs": 1606.7999999523163,
-              "endMs": 2572.5,
+              "startMs": 491.2000000476837,
+              "responseStartMs": 1614.3999999761581,
+              "endMs": 2580.2000000476837,
               "transferBytes": 32374,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
             },
             {
-              "path": "/art/expedition/money-tree.webp",
-              "initiator": "css",
-              "startMs": 482.60000002384186,
-              "responseStartMs": 1706.1000000238419,
-              "endMs": 2867.100000023842,
-              "transferBytes": 46716,
-              "encodedBodyBytes": 46416,
-              "decodedBodyBytes": 46416
-            },
-            {
               "path": "/art/expedition/frontier-flagship-compact.webp",
               "initiator": "css",
-              "startMs": 482.6999999284744,
-              "responseStartMs": 1845.6999999284744,
-              "endMs": 2827.399999976158,
+              "startMs": 491.2000000476837,
+              "responseStartMs": 1855.8000000715256,
+              "endMs": 2837,
               "transferBytes": 38814,
               "encodedBodyBytes": 38514,
               "decodedBodyBytes": 38514
             },
             {
-              "path": "/art/expedition/canyon-0.5.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 4293.399999976158,
-              "responseStartMs": 4296.100000023842,
-              "endMs": 5594.600000023842,
-              "transferBytes": 87706,
-              "encodedBodyBytes": 87406,
-              "decodedBodyBytes": 87406
+              "path": "/art/expedition/money-tree.webp",
+              "initiator": "css",
+              "startMs": 491.2000000476837,
+              "responseStartMs": 1713.8000000715256,
+              "endMs": 2874.2000000476837,
+              "transferBytes": 46716,
+              "encodedBodyBytes": 46416,
+              "decodedBodyBytes": 46416
             },
             {
               "path": "/art/projectile-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4293.5,
-              "responseStartMs": 4296.199999928474,
-              "endMs": 4463.600000023842,
+              "startMs": 4301.800000071526,
+              "responseStartMs": 4303.399999976158,
+              "endMs": 4471.300000071526,
               "transferBytes": 650,
               "encodedBodyBytes": 350,
               "decodedBodyBytes": 350
             },
             {
-              "path": "/art/projectile-explosive-astro-joe-ammo.png",
+              "path": "/art/expedition/canyon-0.5.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4293.5,
-              "responseStartMs": 4296.199999928474,
-              "endMs": 4509,
-              "transferBytes": 1872,
-              "encodedBodyBytes": 1572,
-              "decodedBodyBytes": 1572
+              "startMs": 4301.800000071526,
+              "responseStartMs": 4303.300000071526,
+              "endMs": 5582,
+              "transferBytes": 87706,
+              "encodedBodyBytes": 87406,
+              "decodedBodyBytes": 87406
             },
             {
               "path": "/art/projectile-startrell-cluggins-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4293.600000023842,
-              "responseStartMs": 4296.399999976158,
-              "endMs": 4478.899999976158,
+              "startMs": 4301.899999976158,
+              "responseStartMs": 4303.5,
+              "endMs": 4488,
               "transferBytes": 1074,
               "encodedBodyBytes": 774,
               "decodedBodyBytes": 774
             },
             {
+              "path": "/art/projectile-explosive-astro-joe-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 4301.899999976158,
+              "responseStartMs": 4303.5,
+              "endMs": 4517.899999976158,
+              "transferBytes": 1872,
+              "encodedBodyBytes": 1572,
+              "decodedBodyBytes": 1572
+            },
+            {
               "path": "/art/projectile-tars-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4293.600000023842,
-              "responseStartMs": 4296.399999976158,
-              "endMs": 4484.600000023842,
+              "startMs": 4302.700000047684,
+              "responseStartMs": 4303.700000047684,
+              "endMs": 4501.600000023842,
               "transferBytes": 956,
               "encodedBodyBytes": 656,
               "decodedBodyBytes": 656
@@ -3949,9 +3900,9 @@
             {
               "path": "/art/projectile-moon-zeus-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4293.600000023842,
-              "responseStartMs": 4296.399999976158,
-              "endMs": 4516.100000023842,
+              "startMs": 4302.700000047684,
+              "responseStartMs": 4303.700000047684,
+              "endMs": 4523.700000047684,
               "transferBytes": 1877,
               "encodedBodyBytes": 1577,
               "decodedBodyBytes": 1577
@@ -3959,9 +3910,9 @@
             {
               "path": "/art/expedition/ranger.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4294.399999976158,
-              "responseStartMs": 4464.100000023842,
-              "endMs": 4619.699999928474,
+              "startMs": 4302.700000047684,
+              "responseStartMs": 4472,
+              "endMs": 4634.800000071526,
               "transferBytes": 300,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
@@ -3969,9 +3920,9 @@
             {
               "path": "/art/expedition/money-bush.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4294.399999976158,
-              "responseStartMs": 4479.699999928474,
-              "endMs": 4642.5,
+              "startMs": 4302.800000071526,
+              "responseStartMs": 4488.899999976158,
+              "endMs": 4649.899999976158,
               "transferBytes": 300,
               "encodedBodyBytes": 34948,
               "decodedBodyBytes": 34948
@@ -3979,9 +3930,9 @@
             {
               "path": "/art/expedition/asteroid.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4294.399999976158,
-              "responseStartMs": 4484.899999976158,
-              "endMs": 4659.199999928474,
+              "startMs": 4303.300000071526,
+              "responseStartMs": 4502.200000047684,
+              "endMs": 4665,
               "transferBytes": 300,
               "encodedBodyBytes": 33076,
               "decodedBodyBytes": 33076
@@ -3989,9 +3940,9 @@
             {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4294.5,
-              "responseStartMs": 4510,
-              "endMs": 4673.799999952316,
+              "startMs": 4303.399999976158,
+              "responseStartMs": 4518.5,
+              "endMs": 4680.399999976158,
               "transferBytes": 300,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -3999,9 +3950,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4294.5,
-              "responseStartMs": 4516.600000023842,
-              "endMs": 4690.5,
+              "startMs": 4303.399999976158,
+              "responseStartMs": 4524.600000023842,
+              "endMs": 4697.100000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -4009,9 +3960,9 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4295.199999928474,
-              "responseStartMs": 4620.100000023842,
-              "endMs": 4778.399999976158,
+              "startMs": 4303.899999976158,
+              "responseStartMs": 4635.300000071526,
+              "endMs": 4794,
               "transferBytes": 300,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
@@ -4019,9 +3970,9 @@
             {
               "path": "/art/expedition/tars.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4295.299999952316,
-              "responseStartMs": 4643.100000023842,
-              "endMs": 4801.299999952316,
+              "startMs": 4303.899999976158,
+              "responseStartMs": 4650.300000071526,
+              "endMs": 4808.100000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 26458,
               "decodedBodyBytes": 26458
@@ -4029,9 +3980,9 @@
             {
               "path": "/art/expedition/money-tree.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4295.399999976158,
-              "responseStartMs": 4659.899999976158,
-              "endMs": 4823.399999976158,
+              "startMs": 4303.899999976158,
+              "responseStartMs": 4665.300000071526,
+              "endMs": 4823.100000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 46416,
               "decodedBodyBytes": 46416
@@ -4039,9 +3990,9 @@
             {
               "path": "/art/expedition/frontier-flagship-compact.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4295.399999976158,
-              "responseStartMs": 4674.199999928474,
-              "endMs": 4838,
+              "startMs": 4304,
+              "responseStartMs": 4680.800000071526,
+              "endMs": 4847,
               "transferBytes": 300,
               "encodedBodyBytes": 38514,
               "decodedBodyBytes": 38514
@@ -4049,39 +4000,39 @@
             {
               "path": "/art/expedition/scout.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4295.5,
-              "responseStartMs": 4691,
-              "endMs": 5355.600000023842,
+              "startMs": 4304.5,
+              "responseStartMs": 4697.700000047684,
+              "endMs": 5363.5,
               "transferBytes": 24516,
               "encodedBodyBytes": 24216,
               "decodedBodyBytes": 24216
             },
             {
-              "path": "/art/expedition/grunt.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 4295.5,
-              "responseStartMs": 4779.399999976158,
-              "endMs": 5701.100000023842,
-              "transferBytes": 28722,
-              "encodedBodyBytes": 28422,
-              "decodedBodyBytes": 28422
-            },
-            {
               "path": "/art/expedition/sprinter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4296.399999976158,
-              "responseStartMs": 4801.899999976158,
-              "endMs": 5574.799999952316,
+              "startMs": 4304.5,
+              "responseStartMs": 4808.800000071526,
+              "endMs": 5574.5,
               "transferBytes": 21420,
               "encodedBodyBytes": 21120,
               "decodedBodyBytes": 21120
             },
             {
+              "path": "/art/expedition/grunt.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 4304.5,
+              "responseStartMs": 4794.600000023842,
+              "endMs": 5710.800000071526,
+              "transferBytes": 28722,
+              "encodedBodyBytes": 28422,
+              "decodedBodyBytes": 28422
+            },
+            {
               "path": "/art/expedition/manhunter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4296.399999976158,
-              "responseStartMs": 4824,
-              "endMs": 5834.5,
+              "startMs": 4304.5,
+              "responseStartMs": 4823.899999976158,
+              "endMs": 5843.300000071526,
               "transferBytes": 34702,
               "encodedBodyBytes": 34402,
               "decodedBodyBytes": 34402
@@ -4089,9 +4040,9 @@
             {
               "path": "/art/expedition/plated-crawler.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4296.699999928474,
-              "responseStartMs": 4838.5,
-              "endMs": 5820.799999952316,
+              "startMs": 4304.700000047684,
+              "responseStartMs": 4847.600000023842,
+              "endMs": 5834.600000023842,
               "transferBytes": 33852,
               "encodedBodyBytes": 33552,
               "decodedBodyBytes": 33552
@@ -4099,9 +4050,9 @@
             {
               "path": "/art/expedition/gargantua.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4296.699999928474,
-              "responseStartMs": 5356.399999976158,
-              "endMs": 5934.399999976158,
+              "startMs": 4305.300000071526,
+              "responseStartMs": 5364.5,
+              "endMs": 5941.200000047684,
               "transferBytes": 34580,
               "encodedBodyBytes": 34280,
               "decodedBodyBytes": 34280
@@ -4109,89 +4060,89 @@
           ],
           "longTasks": [
             {
-              "start": 4182.399999976158,
-              "duration": 87
+              "start": 4190.300000071526,
+              "duration": 89
             }
           ],
           "resourceGroups": {
             "javascript": {
               "requests": 3,
-              "transferBytes": 381513,
-              "encodedBodyBytes": 380613,
-              "lastEndMs": 4178.199999928474
+              "transferBytes": 381512,
+              "encodedBodyBytes": 380612,
+              "lastEndMs": 4185.5
             },
             "images": {
               "requests": 30,
               "transferBytes": 609697,
               "encodedBodyBytes": 933067,
-              "lastEndMs": 5934.399999976158
+              "lastEndMs": 5941.200000047684
             },
             "other": {
               "requests": 2,
-              "transferBytes": 10701,
-              "encodedBodyBytes": 10101,
-              "lastEndMs": 684.6000000238419
+              "transferBytes": 10765,
+              "encodedBodyBytes": 10165,
+              "lastEndMs": 691.8000000715256
             }
           },
           "cdpMetrics": {
             "Documents": 4,
             "Nodes": 908,
-            "LayoutDuration": 0.114902,
-            "RecalcStyleDuration": 0.023238,
-            "ScriptDuration": 0.271811,
-            "TaskDuration": 0.837132,
-            "JSHeapUsedSize": 7387944
+            "LayoutDuration": 0.119747,
+            "RecalcStyleDuration": 0.031982,
+            "ScriptDuration": 0.276434,
+            "TaskDuration": 0.888027,
+            "JSHeapUsedSize": 7539900
           },
           "initialImages": 21,
           "initialImagePayload": 600697,
           "errors": []
         },
         {
-          "firstPlayableMs": 5996.700000047684,
+          "firstPlayableMs": 5990.799999952316,
           "navigation": {
-            "responseEndMs": 157,
-            "domInteractiveMs": 173.80000007152557,
-            "loadEndMs": 2874.7000000476837,
+            "responseEndMs": 158.19999992847443,
+            "domInteractiveMs": 173.10000002384186,
+            "loadEndMs": 2882.5,
             "transferBytes": 1080,
             "encodedBodyBytes": 780
           },
           "resources": [
             {
-              "path": "/assets/index-C4kOWVjh.js",
-              "initiator": "script",
-              "startMs": 166.20000004768372,
-              "responseStartMs": 170.80000007152557,
-              "endMs": 464.5,
-              "transferBytes": 19159,
-              "encodedBodyBytes": 18859,
-              "decodedBodyBytes": 55481
+              "path": "/assets/index-Conhk4v9.css",
+              "initiator": "link",
+              "startMs": 166.19999992847443,
+              "responseStartMs": 169.79999995231628,
+              "endMs": 404.2999999523163,
+              "transferBytes": 8248,
+              "encodedBodyBytes": 7948,
+              "decodedBodyBytes": 32590
             },
             {
-              "path": "/assets/index-C95nE9JH.css",
-              "initiator": "link",
-              "startMs": 166.60000002384186,
-              "responseStartMs": 170.39999997615814,
-              "endMs": 405.60000002384186,
-              "transferBytes": 8184,
-              "encodedBodyBytes": 7884,
-              "decodedBodyBytes": 32248
+              "path": "/assets/index-CpdPJc_j.js",
+              "initiator": "script",
+              "startMs": 166.19999992847443,
+              "responseStartMs": 170,
+              "endMs": 466.2999999523163,
+              "transferBytes": 19158,
+              "encodedBodyBytes": 18858,
+              "decodedBodyBytes": 55481
             },
             {
               "path": "/art/manifest.json",
               "initiator": "fetch",
-              "startMs": 483.10000002384186,
-              "responseStartMs": 484.2000000476837,
+              "startMs": 481.6999999284744,
+              "responseStartMs": 482.7999999523163,
               "endMs": 689.3999999761581,
               "transferBytes": 2517,
               "encodedBodyBytes": 2217,
               "decodedBodyBytes": 16356
             },
             {
-              "path": "/assets/battlefield-CUze8qCG.js",
+              "path": "/assets/battlefield-BiZ5bc8S.js",
               "initiator": "script",
-              "startMs": 484.3000000715256,
-              "responseStartMs": 485.3000000715256,
-              "endMs": 811.7000000476837,
+              "startMs": 484.2999999523163,
+              "responseStartMs": 485.39999997615814,
+              "endMs": 811.1000000238419,
               "transferBytes": 6728,
               "encodedBodyBytes": 6428,
               "decodedBodyBytes": 17044
@@ -4199,19 +4150,29 @@
             {
               "path": "/assets/phaser-B_vcVLyb.js",
               "initiator": "script",
-              "startMs": 484.3000000715256,
-              "responseStartMs": 485.8000000715256,
+              "startMs": 484.2999999523163,
+              "responseStartMs": 486.10000002384186,
               "endMs": 4186.600000023842,
               "transferBytes": 355626,
               "encodedBodyBytes": 355326,
               "decodedBodyBytes": 1367089
             },
             {
+              "path": "/art/expedition/money-bush.webp",
+              "initiator": "css",
+              "startMs": 487.7999999523163,
+              "responseStartMs": 488.89999997615814,
+              "endMs": 1649.2999999523163,
+              "transferBytes": 35248,
+              "encodedBodyBytes": 34948,
+              "decodedBodyBytes": 34948
+            },
+            {
               "path": "/art/expedition/ranger.webp",
               "initiator": "css",
-              "startMs": 488.60000002384186,
-              "responseStartMs": 490.10000002384186,
-              "endMs": 1711.6000000238419,
+              "startMs": 487.7999999523163,
+              "responseStartMs": 488.89999997615814,
+              "endMs": 1711,
               "transferBytes": 38306,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
@@ -4219,29 +4180,19 @@
             {
               "path": "/art/expedition/asteroid.webp",
               "initiator": "css",
-              "startMs": 488.7000000476837,
-              "responseStartMs": 490.10000002384186,
-              "endMs": 1619.8999999761581,
+              "startMs": 487.89999997615814,
+              "responseStartMs": 489.10000002384186,
+              "endMs": 1620,
               "transferBytes": 33376,
               "encodedBodyBytes": 33076,
               "decodedBodyBytes": 33076
             },
             {
-              "path": "/art/expedition/money-bush.webp",
-              "initiator": "css",
-              "startMs": 488.7000000476837,
-              "responseStartMs": 490.10000002384186,
-              "endMs": 1650.7000000476837,
-              "transferBytes": 35248,
-              "encodedBodyBytes": 34948,
-              "decodedBodyBytes": 34948
-            },
-            {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "css",
-              "startMs": 489.3000000715256,
-              "responseStartMs": 692.7000000476837,
-              "endMs": 1853.3000000715256,
+              "startMs": 487.89999997615814,
+              "responseStartMs": 692.8999999761581,
+              "endMs": 1853.3999999761581,
               "transferBytes": 37704,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -4249,9 +4200,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "css",
-              "startMs": 489.3000000715256,
-              "responseStartMs": 815,
-              "endMs": 2212.2000000476837,
+              "startMs": 488.6999999284744,
+              "responseStartMs": 814.5,
+              "endMs": 2212.6999999284744,
               "transferBytes": 45774,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -4259,9 +4210,9 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "css",
-              "startMs": 489.3000000715256,
+              "startMs": 488.6999999284744,
               "responseStartMs": 1623.3999999761581,
-              "endMs": 2581.899999976158,
+              "endMs": 2603.2999999523163,
               "transferBytes": 32374,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
@@ -4269,9 +4220,9 @@
             {
               "path": "/art/expedition/tars.webp",
               "initiator": "css",
-              "startMs": 489.39999997615814,
-              "responseStartMs": 1651.8999999761581,
-              "endMs": 2512.2000000476837,
+              "startMs": 488.7999999523163,
+              "responseStartMs": 1650.5,
+              "endMs": 2504.899999976158,
               "transferBytes": 26758,
               "encodedBodyBytes": 26458,
               "decodedBodyBytes": 26458
@@ -4279,9 +4230,9 @@
             {
               "path": "/art/expedition/frontier-flagship-compact.webp",
               "initiator": "css",
-              "startMs": 489.5,
-              "responseStartMs": 1856.8999999761581,
-              "endMs": 2836.7000000476837,
+              "startMs": 488.7999999523163,
+              "responseStartMs": 1854.3999999761581,
+              "endMs": 2842.5,
               "transferBytes": 38814,
               "encodedBodyBytes": 38514,
               "decodedBodyBytes": 38514
@@ -4289,9 +4240,9 @@
             {
               "path": "/art/expedition/money-tree.webp",
               "initiator": "css",
-              "startMs": 489.5,
-              "responseStartMs": 1712.6000000238419,
-              "endMs": 2874.100000023842,
+              "startMs": 488.7999999523163,
+              "responseStartMs": 1714.2999999523163,
+              "endMs": 2881.600000023842,
               "transferBytes": 46716,
               "encodedBodyBytes": 46416,
               "decodedBodyBytes": 46416
@@ -4299,9 +4250,9 @@
             {
               "path": "/art/expedition/canyon-0.5.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4308.399999976158,
-              "responseStartMs": 4309.600000023842,
-              "endMs": 5573.100000023842,
+              "startMs": 4305.699999928474,
+              "responseStartMs": 4307.600000023842,
+              "endMs": 5619.299999952316,
               "transferBytes": 87706,
               "encodedBodyBytes": 87406,
               "decodedBodyBytes": 87406
@@ -4309,39 +4260,39 @@
             {
               "path": "/art/projectile-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4309.100000023842,
-              "responseStartMs": 4310.800000071526,
-              "endMs": 4494.600000023842,
+              "startMs": 4305.799999952316,
+              "responseStartMs": 4307.399999976158,
+              "endMs": 4470.100000023842,
               "transferBytes": 650,
               "encodedBodyBytes": 350,
               "decodedBodyBytes": 350
             },
             {
-              "path": "/art/projectile-startrell-cluggins-ammo.png",
-              "initiator": "xmlhttprequest",
-              "startMs": 4309.200000047684,
-              "responseStartMs": 4310.800000071526,
-              "endMs": 4501.300000071526,
-              "transferBytes": 1074,
-              "encodedBodyBytes": 774,
-              "decodedBodyBytes": 774
-            },
-            {
               "path": "/art/projectile-explosive-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4309.200000047684,
-              "responseStartMs": 4310.800000071526,
-              "endMs": 4524,
+              "startMs": 4306.299999952316,
+              "responseStartMs": 4307.600000023842,
+              "endMs": 4515.5,
               "transferBytes": 1872,
               "encodedBodyBytes": 1572,
               "decodedBodyBytes": 1572
             },
             {
+              "path": "/art/projectile-startrell-cluggins-ammo.png",
+              "initiator": "xmlhttprequest",
+              "startMs": 4306.399999976158,
+              "responseStartMs": 4307.699999928474,
+              "endMs": 4499.299999952316,
+              "transferBytes": 1074,
+              "encodedBodyBytes": 774,
+              "decodedBodyBytes": 774
+            },
+            {
               "path": "/art/projectile-tars-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4309.300000071526,
-              "responseStartMs": 4310.700000047684,
-              "endMs": 4478.899999976158,
+              "startMs": 4306.600000023842,
+              "responseStartMs": 4307.600000023842,
+              "endMs": 4491.899999976158,
               "transferBytes": 956,
               "encodedBodyBytes": 656,
               "decodedBodyBytes": 656
@@ -4349,9 +4300,9 @@
             {
               "path": "/art/projectile-moon-zeus-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4309.300000071526,
-              "responseStartMs": 4310.800000071526,
-              "endMs": 4530.300000071526,
+              "startMs": 4306.799999952316,
+              "responseStartMs": 4307.799999952316,
+              "endMs": 4529.100000023842,
               "transferBytes": 1877,
               "encodedBodyBytes": 1577,
               "decodedBodyBytes": 1577
@@ -4359,9 +4310,9 @@
             {
               "path": "/art/expedition/ranger.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4310,
-              "responseStartMs": 4479.5,
-              "endMs": 4644.5,
+              "startMs": 4306.799999952316,
+              "responseStartMs": 4470.699999928474,
+              "endMs": 4636.899999976158,
               "transferBytes": 300,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
@@ -4369,9 +4320,9 @@
             {
               "path": "/art/expedition/money-bush.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4310.100000023842,
-              "responseStartMs": 4495.200000047684,
-              "endMs": 4657.700000047684,
+              "startMs": 4306.799999952316,
+              "responseStartMs": 4492.600000023842,
+              "endMs": 4651.799999952316,
               "transferBytes": 300,
               "encodedBodyBytes": 34948,
               "decodedBodyBytes": 34948
@@ -4379,9 +4330,9 @@
             {
               "path": "/art/expedition/asteroid.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4310.100000023842,
-              "responseStartMs": 4501.800000071526,
-              "endMs": 4672,
+              "startMs": 4306.799999952316,
+              "responseStartMs": 4499.899999976158,
+              "endMs": 4665.299999952316,
               "transferBytes": 300,
               "encodedBodyBytes": 33076,
               "decodedBodyBytes": 33076
@@ -4389,9 +4340,9 @@
             {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4310.200000047684,
-              "responseStartMs": 4524.600000023842,
-              "endMs": 4688.899999976158,
+              "startMs": 4307,
+              "responseStartMs": 4516.199999928474,
+              "endMs": 4682.299999952316,
               "transferBytes": 300,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -4399,9 +4350,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4310.200000047684,
-              "responseStartMs": 4530.899999976158,
-              "endMs": 4695.700000047684,
+              "startMs": 4307,
+              "responseStartMs": 4529.899999976158,
+              "endMs": 4697.199999928474,
               "transferBytes": 300,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -4409,9 +4360,9 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4310.899999976158,
-              "responseStartMs": 4644.899999976158,
-              "endMs": 4807.700000047684,
+              "startMs": 4307.699999928474,
+              "responseStartMs": 4637.5,
+              "endMs": 4802.899999976158,
               "transferBytes": 300,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
@@ -4419,9 +4370,9 @@
             {
               "path": "/art/expedition/tars.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4311,
-              "responseStartMs": 4658.100000023842,
-              "endMs": 4823.700000047684,
+              "startMs": 4307.799999952316,
+              "responseStartMs": 4652.199999928474,
+              "endMs": 4814.699999928474,
               "transferBytes": 300,
               "encodedBodyBytes": 26458,
               "decodedBodyBytes": 26458
@@ -4429,9 +4380,9 @@
             {
               "path": "/art/expedition/money-tree.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4311.100000023842,
-              "responseStartMs": 4672.700000047684,
-              "endMs": 4838.600000023842,
+              "startMs": 4307.799999952316,
+              "responseStartMs": 4665.699999928474,
+              "endMs": 4830.5,
               "transferBytes": 300,
               "encodedBodyBytes": 46416,
               "decodedBodyBytes": 46416
@@ -4439,9 +4390,9 @@
             {
               "path": "/art/expedition/frontier-flagship-compact.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4311.100000023842,
-              "responseStartMs": 4689.600000023842,
-              "endMs": 4853.399999976158,
+              "startMs": 4307.899999976158,
+              "responseStartMs": 4682.799999952316,
+              "endMs": 4844.600000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 38514,
               "decodedBodyBytes": 38514
@@ -4449,39 +4400,39 @@
             {
               "path": "/art/expedition/scout.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4311.100000023842,
-              "responseStartMs": 4698.700000047684,
-              "endMs": 5370.600000023842,
+              "startMs": 4307.899999976158,
+              "responseStartMs": 4700.5,
+              "endMs": 5356.399999976158,
               "transferBytes": 24516,
               "encodedBodyBytes": 24216,
               "decodedBodyBytes": 24216
             },
             {
-              "path": "/art/expedition/sprinter.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 4311.200000047684,
-              "responseStartMs": 4824.800000071526,
-              "endMs": 5587.899999976158,
-              "transferBytes": 21420,
-              "encodedBodyBytes": 21120,
-              "decodedBodyBytes": 21120
-            },
-            {
               "path": "/art/expedition/grunt.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4311.200000047684,
-              "responseStartMs": 4810.800000071526,
-              "endMs": 5714.399999976158,
+              "startMs": 4307.899999976158,
+              "responseStartMs": 4805.899999976158,
+              "endMs": 5732,
               "transferBytes": 28722,
               "encodedBodyBytes": 28422,
               "decodedBodyBytes": 28422
             },
             {
+              "path": "/art/expedition/sprinter.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 4308.699999928474,
+              "responseStartMs": 4815.600000023842,
+              "endMs": 5581.100000023842,
+              "transferBytes": 21420,
+              "encodedBodyBytes": 21120,
+              "decodedBodyBytes": 21120
+            },
+            {
               "path": "/art/expedition/plated-crawler.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4312,
-              "responseStartMs": 4854.300000071526,
-              "endMs": 5836.700000047684,
+              "startMs": 4308.699999928474,
+              "responseStartMs": 4845.600000023842,
+              "endMs": 5836.699999928474,
               "transferBytes": 33852,
               "encodedBodyBytes": 33552,
               "decodedBodyBytes": 33552
@@ -4489,8 +4440,8 @@
             {
               "path": "/art/expedition/manhunter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4312,
-              "responseStartMs": 4839.800000071526,
+              "startMs": 4308.699999928474,
+              "responseStartMs": 4831.299999952316,
               "endMs": 5850.600000023842,
               "transferBytes": 34702,
               "encodedBodyBytes": 34402,
@@ -4499,9 +4450,9 @@
             {
               "path": "/art/expedition/gargantua.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4312,
-              "responseStartMs": 5371.899999976158,
-              "endMs": 5948.600000023842,
+              "startMs": 4308.799999952316,
+              "responseStartMs": 5359.600000023842,
+              "endMs": 5947.100000023842,
               "transferBytes": 34580,
               "encodedBodyBytes": 34280,
               "decodedBodyBytes": 34280
@@ -4509,89 +4460,89 @@
           ],
           "longTasks": [
             {
-              "start": 4193,
-              "duration": 92
+              "start": 4191,
+              "duration": 89
             }
           ],
           "resourceGroups": {
             "javascript": {
               "requests": 3,
-              "transferBytes": 381513,
-              "encodedBodyBytes": 380613,
+              "transferBytes": 381512,
+              "encodedBodyBytes": 380612,
               "lastEndMs": 4186.600000023842
             },
             "images": {
               "requests": 30,
               "transferBytes": 609697,
               "encodedBodyBytes": 933067,
-              "lastEndMs": 5948.600000023842
+              "lastEndMs": 5947.100000023842
             },
             "other": {
               "requests": 2,
-              "transferBytes": 10701,
-              "encodedBodyBytes": 10101,
+              "transferBytes": 10765,
+              "encodedBodyBytes": 10165,
               "lastEndMs": 689.3999999761581
             }
           },
           "cdpMetrics": {
             "Documents": 4,
             "Nodes": 908,
-            "LayoutDuration": 0.119943,
-            "RecalcStyleDuration": 0.036366,
-            "ScriptDuration": 0.305348,
-            "TaskDuration": 0.930026,
-            "JSHeapUsedSize": 7461108
+            "LayoutDuration": 0.123545,
+            "RecalcStyleDuration": 0.034735,
+            "ScriptDuration": 0.279711,
+            "TaskDuration": 0.882935,
+            "JSHeapUsedSize": 7501572
           },
           "initialImages": 21,
           "initialImagePayload": 600697,
           "errors": []
         },
         {
-          "firstPlayableMs": 5981.600000023842,
+          "firstPlayableMs": 5983.100000023842,
           "navigation": {
-            "responseEndMs": 165,
-            "domInteractiveMs": 180.89999997615814,
-            "loadEndMs": 2874.2999999523163,
+            "responseEndMs": 166.39999997615814,
+            "domInteractiveMs": 177,
+            "loadEndMs": 2873.899999976158,
             "transferBytes": 1080,
             "encodedBodyBytes": 780
           },
           "resources": [
             {
-              "path": "/assets/index-C95nE9JH.css",
-              "initiator": "link",
-              "startMs": 174.5,
-              "responseStartMs": 177.60000002384186,
-              "endMs": 413.60000002384186,
-              "transferBytes": 8184,
-              "encodedBodyBytes": 7884,
-              "decodedBodyBytes": 32248
+              "path": "/assets/index-CpdPJc_j.js",
+              "initiator": "script",
+              "startMs": 171.29999995231628,
+              "responseStartMs": 174.89999997615814,
+              "endMs": 472.39999997615814,
+              "transferBytes": 19158,
+              "encodedBodyBytes": 18858,
+              "decodedBodyBytes": 55481
             },
             {
-              "path": "/assets/index-C4kOWVjh.js",
-              "initiator": "script",
-              "startMs": 174.5,
-              "responseStartMs": 177.79999995231628,
-              "endMs": 473.6999999284744,
-              "transferBytes": 19159,
-              "encodedBodyBytes": 18859,
-              "decodedBodyBytes": 55481
+              "path": "/assets/index-Conhk4v9.css",
+              "initiator": "link",
+              "startMs": 171.39999997615814,
+              "responseStartMs": 174.69999992847443,
+              "endMs": 413.2999999523163,
+              "transferBytes": 8248,
+              "encodedBodyBytes": 7948,
+              "decodedBodyBytes": 32590
             },
             {
               "path": "/art/manifest.json",
               "initiator": "fetch",
-              "startMs": 485.6999999284744,
-              "responseStartMs": 486.60000002384186,
-              "endMs": 690.3999999761581,
+              "startMs": 484.7999999523163,
+              "responseStartMs": 485.89999997615814,
+              "endMs": 689.8999999761581,
               "transferBytes": 2517,
               "encodedBodyBytes": 2217,
               "decodedBodyBytes": 16356
             },
             {
-              "path": "/assets/battlefield-CUze8qCG.js",
+              "path": "/assets/battlefield-BiZ5bc8S.js",
               "initiator": "script",
-              "startMs": 487.39999997615814,
-              "responseStartMs": 488.39999997615814,
-              "endMs": 812.1999999284744,
+              "startMs": 485.5,
+              "responseStartMs": 486.2999999523163,
+              "endMs": 811.8999999761581,
               "transferBytes": 6728,
               "encodedBodyBytes": 6428,
               "decodedBodyBytes": 17044
@@ -4599,9 +4550,9 @@
             {
               "path": "/assets/phaser-B_vcVLyb.js",
               "initiator": "script",
-              "startMs": 487.39999997615814,
-              "responseStartMs": 489,
-              "endMs": 4186.899999976158,
+              "startMs": 486.10000002384186,
+              "responseStartMs": 487.2999999523163,
+              "endMs": 4186.699999928474,
               "transferBytes": 355626,
               "encodedBodyBytes": 355326,
               "decodedBodyBytes": 1367089
@@ -4609,39 +4560,39 @@
             {
               "path": "/art/expedition/ranger.webp",
               "initiator": "css",
-              "startMs": 491.5,
-              "responseStartMs": 492.60000002384186,
+              "startMs": 490.1999999284744,
+              "responseStartMs": 491.5,
               "endMs": 1710.1000000238419,
               "transferBytes": 38306,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
             },
             {
-              "path": "/art/expedition/asteroid.webp",
-              "initiator": "css",
-              "startMs": 491.6999999284744,
-              "responseStartMs": 492.7999999523163,
-              "endMs": 1612,
-              "transferBytes": 33376,
-              "encodedBodyBytes": 33076,
-              "decodedBodyBytes": 33076
-            },
-            {
               "path": "/art/expedition/money-bush.webp",
               "initiator": "css",
-              "startMs": 491.6999999284744,
-              "responseStartMs": 492.6999999284744,
-              "endMs": 1649.1000000238419,
+              "startMs": 490.6999999284744,
+              "responseStartMs": 491.7999999523163,
+              "endMs": 1652.5,
               "transferBytes": 35248,
               "encodedBodyBytes": 34948,
               "decodedBodyBytes": 34948
             },
             {
+              "path": "/art/expedition/asteroid.webp",
+              "initiator": "css",
+              "startMs": 490.7999999523163,
+              "responseStartMs": 491.89999997615814,
+              "endMs": 1621,
+              "transferBytes": 33376,
+              "encodedBodyBytes": 33076,
+              "decodedBodyBytes": 33076
+            },
+            {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "css",
-              "startMs": 491.6999999284744,
-              "responseStartMs": 691.3999999761581,
-              "endMs": 1852.1999999284744,
+              "startMs": 490.7999999523163,
+              "responseStartMs": 691.1000000238419,
+              "endMs": 1853.1999999284744,
               "transferBytes": 37704,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -4649,9 +4600,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "css",
-              "startMs": 491.6999999284744,
-              "responseStartMs": 813.1000000238419,
-              "endMs": 2214,
+              "startMs": 490.7999999523163,
+              "responseStartMs": 812.7999999523163,
+              "endMs": 2213.1999999284744,
               "transferBytes": 45774,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -4659,9 +4610,9 @@
             {
               "path": "/art/expedition/tars.webp",
               "initiator": "css",
-              "startMs": 491.6999999284744,
-              "responseStartMs": 1650.2999999523163,
-              "endMs": 2506.399999976158,
+              "startMs": 490.7999999523163,
+              "responseStartMs": 1653.1999999284744,
+              "endMs": 2513.2999999523163,
               "transferBytes": 26758,
               "encodedBodyBytes": 26458,
               "decodedBodyBytes": 26458
@@ -4669,17 +4620,27 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "css",
-              "startMs": 491.6999999284744,
-              "responseStartMs": 1612.7999999523163,
-              "endMs": 2587.6999999284744,
+              "startMs": 490.7999999523163,
+              "responseStartMs": 1622.3999999761581,
+              "endMs": 2596.600000023842,
               "transferBytes": 32374,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
             },
             {
+              "path": "/art/expedition/frontier-flagship-compact.webp",
+              "initiator": "css",
+              "startMs": 490.89999997615814,
+              "responseStartMs": 1854,
+              "endMs": 2845.2999999523163,
+              "transferBytes": 38814,
+              "encodedBodyBytes": 38514,
+              "decodedBodyBytes": 38514
+            },
+            {
               "path": "/art/expedition/money-tree.webp",
               "initiator": "css",
-              "startMs": 491.6999999284744,
+              "startMs": 490.89999997615814,
               "responseStartMs": 1710.8999999761581,
               "endMs": 2873.6999999284744,
               "transferBytes": 46716,
@@ -4687,21 +4648,11 @@
               "decodedBodyBytes": 46416
             },
             {
-              "path": "/art/expedition/frontier-flagship-compact.webp",
-              "initiator": "css",
-              "startMs": 491.7999999523163,
-              "responseStartMs": 1852.8999999761581,
-              "endMs": 2834.6999999284744,
-              "transferBytes": 38814,
-              "encodedBodyBytes": 38514,
-              "decodedBodyBytes": 38514
-            },
-            {
               "path": "/art/expedition/canyon-0.5.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4302.699999928474,
-              "responseStartMs": 4304.699999928474,
-              "endMs": 5573.600000023842,
+              "startMs": 4300.399999976158,
+              "responseStartMs": 4302.399999976158,
+              "endMs": 5573.100000023842,
               "transferBytes": 87706,
               "encodedBodyBytes": 87406,
               "decodedBodyBytes": 87406
@@ -4709,9 +4660,9 @@
             {
               "path": "/art/projectile-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4303.199999928474,
-              "responseStartMs": 4304.799999952316,
-              "endMs": 4479.600000023842,
+              "startMs": 4301,
+              "responseStartMs": 4302.399999976158,
+              "endMs": 4471.100000023842,
               "transferBytes": 650,
               "encodedBodyBytes": 350,
               "decodedBodyBytes": 350
@@ -4719,9 +4670,9 @@
             {
               "path": "/art/projectile-startrell-cluggins-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4303.199999928474,
-              "responseStartMs": 4304.799999952316,
-              "endMs": 4485.899999976158,
+              "startMs": 4301,
+              "responseStartMs": 4302.5,
+              "endMs": 4487.699999928474,
               "transferBytes": 1074,
               "encodedBodyBytes": 774,
               "decodedBodyBytes": 774
@@ -4729,9 +4680,9 @@
             {
               "path": "/art/projectile-explosive-astro-joe-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4303.199999928474,
-              "responseStartMs": 4304.699999928474,
-              "endMs": 4514.699999928474,
+              "startMs": 4301,
+              "responseStartMs": 4302.399999976158,
+              "endMs": 4515.299999952316,
               "transferBytes": 1872,
               "encodedBodyBytes": 1572,
               "decodedBodyBytes": 1572
@@ -4739,9 +4690,9 @@
             {
               "path": "/art/projectile-tars-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4303.299999952316,
-              "responseStartMs": 4304.799999952316,
-              "endMs": 4493.199999928474,
+              "startMs": 4301.100000023842,
+              "responseStartMs": 4302.5,
+              "endMs": 4491.899999976158,
               "transferBytes": 956,
               "encodedBodyBytes": 656,
               "decodedBodyBytes": 656
@@ -4749,9 +4700,9 @@
             {
               "path": "/art/projectile-moon-zeus-ammo.png",
               "initiator": "xmlhttprequest",
-              "startMs": 4303.399999976158,
-              "responseStartMs": 4304.899999976158,
-              "endMs": 4523.699999928474,
+              "startMs": 4301.600000023842,
+              "responseStartMs": 4302.5,
+              "endMs": 4523,
               "transferBytes": 1877,
               "encodedBodyBytes": 1577,
               "decodedBodyBytes": 1577
@@ -4759,9 +4710,9 @@
             {
               "path": "/art/expedition/ranger.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4304,
-              "responseStartMs": 4480.100000023842,
-              "endMs": 4642.799999952316,
+              "startMs": 4301.600000023842,
+              "responseStartMs": 4471.699999928474,
+              "endMs": 4637.899999976158,
               "transferBytes": 300,
               "encodedBodyBytes": 38006,
               "decodedBodyBytes": 38006
@@ -4769,9 +4720,9 @@
             {
               "path": "/art/expedition/money-bush.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4304,
-              "responseStartMs": 4486.399999976158,
-              "endMs": 4657.199999928474,
+              "startMs": 4301.899999976158,
+              "responseStartMs": 4488.600000023842,
+              "endMs": 4649.799999952316,
               "transferBytes": 300,
               "encodedBodyBytes": 34948,
               "decodedBodyBytes": 34948
@@ -4779,9 +4730,9 @@
             {
               "path": "/art/expedition/asteroid.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4304.100000023842,
-              "responseStartMs": 4493.799999952316,
-              "endMs": 4664.899999976158,
+              "startMs": 4301.899999976158,
+              "responseStartMs": 4492.600000023842,
+              "endMs": 4657.899999976158,
               "transferBytes": 300,
               "encodedBodyBytes": 33076,
               "decodedBodyBytes": 33076
@@ -4789,9 +4740,9 @@
             {
               "path": "/art/expedition/moon-zeus.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4304.199999928474,
-              "responseStartMs": 4515.399999976158,
-              "endMs": 4679.299999952316,
+              "startMs": 4302.199999928474,
+              "responseStartMs": 4515.899999976158,
+              "endMs": 4680.100000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 37404,
               "decodedBodyBytes": 37404
@@ -4799,9 +4750,9 @@
             {
               "path": "/art/expedition/explosive-astro-joe.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4304.199999928474,
-              "responseStartMs": 4524.299999952316,
-              "endMs": 4696.199999928474,
+              "startMs": 4302.299999952316,
+              "responseStartMs": 4523.899999976158,
+              "endMs": 4697.100000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 45474,
               "decodedBodyBytes": 45474
@@ -4809,9 +4760,9 @@
             {
               "path": "/art/expedition/startrell-cluggins.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4304.199999928474,
-              "responseStartMs": 4643.399999976158,
-              "endMs": 4809.5,
+              "startMs": 4302.600000023842,
+              "responseStartMs": 4638.399999976158,
+              "endMs": 4800.600000023842,
               "transferBytes": 300,
               "encodedBodyBytes": 32074,
               "decodedBodyBytes": 32074
@@ -4819,9 +4770,9 @@
             {
               "path": "/art/expedition/tars.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4305.100000023842,
-              "responseStartMs": 4657.5,
-              "endMs": 4823.799999952316,
+              "startMs": 4302.699999928474,
+              "responseStartMs": 4650.199999928474,
+              "endMs": 4816.799999952316,
               "transferBytes": 300,
               "encodedBodyBytes": 26458,
               "decodedBodyBytes": 26458
@@ -4829,9 +4780,9 @@
             {
               "path": "/art/expedition/money-tree.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4305.299999952316,
-              "responseStartMs": 4665.199999928474,
-              "endMs": 4840,
+              "startMs": 4302.699999928474,
+              "responseStartMs": 4658.299999952316,
+              "endMs": 4823,
               "transferBytes": 300,
               "encodedBodyBytes": 46416,
               "decodedBodyBytes": 46416
@@ -4839,9 +4790,9 @@
             {
               "path": "/art/expedition/frontier-flagship-compact.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4305.399999976158,
-              "responseStartMs": 4696.799999952316,
-              "endMs": 4869.199999928474,
+              "startMs": 4302.799999952316,
+              "responseStartMs": 4680.399999976158,
+              "endMs": 4846.799999952316,
               "transferBytes": 300,
               "encodedBodyBytes": 38514,
               "decodedBodyBytes": 38514
@@ -4849,9 +4800,9 @@
             {
               "path": "/art/expedition/scout.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4305.399999976158,
-              "responseStartMs": 4679.899999976158,
-              "endMs": 5303.699999928474,
+              "startMs": 4302.899999976158,
+              "responseStartMs": 4697.699999928474,
+              "endMs": 5350.5,
               "transferBytes": 24516,
               "encodedBodyBytes": 24216,
               "decodedBodyBytes": 24216
@@ -4859,9 +4810,9 @@
             {
               "path": "/art/expedition/sprinter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4305.5,
-              "responseStartMs": 4824.399999976158,
-              "endMs": 5594.699999928474,
+              "startMs": 4303.699999928474,
+              "responseStartMs": 4817.299999952316,
+              "endMs": 5579.899999976158,
               "transferBytes": 21420,
               "encodedBodyBytes": 21120,
               "decodedBodyBytes": 21120
@@ -4869,39 +4820,39 @@
             {
               "path": "/art/expedition/grunt.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4305.5,
-              "responseStartMs": 4810.100000023842,
-              "endMs": 5723.699999928474,
+              "startMs": 4303.699999928474,
+              "responseStartMs": 4801.199999928474,
+              "endMs": 5723.100000023842,
               "transferBytes": 28722,
               "encodedBodyBytes": 28422,
               "decodedBodyBytes": 28422
             },
             {
-              "path": "/art/expedition/plated-crawler.webp",
-              "initiator": "xmlhttprequest",
-              "startMs": 4306.199999928474,
-              "responseStartMs": 4869.899999976158,
-              "endMs": 5843.899999976158,
-              "transferBytes": 33852,
-              "encodedBodyBytes": 33552,
-              "decodedBodyBytes": 33552
-            },
-            {
               "path": "/art/expedition/manhunter.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4306.199999928474,
-              "responseStartMs": 4840.600000023842,
-              "endMs": 5851.199999928474,
+              "startMs": 4303.699999928474,
+              "responseStartMs": 4823.600000023842,
+              "endMs": 5844.299999952316,
               "transferBytes": 34702,
               "encodedBodyBytes": 34402,
               "decodedBodyBytes": 34402
             },
             {
+              "path": "/art/expedition/plated-crawler.webp",
+              "initiator": "xmlhttprequest",
+              "startMs": 4304.199999928474,
+              "responseStartMs": 4847.399999976158,
+              "endMs": 5836.699999928474,
+              "transferBytes": 33852,
+              "encodedBodyBytes": 33552,
+              "decodedBodyBytes": 33552
+            },
+            {
               "path": "/art/expedition/gargantua.webp",
               "initiator": "xmlhttprequest",
-              "startMs": 4306.199999928474,
-              "responseStartMs": 5304.5,
-              "endMs": 5940.299999952316,
+              "startMs": 4304.299999952316,
+              "responseStartMs": 5351.199999928474,
+              "endMs": 5940.5,
               "transferBytes": 34580,
               "encodedBodyBytes": 34280,
               "decodedBodyBytes": 34280
@@ -4909,38 +4860,38 @@
           ],
           "longTasks": [
             {
-              "start": 4191.199999928474,
-              "duration": 88
+              "start": 4192,
+              "duration": 87
             }
           ],
           "resourceGroups": {
             "javascript": {
               "requests": 3,
-              "transferBytes": 381513,
-              "encodedBodyBytes": 380613,
-              "lastEndMs": 4186.899999976158
+              "transferBytes": 381512,
+              "encodedBodyBytes": 380612,
+              "lastEndMs": 4186.699999928474
             },
             "images": {
               "requests": 30,
               "transferBytes": 609697,
               "encodedBodyBytes": 933067,
-              "lastEndMs": 5940.299999952316
+              "lastEndMs": 5940.5
             },
             "other": {
               "requests": 2,
-              "transferBytes": 10701,
-              "encodedBodyBytes": 10101,
-              "lastEndMs": 690.3999999761581
+              "transferBytes": 10765,
+              "encodedBodyBytes": 10165,
+              "lastEndMs": 689.8999999761581
             }
           },
           "cdpMetrics": {
             "Documents": 4,
             "Nodes": 908,
-            "LayoutDuration": 0.119643,
-            "RecalcStyleDuration": 0.029212,
-            "ScriptDuration": 0.274056,
-            "TaskDuration": 0.855696,
-            "JSHeapUsedSize": 7410996
+            "LayoutDuration": 0.116527,
+            "RecalcStyleDuration": 0.032587,
+            "ScriptDuration": 0.276542,
+            "TaskDuration": 0.897234,
+            "JSHeapUsedSize": 7570356
           },
           "initialImages": 21,
           "initialImagePayload": 600697,
@@ -4950,61 +4901,61 @@
       "transitions": [
         {
           "style": "original",
-          "wallMs": 15395,
+          "wallMs": 15475,
           "newUniqueImages": 33,
           "creditsPreserved": true
         },
         {
           "style": "expedition",
-          "wallMs": 304,
+          "wallMs": 309,
           "newUniqueImages": 0,
           "creditsPreserved": true
         },
         {
           "style": "original",
-          "wallMs": 303,
+          "wallMs": 306,
           "newUniqueImages": 0,
           "creditsPreserved": true
         },
         {
           "style": "expedition",
-          "wallMs": 301,
+          "wallMs": 388,
           "newUniqueImages": 0,
           "creditsPreserved": true
         },
         {
           "map": "bridge",
-          "wallMs": 1447,
+          "wallMs": 1435,
           "newUniqueImages": 3,
           "readyCredits": "230"
         },
         {
           "map": "nest",
-          "wallMs": 576,
+          "wallMs": 510,
           "newUniqueImages": 0,
           "readyCredits": "230"
         },
         {
           "map": "canyon",
-          "wallMs": 233,
+          "wallMs": 79,
           "newUniqueImages": 0,
           "readyCredits": "230"
         },
         {
           "map": "nest",
-          "wallMs": 276,
+          "wallMs": 147,
           "newUniqueImages": 0,
           "readyCredits": "230"
         }
       ],
       "combat": {
         "purchased": 20,
-        "wallMs": 83820,
+        "wallMs": 83848,
         "phase": "Outpost secured",
-        "lateWaveFrameSamples": 1289,
+        "lateWaveFrameSamples": 1283,
         "medianFrameGapMs": 33.3,
         "p95FrameGapMs": 33.4,
-        "gapsOver50ms": 1,
+        "gapsOver50ms": 3,
         "frameGapsMs": [
           16.5,
           16.59999999999127,
@@ -5041,6 +4992,15 @@
           16.59999999999127,
           16.59999999999127,
           16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
+          16.59999999999127,
           16.60000000000582,
           16.60000000000582,
           16.60000000000582,
@@ -5093,29 +5053,12 @@
           16.60000000000582,
           16.60000000000582,
           16.60000000000582,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
-          16.69999999999709,
+          16.60000000000582,
+          16.60000000000582,
+          16.60000000000582,
+          16.60000000000582,
+          16.60000000000582,
+          16.60000000000582,
           16.69999999999709,
           16.69999999999709,
           16.69999999999709,
@@ -5250,12 +5193,8 @@
           16.70000000001164,
           16.70000000001164,
           16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.70000000001164,
-          16.79999999998836,
-          16.79999999998836,
-          16.79999999998836,
+          16.80000000000291,
+          16.80000000000291,
           16.80000000000291,
           16.80000000000291,
           16.80000000000291,
@@ -5310,6 +5249,9 @@
           33.19999999999709,
           33.19999999999709,
           33.19999999999709,
+          33.19999999999709,
+          33.19999999999709,
+          33.19999999999709,
           33.20000000001164,
           33.20000000001164,
           33.20000000001164,
@@ -5322,7 +5264,6 @@
           33.20000000001164,
           33.20000000001164,
           33.20000000001164,
-          33.20000000001164,
           33.29999999998836,
           33.29999999998836,
           33.29999999998836,
@@ -5428,23 +5369,6 @@
           33.29999999998836,
           33.29999999998836,
           33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
-          33.29999999998836,
           33.30000000000291,
           33.30000000000291,
           33.30000000000291,
@@ -5920,7 +5844,29 @@
           33.30000000000291,
           33.30000000000291,
           33.30000000000291,
-          33.30000000000291,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
+          33.39999999999418,
           33.39999999999418,
           33.39999999999418,
           33.39999999999418,
@@ -6127,11 +6073,6 @@
           33.39999999999418,
           33.39999999999418,
           33.39999999999418,
-          33.40000000000873,
-          33.40000000000873,
-          33.40000000000873,
-          33.40000000000873,
-          33.40000000000873,
           33.40000000000873,
           33.40000000000873,
           33.40000000000873,
@@ -6286,18 +6227,22 @@
           33.5,
           33.5,
           33.5,
-          49.90000000000873,
-          49.90000000000873,
+          33.5,
+          49.89999999999418,
           50,
           50,
           50,
           50,
           50,
           50,
-          133.3000000000029
+          50,
+          50,
+          50.09999999999127,
+          50.10000000000582,
+          116.69999999999709
         ],
-        "jsHeapUsedBytes": 15233080,
-        "jsHeapAfterFiveRestartsBytes": 15550640,
+        "jsHeapUsedBytes": 36581796,
+        "jsHeapAfterFiveRestartsBytes": 14905600,
         "canvasesAfterFiveRestarts": 1,
         "errors": []
       }

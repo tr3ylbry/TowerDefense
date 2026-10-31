@@ -4,7 +4,7 @@
 
 Expedition 0.5 completes the illustrated roster and three-environment visual system, preserves the school comparison/history, and makes measured startup improvements without changing gameplay balance. Explosive Astro Joe, Startrell Cluggins, Money Tree and the original Frontier Flagship now match the other defenders; Bridge and Nest have illustrated scenery and a readable Expedition acid decal. One unsuitable wide flagship was rejected after field review and replaced with a compact edit.
 
-Matched production measurements reduce initial imagery from 2,369,834 to 600,697 bytes and constrained median readiness from 14,803 to 5,982 ms. Normal readiness and sampled combat frame times are effectively unchanged. A reproduced ordinary-dialog background-resume defect and enlarged-phone-control clipping are fixed. The 0.4 terminal remains intact.
+Matched production measurements reduce initial imagery from 2,369,834 to 600,697 bytes and constrained median readiness from 14,803 to 5,987 ms. Normal readiness and sampled combat frame times are effectively unchanged. A reproduced ordinary-dialog background-resume defect and enlarged-phone-control clipping are fixed. The 0.4 terminal remains intact.
 
 The implementation is complete within the available engineering environment. Independent human sessions, physical-device/native Safari/screen-reader validation and retained-art rights clearance remain external gaps. No campaign, saves, accounts, backend, hosting or publication were added.
 
@@ -65,7 +65,7 @@ The normalized crew-card grid and semantic economy terminal were retained. Compa
 
 A new regression first reproduced active play→Guide→background/return→close incorrectly resuming. Visibility changes now invalidate ordinary-dialog resume intent, and close checks current visibility. Guide, destinations, restart cancellation and credits are covered, including close while hidden. Existing artwork-transition protection remains.
 
-A 150% CSS-zoom phone stress test exposed an unshrinkable destination group and clipped pause controls. Mobile location sizing and telemetry now wrap; all nine selections, deployment, pause and restart remain usable. This is a repeatable layout stress test, not native OS text-scaling evidence.
+A 150% CSS-zoom phone stress test exposed an unshrinkable destination group and clipped pause controls. The first Linux CI run then exposed header overflow that local system-font metrics had missed. An isolated Linux DejaVu reproduction measured navigation ending at 396.38 pixels in a 390-pixel viewport. The header now wraps; ready/pause instructions grow to fit the Start control; the threat row and full Enlarge label remain visible. The outcome ledger retains its bounded scroll frame. Strengthened geometry assertions, all nine selections, deployment, pause and restart pass in Linux Firefox/WebKit and related local tests. [Linux before/after evidence](../reports/expedition-0.5/verification/linux-layout/README.md) records the exact failure and fix. This is a repeatable layout stress test, not native OS text-scaling evidence.
 
 ## 7. Performance measurements and decisions
 
@@ -74,20 +74,20 @@ A 150% CSS-zoom phone stress test exposed an unshrinkable destination group and 
 | Measure                               |                 Before |               After |
 | ------------------------------------- | ---------------------: | ------------------: |
 | Unique initial image bytes            |              2,369,834 |             600,697 |
-| Total reported initial transfer       |              2,772,199 |           1,002,991 |
+| Total reported initial transfer       |              2,772,199 |           1,003,054 |
 | Resource entries including navigation |                     38 |                  36 |
-| Constrained readiness samples, ms     | 14,798 /14,803 /14,804 | 5,974 /5,997 /5,982 |
-| Constrained median, ms                |                 14,803 |               5,982 |
-| Normal readiness samples, ms          |          171 /156 /147 |       173 /155 /151 |
-| Normal median, ms                     |                    156 |                 155 |
+| Constrained readiness samples, ms     | 14,798 /14,803 /14,804 | 5,987 /5,991 /5,983 |
+| Constrained median, ms                |                 14,803 |               5,987 |
+| Normal readiness samples, ms          |          171 /156 /147 |       210 /158 /151 |
+| Normal median, ms                     |                    156 |                 158 |
 
 This establishes 74.7% less initial imagery, 63.8% less reported transfer and 59.6% less constrained readiness time under this profile. Normal readiness is effectively unchanged. The main practical change is proportionate 384 px quality 90 WebP cutouts and 1080 px quality 85 backgrounds, with exact alpha after resampling and preserved originals. Independent manifest/renderer downloads now overlap. No cache framework, runtime dependency, renderer rewrite or audio change was justified; audio remains lazy and opt-in.
 
-Decode/upload work did not improve: implicit decode traces changed 21.2→24.5 ms normal and 84.9→97.0 ms constrained; synchronous WebGL upload dispatch changed 27.9→28.1 ms and 109.5→112.4 ms. These overlapping diagnostics are not exclusive wall-time shares or GPU-completion measurements. The improvement is delivery/readiness, not faster decoding or FPS.
+Decode/upload work did not establish a speedup: implicit decode traces changed 21.2→25.0 ms normal and 84.9→98.2 ms constrained; synchronous WebGL upload dispatch changed 27.9→27.8 ms and 109.5→109.6 ms. These overlapping diagnostics are not exclusive wall-time shares or GPU-completion measurements. The improvement is delivery/readiness, not faster decoding or FPS.
 
 Both matched 20-defender Nest missions won before/after. Final late-wave RAF median/p95 gaps were 16.7/33.4 ms normal and 33.3/33.4 ms constrained, effectively the same as before. Warm WebGL texture handles plateaued 81→81→81 after selected map/style cycles; five restarts retained one canvas and zero page errors. Heap collection was uncontrolled and GPU memory unmeasured: no all-leaks-absent or real-device performance claim is made.
 
-The first optional Original switch still costs about 15.4 s constrained and requests 33 newly deferred school images; subsequent switches request zero new unique images. This cost is disclosed rather than hidden inside an initial-load improvement claim. Future campaigns should preserve selected-scene loading and avoid an unbounded cache.
+The first optional Original switch still costs about 15.5 s constrained and requests 33 newly deferred school images; subsequent switches request zero new unique images. This cost is disclosed rather than hidden inside an initial-load improvement claim. Future campaigns should preserve selected-scene loading and avoid an unbounded cache.
 
 ## 8. Loading and recovery
 
@@ -121,11 +121,11 @@ Playwright WebKit is not native Safari. Desktop emulation is not physical touch,
 
 The original 98 rule tests remain, with four added registration/environment checks: **102 total**. Strict TypeScript and production build pass. All 26 previous browser scenarios remain; seven new scenarios yield 33 per engine/99 in CI. Asset-failure routes, name assertions and a portrait URL assertion are updated to the actual new WebP/name while preserving their behavioral requirements. No assertion, browser or security protection was disabled to obtain a pass.
 
-The first local full browser pass identified one stale `.png` portrait expectation; the actual WebP output was correct. Its exact URL assertion was updated and rerun. The dialog-resume and enlarged-content failures were implementation defects reproduced before their fixes, not silently discarded tests. [Verification details](../reports/expedition-0.5/verification/README.md) distinguish these corrections, measured boundaries and external limits. Final exact-commit CI results are authoritative at handoff.
+The first local full browser pass identified one stale `.png` portrait expectation; the actual WebP output was correct. Its exact URL assertion was updated and rerun. The dialog-resume and enlarged-content failures were implementation defects reproduced before their fixes, not silently discarded tests. [Verification details](../reports/expedition-0.5/verification/README.md) distinguish these corrections, measured boundaries and external limits. The initial Linux run passed all 33 Chromium cases and 32 each in Firefox/WebKit; both failures identified the enlarged header issue described above. After reproducing and fixing it, the existing geometry checks were strengthened rather than relaxed. Final exact-commit CI results are authoritative at handoff.
 
 ## 13. Git delivery and preservation
 
-Delivery uses the existing independent `tr3ylbry/TowerDefense` repository on `modernization`, organized as asset preparation, runtime/test integration, and evidence/documentation commits. Validated changes are pushed; exact hashes and final CI URL are reported at handoff. No other contributor repository is a push target.
+Delivery uses the existing independent `tr3ylbry/TowerDefense` repository on `modernization`, organized as asset preparation, runtime/test integration, evidence/documentation commits, and a follow-up mobile-layout/evidence correction found by CI. Validated changes are pushed; exact hashes and final CI URL are reported at handoff. No other contributor repository is a push target.
 
 Original Java source, source assets, documentation, contributor attribution and project configuration remain unchanged against `school-project-2019`. The `master` comparison commit and peeled school tag remain `d5ba2c76aa7cf287b4b89b10ff35cc15a24d09fb`; annotated tag object remains `de94c0c5097af2a8e2f7662a8ff538136dbb4aa7`. No school history is rewritten. Hosting/Treydmark/Vercel remain outside scope.
 
