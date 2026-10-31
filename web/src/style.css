@@ -1711,11 +1711,13 @@ dialog li {
   padding: 7px;
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
-  grid-template-rows: 35px 1fr;
+  grid-template-rows: 35px minmax(28px, auto);
   gap: 4px;
   align-items: center;
 }
 .crew-card .portrait {
+  grid-column: 1;
+  grid-row: 1;
   width: 34px;
   height: 35px;
   background-size: auto 35px;
@@ -1723,8 +1725,12 @@ dialog li {
 .crew-info {
   grid-column: 1 / -1;
   grid-row: 2;
+  display: block;
+  align-self: start;
 }
 .crew-info strong {
+  display: block;
+  min-height: 2.4em;
   font-size: 11px;
   line-height: 1.2;
   white-space: normal;
@@ -1734,12 +1740,17 @@ dialog li {
   display: none;
 }
 .crew-price {
+  /* Reset the older narrow-screen absolute placement; price belongs to row 1. */
+  position: static;
+  inset: auto;
+  height: auto;
   grid-column: 2;
   grid-row: 1;
   margin: 0;
   padding: 0;
   font-size: 11px;
-  gap: 3px;
+  line-height: 14px;
+  gap: 4px;
 }
 .crew-price kbd {
   min-width: 17px;

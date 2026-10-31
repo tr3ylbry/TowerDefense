@@ -15,3 +15,7 @@ Agent-driven ordinary browser controls in the local in-app browser. No private g
 | [bridge-combat.png](bridge-combat.png)                                              | Third full mission, retained Bridge scene/acid coordinates with new defenders in late combat.                                                                                                                       |
 
 Immediate screenshots during viewport resizing can contain an incomplete compositor frame. Those transient captures were discarded; stable views above were visually reviewed. Portrait/landscape touch emulation, panning, all crew details, keyboard focus and target sizes also have browser regressions. Native Safari and physical-device validation remain pending.
+
+## Crew-card normalization
+
+[Desktop Expedition strip](crew-cards-desktop.png) and [original-art strip](crew-cards-desktop-original.png) are actual Chromium test captures; [phone Explosive](crew-cards-phone.png) and [phone Falcon](crew-cards-phone-falcon.png) are manual in-app-browser views. The explicit top row separates portrait and price; full names wrap in the aligned lower area. Current labels retain two lines of space, while longer future names can expand the row. No price/name overlap, clipping or shortened labels is needed. Both art styles, all nine units and three widths have geometry regressions, alongside the retained touch/scroll/focus tests.

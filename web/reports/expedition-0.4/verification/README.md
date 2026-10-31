@@ -13,3 +13,11 @@ App rules/presentation: game commit `da0798f59866cd23ae6fb59cab89218b9a4f6e57`; 
 - Original Java source/assets/documentation/configuration compare unchanged against `school-project-2019`. Master and peeled school tag remain `d5ba2c76aa7cf287b4b89b10ff35cc15a24d09fb`; annotated tag object remains `de94c0c5097af2a8e2f7662a8ff538136dbb4aa7`. Push target is only `origin`, `https://github.com/tr3ylbry/TowerDefense.git`; GitHub reports an independent repository (`fork:false`) with default branch modernization.
 
 No human participants, physical-device runs, native Safari results or enjoyment ratings are included in these counts. See the [five-person kit](../../../playtest/README.md) for the remaining external validation.
+
+## Final review follow-up
+
+The first pushed CI run passed 26 Firefox cases and found a transient-announcement assertion race in Chromium plus a lost pause click in WebKit. The follow-up preserves every assertion and tests the live-region emission when it occurs. Public 2× setup earns the same funds before returning to 1× for the directional case.
+
+[Pause before](pause-pointer-before.json) / [pause after](pause-pointer-after.json) compare the same 1200ms pointer hold across a normal telemetry update. Before: Chromium paused, WebKit remained playing. After: both paused. The implementation keeps the visible label node stable until the phase changes. This guard is now part of the existing background-transition browser scenario.
+
+Crew cards have explicit image/price/name areas. Geometry assertions cover all nine at 1280/900/390 widths, in both original and Expedition artwork, checking equal sizes, consistent offsets, containment and non-overlap. Existing desktop viewport, phone scrolling, touch and complete-detail checks also pass locally. These presentation changes do not alter measured game rules; performance numbers remain tied to the earlier captured source rather than claimed as a remeasurement.

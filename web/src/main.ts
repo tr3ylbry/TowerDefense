@@ -70,7 +70,7 @@ app.innerHTML = `
       <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span id="supply-status">Supply +30 / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
         .map((kind, i) => {
           const tower = TOWERS[kind];
-          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" data-art-tower="${kind}" style="background-image:url('${base}art/${tower.sprite}-idle.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price">◈ ${tower.cost}<kbd>${i + 1}</kbd></span></button>`;
+          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" data-art-tower="${kind}" style="background-image:url('${base}art/${tower.sprite}-idle.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price"><span class="crew-cost">◈ ${tower.cost}</span><kbd>${i + 1}</kbd></span></button>`;
         })
         .join(
           "",
@@ -383,12 +383,16 @@ function render(state: Snapshot): void {
     );
   pause.disabled =
     assetBusy || (state.phase !== "playing" && state.phase !== "paused");
-  pause.innerHTML =
-    state.phase === "paused" ? "▷ <span>Resume</span>" : "Ⅱ <span>Pause</span>";
-  pause.setAttribute(
-    "aria-label",
-    state.phase === "paused" ? "Resume mission" : "Pause mission",
-  );
+  const pauseLabel =
+    state.phase === "paused" ? "Resume mission" : "Pause mission";
+  // Keep the pointer target stable across live telemetry updates.
+  if (pause.getAttribute("aria-label") !== pauseLabel) {
+    pause.innerHTML =
+      state.phase === "paused"
+        ? "▷ <span>Resume</span>"
+        : "Ⅱ <span>Pause</span>";
+    pause.setAttribute("aria-label", pauseLabel);
+  }
   document
     .querySelectorAll<HTMLElement>("[data-tower]")
     .forEach((card) =>

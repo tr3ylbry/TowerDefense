@@ -1,0 +1,15 @@
+{
+  "condition": "Pre-guard production build: pause label replaced on every telemetry render. Public pointer input held for 1200ms.",
+  "bundle": "index-DLQr2Bq1.js",
+  "sha256": "542df9256a900a1bbf27693594732c25b102f231db9e0bd63e295af473f52024",
+  "results": [
+    {
+      "engine": "chromium",
+      "statusAfterHeldClick": "Mission paused"
+    },
+    {
+      "engine": "webkit",
+      "statusAfterHeldClick": "Mission in progress"
+    }
+  ]
+}

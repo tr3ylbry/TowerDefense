@@ -1,0 +1,15 @@
+{
+  "condition": "Corrected production build: pause label changes only when phase changes. Public pointer input held for 1200ms.",
+  "bundle": "index-hjxpEZBz.js",
+  "sha256": "5e2775c09d62e5c6dcfafa845a5210f5fc56786db7bdd1e971d3c5803d1f1512",
+  "results": [
+    {
+      "engine": "chromium",
+      "statusAfterHeldClick": "Mission paused"
+    },
+    {
+      "engine": "webkit",
+      "statusAfterHeldClick": "Mission paused"
+    }
+  ]
+}
