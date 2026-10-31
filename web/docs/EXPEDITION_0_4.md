@@ -98,6 +98,12 @@ The first pushed CI run (`72ea4bf`, [run 41236746865](https://github.com/tr3ylbr
 
 The complete 98 rule checks/build and targeted local browser corrections pass. Final Linux results are attached to the follow-up commit in GitHub Actions and reported at handoff. No assertions were removed, no browser was skipped, and no security setting was disabled. The earlier controlled performance capture remains explicitly tied to `da0798f`; these subsequent presentation/test changes are not presented as a new performance measurement. Gameplay rules and the frozen tactical research inputs remain unchanged.
 
+## Mission economy terminal follow-up
+
+The user's Canyon victory screenshot supplied visual feedback on the two centered receipt sentences. The expanded receipt now has a compact mint terminal treatment: three aligned deployed/lost/spent readouts, an itemized credit table, signed income and purchase amounts, and an emphasized ending balance. The opening 230-credit bank remains visible. Every amount comes from the existing final snapshot; no economy, prices or balance rules changed. Static fine lines and tabular numerals provide the monitor appearance without additional animation, assets or dependencies.
+
+Native details/summary keyboard behavior, semantic table headers and explicit plus/minus signs preserve readable interaction beyond color. In short focused, phone and landscape battlefields, the expanded outcome overlay scrolls vertically so the entire ledger and Play again remain reachable. The existing receipt browser scenario retains its original purchase/start/reset assertions and now checks actual balance reconciliation, keyboard toggling, horizontal containment, scrollable ending balance and restart at 390×844 and 844×390. Both local Chromium and WebKit pass; the full browser matrix is checked again on the pushed follow-up. [Desktop and phone captures](../reports/expedition-0.4/visual/README.md) record the result. This user formatting feedback is not counted as an independent structured playtest.
+
 ## Human and agent evidence
 
 **Zero independent human sessions** have been completed. [The five-player package](../playtest/README.md) is ready, with anonymous pending rows, setup instructions, consent/privacy boundaries, timed first deployment, firing-direction tasks, income/armor/call questions, difficulty observations and open comments. Prompted direction tasks are separate from unassisted behavior. Human evidence must precede broad difficulty or enjoyment claims.
@@ -123,4 +129,4 @@ Pauses and tool timing make these demonstrations unsuitable as controlled balanc
 
 ## Git delivery
 
-Changes are organized into defender art, tactical/reliability implementation, research/verification documentation, and focused crew-card/pause follow-up commits on `modernization`. Completed validated work is pushed to the existing independent `tr3ylbry/TowerDefense` repository; no other contributor repository is a push target. Exact delivered commits and final CI run are reported with the handoff. School source/assets compare unchanged against `school-project-2019`; master/tag reference hashes are checked without modifying them.
+Changes are organized into defender art, tactical/reliability implementation, research/verification documentation, focused crew-card/pause follow-up, and mission-economy terminal commits on `modernization`. Completed validated work is pushed to the existing independent `tr3ylbry/TowerDefense` repository; no other contributor repository is a push target. Exact delivered commits and final CI run are reported with the handoff. School source/assets compare unchanged against `school-project-2019`; master/tag reference hashes are checked without modifying them.

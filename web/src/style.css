@@ -2190,18 +2190,130 @@ dialog li {
 }
 #mission-receipt {
   font: 11px/1.6 var(--mono);
-  color: #c6dcd4;
-  margin: 8px auto;
+  font-variant-numeric: tabular-nums;
+  color: #cee7dd;
+  text-align: left;
+  margin: 12px auto 16px;
   max-width: 460px;
+  border: 1px solid #8ecbb96b;
+  border-radius: 5px;
+  background: #102b2ded;
+  box-shadow: inset 3px 0 #93d7bd;
 }
 #mission-receipt summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
   cursor: pointer;
-  padding: 7px 10px;
-  min-height: 32px;
+  padding: 9px 14px;
+  min-height: 44px;
+  font-weight: 600;
 }
-#mission-receipt p {
-  font: inherit;
-  margin: 4px 0;
+#mission-receipt summary::-webkit-details-marker {
+  display: none;
+}
+#mission-receipt summary::before {
+  content: "+";
+  color: #a3e4c9;
+}
+#mission-receipt[open] summary::before {
+  content: "−";
+}
+.receipt-code {
+  margin-left: auto;
+  color: #a2c7b9;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.receipt-terminal {
+  padding: 0 14px 4px;
+  background: repeating-linear-gradient(transparent 0 3px, #b5f6dc03 3px 4px);
+}
+.receipt-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px 0;
+  border-block: 1px solid #8ecbb933;
+}
+.receipt-stats span {
+  min-width: 0;
+}
+.receipt-stats strong {
+  display: block;
+  color: #e2f5ec;
+  font-size: 17px;
+  line-height: 1.3;
+}
+#receipt-sources {
+  width: 100%;
+  border-collapse: collapse;
+}
+#receipt-sources caption {
+  padding: 10px 0 6px;
+  text-align: left;
+  color: #b1cfc3;
+}
+#receipt-sources th,
+#receipt-sources td {
+  padding: 4px 0;
+  font-weight: 400;
+}
+#receipt-sources th {
+  text-align: left;
+}
+#receipt-sources td,
+#receipt-sources thead th:last-child {
+  text-align: right;
+  padding-left: 14px;
+  white-space: nowrap;
+}
+#receipt-sources thead {
+  color: #a2c7b9;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#receipt-sources tbody tr + tr {
+  border-top: 1px solid #8ecbb91a;
+}
+#receipt-sources .receipt-debit td {
+  color: #ffc09d;
+}
+#receipt-sources tfoot {
+  border-top: 1px solid #93d7bd;
+  color: #b6f0d7;
+}
+#receipt-sources tfoot th,
+#receipt-sources tfoot td {
+  padding-block: 9px;
+  font-weight: 600;
+}
+#receipt-sources tfoot td {
+  font-size: 19px;
+}
+/* The ledger can exceed the battlefield's height in focused/phone layouts. */
+.mission-overlay:has(#mission-receipt[open]) {
+  align-items: start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.mission-overlay:has(#mission-receipt[open]) .overlay-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 460px;
+}
+.mission-overlay:has(#mission-receipt[open]) .overlay-orbit,
+.mission-overlay:has(#mission-receipt[open]) .overline,
+.mission-overlay:has(#mission-receipt[open]) .overlay-note {
+  display: none;
+}
+.mission-overlay:has(#mission-receipt[open]) h2 {
+  font-size: 23px;
+}
+.mission-overlay:has(#mission-receipt[open]) #overlay-body {
+  margin: 8px 0 12px;
 }
 .mission-tools .tool,
 .time-controls button,

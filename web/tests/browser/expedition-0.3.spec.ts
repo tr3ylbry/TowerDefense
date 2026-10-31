@@ -288,7 +288,7 @@ test("audio can be enabled and disabled by a user gesture", async ({
 
 test("mission receipts explain actual spending and reset with the mission", async ({
   page,
-}) => {
+}, info) => {
   await page.goto("/");
   await page
     .getByRole("button", { name: "Begin mission", exact: true })
@@ -307,6 +307,67 @@ test("mission receipts explain actual spending and reset with the mission", asyn
   await expect(page.locator("#receipt-sources")).toContainText(
     "Started with 230.",
   );
+  const ledger = page.getByRole("table", { name: "Started with 230." });
+  await expect(
+    ledger.getByRole("columnheader", { name: "Spacebucks" }),
+  ).toBeVisible();
+  await expect(
+    ledger.getByRole("row", { name: "Crew purchases −50", exact: true }),
+  ).toBeVisible();
+  const amounts = await ledger.locator("td").allTextContents();
+  const values = amounts.map((amount) => Number(amount.replace("−", "-")));
+  const balance = Number(await page.locator("#credits").innerText());
+  expect(
+    values.slice(0, -1).reduce((total, amount) => total + amount, 230),
+  ).toBe(balance);
+  expect(values.at(-1)).toBe(balance);
+  // A static terminal remains usable without decorative animation or pointer input.
+  const disclosure = page.locator("#mission-receipt summary");
+  await disclosure.focus();
+  await disclosure.press("Enter");
+  await expect(ledger).not.toBeVisible();
+  await disclosure.press("Enter");
+  await expect(ledger).toBeVisible();
+  await page.setViewportSize({ width: 1440, height: 1200 });
+  await disclosure.scrollIntoViewIfNeeded();
+  await page
+    .locator("#overlay")
+    .screenshot({ path: info.outputPath("mission-ledger-desktop.png") });
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 844, height: 390 },
+  ]) {
+    await page.setViewportSize(viewport);
+    const bounds = await page
+      .locator("#mission-receipt")
+      .evaluate((receipt) => {
+        const box = receipt.getBoundingClientRect();
+        const overlay = document.querySelector("#overlay")!;
+        const frame = overlay.getBoundingClientRect();
+        return {
+          fits: box.left >= frame.left && box.right <= frame.right,
+          noOverflow: receipt.scrollWidth <= receipt.clientWidth,
+          canScroll: overlay.scrollHeight > overlay.clientHeight,
+          scrollable: getComputedStyle(overlay).overflowY === "auto",
+        };
+      });
+    expect(bounds).toEqual({
+      fits: true,
+      noOverflow: true,
+      canScroll: true,
+      scrollable: true,
+    });
+    await ledger
+      .getByRole("rowheader", { name: "Ending balance", exact: true })
+      .scrollIntoViewIfNeeded();
+    await expect(
+      ledger.getByRole("rowheader", { name: "Ending balance", exact: true }),
+    ).toBeInViewport();
+    if (viewport.width === 390)
+      await page
+        .locator("#overlay")
+        .screenshot({ path: info.outputPath("mission-ledger-phone.png") });
+  }
   await page.locator("#start").click();
   await expect(page.locator("#mission-receipt")).not.toBeVisible();
   await expect(page.locator("#credits")).toHaveText("230");

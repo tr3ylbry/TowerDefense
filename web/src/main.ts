@@ -50,6 +50,30 @@ try {
 
 const helmet =
   '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 29v-8a13 13 0 0 1 26 0v8l-5 10H16Z" fill="currentColor"/><rect x="15" y="15" width="18" height="13" rx="5" fill="#18303a"/><path d="M19 35h10" stroke="#f5a47d" stroke-width="3"/></svg>';
+const missionReceipt = `
+  <details id="mission-receipt" hidden>
+    <summary><span>Mission economy</span><span class="receipt-code" aria-hidden="true">ECON / 01</span></summary>
+    <div class="receipt-terminal">
+      <div id="receipt-summary" class="receipt-stats" role="group" aria-label="Crew and spending">
+        <span><strong id="receipt-deployed">0</strong> deployed</span>
+        <span><strong id="receipt-lost">0</strong> lost</span>
+        <span><strong id="receipt-spent">0</strong> spent</span>
+      </div>
+      <table id="receipt-sources">
+        <caption>Started with 230.</caption>
+        <thead><tr><th scope="col">Credit source</th><th scope="col">Spacebucks</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Outpost supply</th><td id="receipt-supply">+0</td></tr>
+          <tr><th scope="row">Defender income</th><td id="receipt-growth">+0</td></tr>
+          <tr><th scope="row">Alien bounties</th><td id="receipt-bounties">+0</td></tr>
+          <tr><th scope="row">Early-wave bonuses</th><td id="receipt-calls">+0</td></tr>
+          <tr><th scope="row">Salvage recovered</th><td id="receipt-salvage">+0</td></tr>
+          <tr class="receipt-debit"><th scope="row">Crew purchases</th><td id="receipt-purchases">−0</td></tr>
+        </tbody>
+        <tfoot><tr><th scope="row">Ending balance</th><td id="receipt-balance">0</td></tr></tfoot>
+      </table>
+    </div>
+  </details>`;
 app.innerHTML = `
   <header class="site-header">
     <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.4</span></span></span></a>
@@ -63,7 +87,7 @@ app.innerHTML = `
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
-        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><details id="mission-receipt" hidden><summary>Mission economy</summary><p id="receipt-summary"></p><p id="receipt-sources"></p></details><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
+        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p>${missionReceipt}<button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
         <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. Place a gun in an empty tile to its left, check its armor, or salvage blockers if no firing tile remains. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
@@ -470,10 +494,19 @@ function render(state: Snapshot): void {
           : "The signal went quiet.<br>Try a new formation.";
       body.textContent = `${state.kills} hostiles cleared · ${Math.floor(state.elapsed / 60)}m ${Math.floor(state.elapsed % 60)}s elapsed · ${state.integrity} shields remaining`;
       const economy = state.economy;
-      get("receipt-summary").textContent =
-        `${economy.purchases} deployed · ${economy.losses} lost · ${economy.spent} spent · ${state.credits} remaining`;
-      get("receipt-sources").textContent =
-        `Started with 230. Earned ${economy.supply} supply, ${economy.growth} income, ${economy.bounties} bounties, ${economy.calls} wave bonuses; recovered ${economy.salvage} through salvage.`;
+      get("receipt-deployed").textContent = String(economy.purchases);
+      get("receipt-lost").textContent = String(economy.losses);
+      get("receipt-spent").textContent = String(economy.spent);
+      for (const source of [
+        "supply",
+        "growth",
+        "bounties",
+        "calls",
+        "salvage",
+      ] as const)
+        get(`receipt-${source}`).textContent = `+${economy[source]}`;
+      get("receipt-purchases").textContent = `−${economy.spent}`;
+      get("receipt-balance").textContent = String(state.credits);
       start.innerHTML =
         '<span>Play again</span><span aria-hidden="true">↗</span>';
       note.textContent =
