@@ -102,7 +102,9 @@ test("fits a narrow viewport and persists reduced motion", async ({ page }) => {
 });
 
 test("offers retry when an art resource fails to load", async ({ page }) => {
-  await page.route("**/art/money-tree-idle.png", (route) => route.abort());
+  await page.route("**/art/expedition/money-tree.webp", (route) =>
+    route.abort(),
+  );
   await page.goto("/");
   await expect(
     page.getByRole("heading", { name: "We lost the transmission." }),
@@ -222,7 +224,7 @@ test("deploys the expanded crew and selects the Falcon on The Nest", async ({
     .getByRole("gridcell", { name: "Lane 3, tile 1, empty", exact: true })
     .click();
   await expect(page.locator("#announcement")).toContainText(
-    "more credits for Millennium Falcon",
+    "more credits for Frontier Flagship",
   );
   await page.getByRole("button", { name: "Restart", exact: true }).click();
   await page.getByRole("button", { name: "Restart mission" }).click();
@@ -344,7 +346,7 @@ test("focused desktop controls fit the viewport and the art comparison preserves
   ).toBeEnabled();
   await expect(page.locator('[data-art-tower="astro"]')).toHaveCSS(
     "background-image",
-    /expedition\/ranger\.png/,
+    /expedition\/ranger\.webp/,
   );
   await testInfo.attach("expedition-art", {
     body: await page.screenshot({
@@ -502,7 +504,7 @@ test("phone zoom and every crew card remain usable with complete unit details", 
 test("missing Expedition artwork uses the same recoverable loading failure", async ({
   page,
 }) => {
-  await page.route("**/art/expedition/scout.png", (route) => route.abort());
+  await page.route("**/art/expedition/scout.webp", (route) => route.abort());
   await page.goto("/");
   await expect(
     page.getByRole("button", { name: "Retry loading", exact: true }),

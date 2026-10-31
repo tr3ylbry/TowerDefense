@@ -9,7 +9,13 @@ import {
   STEP,
   TOWERS,
 } from "./game/content";
-import { BIOMES, EXPEDITION_ENEMIES, EXPEDITION_TOWERS } from "./game/art";
+import {
+  BIOMES,
+  EXPEDITION_ENEMIES,
+  EXPEDITION_TOWERS,
+  EXPEDITION_ENVIRONMENTS,
+  EXPEDITION_ACID,
+} from "./game/art";
 import type { EnemyKind, MapKind, TowerKind } from "./game/content";
 import { assetsFor, backgroundKey } from "./assets";
 import type { ArtManifest, ArtStyle, AssetPlan } from "./assets";
@@ -48,6 +54,7 @@ interface Options {
   onState: (state: Snapshot) => void;
   onEvent: (event: GameEvent) => void;
   onReady: () => void;
+  onProgress: (fraction: number) => void;
   onError: () => void;
 }
 
@@ -163,12 +170,14 @@ export function mountBattlefield(options: Options): Battlefield {
       });
     }
     preload(): void {
+      this.load.on("progress", options.onProgress);
       this.load.on("loaderror", () => {
         loaded = false;
       });
       this.queue(initial);
     }
     create(): void {
+      this.load.off("progress", options.onProgress);
       this.load.removeAllListeners("loaderror");
       if (!loaded) {
         options.onError();
@@ -369,11 +378,12 @@ export function mountBattlefield(options: Options): Battlefield {
       if (this.activeMap === mapKey) return;
       this.activeMap = mapKey;
       const map = MAPS[state.map];
-      const expedition = state.map === "canyon" && style === "expedition";
+      const zoom =
+        style === "expedition" ? EXPEDITION_ENVIRONMENTS[state.map].zoom : 1;
       const biome = BIOMES[state.map];
       this.background
-        .setTexture(expedition ? "expedition-canyon" : map.background)
-        .setDisplaySize(1080, 660)
+        .setTexture(backgroundKey(state.map, style))
+        .setDisplaySize(FIELD.width * zoom, FIELD.height * zoom)
         .setAlpha(style === "expedition" ? biome.backgroundAlpha : 0.24);
       this.shade
         .setFillStyle(style === "expedition" ? biome.shadow : 0x102330)
@@ -414,16 +424,22 @@ export function mountBattlefield(options: Options): Battlefield {
         for (let col = 0; col < COLS; col++) {
           if (!isBlocked(state.map, row, col)) continue;
           const pool = this.add
-            .image(worldX(col + 0.5), worldY(row), "acid-pool")
+            .image(
+              worldX(col + 0.5),
+              worldY(row),
+              style === "expedition" ? EXPEDITION_ACID.key : "acid-pool",
+            )
             .setDisplaySize(FIELD.cellWidth - 10, FIELD.cellHeight - 10)
-            .setAlpha(0.8);
+            .setAlpha(style === "expedition" ? 0.95 : 0.8);
           const mark = this.add
             .text(worldX(col + 0.5), worldY(row), "×", {
               fontFamily: "monospace",
               fontSize: "19px",
+              fontStyle: "bold",
               color: "#d9edb4",
             })
-            .setOrigin(0.5);
+            .setOrigin(0.5)
+            .setStroke("#102330", 3);
           this.terrain.add([pool, mark]);
         }
     }
@@ -485,21 +501,33 @@ export function mountBattlefield(options: Options): Battlefield {
             0.12
           : 0;
         sprite.setX(
-          worldX(tower.col + 0.5) - recoil * (tower.kind === "zeus" ? 8 : 5),
+          worldX(tower.col + 0.5) -
+            recoil *
+              (tower.kind === "startrell"
+                ? 2
+                : tower.kind === "zeus"
+                  ? 8
+                  : tower.kind === "explosive"
+                    ? 7
+                    : tower.kind === "falcon"
+                      ? 3
+                      : 5),
         );
         if (artwork) {
           const breath =
-            animate && tower.kind !== "wall"
+            animate && tower.kind !== "wall" && tower.kind !== "falcon"
               ? Math.sin(visualTime * 3 + tower.id) * 0.8
               : 0;
           const production =
-            animate && tower.kind === "bush"
+            animate && (tower.kind === "bush" || tower.kind === "tree")
               ? Math.max(
                   0,
                   (sprite.getData("produceUntil") ?? 0) - visualTime,
                 ) / 0.45
               : 0;
-          const growth = Math.sin(production * Math.PI) * 0.05;
+          const growth =
+            Math.sin(production * Math.PI) *
+            (tower.kind === "tree" ? 0.03 : 0.05);
           sprite.setDisplaySize(
             artwork.width * (1 + growth),
             (artwork.height + breath) * (1 + growth),
@@ -752,7 +780,9 @@ export function mountBattlefield(options: Options): Battlefield {
             projectile.previousX +
               (projectile.x - projectile.previousX) * alpha,
           ),
-          worldY(projectile.row) - 9 + projectile.offset,
+          worldY(projectile.row) +
+            (projectile.kind === "falcon" ? 4 : -9) +
+            projectile.offset,
         );
         if (animate)
           this.bars
@@ -835,7 +865,7 @@ export function mountBattlefield(options: Options): Battlefield {
         const tower = state.towers.find(
           (t) => t.row === event.row && t.col + 0.5 === event.x,
         );
-        if (tower?.kind === "bush")
+        if (tower?.kind === "bush" || tower?.kind === "tree")
           towerSprites
             .get(tower.id)
             ?.setData("produceUntil", state.elapsed + 0.45);
@@ -869,7 +899,11 @@ export function mountBattlefield(options: Options): Battlefield {
           )
           .setStrokeStyle(
             event.resisted ? 3 : 2,
-            event.resisted ? 0xb8d9e8 : 0xa4e4c9,
+            event.resisted
+              ? 0xb8d9e8
+              : event.kind === "explosive"
+                ? 0xf3a17a
+                : 0xa4e4c9,
           )
           .setDepth(9);
         this.effects.add(ring);
@@ -915,22 +949,49 @@ export function mountBattlefield(options: Options): Battlefield {
         });
       }
       if (event.type === "shot") {
-        const flash = this.add
-          .circle(
-            x + 35,
-            y - 12,
-            event.kind === "zeus" ? 12 : 7,
-            event.kind === "zeus" ? 0xaadfea : 0xb7f2db,
-          )
-          .setDepth(9);
-        this.effects.add(flash);
-        this.tweens.add({
-          targets: flash,
-          alpha: 0,
-          scale: 0.2,
-          duration: 100,
-          onComplete: () => flash.destroy(),
-        });
+        // One release event drives all three flagship weapons; no independent shot clock.
+        const muzzles =
+          event.kind === "falcon"
+            ? [
+                [43, -6, 0xaadfea],
+                [43, 4, 0xb7f2db],
+                [43, 14, 0xf3a17a],
+              ]
+            : [
+                [
+                  event.kind === "explosive" ? 39 : 35,
+                  event.kind === "startrell" ? -23 : -12,
+                  event.kind === "explosive"
+                    ? 0xf3a17a
+                    : event.kind === "zeus"
+                      ? 0xaadfea
+                      : 0xb7f2db,
+                ],
+              ];
+        for (const [dx, dy, color] of muzzles) {
+          const flash = this.add
+            .circle(
+              x + dx,
+              y + dy,
+              event.kind === "startrell"
+                ? 3
+                : event.kind === "zeus"
+                  ? 12
+                  : event.kind === "falcon"
+                    ? 4
+                    : 7,
+              color,
+            )
+            .setDepth(9);
+          this.effects.add(flash);
+          this.tweens.add({
+            targets: flash,
+            alpha: 0,
+            scale: 0.2,
+            duration: event.kind === "startrell" ? 65 : 100,
+            onComplete: () => flash.destroy(),
+          });
+        }
       }
       if (
         event.type === "hit" ||

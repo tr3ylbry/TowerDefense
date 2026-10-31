@@ -167,7 +167,7 @@ export const TOWERS = {
     splashRadius: 0,
   },
   falcon: {
-    name: "Millennium Falcon",
+    name: "Frontier Flagship",
     role: "Flagship",
     description: "Three piercing rounds per volley. One lane.",
     cost: 250,

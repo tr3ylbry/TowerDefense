@@ -1,6 +1,10 @@
 import "./style.css";
 import { COLS, ENEMIES, isBlocked, MAPS, ROWS, TOWERS } from "./game/content";
-import { EXPEDITION_ENEMIES, EXPEDITION_TOWERS } from "./game/art";
+import {
+  EXPEDITION_ENEMIES,
+  EXPEDITION_TOWERS,
+  EXPEDITION_ENVIRONMENTS,
+} from "./game/art";
 import type { EnemyKind, MapKind, TowerKind } from "./game/content";
 import { Simulation } from "./game/simulation";
 import type { Snapshot } from "./game/simulation";
@@ -76,7 +80,7 @@ const missionReceipt = `
   </details>`;
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.4</span></span></span></a>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.5</span></span></span></a>
     <nav aria-label="Main"><span class="nav-active">The mission</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
@@ -94,7 +98,7 @@ app.innerHTML = `
       <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span id="supply-status">Supply +30 / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
         .map((kind, i) => {
           const tower = TOWERS[kind];
-          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" data-art-tower="${kind}" style="background-image:url('${base}art/${tower.sprite}-idle.png')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price"><span class="crew-cost">◈ ${tower.cost}</span><kbd>${i + 1}</kbd></span></button>`;
+          return `<button class="crew-card ${kind === "astro" ? "selected" : ""}" data-tower="${kind}" aria-pressed="${kind === "astro"}" aria-label="${tower.name}, ${tower.cost} credits. ${tower.description}"><span class="portrait" data-art-tower="${kind}" style="background-image:url('${base}art/${EXPEDITION_TOWERS[kind].file}')"></span><span class="crew-info"><span class="crew-role">${tower.role}</span><strong>${tower.name}</strong><span class="crew-description">${tower.description}</span></span><span class="crew-price"><span class="crew-cost">◈ ${tower.cost}</span><kbd>${i + 1}</kbd></span></button>`;
         })
         .join(
           "",
@@ -103,23 +107,23 @@ app.innerHTML = `
     <div class="dispatch" id="announcement" role="status" aria-live="polite" aria-atomic="true">Select a crew member to get started.</div>
     <footer><span><span class="footer-dot"></span> MADE FOR THE JOY OF BUILDING.</span><span>A school project, reimagined. <button id="credits-open">Meet the original team ↗</button></span></footer>
   </main>
-  <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Tanks absorb 80% of ordinary fire: TARS ignores plating; plasma and explosives partially pierce it. Explosive Astro Joe and Moon Zeus hit clusters; the Falcon fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission. N calls an eligible wave early.</p><p><strong>Choose your pace.</strong> After a wave finishes entering, Call next wave brings the next arrival to three game seconds from now. Gain two credits per whole second saved, up to 40 per wave. Later waves move earlier by the same amount; surviving aliens stay on the field. Each wave can pay once. Lane warnings show actual arrivals in the next five game seconds: an arrow for ordinary enemies, a diamond for plated Tanks, and !! for Gargantua.</p><p><strong>Read the field.</strong> Blue plate sparks mean armor resisted most of a hit. A mint impact means a piercing hit. An orange outline marks a defender taking damage; a triangle and critical label mark health below 30%. On phones, Enlarge field gives a closer view you can pan; Overview restores the whole field.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.entries(
+  <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Tanks absorb 80% of ordinary fire: TARS ignores plating; plasma and explosives partially pierce it. Explosive Astro Joe and Moon Zeus hit clusters; the Frontier Flagship fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission. N calls an eligible wave early.</p><p><strong>Choose your pace.</strong> After a wave finishes entering, Call next wave brings the next arrival to three game seconds from now. Gain two credits per whole second saved, up to 40 per wave. Later waves move earlier by the same amount; surviving aliens stay on the field. Each wave can pay once. Lane warnings show actual arrivals in the next five game seconds: an arrow for ordinary enemies, a diamond for plated Tanks, and !! for Gargantua.</p><p><strong>Read the field.</strong> Blue plate sparks mean armor resisted most of a hit. A mint impact means a piercing hit. An orange outline marks a defender taking damage; a triangle and critical label mark health below 30%. On phones, Enlarge field gives a closer view you can pan; Overview restores the whole field.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.entries(
     ENEMIES,
   )
     .map(
       ([kind, enemy]) =>
-        `<article><span class="alien-portrait" data-art-enemy="${kind}" style="background-image:url('${base}art/${enemy.sprite}-walk.png')" aria-hidden="true"></span><div><h4>${enemy.name}</h4><p>${enemy.description}</p><small>${enemy.health} health · ${enemy.reward} credit bounty</small></div></article>`,
+        `<article><span class="alien-portrait" data-art-enemy="${kind}" style="background-image:url('${base}art/${EXPEDITION_ENEMIES[kind as EnemyKind].file}')" aria-hidden="true"></span><div><h4>${enemy.name}</h4><p>${enemy.description}</p><small>${enemy.health} health · ${enemy.reward} credit bounty</small></div></article>`,
     )
     .join(
       "",
     )}</div><button class="primary-button" data-close>Back to the frontier ↗</button></dialog>
-  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork adds AI-generated Canyon scenery, an astronaut, a utility robot, and all six alien types, with procedural motion. Use the art switch to compare them with the originals.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
+  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork illustrates all three environments, nine defenders, and six alien types, with simulation-driven procedural motion. Frontier Flagship is an original interpretation of the school unit named Millennium Falcon; the original name and artwork remain in the school history. Use the art switch to compare the illustrations with the retained school assets.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
   <dialog id="map-dialog" aria-labelledby="map-title"><button class="dialog-close" data-close aria-label="Close destinations">×</button><span class="eyebrow">THREE ORIGINAL FRONTIERS</span><h2 id="map-title">Choose your destination.</h2><p id="map-warning">Each destination has four waves and the full original roster.</p><div class="destination-list">${(
     Object.keys(MAPS) as MapKind[]
   )
     .map((kind) => {
       const map = MAPS[kind];
-      return `<button class="destination-card" data-map="${kind}" aria-label="Choose ${map.name}"><img loading="lazy" decoding="async" src="${base}art/${map.background}.webp" alt="" width="144" height="81"><span><span class="micro-label">${map.number} / ${map.tag}</span><strong>${map.name}</strong><span>${map.description}</span></span><span aria-hidden="true">↗</span></button>`;
+      return `<button class="destination-card" data-map="${kind}" aria-label="Choose ${map.name}"><img loading="lazy" decoding="async" src="${base}art/${EXPEDITION_ENVIRONMENTS[kind].file}" alt="" width="144" height="81"><span><span class="micro-label">${map.number} / ${map.tag}</span><strong>${map.name}</strong><span>${map.description}</span></span><span aria-hidden="true">↗</span></button>`;
     })
     .join(
       "",
@@ -474,7 +478,7 @@ function render(state: Snapshot): void {
     if (state.phase === "ready") {
       title.innerHTML = "Home is behind you.<br>Hold the line.";
       body.textContent =
-        "Choose a crew card, then an empty tile. Cover all six lanes with firing defenders and protect three shields through four waves.";
+        "Choose a crew card, then an empty tile. Guns fire right: place them to the left of approaching aliens. Cover all six lanes and protect three shields.";
       start.innerHTML =
         '<span>Begin mission</span><span aria-hidden="true">↗</span>';
       note.textContent =
@@ -589,7 +593,7 @@ get("art-toggle").addEventListener("click", () => {
       announce(
         artStyle === "original"
           ? "Original school project art selected. Combat rules are unchanged."
-          : "Expedition art selected: illustrated Canyon, five defenders, and all six alien types.",
+          : "Expedition art selected: three illustrated environments, all nine defenders, and all six alien types.",
       );
     },
     simulation.snapshot().phase === "playing",
@@ -691,8 +695,9 @@ function applyArtwork(): void {
       portrait.style.backgroundImage = `url("${base}art/${artwork?.file ?? `${ENEMIES[kind].sprite}-walk.png`}")`;
       portrait.classList.toggle("expedition-portrait", Boolean(artwork));
     });
-  document.querySelector<HTMLImageElement>('[data-map="canyon"] img')!.src =
-    `${base}art/${artStyle === "expedition" ? "expedition/canyon.webp" : "stage-one.webp"}`;
+  for (const map of Object.keys(MAPS) as MapKind[])
+    document.querySelector<HTMLImageElement>(`[data-map="${map}"] img`)!.src =
+      `${base}art/${artStyle === "expedition" ? EXPEDITION_ENVIRONMENTS[map].file : `${MAPS[map].background}.webp`}`;
 }
 applyArtwork();
 let sound = false;
@@ -745,7 +750,7 @@ for (const id of [
 ]) {
   const dialog = get<HTMLDialogElement>(id);
   dialog.addEventListener("close", () => {
-    if (resumeAfterDialog) simulation.resume();
+    if (resumeAfterDialog && !document.hidden) simulation.resume();
     resumeAfterDialog = false;
     render(simulation.snapshot());
   });
@@ -832,8 +837,11 @@ document.addEventListener("keydown", (event) => {
   } else if (key === "escape") select(null);
 });
 document.addEventListener("visibilitychange", () => {
-  // A transition that ever went into the background requires explicit resume.
-  if (document.hidden && assetRequest) assetRequest.resume = false;
+  // Any dialog/transition backgrounded during a pause requires explicit resume.
+  if (document.hidden) {
+    resumeAfterDialog = false;
+    if (assetRequest) assetRequest.resume = false;
+  }
   if (document.hidden && simulation.snapshot().phase === "playing") {
     simulation.pause();
     render(simulation.snapshot());
@@ -843,16 +851,20 @@ document.addEventListener("visibilitychange", () => {
 
 async function initialize(): Promise<void> {
   try {
-    const response = await fetch(`${base}art/manifest.json`);
-    if (!response.ok) throw new Error("Asset manifest unavailable");
-    const art = (await response.json()) as ArtManifest;
+    // Independent downloads overlap; artwork still waits for validated metadata.
+    const [art, { mountBattlefield }] = await Promise.all([
+      fetch(`${base}art/manifest.json`).then((response) => {
+        if (!response.ok) throw new Error("Asset manifest unavailable");
+        return response.json() as Promise<ArtManifest>;
+      }),
+      import("./battlefield"),
+    ]);
     if (
       !Array.isArray(art.sprites) ||
       !Array.isArray(art.backgrounds) ||
       !Array.isArray(art.images)
     )
       throw new Error("Invalid asset manifest");
-    const { mountBattlefield } = await import("./battlefield");
     battlefield = mountBattlefield({
       parent: get("phaser"),
       simulation,
@@ -876,6 +888,11 @@ async function initialize(): Promise<void> {
         start.innerHTML =
           '<span>Begin mission</span><span aria-hidden="true">↗</span>';
         render(simulation.snapshot());
+      },
+      onProgress: (fraction) => {
+        if (!loadError && !ready)
+          start.querySelector("span")!.textContent =
+            `Loading artwork · ${Math.round(fraction * 100)}%`;
       },
       onError: loadFailed,
     });

@@ -1,6 +1,11 @@
 import { AMMO, ENEMIES, MAPS, TOWERS } from "./game/content";
 import type { MapKind, EnemyKind, TowerKind } from "./game/content";
-import { EXPEDITION_ENEMIES, EXPEDITION_TOWERS } from "./game/art";
+import {
+  EXPEDITION_ENEMIES,
+  EXPEDITION_TOWERS,
+  EXPEDITION_ENVIRONMENTS,
+  EXPEDITION_ACID,
+} from "./game/art";
 export type ArtStyle = "expedition" | "original";
 export interface ImageAsset {
   key: string;
@@ -22,8 +27,8 @@ export interface AssetPlan {
   sprites: SpriteAsset[];
 }
 export function backgroundKey(map: MapKind, style: ArtStyle): string {
-  return map === "canyon" && style === "expedition"
-    ? "expedition-canyon"
+  return style === "expedition"
+    ? EXPEDITION_ENVIRONMENTS[map].key
     : MAPS[map].background;
 }
 /** Only the selected environment/style is needed to play. Texture keys form the cache. */
@@ -44,9 +49,10 @@ export function assetsFor(
     if (found) sprites.push(found);
     else if (required) throw Error(`Missing animation: ${key}`);
   };
-  if (map === "canyon" && style === "expedition")
-    images.push({ key: "expedition-canyon", file: "expedition/canyon.webp" });
-  else {
+  if (style === "expedition") {
+    const { key, file } = EXPEDITION_ENVIRONMENTS[map];
+    images.push({ key, file });
+  } else {
     const background = art.backgrounds.find(
       (x) => x.key === MAPS[map].background,
     );
@@ -54,7 +60,10 @@ export function assetsFor(
     images.push(background);
   }
   for (const ammo of Object.values(AMMO)) image(ammo.sprite);
-  if (map !== "canyon") image("acid-pool");
+  if (map !== "canyon") {
+    if (style === "expedition") images.push(EXPEDITION_ACID);
+    else image("acid-pool");
+  }
   for (const [kind, tower] of Object.entries(TOWERS)) {
     const cutout =
       style === "expedition" ? EXPEDITION_TOWERS[kind as TowerKind] : undefined;

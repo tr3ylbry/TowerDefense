@@ -168,7 +168,7 @@ test("new defender illustrations defer their school sheets and preserve deployme
   await page.goto("/");
   await expect(page.locator("#start")).toBeEnabled();
   for (const name of ["money-bush", "asteroid", "moon-zeus"]) {
-    expect(requests).toContain(`/art/expedition/${name}.png`);
+    expect(requests).toContain(`/art/expedition/${name}.webp`);
     expect(requests).not.toContain(`/art/${name}-idle.png`);
   }
   await expectCrewLayout(page);

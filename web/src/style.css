@@ -2338,6 +2338,16 @@ dialog li {
   }
 }
 @media (max-width: 700px) {
+  /* Let enlarged page content reflow instead of clipping destination/pause controls. */
+  .location,
+  .telemetry {
+    flex-wrap: wrap;
+  }
+  .location {
+    min-width: 0;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
   .mission-tools {
     gap: 4px;
     flex-wrap: wrap;

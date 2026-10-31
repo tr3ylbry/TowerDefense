@@ -129,7 +129,7 @@ test("failed destination resources preserve the existing map and a retry prepare
   page,
 }) => {
   let fail = true;
-  await page.route("**/art/stage-two.webp", (route) =>
+  await page.route("**/art/expedition/sky-bridge.webp", (route) =>
     fail ? route.abort() : route.continue(),
   );
   await page.goto("/");
@@ -240,7 +240,7 @@ test.describe("emulated touch", () => {
     await page.locator("#field-zoom").tap();
     await page.locator('[data-tower="falcon"]').tap();
     await expect(page.locator("#selected-detail")).toContainText(
-      "Millennium Falcon",
+      "Frontier Flagship",
     );
     await page.locator("#motion-toggle").tap();
     await expect(page.locator("html")).toHaveClass(/reduced-motion/);
