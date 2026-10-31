@@ -1,0 +1,124 @@
+[
+  {
+    "name": "demo",
+    "preservedFile": "art-source/expedition-0.5/demo-original.png",
+    "sha256": "b67fcf4fd4e4d018d4e8e6d43034bcda6ad0694a2d8a731c484a103ffec89036",
+    "sourceCopyVerified": true,
+    "size": [
+      1304,
+      1206
+    ],
+    "bytes": 1669514,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "status": "selected; reviewed in actual game fields"
+  },
+  {
+    "name": "startrell",
+    "preservedFile": "art-source/expedition-0.5/startrell-original.png",
+    "sha256": "853a1fd9ccf62664bbc7c89b72af285d515cc3b7e455a4fcaf0dce3d6df99b47",
+    "sourceCopyVerified": true,
+    "size": [
+      1287,
+      1222
+    ],
+    "bytes": 1084622,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "status": "selected; reviewed in actual game fields"
+  },
+  {
+    "name": "tree",
+    "preservedFile": "art-source/expedition-0.5/tree-original.png",
+    "sha256": "5faef74dc907029c0f2052eb94f5041d4b70cf98e88ea4f3f0faf6c54e0d8d4e",
+    "sourceCopyVerified": true,
+    "size": [
+      1178,
+      1335
+    ],
+    "bytes": 1508645,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "status": "selected; reviewed in actual game fields"
+  },
+  {
+    "name": "flagship",
+    "preservedFile": "art-source/expedition-0.5/flagship-original.png",
+    "sha256": "d3267d0318bb082bdc80b6818606f6a7d7d503e2ee714833bec99ba65ed62cd2",
+    "sourceCopyVerified": true,
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 1788154,
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "status": "rejected wide prototype"
+  },
+  {
+    "name": "bridge",
+    "preservedFile": "art-source/expedition-0.5/bridge-original.png",
+    "sha256": "594b2413b8b81403ba99e9b05e4661a5897150d385c6a9be9ebc409ba1d25900",
+    "sourceCopyVerified": true,
+    "size": [
+      1604,
+      980
+    ],
+    "bytes": 2316323,
+    "alphaExtrema": null,
+    "status": "selected; reviewed in actual game fields"
+  },
+  {
+    "name": "nest",
+    "preservedFile": "art-source/expedition-0.5/nest-original.png",
+    "sha256": "e7b6d60ba263ee917a84a7b0363c4dd5a668ace9f5eeab0d0357ef782c77f950",
+    "sourceCopyVerified": true,
+    "size": [
+      1604,
+      980
+    ],
+    "bytes": 2171338,
+    "alphaExtrema": null,
+    "status": "selected; reviewed in actual game fields"
+  },
+  {
+    "name": "flagship-compact",
+    "preservedFile": "art-source/expedition-0.5/flagship-compact-original.png",
+    "sha256": "27494dbc75196a3db3259a9e9b80880fa5454234931277624cb3195020920cc5",
+    "sourceCopyVerified": true,
+    "size": [
+      1484,
+      1060
+    ],
+    "bytes": 1808703,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "status": "selected; reviewed in actual game fields"
+  },
+  {
+    "name": "acid",
+    "preservedFile": "art-source/expedition-0.5/acid-original.png",
+    "sha256": "789c47fce607aaefe000a01c9e955d70720b4b544aa2a2ede318edfce6117d79",
+    "sourceCopyVerified": true,
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 1142802,
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "status": "selected; reviewed in actual game fields"
+  }
+]
