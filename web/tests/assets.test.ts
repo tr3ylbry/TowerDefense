@@ -16,7 +16,7 @@ describe("mission asset plans", () => {
       expect(keys).toContain(EXPEDITION_ENEMIES[kind]!.key);
       expect(keys).not.toContain(`${ENEMIES[kind].sprite}-walk`);
     }
-    for (const kind of ["astro", "tars"] as const) {
+    for (const kind of ["astro", "tars", "bush", "wall", "zeus"] as const) {
       expect(keys).toContain(EXPEDITION_TOWERS[kind]!.key);
       expect(keys).not.toContain(`${TOWERS[kind].sprite}-idle`);
     }

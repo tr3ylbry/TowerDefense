@@ -10,6 +10,27 @@ export interface ExpeditionArt {
 
 // Static cutouts share a foot anchor; motion is procedural and never controls rules.
 export const EXPEDITION_TOWERS: Partial<Record<TowerKind, ExpeditionArt>> = {
+  bush: {
+    key: "expedition-money-bush",
+    file: "expedition/money-bush.png",
+    width: 68,
+    height: 63.75,
+    foot: 382 / 420,
+  },
+  wall: {
+    key: "expedition-asteroid",
+    file: "expedition/asteroid.png",
+    width: 82,
+    height: (82 * 355) / 448,
+    foot: 318 / 355,
+  },
+  zeus: {
+    key: "expedition-moon-zeus",
+    file: "expedition/moon-zeus.png",
+    width: 90,
+    height: (90 * 398) / 448,
+    foot: 376 / 398,
+  },
   tars: {
     key: "expedition-tars",
     file: "expedition/tars.png",

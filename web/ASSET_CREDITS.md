@@ -25,3 +25,7 @@ Three additional original AI-generated transparent cutouts—Scout, Grunt, and T
 ## Expedition 0.3
 
 Sprinter, ManHunter, and Gargantua complete the illustrated alien roster. These original AI-generated transparent cutouts use the built-in image tool; [prompts, exact alpha-derived foot anchors, source IDs, conversion and integrity hashes](public/art/expedition/README-0.3.md) are recorded. Unchanged full-resolution sources and one rejected authored-stride experiment live in `art-source/expedition-0.3/`, outside the public build. The experiment is not a shipped animation frame. All school sheets remain intact and load when original-art comparison needs them. Seven defenders and Bridge/Nest scenery continue to use retained school art with the provenance limitations above.
+
+## Expedition 0.4
+
+Money Bush, Asteroid, and Moon Zeus add three original AI-generated transparent illustrations using the built-in image tool. [Prompts, untouched source hashes, alpha measurements, proportional conversion, and field review](public/art/expedition/README-0.4.md) document the group. Full-resolution sources live in `art-source/expedition-0.4/`, outside the public build. These remain static cutouts with event-driven procedural feedback. Four defenders (Explosive Astro Joe, Startrell Cluggins, Money Tree, Millennium Falcon) and Bridge/Nest scenery retain school art; the external provenance limits above still apply. Original assets and contributor credits are preserved.

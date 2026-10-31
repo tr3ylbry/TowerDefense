@@ -45,7 +45,7 @@ Approximate displayed bounds: ranger 80×74, TARS 67×76, Scout 66×55, Grunt 86
 - **Canyon:** its broad quiet ground and edge-framed cliffs work behind six lanes. The warm/cool split supports readable cream/mint units. Retain it; avoid adding central props that obscure cells.
 - **Ranger:** suit colors, navy edges, tool direction, and expression establish the shared character language. Retain it; use subtle breathing/recoil and a corrected foot origin rather than generating inconsistent firing frames.
 - **Plated crawler:** a good low/wide armored silhouette and palette match. Its image has more transparent space below the feet than the ranger; an explicit foot origin corrects apparent floating. Retain it.
-- **0.2 additions:** Scout, Grunt, and TARS replace the most visible stylistic mismatches in a coherent combat subset. Their outlines and shading were inspected together, including alpha and facing direction. Expedition 0.3 completes the alien group with Sprinter, ManHunter, and Gargantua. Seven defenders still use school art, so full defender-roster cohesion remains unfinished.
+- **0.2 additions:** Scout, Grunt, and TARS replace the most visible stylistic mismatches in a coherent combat subset. Their outlines and shading were inspected together, including alpha and facing direction. Expedition 0.3 completes the alien group with Sprinter, ManHunter, and Gargantua. At that milestone seven defenders still used school art. Expedition 0.4 reduces this to four; full defender-roster cohesion remains unfinished.
 
 ## Animation and feedback
 
@@ -74,3 +74,11 @@ Prompts, selected generation sources, dimensions, alpha checks, byte sizes, and 
 The new three-cutout group totals 568,457 bytes (about 555 KiB). It completes all six alien illustrations, retaining the original sprite sheets for comparison on demand. The initial game loads only the current environment and selected art style. Successfully loaded textures/animations are cached across switches and restarts; failures retain the existing paused presentation until retry or cancellation.
 
 A single authored alternate Sprinter stride was generated and evaluated. Its leg-contact change was insufficient and its body repaint risked flicker. It is preserved outside public assets as a rejected experiment; no animation-sheet claim is made. Procedural motion was retained and differentiated by role. See [0.3 prompts and evaluation](../public/art/expedition/README-0.3.md).
+
+## Expedition 0.4 defender roles
+
+- **Money Bush:** muted green leaves and amber resource pods in a cream/mint cradle. Its compact 68×63.75 canvas distinguishes income from weaponry. Actual production triggers a brief 5% growth cue; no artificial payment event is generated.
+- **Asteroid:** low, broad slate mass with warm crater rims, displayed at approximately 82×65. It has no breathing motion. Additional static crack tiers at 65% and 30% health remain visible when paused or motion is reduced.
+- **Moon Zeus:** cream/mint heavy suit, navy joints, orange sensor and large right-facing plasma barrel, approximately 90×80. Actual wind-up lights the barrel cue; release adds a cool flash and stronger short recoil. Reduced motion keeps a static charge cue and removes flashes/recoil.
+
+The three cutouts total 607,605 bytes, proportionally packaged at 448 pixels maximum to keep the group below 650 KiB. Explicit alpha-derived foot anchors retain transparent padding. Root review in the actual Canyon field confirmed role silhouettes, grounding, facing direction, and room for adjacent cells and health indicators. These are single images, not authored action sheets. The prior rejected Sprinter experiment remains excluded; no new frame generation was justified. See [0.4 provenance](../public/art/expedition/README-0.4.md) and [field captures](../reports/expedition-0.4/visual/README.md).
