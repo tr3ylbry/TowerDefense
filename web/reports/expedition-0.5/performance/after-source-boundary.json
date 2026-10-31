@@ -1,6 +1,6 @@
 {
-  "baseCommit": "7657f6a4e59482516bfcd9677cd8c91d1e89af36",
-  "boundary": "Final Expedition0.5 working tree including phone-header wrapping, mobile threat/help wrapping, and content-height ready/pause panel fixes. Prior complete after measurements and an interrupted header-only refresh are retained in separate historical subdirectories. Later source-preserving commits do not change this runtime.",
+  "baseCommit": "78cb5669b866b25fb6b02473d2a9e2ee3b948beb",
+  "boundary": "Final Expedition 0.5 working tree including the additional mobile incoming-summary flex/min-width repair that preserves the existing 390x844 overview footer. Earlier complete mobile-layout measurements are pinned at 78cb5669b866b25fb6b02473d2a9e2ee3b948beb; no duplicate raw folder added. Historical first after and interrupted header-only captures remain in their separate subdirectories.",
   "sourceHashes": {
     "src/battlefield.ts": "b47dc4461224af26d16bb494e193430d5c035008fa02cf5e8e784d3a83681f96",
     "src/guidance.ts": "68f41b53b8334743b40da607f107f621d749437fbf6c2be8378c933ea99c4e97",
@@ -13,16 +13,16 @@
     "src/game/content.ts": "48f55682d4f55c0f900c551ef52b1fc1c0ee712ef994b4d513a5283b7f4664cd",
     "src/game/combat.ts": "adca35274cd4ebe99ebdf5e093a7c33e19dff13d3836be1203449fd29653d0d3",
     "src/game/simulation.ts": "f43d1b6cb08abf5c8a6b6b777c170269b4ed517e279d21ff220229e494e8991c",
-    "src/style.css": "621c322714770adef0826c1b77a0973bf5a910cc8264f4c707ac19a1685a077d",
+    "src/style.css": "e0c238bfe6706b0aec98977b5d5706075dca3155da06874ab5b1d78836c33ff8",
     "vite.config.ts": "868cb3264cc46afc2f02256166f0f8255c09fcf2295d9db76b54edfe748e93e5",
     "index.html": "8816f1a02113469bfa91062f49f446f61518082126f0c4b359ec088dd4ec9cff",
     "package.json": "f740afd80f0c96717c9254ec757fa7eef53657c3825fca441acd3914537ea328",
     "package-lock.json": "106fe0de67621897a8cce7378390c4728cc875fda7cc77d8fbab8c92ab3bf83b"
   },
   "bundleHashes": {
-    "assets/battlefield-BiZ5bc8S.js": "32cd8b7b607bd2bcd096b34168ee61ccfa997beebbbc89e2b7599d4c73d429fb",
-    "assets/index-Conhk4v9.css": "62f6b60a59ba28ad34f9070091ebf2108871adbf5e9d8682179d22b3163c8f34",
-    "assets/index-CpdPJc_j.js": "d516976924cc3480c33a6cd96fe236ab9b90c274c5ed51583ca6916095da3ed1",
+    "assets/battlefield-C0dv3LwS.js": "5f85953900629222f56a909adb358114a90e0aeb8b89252def4be3562c61560c",
+    "assets/index-B-2fGR3j.js": "3c6fbfc3df4e4c102b3cc5dff50fb76008a0b297244cbd8015c87990d0bfe80d",
+    "assets/index-BiMgK-NT.css": "3ca9b2a463f10d165d8f148ebbec925d4d1403bf05d618001cef6b2e1c68a439",
     "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
   }
 }

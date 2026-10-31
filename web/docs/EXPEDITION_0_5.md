@@ -65,7 +65,7 @@ The normalized crew-card grid and semantic economy terminal were retained. Compa
 
 A new regression first reproduced active play→Guide→background/return→close incorrectly resuming. Visibility changes now invalidate ordinary-dialog resume intent, and close checks current visibility. Guide, destinations, restart cancellation and credits are covered, including close while hidden. Existing artwork-transition protection remains.
 
-A 150% CSS-zoom phone stress test exposed an unshrinkable destination group and clipped pause controls. The first Linux CI run then exposed header overflow that local system-font metrics had missed. An isolated Linux DejaVu reproduction measured navigation ending at 396.38 pixels in a 390-pixel viewport. The header now wraps; ready/pause instructions grow to fit the Start control; the threat row and full Enlarge label remain visible. The outcome ledger retains its bounded scroll frame. Strengthened geometry assertions, all nine selections, deployment, pause and restart pass in Linux Firefox/WebKit and related local tests. [Linux before/after evidence](../reports/expedition-0.5/verification/linux-layout/README.md) records the exact failure and fix. This is a repeatable layout stress test, not native OS text-scaling evidence.
+A 150% CSS-zoom phone stress test exposed an unshrinkable destination group and clipped pause controls. The first Linux CI run then exposed header overflow that local system-font metrics had missed. An isolated Linux DejaVu reproduction measured navigation ending at 396.38 pixels in a 390-pixel viewport. The header now wraps; ready/pause instructions grow to fit the Start control; the threat row and full Enlarge label remain visible. The outcome ledger retains its bounded scroll frame. The next CI pass caught the compact-phone threat row consuming extra height; a flexible text column restores the existing below-the-fold limit while retaining the full Enlarge label. All fourteen existing/new Linux phone, narrow, pan, zoom and terminal scenarios then pass together, alongside related local tests and the strengthened control geometry assertions. [Linux before/after evidence](../reports/expedition-0.5/verification/linux-layout/README.md) records the exact failure and fix. This is a repeatable layout stress test, not native OS text-scaling evidence.
 
 ## 7. Performance measurements and decisions
 
@@ -74,20 +74,20 @@ A 150% CSS-zoom phone stress test exposed an unshrinkable destination group and 
 | Measure                               |                 Before |               After |
 | ------------------------------------- | ---------------------: | ------------------: |
 | Unique initial image bytes            |              2,369,834 |             600,697 |
-| Total reported initial transfer       |              2,772,199 |           1,003,054 |
+| Total reported initial transfer       |              2,772,199 |           1,003,056 |
 | Resource entries including navigation |                     38 |                  36 |
-| Constrained readiness samples, ms     | 14,798 /14,803 /14,804 | 5,987 /5,991 /5,983 |
+| Constrained readiness samples, ms     | 14,798 /14,803 /14,804 | 5,990 /5,987 /5,986 |
 | Constrained median, ms                |                 14,803 |               5,987 |
-| Normal readiness samples, ms          |          171 /156 /147 |       210 /158 /151 |
-| Normal median, ms                     |                    156 |                 158 |
+| Normal readiness samples, ms          |          171 /156 /147 |       157 /156 /150 |
+| Normal median, ms                     |                    156 |                 156 |
 
 This establishes 74.7% less initial imagery, 63.8% less reported transfer and 59.6% less constrained readiness time under this profile. Normal readiness is effectively unchanged. The main practical change is proportionate 384 px quality 90 WebP cutouts and 1080 px quality 85 backgrounds, with exact alpha after resampling and preserved originals. Independent manifest/renderer downloads now overlap. No cache framework, runtime dependency, renderer rewrite or audio change was justified; audio remains lazy and opt-in.
 
-Decode/upload work did not establish a speedup: implicit decode traces changed 21.2→25.0 ms normal and 84.9→98.2 ms constrained; synchronous WebGL upload dispatch changed 27.9→27.8 ms and 109.5→109.6 ms. These overlapping diagnostics are not exclusive wall-time shares or GPU-completion measurements. The improvement is delivery/readiness, not faster decoding or FPS.
+Decode/upload work did not establish a speedup: implicit decode traces changed 21.2→23.8 ms normal and 84.9→99.4 ms constrained; synchronous WebGL upload dispatch changed 27.9→26.9 ms and 109.5→114.1 ms. These overlapping diagnostics are not exclusive wall-time shares or GPU-completion measurements. The improvement is delivery/readiness, not faster decoding or FPS.
 
 Both matched 20-defender Nest missions won before/after. Final late-wave RAF median/p95 gaps were 16.7/33.4 ms normal and 33.3/33.4 ms constrained, effectively the same as before. Warm WebGL texture handles plateaued 81→81→81 after selected map/style cycles; five restarts retained one canvas and zero page errors. Heap collection was uncontrolled and GPU memory unmeasured: no all-leaks-absent or real-device performance claim is made.
 
-The first optional Original switch still costs about 15.5 s constrained and requests 33 newly deferred school images; subsequent switches request zero new unique images. This cost is disclosed rather than hidden inside an initial-load improvement claim. Future campaigns should preserve selected-scene loading and avoid an unbounded cache.
+The first optional Original switch still costs about 15.4 s constrained and requests 33 newly deferred school images; subsequent switches request zero new unique images. This cost is disclosed rather than hidden inside an initial-load improvement claim. Future campaigns should preserve selected-scene loading and avoid an unbounded cache.
 
 ## 8. Loading and recovery
 
@@ -121,7 +121,7 @@ Playwright WebKit is not native Safari. Desktop emulation is not physical touch,
 
 The original 98 rule tests remain, with four added registration/environment checks: **102 total**. Strict TypeScript and production build pass. All 26 previous browser scenarios remain; seven new scenarios yield 33 per engine/99 in CI. Asset-failure routes, name assertions and a portrait URL assertion are updated to the actual new WebP/name while preserving their behavioral requirements. No assertion, browser or security protection was disabled to obtain a pass.
 
-The first local full browser pass identified one stale `.png` portrait expectation; the actual WebP output was correct. Its exact URL assertion was updated and rerun. The dialog-resume and enlarged-content failures were implementation defects reproduced before their fixes, not silently discarded tests. [Verification details](../reports/expedition-0.5/verification/README.md) distinguish these corrections, measured boundaries and external limits. The initial Linux run passed all 33 Chromium cases and 32 each in Firefox/WebKit; both failures identified the enlarged header issue described above. After reproducing and fixing it, the existing geometry checks were strengthened rather than relaxed. Final exact-commit CI results are authoritative at handoff.
+The first local full browser pass identified one stale `.png` portrait expectation; the actual WebP output was correct. Its exact URL assertion was updated and rerun. The dialog-resume and enlarged-content failures were implementation defects reproduced before their fixes, not silently discarded tests. [Verification details](../reports/expedition-0.5/verification/README.md) distinguish these corrections, measured boundaries and external limits. The initial Linux run passed all 33 Chromium cases and 32 each in Firefox/WebKit; both failures identified the enlarged header issue described above. After reproducing and fixing it, the existing geometry checks were strengthened rather than relaxed. A follow-up full run caught ordinary phone details exceeding the viewport; the compact threat-row correction is covered by the original overview constraint and the enlarged-layout case together. The retained multi-layout receipt scenario also exceeded its total 45-second budget once in Chromium CI. It now has 75 seconds for its full flow; the independent 35-second outcome requirement and all functional assertions remain unchanged. Final exact-commit CI results are authoritative at handoff.
 
 ## 13. Git delivery and preservation
 

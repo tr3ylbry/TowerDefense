@@ -2351,6 +2351,10 @@ dialog li {
     max-width: 100%;
     white-space: normal;
   }
+  #incoming-summary {
+    flex: 1;
+    min-width: 0;
+  }
   /* Instructions and resume controls need room; the outcome ledger keeps its scroll frame. */
   body:not(.zoomed-field)
     .board-stack:has(.mission-overlay:not([hidden]) #mission-receipt[hidden]) {

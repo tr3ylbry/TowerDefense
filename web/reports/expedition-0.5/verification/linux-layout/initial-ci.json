@@ -15,5 +15,29 @@
   },
   "failedScenario": "phone controls and the complete roster remain reachable under enlarged page content",
   "reproduction": "Official Playwright1.64.1-noble Linux ARM64 image + fonts-dejavu-core; both exact Firefox/WebKit tests failed before header wrapping and passed after",
-  "fix": "Mobile header wraps with automatic height and a preserved minimum height. Overflow assertion remains, with direct numeric width diagnostics."
+  "fix": "Mobile header wraps with automatic height and a preserved minimum height. Overflow assertion remains, with direct numeric width diagnostics.",
+  "followup": {
+    "head": "78cb5669b866b25fb6b02473d2a9e2ee3b948beb",
+    "run": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41251410436",
+    "firefox": {
+      "passed": 32,
+      "failed": 1,
+      "detailsBottom": 868.9500122070312,
+      "viewportHeight": 844
+    },
+    "webkit": {
+      "passed": 32,
+      "failed": 1,
+      "detailsBottom": 860.9375,
+      "viewportHeight": 844
+    },
+    "failedScenario": "phone overview shows the entire field and scrolls the crew to keyboard selection",
+    "correction": "Mobile incoming-summary flex:1 and min-width:0; all fourteen Linux phone/terminal regressions pass together.",
+    "chromium": {
+      "passed": 32,
+      "failed": 1,
+      "failure": "Retained multi-layout receipt case exceeded total45000ms; no individual functional assertion failure reported.",
+      "change": "75000ms total scenario budget; independent35000ms outcome requirement and every assertion retained."
+    }
+  }
 }

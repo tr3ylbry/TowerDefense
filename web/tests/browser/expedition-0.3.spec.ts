@@ -289,6 +289,9 @@ test("audio can be enabled and disabled by a user gesture", async ({
 test("mission receipts explain actual spending and reset with the mission", async ({
   page,
 }, info) => {
+  // Allow startup, a real outcome, three layouts and captures on software-rendered CI.
+  // The separate 35-second outcome requirement and all ledger assertions stay intact.
+  test.setTimeout(75_000);
   await page.goto("/");
   await page
     .getByRole("button", { name: "Begin mission", exact: true })
