@@ -2,8 +2,7 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). It includes all nine original defenders, six alien types, and all three maps, each with four waves. Expedition 0.3 completes the illustrated alien roster, adds role-specific movement and a heavy-enemy contact cue, improves lane/economy/refund guidance, and introduces mission economy receipts. On-demand cached artwork reduces initial image payload by 57% while preserving recoverable art comparison and destination changes. All combat rules remain deterministic. Early-wave calls, enemy warnings, the focused control deck, original map restrictions, nine defenders, keyboard/touch controls, optional sound, and reduced motion remain available. See the [0.3 report](web/docs/EXPEDITION_0_3.md) for measurements, economy research, browser coverage, and limitations.
-
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md), with all nine original defenders, six alien types, and three four-wave maps. **Expedition 0.4** adds actionable forward-firing threat feedback, illustrated Money Bush/Asteroid/Moon Zeus defenders, and paired lane relays in The Nest’s later waves. Unit prices and combat statistics remain unchanged. On-demand art comparison, keyboard/touch controls, reduced motion, mission receipts, optional early-wave calls, and deterministic gameplay are retained. See the [0.4 report](web/docs/EXPEDITION_0_4.md) for evidence, verification, and remaining external playtesting.
 ```sh
 cd web
 npm ci

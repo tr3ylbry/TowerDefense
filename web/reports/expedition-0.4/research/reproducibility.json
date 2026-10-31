@@ -1,0 +1,18 @@
+{
+  "identicalFullRerun": true,
+  "unchangedMapRunsMatchExactly": 1008,
+  "totalPolicyRuns": 3024,
+  "files": {
+    "baseline/results.json": "e5e0e3fa72696276832caacc9a6bc0a0a18d9a6deb7ec6d942150caca6dacd1e",
+    "baseline/summary.json": "56af2bd12dd688e3911be3440be64e9a3dd8519902fd0929d4f09af4cb9ed13a",
+    "baseline/ledgers.csv": "c962f524ec5eb265b416d8893c8e06dfa005d39f3a5db8e6d0849a58d57cba89",
+    "baseline/schedules.json": "427d414c30874e672d72343300a3d54fa6613944dfb9d768bd375d733d0c3ae6",
+    "candidate/results.json": "d1f5787d7e2d28839ff3cc9d8e238c7d1af779a481e4815ab7e71cd75d56aaa4",
+    "candidate/summary.json": "13ee1f5f7c57368ad5e31ad4cae1b03402cb17396f6f181a682b79025b764630",
+    "candidate/ledgers.csv": "fbac2e130df69718c41353278b90b590298a88038ce11f62740e5e6593ec606f",
+    "candidate/schedules.json": "2f00e6bb22a327c7133f8ac620cf4f4e806972d124c2763fc0fea952d04d18bd",
+    "comparison.json": "69e744a5e10b967ad3cb8547a3227dce60aa64451220895ccd1c25766fafc143",
+    "comparison.csv": "629191769fdb57c2cccec292cf792d000729188850186c20a5bdc71cb7c12820",
+    "original-stalls.json": "6ae6c50cbd138f6a4741eaaf63b6f9a249b829e2d90b7a820a34519e246f6ef5"
+  }
+}

@@ -1,0 +1,994 @@
+{
+  "baselineCommit": "cfb6eb35917ef8f5102d74c935e607455d61e910",
+  "geometry": {
+    "aim": "enemy.x > tower.col + 0.2",
+    "freshDirectHit": "enemy.x >= tower.col + 0.85 - 0.35",
+    "blocking": "tower.col + 0.5 <= enemy.x + 0.45 && tower.col + 0.5 >= enemy.x - 0.55",
+    "note": "Fresh direct reach is not a hit guarantee. Wind-up, movement and collision order matter; splash may indirectly damage a passed enemy from a target ahead."
+  },
+  "runs": [
+    {
+      "plan": "cheap-maintenance",
+      "mode": "aggressive",
+      "map": "canyon",
+      "seed": 3352022,
+      "result": "timeout",
+      "shields": 3,
+      "warningChecks": 1203,
+      "clusterLaneSeconds": 98.05,
+      "passedThreatSeconds": 458.5,
+      "passedThreatObservations": [
+        {
+          "firstObservedAt": 141.5,
+          "kind": "tank",
+          "row": 1,
+          "x": 1.04,
+          "health": 353.6
+        }
+      ],
+      "finalEngagement": [
+        {
+          "enemy": {
+            "kind": "tank",
+            "row": 1,
+            "x": 0.13,
+            "health": 353.6,
+            "attacking": true
+          },
+          "sameLaneDefenders": [
+            {
+              "kind": "astro",
+              "col": 1,
+              "health": 260,
+              "aimGate": 1.2,
+              "firstShotMinimumX": 1.5,
+              "canAim": false,
+              "canHitWithFreshShot": false,
+              "isBlocking": false
+            },
+            {
+              "kind": "astro",
+              "col": 0,
+              "health": 160,
+              "aimGate": 0.2,
+              "firstShotMinimumX": 0.5,
+              "canAim": false,
+              "canHitWithFreshShot": false,
+              "isBlocking": true
+            }
+          ]
+        }
+      ],
+      "recovery": {
+        "actions": [
+          {
+            "row": 1,
+            "col": 0,
+            "result": {
+              "ok": true,
+              "message": "Salvaged Astro Joe for 20 credits."
+            }
+          }
+        ],
+        "result": "won",
+        "elapsed": 600.5,
+        "shields": 2,
+        "credits": 1558,
+        "events": [
+          {
+            "type": "removed",
+            "row": 1,
+            "x": 0.5,
+            "amount": 20
+          },
+          {
+            "type": "breach",
+            "row": 1,
+            "x": 0
+          },
+          {
+            "type": "end",
+            "row": 0,
+            "x": 0
+          }
+        ]
+      },
+      "lastHostileDamageAt": 178.7,
+      "finalEnemies": [
+        {
+          "kind": "tank",
+          "row": 1,
+          "x": 0.13,
+          "health": 353.6,
+          "attacking": true
+        }
+      ],
+      "duration": 600,
+      "initialCredits": 230,
+      "earned": {
+        "passive": 3600,
+        "income": 0,
+        "kills": 590,
+        "calls": 68
+      },
+      "earnedTotal": 4258,
+      "spent": 2950,
+      "refunded": 0,
+      "endingCredits": 1538,
+      "purchases": 59,
+      "purchasedByKind": {
+        "astro": 59
+      },
+      "deaths": 47,
+      "deathsByKind": {
+        "astro": 47
+      },
+      "salvages": 0,
+      "replacements": 47,
+      "firstPurchase": 0,
+      "lastPurchase": 592.05,
+      "firstOffensivePurchase": 0,
+      "firstAllLanesArmed": 10.65,
+      "firstMajorPurchase": null,
+      "firstFalcon": null,
+      "lastFalcon": null,
+      "falconCount": 0,
+      "falconShots": 0,
+      "falconHits": 0,
+      "latePurchases": 12,
+      "lateResponsiveMajorPurchases": 0,
+      "timeAfterLastPurchase": 7.95,
+      "idle": 7,
+      "longestIdle": 7,
+      "calls": 3,
+      "callDetails": [
+        {
+          "at": 16,
+          "wave": 2,
+          "secondsSaved": 10,
+          "reward": 20,
+          "livingEnemies": 3
+        },
+        {
+          "at": 31.6,
+          "wave": 3,
+          "secondsSaved": 11.4,
+          "reward": 22,
+          "livingEnemies": 3
+        },
+        {
+          "at": 49,
+          "wave": 4,
+          "secondsSaved": 13.6,
+          "reward": 26,
+          "livingEnemies": 5
+        }
+      ],
+      "incomeByKind": {},
+      "shotCounts": {
+        "astro": 834
+      },
+      "hitCounts": {
+        "astro": 793
+      },
+      "majorPurchaseTimeline": [],
+      "lastTransactions": [
+        {
+          "at": 455.55,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1068,
+          "creditsAfter": 1018,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 475.05,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1138,
+          "creditsAfter": 1088,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 494.55,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1178,
+          "creditsAfter": 1128,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 514.05,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1248,
+          "creditsAfter": 1198,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 533.55,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1318,
+          "creditsAfter": 1268,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 553.05,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1388,
+          "creditsAfter": 1338,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 572.55,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1458,
+          "creditsAfter": 1408,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 592.05,
+          "kind": "astro",
+          "row": 1,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1528,
+          "creditsAfter": 1478,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        }
+      ],
+      "refundTimeline": []
+    },
+    {
+      "plan": "falcon-saving",
+      "mode": "clear-field",
+      "map": "nest",
+      "seed": 3352025,
+      "result": "timeout",
+      "shields": 2,
+      "warningChecks": 1202,
+      "clusterLaneSeconds": 18.55,
+      "passedThreatSeconds": 458.65,
+      "passedThreatObservations": [
+        {
+          "firstObservedAt": 141.35,
+          "kind": "tank",
+          "row": 5,
+          "x": 1.04,
+          "health": 234
+        },
+        {
+          "firstObservedAt": 141.35,
+          "kind": "sprinter",
+          "row": 5,
+          "x": 1.03,
+          "health": 114
+        }
+      ],
+      "finalEngagement": [
+        {
+          "enemy": {
+            "kind": "tank",
+            "row": 5,
+            "x": 0.09,
+            "health": 234,
+            "attacking": true
+          },
+          "sameLaneDefenders": [
+            {
+              "kind": "falcon",
+              "col": 2,
+              "health": 1200,
+              "aimGate": 2.2,
+              "firstShotMinimumX": 2.5,
+              "canAim": false,
+              "canHitWithFreshShot": false,
+              "isBlocking": false
+            },
+            {
+              "kind": "astro",
+              "col": 0,
+              "health": 160,
+              "aimGate": 0.2,
+              "firstShotMinimumX": 0.5,
+              "canAim": false,
+              "canHitWithFreshShot": false,
+              "isBlocking": true
+            }
+          ]
+        }
+      ],
+      "recovery": {
+        "actions": [
+          {
+            "row": 5,
+            "col": 0,
+            "result": {
+              "ok": true,
+              "message": "Salvaged Astro Joe for 20 credits."
+            }
+          }
+        ],
+        "result": "won",
+        "elapsed": 600.35,
+        "shields": 1,
+        "credits": 1609,
+        "events": [
+          {
+            "type": "removed",
+            "row": 5,
+            "x": 0.5,
+            "amount": 20
+          },
+          {
+            "type": "breach",
+            "row": 5,
+            "x": 0
+          },
+          {
+            "type": "end",
+            "row": 0,
+            "x": 0
+          }
+        ]
+      },
+      "lastHostileDamageAt": 141.75,
+      "finalEnemies": [
+        {
+          "kind": "tank",
+          "row": 5,
+          "x": 0.09,
+          "health": 234,
+          "attacking": true
+        }
+      ],
+      "duration": 600,
+      "initialCredits": 230,
+      "earned": {
+        "passive": 3600,
+        "income": 0,
+        "kills": 745,
+        "calls": 64
+      },
+      "earnedTotal": 4409,
+      "spent": 3050,
+      "refunded": 0,
+      "endingCredits": 1589,
+      "purchases": 37,
+      "purchasedByKind": {
+        "astro": 31,
+        "falcon": 6
+      },
+      "deaths": 25,
+      "deathsByKind": {
+        "astro": 25
+      },
+      "salvages": 0,
+      "replacements": 25,
+      "firstPurchase": 0,
+      "lastPurchase": 592.05,
+      "firstOffensivePurchase": 0,
+      "firstAllLanesArmed": 15,
+      "firstMajorPurchase": 35.25,
+      "firstFalcon": 35.25,
+      "lastFalcon": 140,
+      "falconCount": 6,
+      "falconShots": 40,
+      "falconHits": 106,
+      "latePurchases": 12,
+      "lateResponsiveMajorPurchases": 0,
+      "timeAfterLastPurchase": 7.95,
+      "idle": 18,
+      "longestIdle": 12,
+      "calls": 2,
+      "callDetails": [
+        {
+          "at": 27.05,
+          "wave": 2,
+          "secondsSaved": 15.95,
+          "reward": 30,
+          "livingEnemies": 0
+        },
+        {
+          "at": 53.9,
+          "wave": 3,
+          "secondsSaved": 17.15,
+          "reward": 34,
+          "livingEnemies": 0
+        }
+      ],
+      "incomeByKind": {},
+      "shotCounts": {
+        "astro": 322,
+        "falcon": 40
+      },
+      "hitCounts": {
+        "astro": 285,
+        "falcon": 106
+      },
+      "majorPurchaseTimeline": [
+        {
+          "at": 35.25,
+          "kind": "falcon",
+          "row": 0,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 2,
+          "creditsBefore": 255,
+          "creditsAfter": 5,
+          "visibleLaneThreat": true,
+          "livingEnemies": 2
+        },
+        {
+          "at": 53.95,
+          "kind": "falcon",
+          "row": 1,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 2,
+          "creditsBefore": 259,
+          "creditsAfter": 9,
+          "visibleLaneThreat": false,
+          "livingEnemies": 0
+        },
+        {
+          "at": 70,
+          "kind": "falcon",
+          "row": 2,
+          "col": 3,
+          "cost": 250,
+          "replacement": false,
+          "wave": 3,
+          "creditsBefore": 254,
+          "creditsAfter": 4,
+          "visibleLaneThreat": true,
+          "livingEnemies": 3
+        },
+        {
+          "at": 100,
+          "kind": "falcon",
+          "row": 3,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 3,
+          "creditsBefore": 264,
+          "creditsAfter": 14,
+          "visibleLaneThreat": false,
+          "livingEnemies": 1
+        },
+        {
+          "at": 119.65,
+          "kind": "falcon",
+          "row": 4,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 4,
+          "creditsBefore": 264,
+          "creditsAfter": 14,
+          "visibleLaneThreat": true,
+          "livingEnemies": 6
+        },
+        {
+          "at": 140,
+          "kind": "falcon",
+          "row": 5,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 4,
+          "creditsBefore": 264,
+          "creditsAfter": 14,
+          "visibleLaneThreat": true,
+          "livingEnemies": 3
+        }
+      ],
+      "lastTransactions": [
+        {
+          "at": 455.55,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1119,
+          "creditsAfter": 1069,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 475.05,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1189,
+          "creditsAfter": 1139,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 494.55,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1229,
+          "creditsAfter": 1179,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 514.05,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1299,
+          "creditsAfter": 1249,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 533.55,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1369,
+          "creditsAfter": 1319,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 553.05,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1439,
+          "creditsAfter": 1389,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 572.55,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1509,
+          "creditsAfter": 1459,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 592.05,
+          "kind": "astro",
+          "row": 5,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1579,
+          "creditsAfter": 1529,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        }
+      ],
+      "refundTimeline": []
+    },
+    {
+      "plan": "falcon-saving",
+      "mode": "clear-field",
+      "map": "nest",
+      "seed": 3352026,
+      "result": "timeout",
+      "shields": 3,
+      "warningChecks": 1202,
+      "clusterLaneSeconds": 30.45,
+      "passedThreatSeconds": 456.85,
+      "passedThreatObservations": [
+        {
+          "firstObservedAt": 143.15,
+          "kind": "tank",
+          "row": 3,
+          "x": 1.04,
+          "health": 218.4
+        },
+        {
+          "firstObservedAt": 144.65,
+          "kind": "tank",
+          "row": 4,
+          "x": 0.8,
+          "health": 182
+        }
+      ],
+      "finalEngagement": [
+        {
+          "enemy": {
+            "kind": "tank",
+            "row": 4,
+            "x": 0.14,
+            "health": 182,
+            "attacking": true
+          },
+          "sameLaneDefenders": [
+            {
+              "kind": "falcon",
+              "col": 2,
+              "health": 1000,
+              "aimGate": 2.2,
+              "firstShotMinimumX": 2.5,
+              "canAim": false,
+              "canHitWithFreshShot": false,
+              "isBlocking": false
+            },
+            {
+              "kind": "astro",
+              "col": 0,
+              "health": 200,
+              "aimGate": 0.2,
+              "firstShotMinimumX": 0.5,
+              "canAim": false,
+              "canHitWithFreshShot": false,
+              "isBlocking": true
+            }
+          ]
+        }
+      ],
+      "recovery": {
+        "actions": [
+          {
+            "row": 4,
+            "col": 0,
+            "result": {
+              "ok": true,
+              "message": "Salvaged Astro Joe for 20 credits."
+            }
+          }
+        ],
+        "result": "won",
+        "elapsed": 600.55,
+        "shields": 2,
+        "credits": 1424,
+        "events": [
+          {
+            "type": "removed",
+            "row": 4,
+            "x": 0.5,
+            "amount": 20
+          },
+          {
+            "type": "breach",
+            "row": 4,
+            "x": 0
+          },
+          {
+            "type": "end",
+            "row": 0,
+            "x": 0
+          }
+        ]
+      },
+      "lastHostileDamageAt": 179.4,
+      "finalEnemies": [
+        {
+          "kind": "tank",
+          "row": 4,
+          "x": 0.14,
+          "health": 182,
+          "attacking": true
+        }
+      ],
+      "duration": 600,
+      "initialCredits": 230,
+      "earned": {
+        "passive": 3600,
+        "income": 0,
+        "kills": 760,
+        "calls": 64
+      },
+      "earnedTotal": 4424,
+      "spent": 3250,
+      "refunded": 0,
+      "endingCredits": 1404,
+      "purchases": 41,
+      "purchasedByKind": {
+        "astro": 35,
+        "falcon": 6
+      },
+      "deaths": 29,
+      "deathsByKind": {
+        "astro": 29
+      },
+      "salvages": 0,
+      "replacements": 29,
+      "firstPurchase": 0,
+      "lastPurchase": 594.25,
+      "firstOffensivePurchase": 0,
+      "firstAllLanesArmed": 15,
+      "firstMajorPurchase": 35.25,
+      "firstFalcon": 35.25,
+      "lastFalcon": 195,
+      "falconCount": 6,
+      "falconShots": 36,
+      "falconHits": 94,
+      "latePurchases": 13,
+      "lateResponsiveMajorPurchases": 0,
+      "timeAfterLastPurchase": 5.75,
+      "idle": 18,
+      "longestIdle": 12,
+      "calls": 2,
+      "callDetails": [
+        {
+          "at": 27.05,
+          "wave": 2,
+          "secondsSaved": 15.95,
+          "reward": 30,
+          "livingEnemies": 0
+        },
+        {
+          "at": 53.9,
+          "wave": 3,
+          "secondsSaved": 17.15,
+          "reward": 34,
+          "livingEnemies": 0
+        }
+      ],
+      "incomeByKind": {},
+      "shotCounts": {
+        "astro": 465,
+        "falcon": 36
+      },
+      "hitCounts": {
+        "astro": 435,
+        "falcon": 94
+      },
+      "majorPurchaseTimeline": [
+        {
+          "at": 35.25,
+          "kind": "falcon",
+          "row": 0,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 2,
+          "creditsBefore": 255,
+          "creditsAfter": 5,
+          "visibleLaneThreat": true,
+          "livingEnemies": 2
+        },
+        {
+          "at": 53.95,
+          "kind": "falcon",
+          "row": 1,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 2,
+          "creditsBefore": 259,
+          "creditsAfter": 9,
+          "visibleLaneThreat": true,
+          "livingEnemies": 0
+        },
+        {
+          "at": 75,
+          "kind": "falcon",
+          "row": 2,
+          "col": 3,
+          "cost": 250,
+          "replacement": false,
+          "wave": 3,
+          "creditsBefore": 259,
+          "creditsAfter": 9,
+          "visibleLaneThreat": true,
+          "livingEnemies": 5
+        },
+        {
+          "at": 107.55,
+          "kind": "falcon",
+          "row": 3,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 4,
+          "creditsBefore": 264,
+          "creditsAfter": 14,
+          "visibleLaneThreat": true,
+          "livingEnemies": 5
+        },
+        {
+          "at": 140,
+          "kind": "falcon",
+          "row": 4,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 4,
+          "creditsBefore": 264,
+          "creditsAfter": 14,
+          "visibleLaneThreat": true,
+          "livingEnemies": 5
+        },
+        {
+          "at": 195,
+          "kind": "falcon",
+          "row": 5,
+          "col": 2,
+          "cost": 250,
+          "replacement": false,
+          "wave": 4,
+          "creditsBefore": 274,
+          "creditsAfter": 24,
+          "visibleLaneThreat": false,
+          "livingEnemies": 1
+        }
+      ],
+      "lastTransactions": [
+        {
+          "at": 457.75,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 934,
+          "creditsAfter": 884,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 477.25,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1004,
+          "creditsAfter": 954,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 496.75,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1074,
+          "creditsAfter": 1024,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 516.25,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1144,
+          "creditsAfter": 1094,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 535.75,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1214,
+          "creditsAfter": 1164,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 555.25,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1284,
+          "creditsAfter": 1234,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 574.75,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1324,
+          "creditsAfter": 1274,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        },
+        {
+          "at": 594.25,
+          "kind": "astro",
+          "row": 4,
+          "col": 0,
+          "cost": 50,
+          "replacement": true,
+          "wave": 4,
+          "creditsBefore": 1394,
+          "creditsAfter": 1344,
+          "visibleLaneThreat": true,
+          "livingEnemies": 1
+        }
+      ],
+      "refundTimeline": []
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "sourceCommit": "da0798f59866cd23ae6fb59cab89218b9a4f6e57",
+  "measuredAtUTC": "2026-10-31T19:51:15.221Z",
+  "browserVersion": "156.0.8078.4",
+  "complete": true,
+  "host": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M5",
+    "node": "v24.14.1"
+  },
+  "conditions": [
+    {
+      "name": "local-control",
+      "network": null,
+      "cpuRate": 1,
+      "startups": [
+        {
+          "run": 0,
+          "firstPlayableMs": 624,
+          "initialImages": 23,
+          "initialImagePayload": 2369834
+        },
+        {
+          "run": 1,
+          "firstPlayableMs": 556,
+          "initialImages": 23,
+          "initialImagePayload": 2369834
+        },
+        {
+          "run": 2,
+          "firstPlayableMs": 580,
+          "initialImages": 23,
+          "initialImagePayload": 2369834
+        }
+      ],
+      "combat": {
+        "purchased": 20,
+        "wallMs": 83921,
+        "phase": "Outpost secured",
+        "lateWaveFrameSamples": 1822,
+        "medianFrameGapMs": 16.7,
+        "p95FrameGapMs": 33.4,
+        "gapsOver50ms": 4,
+        "jsHeapUsedBytes": 26296616,
+        "jsHeapAfterFiveRestartsBytes": 37690324,
+        "canvasesAfterFiveRestarts": 1,
+        "errors": []
+      },
+      "transitions": [
+        {
+          "style": "original",
+          "wallMs": 341,
+          "newUniqueImages": 27,
+          "creditsPreserved": true
+        },
+        {
+          "style": "expedition",
+          "wallMs": 207,
+          "newUniqueImages": 0,
+          "creditsPreserved": true
+        },
+        {
+          "style": "original",
+          "wallMs": 163,
+          "newUniqueImages": 0,
+          "creditsPreserved": true
+        },
+        {
+          "style": "expedition",
+          "wallMs": 116,
+          "newUniqueImages": 0,
+          "creditsPreserved": true
+        },
+        {
+          "map": "nest",
+          "wallMs": 260,
+          "newUniqueImages": 3,
+          "readyCredits": "230"
+        }
+      ]
+    },
+    {
+      "name": "constrained",
+      "network": {
+        "latencyMs": 150,
+        "downloadBytesPerSec": 200000,
+        "uploadBytesPerSec": 75000
+      },
+      "cpuRate": 4,
+      "startups": [
+        {
+          "run": 0,
+          "firstPlayableMs": 15199,
+          "initialImages": 23,
+          "initialImagePayload": 2369834
+        },
+        {
+          "run": 1,
+          "firstPlayableMs": 15371,
+          "initialImages": 23,
+          "initialImagePayload": 2369834
+        },
+        {
+          "run": 2,
+          "firstPlayableMs": 15443,
+          "initialImages": 23,
+          "initialImagePayload": 2369834
+        }
+      ],
+      "combat": {
+        "purchased": 20,
+        "wallMs": 83803,
+        "phase": "Outpost secured",
+        "lateWaveFrameSamples": 1036,
+        "medianFrameGapMs": 33.4,
+        "p95FrameGapMs": 50.1,
+        "gapsOver50ms": 54,
+        "jsHeapUsedBytes": 36693460,
+        "jsHeapAfterFiveRestartsBytes": 27092016,
+        "canvasesAfterFiveRestarts": 1,
+        "errors": []
+      },
+      "transitions": [
+        {
+          "style": "original",
+          "wallMs": 15015,
+          "newUniqueImages": 27,
+          "creditsPreserved": true
+        },
+        {
+          "style": "expedition",
+          "wallMs": 373,
+          "newUniqueImages": 0,
+          "creditsPreserved": true
+        },
+        {
+          "style": "original",
+          "wallMs": 409,
+          "newUniqueImages": 0,
+          "creditsPreserved": true
+        },
+        {
+          "style": "expedition",
+          "wallMs": 393,
+          "newUniqueImages": 0,
+          "creditsPreserved": true
+        },
+        {
+          "map": "nest",
+          "wallMs": 1509,
+          "newUniqueImages": 3,
+          "readyCredits": "230"
+        }
+      ]
+    }
+  ],
+  "limitations": "Local production-build preview, headless Chromium, emulated network/CPU; not a physical-phone, native Safari, remote-hosting, controlled-GC, GPU-memory, or worst-case FPS claim."
+}

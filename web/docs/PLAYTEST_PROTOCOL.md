@@ -40,3 +40,7 @@ Use the same verified commit and record browser, viewport/device, input type, ar
 ## Synthesis
 
 Keep observations separate from interpretations. Report each issue's frequency out of completed sessions, severity (blocked, costly/repeated confusion, minor friction), and concrete evidence. Five sessions can find usability problems; they do not establish population win rates or statistical enjoyment claims. Retest fixes with new players when possible. Do not silently merge agent runs into participant counts.
+
+## Expedition 0.4 addition
+
+Use the [ready-to-use kit and blank results sheet](../playtest/README.md). Observe firing-direction comprehension and response to passed-gun warnings. Keep the prompted direction task separate from unassisted play. On Nest, record understanding of the late paired lane relay, reserve spending, and whether splash/barrier choices feel useful. No independent sessions have been completed or invented.

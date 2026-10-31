@@ -27,7 +27,19 @@ test("late legal deployment explains passed direct fire, supports rescue, and cl
     page.getByRole("gridcell", { name: /Lane 6, tile 9, Astro Joe/ }),
   ).toBeVisible();
   await expect(page.locator("#direction-help")).toHaveAttribute("open", "");
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  const explanation = page.locator("#direction-help summary");
+  expect((await explanation.boundingBox())!.height).toBeGreaterThanOrEqual(44);
   await page.locator("#direction-help summary").click();
+  await expect(page.locator("#direction-help")).not.toHaveAttribute("open", "");
+  await explanation.press("Enter");
+  await expect(page.locator("#direction-help")).toHaveAttribute("open", "");
+  await explanation.press("Enter");
   await expect(page.locator("#direction-help")).not.toHaveAttribute("open", "");
   await page
     .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
