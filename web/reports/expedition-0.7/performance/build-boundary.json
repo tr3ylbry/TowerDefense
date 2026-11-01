@@ -1,0 +1,20 @@
+{
+  "baselineCommit": "1d50373cc9cec50ac826840a03f61b77c736ff57",
+  "baselineBundlesVerifiedAgainst": "reports/expedition-0.6/performance/build-boundary.json",
+  "baselineBundles": {
+    "assets/battlefield-nJqa0JkJ.js": "917424c9f922520e731d37469d72a7f7fa8e7121315f638b24c6ac3d01f4648a",
+    "assets/index-5uMBKf0k.css": "8fef60fc2e5536e2f261ba82ee29dcdfb63ec37484a8d6e7179bb8374a214c7b",
+    "assets/index-DBFINsuQ.js": "fa32b6d7f14a6ae622b0ac1288c1eb7d502ad2c1d9fd4d048dff043503813a60",
+    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+  },
+  "afterBundles": {
+    "assets/battlefield-CPWYBpWt.js": "fdfd01374d6586b8e386f5923168acce2e1a914b76d9efdc78f42eb1ed935336",
+    "assets/index-DLObCRMJ.js": "718077dff2ec6559e720a245acb0f85be36764b2c1f3e9fbf2fa7c1a6e090c4e",
+    "assets/index-xARp2dAT.css": "2cbdb0d79c68953050930c594956e68fec05d9b7599fad540f17240d2a8740f7",
+    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+  },
+  "note": "Runtime source hashes are recorded by profile-0.7.mjs; final delivery commit is linked in the milestone response.",
+  "runtimeCommit": "f815c85564250cd0b37960318c255a47ade7d3a8",
+  "researchCommit": "cce0ee976a6e2e42f75a7cbe60698a0938184ee2",
+  "sourceInventoryMatchesCurrent": true
+}

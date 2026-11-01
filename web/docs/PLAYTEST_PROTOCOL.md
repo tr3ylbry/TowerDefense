@@ -2,7 +2,7 @@
 
 ## Status and recruitment
 
-No independent sessions were completed during Expeditions 0.3–0.6. Agent-driven browser sessions and deterministic policies are engineering evidence, not human feedback. Target five independent first-time players, with at least two using a physical phone if available. Obtain consent before recording; use anonymous session IDs and avoid collecting personal data. A session may proceed without a recording if the player prefers observer notes.
+No independent sessions were completed during Expeditions 0.3–0.7. Agent-driven browser sessions and deterministic policies are engineering evidence, not human feedback. Target five independent first-time players, with at least two using a physical phone if available. Obtain consent before recording; use anonymous session IDs and avoid collecting personal data. A session may proceed without a recording if the player prefers observer notes.
 
 ## Conditions
 
@@ -13,7 +13,7 @@ Observe first, then ask. A question directing attention to a unit or control is 
 ## Session (15–20 minutes)
 
 1. Ask “What do you think your objective is?” Record their answer verbatim.
-2. After the objective question, invite them to continue. Start the deployment timer when the player activates Begin mission and stop when the first defender is actually placed. Record seconds, selected defender, placement errors, help required, and whether they discover the crew cards or keyboard. Startup readiness is a separate observation; do not include downloads or the observer's opening question in deployment time. If they never deploy, record `not completed` rather than a made-up duration.
+2. After the objective question, invite them to continue. Observe mode discovery before offering any Campaign task. Record the spontaneous mode choice and any later prompt separately, using the existing kit. A standalone choice is an observation, not a failed task. Start the deployment timer when the player activates Begin mission and stop when the first defender is actually placed. Record seconds, selected defender, placement errors, help required, and whether they discover the crew cards or keyboard. Startup readiness is a separate observation; do not include downloads or the observer's opening question in deployment time. If they never deploy, record `not completed` rather than a made-up duration.
 3. Observe opening spending. Ask after the decision “What made you buy that?” Record which income units they notice and what they expect them to do. Do not treat a particular strategy as correct.
 4. At the first Tank encounter, first observe their chosen response. Then ask “What seems different about this enemy?” Record the unprompted behavior separately from the prompted answer and whether information comes from the field, warnings, unit details, or guide.
 5. Note whether Call next wave is discovered or used without prompting. Before a prompted use, ask “What would happen if you used that?” Record understanding of credits, the three-second lead, surviving enemies, and future schedule shift before they click. Do not count the question as spontaneous discovery.
@@ -56,4 +56,4 @@ On Nest, record understanding of the late paired lane relay, reserve spending, a
 
 ## Optional prompted campaign task
 
-After the unassisted opening and replay-interest question, use task 10 in the existing kit. Record discovery, briefing comprehension, locked-state explanation, shield-to-star explanation, and expectations about local-only progress in `open_comments` with prompts identified. Observe actual next/reload behavior only if a genuine win occurs. A later mission not reached in the time limit is not a failed player. No additional participant sheet, invented completions or separate protocol is needed.
+First observe opening Campaign discovery without directing attention to it. After the unassisted opening and replay-interest question, use task 10 in the existing kit if Campaign was not chosen spontaneously. Record discovery, briefing comprehension, locked-state explanation, shield-to-star explanation, and expectations about local-only progress in `open_comments` with prompts identified. Observe actual next/reload behavior only if a genuine win occurs. A later mission not reached in the time limit is not a failed player. No additional participant sheet, invented completions or separate protocol is needed.
