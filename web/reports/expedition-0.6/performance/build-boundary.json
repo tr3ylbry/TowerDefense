@@ -1,0 +1,19 @@
+{
+  "baselineCommit": "5647f09b44520af8a0d7382b3532ac2c8362c914",
+  "baselineBundlesVerifiedAgainst": "reports/expedition-0.5/performance/after-source-boundary.json",
+  "baselineBundles": {
+    "assets/battlefield-C0dv3LwS.js": "5f85953900629222f56a909adb358114a90e0aeb8b89252def4be3562c61560c",
+    "assets/index-B-2fGR3j.js": "3c6fbfc3df4e4c102b3cc5dff50fb76008a0b297244cbd8015c87990d0bfe80d",
+    "assets/index-BiMgK-NT.css": "3ca9b2a463f10d165d8f148ebbec925d4d1403bf05d618001cef6b2e1c68a439",
+    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+  },
+  "runtimeCommit": "484963d0a833f0290bf820066dcaed16560717cd",
+  "afterBundles": {
+    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276",
+    "assets/battlefield-B_FaKuNP.js": "7371b782eecbb06bf1cd66cb02f13949bd88befe4182459632891983851133da",
+    "assets/index-6RXat-_G.css": "ebc7da62aafc97c3b63740e51e46363e36385eba7027912f99b0efabd7bec014",
+    "assets/index-BdgvfhWm.js": "fa137b592310ef0dfdec950084d70d59eaf632aea28775c5a2136255e51238e1"
+  },
+  "sourceInventoryMatchesCurrent": true,
+  "notes": "Documentation/evidence commits do not alter the measured runtime. The earlier 0.5 boundary names a precursor base commit plus final working sources; its bundle hashes match this frozen artifact exactly."
+}

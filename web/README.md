@@ -2,9 +2,9 @@
 
 The full original character and map roster, built with TypeScript, Phaser, and Vite. This is Trey Bryant's independent continuation of the original CSC 335 team project by Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.
 
-Expedition 0.5 completes the illustrated nine-defender roster and all three environments, introduces the original Frontier Flagship interpretation, and reduces initial image payload by 74.7% in matched production measurements. Constrained readiness improves from 14.8 s to 6.0 s under the same desktop emulation profile; normal startup and sampled combat frame times remain effectively unchanged. All prices, combat statistics, acid coordinates and wave schedules remain unchanged. Backgrounded dialogs now require explicit resume, and enlarged phone content reflows its controls.
+Expedition 0.6 adds a six-mission campaign across the three illustrated environments, local progression, shield-based stars, replay and next-mission navigation. The original three standalone missions and all combat/economy rules remain intact. Mission content is separate from reusable terrain and art, with one deterministic simulation for both modes. Saves are versioned, validated and recover valid records from damaged data; play continues in memory if storage is unavailable.
 
-See the [0.5 milestone report](docs/EXPEDITION_0_5.md), [art direction](docs/ART_DIRECTION.md), [art provenance](public/art/expedition/README-0.5.md), [current performance evidence](reports/expedition-0.5/performance/README.md), [preserved tactical/economy research](reports/expedition-0.4/research/README.md), and [five-player testing kit](playtest/README.md). The [0.4 report](docs/EXPEDITION_0_4.md) preserves the prior baseline. Independent human, physical-device and native Safari validation remain pending. Campaigns, upgrades, saves and an editor remain future work; hosting is separate.
+See the [0.6 milestone report](docs/EXPEDITION_0_6.md), [campaign architecture and save schema](docs/CAMPAIGN_ARCHITECTURE.md), [campaign balance study](reports/expedition-0.6/research/README.md), [0.5 art direction](docs/ART_DIRECTION.md), [provenance](ASSET_CREDITS.md), and [existing five-player kit](playtest/README.md). Independent player and physical-device evidence remain outstanding; native desktop Safari received a focused smoke check. Hosting is separate.
 
 ## Run locally
 
@@ -20,7 +20,18 @@ Open the Local URL printed by Vite. No API keys, account, database, or backend s
 
 ## Play
 
-Choose **The Canyon**, **Sky Bridge**, or **The Nest** using Change destination. Each mission has six lanes, nine columns, four distinct waves, and all nine original defenders. All six original alien types appear in every mission: Little Green Men, Grunt, Sprinter, ManHunter, Tank, and Gargantua. Each breach costs one of three outpost shields. Clear every scheduled enemy with a shield remaining to win.
+Choose **Campaign** in the main navigation or destination selector to enter Mission control. Review an unlocked mission, prepare its battlefield, then Begin. Win with one, two or three shields to earn the same number of stars and unlock the next mission. Best stars survive losses and replay; the board shows completion out of six and stars out of eighteen. Returning to Mission control pauses the current deployment; preparing another mission explicitly abandons it. Your progress lives in this browser only; there is no mid-mission save. Reset campaign progress asks for confirmation and leaves unrelated settings alone. A save warning means you can keep playing, but unsaved progress may be lost when the tab closes.
+
+| Mission               | Environment | Identity                                        |
+| --------------------- | ----------- | ----------------------------------------------- |
+| 01 First Contact      | The Canyon  | Original open-terrain mission                   |
+| 02 Canyon Escalation  | The Canyon  | Runner sweeps and a plated pincer               |
+| 03 Broken Ground      | Sky Bridge  | Original twelve-acid-cell crossing              |
+| 04 Bridge Under Siege | Sky Bridge  | Clustered mixed assaults and escorts            |
+| 05 Into the Nest      | The Nest    | Original sixteen-acid-cell paired relays        |
+| 06 Heart of the Swarm | The Nest    | Heavy anchors, escorts and a three-stage finale |
+
+**Standalone** remains the default. Choose The Canyon, Sky Bridge or The Nest with Change destination, or Standalone destinations from Mission control. Those original schedules are freely accessible and do not award campaign progress. Every mission has six lanes, nine columns, four waves and the complete roster. Each breach costs one of three shields. Clear every scheduled enemy with a shield remaining to win.
 
 | Key | Defender            | Cost | Browser role                                  |
 | --- | ------------------- | ---- | --------------------------------------------- |
@@ -64,14 +75,18 @@ npx playwright install chromium firefox webkit
 npm run test:e2e
 ```
 
-`check` runs deterministic simulation tests, strict TypeScript checking, and a production build. There are 98 rule tests and 26 browser scenarios per engine (Chromium, Firefox, WebKit). New checks cover deferred/cached artwork, slow and failed transitions, preserved mission state, economy guidance and receipts, touch targets, landscape, audio gestures, and repeated lifecycles. Browser tests also cover deployment, economy while paused, salvage, restart, nine-key crew selection, both restored maps, acid-tile rejection, safe destination changes, the alien field guide, narrow viewports, saved motion preferences, and asset-load failures. They also check desktop focus controls, phone overview/zoom, all nine crew cards, automatic crew scrolling, plating guidance, live art comparison, keyboard wave calls, warning updates, and loading failure for new artwork. On a local machine with Chrome already installed, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e -- --project=chromium` uses that browser instead. Desktop WebKit tests are not physical Safari/iOS testing. See the milestone report for local engine availability and CI results.
+`check` runs deterministic simulation tests, strict TypeScript checking, and a production build. There are 151 rule tests and 42 browser scenarios per engine (Chromium, Firefox, WebKit). New checks cover deferred/cached artwork, slow and failed transitions, preserved mission state, economy guidance and receipts, touch targets, landscape, audio gestures, and repeated lifecycles. Browser tests also cover deployment, economy while paused, salvage, restart, nine-key crew selection, both restored maps, acid-tile rejection, safe destination changes, the alien field guide, narrow viewports, saved motion preferences, and asset-load failures. They also check desktop focus controls, phone overview/zoom, all nine crew cards, automatic crew scrolling, plating guidance, live art comparison, keyboard wave calls, warning updates, and loading failure for new artwork. On a local machine with Chrome already installed, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e -- --project=chromium` uses that browser instead. Desktop WebKit tests are not physical Safari/iOS testing. See the milestone report for local engine availability and CI results.
 
 The simulation tests include a full four-wave victory on every map using only earned credits, plus undefended losses. They also check every defender's price and health, original ammunition and three-shot volleys, projectile speeds, actual cluster damage, both income units, map restrictions and selection, frame-size independence, speed changes, input bounds, snapshot isolation, and restart cleanup. New checks verify wind-up/release timing (including pause and salvage), interpolation state, actual armored impacts, and 108 winning specialist/economy runs across twelve seeds and three maps. Twelve fixed twelve-Astro Canyon runs now lose, preventing the old unattended opening from remaining a guaranteed win. An additional 36 clear-field early-call specialist runs win across the same maps/seeds and finish earlier than their automatic-schedule counterparts. Tests cover capped/duplicate/near-deadline rewards, schedule spacing and lane order, pause and speed changes, warning boundaries, pressure/destruction events, and cleanup. These synthetic strategies are regression checks, not exhaustive balance proof.
 
 ## Structure
 
 ```text
-src/game/content.ts      Typed unit definitions and reproducible wave schedules
+src/game/environments.ts Reusable terrain, environment IDs and geometry
+src/game/missions.ts     Six authored missions and stable campaign order
+src/game/content.ts      Typed units, seeded spawns and original MAPS compatibility
+src/game/validate-content.ts Lightweight content authoring checks
+src/campaign/            Progression, result integrity, isolated saves and campaign board
 src/game/simulation.ts   Fixed-step rules and mutable wave timeline; no browser/Phaser
 src/game/waves.ts        Early-call reward and short-horizon warning rules
 src/game/combat.ts       Shared preserved aim/muzzle/collision geometry
@@ -101,9 +116,9 @@ npm run preview
 
 The deployable static site is `web/dist`. Its relative asset base supports hosting under a subsection such as a Treydmark Labs game path. Hosting, portfolio presentation, domains, and publication are owned separately by Treydmark Tech. The simulation can also be mounted behind a future React wrapper; the game loop does not require React renders.
 
-Phaser is an isolated dynamic chunk, about 357 KB gzip. The first mission requests only the current environment and selected character style; other backgrounds, acid terrain, and school comparison sheets load when needed. Opening the destination selector also loads its thumbnails. Successful textures and animations remain cached across destinations and restarts. Failed transitions keep the current mission paused and offer retry or cancellation. See the [current controlled measurements](reports/expedition-0.4/performance/README.md); the 0.3 payload figure is historical and is not claimed as the 0.4 payload.
+Phaser is an isolated dynamic chunk, about 357 KB gzip. The first mission requests only the current environment and selected character style; other backgrounds, acid terrain, and school comparison sheets load when needed. Opening the destination selector also loads its thumbnails. Successful textures and animations remain cached across destinations and restarts. Failed transitions keep the current mission paused and offer retry or cancellation. See the [current matched measurements](reports/expedition-0.6/performance/README.md) and [0.5 delivery evidence](reports/expedition-0.5/performance/README.md). Campaign descriptions add text/code, not another initial art dependency; scenery is shared between missions.
 
-The new three-defender group totals 607,605 bytes. Full-resolution sources stay outside `public/` and the deployable build. [Prototype prompts](public/art/expedition/README.md), [0.2 provenance](public/art/expedition/README-0.2.md), [0.3 prompts and evaluation](public/art/expedition/README-0.3.md), and [0.4 defender provenance](public/art/expedition/README-0.4.md) record their origins. Four defenders and Bridge/Nest scenery retain school artwork. All fonts are local system fonts; no analytics or remote runtime APIs are used.
+All fifteen illustrated character cutouts total 508,362 bytes; initial imagery totals 600,697 bytes. Full-resolution sources stay outside `public/` and the deployable build. [Prototype prompts](public/art/expedition/README.md), [0.2 provenance](public/art/expedition/README-0.2.md), [0.3 prompts and evaluation](public/art/expedition/README-0.3.md), and [0.4 defender provenance](public/art/expedition/README-0.4.md) record their origins. All nine defenders, six aliens and three environments have Expedition art. Original comparison retains school art; external provenance remains a public-release issue. All fonts are local system fonts; no analytics or remote runtime APIs are used.
 
 ## Original version and content
 

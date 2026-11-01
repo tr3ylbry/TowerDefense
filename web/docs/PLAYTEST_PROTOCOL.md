@@ -2,7 +2,7 @@
 
 ## Status and recruitment
 
-No independent sessions were completed during Expeditions 0.3–0.4, and none are supplied by this Expedition 0.5 kit review. Agent-driven browser sessions and deterministic policies are engineering evidence, not human feedback. Target five independent first-time players, with at least two using a physical phone if available. Obtain consent before recording; use anonymous session IDs and avoid collecting personal data. A session may proceed without a recording if the player prefers observer notes.
+No independent sessions were completed during Expeditions 0.3–0.6. Agent-driven browser sessions and deterministic policies are engineering evidence, not human feedback. Target five independent first-time players, with at least two using a physical phone if available. Obtain consent before recording; use anonymous session IDs and avoid collecting personal data. A session may proceed without a recording if the player prefers observer notes.
 
 ## Conditions
 
@@ -19,7 +19,7 @@ Observe first, then ask. A question directing attention to a unit or control is 
 5. Note whether Call next wave is discovered or used without prompting. Before a prompted use, ask “What would happen if you used that?” Record understanding of credits, the three-second lead, surviving enemies, and future schedule shift before they click. Do not count the question as spontaneous discovery.
 6. Let them finish or fail. Note pauses, replacements, salvage, losses, confusion, long idle periods, and self-reported boring or overwhelming moments. Record the mission time of each observation.
 7. At an actual victory or defeat, ask how many credits remain and why. Observe whether they find Mission economy themselves; if needed, prompt them to open it and label that assistance. Ask them to explain one income entry, purchases, and the ending balance in their own words. Check scrolling and Play again reachability on the device; record actual actions rather than whether the observer thinks the panel looks clear.
-8. Ask whether they want another mission and why before directing them to one. If they continue, invite a restart or another destination. On a phone, ask them to inspect the far-right field and find the ninth, flagship defender without explaining scrolling/zoom. Expedition 0.5 uses Frontier Flagship for the public-facing replacement of the historical Millennium Falcon; record the actual label and art style from the tested commit. Observe panning, targeting mistakes, warnings, landscape layout, and reachability.
+8. Ask whether they want another mission and why before directing them to one. If they continue, invite a restart or another destination. On a phone, ask them to inspect the far-right field and find the ninth, flagship defender without explaining scrolling/zoom. Since Expedition 0.5 the browser uses Frontier Flagship for the public-facing replacement of the historical Millennium Falcon; record the actual label and art style from the tested commit. Observe panning, targeting mistakes, warnings, landscape layout, and reachability.
 9. Ask for the most confusing moment and their favorite decision. Avoid leading questions about the new features. Optional direction/Nest tasks below come after these unassisted observations and replay-interest questions.
 
 ## Session record
@@ -53,3 +53,7 @@ Keep observations separate from interpretations. Report each issue's frequency o
 Use the [ready-to-use kit and blank results sheet](../playtest/README.md). For the direction task, start fresh, wait for a Scout to cross an empty tile, then ask the player to place a gun to its right. Observe whether the warning explains why it cannot directly hit that Scout and whether they find an effective empty tile to the left. Do not require deliberately losing shields. Keep this prompted task separate from natural play and do not count successful instructed recovery as spontaneous understanding.
 
 On Nest, record understanding of the late paired lane relay, reserve spending, and whether splash/barrier choices feel useful. Ask about the actual visible briefing, without telling the player the preferred tactic. If waves 3–4 are not reached, record that limitation. These tasks extend the existing protocol; they do not create more participants. No independent sessions have been completed or invented.
+
+## Optional prompted campaign task
+
+After the unassisted opening and replay-interest question, use task 10 in the existing kit. Record discovery, briefing comprehension, locked-state explanation, shield-to-star explanation, and expectations about local-only progress in `open_comments` with prompts identified. Observe actual next/reload behavior only if a genuine win occurs. A later mission not reached in the time limit is not a failed player. No additional participant sheet, invented completions or separate protocol is needed.
