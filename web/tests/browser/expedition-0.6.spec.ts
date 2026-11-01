@@ -129,6 +129,28 @@ test("public-control expedition completes all six missions, persists stars, repl
     await expect(page.locator("#overlay-title")).toHaveText(
       `${MISSIONS[id].title} complete.`,
     );
+    if (index === 0) {
+      for (const viewport of [
+        { width: 390, height: 844 },
+        { width: 844, height: 390 },
+      ]) {
+        await page.setViewportSize(viewport);
+        expect(
+          await page
+            .locator("#overlay")
+            .evaluate((frame) => getComputedStyle(frame).overflowY),
+        ).toBe("auto");
+        for (const control of [
+          "#start",
+          "#campaign-next",
+          "#campaign-return",
+        ]) {
+          await page.locator(control).scrollIntoViewIfNeeded();
+          await expect(page.locator(control)).toBeInViewport();
+        }
+      }
+      await page.setViewportSize({ width: 1000, height: 1000 });
+    }
     await page.locator("#mission-receipt summary").click();
     const transactions = await page
       .locator("#receipt-sources tbody td")
@@ -263,7 +285,7 @@ test("active campaign navigation is explicit and backgrounded dialogs never auto
 
 test("campaign reset requires confirmation and isolates motion and other browser data", async ({
   page,
-}) => {
+}, info) => {
   test.setTimeout(90_000);
   await fixture(page, ["first-contact", "canyon-escalation"]);
   await page.addInitScript(() => {
@@ -286,7 +308,21 @@ test("campaign reset requires confirmation and isolates motion and other browser
     timeout: 45_000,
   });
   await expect(page.locator("#mission-rating")).toContainText("Best: 3/3");
-  await openBoard(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(
+    await page
+      .locator("#overlay")
+      .evaluate((frame) => getComputedStyle(frame).overflowY),
+  ).toBe("auto");
+  for (const control of ["#start", "#campaign-return"]) {
+    await page.locator(control).scrollIntoViewIfNeeded();
+    await expect(page.locator(control)).toBeInViewport();
+  }
+  await page.screenshot({
+    path: info.outputPath("campaign-phone-collapsed-defeat.png"),
+    fullPage: true,
+  });
+  await page.locator("#campaign-return").click();
   await page.locator("#campaign-reset").click();
   await page.locator("#campaign-reset-confirm").click();
   await expect(page.locator("#campaign-reset")).toBeFocused();

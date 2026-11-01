@@ -2614,3 +2614,10 @@ dialog li {
     flex-direction: column;
   }
 }
+
+/* Campaign outcomes include extra navigation even when the economy disclosure is closed. */
+.mission-overlay:has(#campaign-result-actions:not([hidden])) {
+  align-items: start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
