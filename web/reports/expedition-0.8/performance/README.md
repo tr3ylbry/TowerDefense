@@ -1,0 +1,11 @@
+# Expedition 0.8 production comparison
+
+Frozen baseline: `3b5bf7fd5e3160d87def616e9e3cb35a7448e723`, copied to a task-owned temporary directory before editing. Both variants were served with the same installed Vite preview. `build-boundary.json` hashes the actual before/after HTML, CSS and JS; `source-sha256.json` identifies final runtime inputs. The measured source includes the final narrow-screen stacking correction. No browser suites ran concurrently with these samples.
+
+Reproduce from `web/`: serve the preserved baseline at port 4174 and current `npm run build` output at 4175, then run `PLAYWRIGHT_BROWSERS_PATH=/private/tmp/ava-playwright node scripts/research/profile-0.8.mjs`. `AVA_BEFORE_URL` and `AVA_AFTER_URL` override the URLs. The script uses installed Playwright/Chromium; no new dependency is required.
+
+Three fresh contexts per variant/condition, alternating before/after. Readiness means an enabled Begin mission, observed with a MutationObserver against navigation time. Normal medians: 148.7→145.0 ms. Constrained medians: 6,037.9→6,053.3 ms, using 4× CPU throttle, 150 ms latency, 200,000 B/s download and 75,000 B/s upload. Small samples do not establish a speed difference. Initial unique image bodies stay 600,697 bytes across 21 URLs; total transfer including navigation grows 1,010,190→1,010,644 bytes (+454, 0.045%). `startup.json` contains every resource and sample.
+
+The warm navigation probe repeats 36 ready-state mission selections, three cycles per art style. All-unlocked version-1 storage is an explicitly labelled navigation fixture; it provides no victory evidence. Active WebGL handles stay 45 initially, 64 after all Expedition environments, 100 after Original assets, and 100 on returning. One canvas throughout; no page errors. Previewing the board adds its two thumbnails; selecting another Canyon mission reuses its scene. `cache.json` contains all observations and URLs. These are texture-handle/cache observations, not GPU memory measurements or leak proof.
+
+No scene, asset, simulation or renderer optimization was introduced. Retained browser tests cover real combat, repeated restarts, results, art changes, delayed/failed artwork, retry/cancel and explicit resume after absence. This milestone makes no new FPS, heap or physical-device claim.

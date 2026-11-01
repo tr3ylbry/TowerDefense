@@ -1,0 +1,169 @@
+{
+  "browser": "156.0.8078.4",
+  "method": "All-unlocked validated storage fixture only for navigation, not victory evidence. 36 ready-state mission selections through public controls, three cycles per style. Texture handle counts do not measure GPU memory or prove no leaks.",
+  "observations": [
+    {
+      "label": "initial-standalone",
+      "textures": {
+        "created": 64,
+        "deleted": 19,
+        "active": 45
+      },
+      "uniqueImages": 21,
+      "canvases": 1
+    },
+    {
+      "label": "board-preview-only",
+      "textures": {
+        "created": 64,
+        "deleted": 19,
+        "active": 45
+      },
+      "uniqueImages": 23,
+      "canvases": 1
+    },
+    {
+      "label": "same-environment",
+      "textures": {
+        "created": 64,
+        "deleted": 19,
+        "active": 45
+      },
+      "uniqueImages": 23,
+      "canvases": 1
+    },
+    {
+      "label": "expedition-six-mission-cycle-1",
+      "textures": {
+        "created": 123,
+        "deleted": 59,
+        "active": 64
+      },
+      "uniqueImages": 24,
+      "canvases": 1
+    },
+    {
+      "label": "expedition-six-mission-cycle-2",
+      "textures": {
+        "created": 179,
+        "deleted": 115,
+        "active": 64
+      },
+      "uniqueImages": 24,
+      "canvases": 1
+    },
+    {
+      "label": "expedition-six-mission-cycle-3",
+      "textures": {
+        "created": 235,
+        "deleted": 171,
+        "active": 64
+      },
+      "uniqueImages": 24,
+      "canvases": 1
+    },
+    {
+      "label": "original-six-mission-cycle-1",
+      "textures": {
+        "created": 359,
+        "deleted": 259,
+        "active": 100
+      },
+      "uniqueImages": 60,
+      "canvases": 1
+    },
+    {
+      "label": "original-six-mission-cycle-2",
+      "textures": {
+        "created": 415,
+        "deleted": 315,
+        "active": 100
+      },
+      "uniqueImages": 60,
+      "canvases": 1
+    },
+    {
+      "label": "original-six-mission-cycle-3",
+      "textures": {
+        "created": 471,
+        "deleted": 371,
+        "active": 100
+      },
+      "uniqueImages": 60,
+      "canvases": 1
+    },
+    {
+      "label": "return-to-expedition",
+      "textures": {
+        "created": 471,
+        "deleted": 371,
+        "active": 100
+      },
+      "uniqueImages": 60,
+      "canvases": 1
+    }
+  ],
+  "errors": [],
+  "images": [
+    "/art/expedition/ranger.webp",
+    "/art/expedition/money-bush.webp",
+    "/art/expedition/asteroid.webp",
+    "/art/expedition/moon-zeus.webp",
+    "/art/expedition/explosive-astro-joe.webp",
+    "/art/expedition/startrell-cluggins.webp",
+    "/art/expedition/tars.webp",
+    "/art/expedition/money-tree.webp",
+    "/art/expedition/frontier-flagship-compact.webp",
+    "/art/expedition/canyon-0.5.webp",
+    "/art/projectile-astro-joe-ammo.png",
+    "/art/projectile-explosive-astro-joe-ammo.png",
+    "/art/projectile-startrell-cluggins-ammo.png",
+    "/art/projectile-tars-ammo.png",
+    "/art/projectile-moon-zeus-ammo.png",
+    "/art/expedition/scout.webp",
+    "/art/expedition/grunt.webp",
+    "/art/expedition/sprinter.webp",
+    "/art/expedition/manhunter.webp",
+    "/art/expedition/plated-crawler.webp",
+    "/art/expedition/gargantua.webp",
+    "/art/expedition/sky-bridge.webp",
+    "/art/expedition/nest.webp",
+    "/art/expedition/acid-pool.webp",
+    "/art/stage-three.webp",
+    "/art/acid-pool.png",
+    "/art/astro-joe-idle.png",
+    "/art/astro-joe-fire.png",
+    "/art/money-bush-idle.png",
+    "/art/asteroid-idle.png",
+    "/art/moon-zeus-idle.png",
+    "/art/moon-zeus-fire.png",
+    "/art/explosive-astro-joe-idle.png",
+    "/art/startrell-cluggins-idle.png",
+    "/art/startrell-cluggins-fire.png",
+    "/art/tars-idle.png",
+    "/art/tars-fire.png",
+    "/art/money-tree-idle.png",
+    "/art/millennium-falcon-idle.png",
+    "/art/millennium-falcon-fire.png",
+    "/art/little-green-man-walk.png",
+    "/art/little-green-man-attack.png",
+    "/art/little-green-man-die.png",
+    "/art/grunt-walk.png",
+    "/art/grunt-attack.png",
+    "/art/grunt-die.png",
+    "/art/sprinter-walk.png",
+    "/art/sprinter-attack.png",
+    "/art/sprinter-die.png",
+    "/art/manhunter-walk.png",
+    "/art/manhunter-attack.png",
+    "/art/manhunter-die.png",
+    "/art/tank-walk.png",
+    "/art/tank-attack.png",
+    "/art/tank-die.png",
+    "/art/gargantua-walk.png",
+    "/art/gargantua-attack.png",
+    "/art/gargantua-die.png",
+    "/art/stage-one.webp",
+    "/art/stage-two.webp"
+  ]
+}

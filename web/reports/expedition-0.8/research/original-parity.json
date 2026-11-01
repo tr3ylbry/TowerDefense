@@ -1,0 +1,271 @@
+{
+  "baseline": "5647f09b44520af8a0d7382b3532ac2c8362c914",
+  "sourceSha256": {
+    "src/game/art.ts": "307eb2ddcbecb954907fb2d3349a1a23e3f5f3acefd096f5f510a1d75a7076f5",
+    "src/game/combat.ts": "adca35274cd4ebe99ebdf5e093a7c33e19dff13d3836be1203449fd29653d0d3",
+    "src/game/content.ts": "82799743ab5217a7d9f62aadb46c5cdd2d539a73f03c356221f3eda85ed6a442",
+    "src/game/environments.ts": "837383a00b648e0a61035703ac40511e1b9da4b25ed4eabb497bf975a909ae60",
+    "src/game/missions.ts": "9de6d66f913dda5623fcc7101ccca32d22e93b21e9705ae880988351c7a7cc7f",
+    "src/game/simulation.ts": "738148ac9a87b64cd6bc6b83d7de7672d2cf4b4d973fc6670fda2eaaaad2a51c",
+    "src/game/threats.ts": "94067a746614a70ff6e552ff48df99cc60436e1e7a8195f870b07e439187d725",
+    "src/game/validate-content.ts": "57ad43ee7bbfc805d420479bba8f5c887e2aa7c31e96c060d42f1b94f8255edf",
+    "src/game/waves.ts": "6eb58de1f8431e53fb54a4922164e47e73c0cb84a604a48c33ec5f3f8b7b54fe",
+    "tests/helpers/campaign-policy.ts": "776e91f40f2def705f01a8f72f9c35250495a49be271acef7c12485a0a60cdc9"
+  },
+  "definitionParity": true,
+  "scheduleComparisons": 36,
+  "stepwiseRuns": [
+    {
+      "map": "canyon",
+      "seed": 3352019,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 100.35000000000001
+    },
+    {
+      "map": "canyon",
+      "seed": 3352020,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 103.65
+    },
+    {
+      "map": "canyon",
+      "seed": 3352021,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 96.25
+    },
+    {
+      "map": "canyon",
+      "seed": 3352022,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 92.05000000000001
+    },
+    {
+      "map": "canyon",
+      "seed": 3352023,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 99.45
+    },
+    {
+      "map": "canyon",
+      "seed": 3352024,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 92.05000000000001
+    },
+    {
+      "map": "canyon",
+      "seed": 3352025,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 103.65
+    },
+    {
+      "map": "canyon",
+      "seed": 3352026,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 96.25
+    },
+    {
+      "map": "canyon",
+      "seed": 3352027,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 99.45
+    },
+    {
+      "map": "canyon",
+      "seed": 3352028,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 92.05000000000001
+    },
+    {
+      "map": "canyon",
+      "seed": 3352029,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 93.15
+    },
+    {
+      "map": "canyon",
+      "seed": 3352030,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 99.45
+    },
+    {
+      "map": "bridge",
+      "seed": 3352019,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.05000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352020,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 95.85000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352021,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 95.85000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352022,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.05000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352023,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.05000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352024,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.85000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352025,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 95.85000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352026,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 99.05000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352027,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.05000000000001
+    },
+    {
+      "map": "bridge",
+      "seed": 3352028,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.75
+    },
+    {
+      "map": "bridge",
+      "seed": 3352029,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 93.75
+    },
+    {
+      "map": "bridge",
+      "seed": 3352030,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 98.05000000000001
+    },
+    {
+      "map": "nest",
+      "seed": 3352019,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 111.10000000000001
+    },
+    {
+      "map": "nest",
+      "seed": 3352020,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 118
+    },
+    {
+      "map": "nest",
+      "seed": 3352021,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 114.2
+    },
+    {
+      "map": "nest",
+      "seed": 3352022,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 113.4
+    },
+    {
+      "map": "nest",
+      "seed": 3352023,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 113.7
+    },
+    {
+      "map": "nest",
+      "seed": 3352024,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 113.7
+    },
+    {
+      "map": "nest",
+      "seed": 3352025,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 119.5
+    },
+    {
+      "map": "nest",
+      "seed": 3352026,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 119.5
+    },
+    {
+      "map": "nest",
+      "seed": 3352027,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 119.5
+    },
+    {
+      "map": "nest",
+      "seed": 3352028,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 113.7
+    },
+    {
+      "map": "nest",
+      "seed": 3352029,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 112.60000000000001
+    },
+    {
+      "map": "nest",
+      "seed": 3352030,
+      "outcome": "won",
+      "shields": 3,
+      "duration": 112.2
+    }
+  ]
+}
