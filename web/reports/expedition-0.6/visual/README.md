@@ -16,4 +16,6 @@ These are actual application captures. The six mission victories and chapter-com
 | [Native Safari board](native-safari-board.png)                                                            | Safari 27.0.1 actual app window, empty campaign progress                                 |
 | [Native Safari paused comparison](native-safari-paused-original.png)                                      | One Astro deployed using Return, P paused, school comparison selected without restarting |
 
+[Collapsed phone result](campaign-phone-collapsed-defeat.png) shows an actual undefended campaign defeat with replay/return inside the scrollable field before opening economy. A validated test save supplies the prior best rating solely for the reset regression; those stars are not claimed as earned in this capture.
+
 The portable browser cases also capture enlarged-phone victory/Next navigation. Browser output folders are disposable test diagnostics. The repository captures above document the final appearance without claiming physical-phone or screen-reader coverage. Native desktop Safari is separate from WebKit automation; no iPhone, OS mobile text-size or real touch session is implied. The existing five independent participant records remain blank/pending.

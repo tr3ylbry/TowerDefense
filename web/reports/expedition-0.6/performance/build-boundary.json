@@ -7,13 +7,13 @@
     "assets/index-BiMgK-NT.css": "3ca9b2a463f10d165d8f148ebbec925d4d1403bf05d618001cef6b2e1c68a439",
     "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
   },
-  "runtimeCommit": "484963d0a833f0290bf820066dcaed16560717cd",
+  "runtimeCommit": "ff1bc66a8c1b71d31d21b6e2ba289ae0fdf6dc22",
   "afterBundles": {
-    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276",
-    "assets/battlefield-B_FaKuNP.js": "7371b782eecbb06bf1cd66cb02f13949bd88befe4182459632891983851133da",
-    "assets/index-6RXat-_G.css": "ebc7da62aafc97c3b63740e51e46363e36385eba7027912f99b0efabd7bec014",
-    "assets/index-BdgvfhWm.js": "fa137b592310ef0dfdec950084d70d59eaf632aea28775c5a2136255e51238e1"
+    "assets/index-5uMBKf0k.css": "8fef60fc2e5536e2f261ba82ee29dcdfb63ec37484a8d6e7179bb8374a214c7b",
+    "assets/index-DBFINsuQ.js": "fa32b6d7f14a6ae622b0ac1288c1eb7d502ad2c1d9fd4d048dff043503813a60",
+    "assets/battlefield-nJqa0JkJ.js": "917424c9f922520e731d37469d72a7f7fa8e7121315f638b24c6ac3d01f4648a",
+    "assets/phaser-B_vcVLyb.js": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
   },
   "sourceInventoryMatchesCurrent": true,
-  "notes": "Documentation/evidence commits do not alter the measured runtime. The earlier 0.5 boundary names a precursor base commit plus final working sources; its bundle hashes match this frozen artifact exactly."
+  "notes": "Documentation/evidence commits do not alter the measured runtime. Baseline artifact matches its archived final working-source bundle hashes exactly."
 }

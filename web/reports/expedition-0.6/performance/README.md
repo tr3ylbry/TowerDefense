@@ -1,20 +1,20 @@
 # Expedition 0.6 delivery and cache evidence
 
-`profile-0.6.mjs` compares the frozen final 0.5 production build (`5647f09`) with 0.6 runtime commit `484963d`, both served by the same pinned Vite preview implementation on separate loopback ports. No other browser test ran concurrently during this measurement. Each sample uses a fresh Chromium context. Before/after samples alternate, three per condition. Readiness is a MutationObserver of the actual enabled Begin mission control, using `performance.now()` from navigation, rather than a host wait timer. Production and source boundaries are identified by the source hash inventory.
+`profile-0.6.mjs` compares the frozen final 0.5 production build (`5647f09`) with 0.6 runtime commit `ff1bc66`, both served by the same pinned Vite preview implementation on separate loopback ports. No other browser test ran concurrently during this measurement. Each sample uses a fresh Chromium context. Before/after samples alternate, three per condition. Readiness is a MutationObserver of the actual enabled Begin mission control, using `performance.now()` from navigation, rather than a host wait timer. Production and source boundaries are identified by the source hash inventory.
 
 Host: Apple M5/macOS, headless Chromium 156.0.8078.4 (see raw browser value in JSON). Normal is unthrottled. Constrained uses CDP 4× CPU, 150 ms latency, 200,000 B/s down and 75,000 B/s up. This is a repeatable desktop emulation profile, not a physical phone or real mobile network.
 
 | Measure                                |                  Frozen 0.5 |                         0.6 |
 | -------------------------------------- | --------------------------: | --------------------------: |
 | Unique initial image bodies            |        600,697 B / 21 files |        600,697 B / 21 files |
-| Reported transfer including navigation |                 1,003,056 B |                 1,009,861 B |
+| Reported transfer including navigation |                 1,003,056 B |                 1,009,871 B |
 | Entries including navigation           |                          36 |                          36 |
-| Normal samples, ms                     |       153.7 / 161.0 / 132.6 |       146.4 / 149.4 / 142.7 |
-| Normal median, ms                      |                       153.7 |                       146.4 |
-| Constrained samples, ms                | 5,984.6 / 5,987.7 / 6,003.3 | 6,019.3 / 6,056.1 / 6,038.0 |
-| Constrained median, ms                 |                     5,987.7 |                     6,038.0 |
+| Normal samples, ms                     |       219.4 / 144.0 / 144.5 |       172.9 / 144.7 / 145.6 |
+| Normal median, ms                      |                       144.5 |                       145.6 |
+| Constrained samples, ms                | 5,989.2 / 6,005.6 / 5,989.5 | 6,030.8 / 6,029.4 / 6,039.8 |
+| Constrained median, ms                 |                     5,989.5 |                     6,030.8 |
 
-Campaign functionality adds 6,805 reported bytes (0.68%) to initial delivery, without adding an initial image or resource entry. Constrained readiness changes by +50.3 ms / 0.84% in these samples. Normal variation is only milliseconds. This supports preserved initial loading efficiency, not a new speedup claim. The existing 0.5 image reduction remains intact.
+Campaign functionality adds 6,815 reported bytes (0.68%) to initial delivery, without adding an initial image or resource entry. Constrained readiness changes by +41.3 ms / 0.69% in these samples. Normal variation is only milliseconds. This supports preserved initial loading efficiency, not a new speedup claim. The existing 0.5 image reduction remains intact.
 
 `startup.json` preserves the raw entries and all twelve samples. Image bodies are deduplicated by path because CSS portraits and Phaser can create two resource entries for the same file. Actual reported transfer retains cache-revalidation/header overhead; it is not interchangeable with unique image file bytes. The normal and constrained cohorts agree on these byte/count measures. There is no new decode, GPU upload, heap or combat FPS speedup claim.
 
@@ -42,3 +42,5 @@ PLAYWRIGHT_BROWSERS_PATH=/private/tmp/ava-playwright node scripts/research/profi
 ```
 
 `AVA_BEFORE_URL` and `AVA_AFTER_URL` override the local URLs. Never point the baseline at an unfrozen current build. The script requires the pinned Playwright Chromium installed for that path. It instruments browser texture-creation/removal APIs and observes public controls; it never changes authoritative gameplay, credits, spawns or clocks.
+
+The [earlier 484963d sample](prior-to-outcome-scroll-fix/README.md) remains archived with its raw values. It is not substituted for this final corrected-runtime measurement.
