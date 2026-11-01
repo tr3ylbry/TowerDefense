@@ -195,6 +195,38 @@ describe("authoritative completion and progression", () => {
     expect(second.observe(replay, progress)?.previous).toBe(3);
     expect(progress).toEqual(saved);
   });
+  it("preserves a three-star best after an authoritative two-shield replay win", () => {
+    const game = new Simulation();
+    const omitted = makeSpawns(3352019, "canyon")[0].row;
+    game.start();
+    for (
+      let tick = 0;
+      tick < 12000 && game.snapshot().phase === "playing";
+      tick++
+    ) {
+      for (const [col, kind] of (["astro", "tars"] as const).entries()) {
+        for (let row = 0; row < 6; row++) {
+          const state = game.snapshot();
+          if (state.integrity === 3 && row === omitted) continue;
+          if (!state.towers.some((t) => t.row === row && t.col === col))
+            game.place(kind, row, col);
+        }
+      }
+      game.advance(0.05);
+      game.drainEvents();
+    }
+    expect(game.snapshot()).toMatchObject({ phase: "won", integrity: 2 });
+    const progress = emptyProgress();
+    progress.best["first-contact"] = best(3);
+    const before = structuredClone(progress);
+    expect(new CompletionRecorder().observe(game, progress)).toEqual({
+      mission: "first-contact",
+      stars: 2,
+      previous: 3,
+      best: 3,
+    });
+    expect(progress).toEqual(before);
+  });
   it("does not record a locked mission win", () => {
     const { game } = playCampaign("heart-of-the-swarm", 3352019, "mixed");
     const progress = emptyProgress();

@@ -77,7 +77,9 @@ export class CampaignBoard {
         ? `${"★".repeat(result.stars)}${"☆".repeat(3 - result.stars)} · Best ${result.stars}/3`
         : "☆☆☆ · Unrated";
       this.get(`state-${id}`).textContent = result
-        ? "Complete · Replay to improve your rating"
+        ? result.stars < 3
+          ? "Complete · Replay to protect more shields"
+          : "Complete · All three stars. Try a different formation"
         : unlocked
           ? "Available · Ready to explore"
           : `Locked · Complete ${MISSIONS[MISSIONS[id].prerequisite!].title} to unlock`;

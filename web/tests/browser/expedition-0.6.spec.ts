@@ -126,6 +126,14 @@ test("public-control expedition completes all six missions, persists stars, repl
     await expect(page.locator("#mission-rating")).toContainText(
       "3/3 stars · Best: 3/3",
     );
+    await expect(page.locator("#mode-label")).toHaveText("Campaign");
+    await expect(page.locator("#start")).toHaveAccessibleDescription(
+      /3 shields remaining.*3\/3 stars/,
+    );
+    if (index < 5)
+      await expect(page.locator("#campaign-next")).toHaveText(
+        `Next: ${MISSIONS[CAMPAIGN_ORDER[index + 1]].title} ↗`,
+      );
     await expect(page.locator("#overlay-title")).toHaveText(
       `${MISSIONS[id].title} complete.`,
     );

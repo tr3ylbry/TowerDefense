@@ -93,8 +93,8 @@ const missionReceipt = `
   </details>`;
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.6</span></span></span></a>
-    <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ↗</button><span class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.7</span></span></span></a>
+    <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ↗</button><span id="mode-label" class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
   <main id="mission">
@@ -103,8 +103,8 @@ app.innerHTML = `
     <p id="save-warning" class="save-warning" role="status" hidden></p><p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
-        <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
-        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button">Next mission ↗</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
+        <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong id="credit-balance" class="credits" role="group" aria-label="230 credits available"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
+        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><div id="mode-choice" class="mode-choice"><span>Standalone · no saved stars.</span><button id="campaign-entry" class="nav-button" aria-haspopup="dialog" disabled>Explore campaign ↗</button></div>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button">Next mission ↗</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
         <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. Place a gun in an empty tile to its left, check its armor, or salvage blockers if no firing tile remains. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
@@ -331,6 +331,9 @@ function render(state: Snapshot): void {
     (!ready && !loadError) || assetBusy;
   get<HTMLButtonElement>("art-toggle").disabled = !ready || assetBusy;
   get<HTMLButtonElement>("campaign-nav").disabled = !ready || assetBusy;
+  get<HTMLButtonElement>("campaign-entry").disabled = !ready || assetBusy;
+  get("mode-label").textContent = campaignMode ? "Campaign" : "Standalone";
+  get("mode-choice").hidden = campaignMode || state.phase !== "ready";
   renderSelection(state);
   const threatBox = get("passed-threat");
   const help = get<HTMLDetailsElement>("direction-help");
@@ -429,6 +432,10 @@ function render(state: Snapshot): void {
     card.setAttribute("aria-pressed", String(card.dataset.map === state.map));
   });
   get("credits").textContent = String(state.credits);
+  get("credit-balance").setAttribute(
+    "aria-label",
+    `${state.credits} credits available`,
+  );
   get("integrity").textContent = Array.from({ length: 3 }, (_, i) =>
     i < state.integrity ? "◆" : "◇",
   ).join(" ");
@@ -521,6 +528,12 @@ function render(state: Snapshot): void {
       !campaignMode || (state.phase !== "won" && state.phase !== "lost");
     get("campaign-result-actions").hidden =
       !campaignMode || (state.phase !== "won" && state.phase !== "lost");
+    if (state.phase === "won" || state.phase === "lost")
+      start.setAttribute(
+        "aria-describedby",
+        `overlay-title overlay-body${campaignMode ? " mission-rating" : ""}`,
+      );
+    else start.removeAttribute("aria-describedby");
     if (state.phase === "ready") {
       title.innerHTML = "Home is behind you.<br>Hold the line.";
       if (campaignMode) title.textContent = mission.title;
@@ -554,6 +567,9 @@ function render(state: Snapshot): void {
         get("mission-rating").textContent =
           `${"★".repeat(earned)}${"☆".repeat(3 - earned)} · ${earned}/3 stars · Best: ${best}/3${completion?.mission === state.mission && earned ? ` · Previous best: ${completion.previous}/3` : ""}. Victory earns one star per remaining shield.`;
         const next = CAMPAIGN_ORDER[mission.order];
+        get("campaign-next").textContent = next
+          ? `Next: ${MISSIONS[next].title} ↗`
+          : "Next mission ↗";
         get("campaign-next").hidden =
           state.phase !== "won" ||
           !next ||
@@ -890,6 +906,7 @@ function prepareCampaign(id: MissionId): void {
   );
 }
 get("campaign-nav").addEventListener("click", openCampaign);
+get("campaign-entry").addEventListener("click", openCampaign);
 get("campaign-return").addEventListener("click", openCampaign);
 get("campaign-next").addEventListener("click", () => {
   const next = CAMPAIGN_ORDER[MISSIONS[simulation.snapshot().mission].order];
@@ -1057,7 +1074,15 @@ async function initialize(): Promise<void> {
           audio.play("income");
         else if (event.type === "defender-lost" && event.kind)
           announce(`${TOWERS[event.kind].name} lost in lane ${event.row + 1}.`);
-        else if (event.type === "breach") audio.play("breach");
+        else if (event.type === "breach") {
+          audio.play("breach");
+          const state = simulation.snapshot();
+          // One event-driven notice per breach; outcomes have their own announcement.
+          if (state.phase === "playing")
+            announce(
+              `Breach in lane ${event.row + 1}. ${state.integrity} ${state.integrity === 1 ? "shield remains" : "shields remain"}. Check that lane's firing coverage.`,
+            );
+        }
       },
       onReady: () => {
         ready = true;
