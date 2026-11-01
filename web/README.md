@@ -2,9 +2,9 @@
 
 The full original character and map roster, built with TypeScript, Phaser, and Vite. This is Trey Bryant's independent continuation of the original CSC 335 team project by Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.
 
-Expedition 0.7 improves discovery, replay guidance, accessible credits and result feedback in the six-mission campaign. Local progression, shield-based stars, replay and next-mission navigation span three illustrated environments. The original three standalone missions and all combat/economy rules remain intact. Mission content is separate from reusable terrain and art, with one deterministic simulation for both modes. Saves are versioned, validated and recover valid records from damaged data; play continues in memory if storage is unavailable.
+Expedition 0.8 clarifies optional early-wave calls, current firing coverage and passed-enemy recovery, and refines mobile controls. Local progression, shield-based stars, replay and next-mission navigation span six missions in three illustrated environments. The original three standalone missions and all combat/economy rules remain intact. Saves retain their validated version-1 format and in-memory fallback.
 
-See the [0.7 milestone report](docs/EXPEDITION_0_7.md), [campaign architecture and save schema](docs/CAMPAIGN_ARCHITECTURE.md), [six-mission pacing study](reports/expedition-0.7/research/README.md), [0.5 art direction](docs/ART_DIRECTION.md), [provenance](ASSET_CREDITS.md), and [existing five-player kit](playtest/README.md). Independent player and physical-device evidence remain outstanding; native desktop Safari completed an earned-credit victory and save/reload check. Hosting is separate.
+See the [0.8 milestone report](docs/EXPEDITION_0_8.md), [campaign architecture and save schema](docs/CAMPAIGN_ARCHITECTURE.md), [1,296-run pacing study](reports/expedition-0.8/research/README.md), [0.5 art direction](docs/ART_DIRECTION.md), [provenance](ASSET_CREDITS.md), and [existing five-player kit](playtest/README.md). Independent player and physical-device evidence remain outstanding; native desktop Safari completed an earned-credit victory and save/reload check. Hosting is separate.
 
 ## Run locally
 
@@ -51,7 +51,7 @@ Sky Bridge has 12 restricted acid tiles; The Nest has 16. Their positions match 
 - Click/tap a crew card and then a tile to deploy. Number keys 1–9 also select crew.
 - Tab to the battlefield; arrow keys move between tiles; Enter or Space deploys.
 - P pauses/resumes the entire simulation. Changing tabs automatically pauses it.
-- N or **Call next wave** advances an eligible wave with a three-game-second lead. The button shows its reward and overlap risk; the first wave keeps its preparation time.
+- N or **Call next wave** advances an eligible wave with a three-game-second lead. The button shows its exact reward, approximate time saved, waiting alternative and overlap risk; the first wave keeps its preparation time.
 - X selects salvage, returning 40% of the unit's cost. Escape clears selection.
 - The speed control switches between 1× and 2× while preserving cooldowns and schedules.
 - Sound is off by default and uses original synthesized effects. Reduced motion defaults to the OS preference and can be changed and saved locally.

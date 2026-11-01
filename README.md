@@ -2,7 +2,7 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 0.7** improves opening Campaign discovery, mode labels, replay/next-mission guidance, accessible credit totals and outcome feedback. The existing six-mission campaign, three original standalone destinations, nine defenders and six alien types remain intact. A 1,080-run pacing study and 36 frozen-engine parity runs support retaining current combat balance. See the [0.7 report](web/docs/EXPEDITION_0_7.md) and [campaign architecture](web/docs/CAMPAIGN_ARCHITECTURE.md). Native desktop Safari now has an earned-credit victory/reload check; independent players, physical phones and live screen readers remain outstanding. Original school source/assets and history remain preserved. Hosting is separate.
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 0.8** clarifies early-wave choices, firing coverage and passed-enemy recovery, with centered time controls and a more readable mobile wave panel. A 1,296-run pacing study preserves all 1,080 prior policy results and 36 frozen-engine parity runs. The six-mission campaign, three original standalone destinations, nine defenders, six alien types and current balance remain intact. See the [0.8 report](web/docs/EXPEDITION_0_8.md) and [campaign architecture](web/docs/CAMPAIGN_ARCHITECTURE.md). Developer Canyon feedback is recorded separately from the five pending independent sessions. Physical-phone and live screen-reader checks remain outstanding. Original school source/assets and history remain preserved. Hosting is separate.
 
 ```sh
 cd web

@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-01",
+  "timezone": "America/Phoenix",
+  "baseline": "3b5bf7fd5e3160d87def616e9e3cb35a7448e723",
+  "rules": {
+    "command": "npm run check",
+    "files": 9,
+    "passed": 158,
+    "strictTypeScript": true,
+    "productionBuild": true
+  },
+  "localCompletedBeforeOpeningCorrection": {
+    "command": "npm run test:e2e -- --project=chromium",
+    "passed": 49,
+    "failed": 1,
+    "minutes": 11.5,
+    "sixMissionEarnedCreditJourney": "passed, 8.3 minutes",
+    "failure": "Crew detail bottom 870.828125 > 844; unchanged viewport assertion. Fixed compact disabled-call opening."
+  },
+  "localFinal": {
+    "command": "npm run test:e2e -- --project=chromium --project=webkit --grep 'wave decisions|phone overview|focused desktop controls|phone controls and the complete roster'",
+    "passed": 12,
+    "failed": 0,
+    "chromium": 6,
+    "webkit": 6,
+    "minutes": 1.1,
+    "includes": "150% mobile layout, centered text bounds, exact target after P-resume and arrow navigation, header resume, original phone fit"
+  },
+  "research": {
+    "runs": 1296,
+    "unchangedPriorRuns": 1080,
+    "frozenParityRuns": 36,
+    "wins": 1237,
+    "losses": 58,
+    "timeouts": 1
+  },
+  "nativeSafari": {
+    "version": "27.0.1",
+    "build": "22625.1.29.11.28",
+    "os": "macOS 27.0.1",
+    "undefendedNest": {
+      "outcome": "lost",
+      "elapsed": 51,
+      "kills": 0
+    },
+    "controlledNestReplay": {
+      "outcome": "won",
+      "elapsed": 165,
+      "kills": 38,
+      "shields": 3,
+      "purchases": 12,
+      "defenderLosses": 0,
+      "spent": 900,
+      "supply": 990,
+      "bounties": 795,
+      "ending": 1115,
+      "income": 0,
+      "earlyBonuses": 0,
+      "salvage": 0
+    },
+    "finalBuildKeyboard": "Astro purchased for 50; P pause/resume + ArrowRight focuses Lane 1 tile 2; no clock, credit or spawn injection",
+    "cleanup": "Only agent test tabs closed; preexisting Apple tab preserved"
+  },
+  "external": {
+    "independentPlayers": "0/5 pending; CSV unchanged",
+    "developerFeedback": "Retrospective Canyon observations, separately documented",
+    "physicalPhone": "pending; viewport emulation only",
+    "liveScreenReader": "pending; semantic/native AX/keyboard only"
+  },
+  "preservation": {
+    "schoolFilesUnchanged": true,
+    "originalReadmeSectionUnchanged": true,
+    "kitUnchanged": true,
+    "master": "d5ba2c76aa7cf287b4b89b10ff35cc15a24d09fb",
+    "schoolTagObject": "de94c0c5097af2a8e2f7662a8ff538136dbb4aa7",
+    "independentRepo": true,
+    "defaultBranch": "modernization",
+    "onlyRemote": "https://github.com/tr3ylbry/TowerDefense.git"
+  },
+  "ci": {
+    "projects": ["chromium", "firefox", "webkit"],
+    "scenariosPerProject": 50,
+    "observedFinalRun": "Reported with exact final pushed commit and result in delivery response; not predicted here."
+  }
+}

@@ -1,0 +1,33 @@
+
+> astronauts-vs-aliens-web@0.8.0 check
+> npm run test && npm run build
+
+
+> astronauts-vs-aliens-web@0.8.0 test
+> vitest run
+
+
+ RUN  v5.0.5 <web>
+
+
+ Test Files  9 passed (9)
+      Tests  158 passed (158)
+   Start at  16:34:26
+   Duration  1.41s (tests 91%, import 4%, transform 3%, worker 1%)
+
+
+> astronauts-vs-aliens-web@0.8.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 23 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                          0.78 kB │ gzip:   0.45 kB
+dist/assets/index-CriuIri2.css          36.21 kB │ gzip:   8.76 kB
+dist/assets/battlefield-CZsz8Gw5.js     17.04 kB │ gzip:   6.45 kB
+dist/assets/index-BDyhQBZ7.js           78.48 kB │ gzip:  25.92 kB
+dist/assets/phaser-B_vcVLyb.js       1,367.08 kB │ gzip: 357.00 kB
+
+✓ built in 334ms

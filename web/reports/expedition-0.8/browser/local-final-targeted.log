@@ -1,0 +1,29 @@
+
+> astronauts-vs-aliens-web@0.8.0 test:e2e
+> playwright test --project=chromium --project=webkit --grep wave decisions|phone overview|focused desktop controls|phone controls and the complete roster --output=<test-output>
+
+
+Running 12 tests using 2 workers
+
+(node:47737) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:47736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/browser/expedition-0.5.spec.ts:142:1 › phone controls and the complete roster remain reachable under enlarged page content (8.9s)
+  ✓   1 [chromium] › tests/browser/expedition-0.8.spec.ts:8:3 › wave decisions remain clear and time controls centered at 1280x900 (17.7s)
+  ✓   3 [chromium] › tests/browser/expedition-0.8.spec.ts:8:3 › wave decisions remain clear and time controls centered at 390x844 (18.2s)
+  ✓   5 [chromium] › tests/browser/mission.spec.ts:285:1 › focused desktop controls fit the viewport and the art comparison preserves play (8.4s)
+  ✓   4 [chromium] › tests/browser/expedition-0.8.spec.ts:8:3 › wave decisions remain clear and time controls centered at 844x390 (18.4s)
+(node:47800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/browser/mission.spec.ts:369:1 › phone overview shows the entire field and scrolls the crew to keyboard selection (3.2s)
+(node:47813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [webkit] › tests/browser/expedition-0.5.spec.ts:142:1 › phone controls and the complete roster remain reachable under enlarged page content (2.9s)
+  ✓   8 [webkit] › tests/browser/expedition-0.8.spec.ts:8:3 › wave decisions remain clear and time controls centered at 1280x900 (11.7s)
+  ✓   9 [webkit] › tests/browser/expedition-0.8.spec.ts:8:3 › wave decisions remain clear and time controls centered at 390x844 (11.5s)
+  ✓  11 [webkit] › tests/browser/mission.spec.ts:285:1 › focused desktop controls fit the viewport and the art comparison preserves play (2.2s)
+  ✓  12 [webkit] › tests/browser/mission.spec.ts:369:1 › phone overview shows the entire field and scrolls the crew to keyboard selection (954ms)
+  ✓  10 [webkit] › tests/browser/expedition-0.8.spec.ts:8:3 › wave decisions remain clear and time controls centered at 844x390 (11.7s)
+
+  12 passed (1.1m)
