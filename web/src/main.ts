@@ -639,10 +639,13 @@ document
 get("salvage").addEventListener("click", () =>
   select(selected === "salvage" ? null : "salvage"),
 );
-pause.addEventListener("click", () => {
+function togglePause(): void {
   simulation.togglePause();
-  render(simulation.snapshot());
-});
+  const state = simulation.snapshot();
+  render(state);
+  if (state.phase === "playing") cells[focusIndex].focus();
+}
+pause.addEventListener("click", togglePause);
 get("speed").addEventListener("click", () => {
   simulation.setSpeed(simulation.snapshot().speed === 1 ? 2 : 1);
   render(simulation.snapshot());
@@ -1026,8 +1029,7 @@ document.addEventListener("keydown", (event) => {
     select(towerKinds[Number(key) - 1]);
   } else if (key === "p") {
     event.preventDefault();
-    simulation.togglePause();
-    render(simulation.snapshot());
+    togglePause();
   } else if (key === "n") {
     event.preventDefault();
     callNextWave();

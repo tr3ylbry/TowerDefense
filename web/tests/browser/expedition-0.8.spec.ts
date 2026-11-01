@@ -94,4 +94,18 @@ for (const viewport of [
     await expect(page.locator("#announcement")).toHaveText(announcement!);
     await expect(page.locator("#speed")).toHaveText("2×");
     await expect(page.locator("#pause")).toHaveAccessibleName("Resume mission");
+    await page.keyboard.press("p");
+    await expect(page.locator("#battle-grid [tabindex='0']")).toBeFocused();
+    await page.keyboard.press("ArrowRight");
+    await expect(
+      page.getByRole("gridcell", {
+        name: "Lane 4, tile 2, empty",
+        exact: true,
+      }),
+    ).toBeFocused();
+    await page.locator("#pause").click();
+    await expect(page.locator("#status")).toHaveText("Mission paused");
+    await page.locator("#pause").click();
+    await expect(page.locator("#battle-grid [tabindex='0']")).toBeFocused();
+    await page.keyboard.press("p");
   });

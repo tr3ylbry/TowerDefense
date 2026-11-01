@@ -95,8 +95,8 @@
     {
       "label": "return-to-expedition",
       "textures": {
-        "created": 471,
-        "deleted": 371,
+        "created": 503,
+        "deleted": 403,
         "active": 100
       },
       "uniqueImages": 60,

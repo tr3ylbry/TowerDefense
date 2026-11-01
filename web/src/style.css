@@ -2140,7 +2140,6 @@ dialog li {
     padding: 9px 10px;
     gap: 10px;
     align-items: stretch;
-    flex-direction: column;
   }
   .wave-control .wave-forecast {
     font-size: 10px;
@@ -2149,10 +2148,18 @@ dialog li {
     font-size: 11px;
   }
   .call-wave {
+    min-width: 104px;
+    width: 104px;
+    justify-content: center;
+    padding: 6px;
+  }
+  .wave-control:has(.wave-timing:not([hidden])) {
+    flex-direction: column;
+  }
+  .wave-control:has(.wave-timing:not([hidden])) .call-wave {
     min-width: 0;
     width: 100%;
     flex-direction: row;
-    justify-content: center;
     padding: 10px;
   }
   .threat-strip {

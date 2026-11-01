@@ -24,23 +24,23 @@
   "after": {
     "index.html": {
       "bytes": 780,
-      "sha256": "14975ad666ff8a03dcb4ce3316ecc55164f0b8622bb091989186cab84aa96c51"
+      "sha256": "beff80882d2013bb7b94cf31c959c2ab762d3aaeec2814529258a3f415befa44"
     },
-    "assets/index-Bymz-mIM.css": {
-      "bytes": 36074,
-      "sha256": "1bce204502a3835b58a5ed884f6a9d85fc732b9e4bcf58318c8011f5fa785969"
+    "assets/index-BDyhQBZ7.js": {
+      "bytes": 78485,
+      "sha256": "4635a78ff9e8bf8274b6d024315ef7c94dedd9cdec2ce5ef16b973c944076f51"
+    },
+    "assets/index-CriuIri2.css": {
+      "bytes": 36217,
+      "sha256": "8076b7fab371ff91ce00a60f5e404ed0a5a8484ba3fe1128f98d3a150cd58878"
     },
     "assets/phaser-B_vcVLyb.js": {
       "bytes": 1367089,
       "sha256": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
     },
-    "assets/battlefield-C0MtaNQS.js": {
+    "assets/battlefield-CZsz8Gw5.js": {
       "bytes": 17044,
-      "sha256": "f6f205a664465a1171db15ea929d689080644625e2663fe2daa1d21510a75446"
-    },
-    "assets/index-D4y_YYCR.js": {
-      "bytes": 78459,
-      "sha256": "84337997699f6471d60bbcdffc6cf7a586ab7af6afe1d4b9478867963cb8a4c3"
+      "sha256": "69da79ad99f3637eb76a6456b70f03412919d40c4439e27296e24cf69ba0034c"
     }
   }
 }
