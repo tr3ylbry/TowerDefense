@@ -11,12 +11,28 @@ export function coverage(state: Snapshot): string {
   const missing = Array.from({ length: ROWS }, (_, row) => row).filter(
     (row) => !covered.has(row),
   );
-  const passed = laneThreats(state).filter((t) => t.passed);
+  const threats = laneThreats(state);
+  const passed = threats.filter((t) => t.passed);
   if (passed.length)
     return `${covered.size}/6 lanes armed · Past guns: ${passed.map((t) => `L${t.row + 1}`).join(", ")}`;
   return missing.length
-    ? `${covered.size}/6 lanes firing · Cover ${missing.map((row) => `L${row + 1}`).join(", ")}`
-    : "6/6 lanes firing · Your crew fires right";
+    ? `${covered.size}/6 lanes armed · Cover ${missing.map((row) => `L${row + 1}`).join(", ")}`
+    : threats.length
+      ? `6/6 lanes armed · ${threats.filter((t) => t.engaged).length}/${threats.length} nearest threats in firing lines`
+      : "6/6 lanes armed · Your crew fires right";
+}
+
+/** Presentation only: eligibility, reward and the changed schedule come from the simulation. */
+export function waveCallDetails(state: Snapshot): [string, string] {
+  const next = state.nextWave;
+  if (!next?.canLaunch) return ["", next?.reason ?? "No further wave to call."];
+  const surviving = state.enemies.filter((e) => e.health > 0).length;
+  return [
+    `Call available · Wait ${Math.ceil(Math.max(0, next.startAt - state.elapsed))}s, or call: 3s lead (~${Math.round(next.secondsSaved)}s sooner).`,
+    surviving
+      ? `${surviving} still on field: incoming hostiles will overlap survivors. Later waves shift too.`
+      : "Field clear. Keep preparing or call early. Later waves shift too.",
+  ];
 }
 export function crewDetails(
   kind: TowerKind | "salvage" | null,

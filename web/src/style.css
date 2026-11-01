@@ -410,6 +410,7 @@ h1 > span {
   padding: 7px 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
 }
 .time-controls button:hover {
@@ -2056,6 +2057,11 @@ dialog li {
   line-height: 1.4;
   margin-top: 4px;
 }
+.wave-timing {
+  margin-top: 5px;
+  color: #c9efd9;
+  font: 600 12px/1.5 var(--mono);
+}
 .call-wave {
   display: flex;
   flex-direction: column;
@@ -2134,6 +2140,7 @@ dialog li {
     padding: 9px 10px;
     gap: 10px;
     align-items: stretch;
+    flex-direction: column;
   }
   .wave-control .wave-forecast {
     font-size: 10px;
@@ -2142,10 +2149,11 @@ dialog li {
     font-size: 11px;
   }
   .call-wave {
-    min-width: 104px;
-    width: 104px;
+    min-width: 0;
+    width: 100%;
+    flex-direction: row;
     justify-content: center;
-    padding: 6px;
+    padding: 10px;
   }
   .threat-strip {
     padding: 7px 10px;

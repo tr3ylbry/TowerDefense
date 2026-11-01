@@ -18,7 +18,7 @@ import { CampaignBoard, campaignMarkup } from "./campaign/board";
 import { AudioBus } from "./audio";
 import type { Battlefield } from "./battlefield";
 import type { ArtManifest, ArtStyle } from "./assets";
-import { coverage, crewDetails } from "./guidance";
+import { coverage, crewDetails, waveCallDetails } from "./guidance";
 import { laneThreats, placementWarning, threatAdvice } from "./game/threats";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
@@ -105,7 +105,7 @@ app.innerHTML = `
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong id="credit-balance" class="credits" role="group" aria-label="230 credits available"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
         <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><div id="mode-choice" class="mode-choice"><span>Standalone · no saved stars.</span><button id="campaign-entry" class="nav-button" aria-haspopup="dialog" disabled>Explore campaign ↗</button></div>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button">Next mission ↗</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
-        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. Place a gun in an empty tile to its left, check its armor, or salvage blockers if no firing tile remains. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
+        <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-timing" class="wave-timing"></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-timing wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. If an empty forward firing tile remains, place a gun there and check armor. Salvage can open an occupied tile, but cannot restore a firing line after the hostile passes every legal muzzle. Removing its blocker lets it advance and may cost a shield. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
       <aside class="crew-panel" aria-labelledby="crew-title"><div class="crew-heading"><h2 id="crew-title">Deploy your crew</h2><span id="supply-status">Supply +30 / 5s</span></div><div class="crew-list" role="group" aria-label="Defender roster">${towerKinds
@@ -395,9 +395,10 @@ function render(state: Snapshot): void {
       ? `Call wave ${upcoming.number} early for ${upcoming.reward} credits`
       : "Call next wave early",
   );
-  get("wave-risk").textContent = upcoming?.canLaunch
-    ? `3s lead · ${state.enemies.length} still on field. Later waves shift too.`
-    : (upcoming?.reason ?? "No further wave to call.");
+  const [timing, risk] = waveCallDetails(state);
+  get("wave-timing").textContent = timing;
+  get("wave-timing").hidden = !timing;
+  get("wave-risk").textContent = risk;
   get("incoming-summary").textContent = state.incoming.length
     ? state.incoming
         .map(
@@ -694,9 +695,14 @@ get("field-zoom").addEventListener("click", () => {
   render(simulation.snapshot());
 });
 function callNextWave(): void {
+  const upcoming = simulation.snapshot().nextWave;
   const result = simulation.launchNextWave();
   render(simulation.snapshot());
-  announce(result.message);
+  announce(
+    result.ok && upcoming
+      ? `${result.message} Remaining waves moved about ${Math.round(upcoming.secondsSaved)}s earlier.`
+      : result.message,
+  );
   if (result.ok) cells[focusIndex].focus();
 }
 get("call-wave").addEventListener("click", callNextWave);

@@ -178,7 +178,7 @@ test("first-play guidance distinguishes firing coverage, income timing and salva
     .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
     .click();
   await expect(page.locator("#coverage-status")).toContainText(
-    "0/6 lanes firing",
+    "0/6 lanes armed",
   );
   await expect(page.locator("#supply-status")).toContainText("1 income unit");
   await page.locator('[data-tower="astro"]').click();
@@ -186,7 +186,7 @@ test("first-play guidance distinguishes firing coverage, income timing and salva
     .getByRole("gridcell", { name: "Lane 1, tile 2, empty", exact: true })
     .click();
   await expect(page.locator("#coverage-status")).toContainText(
-    "1/6 lanes firing",
+    "1/6 lanes armed",
   );
   await page.locator('[data-tower="falcon"]').click();
   await expect(page.locator("#selected-detail")).toContainText(

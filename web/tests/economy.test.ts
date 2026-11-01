@@ -67,7 +67,7 @@ it("counts only firing defenders as coverage and previews actual refunds and pay
   game.start();
   game.place("bush", 0, 0);
   game.place("wall", 1, 0);
-  expect(coverage(game.snapshot())).toContain("0/6 lanes firing");
+  expect(coverage(game.snapshot())).toContain("0/6 lanes armed");
   game.place("astro", 2, 0);
   expect(coverage(game.snapshot())).toContain("1/6");
   expect(
