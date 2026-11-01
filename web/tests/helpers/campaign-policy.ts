@@ -3,6 +3,7 @@ import type { TowerKind } from "../../src/game/content";
 import { MISSIONS } from "../../src/game/missions";
 import type { MissionId } from "../../src/game/missions";
 import { Simulation } from "../../src/game/simulation";
+import { laneThreats } from "../../src/game/threats";
 
 export const POLICIES = [
   "cheap",
@@ -25,6 +26,20 @@ export function playCampaign(
   game.start();
   let idle = 0,
     allCoveredAt: number | null = null;
+  // Read-only research instrumentation. It never influences the policy's actions.
+  let idleStreak = 0,
+    longestIdle = 0,
+    replacements = 0;
+  let lastPurchaseAt: number | null = null,
+    lastDamageAt: number | null = null;
+  const visited = new Set<string>();
+  const threatSeconds = {
+    armored: 0,
+    heavy: 0,
+    clusteredLane: 0,
+    passedLane: 0,
+  };
+  const purchasedByKind: Partial<Record<TowerKind, number>> = {};
   const columns = Array.from({ length: 6 }, (_, row) =>
     Array.from({ length: COLS }, (_, col) => col).filter(
       (col) => !isBlocked(MISSIONS[id].environment, row, col),
@@ -56,7 +71,26 @@ export function playCampaign(
   for (let tick = 0; tick < 12000; tick++) {
     const state = game.snapshot();
     if (state.phase !== "playing") break;
-    if (!state.enemies.length && state.pendingSpawns) idle += STEP;
+    if (!state.enemies.length && state.pendingSpawns) {
+      idle += STEP;
+      idleStreak += STEP;
+      longestIdle = Math.max(longestIdle, idleStreak);
+    } else idleStreak = 0;
+    if (state.enemies.some((e) => e.kind === "tank"))
+      threatSeconds.armored += STEP;
+    if (state.enemies.some((e) => e.kind === "gargantua"))
+      threatSeconds.heavy += STEP;
+    for (let row = 0; row < 6; row++) {
+      const enemies = state.enemies.filter((e) => e.row === row);
+      if (
+        enemies.some((a, i) =>
+          enemies.some((b, j) => i < j && Math.abs(a.x - b.x) <= 1),
+        )
+      )
+        threatSeconds.clusteredLane += STEP;
+    }
+    threatSeconds.passedLane +=
+      laneThreats(state).filter((t) => t.passed).length * STEP;
     if (
       allCoveredAt === null &&
       Array.from({ length: 6 }, (_, row) =>
@@ -90,7 +124,14 @@ export function playCampaign(
         continue;
       // Save for the next planned slot, instead of spending its funds on cheaper later entries.
       if (live.credits < TOWERS[slot.kind].cost) break;
-      game.place(slot.kind, slot.row, slot.col);
+      const result = game.place(slot.kind, slot.row, slot.col);
+      if (result.ok) {
+        const key = `${slot.row}:${slot.col}`;
+        if (visited.has(key)) replacements++;
+        visited.add(key);
+        lastPurchaseAt = live.elapsed;
+        purchasedByKind[slot.kind] = (purchasedByKind[slot.kind] ?? 0) + 1;
+      }
     }
     const after = game.snapshot();
     if (
@@ -100,12 +141,21 @@ export function playCampaign(
     )
       game.launchNextWave();
     game.advance(STEP);
-    game.drainEvents();
+    if (game.drainEvents().some((e) => e.type === "defender-hit"))
+      lastDamageAt = game.snapshot().elapsed;
   }
   return {
     game,
     state: game.snapshot(),
     idle: Math.round(idle * 100) / 100,
     allCoveredAt,
+    research: {
+      longestIdle,
+      replacements,
+      lastPurchaseAt,
+      lastDamageAt,
+      purchasedByKind,
+      threatSeconds,
+    },
   };
 }
