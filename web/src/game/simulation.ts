@@ -2,7 +2,7 @@ import {
   AMMO,
   COLS,
   ENEMIES,
-  makeSpawns,
+  makeMissionSpawns,
   isBlocked,
   MAPS,
   ROWS,
@@ -10,6 +10,8 @@ import {
   TOWERS,
 } from "./content";
 import type { AmmoKind, EnemyKind, MapKind, Spawn, TowerKind } from "./content";
+import { MISSIONS, STANDALONE_MISSIONS } from "./missions";
+import type { MissionId } from "./missions";
 
 import { EARLY_WAVE_LEAD, earlyWaveReward, spawnWarnings } from "./waves";
 import type { SpawnWarning } from "./waves";
@@ -83,6 +85,7 @@ function emptyEconomy() {
 }
 export interface Snapshot {
   map: MapKind;
+  mission: MissionId;
   phase: Phase;
   elapsed: number;
   credits: number;
@@ -132,6 +135,8 @@ export interface ActionResult {
 
 /** One fixed-step clock owns all gameplay. Rendering and wall-clock timers never change rules. */
 export class Simulation {
+  private mission: MissionId;
+  private attempt = 0;
   private phase: Phase = "ready";
   private ticks = 0;
   private accumulator = 0;
@@ -154,11 +159,15 @@ export class Simulation {
   private events: GameEvent[] = [];
 
   constructor(
-    private readonly seed = 3352019,
+    private readonly seed?: number,
     private map: MapKind = "canyon",
   ) {
-    this.spawns = makeSpawns(seed, map);
-    this.waveStarts = MAPS[map].waves.map((wave) => wave.start);
+    this.mission = STANDALONE_MISSIONS[map];
+    this.spawns = makeMissionSpawns(
+      seed ?? MISSIONS[this.mission].seed,
+      this.mission,
+    );
+    this.waveStarts = MISSIONS[this.mission].waves.map((wave) => wave.start);
   }
 
   snapshot(): Snapshot {
@@ -166,6 +175,7 @@ export class Simulation {
     const nextWave = this.nextWave();
     return {
       map: this.map,
+      mission: this.mission,
       phase: this.phase,
       elapsed,
       credits: this.credits,
@@ -196,6 +206,9 @@ export class Simulation {
   start(): void {
     if (this.phase === "ready") this.phase = "playing";
   }
+  get attemptId(): number {
+    return this.attempt;
+  }
   pause(): void {
     if (this.phase === "playing") this.phase = "paused";
   }
@@ -219,15 +232,26 @@ export class Simulation {
         ok: false,
         message: "Restart the mission before changing destination.",
       };
-    this.map = map;
-    this.restart();
+    this.chooseMission(STANDALONE_MISSIONS[map]);
     return {
       ok: true,
       message: `${MAPS[map].name} selected. ${MAPS[map].description}`,
     };
   }
 
+  chooseMission(mission: MissionId): ActionResult {
+    if (!Object.hasOwn(MISSIONS, mission))
+      return { ok: false, message: "Choose an available mission." };
+    if (this.phase !== "ready")
+      return { ok: false, message: "Restart before changing mission." };
+    this.mission = mission;
+    this.map = MISSIONS[mission].environment;
+    this.restart();
+    return { ok: true, message: `${MISSIONS[mission].title} selected.` };
+  }
+
   restart(): void {
+    this.attempt++;
     this.phase = "ready";
     this.ticks = 0;
     this.accumulator = 0;
@@ -238,8 +262,11 @@ export class Simulation {
     this.towers = [];
     this.enemies = [];
     this.projectiles = [];
-    this.spawns = makeSpawns(this.seed, this.map);
-    this.waveStarts = MAPS[this.map].waves.map((wave) => wave.start);
+    this.spawns = makeMissionSpawns(
+      this.seed ?? MISSIONS[this.mission].seed,
+      this.mission,
+    );
+    this.waveStarts = MISSIONS[this.mission].waves.map((wave) => wave.start);
     this.calledWaves.clear();
     this.spawnIndex = 0;
     this.bankClock = 0;
@@ -276,7 +303,7 @@ export class Simulation {
   }
 
   private nextWave(): NextWave | null {
-    const definition = MAPS[this.map].waves[this.wave];
+    const definition = MISSIONS[this.mission].waves[this.wave];
     if (!definition || this.phase === "won" || this.phase === "lost")
       return null;
     const startAt = this.waveStarts[this.wave];

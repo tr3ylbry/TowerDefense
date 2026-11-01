@@ -1,5 +1,9 @@
-export const ROWS = 6;
-export const COLS = 9;
+import { ENVIRONMENTS, ROWS, COLS } from "./environments";
+import type { MapKind } from "./environments";
+import { MISSIONS, STANDALONE_MISSIONS } from "./missions";
+import type { MissionId } from "./missions";
+export { ROWS, COLS };
+export type { MapKind };
 export const STEP = 0.05;
 
 export const AMMO = {
@@ -276,257 +280,21 @@ export interface Wave {
   entries?: readonly { offset: number; laneSlot: number }[];
   briefing?: string;
 }
-interface MissionDefinition {
-  name: string;
-  number: string;
-  tag: string;
-  description: string;
-  background: string;
-  blocked: readonly (readonly number[])[];
-  waves: readonly Wave[];
-}
-
-// Restricted cells are copied from the Java Controller's zero-based map coordinates.
-// The original duplicate column in The Nest's last row is represented once.
+/** Compatibility view for original standalone callers; terrain and waves each have one source. */
 export const MAPS = {
   canyon: {
-    name: "The Canyon",
-    number: "01",
-    tag: "FIRST CONTACT",
-    description:
-      "Open terrain. Cover six lanes, invest in income, and prepare armor-piercing support for Tank waves.",
-    background: "stage-one",
-    blocked: [[], [], [], [], [], []],
-    waves: [
-      {
-        start: 7,
-        title: "First contact",
-        enemies: ["scout", "scout", "scout", "scout", "scout", "scout"],
-      },
-      {
-        start: 29,
-        title: "Fast company",
-        enemies: [
-          "scout",
-          "grunt",
-          "sprinter",
-          "grunt",
-          "scout",
-          "sprinter",
-          "scout",
-          "grunt",
-        ],
-      },
-      {
-        start: 56,
-        title: "Plated advance",
-        enemies: [
-          "grunt",
-          "manhunter",
-          "tank",
-          "tank",
-          "grunt",
-          "sprinter",
-          "grunt",
-          "scout",
-          "manhunter",
-        ],
-      },
-      {
-        start: 87,
-        title: "The last stand",
-        enemies: [
-          "grunt",
-          "tank",
-          "sprinter",
-          "manhunter",
-          "scout",
-          "gargantua",
-          "tank",
-          "sprinter",
-          "tank",
-          "manhunter",
-        ],
-      },
-    ],
+    ...ENVIRONMENTS.canyon,
+    waves: MISSIONS[STANDALONE_MISSIONS.canyon].waves,
   },
   bridge: {
-    name: "Sky Bridge",
-    number: "02",
-    tag: "BROKEN GROUND",
-    description:
-      "Twelve acid pools divide the bridge. Defenders cannot deploy on them; aliens cross freely.",
-    background: "stage-two",
-    blocked: [
-      [3, 4],
-      [4, 5],
-      [4, 5],
-      [3, 4],
-      [5, 6],
-      [3, 4],
-    ],
-    waves: [
-      {
-        start: 10,
-        title: "Across the divide",
-        enemies: ["scout", "scout", "scout", "grunt", "scout", "scout"],
-      },
-      {
-        start: 42,
-        title: "Bridge runners",
-        enemies: [
-          "sprinter",
-          "grunt",
-          "sprinter",
-          "scout",
-          "grunt",
-          "manhunter",
-          "scout",
-          "sprinter",
-        ],
-      },
-      {
-        start: 82,
-        title: "Heavy crossing",
-        enemies: [
-          "tank",
-          "grunt",
-          "manhunter",
-          "sprinter",
-          "grunt",
-          "tank",
-          "scout",
-          "manhunter",
-          "grunt",
-          "sprinter",
-        ],
-      },
-      {
-        start: 126,
-        title: "Hold the bridge",
-        enemies: [
-          "gargantua",
-          "sprinter",
-          "tank",
-          "manhunter",
-          "grunt",
-          "sprinter",
-          "grunt",
-          "tank",
-          "manhunter",
-          "scout",
-          "grunt",
-          "sprinter",
-        ],
-      },
-    ],
+    ...ENVIRONMENTS.bridge,
+    waves: MISSIONS[STANDALONE_MISSIONS.bridge].waves,
   },
   nest: {
-    name: "The Nest",
-    number: "03",
-    tag: "HOSTILE TERRITORY",
-    description:
-      "Sixteen acid pools constrain your formation. Late waves arrive in paired lane relays; keep a reserve for the second group.",
-    background: "stage-three",
-    blocked: [
-      [1, 3, 6],
-      [1, 4, 7],
-      [1, 2, 5],
-      [1, 4],
-      [1, 3, 6],
-      [1, 4],
-    ],
-    waves: [
-      {
-        start: 12,
-        title: "Into the nest",
-        enemies: ["scout", "grunt", "scout", "scout", "grunt", "scout"],
-      },
-      {
-        start: 46,
-        title: "The swarm wakes",
-        enemies: [
-          "sprinter",
-          "manhunter",
-          "grunt",
-          "sprinter",
-          "scout",
-          "grunt",
-          "sprinter",
-          "manhunter",
-          "scout",
-        ],
-      },
-      {
-        start: 90,
-        title: "The inner guard",
-        briefing:
-          "Paired lane relay: three lanes first, then the other three. Splash and barriers help; hold a reserve.",
-        entries: [
-          { offset: 0, laneSlot: 0 },
-          { offset: 0.6, laneSlot: 0 },
-          { offset: 2.4, laneSlot: 1 },
-          { offset: 3, laneSlot: 1 },
-          { offset: 4.8, laneSlot: 2 },
-          { offset: 5.4, laneSlot: 2 },
-          { offset: 12, laneSlot: 3 },
-          { offset: 12.6, laneSlot: 3 },
-          { offset: 14.4, laneSlot: 4 },
-          { offset: 15, laneSlot: 4 },
-          { offset: 16.8, laneSlot: 5 },
-        ],
-        enemies: [
-          "tank",
-          "manhunter",
-          "grunt",
-          "sprinter",
-          "tank",
-          "grunt",
-          "manhunter",
-          "sprinter",
-          "grunt",
-          "tank",
-          "scout",
-        ],
-      },
-      {
-        start: 136,
-        title: "Heart of the swarm",
-        briefing:
-          "Paired lane relay: three lanes first, then the other three. Splash and barriers help; hold a reserve.",
-        entries: [
-          { offset: 0, laneSlot: 0 },
-          { offset: 0.6, laneSlot: 0 },
-          { offset: 2.4, laneSlot: 1 },
-          { offset: 3, laneSlot: 1 },
-          { offset: 4.8, laneSlot: 2 },
-          { offset: 5.4, laneSlot: 2 },
-          { offset: 12, laneSlot: 3 },
-          { offset: 12.6, laneSlot: 3 },
-          { offset: 14.4, laneSlot: 4 },
-          { offset: 15, laneSlot: 4 },
-          { offset: 16.8, laneSlot: 5 },
-          { offset: 17.4, laneSlot: 5 },
-        ],
-        enemies: [
-          "gargantua",
-          "manhunter",
-          "tank",
-          "grunt",
-          "manhunter",
-          "sprinter",
-          "gargantua",
-          "grunt",
-          "tank",
-          "sprinter",
-          "manhunter",
-          "sprinter",
-        ],
-      },
-    ],
+    ...ENVIRONMENTS.nest,
+    waves: MISSIONS[STANDALONE_MISSIONS.nest].waves,
   },
-} as const satisfies Record<string, MissionDefinition>;
-export type MapKind = keyof typeof MAPS;
+} as const;
 
 export function isBlocked(map: MapKind, row: number, col: number): boolean {
   const blocked: readonly (readonly number[])[] = MAPS[map].blocked;
@@ -534,12 +302,16 @@ export function isBlocked(map: MapKind, row: number, col: number): boolean {
 }
 
 export function makeSpawns(seed: number, map: MapKind = "canyon"): Spawn[] {
+  return makeMissionSpawns(seed, STANDALONE_MISSIONS[map]);
+}
+
+export function makeMissionSpawns(seed: number, mission: MissionId): Spawn[] {
   let value = seed >>> 0;
   const random = () => {
     value = (Math.imul(value, 1664525) + 1013904223) >>> 0;
     return value / 4294967296;
   };
-  return MAPS[map].waves.flatMap((wave, index) => {
+  return MISSIONS[mission].waves.flatMap((wave, index) => {
     const lanes = Array.from({ length: ROWS }, (_, row) => row);
     for (let i = lanes.length - 1; i > 0; i--) {
       const j = Math.floor(random() * (i + 1));
