@@ -8,6 +8,13 @@ import {
 import type { EnemyKind, MapKind, TowerKind } from "./game/content";
 import { Simulation } from "./game/simulation";
 import type { Snapshot } from "./game/simulation";
+import { MISSIONS, CAMPAIGN_ORDER } from "./game/missions";
+import type { MissionId } from "./game/missions";
+import { validateContent } from "./game/validate-content";
+import { CampaignSave } from "./campaign/save";
+import { CompletionRecorder, isUnlocked, rating } from "./campaign/progress";
+import type { Completion } from "./campaign/progress";
+import { CampaignBoard, campaignMarkup } from "./campaign/board";
 import { AudioBus } from "./audio";
 import type { Battlefield } from "./battlefield";
 import type { ArtManifest, ArtStyle } from "./assets";
@@ -15,7 +22,13 @@ import { coverage, crewDetails } from "./guidance";
 import { laneThreats, placementWarning, threatAdvice } from "./game/threats";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
+validateContent();
 const simulation = new Simulation();
+const campaignSave = new CampaignSave();
+const completionRecorder = new CompletionRecorder();
+let campaignMode = false;
+let completedAttempt = -1;
+let completion: Completion | null = null;
 const audio = new AudioBus();
 const towerKinds = Object.keys(TOWERS) as TowerKind[];
 const base = import.meta.env.BASE_URL;
@@ -80,18 +93,18 @@ const missionReceipt = `
   </details>`;
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.5</span></span></span></a>
-    <nav aria-label="Main"><span class="nav-active">The mission</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.6</span></span></span></a>
+    <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ↗</button><span class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
   <main id="mission">
     <section class="mission-heading" aria-labelledby="mission-title"><div><p class="eyebrow"><span class="signal-dot"></span> EXPEDITION 001 <span class="eyebrow-line"></span> ORBITAL DEFENSE</p><h1 id="mission-title">A little space.<br class="mobile-break"> A lot to defend<span>.</span></h1></div><p class="mission-intro">A familiar crew. An unfamiliar frontier.<br>Build your defenses and hold the line.</p></section>
     <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" disabled class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" disabled class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
-    <p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
+    <p id="save-warning" class="save-warning" role="status" hidden></p><p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong class="credits"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
-        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p>${missionReceipt}<button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
+        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button">Next mission ↗</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
         <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. Place a gun in an empty tile to its left, check its armor, or salvage blockers if no firing tile remains. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
@@ -127,8 +140,9 @@ app.innerHTML = `
     })
     .join(
       "",
-    )}</div><button class="secondary-button" data-close>Keep current destination</button></dialog>
+    )}</div><button id="campaign-switch" class="primary-button">Campaign mission control ↗</button><button class="secondary-button" data-close>Keep current destination</button></dialog>
   <dialog id="asset-dialog" aria-labelledby="asset-title"><span class="eyebrow">MISSION RESOURCES</span><h2 id="asset-title">Preparing artwork…</h2><p id="asset-message" role="status">Your mission is paused while artwork loads.</p><progress id="asset-progress" aria-label="Loading artwork"></progress><div class="dialog-actions"><button id="asset-retry" class="primary-button" hidden>Retry artwork</button><button id="asset-cancel" class="secondary-button" hidden>Keep current mission</button></div></dialog>
+  ${campaignMarkup}
   <dialog id="restart-dialog" aria-labelledby="restart-title"><span class="eyebrow">MISSION CONTROL</span><h2 id="restart-title">Start a fresh mission?</h2><p>Your current deployment and progress will be reset.</p><div class="dialog-actions"><button id="restart-cancel" class="secondary-button">Keep playing</button><button id="restart-confirm" class="primary-button">Restart mission ↗</button></div></dialog>
 `;
 
@@ -266,6 +280,16 @@ for (let row = 0; row < ROWS; row++) {
 }
 
 function render(state: Snapshot): void {
+  if (
+    campaignMode &&
+    state.phase === "won" &&
+    completedAttempt !== simulation.attemptId
+  ) {
+    completedAttempt = simulation.attemptId;
+    completion = completionRecorder.observe(simulation, campaignSave.progress);
+    if (completion) campaignSave.save();
+  }
+  showSaveWarning();
   const passed = laneThreats(state).filter((t) => t.passed);
   const signature = JSON.stringify([
     ready,
@@ -281,6 +305,9 @@ function render(state: Snapshot): void {
     state.nextWave?.canLaunch,
     state.nextWave?.reward,
     state.map,
+    state.mission,
+    simulation.attemptId,
+    campaignMode,
     state.phase,
     Math.floor(state.elapsed),
     state.credits,
@@ -303,6 +330,7 @@ function render(state: Snapshot): void {
   get<HTMLButtonElement>("map-open").disabled =
     (!ready && !loadError) || assetBusy;
   get<HTMLButtonElement>("art-toggle").disabled = !ready || assetBusy;
+  get<HTMLButtonElement>("campaign-nav").disabled = !ready || assetBusy;
   renderSelection(state);
   const threatBox = get("passed-threat");
   const help = get<HTMLDetailsElement>("direction-help");
@@ -322,6 +350,7 @@ function render(state: Snapshot): void {
   get("supply-status").textContent =
     `Supply +30 in ${state.economy.supplyIn}s · ${growers} income ${growers === 1 ? "unit" : "units"}`;
   const map = MAPS[state.map];
+  const mission = MISSIONS[state.mission];
   document.body.classList.toggle("focused-play", focused);
   document.body.classList.toggle("zoomed-field", zoomed);
   get("focus-toggle").setAttribute("aria-pressed", String(focused));
@@ -346,8 +375,10 @@ function render(state: Snapshot): void {
   get("wave-tactic").textContent =
     upcoming?.briefing ??
     (state.pendingSpawns > 0
-      ? (map.waves[state.wave - 1] as import("./game/content").Wave | undefined)
-          ?.briefing
+      ? (
+          mission.waves[state.wave - 1] as
+            import("./game/content").Wave | undefined
+        )?.briefing
       : "") ??
     "";
   const call = get<HTMLButtonElement>("call-wave");
@@ -381,11 +412,18 @@ function render(state: Snapshot): void {
         .map((tower) => `L${tower.row + 1} ${TOWERS[tower.kind].name}`)
         .join(", ")}`
     : "";
-  document.title = `Astronauts vs Aliens — ${map.name}`;
+  document.title = `Astronauts vs Aliens — ${campaignMode ? mission.title : map.name}`;
   grid.inert = assetBusy || state.phase !== "playing";
-  get("location-name").textContent = map.name;
-  get("location-number").textContent = map.number;
-  get("location-tag").textContent = map.tag;
+  get("location-name").textContent = campaignMode ? mission.title : map.name;
+  get("map-open").textContent = campaignMode
+    ? "Mission control ↗"
+    : "Change destination ↗";
+  get("location-number").textContent = campaignMode
+    ? String(mission.order).padStart(2, "0")
+    : map.number;
+  get("location-tag").textContent = campaignMode
+    ? `CAMPAIGN / ${map.name}`
+    : map.tag;
   get("terrain-note").textContent = map.description;
   document.querySelectorAll<HTMLElement>("[data-map]").forEach((card) => {
     card.setAttribute("aria-pressed", String(card.dataset.map === state.map));
@@ -461,12 +499,16 @@ function render(state: Snapshot): void {
       : `${state.kills} HOSTILES CLEARED`;
   if (state.wave !== lastWave) {
     if (state.wave > 0)
-      announce(`Wave ${state.wave}: ${map.waves[state.wave - 1].title}.`);
+      announce(`Wave ${state.wave}: ${mission.waves[state.wave - 1].title}.`);
     lastWave = state.wave;
   }
-  if (!loadError && (state.phase !== lastPhase || state.map !== lastMap)) {
+  if (
+    !loadError &&
+    (state.phase !== lastPhase ||
+      `${state.mission}/${campaignMode}` !== lastMap)
+  ) {
     lastPhase = state.phase;
-    lastMap = state.map;
+    lastMap = `${state.mission}/${campaignMode}`;
     overlay.hidden = state.phase === "playing";
     overlay.classList.toggle("compact-overlay", state.phase === "paused");
     const title = get("overlay-title");
@@ -475,10 +517,17 @@ function render(state: Snapshot): void {
     const receipt = get<HTMLDetailsElement>("mission-receipt");
     receipt.hidden = state.phase !== "won" && state.phase !== "lost";
     receipt.open = false;
+    get("mission-rating").hidden =
+      !campaignMode || (state.phase !== "won" && state.phase !== "lost");
+    get("campaign-result-actions").hidden =
+      !campaignMode || (state.phase !== "won" && state.phase !== "lost");
     if (state.phase === "ready") {
       title.innerHTML = "Home is behind you.<br>Hold the line.";
+      if (campaignMode) title.textContent = mission.title;
       body.textContent =
         "Choose a crew card, then an empty tile. Guns fire right: place them to the left of approaching aliens. Cover all six lanes and protect three shields.";
+      if (campaignMode)
+        body.textContent = `${mission.briefing} ${mission.tactics}`;
       start.innerHTML =
         '<span>Begin mission</span><span aria-hidden="true">↗</span>';
       note.textContent =
@@ -497,6 +546,19 @@ function render(state: Snapshot): void {
           ? `${map.name} secured.<br>Nice work, commander.`
           : "The signal went quiet.<br>Try a new formation.";
       body.textContent = `${state.kills} hostiles cleared · ${Math.floor(state.elapsed / 60)}m ${Math.floor(state.elapsed % 60)}s elapsed · ${state.integrity} shields remaining`;
+      if (campaignMode) {
+        if (state.phase === "won")
+          title.textContent = `${mission.title} complete.`;
+        const earned = rating(state);
+        const best = campaignSave.progress.best[state.mission]?.stars ?? 0;
+        get("mission-rating").textContent =
+          `${"★".repeat(earned)}${"☆".repeat(3 - earned)} · ${earned}/3 stars · Best: ${best}/3${completion?.mission === state.mission && earned ? ` · Previous best: ${completion.previous}/3` : ""}. Victory earns one star per remaining shield.`;
+        const next = CAMPAIGN_ORDER[mission.order];
+        get("campaign-next").hidden =
+          state.phase !== "won" ||
+          !next ||
+          !isUnlocked(campaignSave.progress, next);
+      }
       const economy = state.economy;
       get("receipt-deployed").textContent = String(economy.purchases);
       get("receipt-lost").textContent = String(economy.losses);
@@ -517,6 +579,12 @@ function render(state: Snapshot): void {
         state.phase === "won"
           ? "Same frontier. A new strategy."
           : "Cover every lane, then add TARS or plasma before the plated wave.";
+      if (
+        campaignMode &&
+        mission.order === CAMPAIGN_ORDER.length &&
+        state.phase === "won"
+      )
+        note.textContent = "Chapter one complete. All six frontiers secured.";
       announce(
         state.phase === "won"
           ? "Mission complete. The outpost is safe."
@@ -747,9 +815,11 @@ for (const id of [
   "credits-dialog",
   "restart-dialog",
   "map-dialog",
+  "campaign-dialog",
 ]) {
   const dialog = get<HTMLDialogElement>(id);
   dialog.addEventListener("close", () => {
+    if (document.querySelector("dialog[open]")) return;
     if (resumeAfterDialog && !document.hidden) simulation.resume();
     resumeAfterDialog = false;
     render(simulation.snapshot());
@@ -760,7 +830,107 @@ for (const id of [
       button.addEventListener("click", () => closeDialog(dialog)),
     );
 }
+function showSaveWarning(): void {
+  const notice = get("save-warning");
+  if (notice.textContent !== campaignSave.warning)
+    notice.textContent = campaignSave.warning;
+  notice.hidden = !campaignSave.warning;
+}
+const campaignBoard = new CampaignBoard((id) => {
+  if (isUnlocked(campaignSave.progress, id)) campaignBoard.review(id);
+});
+function updateCampaign(): void {
+  const state = simulation.snapshot();
+  campaignBoard.update(
+    campaignSave.progress,
+    campaignSave.warning,
+    state.phase === "playing" || state.phase === "paused",
+    MISSIONS[state.mission].title,
+  );
+}
+function openCampaign(): void {
+  updateCampaign();
+  campaignBoard.overview();
+  openDialog("campaign-dialog");
+  get("campaign-title").focus();
+}
+function swapDialog(from: string, to: string): void {
+  const resume = resumeAfterDialog;
+  resumeAfterDialog = false;
+  get<HTMLDialogElement>(from).close();
+  get<HTMLDialogElement>(to).showModal();
+  // Dialog close events are asynchronous: don't let the departing dialog resume this one.
+  queueMicrotask(() => {
+    resumeAfterDialog = resume;
+  });
+}
+function prepareCampaign(id: MissionId): void {
+  if (!isUnlocked(campaignSave.progress, id) || !ready || assetBusy) return;
+  const resume = resumeAfterDialog;
+  resumeAfterDialog = false;
+  get<HTMLDialogElement>("campaign-dialog").close();
+  requestArtwork(
+    MISSIONS[id].environment,
+    artStyle,
+    () => {
+      simulation.restart();
+      simulation.chooseMission(id);
+      campaignMode = true;
+      completion = null;
+      lastWave = 0;
+      lastPhase = "";
+      directionExplained = false;
+      focused = false;
+      select("astro");
+      announce(
+        `${MISSIONS[id].title} prepared. Review your briefing, then begin.`,
+      );
+    },
+    resume,
+  );
+}
+get("campaign-nav").addEventListener("click", openCampaign);
+get("campaign-return").addEventListener("click", openCampaign);
+get("campaign-next").addEventListener("click", () => {
+  const next = CAMPAIGN_ORDER[MISSIONS[simulation.snapshot().mission].order];
+  if (!next) return;
+  openCampaign();
+  campaignBoard.review(next);
+});
+get("campaign-switch").addEventListener("click", () => {
+  updateCampaign();
+  campaignBoard.overview();
+  swapDialog("map-dialog", "campaign-dialog");
+  get("campaign-title").focus();
+});
+get("campaign-standalone").addEventListener("click", () => {
+  get("map-warning").textContent =
+    "Standalone play does not award campaign stars. Choosing a destination resets the current deployment; closing keeps it.";
+  swapDialog("campaign-dialog", "map-dialog");
+});
+get("campaign-back").addEventListener("click", () => campaignBoard.overview());
+get("campaign-launch").addEventListener("click", () => {
+  if (campaignBoard.selected) prepareCampaign(campaignBoard.selected);
+});
+get("campaign-reset").addEventListener("click", () =>
+  get<HTMLDialogElement>("campaign-reset-dialog").showModal(),
+);
+get("campaign-reset-cancel").addEventListener("click", () =>
+  get<HTMLDialogElement>("campaign-reset-dialog").close(),
+);
+get("campaign-reset-confirm").addEventListener("click", () => {
+  campaignSave.reset();
+  campaignBoard.overview();
+  updateCampaign();
+  showSaveWarning();
+  get<HTMLDialogElement>("campaign-reset-dialog").close();
+  get("campaign-reset").focus();
+});
 get("map-open").addEventListener("click", () => {
+  if (campaignMode) {
+    openCampaign();
+    return;
+  }
   get("map-warning").textContent =
     simulation.snapshot().phase === "ready"
       ? "Each destination has four waves and the full original roster."
@@ -779,7 +949,10 @@ document.querySelectorAll<HTMLButtonElement>("[data-map]").forEach((card) => {
       () => {
         if (simulation.snapshot().phase !== "ready") simulation.restart();
         const result = simulation.chooseMap(map);
+        campaignMode = false;
+        completion = null;
         lastWave = 0;
+        lastPhase = "";
         select("astro");
         announce(result.message);
       },

@@ -2424,3 +2424,193 @@ dialog li {
     min-height: 240px;
   }
 }
+
+/* Campaign mission control uses shared scenery; no extra initial image dependencies. */
+#campaign-dialog {
+  width: min(1000px, calc(100% - 32px));
+  max-width: 1000px;
+  max-height: calc(100% - 32px);
+  padding: clamp(20px, 4vw, 48px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: linear-gradient(145deg, #21363e, #13232e 70%);
+}
+#campaign-dialog h2 {
+  font-size: clamp(26px, 4vw, 46px);
+}
+#campaign-progress {
+  color: #bfe3d3;
+  font-family: monospace;
+}
+#campaign-dialog .campaign-rule {
+  font-size: 12px;
+  color: #b4c7c9;
+  line-height: 1.6;
+}
+.campaign-sector {
+  border-top: 1px solid #4b636a;
+  padding-top: 20px;
+  margin-top: 24px;
+}
+.sector-heading {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.sector-heading img {
+  width: 112px;
+  height: 63px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #60767b;
+}
+.sector-heading h3 {
+  font-size: 24px;
+  margin: 4px 0 0;
+}
+.campaign-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.campaign-card {
+  min-width: 0;
+  padding: 20px;
+  background: #253b43;
+  border: 1px solid #65827f;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.campaign-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mission-index {
+  color: #f4ad88;
+  font: 24px monospace;
+}
+.card-rating {
+  color: #dcdec0;
+  font: 12px monospace;
+}
+.campaign-card h4 {
+  font-size: 21px;
+  margin: 15px 0 0;
+  overflow-wrap: anywhere;
+}
+#campaign-dialog .campaign-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+#campaign-dialog .card-state {
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #c0ded0;
+}
+.campaign-card button {
+  width: 100%;
+  margin-top: 12px;
+}
+.locked-mission {
+  background: #1c2c35;
+  border-color: #455d66;
+}
+.locked-mission .card-state {
+  color: #c0c8cb;
+}
+#campaign-dialog button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.campaign-briefing {
+  margin: 24px 0;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid #80b4ad;
+  background: #223c44;
+  border-radius: 8px;
+}
+.campaign-briefing h3 {
+  font-size: clamp(24px, 4vw, 36px);
+}
+.campaign-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.save-warning {
+  color: #ffe0b3;
+  background: #3d3430;
+  border: 1px solid #c99267;
+  border-radius: 5px;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.mission-rating {
+  color: #f7d7a2;
+  font-family: monospace;
+}
+.campaign-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px auto;
+}
+.campaign-result-actions button {
+  padding: 8px 14px;
+  min-height: 44px;
+  font-size: 12px;
+}
+#campaign-dialog [hidden],
+#campaign-result-actions[hidden],
+#mission-rating[hidden],
+.save-warning[hidden] {
+  display: none;
+}
+#campaign-dialog button,
+#campaign-reset-dialog button {
+  min-height: 44px;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+#campaign-reset-dialog {
+  max-height: calc(100% - 32px);
+  overflow: auto;
+}
+@media (max-width: 700px) {
+  #campaign-dialog {
+    width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    padding: 20px 16px;
+  }
+  .campaign-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .campaign-card {
+    padding: 16px;
+  }
+  .sector-heading {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .sector-heading h3 {
+    font-size: 20px;
+  }
+  .campaign-footer > button {
+    width: 100%;
+  }
+  .campaign-result-actions {
+    flex-direction: column;
+  }
+}
