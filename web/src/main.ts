@@ -920,6 +920,10 @@ get("campaign-reset-cancel").addEventListener("click", () =>
 );
 get("campaign-reset-confirm").addEventListener("click", () => {
   campaignSave.reset();
+  // Refresh an existing outcome without allowing its already-observed win to save again.
+  completion = null;
+  lastPhase = "";
+  lastUiSignature = "";
   campaignBoard.overview();
   updateCampaign();
   showSaveWarning();

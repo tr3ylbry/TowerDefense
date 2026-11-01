@@ -180,6 +180,9 @@ describe("authoritative completion and progression", () => {
     const saved = structuredClone(progress);
     expect(recorder.observe(game, progress)?.stars).toBe(3);
     expect(progress).toEqual(saved);
+    const reset = emptyProgress();
+    recorder.observe(game, reset);
+    expect(reset).toEqual(emptyProgress());
     expect(isUnlocked(progress, "canyon-escalation")).toBe(true);
     const loss = new Simulation();
     loss.start();

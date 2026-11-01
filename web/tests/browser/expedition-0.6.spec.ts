@@ -170,7 +170,9 @@ test("public-control expedition completes all six missions, persists stars, repl
         MISSIONS[CAMPAIGN_ORDER[index + 1]].title,
       );
       if (enlarged) {
-        await enlarged.evaluate((style) => style.parentNode?.removeChild(style));
+        await enlarged.evaluate((style) =>
+          style.parentNode?.removeChild(style),
+        );
         await page.setViewportSize({ width: 1000, height: 1000 });
       }
       await page.locator("#campaign-back").click();
@@ -262,6 +264,7 @@ test("active campaign navigation is explicit and backgrounded dialogs never auto
 test("campaign reset requires confirmation and isolates motion and other browser data", async ({
   page,
 }) => {
+  test.setTimeout(90_000);
   await fixture(page, ["first-contact", "canyon-escalation"]);
   await page.addInitScript(() => {
     localStorage.setItem("ava-reduced-motion", "true");
@@ -276,6 +279,14 @@ test("campaign reset requires confirmation and isolates motion and other browser
   await expect(page.locator("#campaign-progress")).toContainText(
     "2 / 6 missions complete",
   );
+  await prepare(page, "first-contact");
+  await page.locator("#start").click();
+  await page.locator("#speed").click();
+  await expect(page.locator("#status")).toHaveText("Signal lost", {
+    timeout: 45_000,
+  });
+  await expect(page.locator("#mission-rating")).toContainText("Best: 3/3");
+  await openBoard(page);
   await page.locator("#campaign-reset").click();
   await page.locator("#campaign-reset-confirm").click();
   await expect(page.locator("#campaign-reset")).toBeFocused();
@@ -287,6 +298,8 @@ test("campaign reset requires confirmation and isolates motion and other browser
       other: localStorage.getItem("unrelated-demo"),
     })),
   ).toEqual({ campaign: null, motion: "true", other: "keep" });
+  await page.locator("#campaign-dialog").press("Escape");
+  await expect(page.locator("#mission-rating")).toContainText("Best: 0/3");
 });
 
 test("blocked storage warns without interrupting campaign deployment", async ({
