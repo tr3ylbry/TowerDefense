@@ -36,3 +36,14 @@ jobs:
       - run: npm run check
       - run: npx playwright install --with-deps ${{ matrix.browser }}
       - run: npm run test:e2e -- --project=${{ matrix.browser }}
+
+      - name: Retain failed browser traces
+        if: failure()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: browser-failure-${{ matrix.browser }}
+          path: |
+            web/test-results/
+            web/playwright-report/
+          retention-days: 7
+          if-no-files-found: ignore

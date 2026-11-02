@@ -1,4 +1,5 @@
 import "./style.css";
+import { actionArrow } from "./icons";
 import { COLS, ENEMIES, isBlocked, MAPS, ROWS, TOWERS } from "./game/content";
 import {
   EXPEDITION_ENEMIES,
@@ -95,17 +96,17 @@ const missionReceipt = `
 app.innerHTML = `
   <header class="site-header">
     <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon" aria-hidden="true">${helmet}</span><span class="wordmark-copy" aria-hidden="true"><span class="wordmark-astronauts">ASTRONAUTS</span><span class="wordmark-versus">vs</span><span class="wordmark-aliens">ALIENS</span><span class="edition">EXPEDITION 1.0</span></span></a>
-    <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ↗</button><span id="mode-label" class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
+    <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ${actionArrow}</button><span id="mode-label" class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide ${actionArrow}</button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original ${actionArrow}</a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
   <main id="mission">
     <section class="mission-heading" aria-labelledby="mission-title"><div><p class="eyebrow"><span class="signal-dot"></span> EXPEDITION 001 <span class="eyebrow-line"></span> ORBITAL DEFENSE</p><h1 id="mission-title">A little space.<br class="mobile-break"> A lot to defend<span>.</span></h1></div><p class="mission-intro">A familiar crew. An unfamiliar frontier.<br>Build your defenses and hold the line.</p></section>
-    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" disabled class="destination-button" aria-haspopup="dialog">Change destination ↗</button></div><div class="mission-tools"><button id="art-toggle" disabled class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
+    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" disabled class="destination-button" aria-haspopup="dialog"><span id="map-open-label">Change destination</span> ${actionArrow}</button></div><div class="mission-tools"><button id="art-toggle" disabled class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
     <p id="save-warning" class="save-warning" role="status" hidden></p><p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
         <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong id="credit-balance" class="credits" role="group" aria-label="230 credits available"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label"><span id="current-difficulty" hidden>HARD</span>WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed" title="Simulation speed, independent of difficulty">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
-        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><div id="mode-choice" class="mode-choice"><span>Standalone · no saved stars.</span><button id="campaign-entry" class="nav-button" aria-haspopup="dialog" disabled>Explore campaign ↗</button></div>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button">Next mission ↗</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
+        <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><div id="mode-choice" class="mode-choice"><span>Standalone · no saved stars.</span><button id="campaign-entry" class="nav-button" aria-haspopup="dialog" disabled>Explore campaign ${actionArrow}</button></div>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> ${actionArrow}</button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button"><span id="campaign-next-label">Next mission</span> ${actionArrow}</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
         <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-timing" class="wave-timing"></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-timing wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. If an empty forward firing tile remains, place a gun there and check armor. Salvage can open an occupied tile, but cannot restore a firing line after the hostile passes every legal muzzle. Removing its blocker lets it advance and may cost a shield. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
       </section>
@@ -119,7 +120,7 @@ app.innerHTML = `
         )}</div><div class="crew-details"><p id="selected-detail"><strong>Astro Joe · 50 credits</strong><span>Steady fire. Your first line of defense.</span></p><button id="salvage" class="salvage-button" aria-pressed="false" aria-label="Salvage a defender, recover 40% of its cost">⌁ Salvage <kbd>X</kbd></button></div></aside>
     </div>
     <div class="dispatch" id="announcement" role="status" aria-live="polite" aria-atomic="true">Select a crew member to get started.</div>
-    <footer><span><span class="footer-dot"></span> MADE FOR THE JOY OF BUILDING.</span><span>A school project, reimagined. <button id="credits-open">Meet the original team ↗</button></span></footer>
+    <footer><span><span class="footer-dot"></span> MADE FOR THE JOY OF BUILDING.</span><span>A school project, reimagined. <button id="credits-open">Meet the original team ${actionArrow}</button></span></footer>
   </main>
   <dialog id="guide-dialog" aria-labelledby="guide-title"><button class="dialog-close" data-close aria-label="Close field guide">×</button><span class="eyebrow">FIELD GUIDE / 001</span><h2 id="guide-title">Every outpost starts<br>with a good plan.</h2><ol><li><strong>Deploy.</strong> Choose one of nine crew cards, then click or tap an empty tile. Tanks absorb 80% of ordinary fire: TARS ignores plating; plasma and explosives partially pierce it. Explosive Astro Joe and Moon Zeus hit clusters; the Frontier Flagship fires three rounds into one lane.</li><li><strong>Fund the mission.</strong> Money Bushes produce 25 credits every 6 seconds; Money Trees produce 60 every 8. The outpost provides 30 every 5 seconds.</li><li><strong>Buy time.</strong> Asteroids block enemies. Place attackers behind them. Acid pools on Sky Bridge and The Nest prevent deployment, but aliens can cross them. Salvage returns 40% of a defender's cost.</li><li><strong>Hold the line.</strong> Clear four waves. An alien reaching the left edge costs one shield. Lose all three and the outpost falls.</li></ol><p>Use number keys 1–9 to select crew. Tab to the field, use arrow keys to move, and Enter or Space to place. P pauses, X selects salvage, and Escape cancels selection. Moving to another tab pauses the mission. N calls an eligible wave early.</p><p><strong>Choose your pace.</strong> After a wave finishes entering, Call next wave brings the next arrival to three game seconds from now. Gain two credits per whole second saved, up to 40 per wave. Later waves move earlier by the same amount; surviving aliens stay on the field. Each wave can pay once. Lane warnings show actual arrivals in the next five game seconds: an arrow for ordinary enemies, a diamond for plated Tanks, and !! for Gargantua.</p><p><strong>Read the field.</strong> Blue plate sparks mean armor resisted most of a hit. A mint impact means a piercing hit. An orange outline marks a defender taking damage; a triangle and critical label mark health below 30%. On phones, Enlarge field gives a closer view you can pan; Overview restores the whole field.</p><h3 class="guide-subtitle">Know the invaders</h3><div class="alien-guide">${Object.entries(
     ENEMIES,
@@ -130,21 +131,21 @@ app.innerHTML = `
     )
     .join(
       "",
-    )}</div><button class="primary-button" data-close>Back to the frontier ↗</button></dialog>
-  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork illustrates all three environments, nine defenders, and six alien types, with simulation-driven procedural motion. Frontier Flagship is an original interpretation of the school unit named Millennium Falcon; the original name and artwork remain in the school history. Use the art switch to compare the illustrations with the retained school assets.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ↗</a></dialog>
+    )}</div><button class="primary-button" data-close>Back to the frontier ${actionArrow}</button></dialog>
+  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork illustrates all three environments, nine defenders, and six alien types, with simulation-driven procedural motion. Frontier Flagship is an original interpretation of the school unit named Millennium Falcon; the original name and artwork remain in the school history. Use the art switch to compare the illustrations with the retained school assets.</p><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ${actionArrow}</a></dialog>
   <dialog id="map-dialog" aria-labelledby="map-title"><button class="dialog-close" data-close aria-label="Close destinations">×</button><span class="eyebrow">THREE ORIGINAL FRONTIERS</span><h2 id="map-title">Choose your destination.</h2><p id="map-warning">Each destination has four waves and the full original roster.</p><div class="destination-list">${(
     Object.keys(MAPS) as MapKind[]
   )
     .map((kind) => {
       const map = MAPS[kind];
-      return `<button class="destination-card" data-map="${kind}" aria-label="Choose ${map.name}"><img loading="lazy" decoding="async" src="${base}art/${EXPEDITION_ENVIRONMENTS[kind].file}" alt="" width="144" height="81"><span><span class="micro-label">${map.number} / ${map.tag}</span><strong>${map.name}</strong><span>${map.description}</span></span><span aria-hidden="true">↗</span></button>`;
+      return `<button class="destination-card" data-map="${kind}" aria-label="Choose ${map.name}"><img loading="lazy" decoding="async" src="${base}art/${EXPEDITION_ENVIRONMENTS[kind].file}" alt="" width="144" height="81"><span><span class="micro-label">${map.number} / ${map.tag}</span><strong>${map.name}</strong><span>${map.description}</span></span>${actionArrow}</button>`;
     })
     .join(
       "",
-    )}</div><button id="campaign-switch" class="primary-button">Campaign mission control ↗</button><button class="secondary-button" data-close>Keep current destination</button></dialog>
+    )}</div><button id="campaign-switch" class="primary-button">Campaign mission control ${actionArrow}</button><button class="secondary-button" data-close>Keep current destination</button></dialog>
   <dialog id="asset-dialog" aria-labelledby="asset-title"><span class="eyebrow">MISSION RESOURCES</span><h2 id="asset-title">Preparing artwork…</h2><p id="asset-message" role="status">Your mission is paused while artwork loads.</p><progress id="asset-progress" aria-label="Loading artwork"></progress><div class="dialog-actions"><button id="asset-retry" class="primary-button" hidden>Retry artwork</button><button id="asset-cancel" class="secondary-button" hidden>Keep current mission</button></div></dialog>
   ${campaignMarkup}
-  <dialog id="restart-dialog" aria-labelledby="restart-title"><span class="eyebrow">MISSION CONTROL</span><h2 id="restart-title">Start a fresh mission?</h2><p>Your current deployment and progress will be reset.</p><div class="dialog-actions"><button id="restart-cancel" class="secondary-button">Keep playing</button><button id="restart-confirm" class="primary-button">Restart mission ↗</button></div></dialog>
+  <dialog id="restart-dialog" aria-labelledby="restart-title"><span class="eyebrow">MISSION CONTROL</span><h2 id="restart-title">Start a fresh mission?</h2><p>Your current deployment and progress will be reset.</p><div class="dialog-actions"><button id="restart-cancel" class="secondary-button">Keep playing</button><button id="restart-confirm" class="primary-button">Restart mission ${actionArrow}</button></div></dialog>
 `;
 
 const get = <T extends HTMLElement = HTMLElement>(id: string) =>
@@ -428,9 +429,9 @@ function render(state: Snapshot): void {
   document.title = `Astronauts vs Aliens — ${campaignMode ? mission.title : map.name}${hard ? " · Hard" : ""}`;
   grid.inert = assetBusy || state.phase !== "playing";
   get("location-name").textContent = campaignMode ? mission.title : map.name;
-  get("map-open").textContent = campaignMode
-    ? "Mission control ↗"
-    : "Change destination ↗";
+  get("map-open-label").textContent = campaignMode
+    ? "Mission control"
+    : "Change destination";
   get("location-number").textContent = campaignMode
     ? String(mission.order).padStart(2, "0")
     : map.number;
@@ -560,16 +561,14 @@ function render(state: Snapshot): void {
         body.textContent = hard
           ? HARD_DESCRIPTION
           : `${mission.briefing} ${mission.tactics}`;
-      start.innerHTML =
-        '<span>Begin mission</span><span aria-hidden="true">↗</span>';
+      start.innerHTML = `<span>Begin mission</span>${actionArrow}`;
       note.textContent =
         "Pick a defender, then choose a tile. That's your first move.";
     } else if (state.phase === "paused") {
       title.textContent = "Take a breath, trooper.";
       body.textContent =
         "The whole battlefield is on hold. Your crew will be right here.";
-      start.innerHTML =
-        '<span>Resume mission</span><span aria-hidden="true">↗</span>';
+      start.innerHTML = `<span>Resume mission</span>${actionArrow}`;
       note.textContent = "P to resume · No time passes while paused.";
       if (!document.querySelector("dialog[open]")) start.focus();
     } else if (state.phase === "won" || state.phase === "lost") {
@@ -587,9 +586,9 @@ function render(state: Snapshot): void {
         get("mission-rating").textContent =
           `${"★".repeat(earned)}${"☆".repeat(3 - earned)} · ${earned}/3 stars · Best: ${best}/3${completion?.mission === state.mission && earned ? ` · Previous best: ${completion.previous}/3` : ""}. Victory earns one star per remaining shield.`;
         const next = CAMPAIGN_ORDER[mission.order];
-        get("campaign-next").textContent = next
-          ? `Next: ${MISSIONS[next].title} ↗`
-          : "Next mission ↗";
+        get("campaign-next-label").textContent = next
+          ? `Next: ${MISSIONS[next].title}`
+          : "Next mission";
         get("campaign-next").hidden =
           state.phase !== "won" ||
           !next ||
@@ -614,8 +613,7 @@ function render(state: Snapshot): void {
         get(`receipt-${source}`).textContent = `+${economy[source]}`;
       get("receipt-purchases").textContent = `−${economy.spent}`;
       get("receipt-balance").textContent = String(state.credits);
-      start.innerHTML =
-        '<span>Play again</span><span aria-hidden="true">↗</span>';
+      start.innerHTML = `<span>Play again</span>${actionArrow}`;
       note.textContent =
         state.phase === "won"
           ? "Same frontier. A new strategy."
@@ -1124,8 +1122,7 @@ async function initialize(): Promise<void> {
       onReady: () => {
         ready = true;
         start.disabled = false;
-        start.innerHTML =
-          '<span>Begin mission</span><span aria-hidden="true">↗</span>';
+        start.innerHTML = `<span>Begin mission</span>${actionArrow}`;
         render(simulation.snapshot());
       },
       onProgress: (fraction) => {

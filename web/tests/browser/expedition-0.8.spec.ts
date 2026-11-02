@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import { slowRuntime } from "./slow-runtime";
+test.beforeEach(slowRuntime);
 
 for (const viewport of [
   { width: 1280, height: 900 },
@@ -8,6 +10,7 @@ for (const viewport of [
   test(`wave decisions remain clear and time controls centered at ${viewport.width}x${viewport.height}`, async ({
     page,
   }, info) => {
+    test.setTimeout(90000);
     await page.setViewportSize(viewport);
     await page.goto("/");
     await expect(page.locator("#start")).toBeEnabled();
@@ -28,7 +31,11 @@ for (const viewport of [
         .click();
     await page.locator("#speed").click();
     await expect(page.locator("#speed")).toHaveText("2×");
-    await expect(page.locator("#call-wave")).toBeEnabled({ timeout: 20000 });
+    // Read the short-lived choice at 1×; screenshot/layout inspection happens
+    // paused so a slow software renderer cannot consume the call window.
+    await page.locator("#speed").click();
+    await expect(page.locator("#speed")).toHaveText("1×");
+    await expect(page.locator("#call-wave")).toBeEnabled({ timeout: 40000 });
     await expect(page.locator("#wave-timing")).toContainText(
       /Call available · Wait \d+s, or call: 3s lead \(~\d+s sooner\)/,
     );
@@ -41,6 +48,12 @@ for (const viewport of [
     await expect(page.locator("#call-wave")).toHaveAccessibleDescription(
       /Wait.*overlap survivors/,
     );
+    const activeBounds = await page.locator("#call-wave").boundingBox();
+    expect(activeBounds!.width).toBeGreaterThanOrEqual(44);
+    expect(activeBounds!.height).toBeGreaterThanOrEqual(44);
+    expect(activeBounds!.height).toBeLessThan(120);
+    await page.locator("#pause").click();
+    await expect(page.locator("#status")).toHaveText("Mission paused");
     await page.locator("#call-wave").scrollIntoViewIfNeeded();
     await expect(page.locator("#call-wave")).toBeInViewport();
     const bounds = await page.locator("#call-wave").boundingBox();
@@ -78,6 +91,10 @@ for (const viewport of [
       path: info.outputPath("wave-choice.png"),
       fullPage: true,
     });
+    await page.locator("#speed").click();
+    await expect(page.locator("#speed")).toHaveText("2×");
+    await page.locator("#pause").click();
+    await expect(page.locator("#call-wave")).toBeEnabled();
     await page.locator("#call-wave").press("Enter");
     await expect(page.locator("#announcement")).toContainText(
       /Wave 2 called.*Remaining waves moved about \d+s earlier/,

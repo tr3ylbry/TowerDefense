@@ -1,0 +1,46 @@
+{
+  "failedRun": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41476246480",
+  "failedHead": "48d60b22bf74eb22d909667db4aa619e33ff0c39",
+  "initialCI": {
+    "chromium": {
+      "passed": 55,
+      "failed": 4
+    },
+    "firefox": {
+      "passed": 59,
+      "failed": 0
+    },
+    "webkit": {
+      "passed": 59,
+      "failed": 0
+    }
+  },
+  "controlledReproduction": {
+    "method": "Public controls at 2\u00d7 followed by 6.5s real review delay (no simulation clock or state injection)",
+    "before": {
+      "wave": "1",
+      "timing": "Call available \u00b7 Wait 13s, or call: 3s lead (~10s sooner).",
+      "enabled": true
+    },
+    "after": {
+      "wave": "2",
+      "timing": "",
+      "enabled": false
+    },
+    "announcement": "Wave 2: Fast company."
+  },
+  "correction": "Review public layout while paused, resume and immediately activate Call. Use the real Gargantua warning, maintain barriers with earned credits, and observe an actual 100-point public health decrement rather than assuming a pristine wall. Preserve call/keyboard/focus/pause assertions; add paused target-size coverage.",
+  "confirmedLayoutDefect": "At 150% phone zoom, paused Call button stretched to 140.5px with adjacent briefing. align-self:center restores its intended size; min44/max120 assertions cover active and paused states.",
+  "stressCheck": "Six affected cases passed in bundled Chromium at 4x CPU; final phone-polish cases additionally rerun in Chromium and WebKit (result recorded in delivery).",
+  "phoneStressFollowup": {
+    "chromium": "7/7, 4x CPU throttling",
+    "webkit": "6/7; one wave test was interrupted by Vite reloading src/main.ts during a formatting edit. Final immutable-production retest required.",
+    "note": "All four 1.0 scenarios passed in both engines, including phone overview/rotation; no game clock/state injection."
+  },
+  "immutableProductionRetest": {
+    "chromium": "2/2 including phone actions and enlarged landscape wave-choice, 4x CPU",
+    "webkit": "2/2 same scenarios",
+    "total": "4/4 in44.2s; test server4175 with immutable snapshot and no Vite reload",
+    "clock": "Real time and public controls; no simulation state injection"
+  }
+}

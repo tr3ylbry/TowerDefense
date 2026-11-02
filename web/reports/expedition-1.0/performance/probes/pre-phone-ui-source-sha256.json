@@ -1,0 +1,23 @@
+{
+  "src/game/alien-animation.ts": "6dfc066d69deaf46431b677af4ac9e7420de52ac3c2fdbb1d139544e05e78a60",
+  "src/game/art.ts": "307eb2ddcbecb954907fb2d3349a1a23e3f5f3acefd096f5f510a1d75a7076f5",
+  "src/game/challenges.ts": "d0562a2bc8a85665cce60417c0286d7855c26649b0b7bca8f91a2e4f7f381d3e",
+  "src/game/combat.ts": "adca35274cd4ebe99ebdf5e093a7c33e19dff13d3836be1203449fd29653d0d3",
+  "src/game/content.ts": "8a808dd4ff2d69aa27147b9a06b29a7368c0db9b4ed5e8ede1a9a86f318b21b5",
+  "src/game/environments.ts": "837383a00b648e0a61035703ac40511e1b9da4b25ed4eabb497bf975a909ae60",
+  "src/game/missions.ts": "9de6d66f913dda5623fcc7101ccca32d22e93b21e9705ae880988351c7a7cc7f",
+  "src/game/simulation.ts": "ca973b869b3a67a80a8267b3e075d0d6957c788b040ef28873f80a7c9320f07c",
+  "src/game/threats.ts": "94067a746614a70ff6e552ff48df99cc60436e1e7a8195f870b07e439187d725",
+  "src/game/validate-content.ts": "57ad43ee7bbfc805d420479bba8f5c887e2aa7c31e96c060d42f1b94f8255edf",
+  "src/game/waves.ts": "6eb58de1f8431e53fb54a4922164e47e73c0cb84a604a48c33ec5f3f8b7b54fe",
+  "src/campaign/board.ts": "d4162a81de8e92ba7a259d236e7512fd7ab44395c34b3851c262e98bc4a59f0f",
+  "src/campaign/progress.ts": "d446ecd5db972773fc928d99fc769b0a1fd15c74cbabd422f5e75e4c05c30aed",
+  "src/campaign/save.ts": "d5ce0c5b4158695eda1a25f299d8f19c27426c43abcd5dfd79043b70288e74cd",
+  "src/main.ts": "5a4932795323c40d5597d2f03d7ce5aca79ae6c0f1ab3179a452e110131fef1d",
+  "src/guidance.ts": "5adcf9b01f73c99f76af6235b6040eb5c571b4d1b9badfc3ceece931f1242d7b",
+  "src/style.css": "2182a1eadbebada3e2986c7a263965aa1fe4b6e4ee65026863b5637c5dbe51fb",
+  "src/battlefield.ts": "4d3f1fd40799ec9f5074400a295aab0a51cafd48d04bdd8be0924e63ad0ac39f",
+  "src/assets.ts": "7111945d460da9771cf6c63f905e400f0880a674ea78c6ebba6865bbf1d467c8",
+  "package.json": "ed0475a5d99f9753ce39919718d820de27ce36b17ad8a415dbea4f9f8614fd4d",
+  "package-lock.json": "3faf20119d061002c3dd10e0b7f9ee13059ece298775ccc5ef26dd25bbf8022a"
+}

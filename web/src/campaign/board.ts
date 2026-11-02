@@ -1,3 +1,4 @@
+import { actionArrow } from "../icons";
 import { ENVIRONMENTS } from "../game/environments";
 import type { MapKind } from "../game/environments";
 import { CAMPAIGN_ORDER, MISSIONS } from "../game/missions";
@@ -28,7 +29,7 @@ export const campaignMarkup = `
       )
         .map((id) => {
           const mission = MISSIONS[id];
-          return `<article class="campaign-card" data-mission-card="${id}"><div class="campaign-card-top"><span class="mission-index">${String(mission.order).padStart(2, "0")}</span><span id="rating-${id}" class="card-rating"></span></div><h4>${mission.title}</h4><p>${mission.description}</p><p id="state-${id}" class="card-state"></p><button data-review="${id}" class="secondary-button" aria-describedby="state-${id}">Review mission ${String(mission.order).padStart(2, "0")}</button></article>`;
+          return `<article class="campaign-card" data-mission-card="${id}"><div class="campaign-card-top"><span class="mission-index">${String(mission.order).padStart(2, "0")}</span><span id="rating-${id}" class="card-rating"></span></div><h4>${mission.title}</h4><p>${mission.description}</p><p id="state-${id}" class="card-state"></p><button data-review="${id}" class="secondary-button" aria-describedby="state-${id}"><span data-review-label>Review mission ${String(mission.order).padStart(2, "0")}</span> ${actionArrow}</button></article>`;
         })
         .join("")}</div>
     </section>`,
@@ -40,9 +41,9 @@ export const campaignMarkup = `
     <div id="difficulty-choice" class="difficulty-choice" hidden><label for="difficulty">Difficulty</label><select id="difficulty" aria-describedby="difficulty-description"><option value="normal">Normal</option><option value="hard">Hard challenge · prototype</option></select><p id="difficulty-description"></p></div>
     <p class="campaign-rule">Four waves · 230 starting credits · 3 shields · all nine defenders. No permanent upgrades.</p>
     <p id="briefing-warning"></p>
-    <div class="dialog-actions"><button id="campaign-back" class="secondary-button">Back to missions</button><button id="campaign-launch" class="primary-button">Prepare mission ↗</button></div>
+    <div class="dialog-actions"><button id="campaign-back" class="secondary-button">Back to missions</button><button id="campaign-launch" class="primary-button"><span id="campaign-launch-label">Prepare mission</span> ${actionArrow}</button></div>
   </section>
-  <div class="campaign-footer"><button id="campaign-standalone" class="secondary-button">Standalone destinations ↗</button><button id="campaign-reset" class="nav-button">Reset campaign progress</button></div>
+  <div class="campaign-footer"><button id="campaign-standalone" class="secondary-button">Standalone destinations ${actionArrow}</button><button id="campaign-reset" class="nav-button">Reset campaign progress</button></div>
   <p class="campaign-rule">Progress is saved only in this browser. In-progress missions are not saved.</p>
 </dialog>
 <dialog id="campaign-reset-dialog" aria-labelledby="campaign-reset-title"><h2 id="campaign-reset-title">Clear your expedition record?</h2><p>Delete campaign completions, stars and saved best results in this browser. Sound and reduced-motion settings stay as they are. This cannot be undone.</p><div class="dialog-actions"><button id="campaign-reset-cancel" class="secondary-button" autofocus>Keep progress</button><button id="campaign-reset-confirm" class="primary-button">Reset campaign progress</button></div></dialog>`;
@@ -94,15 +95,15 @@ export class CampaignBoard {
       )!;
       card.classList.toggle("locked-mission", !unlocked);
       card.querySelector<HTMLButtonElement>("button")!.disabled = !unlocked;
-      card.querySelector<HTMLButtonElement>("button")!.textContent =
-        `${result ? "Replay" : "Review"} mission ${String(MISSIONS[id].order).padStart(2, "0")} ↗`;
+      card.querySelector<HTMLElement>("[data-review-label]")!.textContent =
+        `${result ? "Replay" : "Review"} mission ${String(MISSIONS[id].order).padStart(2, "0")}`;
     }
     this.get("briefing-warning").textContent = active
       ? "This starts a fresh deployment. Your current mission will be abandoned. Saved stars are kept."
       : "Prepare the battlefield, then choose Begin mission when ready.";
-    this.get("campaign-launch").textContent = active
-      ? "Abandon current mission & prepare ↗"
-      : "Prepare mission ↗";
+    this.get("campaign-launch-label").textContent = active
+      ? "Abandon current mission & prepare"
+      : "Prepare mission";
     const base = import.meta.env.BASE_URL;
     document
       .querySelectorAll<HTMLImageElement>("[data-sector-art]")

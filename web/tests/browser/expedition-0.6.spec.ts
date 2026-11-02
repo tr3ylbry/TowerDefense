@@ -132,7 +132,7 @@ test("public-control expedition completes all six missions, persists stars, repl
     );
     if (index < 5)
       await expect(page.locator("#campaign-next")).toHaveText(
-        `Next: ${MISSIONS[CAMPAIGN_ORDER[index + 1]].title} ↗`,
+        `Next: ${MISSIONS[CAMPAIGN_ORDER[index + 1]].title}`,
       );
     await expect(page.locator("#overlay-title")).toHaveText(
       `${MISSIONS[id].title} complete.`,

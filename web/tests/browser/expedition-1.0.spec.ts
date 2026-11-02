@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import { slowRuntime } from "./slow-runtime";
+test.beforeEach(slowRuntime);
 test.use({
   video:
     process.env.AVA_RECORD_ANIMATION === "1"
@@ -49,7 +51,7 @@ test("both anatomy pilots animate, pause and reduce motion on all environments",
 test("both pilots survive actual spawned combat, pause, art comparison, speed, reduced motion and restarts", async ({
   page,
 }, info) => {
-  test.setTimeout(110000);
+  test.setTimeout(180000);
   const errors: string[] = [],
     atlases: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -69,7 +71,7 @@ test("both pilots survive actual spawned combat, pause, art comparison, speed, r
       .click();
   await page.waitForTimeout(1200);
   await page.locator("#speed").click();
-  const deadline = Date.now() + 65000;
+  const deadline = Date.now() + 90000;
   while (
     Date.now() < deadline &&
     (await page.locator("#wave-number").innerText()) !== "4"
@@ -90,29 +92,52 @@ test("both pilots survive actual spawned combat, pause, art comparison, speed, r
     await page.waitForTimeout(200);
   }
   await expect(page.locator("#wave-number")).toHaveText("4");
-  // Gargantua is authored at +9 seconds in this wave, then walks into the
-  // purchased barrier. This is elapsed real gameplay, never injected entities.
-  await page.waitForTimeout(3500);
-  // Replace earned-credit barriers before the heavy arrival; earlier enemies
-  // may already have destroyed the opening line. Lane four is the authored
-  // default-seed Gargantua lane, not an injected simulation fixture.
-  for (let lane = 1; lane <= 6; lane++) {
-    const cell = page.getByRole("gridcell", {
-      name: `Lane ${lane}, tile 8, empty`,
-      exact: true,
-    });
-    if (
-      (await cell.count()) &&
-      Number(await page.locator("#credits").innerText()) >= 35
-    )
-      await cell.click();
-  }
-  await expect(
-    page.getByRole("gridcell", {
-      name: /^Lane 4, tile 8, Asteroid, (1000|900|800) health/,
-    }),
-  ).toBeAttached({ timeout: 10000 });
+  // Synchronize with the public schedule: software rendering can advance
+  // fewer game seconds per real second. Earlier aliens can already be biting
+  // a barrier when Gargantua arrives, so observe a real 100-point strike rather
+  // than assuming its first contact is against an untouched 1100-point wall.
   await page.locator("#speed").click();
+  await expect(page.locator("#incoming-summary")).toContainText("Gargantua", {
+    timeout: 45000,
+  });
+  const heavyCell = page.getByRole("gridcell", { name: /^Lane 4, tile 8,/ });
+  await page.locator('[data-tower="wall"]').click();
+  const healthHistory: (number | null)[] = [];
+  let previousHealth: number | null = null;
+  let observedHeavyStrike = false;
+  const contactDeadline = Date.now() + 60000;
+  while (!observedHeavyStrike && Date.now() < contactDeadline) {
+    const label = await heavyCell.getAttribute("aria-label");
+    const match = label?.match(/Asteroid, (\d+) health$/);
+    const health = match ? Number(match[1]) : null;
+    if (health !== previousHealth) healthHistory.push(health);
+    observedHeavyStrike =
+      health !== null &&
+      previousHealth !== null &&
+      previousHealth - health === 100;
+    previousHealth = health;
+    if (observedHeavyStrike) break;
+    for (let lane = 1; lane <= 6; lane++) {
+      const empty = page.getByRole("gridcell", {
+        name: `Lane ${lane}, tile 8, empty`,
+        exact: true,
+      });
+      if (
+        (await empty.count()) &&
+        Number(await page.locator("#credits").innerText()) >= 35
+      )
+        await empty.click();
+    }
+    await page.waitForTimeout(75);
+  }
+  await info.attach("lane-4-health.json", {
+    body: JSON.stringify(healthHistory),
+    contentType: "application/json",
+  });
+  expect(
+    observedHeavyStrike,
+    "Public barrier health records a 100-point strike",
+  ).toBe(true);
   await expect(page.locator("#speed")).toHaveText("1×");
   await page.waitForTimeout(1500);
   await page.screenshot({
@@ -190,4 +215,73 @@ test("failed Gargantua atlas blocks readiness, retries cleanly and keeps other e
     ),
   ).toBe(false);
   await expect(page.locator("canvas")).toHaveCount(1);
+});
+
+test("phone actions use centered vector icons and landscape overview shows every lane", async ({
+  page,
+}, info) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await expect(page.locator("#start")).toBeEnabled();
+  for (const selector of ["#campaign-nav", "#guide-open", "#start"]) {
+    await expect(page.locator(`${selector} .action-arrow`)).toHaveAttribute(
+      "aria-hidden",
+      "true",
+    );
+    await expect(page.locator(selector)).not.toContainText("↗");
+  }
+  const centeredAction = async () => {
+    const offset = await page.locator("#start").evaluate((button) => {
+      const children = [...button.children].map((e) => e.getBoundingClientRect());
+      const outer = button.getBoundingClientRect();
+      const center = (children[0].left + children.at(-1)!.right) / 2;
+      return Math.abs(center - (outer.left + outer.width / 2));
+    });
+    expect(offset).toBeLessThan(2);
+  };
+  await centeredAction();
+  await page.locator("#start").click();
+  for (const viewport of [
+    { width: 667, height: 320 },
+    { width: 844, height: 390 },
+    { width: 852, height: 393 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await expect(page.locator(".mission-bar")).toBeInViewport({ ratio: 1 });
+    await expect(page.locator(".board-stack")).toBeInViewport({ ratio: 1 });
+    const scroll = await page.locator(".battle-scroll").evaluate((e) => ({
+      height: e.clientHeight,
+      content: e.scrollHeight,
+    }));
+    expect(scroll.content - scroll.height).toBeLessThanOrEqual(1);
+    for (let lane = 1; lane <= 6; lane++)
+      await expect(
+        page.getByRole("gridcell", {
+          name: `Lane ${lane}, tile 9, empty`,
+          exact: true,
+        }),
+      ).toBeInViewport({ ratio: 1 });
+  }
+  await page.screenshot({ path: info.outputPath("landscape-overview.png") });
+  await page.locator("#field-zoom").click();
+  await expect(page.locator("#field-zoom")).toHaveAccessibleName(
+    "Show battlefield overview",
+  );
+  const enlarged = await page.locator(".board-stack").boundingBox();
+  expect(enlarged!.width).toBeGreaterThanOrEqual(660);
+  await page
+    .getByRole("gridcell", { name: "Lane 6, tile 9, empty", exact: true })
+    .click();
+  await expect(
+    page.getByRole("gridcell", {
+      name: "Lane 6, tile 9, Astro Joe, 260 health",
+      exact: true,
+    }),
+  ).toBeAttached();
+  await page.locator("#field-zoom").click();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator("#pause").click();
+  await centeredAction();
+  await expect(page.locator("#start")).toHaveAccessibleName("Resume mission");
 });

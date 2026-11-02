@@ -1,0 +1,60 @@
+Window: "Astronauts vs Aliens — The Canyon", App: Safari.
+0 standard window Astronauts vs Aliens — The Canyon, ID: SafariWindow?IsSecure=false&UUID=61258AB6-0671-428B-BF63-63CC8CC962F7, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) -1
+		3 tab group
+			4 scroll area
+				5 HTML content Description: Astronauts vs Aliens — The Canyon, URL: 127.0.0.1:4175/
+					6 link Skip to mission, Value: 127.0.0.1:4175/#mission
+					7 container
+						8 heading The Canyon, Value: 2
+							9 text The Canyon
+						10 pop up button Change destination ↗
+						11 toggle button Show original art, Value: off
+						12 toggle button Leave focused view, Value: on
+						13 button Field guide
+						14 toggle button Toggle sound effects, Help: Toggle synthesized sound effects, Value: off
+						15 toggle button Reduce decorative animation, Value: off
+						16 button Restart, Help: Restart mission
+						17 container Mission control
+							18 text SPACEBUCKS
+							19 container 582 credits available
+							20 text OUTPOST INTEGRITY
+							21 container 3 shields remaining
+								22 text ◆ ◆ ◆
+							23 text WAVE 4 / 4
+							24 button Switch to normal speed, Help: Simulation speed, independent of difficulty
+							25 button (disabled) Pause mission
+							26 text A TRANSMISSION FROM THE FRONTIER
+							27 heading Value: 2, The Canyon secured.
+Nice work, commander.
+								28 text The Canyon secured. Nice work, commander.
+							29 text 33 hostiles cleared · 1m 52s elapsed · 3 shields remaining
+							30 summary + Mission economy, Value: off
+								31 text +
+								32 text Mission economy
+							33 button Play again
+							34 text Same frontier. A new strategy.
+							35 container Wave briefing
+								36 text OUTPOST SECURED · All waves cleared.
+							37 text No further wave to call.
+							38 button (disabled) Call next wave early
+							39 container Incoming threats
+								40 text Watching the approaches · next 5 seconds
+							41 text Outpost secured 33 HOSTILES CLEARED
+						42 container Deploy your crew
+							43 container Defender roster
+								44 toggle button Astro Joe, 50 credits. Steady fire. Your first line of defense., Value: off
+								45 toggle button Money Bush, 60 credits. Generates 25 credits every 6 seconds., Value: off
+								46 toggle button Asteroid, 35 credits. A durable barrier that buys you time., Value: on
+								47 toggle button Moon Zeus, 125 credits. Plasma partially pierces plating and hits nearby aliens., Value: off
+								48 toggle button Explosive Astro Joe, 85 credits. Shells partially pierce plating and hit a wide cluster., Value: off
+								49 toggle button Startrell Cluggins, 75 credits. Light, fast shots keep sprinters in check., Value: off
+								50 toggle button TARS, 100 credits. Piercing rounds ignore Tank plating., Value: off
+								51 toggle button Money Tree, 150 credits. Generates 60 credits every 8 seconds., Value: off
+								52 toggle button Frontier Flagship, 250 credits. Three piercing rounds per volley. One lane., Value: off
+							53 text Asteroid · 35 credits
+							54 text A durable barrier that buys you time. Ready to deploy · 1100 health · Barrier · Put ahead of firing defenders
+							55 toggle button Salvage a defender, recover 40% of its cost, Value: off
+						56 text Mission complete. The outpost is safe.
+					57 menu Secondary Actions: Cancel

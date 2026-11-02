@@ -5,9 +5,9 @@ Frozen 0.9 production reference: `feae81d`; candidate built from the 1.0 source 
 | Measure                                     | 0.9 reference | 1.0 candidate | Interpretation                                                  |
 | ------------------------------------------- | ------------: | ------------: | --------------------------------------------------------------- |
 | Initial imagery                             |      719,131B |      888,925B | +169,794B, +23.6%; Sprinter+750B and Gargantua+169,044B         |
-| Initial transfer including navigation       |    1,131,457B |    1,301,734B | +170,277B, +15.0%; measured transfer includes response overhead |
-| Normal desktop median enabled Begin mission |       143.1ms |       153.1ms | Small noisy difference; no speed-improvement claim              |
-| Constrained median readiness                |     6,691.6ms |     7,544.5ms | +852.9ms, +12.7%; explicit startup cost                         |
+| Initial transfer including navigation       |    1,131,457B |    1,302,068B | +170,611B, +15.0%; measured transfer includes response overhead |
+| Normal desktop median enabled Begin mission |       152.2ms |       159.6ms | Small noisy difference; no speed-improvement claim              |
+| Constrained median readiness                |     6,685.6ms |     7,541.6ms | +856.0ms, +12.8%; explicit startup cost                         |
 | 50-Sprinter median sampled interval         |        16.7ms |        16.7ms | Same sampled cadence                                            |
 | 50-Gargantua median interval                |        16.7ms |        16.7ms | Static/procedural versus baked poses                            |
 | 25+25 mixed median interval                 |        16.7ms |        16.7ms | Same sampled cadence                                            |
@@ -21,7 +21,7 @@ All-group p95 ranges were16.8–18.5ms before,16.8–18.4ms after. Pose-loop p95
 
 The current real application warms to47 active WebGL handles initially,66 after all Expedition environments,102 after Original comparison. Three complete six-mission navigation cycles per style retain those plateaus; one canvas, no page errors, no repeated per-cycle image growth. This uses a clearly labeled all-unlocked storage fixture for navigation, not campaign-win evidence. It indicates bounded retention, not zero leaks or measured VRAM. Three actual-combat restarts and paused style comparisons are separately browser-tested.
 
-A first headless-shell probe could not create WebGL; the game used Canvas fallback, and the WebGL-only fixture correctly failed readiness. Its startup/cache files remain under [probes](probes/headless-shell-startup.json), excluded from final comparisons and texture conclusions. Installed Chrome worked with default settings; no security flag was added. One background animation-review tab was closed during that first probe, another reason not to treat its normal-desktop startup as final. The final measurements ran after its closure.
+A first headless-shell probe could not create WebGL; the game used Canvas fallback, and the WebGL-only fixture correctly failed readiness. Its startup/cache files remain under [probes](probes/headless-shell-startup.json), excluded from final comparisons and texture conclusions. Installed Chrome worked with default settings; no security flag was added. One background animation-review tab was closed during that first probe, another reason not to treat its normal-desktop startup as final. The final measurements ran after its closure and after the owner-reported mobile fixes. Earlier snapshots are retained under`probes/pre-paused-phone-*` and`probes/pre-phone-ui-*`; they are historical evidence, not the final loading comparison. Dense rendering/decode uses the unchanged animation assets/renderer; UI-only icon/layout changes do not alter that fixture.
 
 ## Provisional budget and acceptance decision
 

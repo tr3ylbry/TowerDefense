@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-02",
+  "observer": "Project owner; experienced returning player, not an independent first-time participant",
+  "hardware": "iPhone 17",
+  "browser": "Safari",
+  "osVersion": "Not supplied",
+  "delivery": "Temporary trusted local-network production preview; no public deployment",
+  "sourceReference": "pre-phone-ui-source-sha256.json in performance/probes (48d60b2 plus paused Call button alignment)",
+  "observations": [
+    "Overall gameplay worked in portrait and landscape.",
+    "Campaign, Field guide and The original arrows appeared as emoji on iOS; the owner preferred the desktop-style arrows.",
+    "Begin mission and similar action contents needed centering.",
+    "Landscape required vertical scrolling to see both the upper controls and all six lanes.",
+    "Portrait battlefield was small; it remained usable, with more screenshots/observations offered later."
+  ],
+  "implementedResponse": [
+    "Shared decorative SVG arrows with aria-hidden rather than font glyphs across navigation/campaign/action buttons.",
+    "Center primary/secondary/destination action groups with modest spacing.",
+    "Compact focused landscape toolbar and safe-viewport-based battlefield sizing; remove internal vertical clipping.",
+    "Expose existing Enlarge/Overview mode in landscape as well as portrait, preserving pan and keyboard access."
+  ],
+  "verification": "Automated mobile viewport regression covers 667x320, 844x390, 852x393, portrait rotation, far-cell placement, enlargement, and primary-group centering. Final owner recheck/screenshots pending.",
+  "limitations": [
+    "No device FPS, memory, thermal, long-session, backgrounding or text-size measurements supplied.",
+    "Not a completed five-player study; independent participants remain 0/5."
+  ]
+}

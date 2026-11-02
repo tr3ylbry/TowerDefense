@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-02",
+  "browser": "Native Safari 27.0.1 (22625.1.29.11.28)",
+  "platform": "macOS desktop",
+  "initialBlocker": "Mac initially locked; owner subsequently unlocked it.",
+  "mission": {
+    "environment": "Standalone Canyon, Normal",
+    "strategy": "Six Astro Joes in column 1, six earned-credit TARS in column 2 and one lane-4 column-8 Asteroid; public keyboard/grid actions only",
+    "result": "Victory",
+    "shields": 3,
+    "kills": 33,
+    "elapsed": "1m 52s",
+    "credits": 582,
+    "barrierObservation": "Lane 4, tile 8, Asteroid, 1000 health during final-wave combat"
+  },
+  "actionsVerified": [
+    "Keyboard placement and six-lane focus movement",
+    "1x/2x controls",
+    "Early-call public announcement",
+    "Pause/resume with unchanged bank during paused art comparisons",
+    "Original/Expedition art switching",
+    "Reduced-motion setting",
+    "Restart confirmation and Escape cancellation",
+    "Final phone-polish build: reload, campaign review and Prepare mission, vector-icon accessible names, centered Begin mission"
+  ],
+  "versionBoundary": "Victory on pre-phone-ui-source-sha256.json production build; final icon/layout build received a separate native readiness/campaign smoke check, not a second relabeled victory.",
+  "evidence": [
+    "native-safari-victory.txt",
+    "../visual/native-safari-victory.png",
+    "../visual/native-safari-actions.png"
+  ],
+  "voiceOver": {
+    "status": "Launched (owner-confirmed); game spoken-output check incomplete",
+    "attempts": [
+      "Direct app launch timed out; app inventory did not confirm a running VoiceOver process.",
+      "Command-F5 did not establish live output.",
+      "System Settings VoiceOver switch was toggled on; no live caption/speech or running process could be confirmed.",
+      "Restored observed initial off setting and closed only the test Settings window."
+    ],
+    "limitation": "This confirms live screen-reader startup, not successful game navigation/announcements. No game spoken-output pass is claimed. Initial off setting was restored.",
+    "ownerObservation": "Owner confirmed that VoiceOver started and read the Codex mobile-preview instructions, indicating focus remained in the chat rather than the game."
+  },
+  "cleanup": "Closed only the agent-created Safari test tab; original Apple tab preserved."
+}
