@@ -53,7 +53,7 @@ export const HARD_FIRST_CONTACT: readonly Wave[] = MISSIONS[
           laneSlot: j % 6,
         })),
         briefing:
-          "Compact relay: six lanes, then reinforcements at +5s. Watch plating and keep reserve fire.",
+          "Compact relay: six lanes, then reinforcements at +5s. Tanks resist ordinary fire: TARS ignores plating; plasma and shells partly pierce it. Keep reserve fire.",
       }
     : {}),
 }));
