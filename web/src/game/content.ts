@@ -107,7 +107,7 @@ export const TOWERS = {
     splashRadius: 0.7,
   },
   explosive: {
-    name: "Explosive Astro Joe",
+    name: "Astro Joe X",
     role: "Demolitions",
     description: "Shells partially pierce plating and hit a wide cluster.",
     cost: 85,

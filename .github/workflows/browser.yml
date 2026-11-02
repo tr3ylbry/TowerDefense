@@ -20,6 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
+        shard: [1, 2]
     defaults:
       run:
         working-directory: web
@@ -35,13 +36,22 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npx playwright install --with-deps ${{ matrix.browser }}
-      - run: npm run test:e2e -- --project=${{ matrix.browser }}
+      - name: Start virtual audio output
+        run: |
+          sudo apt-get install --no-install-recommends -y pulseaudio
+          pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=ava_test_audio rate=48000 channels=2
+          pactl set-default-sink ava_test_audio
+          pactl set-sink-mute ava_test_audio 0
+          pactl set-sink-volume ava_test_audio 100%
+          pactl info
+      - run: npm run test:e2e -- --project=${{ matrix.browser }} --shard=${{ matrix.shard }}/2
 
       - name: Retain failed browser traces
         if: failure()
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: browser-failure-${{ matrix.browser }}
+          name: browser-failure-${{ matrix.browser }}-${{ matrix.shard }}
           path: |
             web/test-results/
             web/playwright-report/

@@ -1,0 +1,376 @@
+{
+  "towers": {
+    "astro": {
+      "bounds": [
+        8,
+        4,
+        120,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 57.866666666666674,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "astro-joe-idle.png",
+          "frames": 4,
+          "sha256": "d8e6868f3e0f6cb8cb2ee9dc83fbb930ce4b4602d8fe035482719b18f1a452ce"
+        },
+        {
+          "file": "astro-joe-fire.png",
+          "frames": 2,
+          "sha256": "bd51b3f15a799da8a8039777db3ce93260f7d0e15e04f3cc03139e78c12fe2d5"
+        }
+      ]
+    },
+    "bush": {
+      "bounds": [
+        4,
+        22,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 72.94117647058823,
+      "maxVisibleHeight": 61.99999999999999,
+      "inputs": [
+        {
+          "file": "money-bush-idle.png",
+          "frames": 5,
+          "sha256": "cc2b1b7fe8bf95cdc25c3d34b8a092239df168ef263ab176431d24ea31a443f0"
+        }
+      ]
+    },
+    "wall": {
+      "bounds": [
+        6,
+        4,
+        122,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 59.93333333333334,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "asteroid-idle.png",
+          "frames": 11,
+          "sha256": "c8b0b341db4ff04ce9b8ff191c7f59a0afcd121657983aa031f1d47f269d23cd"
+        }
+      ]
+    },
+    "zeus": {
+      "bounds": [
+        4,
+        4,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 62.00000000000001,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "moon-zeus-idle.png",
+          "frames": 7,
+          "sha256": "69e7661679ce6ad74f503a9fbfc0a596056ab8f1c11f7d3489de961839386e6c"
+        },
+        {
+          "file": "moon-zeus-fire.png",
+          "frames": 6,
+          "sha256": "6883e6777e12a5fc742b82654458a431eaba75cedc2a83264e1fe090f7a470e2"
+        }
+      ]
+    },
+    "explosive": {
+      "bounds": [
+        4,
+        26,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 75.91836734693878,
+      "maxVisibleHeight": 62.0,
+      "inputs": [
+        {
+          "file": "explosive-astro-joe-idle.png",
+          "frames": 6,
+          "sha256": "7406cb54b48ada28656162fa61f69a8ec7d6e9832f2c038de93f26a0b63e3b18"
+        }
+      ]
+    },
+    "startrell": {
+      "bounds": [
+        12,
+        4,
+        115,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 53.21666666666667,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "startrell-cluggins-idle.png",
+          "frames": 10,
+          "sha256": "a023941adeb6ee791de94ee5e62d197e006a602c9ab386a6c697e73e506d41b0"
+        },
+        {
+          "file": "startrell-cluggins-fire.png",
+          "frames": 6,
+          "sha256": "872ac5f1b41a61066a1988dceeae635a24ecdcdcb0491669a0ea7323e4b8ed6b"
+        }
+      ]
+    },
+    "tars": {
+      "bounds": [
+        12,
+        4,
+        115,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 53.21666666666667,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "tars-idle.png",
+          "frames": 10,
+          "sha256": "5eac7103a91aa0f667515ee00cfdbbe44c7beae38eac5cde0ca429eea87b8c95"
+        },
+        {
+          "file": "tars-fire.png",
+          "frames": 6,
+          "sha256": "af7121a2563f2962e24f643d463efd59a2e74f3bad4d98348091dc2ce3380594"
+        }
+      ]
+    },
+    "tree": {
+      "bounds": [
+        20,
+        4,
+        108,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 45.46666666666667,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "money-tree-idle.png",
+          "frames": 5,
+          "sha256": "0efddb3f7243b8fe7f96cfd0726a032941f17dd82527b7bdd715c545f1f1cc2e"
+        }
+      ]
+    },
+    "falcon": {
+      "bounds": [
+        4,
+        24,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 74.4,
+      "maxVisibleHeight": 62.0,
+      "inputs": [
+        {
+          "file": "millennium-falcon-idle.png",
+          "frames": 12,
+          "sha256": "0800f21132c036abea676b10c1606030c49a86db8c5aae63f45aeddc651cd6ce"
+        },
+        {
+          "file": "millennium-falcon-fire.png",
+          "frames": 11,
+          "sha256": "e154efc0711312b65e8a6507038e9f128eb588a4e1421dd5d5aacd3369b17e57"
+        }
+      ]
+    }
+  },
+  "enemies": {
+    "scout": {
+      "bounds": [
+        4,
+        43,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 86.0,
+      "maxVisibleHeight": 58.05,
+      "inputs": [
+        {
+          "file": "little-green-man-walk.png",
+          "frames": 17,
+          "sha256": "0770f620e80d5ccc349a7c5024bb97d487d323fb7678863e56018cf47357c5c0"
+        },
+        {
+          "file": "little-green-man-attack.png",
+          "frames": 13,
+          "sha256": "795128d7221c3d6d13d8f04c0121e078eb7e6111df1251d70f3f4affc2b74444"
+        },
+        {
+          "file": "little-green-man-die.png",
+          "frames": 15,
+          "sha256": "4bab5426349fdc6301ead9c48003d5b1295ffc1e71256dbfbcfc6b1b371244b9"
+        }
+      ]
+    },
+    "grunt": {
+      "bounds": [
+        4,
+        42,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 86.0,
+      "maxVisibleHeight": 58.766666666666666,
+      "inputs": [
+        {
+          "file": "grunt-walk.png",
+          "frames": 13,
+          "sha256": "45f57d2322c3ed621d9cf3c0ea1a9036604c1b4cd7ef01d74e6c5efb865c5110"
+        },
+        {
+          "file": "grunt-attack.png",
+          "frames": 9,
+          "sha256": "ddabf32a52e88a14135aed39b5fabbe9a1f0672c1830eecef46ad5d105ab1680"
+        },
+        {
+          "file": "grunt-die.png",
+          "frames": 13,
+          "sha256": "13d2c49215e7cc423596a25b566d05f78fa57c2af645827a4826fe84860723ff"
+        }
+      ]
+    },
+    "sprinter": {
+      "bounds": [
+        4,
+        36,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 84.54545454545455,
+      "maxVisibleHeight": 62.0,
+      "inputs": [
+        {
+          "file": "sprinter-walk.png",
+          "frames": 17,
+          "sha256": "ac94405300f3633e603a46cd834b2f265777576c0c8735c4ed80c9fa41f41cad"
+        },
+        {
+          "file": "sprinter-attack.png",
+          "frames": 13,
+          "sha256": "0dee19107fa5449640f0869e6acec7873b331cdb4b0db8b992063873e49305bd"
+        },
+        {
+          "file": "sprinter-die.png",
+          "frames": 21,
+          "sha256": "0bdd336dc9e3e4a7eede138c15ef4f8ea2b566a85fe68bf7c7131ec1225326de"
+        }
+      ]
+    },
+    "manhunter": {
+      "bounds": [
+        4,
+        13,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 67.02702702702702,
+      "maxVisibleHeight": 61.99999999999999,
+      "inputs": [
+        {
+          "file": "manhunter-walk.png",
+          "frames": 33,
+          "sha256": "33a90546d7a0db1eeeac53eec2a1105a78c8d0163d822e7acad55b5d23e90ae2"
+        },
+        {
+          "file": "manhunter-attack.png",
+          "frames": 33,
+          "sha256": "ff08320ebccecfc75d971a27bd0f5f7cc95011052bde4af92e7cf766b82575c3"
+        },
+        {
+          "file": "manhunter-die.png",
+          "frames": 21,
+          "sha256": "4ff72a436be84b9db15b72239a478efae32ebb2eec3f2e66e4b5212257f6a9b3"
+        }
+      ]
+    },
+    "tank": {
+      "bounds": [
+        4,
+        4,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 62.00000000000001,
+      "maxVisibleHeight": 62.00000000000001,
+      "inputs": [
+        {
+          "file": "tank-walk.png",
+          "frames": 17,
+          "sha256": "effce9c98bb152a936f80a39f7e9ede9b7e229633ccde68da92719c672f27eab"
+        },
+        {
+          "file": "tank-attack.png",
+          "frames": 17,
+          "sha256": "ab83666a78bed550a978dd55435fb3ebe3bdb0466382f6ea5b311e90ac9eb27c"
+        },
+        {
+          "file": "tank-die.png",
+          "frames": 23,
+          "sha256": "dcb19d220a168d5127fd763211ee27be1157588ef71cd655789be7e38ecd3ad2"
+        }
+      ]
+    },
+    "gargantua": {
+      "bounds": [
+        4,
+        32,
+        124,
+        124
+      ],
+      "frameWidth": 128,
+      "frameHeight": 128,
+      "maxVisibleWidth": 80.8695652173913,
+      "maxVisibleHeight": 62.0,
+      "inputs": [
+        {
+          "file": "gargantua-walk.png",
+          "frames": 17,
+          "sha256": "913c266b8088af8cc63602b31dc00dcdea623f33d4c7cbb89494702fce75a446"
+        },
+        {
+          "file": "gargantua-attack.png",
+          "frames": 13,
+          "sha256": "1659a4d5b279f889cc86a5ae86e995138f3c9715706922dea3feefc9ed1c0921"
+        },
+        {
+          "file": "gargantua-die.png",
+          "frames": 13,
+          "sha256": "0bc059319afd16729377c229357c5b57f89411d54ef4b4dfb5998a9c6f18e703"
+        }
+      ]
+    }
+  }
+}

@@ -6,14 +6,18 @@ function media() {
   const events = new Map<string, () => void>();
   const element = {
     src: "", preload: "", loop: false, volume: 1,
-    play: vi.fn<() => Promise<void>>().mockResolvedValue(),
+    play: vi.fn<() => Promise<void>>().mockResolvedValue(undefined),
     pause: vi.fn(), load: vi.fn(), removeAttribute: vi.fn(),
     addEventListener: (event: string, callback: () => void) => events.set(event, callback),
   };
   const create = vi.fn(() => element as unknown as HTMLAudioElement);
   const states = vi.fn();
-  const music = new AmbientMusic("/audio/orbital-drift.wav", states, create);
-  return { music, element, events, create, states };
+  const gain = { gain: { value: 0, setTargetAtTime: vi.fn((value: number) => { gain.gain.value = value; }) }, connect: vi.fn(), disconnect: vi.fn() };
+  const source = { connect: vi.fn(), disconnect: vi.fn() };
+  const context = { state: "running", currentTime: 0, destination: {}, resume: vi.fn().mockResolvedValue(undefined), close: vi.fn().mockResolvedValue(undefined), createGain: vi.fn(() => gain), createMediaElementSource: vi.fn(() => source), addEventListener: vi.fn() };
+  const createContext = vi.fn(() => context as unknown as AudioContext);
+  const music = new AmbientMusic("/audio/orbital-drift.wav", states, create, createContext);
+  return { music, element, events, create, states, context, gain, createContext };
 }
 
 it("keeps music opt-in, reuses one media element and releases it on disposal", async () => {
@@ -22,9 +26,8 @@ it("keeps music opt-in, reuses one media element and releases it on disposal", a
   expect(music.state).toBe("off");
   music.toggle();
   expect(music.state).toBe("starting");
-  await Promise.resolve();
-  expect(music.state).toBe("playing");
-  expect(element).toMatchObject({ preload: "none", loop: true, volume: 0.24 });
+  await vi.waitFor(() => expect(music.state).toBe("playing"));
+  expect(element).toMatchObject({ preload: "none", loop: true, volume: 1 });
   music.toggle();
   expect(music.state).toBe("off");
   expect(element.pause).toHaveBeenCalled();
@@ -43,27 +46,23 @@ it("does not revive a canceled start and requires an explicit gesture after back
   music.toggle();
   music.toggle();
   resolve();
-  await Promise.resolve();
-  expect(music.state).toBe("off");
+  await vi.waitFor(() => expect(music.state).toBe("off"));
   music.toggle();
-  await Promise.resolve();
+  await vi.waitFor(() => expect(music.state).toBe("playing"));
   music.pauseForBackground();
   expect(music.state).toBe("paused");
   expect(element.play).toHaveBeenCalledTimes(2);
   music.toggle();
-  await Promise.resolve();
-  expect(music.state).toBe("playing");
+  await vi.waitFor(() => expect(music.state).toBe("playing"));
 });
 
 it("reports blocked/download failures and reloads the same media element on retry", async () => {
   const { music, element, events, create } = media();
   element.play.mockRejectedValueOnce(new Error("NotAllowedError"));
   music.toggle();
-  await Promise.resolve();
-  expect(music.state).toBe("error");
+  await vi.waitFor(() => expect(music.state).toBe("error"));
   music.toggle();
-  await Promise.resolve();
-  expect(music.state).toBe("playing");
+  await vi.waitFor(() => expect(music.state).toBe("playing"));
   expect(element.load).toHaveBeenCalledTimes(1);
   events.get("error")!();
   expect(music.state).toBe("error");
@@ -87,4 +86,22 @@ it("ships a non-silent bounded PCM loop with a continuous wrap and no clipped sa
   expect(Math.sqrt(square / ((wav.length - 44) / 2))).toBeGreaterThan(0.02);
   expect(peak).toBeLessThan(0.66);
   expect(Math.abs(wav.readInt16LE(44) - wav.readInt16LE(wav.length - 2)) / 32768).toBeLessThan(0.02);
+});
+
+it("changes only the music gain, clamps levels, and preserves the user mix across retry", async () => {
+  const { music, gain, createContext, context } = media();
+  music.setVolume(0);
+  expect(createContext).not.toHaveBeenCalled();
+  music.toggle();
+  await vi.waitFor(() => expect(music.state).toBe("playing"));
+  expect(gain.gain.value).toBe(0);
+  music.setVolume(0.65);
+  expect(gain.gain.setTargetAtTime).toHaveBeenLastCalledWith(0.65 * 0.12, 0, 0.015);
+  music.setVolume(2);
+  expect(gain.gain.value).toBe(0.12);
+  music.setVolume(-1);
+  expect(gain.gain.value).toBe(0);
+  expect(context.createMediaElementSource).toHaveBeenCalledTimes(1);
+  music.destroy();
+  expect(context.close).toHaveBeenCalledTimes(1);
 });

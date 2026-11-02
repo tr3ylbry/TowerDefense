@@ -1,0 +1,306 @@
+{
+  "character": "scout",
+  "toolchain": {
+    "python": "3.14.5",
+    "pillow": "12.2.0",
+    "webp": "1.6.0"
+  },
+  "inputs": {
+    "art-source/expedition-1.0/roster/scout-parts-generated.png": {
+      "bytes": 719604,
+      "sha256": "facfee7c7842cba1dc98fda21db9b6e584cafecb5b59e88ef64f0866145acd84"
+    },
+    "scripts/build-roster-animations.py": {
+      "bytes": 4797,
+      "sha256": "f7f837f5e50b41fa1813cfdc963121f8536e8bf361a79321e78b9e9ac9002662"
+    },
+    "scripts/animation_tools.py": {
+      "bytes": 7992,
+      "sha256": "1575db59a02815e39ab1701d24f7b320784a1f3d24224bf86cd862939c8848a4"
+    }
+  },
+  "frame": {
+    "width": 128,
+    "height": 96,
+    "displayWidth": 96,
+    "displayHeight": 72,
+    "ground": 89
+  },
+  "sequences": {
+    "walk": [
+      0,
+      16
+    ],
+    "idle": [
+      16,
+      8
+    ],
+    "attack": [
+      24,
+      16
+    ]
+  },
+  "frames": 40,
+  "columns": 8,
+  "atlasSize": [
+    1024,
+    480
+  ],
+  "settings": {
+    "format": "WebP",
+    "quality": 82,
+    "method": 6,
+    "strideWorldPixels": 20,
+    "stance": 0.62,
+    "gait": "alternating planted-foot walk",
+    "authoring": "continuous painted limbs, offline mesh deformation; stable body material"
+  },
+  "alphaExactAfterEncoding": true,
+  "frameAlphaBounds": [
+    [
+      28,
+      10,
+      98,
+      89
+    ],
+    [
+      28,
+      10,
+      98,
+      89
+    ],
+    [
+      28,
+      10,
+      98,
+      89
+    ],
+    [
+      28,
+      10,
+      98,
+      89
+    ],
+    [
+      28,
+      9,
+      98,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      102,
+      89
+    ],
+    [
+      28,
+      10,
+      103,
+      89
+    ],
+    [
+      28,
+      10,
+      105,
+      89
+    ],
+    [
+      28,
+      10,
+      107,
+      89
+    ],
+    [
+      28,
+      10,
+      108,
+      89
+    ],
+    [
+      28,
+      10,
+      108,
+      89
+    ],
+    [
+      28,
+      9,
+      104,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      98,
+      89
+    ],
+    [
+      28,
+      10,
+      98,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      24,
+      11,
+      100,
+      89
+    ],
+    [
+      24,
+      11,
+      100,
+      89
+    ],
+    [
+      25,
+      10,
+      100,
+      89
+    ],
+    [
+      26,
+      10,
+      100,
+      89
+    ],
+    [
+      27,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      28,
+      10,
+      100,
+      89
+    ],
+    [
+      29,
+      10,
+      100,
+      89
+    ],
+    [
+      29,
+      10,
+      100,
+      89
+    ]
+  ],
+  "production": {
+    "file": "public/art/expedition/scout-animation.webp",
+    "bytes": 92306,
+    "sha256": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa"
+  }
+}

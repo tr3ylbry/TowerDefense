@@ -12,8 +12,17 @@ import { Simulation } from "../src/game/simulation";
 import sprinter from "../art-source/expedition-1.0/sprinter-conversion.json";
 import gargantua from "../art-source/expedition-1.0/gargantua-conversion.json";
 
+import scout from "../art-source/expedition-1.0/scout-conversion.json";
+
+import grunt from "../art-source/expedition-1.0/grunt-conversion.json";
+
+import manhunter from "../art-source/expedition-1.0/manhunter-conversion.json";
+
+import tank from "../art-source/expedition-1.0/tank-conversion.json";
+
 const moving = { id: 3, x: 8, previousX: 8.02, attacking: false, cooldown: 0 };
-for (const kind of ["sprinter", "gargantua"] as const) {
+const records = { scout, grunt, sprinter, manhunter, tank, gargantua };
+for (const kind of ["scout", "grunt", "sprinter", "manhunter", "tank", "gargantua"] as const) {
   const firstIdle = kind === "sprinter" ? 24 : 16;
   const firstAttack = firstIdle + 8;
   describe(`${kind} presentation contract`, () => {
@@ -36,7 +45,7 @@ for (const kind of ["sprinter", "gargantua"] as const) {
       expect(enemy).toEqual(moving);
     });
     it("locks interpolation to character stride and ignores unrelated elapsed time", () => {
-      const stride = kind === "sprinter" ? 0.48 : 0.28;
+      const stride = records[kind].settings.strideWorldPixels / 100;
       const pose = alienPose(kind, moving, 0, 0.5, false);
       expect(
         alienPose(
@@ -73,7 +82,7 @@ for (const kind of ["sprinter", "gargantua"] as const) {
         );
     });
     it("has contiguous registered poses, intact alpha, reviewed grounding and matching encoded hash", () => {
-      const record = kind === "sprinter" ? sprinter : gargantua;
+      const record = records[kind];
       const sheet = ALIEN_ANIMATIONS[kind];
       expect(record.frames).toBe(sheet.frames);
       expect(record.sequences).toEqual({
@@ -110,11 +119,11 @@ for (const kind of ["sprinter", "gargantua"] as const) {
     });
   });
 }
-it("keeps other character anatomy on its existing renderer", () => {
+it("covers every illustrated alien with an articulated atlas", () => {
   expect(isAnimatedAlien("gargantua")).toBe(true);
   expect(isAnimatedAlien("sprinter")).toBe(true);
   for (const kind of ["scout", "grunt", "tank", "manhunter"] as const)
-    expect(isAnimatedAlien(kind)).toBe(false);
+    expect(isAnimatedAlien(kind)).toBe(true);
 });
 it("shows Gargantua contact on a real damage event and freezes it on pause", () => {
   const game = new Simulation();

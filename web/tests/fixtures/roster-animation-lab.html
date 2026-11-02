@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Full alien roster motion review</title>
+<style>body{background:#10212c;color:#e5ede4;font:14px system-ui;margin:24px}h1{font-size:22px}button,label{margin:0 12px 12px 0;padding:10px}canvas{display:block;width:1080px;max-width:100%;height:auto;margin-bottom:20px}</style>
+<h1>Six illustrated aliens · animation review fixture</h1><p>Actual world size: walking at each unit's speed, idle, contact/recovery. Preview clock only; this is not a recorded mission.</p>
+<button id="pause">Pause preview</button><button id="speed">1×</button><label><input id="reduce" type="checkbox">Reduced motion</label><output id="status"></output>
+<canvas id="canyon" width="1080" height="720"></canvas><canvas id="bridge" width="1080" height="720"></canvas><canvas id="nest" width="1080" height="720"></canvas>
+<script type="module">
+import {ALIEN_ANIMATIONS,alienPose} from '/src/game/alien-animation.ts';
+import {ENEMIES} from '/src/game/content.ts';
+const image=async path=>{const i=new Image();i.src=path;await i.decode();return i;};
+const kinds=Object.keys(ALIEN_ANIMATIONS);
+const atlases=Object.fromEntries(await Promise.all(kinds.map(async kind=>[kind,await image('/art/'+ALIEN_ANIMATIONS[kind].file)])));
+const maps=['canyon','bridge','nest'];
+const backgrounds=await Promise.all(['canyon-0.5','sky-bridge','nest'].map(name=>image('/art/expedition/'+name+'.webp')));
+let elapsed=0,last=performance.now(),paused=false,speed=1;
+const reduce=document.querySelector('#reduce');
+document.querySelector('#pause').onclick=()=>{paused=!paused;document.querySelector('#pause').textContent=paused?'Resume preview':'Pause preview';};
+document.querySelector('#speed').onclick=()=>{speed=speed===1?2:1;document.querySelector('#speed').textContent=speed+'×';};
+function draw(ctx,kind,frame,x,y){const s=ALIEN_ANIMATIONS[kind];ctx.drawImage(atlases[kind],frame%8*s.frameWidth,Math.floor(frame/8)*s.frameHeight,s.frameWidth,s.frameHeight,x-s.width/2,y-s.height*s.foot,s.width,s.height);}
+function render(now){
+ if(!paused)elapsed+=Math.min(.1,(now-last)/1000)*speed;last=now;
+ const frames=[];
+ for(let map=0;map<3;map++){
+  const ctx=document.querySelector('#'+maps[map]).getContext('2d');ctx.drawImage(backgrounds[map],0,0,1080,720);ctx.fillStyle='#10212c99';ctx.fillRect(0,0,1080,720);ctx.fillStyle='#eef4ea';ctx.font='14px monospace';ctx.fillText(maps[map].toUpperCase()+' / WALK · IDLE · CONTACT',18,25);
+  kinds.forEach((kind,row)=>{
+   const y=135+row*110,velocity=ENEMIES[kind].speed,x=8-elapsed*velocity;
+   const enemy={id:row+1,x,previousX:x+.05*velocity,attacking:false,cooldown:0};
+   const poses=[alienPose(kind,enemy,elapsed,1,reduce.checked),alienPose(kind,{...enemy,previousX:x},elapsed,0,reduce.checked),alienPose(kind,{...enemy,attacking:true,cooldown:ENEMIES[kind].cooldown-elapsed%ENEMIES[kind].cooldown},elapsed,0,reduce.checked)];
+   ctx.fillStyle='#eef4ea';ctx.fillText(ENEMIES[kind].name,18,y-60);ctx.strokeStyle='#9ed4c366';ctx.beginPath();ctx.moveTo(18,y);ctx.lineTo(1060,y);ctx.stroke();
+   for(let column=0;column<3;column++)draw(ctx,kind,poses[column].frame,column===0?510-elapsed*velocity*100%170:column===1?735:950,y);
+   if(map===0)frames.push(...poses.map(p=>p.frame));
+  });
+ }
+ document.body.dataset.ready='true';document.body.dataset.frames=frames.join(',');document.querySelector('#status').textContent=paused?'Paused':'Playing';requestAnimationFrame(render);
+}
+requestAnimationFrame(render);
+</script></html>

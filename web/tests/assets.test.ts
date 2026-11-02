@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import manifest from "../public/art/manifest.json";
 import { assetsFor } from "../src/assets";
+import { ALIEN_ANIMATIONS } from "../src/game/alien-animation";
 import { ENEMIES, TOWERS } from "../src/game/content";
 import {
   EXPEDITION_ENEMIES,
@@ -19,18 +20,16 @@ describe("mission asset plans", () => {
     expect(keys).not.toContain("stage-three");
     expect(keys).not.toContain("acid-pool");
     for (const kind of Object.keys(ENEMIES) as (keyof typeof ENEMIES)[]) {
-      expect(keys).toContain(EXPEDITION_ENEMIES[kind]!.key);
+      expect(keys).toContain(ALIEN_ANIMATIONS[kind].key);
+      expect(keys).not.toContain(EXPEDITION_ENEMIES[kind].key);
       expect(keys).not.toContain(`${ENEMIES[kind].sprite}-walk`);
     }
     for (const kind of Object.keys(TOWERS) as (keyof typeof TOWERS)[]) {
       expect(keys).toContain(EXPEDITION_TOWERS[kind]!.key);
       expect(keys).not.toContain(`${TOWERS[kind].sprite}-idle`);
     }
-    expect(plan.sprites.map((x) => x.key)).toEqual([
-      "expedition-sprinter-animation",
-      "expedition-gargantua-animation",
-    ]);
-    expect(plan.sprites[0]).toMatchObject({
+    expect(plan.sprites.map((x) => x.key)).toEqual(Object.values(ALIEN_ANIMATIONS).map((sheet) => sheet.key));
+    expect(plan.sprites.find((sheet) => sheet.key === "expedition-sprinter-animation")).toMatchObject({
       frameWidth: 160,
       frameHeight: 120,
       frames: 48,

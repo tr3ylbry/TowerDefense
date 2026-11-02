@@ -26,13 +26,28 @@ export const GARGANTUA_ANIMATION = {
   foot: 107 / 120,
 } as const;
 
+function rosterAnimation(name: string, width: number, height: number, ground: number) {
+  return {
+    key: `expedition-${name}-animation`, file: `expedition/${name}-animation.webp`,
+    frameWidth: 128, frameHeight: 96, frames: 40, fps: 0,
+    width, height, foot: ground / 96,
+  } as const;
+}
 export const ALIEN_ANIMATIONS = {
+  scout: rosterAnimation("scout", 96, 72, 89),
+  grunt: rosterAnimation("grunt", 112, 84, 85),
   sprinter: SPRINTER_ANIMATION,
+  manhunter: rosterAnimation("manhunter", 112, 84, 90),
+  tank: rosterAnimation("tank", 128, 96, 78),
   gargantua: GARGANTUA_ANIMATION,
-} as const;
+} as const satisfies Record<EnemyKind, unknown>;
 export type AnimatedAlien = keyof typeof ALIEN_ANIMATIONS;
 const POSES = {
+  scout: { walk: 16, idle: 16, attack: 24, stride: 20, idleSeconds: 2.4 },
+  grunt: { walk: 16, idle: 16, attack: 24, stride: 20, idleSeconds: 3.2 },
   sprinter: { walk: 24, idle: 24, attack: 32, stride: 48, idleSeconds: 2.4 },
+  manhunter: { walk: 16, idle: 16, attack: 24, stride: 28, idleSeconds: 2.4 },
+  tank: { walk: 16, idle: 16, attack: 24, stride: 18, idleSeconds: 3.4 },
   gargantua: { walk: 16, idle: 16, attack: 24, stride: 28, idleSeconds: 3.2 },
 } as const;
 

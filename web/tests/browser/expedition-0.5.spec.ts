@@ -12,6 +12,7 @@ test("ordinary dialogs never resume a mission after backgrounding", async ({
     ["#play-guide", "#guide-dialog", "[aria-label='Close field guide']"],
     ["#map-open", "#map-dialog", "[aria-label='Close destinations']"],
     ["#restart", "#restart-dialog", "#restart-cancel"],
+    ["#audio-mix", "#audio-settings", "[aria-label='Close Audio Volume controls']"],
     ["#credits-open", "#credits-dialog", "[aria-label='Close credits']"],
   ]) {
     if (opener === "#credits-open") await page.locator("#focus-toggle").click();

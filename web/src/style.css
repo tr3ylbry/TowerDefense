@@ -1825,7 +1825,7 @@ dialog li {
 }
 .crew-list {
   display: grid;
-  grid-template-columns: repeat(9, minmax(94px, 1fr));
+  grid-template-columns: repeat(9, minmax(118px, 1fr));
   gap: 6px;
   max-height: none;
   overflow-x: auto;
@@ -1834,11 +1834,11 @@ dialog li {
   position: relative;
 }
 .crew-card {
-  min-height: 90px;
+  min-height: 72px;
   padding: 7px;
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
-  grid-template-rows: 35px minmax(28px, auto);
+  grid-template-rows: 35px 14px;
   gap: 4px;
   align-items: center;
 }
@@ -1857,10 +1857,10 @@ dialog li {
 }
 .crew-info strong {
   display: block;
-  min-height: 2.4em;
+  min-height: 1.2em;
   font-size: 11px;
   line-height: 1.2;
-  white-space: normal;
+  white-space: nowrap;
 }
 .crew-role,
 .crew-description {
@@ -2027,11 +2027,11 @@ dialog li {
     padding: 9px 16px;
   }
   .crew-list {
-    grid-template-columns: repeat(9, 104px);
+    grid-template-columns: repeat(9, 118px);
     gap: 6px;
   }
   .crew-card {
-    min-height: 82px;
+    min-height: 72px;
   }
   .crew-heading > span {
     font-size: 9px;
@@ -2927,3 +2927,33 @@ dialog li {
     gap: 12px;
   }
 }
+
+.fx-icon { font: 700 12px var(--mono); letter-spacing: -0.5px; }
+#audio-settings {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(340px, calc(100vw - 24px));
+  height: fit-content;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  border: 1px solid #83b6aa;
+  border-left: 3px solid var(--mint);
+  border-radius: 8px;
+  padding: 24px;
+  color: var(--cream);
+  background: linear-gradient(145deg, #203c42, #11282e);
+  box-shadow: 0 14px 45px #0009;
+}
+#audio-settings h3 { margin: 12px 26px 10px 0; }
+#audio-settings p { color: var(--muted); font-size: 13px; line-height: 1.5; }
+#audio-settings label { display: flex; justify-content: space-between; margin-top: 20px; font: 12px var(--mono); }
+#audio-settings input { width: 100%; min-height: 44px; margin: 0; accent-color: var(--mint); }
+#audio-settings output { color: var(--mint); font-variant-numeric: tabular-nums; }
+@media (max-width: 700px) {
+  .focused-play .mission-tools { gap: 2px; }
+}
+.field-actions { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.field-actions #salvage { min-height: 44px; padding: 6px 9px; margin: 0; white-space: nowrap; font-size: 11px; }
+.field-actions #field-zoom { min-height: 44px; }
+@media (max-width: 700px) { .field-actions #salvage kbd { display: none; } }

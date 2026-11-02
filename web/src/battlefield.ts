@@ -1,3 +1,4 @@
+import { ORIGINAL_REGISTRATION } from "./game/original-registration";
 import Phaser from "phaser";
 import {
   AMMO,
@@ -476,6 +477,7 @@ export function mountBattlefield(options: Options): Battlefield {
       for (const tower of state.towers) {
         const definition = TOWERS[tower.kind];
         const artwork = expedition ? EXPEDITION_TOWERS[tower.kind] : undefined;
+        const original = ORIGINAL_REGISTRATION.towers[tower.kind];
         let sprite = towerSprites.get(tower.id);
         if (!sprite) {
           sprite = this.add
@@ -502,14 +504,15 @@ export function mountBattlefield(options: Options): Battlefield {
             sprite.setDisplaySize(84, 84);
           }
         }
-        sprite.setOrigin(0.5, artwork?.foot ?? 1).setY(worldY(tower.row) + 29);
+        sprite.setOrigin(artwork ? 0.5 : original.originX, artwork?.foot ?? original.originY)
+          .setY(worldY(tower.row) + (artwork ? 29 : 0));
         const recoil = animate
           ? Math.max(0, (sprite.getData("recoilUntil") ?? 0) - visualTime) /
             0.12
           : 0;
         sprite.setX(
           worldX(tower.col + 0.5) -
-            recoil *
+            (artwork ? recoil : 0) *
               (tower.kind === "startrell"
                 ? 2
                 : tower.kind === "zeus"
@@ -540,6 +543,7 @@ export function mountBattlefield(options: Options): Battlefield {
             (artwork.height + breath) * (1 + growth),
           );
         } else {
+          sprite.setDisplaySize(original.width, original.height);
           const duration = sprite.anims.currentAnim?.duration ?? 0;
           sprite.anims.timeScale =
             state.speed *
@@ -654,6 +658,7 @@ export function mountBattlefield(options: Options): Battlefield {
       for (const enemy of state.enemies) {
         const definition = ENEMIES[enemy.kind];
         const artwork = expedition ? EXPEDITION_ENEMIES[enemy.kind] : undefined;
+        const original = ORIGINAL_REGISTRATION.enemies[enemy.kind];
         const animatedKind = isAnimatedAlien(enemy.kind)
           ? enemy.kind
           : undefined;
@@ -667,7 +672,7 @@ export function mountBattlefield(options: Options): Battlefield {
             .sprite(
               worldX(enemy.x),
               worldY(enemy.row) - 4,
-              artwork?.key ?? `${definition.sprite}-walk`,
+              presentation?.key ?? `${definition.sprite}-walk`,
             )
             .setDepth(5)
             .setData("kind", definition.sprite);
@@ -711,10 +716,10 @@ export function mountBattlefield(options: Options): Battlefield {
           ? Math.max(0, (sprite.getData("hitUntil") ?? 0) - visualTime) / 0.14
           : 0;
         sprite
-          .setOrigin(0.5, presentation?.foot ?? 1)
+          .setOrigin(presentation ? 0.5 : original.originX, presentation?.foot ?? original.originY)
           .setPosition(
             worldX(x) + hit * (sprite.getData("resisted") ? 1.5 : 5),
-            worldY(enemy.row) + 29 + stride,
+            worldY(enemy.row) + (presentation ? 29 : 0) + stride,
           )
           .setAngle(lean + hit * (enemy.id % 2 ? 3 : -3));
         if (strike > 0)
@@ -729,7 +734,7 @@ export function mountBattlefield(options: Options): Battlefield {
         else {
           if (sprite.anims.currentAnim?.key !== animation)
             sprite.play(animation);
-          sprite.setDisplaySize(definition.size, definition.size - hit * 2);
+          sprite.setDisplaySize(original.width, original.height - hit * 2);
         }
         if (hit > 0)
           sprite

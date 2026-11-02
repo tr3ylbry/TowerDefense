@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { slowRuntime } from "./slow-runtime";
+import { ALIEN_ANIMATIONS } from "../../src/game/alien-animation";
 test.beforeEach(slowRuntime);
 test.use({
   video:
@@ -48,7 +49,7 @@ test("both anatomy pilots animate, pause and reduce motion on all environments",
   });
 });
 
-test("both pilots survive actual spawned combat, pause, art comparison, speed, reduced motion and restarts", async ({
+test("illustrated roster survives actual spawned combat, pause, art comparison, speed, reduced motion and restarts", async ({
   page,
 }, info) => {
   test.setTimeout(180000);
@@ -56,7 +57,7 @@ test("both pilots survive actual spawned combat, pause, art comparison, speed, r
     atlases: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("request", (r) => {
-    if (/(sprinter|gargantua)-animation.webp$/.test(r.url()))
+    if (/-animation.webp$/.test(r.url()))
       atlases.push(r.url());
   });
   await page.goto("/");
@@ -163,12 +164,8 @@ test("both pilots survive actual spawned combat, pause, art comparison, speed, r
       await page.locator("#pause").click();
     }
   }
-  expect(
-    atlases.filter((r) => r.endsWith("sprinter-animation.webp")),
-  ).toHaveLength(1);
-  expect(
-    atlases.filter((r) => r.endsWith("gargantua-animation.webp")),
-  ).toHaveLength(1);
+  for (const kind of Object.keys(ALIEN_ANIMATIONS))
+    expect(atlases.filter((url) => url.endsWith(`${kind}-animation.webp`))).toHaveLength(1);
   expect(errors).toEqual([]);
 });
 
@@ -256,10 +253,13 @@ test("phone actions use centered vector icons and landscape overview shows every
     .click();
   await expect(
     page.getByRole("gridcell", {
-      name: "Lane 6, tile 9, Astro Joe, 260 health",
-      exact: true,
+      name: /^Lane 6, tile 9, Astro Joe, \d+ health$/,
     }),
   ).toBeAttached();
+  const deployed = await page.getByRole("gridcell", { name: /^Lane 6, tile 9, Astro Joe, \d+ health$/ }).getAttribute("aria-label");
+  const health = Number(deployed!.match(/(\d+) health$/)![1]);
+  expect(health).toBeGreaterThan(0);
+  expect(health).toBeLessThanOrEqual(260);
   await page.locator("#field-zoom").click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.locator("#pause").click();

@@ -79,13 +79,15 @@ export function assetsFor(
       style === "expedition"
         ? EXPEDITION_ENEMIES[kind as EnemyKind]
         : undefined;
-    if (cutout) images.push(cutout);
+    // Animated sheets supply battlefield imagery; guide portraits load on demand.
+    if (cutout) {
+      if (!(kind in ALIEN_ANIMATIONS)) images.push(cutout);
+    }
     else
       for (const action of ["walk", "attack", "die"])
         legacy(`${enemy.sprite}-${action}`);
   }
-  // Both existing pilots appear in every mission; no speculative roster atlases.
-  // Static illustrations remain available for portraits and renderer fallback.
+  // Every authored mission contains all six kinds. Require their sheets before Begin.
   if (style === "expedition") sprites.push(...Object.values(ALIEN_ANIMATIONS));
   return {
     images: [...new Map(images.map((x) => [x.key, x])).values()],

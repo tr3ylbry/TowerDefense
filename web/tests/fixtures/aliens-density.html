@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="utf-8" /><title>Two-pilot render cost fixture</title>
+  <meta charset="utf-8" /><title>Alien render cost fixture</title>
   <body style="margin: 0; background: #10212c">
     <div id="field"></div>
     <script type="module">
@@ -11,10 +11,11 @@
         alienPose,
       } from "/src/game/alien-animation.ts";
       import { ENEMIES } from "/src/game/content.ts";
+      import { EXPEDITION_ENEMIES } from "/src/game/art.ts";
       const params = new URLSearchParams(location.search),
         before = params.get("variant") === "before",
         group = params.get("group") || "mixed";
-      const kinds = group === "mixed" ? ["sprinter", "gargantua"] : [group];
+      const kinds = group === "roster" ? Object.keys(ALIEN_ANIMATIONS) : group === "mixed" ? ["sprinter", "gargantua"] : [group];
       const count = 50,
         sprites = [],
         metrics = {
@@ -45,13 +46,13 @@
         preload() {
           for (const kind of kinds) {
             const sheet = ALIEN_ANIMATIONS[kind];
-            if (before && kind === "gargantua")
-              this.load.image(sheet.key, "/art/expedition/gargantua.webp");
+            if (before && kind !== "sprinter")
+              this.load.image(sheet.key, "/art/" + EXPEDITION_ENEMIES[kind].file);
             else
               this.load.spritesheet(
                 sheet.key,
                 before ? oldSprinter : "/art/" + sheet.file,
-                { frameWidth: 160, frameHeight: 120 },
+                { frameWidth: sheet.frameWidth, frameHeight: sheet.frameHeight },
               );
           }
         }
@@ -67,7 +68,7 @@
                 .setData("kind", kind)
                 .setOrigin(
                   0.5,
-                  before && kind === "gargantua" ? 273 / 280 : sheet.foot,
+                  before && kind !== "sprinter" ? EXPEDITION_ENEMIES[kind].foot : sheet.foot,
                 ),
             );
           }
@@ -87,13 +88,15 @@
               x = 10 - ((elapsed * ENEMIES[kind].speed + i * 0.197) % 10),
               attacking = i % 5 === 0;
             sprite.setPosition(40 + x * 100, 95 + (i % 6) * 95);
-            if (before && kind === "gargantua")
+            if (before && kind !== "sprinter") {
+              const gait = kind === "gargantua" ? [4, 0.7, 0.6] : kind === "manhunter" ? [7, 1, 1.6] : [12, 1.2, 0];
               sprite
-                .setDisplaySize(122, (122 * 280) / 384)
+                .setDisplaySize(EXPEDITION_ENEMIES[kind].width, EXPEDITION_ENEMIES[kind].height)
                 .setY(
-                  sprite.y + (attacking ? 0 : Math.sin(elapsed * 4 + i) * 0.7),
+                  sprite.y + (attacking ? 0 : Math.sin(elapsed * gait[0] + i) * gait[1]),
                 )
-                .setAngle(attacking ? 0 : Math.cos(elapsed * 4 + i) * 0.6);
+                .setAngle(attacking ? 0 : Math.cos(elapsed * gait[0] + i) * gait[2]);
+            }
             else {
               const pose = alienPose(
                 kind,

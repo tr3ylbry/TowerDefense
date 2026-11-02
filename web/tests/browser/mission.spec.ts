@@ -162,7 +162,7 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
     .getByRole("gridcell", { name: "Lane 2, tile 1, empty", exact: true })
     .click();
   await expect(
-    page.getByRole("gridcell", { name: /Lane 2, tile 1, Explosive Astro Joe/ }),
+    page.getByRole("gridcell", { name: /Lane 2, tile 1, Astro Joe X/ }),
   ).toBeVisible();
   await expect(page.locator("#credits")).toHaveText("45");
   await page.getByRole("button", { name: "Change destination" }).click();
@@ -238,7 +238,7 @@ test("field guide documents all six original invaders and resumes the game", asy
 }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Begin mission" }).click();
-  await page.getByRole("button", { name: "Field guide" }).click();
+  await page.getByRole("button", { name: "Field Guide" }).click();
   await expect(page.locator(".alien-guide article")).toHaveCount(6);
   for (const name of [
     "Little Green Men",
@@ -354,7 +354,7 @@ test("focused desktop controls fit the viewport and the art comparison preserves
     }),
     contentType: "image/png",
   });
-  await page.getByRole("button", { name: "Field guide", exact: true }).click();
+  await page.getByRole("button", { name: "Field Guide", exact: true }).click();
   await expect(page.locator(".alien-guide")).toContainText(
     "Plating absorbs 80%",
   );

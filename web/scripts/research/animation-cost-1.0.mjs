@@ -13,12 +13,13 @@ const browser = await chromium.launch({
   }),
   observations = [],
   decodes = [];
+const roster = process.env.AVA_PROFILE_ROSTER === "1";
 const percentile = (xs, p) =>
   [...xs].sort((a, b) => a - b)[
     Math.min(xs.length - 1, Math.floor(xs.length * p))
   ];
 try {
-  for (const group of ["sprinter", "gargantua", "mixed"])
+  for (const group of (roster ? ["roster"] : ["sprinter", "gargantua", "mixed"]))
     for (let sample = 0; sample < 3; sample++)
       for (const variant of ["before", "after"]) {
         const page = await browser.newPage({
@@ -50,9 +51,9 @@ try {
           rawCpu: m.cpu,
           errors,
         });
-        if (group === "mixed" && sample === 2 && variant === "after")
+        if ((group === "mixed" || group === "roster") && sample === 2 && variant === "after")
           await page.screenshot({
-            path: fileURLToPath(new URL("../visual/dense-50-mixed.png", out)),
+            path: fileURLToPath(new URL(roster ? "../visual/dense-50-roster.png" : "../visual/dense-50-mixed.png", out)),
           });
         await page.close();
       }
@@ -64,6 +65,7 @@ try {
       "sprinter-animation.webp",
       "gargantua.webp",
       "gargantua-animation.webp",
+      ...(roster ? ["scout-animation.webp", "grunt-animation.webp", "manhunter-animation.webp", "tank-animation.webp"] : []),
     ]) {
       const result = await page.evaluate(async (name) => {
         const blob = await (await fetch("/art/expedition/" + name)).blob(),
@@ -90,17 +92,19 @@ try {
     "src/battlefield.ts",
     "public/art/expedition/sprinter-animation.webp",
     "public/art/expedition/gargantua-animation.webp",
+    ...(roster ? ["public/art/expedition/scout-animation.webp", "public/art/expedition/grunt-animation.webp", "public/art/expedition/manhunter-animation.webp", "public/art/expedition/tank-animation.webp"] : []),
   ])
     hashes[file] = createHash("sha256")
       .update(await readFile(new URL("../../" + file, import.meta.url)))
       .digest("hex");
   await writeFile(
-    new URL("animation.json", out),
+    new URL(roster ? "roster-animation.json" : "animation.json", out),
     JSON.stringify(
       {
         browser: browser.version(),
         method:
-          "Production-bundled fixture, serial alternating 0.9/1.0 presentation; same current pure pose selector (Sprinter selection unchanged), retained 0.9 atlas/procedural Gargantua vs new atlases. 50 world-size Sprinters, Gargantuas and mixed groups. No combat, collision, health bars or device claim. Raw Scene update intervals include scheduling; CPU timing has ~0.1ms resolution. Decode excludes fetch, includes blob initialization. Texture parse is synchronous hook, excludes deferred GPU work.",
+          "Production-bundled fixture, serial alternating 0.9/1.0 presentation; same current pure pose selector (Sprinter selection unchanged), retained 0.9 Sprinter atlas and original procedural gaits vs new atlases. 50 world-size aliens in the indicated group. No combat, collision, health bars or device claim. Raw Scene update intervals include scheduling; CPU timing has ~0.1ms resolution. Decode excludes fetch, includes blob initialization. Texture parse is synchronous hook, excludes deferred GPU work.",
+        comparisonScope: roster ? "Six-kind roster fixture: before retains Sprinter0.9 atlas and static other cutouts; after uses six baked atlases. No simulation." : "Two-pilot fixture",
         sourceSha256: hashes,
         observations,
         decodes,

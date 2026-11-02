@@ -1,0 +1,306 @@
+{
+  "character": "grunt",
+  "toolchain": {
+    "python": "3.14.5",
+    "pillow": "12.2.0",
+    "webp": "1.6.0"
+  },
+  "inputs": {
+    "art-source/expedition-1.0/roster/grunt-parts-generated.png": {
+      "bytes": 1269225,
+      "sha256": "527432eeea933d2ea54f63a2a81322f1132086b4e6da925f69afb43df1fbd59e"
+    },
+    "scripts/build-roster-animations.py": {
+      "bytes": 4797,
+      "sha256": "f7f837f5e50b41fa1813cfdc963121f8536e8bf361a79321e78b9e9ac9002662"
+    },
+    "scripts/animation_tools.py": {
+      "bytes": 7992,
+      "sha256": "1575db59a02815e39ab1701d24f7b320784a1f3d24224bf86cd862939c8848a4"
+    }
+  },
+  "frame": {
+    "width": 128,
+    "height": 96,
+    "displayWidth": 112,
+    "displayHeight": 84,
+    "ground": 85
+  },
+  "sequences": {
+    "walk": [
+      0,
+      16
+    ],
+    "idle": [
+      16,
+      8
+    ],
+    "attack": [
+      24,
+      16
+    ]
+  },
+  "frames": 40,
+  "columns": 8,
+  "atlasSize": [
+    1024,
+    480
+  ],
+  "settings": {
+    "format": "WebP",
+    "quality": 82,
+    "method": 6,
+    "strideWorldPixels": 20,
+    "stance": 0.68,
+    "gait": "alternating planted-foot walk",
+    "authoring": "continuous painted limbs, offline mesh deformation; stable body material"
+  },
+  "alphaExactAfterEncoding": true,
+  "frameAlphaBounds": [
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      18,
+      9,
+      103,
+      85
+    ],
+    [
+      18,
+      9,
+      103,
+      85
+    ],
+    [
+      19,
+      8,
+      104,
+      85
+    ],
+    [
+      20,
+      8,
+      105,
+      85
+    ],
+    [
+      21,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      106,
+      85
+    ],
+    [
+      22,
+      8,
+      107,
+      85
+    ],
+    [
+      22,
+      8,
+      107,
+      85
+    ],
+    [
+      22,
+      8,
+      107,
+      85
+    ]
+  ],
+  "production": {
+    "file": "public/art/expedition/grunt-animation.webp",
+    "bytes": 97096,
+    "sha256": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f"
+  }
+}

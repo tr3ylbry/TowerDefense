@@ -23,7 +23,7 @@ it("keeps critical cues audible during throttled gunfire, including the first in
       };
     }
     createGain() {
-      return { gain: value, connect: vi.fn() };
+      return { gain: value, connect: vi.fn(), disconnect: vi.fn() };
     }
     close() {
       return Promise.resolve();
@@ -75,5 +75,31 @@ it("honors disabling effects while the browser is still resuming audio", async (
   expect(await pending).toBe(false);
   audio.play("shot");
   expect(oscillator).not.toHaveBeenCalled();
+  audio.destroy();
+});
+
+it("uses equal user defaults, changes FX gain live and keeps zero-volume effects silent", async () => {
+  const gains: { gain: { value: number; setTargetAtTime: ReturnType<typeof vi.fn> }; connect: ReturnType<typeof vi.fn>; disconnect: ReturnType<typeof vi.fn> }[] = [];
+  const starts = vi.fn();
+  class Context {
+    state = "running"; currentTime = 0; destination = {};
+    createGain() {
+      const node = { gain: { value: 0, setTargetAtTime: vi.fn(), setValueAtTime: vi.fn(), exponentialRampToValueAtTime: vi.fn() }, connect: vi.fn(), disconnect: vi.fn() };
+      gains.push(node); return node;
+    }
+    createOscillator() { return { type: "sine", frequency: { setValueAtTime: vi.fn(), exponentialRampToValueAtTime: vi.fn() }, connect: vi.fn(), start: starts, stop: vi.fn() }; }
+    close() { return Promise.resolve(); }
+  }
+  vi.stubGlobal("AudioContext", Context);
+  const audio = new AudioBus();
+  await audio.setEnabled(true);
+  audio.play("income");
+  expect(gains[0].gain.value).toBe(0.65);
+  audio.setVolume(0);
+  expect(gains[0].gain.setTargetAtTime).toHaveBeenLastCalledWith(0, 0, 0.015);
+  audio.play("breach");
+  expect(starts).toHaveBeenCalledTimes(1);
+  audio.setVolume(2);
+  expect(gains[0].gain.setTargetAtTime).toHaveBeenLastCalledWith(1, 0, 0.015);
   audio.destroy();
 });
