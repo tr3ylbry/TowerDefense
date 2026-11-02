@@ -46,5 +46,25 @@
       "implementedRevision": "Horizontal link row and new15-second128BPM arrangement; source-authored synthesis, no samples or stock recording.",
       "pending": "Owner visual confirmation of the corrected horizontal row, Unit stats and Original portrait registration; listening preference for the new arrangement and longer-session/backgrounding checks."
     }
+  },
+  "expandedFollowup": {
+    "requests": [
+      "Independent FX/Music volume sliders with equal user defaults and audible effects",
+      "FX text icon; retain double-note music icon",
+      "Astro Joe X, one-line compact normalized cards for both styles",
+      "All six illustrated aliens need actual locomotion",
+      "Center and fit Original defenders/aliens inside lane tiles",
+      "Field Guide, The Original, Unit Stats, FX Volume, Music Volume capitalization",
+      "Mixer pauses the mission; simpler instruction; relocate Salvage"
+    ],
+    "implemented": [
+      "Both sliders default65%; Web Audio gain channels calibrate music below short effects; no autoplay",
+      "Mixer uses existing pause-safe modal lifecycle, including return-from-background rules",
+      "Salvage beside Enlarge/Overview, removed from selected-unit details",
+      "Four additional articulated walk/idle/contact sheets; all six simulation-selected, one Sprite per alien",
+      "Alpha-union registration across419 original frames, proportional and centered in86x62 inside100x74 cells"
+    ],
+    "ownerConfirmation": "On real iPhone17/Safari: volume balance seems good and both sliders work. Owner requested mixer auto-pause and wording/layout refinements afterward; final Original-lane preference not explicitly confirmed.",
+    "pending": "Final modal/Salvage preference, Original lane-fit preference, long-session performance and live screen reader."
   }
 }

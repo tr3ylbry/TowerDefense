@@ -41,7 +41,7 @@ Do not assume these biped pivots fit Tank or Gargantua. A next pilot needs its o
 
 ## Expedition 1.0: two rigs, one runtime contract
 
-The 0.9 discussion above is the preserved design history. The production registry now contains **Sprinter and Gargantua**. Both use a single existing Phaser Sprite, `fps: 0`, and the shared pure `alienPose(kind, enemy, elapsed, interpolation, reducedMotion)` selector. Sprinter's compatibility wrapper remains for the earlier fixtures/tests. No combat/snapshot/save schema changes are needed.
+The 0.9 discussion above is the preserved design history. The initial1.0 pilot registry contained **Sprinter and Gargantua**; the owner-requested follow-up below completes all six. Both use a single existing Phaser Sprite, `fps: 0`, and the shared pure `alienPose(kind, enemy, elapsed, interpolation, reducedMotion)` selector. Sprinter's compatibility wrapper remains for the earlier fixtures/tests. No combat/snapshot/save schema changes are needed.
 
 | Responsibility    | Shared                                                                                                                                                         | Character-specific                                                                                                             |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -67,3 +67,11 @@ The existing Gargantua contact ring now uses elapsed age since the authoritative
 ### Adding a third alien
 
 First establish a source identity, parts/anchors and believable foot path for its anatomy. Reuse utilities, not the other creature's skeleton. Bake reviewed frames and record hashes/grounding. Add a registry definition and a small pose-layout entry, then verify contact timing against that alien's existing cooldown. Extend atlas metadata tests, actual-combat style/retry/restart checks and the dense mixed fixture. Measure cold startup/decoding and warm retention before accepting delivery. The renderer already handles registered alien kinds; it needs no new branch for each third character. Follow the [provisional performance budget](../reports/expedition-1.0/performance/README.md). Do not roll out every atlas by default.
+
+## Owner-requested all-six follow-up
+
+`build-roster-animations.py` adds reviewed anatomy-specific configs for Scout, Grunt, ManHunter and Tank. Each uses five generated components: fixed torso/head/tail plus four whole limbs. Biped arms rotate around reviewed shoulders; legs use the existing continuous source-pixel mesh anchored at root/ankle. Tank uses a diagonal-pair crawl, separate from Gargantua’s lateral four-beat gait. Forty128×96 cells pack into1024×480; source PNG, pivots, configuration, hashes, ground and alpha validation remain in each conversion manifest. No runtime rig or new dependency is added.
+
+`ALIEN_ANIMATIONS` now covers every EnemyKind. All authored missions contain those six kinds; `assetsFor` requires their sheets before Begin and omits duplicate static battlefield cutouts. Guide portraits remain deferred. The same pure selector handles actual distance, elapsed time, authoritative contact cooldown, pause, speed and reduced motion. No simulation balance or save schema changes. New fixture/testing and separate all-roster performance data document this explicitly requested expansion; historical two-pilot results remain separate.
+
+Original style uses `original-registration.ts`, generated from the union of alpha≥32 bounds across all419 retained frames. It preserves aspect ratio, centers the visible union and fits86×62 world pixels inside100×74 cells; `original-fit-review.py` independently checks every frame against runtime metadata. Original playback remains authored walk/attack/death and idle/fire. Extra whole-image tower recoil is disabled for Original to preserve the fit. No school pixels are rewritten.

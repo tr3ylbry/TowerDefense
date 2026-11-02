@@ -1,0 +1,18 @@
+{
+  "method": "Same-host repeat of all four source-to-atlas builds; each validates alpha, clipping, grounding, contiguous poses and source/output hashes before publishing.",
+  "byteIdentical": true,
+  "outputs": {
+    "public/art/expedition/scout-animation.webp": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa",
+    "art-source/expedition-1.0/scout-animation.png": "b97a9dd5531ef847cdb925bbd04df0d49f2c3f1cd08bc7285e558a9f6f9a3efe",
+    "art-source/expedition-1.0/scout-conversion.json": "2a2771cbfccfa2b8d0649d79188646581ee68bffe31fdd59e7c9abdacbf04bcf",
+    "public/art/expedition/grunt-animation.webp": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f",
+    "art-source/expedition-1.0/grunt-animation.png": "aefcb005d5830159759236cc38b3e30ae4236f0da477031f70db28ec39e664d9",
+    "art-source/expedition-1.0/grunt-conversion.json": "2c46fecbea232555f1170a6f2435b858e2e4d7d5a7324b1882f4934a3a1faf2b",
+    "public/art/expedition/manhunter-animation.webp": "7a166ef6934c8fbeb0bf3d994fe4659c3b10634b361369278a5f570f4a93591b",
+    "art-source/expedition-1.0/manhunter-animation.png": "d3843e411bcb9aef3c6d2f6213606e23e07ad3267f8e23047ed71afe9391ba37",
+    "art-source/expedition-1.0/manhunter-conversion.json": "958898491defebfeb69e5979b960e82ac856157b8fa6f3a3f5419d6e4808afb4",
+    "public/art/expedition/tank-animation.webp": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0",
+    "art-source/expedition-1.0/tank-animation.png": "c09a2d88cff5c2db00df2b7eb172cb603dae8e77dcb0f05784406331968dd2e3",
+    "art-source/expedition-1.0/tank-conversion.json": "7f71dccc78386146ae9d1ec55bd80fce4194a28d280e19629d9e58a50eeaebe7"
+  }
+}

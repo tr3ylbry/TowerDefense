@@ -65,5 +65,25 @@
     "chromium": "2/2 passed on immutable production snapshot: horizontal navigation, nine-card registration, hover/tap/keyboard popup and real native-media playback/retry/background handling.",
     "webkit": "Final local attempt could not launch: current pinned Playwright expects webkit-2370, absent from the local cache. Earlier WebKit phone-popup/music checks covered the prior arrangement; final exact-head hosted matrix required.",
     "build": "194 rule tests, strict TypeScript and production build passed. Both audio/portrait generators rebuilt byte-identically."
+  },
+  "thirdRun": {
+    "url": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41507317334",
+    "head": "05da2ceaf40d06a4d7bbed3d850eec5f0cbd49df",
+    "chromium": "61/62 passed in32.7min; phone placement asserted pristine260 health after real-time rotation inspections. Now asserts exact unit/tile and live positive health<=260, retaining actual public placement.",
+    "firefox": "59/62 passed: AudioContext did not run, media stalled at0.001s after successful206 WAV delivery, and details overran viewport by9.95px. Trace retained/downloaded for diagnosis; do not count audio playback as passed.",
+    "webkit": "35min cap reached after47/62 started; phone details overran by1.94px. No completed full count claimed.",
+    "corrections": [
+      "Compact one-line cards recover10px; all geometry assertions retained",
+      "Hosted jobs receive a real PulseAudio null output for browser audio; no mocked media clock, AudioContext or assertion skip",
+      "Split each browser into two isolated shards while retaining35min cap and all64 scenarios per engine",
+      "Final head must pass all six jobs; older runs are not relabeled"
+    ]
+  },
+  "latestFocusedChecks": {
+    "rules": "216 passed; strict TypeScript and production build passed",
+    "chromiumWebkit": "14 latest focused checks: 12 initially passed; two dialog absence/focus failures corrected. Four affected scenarios rerun, all4 passed23.1s.",
+    "finalChromeCapture": "4/4 passed12.9s: navigation/all-nine cards, actual media, mixer real gains/modal pause, all-six motion.",
+    "note": "Final full64-case-per-engine matrix across six jobs remains required. Local Firefox profile launch failure is separate from hosted compatibility.",
+    "finalRealCombat": "Final all-six source, installed Chrome/default WebGL, immutable production snapshot: passed43.5s, no page errors, each of six atlases requested exactly once, real observed100-health strike, comparison/motion/speed and three restarts; refreshed unedited video retained."
   }
 }

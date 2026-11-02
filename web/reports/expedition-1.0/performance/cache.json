@@ -5,101 +5,101 @@
     {
       "label": "initial-standalone",
       "textures": {
-        "created": 66,
+        "created": 64,
         "deleted": 19,
-        "active": 47
+        "active": 45
       },
-      "uniqueImages": 23,
+      "uniqueImages": 21,
       "canvases": 1
     },
     {
       "label": "board-preview-only",
       "textures": {
-        "created": 66,
+        "created": 64,
         "deleted": 19,
-        "active": 47
+        "active": 45
       },
-      "uniqueImages": 25,
+      "uniqueImages": 23,
       "canvases": 1
     },
     {
       "label": "same-environment",
       "textures": {
-        "created": 66,
+        "created": 64,
         "deleted": 19,
-        "active": 47
+        "active": 45
       },
-      "uniqueImages": 25,
+      "uniqueImages": 23,
       "canvases": 1
     },
     {
       "label": "expedition-six-mission-cycle-1",
       "textures": {
-        "created": 125,
+        "created": 123,
         "deleted": 59,
-        "active": 66
+        "active": 64
       },
-      "uniqueImages": 26,
+      "uniqueImages": 24,
       "canvases": 1
     },
     {
       "label": "expedition-six-mission-cycle-2",
       "textures": {
-        "created": 181,
+        "created": 179,
         "deleted": 115,
-        "active": 66
+        "active": 64
       },
-      "uniqueImages": 26,
+      "uniqueImages": 24,
       "canvases": 1
     },
     {
       "label": "expedition-six-mission-cycle-3",
       "textures": {
-        "created": 237,
+        "created": 235,
         "deleted": 171,
-        "active": 66
+        "active": 64
       },
-      "uniqueImages": 26,
+      "uniqueImages": 24,
       "canvases": 1
     },
     {
       "label": "original-six-mission-cycle-1",
       "textures": {
-        "created": 361,
+        "created": 359,
         "deleted": 259,
-        "active": 102
+        "active": 100
       },
-      "uniqueImages": 62,
+      "uniqueImages": 60,
       "canvases": 1
     },
     {
       "label": "original-six-mission-cycle-2",
       "textures": {
-        "created": 417,
+        "created": 415,
         "deleted": 315,
-        "active": 102
+        "active": 100
       },
-      "uniqueImages": 62,
+      "uniqueImages": 60,
       "canvases": 1
     },
     {
       "label": "original-six-mission-cycle-3",
       "textures": {
-        "created": 473,
+        "created": 471,
         "deleted": 371,
-        "active": 102
+        "active": 100
       },
-      "uniqueImages": 62,
+      "uniqueImages": 60,
       "canvases": 1
     },
     {
       "label": "return-to-expedition",
       "textures": {
-        "created": 473,
+        "created": 471,
         "deleted": 371,
-        "active": 102
+        "active": 100
       },
-      "uniqueImages": 62,
+      "uniqueImages": 60,
       "canvases": 1
     }
   ],
@@ -120,13 +120,11 @@
     "/art/projectile-startrell-cluggins-ammo.png",
     "/art/projectile-tars-ammo.png",
     "/art/projectile-moon-zeus-ammo.png",
-    "/art/expedition/scout.webp",
-    "/art/expedition/grunt.webp",
-    "/art/expedition/sprinter.webp",
-    "/art/expedition/manhunter.webp",
-    "/art/expedition/plated-crawler.webp",
-    "/art/expedition/gargantua.webp",
+    "/art/expedition/scout-animation.webp",
+    "/art/expedition/grunt-animation.webp",
     "/art/expedition/sprinter-animation.webp",
+    "/art/expedition/manhunter-animation.webp",
+    "/art/expedition/tank-animation.webp",
     "/art/expedition/gargantua-animation.webp",
     "/art/expedition/sky-bridge.webp",
     "/art/expedition/nest.webp",

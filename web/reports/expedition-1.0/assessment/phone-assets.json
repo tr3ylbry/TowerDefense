@@ -2,7 +2,8 @@
   "method": "Same-host deterministic rebuild; CSS metadata reads first-frame alpha bounds only, without changing sprite pixels. Music uses standard-library math and PCM encoding, without samples.",
   "outputs": {
     "public/audio/orbital-drift.wav": "4eb6a565197b899028f29ad0fa7ce473f715a36d95e6914d521835fc3f7b314f",
-    "src/game/original-portraits.ts": "01e480f1a107c8f14dd474d2db91f745887195e6126d246a942f571ad7209ca0"
+    "src/game/original-portraits.ts": "01e480f1a107c8f14dd474d2db91f745887195e6126d246a942f571ad7209ca0",
+    "src/game/original-registration.ts": "a2710511b3020ae1b7cc78eb84b1ac8b23b095f6cccd464a51a4d1a37e34d6d2"
   },
   "musicBytes": 661544,
   "musicSeconds": 15,
@@ -16,7 +17,15 @@
   ],
   "generatorSHA256": {
     "scripts/build-ambient-music.py": "241b7829761bb6996a7c8980477231f837ce367ba45589ed79fbdb06ddf48dd4",
-    "scripts/register-original-portraits.py": "e024473178e0570be74b8fb1852424b51ed3d5b03906a6b13acf20dd4ba1c12e"
+    "scripts/register-original-portraits.py": "db0693b511a2ffaf402261338c34d49d574cad41f9ae5afaaef3ee878faf68db"
   },
-  "tempoBPM": 128
+  "tempoBPM": 128,
+  "mix": {
+    "defaults": {
+      "fx": 65,
+      "music": 65
+    },
+    "routing": "Independent Web Audio gains; music calibrated at0.12 maximum channel gain, FX tone envelope peak0.14. Percentages are equal user levels, not a claim of equal perceived loudness.",
+    "ownerDevice": "Owner confirmed balance and independent sliders on iPhone17/Safari. Mixer auto-pause and final text/Salvage changes followed that check."
+  }
 }

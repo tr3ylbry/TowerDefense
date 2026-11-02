@@ -2,9 +2,9 @@
   "date": "2026-11-02",
   "scope": "Every PNG/WebP physically copied from web/public/art into the current production build, including unused converted legacy files. Source art outside public is excluded from delivery. This inventory records evidence and gaps, not legal clearance.",
   "counts": {
-    "rasterFiles": 100,
+    "rasterFiles": 104,
     "retainedSchoolDerivatives": 67,
-    "generatedDerivatives": 33
+    "generatedDerivatives": 37
   },
   "assets": [
     {
@@ -233,6 +233,22 @@
       "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets"
     },
     {
+      "file": "public/art/expedition/grunt-animation.webp",
+      "bytes": 97096,
+      "sha256": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "art-source/expedition-1.0/grunt-conversion.json",
+        "art-source/expedition-1.0/roster/prompts.json",
+        "art-source/expedition-1.0/roster/generation.json"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets"
+    },
+    {
       "file": "public/art/expedition/grunt.png",
       "bytes": 216649,
       "sha256": "91e7b5409b992c2c8a13d8b2e33a14d4c1971e8e812d990a9d61d17bfedf6fd2",
@@ -253,6 +269,22 @@
       "category": "Expedition generated illustration/derivative",
       "sourceRecords": [
         "public/art/expedition/README-0.2.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets"
+    },
+    {
+      "file": "public/art/expedition/manhunter-animation.webp",
+      "bytes": 84518,
+      "sha256": "7a166ef6934c8fbeb0bf3d994fe4659c3b10634b361369278a5f570f4a93591b",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "art-source/expedition-1.0/manhunter-conversion.json",
+        "art-source/expedition-1.0/roster/prompts.json",
+        "art-source/expedition-1.0/roster/generation.json"
       ],
       "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
       "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
@@ -429,6 +461,22 @@
       "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets"
     },
     {
+      "file": "public/art/expedition/scout-animation.webp",
+      "bytes": 92306,
+      "sha256": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "art-source/expedition-1.0/scout-conversion.json",
+        "art-source/expedition-1.0/roster/prompts.json",
+        "art-source/expedition-1.0/roster/generation.json"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets"
+    },
+    {
       "file": "public/art/expedition/scout.png",
       "bytes": 137235,
       "sha256": "f052710cd668ad1479ea864e1cb67374549a346dfe6ae909947123cb271123f4",
@@ -520,6 +568,22 @@
       "category": "Expedition generated illustration/derivative",
       "sourceRecords": [
         "public/art/expedition/README-0.5.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets"
+    },
+    {
+      "file": "public/art/expedition/tank-animation.webp",
+      "bytes": 136890,
+      "sha256": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "art-source/expedition-1.0/tank-conversion.json",
+        "art-source/expedition-1.0/roster/prompts.json",
+        "art-source/expedition-1.0/roster/generation.json"
       ],
       "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
       "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
@@ -1412,7 +1476,7 @@
   ],
   "otherMaterial": {
     "credits": "Adrian Bao, Mauricio Herrera, Trey Bryant, Tim Lukau retained in app and original README",
-    "audio": "web/src/audio.ts synthesizes browser tones; no original WAV/music recording in public/. Original assets/sounds remains preserved only in repository.",
+    "audio": "web/src/audio.ts synthesizes browser tones; public/audio/orbital-drift.wav is an original source-authored15-second128BPM composition, built without samples by scripts/build-ambient-music.py (hashes in assessment/phone-assets.json). Original assets/sounds remains preserved outside browser delivery.",
     "names": "Historical Millennium Falcon comparison assets remain. Public Frontier Flagship has a new independent design. TARS and other retained identities still need publication review; this inventory makes no registration or clearance claim.",
     "codeAndDependencies": "Independent browser implementation plus pinned dependencies. Phaser LICENSE.md retained in node_modules and license obligations must accompany publication handoff; no blanket license is inferred for original team material."
   }
