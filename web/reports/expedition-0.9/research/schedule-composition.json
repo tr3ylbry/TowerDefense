@@ -1,0 +1,200 @@
+[
+  {
+    "at": 7,
+    "row": 2,
+    "kind": "scout",
+    "wave": 1
+  },
+  {
+    "at": 8.8,
+    "row": 5,
+    "kind": "scout",
+    "wave": 1
+  },
+  {
+    "at": 10.6,
+    "row": 4,
+    "kind": "scout",
+    "wave": 1
+  },
+  {
+    "at": 12.4,
+    "row": 3,
+    "kind": "scout",
+    "wave": 1
+  },
+  {
+    "at": 14.2,
+    "row": 0,
+    "kind": "scout",
+    "wave": 1
+  },
+  {
+    "at": 16,
+    "row": 1,
+    "kind": "scout",
+    "wave": 1
+  },
+  {
+    "at": 29,
+    "row": 1,
+    "kind": "sprinter",
+    "wave": 2
+  },
+  {
+    "at": 29.8,
+    "row": 2,
+    "kind": "grunt",
+    "wave": 2
+  },
+  {
+    "at": 30.6,
+    "row": 0,
+    "kind": "sprinter",
+    "wave": 2
+  },
+  {
+    "at": 31.4,
+    "row": 4,
+    "kind": "grunt",
+    "wave": 2
+  },
+  {
+    "at": 32.2,
+    "row": 5,
+    "kind": "sprinter",
+    "wave": 2
+  },
+  {
+    "at": 33,
+    "row": 3,
+    "kind": "sprinter",
+    "wave": 2
+  },
+  {
+    "at": 34,
+    "row": 1,
+    "kind": "scout",
+    "wave": 2
+  },
+  {
+    "at": 34.8,
+    "row": 2,
+    "kind": "grunt",
+    "wave": 2
+  },
+  {
+    "at": 56,
+    "row": 2,
+    "kind": "tank",
+    "wave": 3
+  },
+  {
+    "at": 56.8,
+    "row": 3,
+    "kind": "manhunter",
+    "wave": 3
+  },
+  {
+    "at": 57.6,
+    "row": 1,
+    "kind": "tank",
+    "wave": 3
+  },
+  {
+    "at": 58.4,
+    "row": 5,
+    "kind": "sprinter",
+    "wave": 3
+  },
+  {
+    "at": 59.2,
+    "row": 0,
+    "kind": "grunt",
+    "wave": 3
+  },
+  {
+    "at": 60,
+    "row": 4,
+    "kind": "sprinter",
+    "wave": 3
+  },
+  {
+    "at": 61,
+    "row": 2,
+    "kind": "tank",
+    "wave": 3
+  },
+  {
+    "at": 61.8,
+    "row": 3,
+    "kind": "scout",
+    "wave": 3
+  },
+  {
+    "at": 62.6,
+    "row": 1,
+    "kind": "manhunter",
+    "wave": 3
+  },
+  {
+    "at": 87,
+    "row": 4,
+    "kind": "tank",
+    "wave": 4
+  },
+  {
+    "at": 87.8,
+    "row": 5,
+    "kind": "sprinter",
+    "wave": 4
+  },
+  {
+    "at": 88.6,
+    "row": 1,
+    "kind": "tank",
+    "wave": 4
+  },
+  {
+    "at": 89.4,
+    "row": 0,
+    "kind": "manhunter",
+    "wave": 4
+  },
+  {
+    "at": 90.2,
+    "row": 2,
+    "kind": "sprinter",
+    "wave": 4
+  },
+  {
+    "at": 91,
+    "row": 3,
+    "kind": "gargantua",
+    "wave": 4
+  },
+  {
+    "at": 92,
+    "row": 4,
+    "kind": "tank",
+    "wave": 4
+  },
+  {
+    "at": 92.8,
+    "row": 5,
+    "kind": "sprinter",
+    "wave": 4
+  },
+  {
+    "at": 93.6,
+    "row": 1,
+    "kind": "tank",
+    "wave": 4
+  },
+  {
+    "at": 94.4,
+    "row": 0,
+    "kind": "manhunter",
+    "wave": 4
+  }
+]

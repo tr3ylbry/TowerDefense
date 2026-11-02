@@ -1,0 +1,46 @@
+{
+  "before": {
+    "index.html": {
+      "bytes": 780,
+      "sha256": "beff80882d2013bb7b94cf31c959c2ab762d3aaeec2814529258a3f415befa44"
+    },
+    "assets/battlefield-CZsz8Gw5.js": {
+      "bytes": 17044,
+      "sha256": "69da79ad99f3637eb76a6456b70f03412919d40c4439e27296e24cf69ba0034c"
+    },
+    "assets/index-BDyhQBZ7.js": {
+      "bytes": 78485,
+      "sha256": "4635a78ff9e8bf8274b6d024315ef7c94dedd9cdec2ce5ef16b973c944076f51"
+    },
+    "assets/index-CriuIri2.css": {
+      "bytes": 36217,
+      "sha256": "8076b7fab371ff91ce00a60f5e404ed0a5a8484ba3fe1128f98d3a150cd58878"
+    },
+    "assets/phaser-B_vcVLyb.js": {
+      "bytes": 1367089,
+      "sha256": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+    }
+  },
+  "after": {
+    "index.html": {
+      "bytes": 780,
+      "sha256": "edec57fab99755cd508ee50e111dc46104f03b88db581754951115d3657cda1e"
+    },
+    "assets/battlefield-BNe0ziae.js": {
+      "bytes": 17796,
+      "sha256": "7a6054c508d4ad1c9f35b6fd1efba46bfc17fd8ef3ca6a60b6df610b4485cb01"
+    },
+    "assets/index-Bq3BHJuf.js": {
+      "bytes": 81470,
+      "sha256": "c9120a9c13f636cb4e9408dcf2cab760bd8a70fff0f10045ce8877139e804a52"
+    },
+    "assets/index-CmRuajbu.css": {
+      "bytes": 37340,
+      "sha256": "0fe4f1adda45bd26a17b254b1443e5016cb9659b3de14be4d6aff6dce1a6ab19"
+    },
+    "assets/phaser-B_vcVLyb.js": {
+      "bytes": 1367089,
+      "sha256": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+    }
+  }
+}

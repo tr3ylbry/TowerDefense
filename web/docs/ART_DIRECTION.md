@@ -1,5 +1,9 @@
 # Expedition art direction
 
+## Expedition 0.9 Sprinter pilot
+
+Sprinter alone now uses a jointed derivative baked into 48 poses: walk, restrained idle and cooldown-synchronized contact attack. Preserve the coral/teal palette, swept crest, amber eye and left-facing biped identity. Stable source torso/face pixels prevent frame-to-frame repainting. The original static illustration remains intact and supplies its guide portrait/fallback; Original comparison retains school animations. The new rig does not imply that every body shape should share these pivots. See [animation architecture](ANIMATION_ARCHITECTURE.md), [exact built-in generation prompt and conversion](../art-source/expedition-0.9/prompts.md) and [visual evidence](../reports/expedition-0.9/visual/README.md). Human preference/readability validation remains pending.
+
 ## Visual identity
 
 An illustrated science-fiction expedition with playful creatures, practical equipment, and a slightly whimsical crew. Use strong painted shapes, soft restrained cel shading, navy contour shadows, and warm upper-left light. Favor curiosity and character over horror, photorealism, glossy mobile-game surfaces, tiny material noise, or franchise imitation.

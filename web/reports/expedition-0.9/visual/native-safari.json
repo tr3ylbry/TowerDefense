@@ -1,0 +1,39 @@
+{
+  "browser": "Safari",
+  "version": "27.0.1",
+  "build": "22625.1.29.11.28",
+  "mode": "agent-driven native desktop Safari, public UI only",
+  "buildUnderTest": "frozen 0.9 production on localhost:4175",
+  "outcome": "First Contact \u00b7 Hard secured",
+  "kills": 33,
+  "shields": 3,
+  "elapsedDisplayed": "1m 58s",
+  "credits": 700,
+  "purchases": 12,
+  "defenderLosses": 0,
+  "spent": 900,
+  "supply": 690,
+  "bounties": 680,
+  "growth": 0,
+  "earlyWaveBonuses": 0,
+  "salvage": 0,
+  "checks": [
+    "Normal default in briefing",
+    "explicit Hard selection and speed distinction",
+    "earned six Astro Joe and six TARS placements",
+    "P pause/resume and arrow focus recovery",
+    "1\u00d7 to 2\u00d7",
+    "Original then Expedition switch while paused preserved 50 credits, 3 shields and wave 2",
+    "real Expedition Sprinter movement on wave 3",
+    "Hard victory receipt",
+    "campaign board remained 0/6 and 0/18 after Hard victory",
+    "review defaulted to Normal, prepare returned 230-credit Normal First Contact",
+    "own test tab closed; pre-existing Apple tab preserved"
+  ],
+  "notObserved": [
+    "independent first-time human feedback",
+    "physical phone",
+    "live screen reader speech",
+    "native reduced-motion during active combat"
+  ]
+}

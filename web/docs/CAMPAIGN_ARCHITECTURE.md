@@ -2,6 +2,14 @@
 
 There is one six-lane, nine-column fixed-step simulation. Campaign and standalone modes share it, all nine defenders, all six aliens, renderer, audio, warning and economy controls.
 
+## Expedition 0.9 optional challenge
+
+`game/challenges.ts` defines one First Contact Hard formation variant. `Simulation.chooseDifficulty` accepts Normal/Hard only while ready; Hard is valid for First Contact only. `simulation.waves` resolves the active authored data for spawning, warnings, early calls and briefing. It never mutates `MISSIONS` or `MAPS`; default `makeMissionSpawns` and original constructors remain Normal. The same seeded shuffler, combat engine and economy run both. Restart keeps difficulty, resets speed to 1× and rebuilds the selected timeline; selecting any mission/destination explicitly clears Hard.
+
+Difficulty is lifecycle configuration outside the established deterministic snapshot shape. It is not persisted. The campaign briefing defaults to Normal on every review; only an explicit Hard selection is captured by the artwork preparation transaction. A failed/cancelled transaction never applies the new selection. A visible Hard badge remains during focused play, separate from speed.
+
+Hard awards no Normal progression: both the UI save path and `CompletionRecorder.observe` reject Hard results. The existing version-1 schema, shield ratings and unlock derivation are unchanged. Returning to Normal re-enables ordinary completion recording on a fresh attempt. [The 0.9 report](EXPEDITION_0_9.md) distinguishes the synthetic study, public-control win/loss checks and remaining human balance uncertainty.
+
 ## Ownership
 
 | Module                     | Responsibility                                                                                                                  |

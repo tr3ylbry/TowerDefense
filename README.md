@@ -2,7 +2,7 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 0.8** clarifies early-wave choices, firing coverage and passed-enemy recovery, with centered time controls and a more readable mobile wave panel. A 1,296-run pacing study preserves all 1,080 prior policy results and 36 frozen-engine parity runs. The six-mission campaign, three original standalone destinations, nine defenders, six alien types and current balance remain intact. See the [0.8 report](web/docs/EXPEDITION_0_8.md) and [campaign architecture](web/docs/CAMPAIGN_ARCHITECTURE.md). Developer Canyon feedback is recorded separately from the five pending independent sessions. Physical-phone and live screen-reader checks remain outstanding. Original school source/assets and history remain preserved. Hosting is separate.
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 0.9** adds a simulation-driven articulated Sprinter pilot and an optional First Contact Hard challenge using denser formations of existing aliens. Normal campaign rules, shield-based stars, saves and the original standalone missions remain intact. A 1,080-run candidate study and 216 exact production-Hard comparisons accompany 1,296 unchanged Normal results and 36 frozen-engine parity runs. See the [0.9 report](web/docs/EXPEDITION_0_9.md), [animation architecture](web/docs/ANIMATION_ARCHITECTURE.md) and [campaign architecture](web/docs/CAMPAIGN_ARCHITECTURE.md). Five independent sessions, physical-phone checks and live screen-reader validation remain pending. Original school source/assets, credits and history remain preserved. Hosting is separate.
 
 ```sh
 cd web
