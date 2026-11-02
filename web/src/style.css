@@ -163,6 +163,13 @@ button {
   position: relative;
   color: #9eb0b0;
 }
+.site-header nav > button,
+.site-header nav > a {
+  font: inherit;
+  line-height: 1.2;
+  min-height: 44px;
+  padding: 0;
+}
 .site-header nav > *:hover {
   color: var(--cream);
 }
@@ -2548,12 +2555,12 @@ dialog li {
     gap: 8px;
     padding-bottom: 0;
     margin-bottom: 6px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   .focused-play .location {
     width: auto;
     min-width: 0;
-    flex: 1;
+    flex: 1 1 200px;
   }
   .focused-play .location h2 {
     font-size: 14px;
@@ -2791,4 +2798,132 @@ dialog li {
   align-items: start;
   overflow-y: auto;
   overscroll-behavior: contain;
+}
+
+/* The same card registration applies to both art collections. */
+.original-art .crew-card .portrait {
+  background-size: var(--original-size);
+  background-position: var(--original-position);
+  image-rendering: pixelated;
+}
+.crew-details {
+  position: relative;
+}
+#selected-detail {
+  display: grid;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+#selected-detail small {
+  margin: 0;
+  color: var(--mint);
+}
+.crew-detail-actions {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+.crew-detail-actions > button {
+  min-height: 44px;
+  margin: 0;
+  white-space: nowrap;
+}
+#crew-stats {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  width: min(350px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid #83b6aa;
+  border-left: 3px solid var(--mint);
+  border-radius: 8px;
+  color: var(--cream);
+  background: linear-gradient(145deg, #203c42, #11282e);
+  box-shadow: 0 14px 45px #0009;
+}
+#crew-stats h3 {
+  margin: 8px 28px 16px 0;
+  font-size: 18px;
+}
+#crew-stats .eyebrow {
+  font: 9px var(--mono);
+  color: var(--mint);
+  letter-spacing: 1.4px;
+}
+#crew-stats dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin: 0;
+  font: 12px/1.5 var(--mono);
+}
+#crew-stats dt,
+#crew-stats dd {
+  padding: 8px 0;
+  border-top: 1px solid #6a95865c;
+}
+#crew-stats dt {
+  color: #b8d2cb;
+}
+#crew-stats dd {
+  margin: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .mission-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .mission-tools {
+    min-width: 0;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+  .crew-detail-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .crew-detail-actions > button {
+    padding: 7px 10px;
+  }
+  .focused-play .crew-details {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .focused-play .mission-tools {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 4px;
+  }
+  .focused-play .mission-tools .tool {
+    flex: 0 0 44px;
+  }
+  .focused-play .mission-tools .tool span {
+    display: none;
+  }
+}
+#crew-stats-toggle:disabled {
+  cursor: default;
+}
+@media (max-width: 560px) {
+  .site-header nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+    width: 100%;
+    margin-left: 0;
+    gap: 12px;
+    min-width: 0;
+  }
+  .site-header nav > button,
+  .site-header nav > a {
+    justify-content: center;
+    min-height: 44px;
+    gap: 12px;
+  }
 }

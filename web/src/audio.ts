@@ -2,17 +2,20 @@
 export class AudioBus {
   private context: AudioContext | null = null;
   private enabled = false;
+  private revision = 0;
   private lastTone: Partial<Record<"shot" | "income" | "breach", number>> = {};
 
-  async setEnabled(enabled: boolean): Promise<void> {
+  async setEnabled(enabled: boolean): Promise<boolean> {
+    const revision = ++this.revision;
     this.enabled = enabled;
-    if (!enabled) return;
+    if (!enabled) return false;
     try {
       this.context ??= new AudioContext();
       if (this.context.state === "suspended") await this.context.resume();
     } catch {
-      this.enabled = false;
+      if (revision === this.revision) this.enabled = false;
     }
+    return this.enabled && this.context?.state === "running";
   }
 
   play(type: "shot" | "income" | "breach", heavy = false): void {
@@ -46,6 +49,8 @@ export class AudioBus {
   }
 
   destroy(): void {
+    this.revision++;
+    this.enabled = false;
     void this.context?.close();
     this.context = null;
   }

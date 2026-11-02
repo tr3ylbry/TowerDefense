@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import { slowRuntime } from "./slow-runtime";
+test.beforeEach(slowRuntime);
 import type { Page } from "@playwright/test";
 test.use({
   video:
@@ -57,7 +59,7 @@ async function earnedArmorVictory(page: Page) {
       ).toBeVisible();
     }
     if (await page.locator("#call-wave").isEnabled())
-      await page.locator("#call-wave").click();
+      await page.keyboard.press("n");
     await page.waitForTimeout(180);
   }
   await expect(page.locator("#status")).toHaveText("Outpost secured");

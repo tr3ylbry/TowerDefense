@@ -71,19 +71,19 @@ it("counts only firing defenders as coverage and previews actual refunds and pay
   game.place("astro", 2, 0);
   expect(coverage(game.snapshot())).toContain("1/6");
   expect(
-    crewDetails("salvage", game.snapshot(), { row: 1, col: 0 })[2],
+    crewDetails("salvage", game.snapshot(), { row: 1, col: 0 }).status,
   ).toContain("Refund 14 credits");
-  expect(crewDetails("tree", game.snapshot(), null)[2]).toContain(
-    "Gross payback 24s",
+  expect(crewDetails("tree", game.snapshot(), null).stats.find(([label]) => label === "Gross payback")?.[1]).toContain(
+    "24s",
   );
-  expect(crewDetails("tars", game.snapshot(), null)[2]).toContain(
-    "100% plating bypass",
+  expect(crewDetails("tars", game.snapshot(), null).stats.find(([label]) => label === "Plating bypass")?.[1]).toContain(
+    "100%",
   );
-  expect(crewDetails("falcon", game.snapshot(), null)[2]).toContain(
+  expect(crewDetails("falcon", game.snapshot(), null).status).toContain(
     `Need ${TOWERS.falcon.cost - game.snapshot().credits} more`,
   );
   game.advance(2);
-  expect(crewDetails("bush", game.snapshot(), { row: 0, col: 0 })[2]).toContain(
+  expect(crewDetails("bush", game.snapshot(), { row: 0, col: 0 }).status).toContain(
     "Next +25 in 4s",
   );
 });

@@ -23,5 +23,28 @@
   "limitations": [
     "No device FPS, memory, thermal, long-session, backgrounding or text-size measurements supplied.",
     "Not a completed five-player study; independent participants remain 0/5."
-  ]
+  ],
+  "screenshotFollowup": {
+    "source": "Six owner-supplied phone screenshots of the earlier preview, not a final corrected-build pass",
+    "requests": [
+      "Align Campaign, Field guide and The original on one horizontal row; owner clarified that vertically aligned meant matching height/baseline, not stacked links.",
+      "Replace bullet-separated crew stats with a hover/tap/keyboard inspector.",
+      "Normalize Original school-art portrait/name/price slots like Expedition.",
+      "Add optional ambient music after clarifying effects-only sound."
+    ],
+    "implementation": [
+      "Horizontal navigation with inherited button/link typography, matching line height, centered icons and minimum44px height.",
+      "One native nonmodal popover, structured definition list, hover preview, tap/click pin, Escape/light dismissal; immediate budget/refund/caution remain visible.",
+      "First-frame alpha-bound CSS registration for all nine original sprites; no retained pixels edited or new image request.",
+      "Original15-second128BPM synth loop with arpeggios, pulsed bass and electronic percussion; separate default-off Music and Effects controls;661,544B PCM WAV deferred to an explicit gesture. Failed playback is retryable; backgrounding pauses without automatic resumption."
+    ],
+    "status": "Prior popover/music checks passed in emulated Chromium/WebKit; final revised arrangement and horizontal-row checks recorded with delivery. Real-phone initial music audibility confirmed; revised preference checks pending.",
+    "ownerRecheck": {
+      "hardware": "iPhone17, Safari",
+      "confirmed": "Owner heard the initial24-second music loop on the real phone.",
+      "requestedRevision": "Keep the links horizontal with matching alignment; make the music more upbeat and futuristic.",
+      "implementedRevision": "Horizontal link row and new15-second128BPM arrangement; source-authored synthesis, no samples or stock recording.",
+      "pending": "Owner visual confirmation of the corrected horizontal row, Unit stats and Original portrait registration; listening preference for the new arrangement and longer-session/backgrounding checks."
+    }
+  }
 }

@@ -34,49 +34,74 @@ export function waveCallDetails(state: Snapshot): [string, string] {
       : "Field clear. Keep preparing or call early. Later waves shift too.",
   ];
 }
+export interface CrewDetails {
+  title: string;
+  description: string;
+  status: string;
+  stats: [label: string, value: string][];
+}
+
+/** Structured presentation only; prices, timing and warnings remain authoritative. */
 export function crewDetails(
   kind: TowerKind | "salvage" | null,
   state: Snapshot,
   cursor: { row: number; col: number } | null,
-): [string, string, string] {
+): CrewDetails {
   if (kind === "salvage") {
-    const tower =
-      cursor &&
-      state.towers.find((x) => x.row === cursor.row && x.col === cursor.col);
-    return [
-      "Salvage · 40% refund",
-      "Choose a deployed defender; removing it opens that tile.",
-      tower
-        ? `${TOWERS[tower.kind].name} · ${Math.ceil(tower.health)} health · Refund ${Math.floor(TOWERS[tower.kind].cost * 0.4)} credits`
+    const tower = cursor && state.towers.find(
+      (x) => x.row === cursor.row && x.col === cursor.col,
+    );
+    return {
+      title: "Salvage",
+      description: "Choose a deployed defender; removing it opens that tile.",
+      status: tower
+        ? `Refund ${Math.floor(TOWERS[tower.kind].cost * 0.4)} credits for ${TOWERS[tower.kind].name}`
         : "Point to or focus a defender to preview the exact refund.",
-    ];
+      stats: tower ? [
+        ["Defender", TOWERS[tower.kind].name],
+        ["Health", String(Math.ceil(tower.health))],
+        ["Refund", `${Math.floor(TOWERS[tower.kind].cost * 0.4)} credits`],
+      ] : [["Refund rate", "40% of purchase price"]],
+    };
   }
-  if (!kind)
-    return [
-      "Choose a defender",
-      "Select a crew card or use keys 1–9.",
-      "Firing defenders cover a lane; income units and barriers do not shoot.",
-    ];
+  if (!kind) return {
+    title: "Choose a defender",
+    description: "Select a crew card or use keys 1–9.",
+    status: "Firing defenders cover a lane; income units and barriers do not shoot.",
+    stats: [],
+  };
   const unit = TOWERS[kind];
   const gap = Math.max(0, unit.cost - state.credits);
-  const budget = gap ? `Need ${gap} more credits` : "Ready to deploy";
-  const installed =
-    cursor &&
-    state.towers.find(
-      (x) => x.row === cursor.row && x.col === cursor.col && x.kind === kind,
-    );
-  const role = unit.income
-    ? installed
-      ? `Next +${unit.income} in ${Math.ceil(unit.incomeInterval - installed.incomeClock - 1e-9)}s`
-      : `Gross payback ${Math.ceil(unit.cost / unit.income) * unit.incomeInterval}s · Protect behind guns`
-    : unit.damage
-      ? `${Math.round(unit.armorPierce * 100)}% plating bypass · Fires right`
-      : "Barrier · Put ahead of firing defenders";
-  const caution =
-    cursor && placementWarning(kind, state, cursor.row, cursor.col);
-  return [
-    `${unit.name} · ${unit.cost} credits`,
-    unit.description,
-    caution ?? `${budget} · ${unit.health} health · ${role}`,
+  const installed = cursor && state.towers.find(
+    (x) => x.row === cursor.row && x.col === cursor.col && x.kind === kind,
+  );
+  const stats: CrewDetails["stats"] = [
+    ["Cost", `${unit.cost} credits`],
+    ["Health", String(unit.health)],
+    ["Role", unit.role],
   ];
+  if (unit.income) stats.push(
+    ["Income", `+${unit.income} every ${unit.incomeInterval}s`],
+    ["Gross payback", `${Math.ceil(unit.cost / unit.income) * unit.incomeInterval}s`],
+    ["Position", "Protect behind guns"],
+  );
+  else if (unit.damage) {
+    stats.push(
+      ["Damage", `${unit.damage} per round`],
+      ["Firing cycle", `${unit.cooldown}s`],
+      ["Plating bypass", `${Math.round(unit.armorPierce * 100)}%`],
+      ["Direction", "Fires right"],
+    );
+    if (unit.ammo.length > 1) stats.push(["Volley", `${unit.ammo.length} rounds`]);
+    if (unit.splashRadius) stats.push(["Splash radius", `${unit.splashRadius} tiles`]);
+  } else stats.push(["Position", "Put ahead of firing defenders"]);
+  const caution = cursor && placementWarning(kind, state, cursor.row, cursor.col);
+  return {
+    title: unit.name,
+    description: unit.description,
+    status: caution ?? (gap ? `Need ${gap} more credits` : installed && unit.income
+      ? `Next +${unit.income} in ${Math.ceil(unit.incomeInterval - installed.incomeClock - 1e-9)}s`
+      : "Ready to deploy"),
+    stats,
+  };
 }

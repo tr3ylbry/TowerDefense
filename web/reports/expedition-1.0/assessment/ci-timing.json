@@ -42,5 +42,28 @@
     "webkit": "2/2 same scenarios",
     "total": "4/4 in44.2s; test server4175 with immutable snapshot and no Vite reload",
     "clock": "Real time and public controls; no simulation state injection"
+  },
+  "secondRun": {
+    "url": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41497664263",
+    "head": "909b4af738e1cb82a2a34e9e140f482312827f41",
+    "firefox": "60/60 passed",
+    "webkit": "59/60 passed; public-health contact step did not observe an isolated100-point drop",
+    "chromium": "35min job cap reached; the Hard and combat helpers stalled waiting for a click after an expiring Call button became disabled. No completed full-suite count claimed.",
+    "evidence": "Completed job logs identify waiting for #call-wave after isEnabled; not a production keyboard/combat change.",
+    "correction": "Both adaptive play helpers use the public N shortcut, which safely rejects an expired choice without an indefinite action wait. The combat scene uses earned Astro Joe/TARS fire to clear preceding enemies and a column9 barrier; a read-only MutationObserver records each public aria-label health update. Exact100-point decrement and simulation-event/frame assertions remain.",
+    "localStress": "New combat strategy passed Chromium at4x CPU and WebKit, 47.5s/45.1s; final Hard helper and WebGL recording additionally validated in delivery."
+  },
+  "localFirefox": "Latest phone cases could not launch locally: bundled Firefox reports Could not find profile folder, including a /private/tmp profile attempt. Prior hosted60-case Firefox success is separate; final62-case CI remains required.",
+  "finalStress": {
+    "browser": "Installed Chrome, WebGL,4x CPU",
+    "hardJourney": "Passed in1.7min: earned Hard victory, deliberate loss, Normal progress isolation and Normal stars",
+    "realCombat": "Passed47.2s: earned Astro Joe/TARS formation, forward barrier, observed exact100-point drop via public DOM MutationObserver; new unedited video retained",
+    "total": "2 passed in2.6min",
+    "method": "Public N shortcut for adaptive calls; no test clock, fake credits, injected enemies or fake victories."
+  },
+  "finalPhoneRevision": {
+    "chromium": "2/2 passed on immutable production snapshot: horizontal navigation, nine-card registration, hover/tap/keyboard popup and real native-media playback/retry/background handling.",
+    "webkit": "Final local attempt could not launch: current pinned Playwright expects webkit-2370, absent from the local cache. Earlier WebKit phone-popup/music checks covered the prior arrangement; final exact-head hosted matrix required.",
+    "build": "194 rule tests, strict TypeScript and production build passed. Both audio/portrait generators rebuilt byte-identically."
   }
 }

@@ -18,6 +18,9 @@ import { CompletionRecorder, isUnlocked, rating } from "./campaign/progress";
 import type { Completion } from "./campaign/progress";
 import { CampaignBoard, campaignMarkup } from "./campaign/board";
 import { AudioBus } from "./audio";
+import { AmbientMusic } from "./music";
+import { CrewInspector } from "./crew-inspector";
+import { ORIGINAL_PORTRAITS } from "./game/original-portraits";
 import type { Battlefield } from "./battlefield";
 import type { ArtManifest, ArtStyle } from "./assets";
 import { coverage, crewDetails, waveCallDetails } from "./guidance";
@@ -101,7 +104,7 @@ app.innerHTML = `
   </header>
   <main id="mission">
     <section class="mission-heading" aria-labelledby="mission-title"><div><p class="eyebrow"><span class="signal-dot"></span> EXPEDITION 001 <span class="eyebrow-line"></span> ORBITAL DEFENSE</p><h1 id="mission-title">A little space.<br class="mobile-break"> A lot to defend<span>.</span></h1></div><p class="mission-intro">A familiar crew. An unfamiliar frontier.<br>Build your defenses and hold the line.</p></section>
-    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" disabled class="destination-button" aria-haspopup="dialog"><span id="map-open-label">Change destination</span> ${actionArrow}</button></div><div class="mission-tools"><button id="art-toggle" disabled class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Sound off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
+    <div class="mission-bar"><div class="location"><span id="location-number" class="location-number">01</span><div><span class="micro-label">YOUR DESTINATION</span><h2 id="location-name">The Canyon</h2></div><span id="location-tag" class="location-tag">FIRST CONTACT</span><button id="map-open" disabled class="destination-button" aria-haspopup="dialog"><span id="map-open-label">Change destination</span> ${actionArrow}</button></div><div class="mission-tools"><button id="art-toggle" disabled class="tool" aria-label="Show original art" aria-pressed="false">◈ <span>Expedition art</span></button><button id="focus-toggle" class="tool" aria-label="Enter focused view" aria-pressed="false">⛶ <span>Focus</span></button><button id="play-guide" class="tool" aria-label="Field guide">? <span>Guide</span></button><button id="sound-toggle" aria-label="Toggle sound effects" class="tool" aria-pressed="false" title="Toggle synthesized sound effects">♪ <span>Effects off</span></button><button id="music-toggle" aria-label="Play ambient music" class="tool" aria-pressed="false" title="Play original ambient music"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M8 14V4l9-2v10M8 6l9-2" fill="none" stroke="currentColor" stroke-width="1.5"/><ellipse cx="5" cy="15" rx="3" ry="2" fill="currentColor"/><ellipse cx="14" cy="13" rx="3" ry="2" fill="currentColor"/></svg><span>Music off</span></button><button id="motion-toggle" aria-label="Reduce decorative animation" class="tool" aria-pressed="${reducedMotion}" title="Reduce decorative animation">◌ <span>Reduced motion</span></button><button id="restart" aria-label="Restart" class="tool" title="Restart mission">↻ <span>Restart</span></button></div></div>
     <p id="save-warning" class="save-warning" role="status" hidden></p><p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
@@ -117,7 +120,7 @@ app.innerHTML = `
         })
         .join(
           "",
-        )}</div><div class="crew-details"><p id="selected-detail"><strong>Astro Joe · 50 credits</strong><span>Steady fire. Your first line of defense.</span></p><button id="salvage" class="salvage-button" aria-pressed="false" aria-label="Salvage a defender, recover 40% of its cost">⌁ Salvage <kbd>X</kbd></button></div></aside>
+        )}</div><div class="crew-details"><div id="selected-detail"><strong>Astro Joe</strong><span>Steady fire. Your first line of defense.</span></div><div class="crew-detail-actions"><button id="crew-stats-toggle" class="secondary-button" aria-expanded="false" aria-controls="crew-stats">Unit stats</button><button id="salvage" class="salvage-button" aria-pressed="false" aria-label="Salvage a defender, recover 40% of its cost">⌁ Salvage <kbd>X</kbd></button></div><section id="crew-stats" popover="auto" aria-labelledby="crew-stats-title"><button class="dialog-close" aria-label="Close unit stats">×</button><span class="eyebrow">CREW READOUT</span><h3 id="crew-stats-title">Astro Joe</h3><dl></dl></section></div></aside>
     </div>
     <div class="dispatch" id="announcement" role="status" aria-live="polite" aria-atomic="true">Select a crew member to get started.</div>
     <footer><span><span class="footer-dot"></span> MADE FOR THE JOY OF BUILDING.</span><span>A school project, reimagined. <button id="credits-open">Meet the original team ${actionArrow}</button></span></footer>
@@ -156,6 +159,33 @@ const overlay = get("overlay");
 const grid = get("battle-grid");
 const announcement = get("announcement");
 const cells: HTMLButtonElement[] = [];
+const inspector = new CrewInspector(
+  get<HTMLButtonElement>("crew-stats-toggle"),
+  get("crew-stats"),
+);
+const music = new AmbientMusic(`${base}audio/orbital-drift.wav?v=128`, (state) => {
+  const button = get("music-toggle");
+  button.dataset.state = state;
+  button.setAttribute(
+    "aria-pressed",
+    String(state === "playing" || state === "starting"),
+  );
+  const labels = {
+    off: "Play ambient music", starting: "Stop ambient music",
+    playing: "Stop ambient music", paused: "Resume ambient music",
+    error: "Retry ambient music",
+  };
+  const text = {
+    off: "Music off", starting: "Loading music…", playing: "Music on",
+    paused: "Resume music", error: "Retry music",
+  };
+  button.setAttribute("aria-label", labels[state]);
+  button.setAttribute("aria-busy", String(state === "starting"));
+  button.querySelector("span")!.textContent = text[state];
+  if (state === "error")
+    announce("Music could not start. Tap Retry music to try again.");
+});
+get("music-toggle").addEventListener("click", () => music.toggle());
 let focusIndex = 0;
 
 function announce(message: string): void {
@@ -194,7 +224,9 @@ function select(kind: TowerKind | "salvage" | null): void {
 
 function renderSelection(state: Snapshot): void {
   const detail = get("selected-detail");
-  const lines = crewDetails(selected, state, cursor);
+  const readout = crewDetails(selected, state, cursor);
+  inspector.update(readout);
+  const lines = [readout.title, readout.description, readout.status];
   const signature = lines.join("|");
   if (detail.dataset.signature === signature) return;
   detail.dataset.signature = signature;
@@ -799,6 +831,9 @@ function applyArtwork(): void {
     .querySelectorAll<HTMLElement>("[data-art-tower]")
     .forEach((portrait) => {
       const kind = portrait.dataset.artTower as TowerKind;
+      const registration = ORIGINAL_PORTRAITS[kind];
+      portrait.style.setProperty("--original-size", registration.size);
+      portrait.style.setProperty("--original-position", registration.position);
       const artwork =
         artStyle === "expedition" ? EXPEDITION_TOWERS[kind] : undefined;
       portrait.style.backgroundImage = `url("${base}art/${artwork?.file ?? `${TOWERS[kind].sprite}-idle.png`}")`;
@@ -819,13 +854,20 @@ function applyArtwork(): void {
 }
 applyArtwork();
 let sound = false;
-get("sound-toggle").addEventListener("click", () => {
+let soundRequest = 0;
+get("sound-toggle").addEventListener("click", async () => {
+  const request = ++soundRequest;
   sound = !sound;
-  void audio.setEnabled(sound);
+  const requested = sound;
+  const enabled = await audio.setEnabled(requested);
+  if (request !== soundRequest) return;
+  sound = enabled;
   get("sound-toggle").setAttribute("aria-pressed", String(sound));
   get("sound-toggle").querySelector("span")!.textContent = sound
-    ? "Sound on"
-    : "Sound off";
+    ? "Effects on"
+    : "Effects off";
+  if (sound) audio.play("income");
+  else if (requested) announce("Sound effects could not start. Tap Effects to try again.");
 });
 get("motion-toggle").addEventListener("click", () => {
   reducedMotion = !reducedMotion;
@@ -1050,6 +1092,11 @@ document.addEventListener("keydown", (event) => {
   )
     return;
   const key = event.key.toLowerCase();
+  if (key === "escape" && inspector.isOpen) {
+    event.preventDefault();
+    inspector.close(true);
+    return;
+  }
   if (event.repeat && ["n", "p", "x"].includes(key)) return;
   if (/^[1-9]$/.test(key)) {
     event.preventDefault();
@@ -1068,6 +1115,8 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("visibilitychange", () => {
   // Any dialog/transition backgrounded during a pause requires explicit resume.
   if (document.hidden) {
+    music.pauseForBackground();
+    inspector.close();
     resumeAfterDialog = false;
     if (assetRequest) assetRequest.resume = false;
   }
@@ -1157,4 +1206,6 @@ if (import.meta.hot)
   import.meta.hot.dispose(() => {
     battlefield?.destroy();
     audio.destroy();
+    music.destroy();
+    inspector.destroy();
   });

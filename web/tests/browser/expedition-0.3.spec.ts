@@ -171,9 +171,10 @@ test("first-play guidance distinguishes firing coverage, income timing and salva
     .getByRole("button", { name: "Begin mission", exact: true })
     .click();
   await page.locator('[data-tower="bush"]').click();
-  await expect(page.locator("#selected-detail")).toContainText(
-    "Gross payback 18s",
-  );
+  await page.locator("#crew-stats-toggle").click();
+  await expect(page.locator("#crew-stats dl")).toContainText(/Gross payback\s*18s/);
+  await page.keyboard.press("Escape");
+  await expect(page.locator('[data-tower="bush"]')).toHaveAttribute("aria-pressed", "true");
   await page
     .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
     .click();

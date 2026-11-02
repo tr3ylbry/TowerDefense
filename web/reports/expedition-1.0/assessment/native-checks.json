@@ -40,5 +40,10 @@
     "limitation": "This confirms live screen-reader startup, not successful game navigation/announcements. No game spoken-output pass is claimed. Initial off setting was restored.",
     "ownerObservation": "Owner confirmed that VoiceOver started and read the Codex mobile-preview instructions, indicating focus remained in the chat rather than the game."
   },
-  "cleanup": "Closed only the agent-created Safari test tab; original Apple tab preserved."
+  "cleanup": "Closed only the agent-created Safari test tab; original Apple tab preserved.",
+  "latestFollowup": {
+    "scope": "Crew stats and native-media music follow-up after the earlier victory/action smoke checks",
+    "result": "Not verified: two CUA Safari operations timed out, with kernel reset; no final native popup/music pass inferred.",
+    "cleanup": "Earlier owned victory tab was closed. A later new-tab operation may have partially opened a test tab; final inventory/cleanup could not be confirmed after timeouts."
+  }
 }

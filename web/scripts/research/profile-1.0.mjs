@@ -251,6 +251,9 @@ try {
   for (const path of [
     "src/main.ts",
     "src/icons.ts",
+    "src/audio.ts",
+    "src/music.ts",
+    "src/crew-inspector.ts",
     "src/guidance.ts",
     "src/style.css",
     "src/battlefield.ts",

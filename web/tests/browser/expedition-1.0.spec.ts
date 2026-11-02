@@ -61,83 +61,64 @@ test("both pilots survive actual spawned combat, pause, art comparison, speed, r
   });
   await page.goto("/");
   await page.locator("#start").click();
-  await page.locator('[data-tower="wall"]').click();
-  for (let lane = 1; lane <= 6; lane++)
-    await page
-      .getByRole("gridcell", {
-        name: `Lane ${lane}, tile 8, empty`,
-        exact: true,
-      })
-      .click();
-  await page.waitForTimeout(1200);
+  await page.locator('[data-tower="astro"]').click();
+  for (let lane = 1; lane <= 4; lane++)
+    await page.getByRole("gridcell", { name: `Lane ${lane}, tile 1, empty`, exact: true }).click();
   await page.locator("#speed").click();
   const deadline = Date.now() + 90000;
-  while (
-    Date.now() < deadline &&
-    (await page.locator("#wave-number").innerText()) !== "4"
-  ) {
-    if (await page.locator("#call-wave").isEnabled())
-      await page.locator("#call-wave").click();
+  while (Date.now() < deadline && (await page.locator("#wave-number").innerText()) !== "4") {
     for (let lane = 1; lane <= 6; lane++) {
-      const cell = page.getByRole("gridcell", {
-        name: `Lane ${lane}, tile 8, empty`,
-        exact: true,
-      });
-      if (
-        (await cell.count()) &&
-        Number(await page.locator("#credits").innerText()) >= 35
-      )
-        await cell.click();
+      const empty = page.getByRole("gridcell", { name: `Lane ${lane}, tile 1, empty`, exact: true });
+      if ((await empty.count()) && Number(await page.locator("#credits").innerText()) >= 50) {
+        await page.locator('[data-tower="astro"]').click();
+        await empty.click();
+      }
     }
-    await page.waitForTimeout(200);
+    const covered = await page.getByRole("gridcell", { name: /tile 1, Astro Joe/ }).count();
+    if (covered === 6) {
+      for (const lane of [4, 1, 2, 3, 5, 6]) {
+        const empty = page.getByRole("gridcell", { name: `Lane ${lane}, tile 2, empty`, exact: true });
+        // Keep the price of a frontline barrier in reserve.
+        if ((await empty.count()) && Number(await page.locator("#credits").innerText()) >= 135) {
+          await page.locator('[data-tower="tars"]').click();
+          await empty.click();
+        }
+      }
+      if (await page.locator("#call-wave").isEnabled()) await page.keyboard.press("n");
+    }
+    await page.waitForTimeout(150);
   }
   await expect(page.locator("#wave-number")).toHaveText("4");
-  // Synchronize with the public schedule: software rendering can advance
-  // fewer game seconds per real second. Earlier aliens can already be biting
-  // a barrier when Gargantua arrives, so observe a real 100-point strike rather
-  // than assuming its first contact is against an untouched 1100-point wall.
   await page.locator("#speed").click();
-  await expect(page.locator("#incoming-summary")).toContainText("Gargantua", {
-    timeout: 45000,
-  });
-  const heavyCell = page.getByRole("gridcell", { name: /^Lane 4, tile 8,/ });
-  await page.locator('[data-tower="wall"]').click();
+  await expect(page.locator("#incoming-summary")).toContainText("Gargantua", { timeout: 45000 });
+  const heavyCell = page.getByRole("gridcell", { name: /^Lane 4, tile 9,/ });
   const healthHistory: (number | null)[] = [];
   let previousHealth: number | null = null;
   let observedHeavyStrike = false;
-  const contactDeadline = Date.now() + 60000;
-  while (!observedHeavyStrike && Date.now() < contactDeadline) {
-    const label = await heavyCell.getAttribute("aria-label");
+  // Read every public UI update, even while a control action is in flight.
+  // Guns clear the earlier crowd; no enemies, credits or game time are injected.
+  await page.exposeFunction("recordBarrierHealth", (label: string | null) => {
     const match = label?.match(/Asteroid, (\d+) health$/);
     const health = match ? Number(match[1]) : null;
     if (health !== previousHealth) healthHistory.push(health);
-    observedHeavyStrike =
-      health !== null &&
-      previousHealth !== null &&
-      previousHealth - health === 100;
+    if (health !== null && previousHealth !== null && previousHealth - health === 100)
+      observedHeavyStrike = true;
     previousHealth = health;
-    if (observedHeavyStrike) break;
-    for (let lane = 1; lane <= 6; lane++) {
-      const empty = page.getByRole("gridcell", {
-        name: `Lane ${lane}, tile 8, empty`,
-        exact: true,
-      });
-      if (
-        (await empty.count()) &&
-        Number(await page.locator("#credits").innerText()) >= 35
-      )
-        await empty.click();
-    }
+  });
+  await heavyCell.evaluate((cell) => {
+    const record = (window as Window & { recordBarrierHealth?: (label: string | null) => Promise<void> }).recordBarrierHealth!;
+    new MutationObserver(() => { void record(cell.getAttribute("aria-label")); })
+      .observe(cell, { attributes: true, attributeFilter: ["aria-label"] });
+  });
+  await page.locator('[data-tower="wall"]').click();
+  const contactDeadline = Date.now() + 60000;
+  while (!observedHeavyStrike && Date.now() < contactDeadline) {
+    if ((await heavyCell.getAttribute("aria-label"))?.endsWith("empty") && Number(await page.locator("#credits").innerText()) >= 35)
+      await heavyCell.click();
     await page.waitForTimeout(75);
   }
-  await info.attach("lane-4-health.json", {
-    body: JSON.stringify(healthHistory),
-    contentType: "application/json",
-  });
-  expect(
-    observedHeavyStrike,
-    "Public barrier health records a 100-point strike",
-  ).toBe(true);
+  await info.attach("lane-4-health.json", { body: JSON.stringify(healthHistory), contentType: "application/json" });
+  expect(observedHeavyStrike, `Public barrier health records a 100-point strike: ${JSON.stringify(healthHistory)}`).toBe(true);
   await expect(page.locator("#speed")).toHaveText("1×");
   await page.waitForTimeout(1500);
   await page.screenshot({
