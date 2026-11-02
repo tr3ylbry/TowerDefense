@@ -463,6 +463,9 @@ for (const viewport of [
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBe(true);
+    // Wider system-font fallback must also wrap the underlying tools at page zoom.
+    await page.addStyleTag({ content: ":root { font-family: Verdana, sans-serif; }" });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const overflow = await page
       .locator("#campaign-dialog")
       .evaluate((dialog) => ({

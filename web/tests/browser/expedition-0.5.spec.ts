@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { TOWERS } from "../../src/game/content";
 import type { TowerKind } from "../../src/game/content";
-import { EXPEDITION_TOWERS, EXPEDITION_ENEMIES } from "../../src/game/art";
+import { EXPEDITION_TOWERS } from "../../src/game/art";
+import { ALIEN_ANIMATIONS } from "../../src/game/alien-animation";
 
 test("ordinary dialogs never resume a mission after backgrounding", async ({
   page,
@@ -91,7 +92,7 @@ test("complete illustrated roster defers school sheets and preserves acid restri
   await expect(page.locator("#start")).toBeEnabled();
   for (const art of [
     ...Object.values(EXPEDITION_TOWERS),
-    ...Object.values(EXPEDITION_ENEMIES),
+    ...Object.values(ALIEN_ANIMATIONS),
   ])
     expect(requests).toContain(`/art/${art.file}`);
   expect(

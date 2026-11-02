@@ -1,6 +1,9 @@
 import { test, expect } from "@playwright/test";
 
 test("phone navigation aligns, crew stats support tap/keyboard/hover, and both art rosters stay registered", async ({ page }, info) => {
+  // Two nine-unit keyboard/art passes plus real placements and enlarged-text review.
+  // Hosted software rendering needs more than the ordinary 45-second case budget.
+  test.setTimeout(90_000);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await expect(page.locator("#start")).toBeEnabled();
@@ -53,7 +56,15 @@ test("phone navigation aligns, crew stats support tap/keyboard/hover, and both a
       const card = page.locator('.crew-card[aria-pressed="true"]');
       await expect(card).toBeInViewport();
       const name = card.locator("strong");
-      expect(await name.evaluate((e) => e.scrollWidth <= e.clientWidth + 1 && e.getBoundingClientRect().height <= parseFloat(getComputedStyle(e).lineHeight) + 1)).toBe(true);
+      const title = await name.evaluate((e) => ({
+        text: e.textContent,
+        width: e.clientWidth,
+        contentWidth: e.scrollWidth,
+        height: e.getBoundingClientRect().height,
+        lineHeight: parseFloat(getComputedStyle(e).lineHeight),
+      }));
+      expect(title.contentWidth, `${title.text} fits its title slot`).toBeLessThanOrEqual(title.width + 1);
+      expect(title.height, `${title.text} stays on one line`).toBeLessThanOrEqual(title.lineHeight + 1);
       const geometry = await card.evaluate((e) => {
         const outer = e.getBoundingClientRect();
         return [...e.querySelectorAll(".portrait, strong, .crew-price")].map((part) => {

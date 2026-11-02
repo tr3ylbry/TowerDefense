@@ -504,7 +504,7 @@ test("phone zoom and every crew card remain usable with complete unit details", 
 test("missing Expedition artwork uses the same recoverable loading failure", async ({
   page,
 }) => {
-  await page.route("**/art/expedition/scout.webp", (route) => route.abort());
+  await page.route("**/art/expedition/scout-animation.webp", (route) => route.abort());
   await page.goto("/");
   await expect(
     page.getByRole("button", { name: "Retry loading", exact: true }),

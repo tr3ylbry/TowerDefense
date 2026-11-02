@@ -85,5 +85,27 @@
     "finalChromeCapture": "4/4 passed12.9s: navigation/all-nine cards, actual media, mixer real gains/modal pause, all-six motion.",
     "note": "Final full64-case-per-engine matrix across six jobs remains required. Local Firefox profile launch failure is separate from hosted compatibility.",
     "finalRealCombat": "Final all-six source, installed Chrome/default WebGL, immutable production snapshot: passed43.5s, no page errors, each of six atlases requested exactly once, real observed100-health strike, comparison/motion/speed and three restarts; refreshed unedited video retained."
+  },
+  "fourthRun": {
+    "url": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41517867246",
+    "head": "f9b043fd704f33d30014692d39bd0ee294b65bd7",
+    "observed": "Firefox and WebKit each29/32 in both shards; Chromium shard2 also29/32. Chromium shard1 still running when final corrections prepared. This run is failed, not a final pass.",
+    "audio": "Real AudioContext, native media advancement/retry and independent gain/mixer pause checks pass in all three completed second shards after PulseAudio output setup.",
+    "defects": [
+      "New44px field actions exceeded focused desktop height by3.69px WebKit/Chromium and5.75px Firefox; old1050px focused width also could not contain nine118px cards",
+      "Startrell Cluggins exceeded its compact title slot in Linux system-font fallback",
+      "At150% landscape content, mission-tools could grow beyond the viewport (reproduced locally as912px in844px with Verdana)",
+      "Two retained asset-plan tests still expected a static Scout portrait no longer required by the animated battlefield",
+      "Expanded phone inspection reached45s while evaluating a visible selected card in hosted Chromium; no missing element or gameplay timeout was reported"
+    ],
+    "corrections": [
+      "124px minimum cards with5px horizontal padding, unchanged11px titles; all names fit with wider Verdana at1280/900/390",
+      "Focused desktop max1220px permits all nine cards; battlefield sizing reserves room for full control/readout rows",
+      "Toolbar flex wrapping, shrinking and maximum width apply at every viewport; enlarged-content assertions retained, with wider-font coverage",
+      "Asset assertions target all six required atlases and block the actual Scout sheet to test recovery",
+      "Only expanded phone inspection gets a bounded90s case allowance; ordinary45s cases, expectation limits and35min job cap remain"
+    ],
+    "localVerification": "All14 affected Chromium/WebKit scenarios passed23.9s,216 rules and TypeScript/production build passed. Final all-engine run remains required.",
+    "finalLocalCombat": "Final corrected production layout: installed Chrome real public-control combat passed43.5s; all six sheets once, actual100-point strike, pause/comparison/reduced motion and three restarts; refreshed video."
   }
 }

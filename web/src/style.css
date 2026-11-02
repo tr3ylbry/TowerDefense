@@ -1635,7 +1635,10 @@ dialog li {
 }
 .mission-tools {
   margin-left: auto;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
 }
 .destination-button {
   display: inline-flex;
@@ -1825,7 +1828,7 @@ dialog li {
 }
 .crew-list {
   display: grid;
-  grid-template-columns: repeat(9, minmax(118px, 1fr));
+  grid-template-columns: repeat(9, minmax(124px, 1fr));
   gap: 6px;
   max-height: none;
   overflow-x: auto;
@@ -1835,7 +1838,7 @@ dialog li {
 }
 .crew-card {
   min-height: 72px;
-  padding: 7px;
+  padding: 7px 5px;
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
   grid-template-rows: 35px 14px;
@@ -2027,7 +2030,7 @@ dialog li {
     padding: 9px 16px;
   }
   .crew-list {
-    grid-template-columns: repeat(9, 118px);
+    grid-template-columns: repeat(9, 124px);
     gap: 6px;
   }
   .crew-card {
@@ -2108,7 +2111,7 @@ dialog li {
 }
 @media (min-width: 701px) {
   .focused-play main {
-    max-width: 1050px;
+    max-width: 1220px;
   }
   .focused-play .crew-heading,
   .focused-play .grid-help {
@@ -2476,7 +2479,8 @@ dialog li {
 }
 @media (min-width: 701px) {
   .focused-play .board-stack {
-    max-width: calc((100svh - 460px) * 1080 / 660);
+    /* Reserve space for the full toolbar, field actions and crew readout. */
+    max-width: calc((100svh - 500px) * 1080 / 660);
   }
 }
 @media (max-width: 700px) {
