@@ -1,0 +1,390 @@
+{
+  "character": "sprinter",
+  "toolchain": {
+    "python": "3.14.5",
+    "pillow": "12.2.0",
+    "webp": "1.6.0"
+  },
+  "inputs": {
+    "art-source/expedition-0.9/near-thigh.png": {
+      "bytes": 118770,
+      "sha256": "9932d57033ee445ffc2e95db78a9674f658b65aa04cdc629c89262d6a3338ba6"
+    },
+    "art-source/expedition-0.9/body.png": {
+      "bytes": 309562,
+      "sha256": "31be7f021a20e69d94a2f1cebefcc5675c656261932db061565728ca9c5c2daf"
+    },
+    "art-source/expedition-0.9/near-shin.png": {
+      "bytes": 63787,
+      "sha256": "4502c562ca76aaeee2cfd78d2c62edc2337a837036921474112e11a5e61f3f52"
+    },
+    "art-source/expedition-0.9/far-thigh.png": {
+      "bytes": 91221,
+      "sha256": "ed5c010b4a6c8b0ae1c77724883b2befef3cbfe028d2a233b0bffa61f079f2e5"
+    },
+    "art-source/expedition-0.9/far-shin.png": {
+      "bytes": 66983,
+      "sha256": "e585d714470e78ce3af965beb8024fb11c81774375864d4ac70ac66b3881a16a"
+    },
+    "art-source/expedition-0.9/near-foot.png": {
+      "bytes": 72601,
+      "sha256": "30d26fe20ef87c21942b945d5e78362da00a0193e03e74ff6d2558c85e2ddf5a"
+    },
+    "art-source/expedition-0.9/near-arm.png": {
+      "bytes": 82303,
+      "sha256": "734f51cc8222bb88344a2f097258c9ae3d9d5968bc859cb59188465796b9a4b6"
+    },
+    "art-source/expedition-0.9/far-arm.png": {
+      "bytes": 75199,
+      "sha256": "d83c9d852168187b8fc0dd872ddebdb581c4d01d22e0d965c9c9a315a1372b64"
+    },
+    "art-source/expedition-0.9/far-foot.png": {
+      "bytes": 88844,
+      "sha256": "1e22e2d0bfe8dedcb51075a6702af5e8aef6c42427d4f6837a912e4781669818"
+    },
+    "art-source/expedition-0.9/conversion.json": {
+      "bytes": 4130,
+      "sha256": "8140da86a8b02c91e9042d91f23685e753c1f0e4d214f0252735ae85d07b3caf"
+    },
+    "scripts/build-alien-animations.py": {
+      "bytes": 6235,
+      "sha256": "84453dd19fbd4920c82119131c0a265d0f20c62f82614c1d647bd84179cfbd98"
+    },
+    "scripts/animation_tools.py": {
+      "bytes": 7992,
+      "sha256": "1575db59a02815e39ab1701d24f7b320784a1f3d24224bf86cd862939c8848a4"
+    }
+  },
+  "frame": {
+    "width": 160,
+    "height": 120,
+    "displayWidth": 128,
+    "displayHeight": 96,
+    "ground": 105
+  },
+  "sequences": {
+    "walk": [
+      0,
+      24
+    ],
+    "idle": [
+      24,
+      8
+    ],
+    "attack": [
+      32,
+      16
+    ]
+  },
+  "frames": 48,
+  "columns": 8,
+  "atlasSize": [
+    1280,
+    720
+  ],
+  "settings": {
+    "format": "WebP",
+    "quality": 85,
+    "method": 6,
+    "strideWorldPixels": 48,
+    "stance": 0.6,
+    "swing": "Hermite x, sine-squared lift; tangent contact; foot roll only in swing",
+    "weightShiftPixels": 0.35
+  },
+  "alphaExactAfterEncoding": true,
+  "frameAlphaBounds": [
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      104
+    ],
+    [
+      32,
+      36,
+      138,
+      104
+    ],
+    [
+      32,
+      36,
+      138,
+      104
+    ],
+    [
+      32,
+      36,
+      138,
+      104
+    ],
+    [
+      32,
+      36,
+      138,
+      104
+    ],
+    [
+      32,
+      36,
+      138,
+      104
+    ],
+    [
+      32,
+      37,
+      138,
+      104
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      37,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      25,
+      38,
+      131,
+      105
+    ],
+    [
+      25,
+      38,
+      132,
+      105
+    ],
+    [
+      27,
+      37,
+      133,
+      105
+    ],
+    [
+      29,
+      37,
+      136,
+      105
+    ],
+    [
+      31,
+      37,
+      137,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      32,
+      36,
+      138,
+      105
+    ],
+    [
+      33,
+      36,
+      139,
+      105
+    ],
+    [
+      33,
+      36,
+      139,
+      105
+    ],
+    [
+      34,
+      36,
+      140,
+      105
+    ]
+  ],
+  "production": {
+    "file": "public/art/expedition/sprinter-animation.webp",
+    "bytes": 119184,
+    "sha256": "fe5f8c066f78e5f8b01a5995279ec7bc22c5427929fd81271cf348241545269a"
+  }
+}

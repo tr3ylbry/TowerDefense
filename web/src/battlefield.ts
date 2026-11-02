@@ -22,7 +22,12 @@ import type { ArtManifest, ArtStyle, AssetPlan } from "./assets";
 export type { ArtManifest } from "./assets";
 import type { GameEvent, Simulation, Snapshot } from "./game/simulation";
 import { laneThreats } from "./game/threats";
-import { SPRINTER_ANIMATION, sprinterPose } from "./game/alien-animation";
+import {
+  ALIEN_ANIMATIONS,
+  alienPose,
+  isAnimatedAlien,
+  attackContact,
+} from "./game/alien-animation";
 
 export const FIELD = {
   width: 1080,
@@ -649,11 +654,12 @@ export function mountBattlefield(options: Options): Battlefield {
       for (const enemy of state.enemies) {
         const definition = ENEMIES[enemy.kind];
         const artwork = expedition ? EXPEDITION_ENEMIES[enemy.kind] : undefined;
-        const articulated =
-          artwork &&
-          enemy.kind === "sprinter" &&
-          this.textures.exists(SPRINTER_ANIMATION.key);
-        const presentation = articulated ? SPRINTER_ANIMATION : artwork;
+        const animatedKind = isAnimatedAlien(enemy.kind)
+          ? enemy.kind
+          : undefined;
+        const sheet = animatedKind ? ALIEN_ANIMATIONS[animatedKind] : undefined;
+        const articulated = artwork && sheet && this.textures.exists(sheet.key);
+        const presentation = articulated ? sheet : artwork;
         const animation = `${definition.sprite}-${enemy.attacking ? "attack" : "walk"}`;
         let sprite = enemySprites.get(enemy.id);
         if (!sprite) {
@@ -675,8 +681,14 @@ export function mountBattlefield(options: Options): Battlefield {
           if (presentation) sprite.setTexture(presentation.key);
           else sprite.play(animation);
         }
-        if (articulated) {
-          const pose = sprinterPose(enemy, state.elapsed, alpha, !animate);
+        if (articulated && animatedKind) {
+          const pose = alienPose(
+            animatedKind,
+            enemy,
+            state.elapsed,
+            alpha,
+            !animate,
+          );
           sprite.setFrame(pose.frame).setData("pose", pose.state);
         }
         const x = enemy.previousX + (enemy.x - enemy.previousX) * alpha;
@@ -692,7 +704,7 @@ export function mountBattlefield(options: Options): Battlefield {
         const strike =
           prototype && enemy.kind === "gargantua" && enemy.attacking
             ? animate
-              ? Math.max(0, 1 - enemy.cooldown / 0.3)
+              ? attackContact(enemy.kind, enemy.cooldown, alpha)
               : 1
             : 0;
         const hit = animate

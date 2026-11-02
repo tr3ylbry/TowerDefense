@@ -28,6 +28,7 @@ describe("mission asset plans", () => {
     }
     expect(plan.sprites.map((x) => x.key)).toEqual([
       "expedition-sprinter-animation",
+      "expedition-gargantua-animation",
     ]);
     expect(plan.sprites[0]).toMatchObject({
       frameWidth: 160,

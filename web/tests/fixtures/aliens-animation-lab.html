@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Expedition 1.0 animation review</title>
+  <style>
+    body {
+      background: #10212c;
+      color: #e5ede4;
+      font: 14px system-ui;
+      margin: 24px;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    button,
+    label {
+      display: inline-block;
+      margin: 0 12px 12px 0;
+    }
+    button {
+      padding: 10px 16px;
+    }
+    canvas {
+      display: block;
+      width: 1080px;
+      height: 340px;
+      max-width: 100%;
+      margin-bottom: 12px;
+    }
+    #detail {
+      width: 576px;
+      height: 432px;
+    }
+  </style>
+  <h1>Two anatomy pilots · render fixture, not a mission</h1>
+  <p>
+    Sprinter: 0.9 / 1.0 walk / idle / attack. Gargantua: retained illustration /
+    walk / idle / attack. World size on all backgrounds. Detail below 4×.
+    Preview clock only; game animation uses simulation state.
+  </p>
+  <button id="pause">Pause preview</button
+  ><button id="speed">1×</button
+  ><label><input id="reduce" type="checkbox" />Reduced motion</label
+  ><output id="status"></output>
+  <canvas id="canyon" width="1080" height="340"></canvas
+  ><canvas id="bridge" width="1080" height="340"></canvas
+  ><canvas id="nest" width="1080" height="340"></canvas
+  ><canvas id="detail" width="576" height="432"></canvas>
+  <script type="module">
+    import { ALIEN_ANIMATIONS, alienPose } from "/src/game/alien-animation.ts";
+    import { ENEMIES } from "/src/game/content.ts";
+    const image = async (path) => {
+      const i = new Image();
+      i.src = path;
+      await i.decode();
+      return i;
+    };
+    const atlases = Object.fromEntries(
+      await Promise.all(
+        Object.entries(ALIEN_ANIMATIONS).map(async ([k, s]) => [
+          k,
+          await image("/art/" + s.file),
+        ]),
+      ),
+    );
+    const old = await image("/art-source/expedition-1.0/sprinter-0.9.webp");
+    const original = await image("/art/expedition/gargantua.webp");
+    const backgrounds = await Promise.all(
+      ["canyon-0.5", "sky-bridge", "nest"].map((n) =>
+        image("/art/expedition/" + n + ".webp"),
+      ),
+    );
+    let elapsed = 0,
+      last = performance.now(),
+      paused = false,
+      speed = 1;
+    const reduce = document.querySelector("#reduce");
+    document.querySelector("#pause").onclick = () => {
+      paused = !paused;
+      document.querySelector("#pause").textContent = paused
+        ? "Resume preview"
+        : "Pause preview";
+    };
+    document.querySelector("#speed").onclick = () => {
+      speed = speed === 1 ? 2 : 1;
+      document.querySelector("#speed").textContent = speed + "×";
+    };
+    function draw(ctx, kind, frame, x, y, zoom = 1, atlas = atlases[kind]) {
+      const s = ALIEN_ANIMATIONS[kind];
+      ctx.drawImage(
+        atlas,
+        (frame % 8) * 160,
+        Math.floor(frame / 8) * 120,
+        160,
+        120,
+        x - (s.width * zoom) / 2,
+        y - s.height * s.foot * zoom,
+        s.width * zoom,
+        s.height * zoom,
+      );
+    }
+    function render(now) {
+      if (!paused) elapsed += Math.min(0.1, (now - last) / 1000) * speed;
+      last = now;
+      const poses = {},
+        frames = [];
+      for (const kind of ["sprinter", "gargantua"]) {
+        const velocity = ENEMIES[kind].speed;
+        const x = 8 - elapsed * velocity;
+        const enemy = {
+          id: 1,
+          x,
+          previousX: x + 0.05 * velocity,
+          attacking: false,
+          cooldown: 0,
+        };
+        poses[kind] = [
+          alienPose(kind, enemy, elapsed, 1, reduce.checked),
+          alienPose(
+            kind,
+            { ...enemy, previousX: x },
+            elapsed,
+            0,
+            reduce.checked,
+          ),
+          alienPose(
+            kind,
+            {
+              ...enemy,
+              attacking: true,
+              cooldown:
+                ENEMIES[kind].cooldown - (elapsed % ENEMIES[kind].cooldown),
+            },
+            elapsed,
+            0,
+            reduce.checked,
+          ),
+        ];
+        frames.push(...poses[kind].map((p) => p.frame));
+      }
+      ["canyon", "bridge", "nest"].forEach((map, i) => {
+        const ctx = document.querySelector("#" + map).getContext("2d");
+        ctx.drawImage(backgrounds[i], 0, 0, 1080, 340);
+        ctx.fillStyle = "#10212c88";
+        ctx.fillRect(0, 0, 1080, 340);
+        ctx.fillStyle = "#eef4ea";
+        ctx.font = "14px monospace";
+        ctx.fillText(
+          map.toUpperCase() +
+            " · world size · walk translates at actual unit speed",
+          16,
+          22,
+        );
+        ["sprinter", "gargantua"].forEach((kind, j) => {
+          const y = 155 + j * 160;
+          ctx.strokeStyle = "#9ed4c3";
+          ctx.beginPath();
+          ctx.moveTo(20, y);
+          ctx.lineTo(1060, y);
+          ctx.stroke();
+          ctx.fillStyle = "#eef4ea";
+          ctx.fillText(kind, 20, y - 100);
+          const x = 440 - ((elapsed * ENEMIES[kind].speed * 100) % 130);
+          if (kind === "sprinter")
+            draw(ctx, kind, poses[kind][0].frame, 140, y, 1, old);
+          else
+            ctx.drawImage(
+              original,
+              80,
+              y - (273 / 280) * ((122 * 280) / 384),
+              122,
+              (122 * 280) / 384,
+            );
+          draw(ctx, kind, poses[kind][0].frame, x, y);
+          draw(ctx, kind, poses[kind][1].frame, 710, y);
+          draw(ctx, kind, poses[kind][2].frame, 950, y);
+        });
+      });
+      const ctx = document.querySelector("#detail").getContext("2d");
+      ctx.fillStyle = "#18303b";
+      ctx.fillRect(0, 0, 576, 432);
+      draw(ctx, "gargantua", poses.gargantua[0].frame, 288, 400, 4);
+      document.body.dataset.ready = "true";
+      document.body.dataset.frames = frames.join(",");
+      document.querySelector("#status").textContent =
+        (paused ? "Paused" : "Playing") + " · " + frames.join(",");
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+  </script>
+</html>

@@ -94,7 +94,7 @@ const missionReceipt = `
   </details>`;
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon" aria-hidden="true">${helmet}</span><span class="wordmark-copy" aria-hidden="true"><span class="wordmark-astronauts">ASTRONAUTS</span><span class="wordmark-versus">vs</span><span class="wordmark-aliens">ALIENS</span><span class="edition">EXPEDITION 0.9</span></span></a>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon" aria-hidden="true">${helmet}</span><span class="wordmark-copy" aria-hidden="true"><span class="wordmark-astronauts">ASTRONAUTS</span><span class="wordmark-versus">vs</span><span class="wordmark-aliens">ALIENS</span><span class="edition">EXPEDITION 1.0</span></span></a>
     <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ↗</button><span id="mode-label" class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
