@@ -1,5 +1,6 @@
 import { AMMO, ENEMIES, MAPS, TOWERS } from "./game/content";
 import type { MapKind, EnemyKind, TowerKind } from "./game/content";
+import { SPRINTER_ANIMATION } from "./game/alien-animation";
 import {
   EXPEDITION_ENEMIES,
   EXPEDITION_TOWERS,
@@ -83,6 +84,9 @@ export function assetsFor(
       for (const action of ["walk", "attack", "die"])
         legacy(`${enemy.sprite}-${action}`);
   }
+  // One proven pilot, needed by every existing mission. Other animation atlases
+  // are not part of this plan. The static illustration remains the fallback.
+  if (style === "expedition") sprites.push(SPRINTER_ANIMATION);
   return {
     images: [...new Map(images.map((x) => [x.key, x])).values()],
     sprites: [...new Map(sprites.map((x) => [x.key, x])).values()],

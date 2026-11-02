@@ -26,7 +26,15 @@ describe("mission asset plans", () => {
       expect(keys).toContain(EXPEDITION_TOWERS[kind]!.key);
       expect(keys).not.toContain(`${TOWERS[kind].sprite}-idle`);
     }
-    expect(plan.sprites).toHaveLength(0);
+    expect(plan.sprites.map((x) => x.key)).toEqual([
+      "expedition-sprinter-animation",
+    ]);
+    expect(plan.sprites[0]).toMatchObject({
+      frameWidth: 160,
+      frameHeight: 120,
+      frames: 48,
+      fps: 0,
+    });
     expect(new Set(keys).size).toBe(keys.length);
   });
   it.each(["bridge", "nest"] as const)(

@@ -22,6 +22,7 @@ import type { ArtManifest, ArtStyle, AssetPlan } from "./assets";
 export type { ArtManifest } from "./assets";
 import type { GameEvent, Simulation, Snapshot } from "./game/simulation";
 import { laneThreats } from "./game/threats";
+import { SPRINTER_ANIMATION, sprinterPose } from "./game/alien-animation";
 
 export const FIELD = {
   width: 1080,
@@ -115,6 +116,7 @@ export function mountBattlefield(options: Options): Battlefield {
     }
     private animations(plan: AssetPlan): void {
       for (const sprite of plan.sprites) {
+        if (sprite.fps === 0) continue;
         if (this.anims.exists(sprite.key)) continue;
         this.anims.create({
           key: sprite.key,
@@ -647,6 +649,11 @@ export function mountBattlefield(options: Options): Battlefield {
       for (const enemy of state.enemies) {
         const definition = ENEMIES[enemy.kind];
         const artwork = expedition ? EXPEDITION_ENEMIES[enemy.kind] : undefined;
+        const articulated =
+          artwork &&
+          enemy.kind === "sprinter" &&
+          this.textures.exists(SPRINTER_ANIMATION.key);
+        const presentation = articulated ? SPRINTER_ANIMATION : artwork;
         const animation = `${definition.sprite}-${enemy.attacking ? "attack" : "walk"}`;
         let sprite = enemySprites.get(enemy.id);
         if (!sprite) {
@@ -665,13 +672,17 @@ export function mountBattlefield(options: Options): Battlefield {
         if (sprite.getData("prototype") !== prototype) {
           sprite.setData("prototype", prototype);
           sprite.anims.stop();
-          if (artwork) sprite.setTexture(artwork.key);
+          if (presentation) sprite.setTexture(presentation.key);
           else sprite.play(animation);
+        }
+        if (articulated) {
+          const pose = sprinterPose(enemy, state.elapsed, alpha, !animate);
+          sprite.setFrame(pose.frame).setData("pose", pose.state);
         }
         const x = enemy.previousX + (enemy.x - enemy.previousX) * alpha;
         // Per-role movement reads game time; it never changes simulation positions.
         const gait = ENEMY_GAITS[enemy.kind] ?? DEFAULT_GAIT;
-        const motion = prototype && animate && !enemy.attacking;
+        const motion = prototype && !articulated && animate && !enemy.attacking;
         const stride = motion
           ? Math.sin(visualTime * gait[0] + enemy.id) * gait[1]
           : 0;
@@ -688,7 +699,7 @@ export function mountBattlefield(options: Options): Battlefield {
           ? Math.max(0, (sprite.getData("hitUntil") ?? 0) - visualTime) / 0.14
           : 0;
         sprite
-          .setOrigin(0.5, artwork?.foot ?? 1)
+          .setOrigin(0.5, presentation?.foot ?? 1)
           .setPosition(
             worldX(x) + hit * (sprite.getData("resisted") ? 1.5 : 5),
             worldY(enemy.row) + 29 + stride,
@@ -698,8 +709,11 @@ export function mountBattlefield(options: Options): Battlefield {
           this.bars
             .lineStyle(2, 0xf1be8f, 0.85)
             .strokeCircle(sprite.x - 34, worldY(enemy.row) + 3, 5 + strike * 6);
-        if (artwork)
-          sprite.setDisplaySize(artwork.width, artwork.height - hit * 2);
+        if (presentation)
+          sprite.setDisplaySize(
+            presentation.width,
+            presentation.height - hit * 2,
+          );
         else {
           if (sprite.anims.currentAnim?.key !== animation)
             sprite.play(animation);

@@ -1,0 +1,33 @@
+{
+  "art-source/expedition-0.3/sprinter-original.png": {
+    "bytes": 1626780,
+    "sha256": "8ba96d38ec2d78a692486e91b6b3508db9e7c864661921a9cc6414ee3bcac94b"
+  },
+  "public/art/expedition/sprinter.webp": {
+    "bytes": 21120,
+    "sha256": "a2b3298b3542d3fec5f5dd64ab940cdd4e6844b13b99d254cbe38c35cd044f40"
+  },
+  "art-source/expedition-0.9/sprinter-parts-generated.png": {
+    "bytes": 1025458,
+    "sha256": "6ee4159864e7d4f902fcac067a8ba5cbeaeb90135066ffced5039d9c4b1c44b6"
+  },
+  "art-source/expedition-0.9/sprinter-animation.png": {
+    "bytes": 303262,
+    "sha256": "8a7b1c724d59f5e8b659323f4918c9345073df0fa0bbef3808f2c1609fd8cd68"
+  },
+  "public/art/expedition/sprinter-animation.webp": {
+    "bytes": 118434,
+    "sha256": "60bd5a59840c4c4041fc6e19e7f52549ef103265db7263b76fa325a05d63ddb2"
+  },
+  "scripts/build-sprinter-animation.py": {
+    "bytes": 5998,
+    "sha256": "6da12d43b3d1498ac36340c6e4cf68ff3c75966fb5806940ede78e56cfa07f09"
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "mode": "edit",
+    "outputId": "exec-3ea34823-cf20-4cda-9351-51ba8c957bbf",
+    "transparentBackground": true,
+    "reference": "art-source/expedition-0.3/sprinter-original.png"
+  }
+}
