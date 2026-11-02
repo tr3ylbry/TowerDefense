@@ -5,6 +5,8 @@ import type { MissionId } from "../game/missions";
 import { EXPEDITION_ENVIRONMENTS } from "../game/art";
 import { campaignSummary, isUnlocked } from "./progress";
 import type { Progress } from "./progress";
+import { HARD_DESCRIPTION } from "../game/challenges";
+import type { Difficulty } from "../game/challenges";
 
 // Trusted authored content only. Saved values are assigned through textContent below.
 export const campaignMarkup = `
@@ -35,6 +37,7 @@ export const campaignMarkup = `
   <section id="campaign-briefing" class="campaign-briefing" aria-labelledby="briefing-title" hidden>
     <p id="briefing-number" class="eyebrow"></p><h3 id="briefing-title" tabindex="-1"></h3>
     <p id="briefing-copy"></p><p id="briefing-tactics"></p>
+    <div id="difficulty-choice" class="difficulty-choice" hidden><label for="difficulty">Difficulty</label><select id="difficulty" aria-describedby="difficulty-description"><option value="normal">Normal</option><option value="hard">Hard challenge · prototype</option></select><p id="difficulty-description"></p></div>
     <p class="campaign-rule">Four waves · 230 starting credits · 3 shields · all nine defenders. No permanent upgrades.</p>
     <p id="briefing-warning"></p>
     <div class="dialog-actions"><button id="campaign-back" class="secondary-button">Back to missions</button><button id="campaign-launch" class="primary-button">Prepare mission ↗</button></div>
@@ -49,6 +52,9 @@ export class CampaignBoard {
   private get = <T extends HTMLElement = HTMLElement>(id: string) =>
     document.getElementById(id) as T;
   constructor(onReview: (id: MissionId) => void) {
+    this.get("difficulty").addEventListener("change", () =>
+      this.describeDifficulty(),
+    );
     for (const id of CAMPAIGN_ORDER)
       this.get<HTMLButtonElement>(`state-${id}`)
         .closest("article")!
@@ -116,7 +122,22 @@ export class CampaignBoard {
     this.get("briefing-title").textContent = mission.title;
     this.get("briefing-copy").textContent = mission.briefing;
     this.get("briefing-tactics").textContent = mission.tactics;
+    this.get("difficulty-choice").hidden = id !== "first-contact";
+    this.get<HTMLSelectElement>("difficulty").value = "normal";
+    this.describeDifficulty();
     this.get("briefing-title").focus();
+  }
+  get difficulty(): Difficulty {
+    return this.selected === "first-contact" &&
+      this.get<HTMLSelectElement>("difficulty").value === "hard"
+      ? "hard"
+      : "normal";
+  }
+  private describeDifficulty(): void {
+    this.get("difficulty-description").textContent =
+      this.difficulty === "hard"
+        ? HARD_DESCRIPTION
+        : "The established campaign. Shield-based stars and unlocks are saved. The optional Hard prototype changes First Contact only.";
   }
   overview(): void {
     this.get("campaign-sectors").hidden = false;

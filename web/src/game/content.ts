@@ -305,13 +305,17 @@ export function makeSpawns(seed: number, map: MapKind = "canyon"): Spawn[] {
   return makeMissionSpawns(seed, STANDALONE_MISSIONS[map]);
 }
 
-export function makeMissionSpawns(seed: number, mission: MissionId): Spawn[] {
+export function makeMissionSpawns(
+  seed: number,
+  mission: MissionId,
+  waves: readonly Wave[] = MISSIONS[mission].waves,
+): Spawn[] {
   let value = seed >>> 0;
   const random = () => {
     value = (Math.imul(value, 1664525) + 1013904223) >>> 0;
     return value / 4294967296;
   };
-  return MISSIONS[mission].waves.flatMap((wave, index) => {
+  return waves.flatMap((wave, index) => {
     const lanes = Array.from({ length: ROWS }, (_, row) => row);
     for (let i = lanes.length - 1; i > 0; i--) {
       const j = Math.floor(random() * (i + 1));

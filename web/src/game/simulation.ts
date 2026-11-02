@@ -12,6 +12,8 @@ import {
 import type { AmmoKind, EnemyKind, MapKind, Spawn, TowerKind } from "./content";
 import { MISSIONS, STANDALONE_MISSIONS } from "./missions";
 import type { MissionId } from "./missions";
+import { HARD_FIRST_CONTACT } from "./challenges";
+import type { Difficulty } from "./challenges";
 
 import { EARLY_WAVE_LEAD, earlyWaveReward, spawnWarnings } from "./waves";
 import type { SpawnWarning } from "./waves";
@@ -136,6 +138,7 @@ export interface ActionResult {
 /** One fixed-step clock owns all gameplay. Rendering and wall-clock timers never change rules. */
 export class Simulation {
   private mission: MissionId;
+  private selectedDifficulty: Difficulty = "normal";
   private attempt = 0;
   private phase: Phase = "ready";
   private ticks = 0;
@@ -209,6 +212,32 @@ export class Simulation {
   get attemptId(): number {
     return this.attempt;
   }
+  get difficulty(): Difficulty {
+    return this.selectedDifficulty;
+  }
+  get waves() {
+    return this.selectedDifficulty === "hard"
+      ? HARD_FIRST_CONTACT
+      : MISSIONS[this.mission].waves;
+  }
+  chooseDifficulty(difficulty: Difficulty): ActionResult {
+    if (
+      (difficulty !== "normal" && difficulty !== "hard") ||
+      this.phase !== "ready" ||
+      (difficulty === "hard" && this.mission !== "first-contact")
+    )
+      return {
+        ok: false,
+        message:
+          "Choose Normal or the First Contact Hard challenge before beginning.",
+      };
+    this.selectedDifficulty = difficulty;
+    this.restart();
+    return {
+      ok: true,
+      message: `${difficulty === "hard" ? "Hard challenge" : "Normal"} prepared.`,
+    };
+  }
   pause(): void {
     if (this.phase === "playing") this.phase = "paused";
   }
@@ -245,6 +274,7 @@ export class Simulation {
     if (this.phase !== "ready")
       return { ok: false, message: "Restart before changing mission." };
     this.mission = mission;
+    this.selectedDifficulty = "normal";
     this.map = MISSIONS[mission].environment;
     this.restart();
     return { ok: true, message: `${MISSIONS[mission].title} selected.` };
@@ -265,8 +295,9 @@ export class Simulation {
     this.spawns = makeMissionSpawns(
       this.seed ?? MISSIONS[this.mission].seed,
       this.mission,
+      this.waves,
     );
-    this.waveStarts = MISSIONS[this.mission].waves.map((wave) => wave.start);
+    this.waveStarts = this.waves.map((wave) => wave.start);
     this.calledWaves.clear();
     this.spawnIndex = 0;
     this.bankClock = 0;
@@ -303,7 +334,7 @@ export class Simulation {
   }
 
   private nextWave(): NextWave | null {
-    const definition = MISSIONS[this.mission].waves[this.wave];
+    const definition = this.waves[this.wave];
     if (!definition || this.phase === "won" || this.phase === "lost")
       return null;
     const startAt = this.waveStarts[this.wave];

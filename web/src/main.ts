@@ -9,6 +9,7 @@ import type { EnemyKind, MapKind, TowerKind } from "./game/content";
 import { Simulation } from "./game/simulation";
 import type { Snapshot } from "./game/simulation";
 import { MISSIONS, CAMPAIGN_ORDER } from "./game/missions";
+import { HARD_DESCRIPTION } from "./game/challenges";
 import type { MissionId } from "./game/missions";
 import { validateContent } from "./game/validate-content";
 import { CampaignSave } from "./campaign/save";
@@ -93,7 +94,7 @@ const missionReceipt = `
   </details>`;
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon">${helmet}</span><span>ASTRONAUTS<span class="wordmark-sub">vs ALIENS<span class="edition"> EXPEDITION 0.7</span></span></span></a>
+    <a class="wordmark" href="${base}" aria-label="Astronauts vs Aliens home"><span class="brand-icon" aria-hidden="true">${helmet}</span><span class="wordmark-copy" aria-hidden="true"><span class="wordmark-astronauts">ASTRONAUTS</span><span class="wordmark-versus">vs</span><span class="wordmark-aliens">ALIENS</span><span class="edition">EXPEDITION 0.9</span></span></a>
     <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ↗</button><span id="mode-label" class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field guide <span>↗</span></button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The original <span>↗</span></a></nav>
     <span class="lab-mark">TREYDMARK<span>EXPERIMENTS IN PLAY</span></span>
   </header>
@@ -103,7 +104,7 @@ app.innerHTML = `
     <p id="save-warning" class="save-warning" role="status" hidden></p><p id="terrain-note" class="terrain-note">Open terrain. All nine defenders available.</p>
     <div class="play-layout">
       <section class="battle-panel" aria-label="Mission control">
-        <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong id="credit-balance" class="credits" role="group" aria-label="230 credits available"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label">WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
+        <div class="telemetry"><div class="telemetry-item"><span class="micro-label">SPACEBUCKS</span><strong id="credit-balance" class="credits" role="group" aria-label="230 credits available"><span aria-hidden="true">◈</span> <span id="credits">230</span></strong></div><div class="telemetry-item"><span class="micro-label">OUTPOST INTEGRITY</span><strong id="integrity" class="integrity" aria-label="3 shields remaining">◆ ◆ ◆</strong></div><div class="telemetry-item wave-item"><span class="micro-label"><span id="current-difficulty" hidden>HARD</span>WAVE <span id="wave-number">0</span> / ${MAPS.canyon.waves.length}</span><span class="wave-track" aria-hidden="true">${MAPS.canyon.waves.map((_, i) => `<i data-wave="${i + 1}"></i>`).join("")}</span></div><div class="time-controls"><button id="speed" aria-label="Switch to double speed" title="Simulation speed, independent of difficulty">1×</button><button id="pause" disabled aria-label="Pause mission">Ⅱ <span>Pause</span></button></div></div>
         <div class="battle-scroll"><div class="board-stack"><div id="phaser" aria-hidden="true"></div><div id="battle-grid" class="battle-grid" role="grid" aria-label="Battlefield, 6 lanes and 9 columns" aria-describedby="grid-help"></div><div id="overlay" class="mission-overlay"><div class="overlay-card"><span class="overline">A TRANSMISSION FROM THE FRONTIER</span><div class="overlay-orbit">${helmet}</div><h2 id="overlay-title">Home is behind you.<br>Hold the line.</h2><p id="overlay-body">Defend the canyon through four incoming waves.<br>Deploy your crew. Keep the outpost standing.</p><div id="mode-choice" class="mode-choice"><span>Standalone · no saved stars.</span><button id="campaign-entry" class="nav-button" aria-haspopup="dialog" disabled>Explore campaign ↗</button></div>${missionReceipt}<p id="mission-rating" class="mission-rating" hidden></p><button id="start" class="primary-button" disabled><span>Preparing the mission…</span> <span aria-hidden="true">↗</span></button><div id="campaign-result-actions" class="campaign-result-actions" hidden><button id="campaign-next" class="secondary-button">Next mission ↗</button><button id="campaign-return" class="secondary-button">Mission control</button></div><p id="overlay-note" class="overlay-note">Pick a defender, then choose a tile. That's your first move.</p></div></div></div></div>
         <div class="wave-control"><div class="wave-copy"><p id="wave-forecast" class="wave-forecast" aria-label="Wave briefing"><span id="wave-title"></span><span id="wave-composition"></span><span id="wave-tactic"></span></p><p id="wave-timing" class="wave-timing"></p><p id="wave-risk" class="wave-risk"></p></div><button id="call-wave" class="call-wave" disabled aria-describedby="wave-timing wave-risk" aria-keyshortcuts="N">Call next wave <span>+0</span></button></div><div class="threat-strip"><p id="incoming-summary" aria-label="Incoming threats">Watching the approaches · next 5 seconds</p><button id="field-zoom" aria-pressed="false" aria-label="Enlarge battlefield">⊕ Enlarge field</button></div><aside id="passed-threat" hidden aria-label="Passed firing coverage"><p id="passed-summary" role="status"></p><details id="direction-help"><summary>Why can’t they fire?</summary><p>Fresh shots travel right. The marked hostile has passed the guns’ direct firing lines. If an empty forward firing tile remains, place a gun there and check armor. Salvage can open an occupied tile, but cannot restore a firing line after the hostile passes every legal muzzle. Removing its blocker lets it advance and may cost a shield. Splash and shots already in flight may still help. Farther-right placements can defend future arrivals.</p></details></aside><div class="field-status"><span id="status"><span class="signal-dot"></span> Awaiting your command</span><span id="coverage-status" class="coverage-status"></span><span id="defense-alert" class="defense-alert"></span><span id="countdown">4 WAVES · 3 SHIELDS · ONE OUTPOST</span></div>
         <p id="grid-help" class="grid-help"><span><kbd>1</kbd>–<kbd>9</kbd> select crew</span><span><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> move · <kbd>Enter</kbd> deploy</span><span><kbd>P</kbd> pause · <kbd>X</kbd> salvage</span><span class="touch-help">Tap crew, then a tile. Enlarge for bigger targets.</span></p>
@@ -280,8 +281,10 @@ for (let row = 0; row < ROWS; row++) {
 }
 
 function render(state: Snapshot): void {
+  const hard = simulation.difficulty === "hard";
+  const ratedCampaign = campaignMode && !hard;
   if (
-    campaignMode &&
+    ratedCampaign &&
     state.phase === "won" &&
     completedAttempt !== simulation.attemptId
   ) {
@@ -308,6 +311,7 @@ function render(state: Snapshot): void {
     state.mission,
     simulation.attemptId,
     campaignMode,
+    hard,
     state.phase,
     Math.floor(state.elapsed),
     state.credits,
@@ -332,7 +336,12 @@ function render(state: Snapshot): void {
   get<HTMLButtonElement>("art-toggle").disabled = !ready || assetBusy;
   get<HTMLButtonElement>("campaign-nav").disabled = !ready || assetBusy;
   get<HTMLButtonElement>("campaign-entry").disabled = !ready || assetBusy;
-  get("mode-label").textContent = campaignMode ? "Campaign" : "Standalone";
+  get("mode-label").textContent = hard
+    ? "Hard challenge"
+    : campaignMode
+      ? "Campaign"
+      : "Standalone";
+  get("current-difficulty").hidden = !hard;
   get("mode-choice").hidden = campaignMode || state.phase !== "ready";
   renderSelection(state);
   const threatBox = get("passed-threat");
@@ -379,7 +388,7 @@ function render(state: Snapshot): void {
     upcoming?.briefing ??
     (state.pendingSpawns > 0
       ? (
-          mission.waves[state.wave - 1] as
+          simulation.waves[state.wave - 1] as
             import("./game/content").Wave | undefined
         )?.briefing
       : "") ??
@@ -416,7 +425,7 @@ function render(state: Snapshot): void {
         .map((tower) => `L${tower.row + 1} ${TOWERS[tower.kind].name}`)
         .join(", ")}`
     : "";
-  document.title = `Astronauts vs Aliens — ${campaignMode ? mission.title : map.name}`;
+  document.title = `Astronauts vs Aliens — ${campaignMode ? mission.title : map.name}${hard ? " · Hard" : ""}`;
   grid.inert = assetBusy || state.phase !== "playing";
   get("location-name").textContent = campaignMode ? mission.title : map.name;
   get("map-open").textContent = campaignMode
@@ -425,10 +434,14 @@ function render(state: Snapshot): void {
   get("location-number").textContent = campaignMode
     ? String(mission.order).padStart(2, "0")
     : map.number;
-  get("location-tag").textContent = campaignMode
-    ? `CAMPAIGN / ${map.name}`
-    : map.tag;
-  get("terrain-note").textContent = map.description;
+  get("location-tag").textContent = hard
+    ? "HARD PROTOTYPE"
+    : campaignMode
+      ? `CAMPAIGN / ${map.name}`
+      : map.tag;
+  get("terrain-note").textContent = hard
+    ? "First Contact · Hard: compact relays, more Sprinters and Tanks. Results do not save stars."
+    : map.description;
   document.querySelectorAll<HTMLElement>("[data-map]").forEach((card) => {
     card.setAttribute("aria-pressed", String(card.dataset.map === state.map));
   });
@@ -507,16 +520,18 @@ function render(state: Snapshot): void {
       : `${state.kills} HOSTILES CLEARED`;
   if (state.wave !== lastWave) {
     if (state.wave > 0)
-      announce(`Wave ${state.wave}: ${mission.waves[state.wave - 1].title}.`);
+      announce(
+        `Wave ${state.wave}: ${simulation.waves[state.wave - 1].title}.`,
+      );
     lastWave = state.wave;
   }
   if (
     !loadError &&
     (state.phase !== lastPhase ||
-      `${state.mission}/${campaignMode}` !== lastMap)
+      `${state.mission}/${campaignMode}/${hard}` !== lastMap)
   ) {
     lastPhase = state.phase;
-    lastMap = `${state.mission}/${campaignMode}`;
+    lastMap = `${state.mission}/${campaignMode}/${hard}`;
     overlay.hidden = state.phase === "playing";
     overlay.classList.toggle("compact-overlay", state.phase === "paused");
     const title = get("overlay-title");
@@ -526,22 +541,25 @@ function render(state: Snapshot): void {
     receipt.hidden = state.phase !== "won" && state.phase !== "lost";
     receipt.open = false;
     get("mission-rating").hidden =
-      !campaignMode || (state.phase !== "won" && state.phase !== "lost");
+      !ratedCampaign || (state.phase !== "won" && state.phase !== "lost");
     get("campaign-result-actions").hidden =
       !campaignMode || (state.phase !== "won" && state.phase !== "lost");
     if (state.phase === "won" || state.phase === "lost")
       start.setAttribute(
         "aria-describedby",
-        `overlay-title overlay-body${campaignMode ? " mission-rating" : ""}`,
+        `overlay-title overlay-body${ratedCampaign ? " mission-rating" : ""}`,
       );
     else start.removeAttribute("aria-describedby");
     if (state.phase === "ready") {
       title.innerHTML = "Home is behind you.<br>Hold the line.";
-      if (campaignMode) title.textContent = mission.title;
+      if (campaignMode)
+        title.textContent = hard ? `${mission.title} · Hard` : mission.title;
       body.textContent =
         "Choose a crew card, then an empty tile. Guns fire right: place them to the left of approaching aliens. Cover all six lanes and protect three shields.";
       if (campaignMode)
-        body.textContent = `${mission.briefing} ${mission.tactics}`;
+        body.textContent = hard
+          ? HARD_DESCRIPTION
+          : `${mission.briefing} ${mission.tactics}`;
       start.innerHTML =
         '<span>Begin mission</span><span aria-hidden="true">↗</span>';
       note.textContent =
@@ -560,7 +578,8 @@ function render(state: Snapshot): void {
           ? `${map.name} secured.<br>Nice work, commander.`
           : "The signal went quiet.<br>Try a new formation.";
       body.textContent = `${state.kills} hostiles cleared · ${Math.floor(state.elapsed / 60)}m ${Math.floor(state.elapsed % 60)}s elapsed · ${state.integrity} shields remaining`;
-      if (campaignMode) {
+      get("campaign-next").hidden = hard;
+      if (ratedCampaign) {
         if (state.phase === "won")
           title.textContent = `${mission.title} complete.`;
         const earned = rating(state);
@@ -576,6 +595,11 @@ function render(state: Snapshot): void {
           !next ||
           !isUnlocked(campaignSave.progress, next);
       }
+      if (hard)
+        title.textContent =
+          state.phase === "won"
+            ? "First Contact · Hard secured."
+            : "Hard challenge lost. Try a new formation.";
       const economy = state.economy;
       get("receipt-deployed").textContent = String(economy.purchases);
       get("receipt-lost").textContent = String(economy.losses);
@@ -602,6 +626,9 @@ function render(state: Snapshot): void {
         state.phase === "won"
       )
         note.textContent = "Chapter one complete. All six frontiers secured.";
+      if (hard)
+        note.textContent =
+          "Hard prototype · Results are not saved. Play again, or choose Normal in Mission control.";
       announce(
         state.phase === "won"
           ? "Mission complete. The outpost is safe."
@@ -891,6 +918,7 @@ function swapDialog(from: string, to: string): void {
 }
 function prepareCampaign(id: MissionId): void {
   if (!isUnlocked(campaignSave.progress, id) || !ready || assetBusy) return;
+  const difficulty = campaignBoard.difficulty;
   const resume = resumeAfterDialog;
   resumeAfterDialog = false;
   get<HTMLDialogElement>("campaign-dialog").close();
@@ -900,6 +928,7 @@ function prepareCampaign(id: MissionId): void {
     () => {
       simulation.restart();
       simulation.chooseMission(id);
+      if (difficulty === "hard") simulation.chooseDifficulty("hard");
       campaignMode = true;
       completion = null;
       lastWave = 0;

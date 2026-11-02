@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Sprinter rendering cost fixture</title>
+  <body style="margin: 0; background: #10212c">
+    <div id="field"></div>
+    <script type="module">
+      import Phaser from "phaser";
+      import {
+        SPRINTER_ANIMATION as sheet,
+        sprinterPose,
+      } from "/src/game/alien-animation.ts";
+      const mode =
+        new URLSearchParams(location.search).get("mode") === "before"
+          ? "before"
+          : "after";
+      let lastFrame = 0;
+      const count = 50,
+        sprites = [];
+      const metrics = {
+        mode,
+        count,
+        frames: [],
+        cpu: [],
+        ready: false,
+        displayObjects: 0,
+        atlasInitMs: null,
+        spriteInitMs: null,
+        textureCount: 0,
+      };
+      window.densityMetrics = metrics;
+      const addSheet = Phaser.Textures.TextureManager.prototype.addSpriteSheet;
+      Phaser.Textures.TextureManager.prototype.addSpriteSheet = function (
+        ...args
+      ) {
+        const start = performance.now();
+        const result = addSheet.apply(this, args);
+        if (args[0] === sheet.key)
+          metrics.atlasInitMs = performance.now() - start;
+        return result;
+      };
+      class Density extends Phaser.Scene {
+        preload() {
+          if (mode === "before")
+            this.load.image("static", "/art/expedition/sprinter.webp");
+          else
+            this.load.spritesheet(sheet.key, "/art/" + sheet.file, {
+              frameWidth: sheet.frameWidth,
+              frameHeight: sheet.frameHeight,
+            });
+        }
+        create() {
+          const start = performance.now();
+          this.add.rectangle(540, 330, 1080, 660, 0x142b36);
+          for (let i = 0; i < count; i++)
+            sprites.push(
+              this.add
+                .sprite(0, 0, mode === "before" ? "static" : sheet.key)
+                .setOrigin(0.5, mode === "before" ? 233 / 256 : sheet.foot),
+            );
+          metrics.displayObjects = this.children.length;
+          metrics.spriteInitMs = performance.now() - start;
+          metrics.textureCount = Object.keys(this.textures.list).length;
+          metrics.ready = true;
+        }
+        update(time) {
+          const start = performance.now(),
+            frameDelta = lastFrame ? start - lastFrame : 0,
+            elapsed = time / 1000;
+          for (let i = 0; i < count; i++) {
+            const x = 10 - ((elapsed * 0.43 + i * 0.197) % 10);
+            const sprite = sprites[i];
+            sprite.setPosition(40 + x * 100, 95 + (i % 6) * 95);
+            if (mode === "before")
+              sprite
+                .setDisplaySize(102, 68)
+                .setY(sprite.y + Math.sin(elapsed * 18 + i) * 1.8)
+                .setAngle(Math.cos(elapsed * 18 + i) * 1.2);
+            else {
+              const pose = sprinterPose(
+                {
+                  id: i,
+                  x,
+                  previousX: x + 0.0215,
+                  attacking: i % 5 === 0,
+                  cooldown: 0.75 - (elapsed % 0.75),
+                },
+                elapsed,
+                1,
+                false,
+              );
+              sprite
+                .setFrame(pose.frame)
+                .setDisplaySize(sheet.width, sheet.height);
+            }
+          }
+          lastFrame = start;
+          if (time > 2000 && metrics.frames.length < 1200) {
+            metrics.frames.push(frameDelta);
+            metrics.cpu.push(performance.now() - start);
+          }
+        }
+      }
+      new Phaser.Game({
+        type: Phaser.WEBGL,
+        width: 1080,
+        height: 660,
+        parent: "field",
+        banner: false,
+        audio: { noAudio: true },
+        scene: Density,
+      });
+    </script>
+  </body>
+</html>

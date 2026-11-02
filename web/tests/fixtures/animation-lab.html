@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Sprinter animation review fixture</title>
+  <style>
+    body {
+      background: #10212c;
+      color: #e5ede4;
+      font: 14px system-ui;
+      margin: 24px;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    button,
+    label {
+      display: inline-block;
+      margin: 0 12px 12px 0;
+    }
+    button {
+      padding: 10px 16px;
+    }
+    canvas {
+      display: block;
+      width: 1080px;
+      height: 220px;
+      max-width: 100%;
+      margin-bottom: 12px;
+    }
+    p {
+      max-width: 1080px;
+    }
+    #detail {
+      width: 512px;
+      height: 384px;
+      image-rendering: auto;
+    }
+  </style>
+  <h1>Sprinter joint-animation review · fixture, not a recorded mission</h1>
+  <p>
+    Actual world size across Canyon, Bridge and Nest. Left: previous static
+    image. Middle: walk. Right: idle and contact attack. Detail below is 4×.
+    Same torso pixels in every pose. This page is a development fixture excluded
+    from the production entry.
+  </p>
+  <button id="pause">Pause preview</button
+  ><button id="speed">1×</button
+  ><label><input id="reduce" type="checkbox" /> Reduced motion</label
+  ><output id="status"></output>
+  <canvas id="canyon" width="1080" height="220"></canvas
+  ><canvas id="bridge" width="1080" height="220"></canvas
+  ><canvas id="nest" width="1080" height="220"></canvas
+  ><canvas id="detail" width="512" height="384"></canvas>
+  <script type="module">
+    import {
+      sprinterPose,
+      SPRINTER_ANIMATION as sheet,
+    } from "/src/game/alien-animation.ts";
+    const image = async (file) => {
+      const i = new Image();
+      i.src = "/art/" + file;
+      await i.decode();
+      return i;
+    };
+    const [atlas, original, ...environments] = await Promise.all([
+      image(sheet.file),
+      image("expedition/sprinter.webp"),
+      ...["canyon-0.5", "sky-bridge", "nest"].map((n) =>
+        image("expedition/" + n + ".webp"),
+      ),
+    ]);
+    let elapsed = 0,
+      last = performance.now(),
+      paused = false,
+      speed = 1;
+    const reduced = document.querySelector("#reduce");
+    document.querySelector("#pause").onclick = () => {
+      paused = !paused;
+      document.querySelector("#pause").textContent = paused
+        ? "Resume preview"
+        : "Pause preview";
+    };
+    document.querySelector("#speed").onclick = () => {
+      speed = speed === 1 ? 2 : 1;
+      document.querySelector("#speed").textContent = speed + "×";
+    };
+    const draw = (ctx, pose, x, y, scale = 1) =>
+      ctx.drawImage(
+        atlas,
+        (pose.frame % 8) * 160,
+        Math.floor(pose.frame / 8) * 120,
+        160,
+        120,
+        x - 64 * scale,
+        y - 84 * scale,
+        128 * scale,
+        96 * scale,
+      );
+    function frame(now) {
+      if (!paused) elapsed += Math.min(0.1, (now - last) / 1000) * speed;
+      last = now;
+      const walkX = 7 - elapsed * 0.43;
+      const walk = sprinterPose(
+        {
+          id: 1,
+          x: walkX,
+          previousX: walkX + 0.0215,
+          attacking: false,
+          cooldown: 0,
+        },
+        elapsed,
+        1,
+        reduced.checked,
+      );
+      const idle = sprinterPose(
+        { id: 2, x: 5, previousX: 5, attacking: false, cooldown: 0 },
+        elapsed,
+        0,
+        reduced.checked,
+      );
+      const attack = sprinterPose(
+        {
+          id: 3,
+          x: 5,
+          previousX: 5,
+          attacking: true,
+          cooldown: 0.75 - (elapsed % 0.75),
+        },
+        elapsed,
+        0,
+        reduced.checked,
+      );
+      ["canyon", "bridge", "nest"].forEach((map, i) => {
+        const canvas = document.querySelector("#" + map),
+          ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, 1080, 220);
+        ctx.drawImage(environments[i], 0, 0, 1080, 220);
+        ctx.fillStyle = "#10212c88";
+        ctx.fillRect(0, 0, 1080, 220);
+        ctx.fillStyle = "#eef4ea";
+        ctx.font = "14px monospace";
+        ctx.fillText(map.toUpperCase() + " · actual battlefield scale", 20, 25);
+        ctx.fillText("0.8 static", 55, 55);
+        ctx.fillText("Walk", 430, 55);
+        ctx.fillText("Idle", 735, 55);
+        ctx.fillText("Attack", 925, 55);
+        ctx.drawImage(original, 40, 160 - (233 / 256) * 68, 102, 68);
+        draw(ctx, walk, 540 - ((elapsed * 43) % 220), 160);
+        draw(ctx, idle, 770, 160);
+        draw(ctx, attack, 960, 160);
+        ctx.strokeStyle = "#9ed4c3";
+        ctx.beginPath();
+        ctx.moveTo(20, 160);
+        ctx.lineTo(1060, 160);
+        ctx.stroke();
+      });
+      const detail = document.querySelector("#detail").getContext("2d");
+      detail.fillStyle = "#18313c";
+      detail.fillRect(0, 0, 512, 384);
+      draw(detail, walk, 256, 336, 4);
+      document.querySelector("#status").textContent =
+        `${paused ? "Paused" : "Playing"} · walk ${walk.frame} · idle ${idle.frame} · attack ${attack.frame}`;
+      document.body.dataset.ready = "true";
+      document.body.dataset.frames = [
+        walk.frame,
+        idle.frame,
+        attack.frame,
+      ].join(",");
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  </script>
+</html>

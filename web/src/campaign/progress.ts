@@ -55,6 +55,7 @@ export class CompletionRecorder {
   private game: Simulation | null = null;
   private result: Completion | null = null;
   observe(game: Simulation, progress: Progress): Completion | null {
+    if (game.difficulty !== "normal") return null;
     const state = game.snapshot();
     if (game === this.game && game.attemptId === this.attempt)
       return this.result;

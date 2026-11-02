@@ -10,6 +10,7 @@ import { MISSIONS } from "../../src/game/missions";
 import type { MissionId } from "../../src/game/missions";
 import { Simulation } from "../../src/game/simulation";
 import { laneThreats } from "../../src/game/threats";
+import type { Difficulty } from "../../src/game/challenges";
 
 export const POLICIES = [
   "cheap",
@@ -27,9 +28,11 @@ export function playCampaign(
   seed: number,
   policy: Policy,
   mode: CallMode = "automatic",
+  difficulty: Difficulty = "normal",
 ) {
   const game = new Simulation(seed, MISSIONS[id].environment);
   game.chooseMission(id);
+  if (difficulty === "hard") game.chooseDifficulty("hard");
   game.start();
   let idle = 0,
     allCoveredAt: number | null = null;
@@ -39,6 +42,9 @@ export function playCampaign(
     replacements = 0;
   let lastPurchaseAt: number | null = null,
     lastDamageAt: number | null = null;
+  let maxEnemies = 0,
+    overlapSeconds = 0;
+  const observedEnemyWaves = new Map<number, number>();
   const visited = new Set<string>();
   const threatSeconds = {
     armored: 0,
@@ -47,7 +53,7 @@ export function playCampaign(
     passedLane: 0,
   };
   const purchasedByKind: Partial<Record<TowerKind, number>> = {};
-  const schedule = makeMissionSpawns(seed, id);
+  const schedule = makeMissionSpawns(seed, id, game.waves);
   const pacing = {
     opening: 0,
     withinWave: 0,
@@ -104,6 +110,14 @@ export function playCampaign(
   for (let tick = 0; tick < 12000; tick++) {
     const state = game.snapshot();
     if (state.phase !== "playing") break;
+    maxEnemies = Math.max(maxEnemies, state.enemies.length);
+    for (const enemy of state.enemies)
+      if (!observedEnemyWaves.has(enemy.id))
+        observedEnemyWaves.set(enemy.id, state.wave);
+    if (
+      new Set(state.enemies.map((e) => observedEnemyWaves.get(e.id))).size > 1
+    )
+      overlapSeconds += STEP;
     if (!state.enemies.length && state.pendingSpawns) {
       idle += STEP;
       idleStreak += STEP;
@@ -232,6 +246,8 @@ export function playCampaign(
     idle: Math.round(idle * 100) / 100,
     allCoveredAt,
     research: {
+      maxEnemies,
+      overlapSeconds,
       longestIdle,
       replacements,
       lastPurchaseAt,
