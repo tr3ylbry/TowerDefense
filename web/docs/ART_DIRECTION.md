@@ -1,8 +1,8 @@
 # Expedition art direction
 
-## Expedition 0.9 Sprinter pilot
+## Expedition 1.0 articulated pilots
 
-Sprinter alone now uses a jointed derivative baked into 48 poses: walk, restrained idle and cooldown-synchronized contact attack. Preserve the coral/teal palette, swept crest, amber eye and left-facing biped identity. Stable source torso/face pixels prevent frame-to-frame repainting. The original static illustration remains intact and supplies its guide portrait/fallback; Original comparison retains school animations. The new rig does not imply that every body shape should share these pivots. See [animation architecture](ANIMATION_ARCHITECTURE.md), [exact built-in generation prompt and conversion](../art-source/expedition-0.9/prompts.md) and [visual evidence](../reports/expedition-0.9/visual/README.md). Human preference/readability validation remains pending.
+Sprinter retains 48 poses with smoother swing contact, restrained weight transfer and eased attack recovery. Gargantua adds 40 poses using a broad quadrupedal four-beat gait and a body-driven strike. Preserve each character's painted face, palette, silhouette, lighting and foot grounding. They share offline production utilities and runtime state selection, but use different anatomical rigs. Static portraits/fallbacks and Original comparison remain. [Architecture](ANIMATION_ARCHITECTURE.md), [source/provenance](../art-source/expedition-1.0/prompts.md), [animated evidence](../reports/expedition-1.0/visual/README.md) and [budget](../reports/expedition-1.0/performance/README.md) record the acceptance and limitations. Human movement preference remains pending.
 
 ## Visual identity
 
@@ -42,7 +42,7 @@ Use a side-on or very slightly elevated lane camera. Defenders face right; alien
 
 The grid is 100×74 world units per cell. Place visible feet on a shared ground line 29 units below the lane center. Static cutouts retain their transparent padding; `src/game/art.ts` records proportional display dimensions and a per-image foot origin. This fixes grounding without destructive cropping or stretching.
 
-Approximate displayed bounds: ranger 80×74, TARS 67×76, Scout 66×55, Grunt 86×71, Tank 108×72, Sprinter 102×68, ManHunter 96×88, Gargantua 122×89. The Scout should look lighter than the Grunt; the Tank is wider and lower rather than simply taller. Legacy sprites retain their own animation sheets, using the same ground line. Giant enemies can extend above their lane, but health bars and ground cues must remain attributable to the correct row.
+Approximate static cutout bounds: ranger 80×74, TARS 67×76, Scout 66×55, Grunt 86×71, Tank 108×72, Sprinter 102×68, ManHunter 96×88, Gargantua 122×89. Animated padded display cells are Sprinter128×96 and Gargantua144×108; alpha/ground anchors keep their visible masses registered. The Scout should look lighter than the Grunt; the Tank is wider and lower rather than simply taller. Legacy sprites retain their own animation sheets, using the same ground line. Giant enemies can extend above their lane, but health bars and ground cues must remain attributable to the correct row.
 
 ## Existing prototype evaluation
 
@@ -56,11 +56,11 @@ Approximate displayed bounds: ranger 80×74, TARS 67×76, Scout 66×55, Grunt 86
 Simulation owns wind-ups, projectile releases, impacts, damage, income, and destruction. Animation reads those events; decorative keyframes never determine damage.
 
 - Interpolate travel between fixed rule updates.
-- Use restrained breathing/stride and a short, small recoil rather than large elastic bouncing. Sprinter has a quicker, slightly higher gait; ManHunter leans into a slower stride; Gargantua has a low-frequency heavy sway. These move only the rendered cutout, never its simulated position.
+- Use restrained breathing/stride and a short, small recoil rather than large elastic bouncing. Sprinter/Gargantua now articulate limbs through baked poses; their actual positions remain simulation-owned. ManHunter and other unanimated illustrations retain restrained cutout motion.
 - A normal hit gives a brief warm silhouette flash and restrained reaction. Plate-resistant hits use a smaller reaction, blue ring/ricochet, and PLATED cue; piercing impacts use mint/cool accents.
 - Splash rings show the actual horizontal radius and stay within the affected lane.
 - A defender taking damage gets a brief flash plus a longer outline. Below 30% health, keep a static triangle/outline and HTML critical label.
-- Gargantua’s close-contact ring anticipates its next recurring strike over the last 0.3 game seconds of its existing cooldown. It adds no attack delay or grace period. Reduced motion shows a static contact cue instead.
+- Gargantua’s close-contact ring appears on the real damage reset and fades over .18 game seconds. It adds no attack delay or grace period. Reduced motion shows a static attack-state cue instead.
 - Corpse animation/fade preserves the foot anchor; remove transient effects after completion.
 - Cap transient effects and avoid camera shake or continuous particle storms.
 - Pause freezes game-time motion and effects. Reduced motion removes flashes, recoil/stride, expanding effects, and decorative twinkles while retaining health, critical, plating, and incoming-threat information.

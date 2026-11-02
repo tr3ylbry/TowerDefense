@@ -1,0 +1,17 @@
+{
+  "sameToolchainRepeatBuildExact": true,
+  "outputsSha256": {
+    "public/art/expedition/sprinter-animation.webp": "fe5f8c066f78e5f8b01a5995279ec7bc22c5427929fd81271cf348241545269a",
+    "public/art/expedition/gargantua-animation.webp": "2d9d035bbbb8c99518c67d385a98921d4df5c04ab2f6191eb6b772c5fb3ea5e9",
+    "art-source/expedition-1.0/sprinter-animation.png": "0aeff0dff9ac8cc241443c6719309a2b1555aded1d6f47d8058b626a69cec1c2",
+    "art-source/expedition-1.0/sprinter-conversion.json": "163b28306c880c82e1dab1bae7512b1a094a8afec3ee144821b1a43ccb30395a",
+    "art-source/expedition-1.0/gargantua-animation.png": "cac8914b43d637146f6669dff03749464eb94e331d0db775c8a6a1f222efa7ad",
+    "art-source/expedition-1.0/gargantua-conversion.json": "b267673074ca97f4a0eab2d11f9951483a92d86988a4267affef1487bcf6a405"
+  },
+  "toolchain": {
+    "python": "3.14.5",
+    "pillow": "12.2.0",
+    "webp": "1.6.0"
+  },
+  "scope": "Second identical-source build, same recorded Python/Pillow/WebP toolchain. Not a claim of bit identity across different codec versions."
+}

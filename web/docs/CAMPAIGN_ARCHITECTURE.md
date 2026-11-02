@@ -83,3 +83,7 @@ Standalone Canyon remains the default, and all original destinations remain free
 Only successful `battlefield.prepare(environment, style)` commits mode/mission changes. Failure offers retry or cancellation with the old mission intact. Visibility changes invalidate automatic resume intent. Ordinary modal swaps keep the original resume intent only while visible. Chapter completion is six wins; total best stars is displayed out of eighteen.
 
 Campaign metadata is static text; opening the board requests three existing scenery thumbnails, rather than mounting six Phaser scenes. Initial assets still include only the selected Canyon environment and current roster; Original art remains deferred. Same-environment missions reuse the texture set. The finite three-environment/two-style cache remains shared and bounded. No new generated imagery, framework, runtime dependency or backend was introduced.
+
+## Expedition 1.0 preservation
+
+Normal authored schedules, simulation rules, shield ratings, save schema and completion recording remain unchanged. The Hard relay briefing now names existing plating counters; no encounter/stat change is introduced. Reassessment exactly retains 1,296 Normal campaign results, 432 Normal/Hard comparison runs and 36 frozen-engine standalone runs. Both articulated aliens read snapshots and cannot change outcomes. See [1.0 evidence](EXPEDITION_1_0.md).

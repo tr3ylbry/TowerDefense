@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-02",
+  "source": "npm audit --json (registry advisory service)",
+  "packageLock": "package-lock.json",
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "dependencyCounts": {
+    "prod": 3,
+    "dev": 86,
+    "optional": 47,
+    "total": 88
+  },
+  "limitations": "No known registry advisory at this check; not a proof of security. No dependency updates introduced."
+}

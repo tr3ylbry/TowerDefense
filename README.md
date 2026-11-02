@@ -2,7 +2,7 @@
 
 ## Browser modernization
 
-The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 0.9** adds a simulation-driven articulated Sprinter pilot and an optional First Contact Hard challenge using denser formations of existing aliens. Normal campaign rules, shield-based stars, saves and the original standalone missions remain intact. A 1,080-run candidate study and 216 exact production-Hard comparisons accompany 1,296 unchanged Normal results and 36 frozen-engine parity runs. See the [0.9 report](web/docs/EXPEDITION_0_9.md), [animation architecture](web/docs/ANIMATION_ARCHITECTURE.md) and [campaign architecture](web/docs/CAMPAIGN_ARCHITECTURE.md). Five independent sessions, physical-phone checks and live screen-reader validation remain pending. Original school source/assets, credits and history remain preserved. Hosting is separate.
+The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 1.0** refines Sprinter and adds an articulated quadrupedal Gargantua pilot, a reproducible animation pipeline and measured asset/performance budget. The six-mission campaign, optional First Contact Hard challenge, Normal rules/stars/saves and original standalone missions remain intact: 1,296 unchanged Normal results, 432 exact Normal/Hard comparisons and 36 frozen-engine parity runs. See the [1.0 report/readiness decisions](web/docs/EXPEDITION_1_0.md), [animation architecture](web/docs/ANIMATION_ARCHITECTURE.md) and [release inventory](web/reports/expedition-1.0/assessment/RIGHTS.md). Independent players, physical phones, live assistive technology and retained-art permissions remain unresolved. Original school source/assets, credits and history remain preserved. Hosting is separate.
 
 ```sh
 cd web

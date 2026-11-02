@@ -1,0 +1,37 @@
+# Expedition 1.0 measured delivery and animation budget
+
+Frozen 0.9 production reference: `feae81d`; candidate built from the 1.0 source hashes in [source-sha256.json](source-sha256.json). Both use the same pinned dependency versions. Tests/builds were stopped for final timing. Local Apple M5/macOS, installed **Chrome156.0.8078.74**, headless, default working WebGL, serial alternating builds and fresh contexts. Three startup samples per version/condition, 150ms latency/200000Bps down/75000Bps up/4× CPU for the constrained profile. [Raw startup](startup.json), [warm retention](cache.json), [render/decode observations including raw intervals](animation.json), and reproducible [startup](../../../scripts/research/profile-1.0.mjs)/[render](../../../scripts/research/animation-cost-1.0.mjs) scripts are committed.
+
+| Measure                                     | 0.9 reference | 1.0 candidate | Interpretation                                                  |
+| ------------------------------------------- | ------------: | ------------: | --------------------------------------------------------------- |
+| Initial imagery                             |      719,131B |      888,925B | +169,794B, +23.6%; Sprinter+750B and Gargantua+169,044B         |
+| Initial transfer including navigation       |    1,131,457B |    1,301,734B | +170,277B, +15.0%; measured transfer includes response overhead |
+| Normal desktop median enabled Begin mission |       143.1ms |       153.1ms | Small noisy difference; no speed-improvement claim              |
+| Constrained median readiness                |     6,691.6ms |     7,544.5ms | +852.9ms, +12.7%; explicit startup cost                         |
+| 50-Sprinter median sampled interval         |        16.7ms |        16.7ms | Same sampled cadence                                            |
+| 50-Gargantua median interval                |        16.7ms |        16.7ms | Static/procedural versus baked poses                            |
+| 25+25 mixed median interval                 |        16.7ms |        16.7ms | Same sampled cadence                                            |
+| Mixed p95 ranges, three runs                |   16.8–16.9ms |   18.2–18.4ms | Small tail increase; no faster-rendering claim                  |
+| Any sampled interval>33.3ms                 |             0 |             0 | Observed on this desktop fixture only                           |
+| Display objects for each 50-unit fixture    |            51 |            51 | 50 Sprites plus one background rectangle                        |
+
+Render measurements use a separately production-bundled **synthetic fixture**, not a mission with 50 real enemies. There is no collision, projectile or health-bar work in it. Groups:50 Sprinters,50 Gargantuas,25+25 mixed; three serial alternating runs each,2s warm-up+10s sample. Before uses the retained 0.9 Sprinter atlas and the former Gargantua procedural transform; after uses both 1.0 atlases. The shared pose selector is identical for Sprinter's frame timing, so the before/after texture comparison remains matched. The separate fixture is excluded from the game entry. [Dense screenshot](../visual/dense-50-mixed.png) shows actual fixture scale/overlap.
+
+All-group p95 ranges were16.8–18.5ms before,16.8–18.4ms after. Pose-loop p95 CPU≈.1ms in every run, near timer resolution. Fifty-Sprite creation .4–.7ms; textures5 for a single type and6 mixed, including Phaser defaults. Median synchronous sheet parsing across the current groups≈8.1ms Sprinter and8.4ms Gargantua; this hook excludes deferred GPU upload/draw work. Six blob decode samples give Sprinter atlas median6.30ms and Gargantua7.55ms; static portraits medians≈1.15ms and1.75ms. Raw cold outliers remain in the report. Decode excludes fetch and includes blob/image initialization; it is not a total startup number.
+
+The current real application warms to47 active WebGL handles initially,66 after all Expedition environments,102 after Original comparison. Three complete six-mission navigation cycles per style retain those plateaus; one canvas, no page errors, no repeated per-cycle image growth. This uses a clearly labeled all-unlocked storage fixture for navigation, not campaign-win evidence. It indicates bounded retention, not zero leaks or measured VRAM. Three actual-combat restarts and paused style comparisons are separately browser-tested.
+
+A first headless-shell probe could not create WebGL; the game used Canvas fallback, and the WebGL-only fixture correctly failed readiness. Its startup/cache files remain under [probes](probes/headless-shell-startup.json), excluded from final comparisons and texture conclusions. Installed Chrome worked with default settings; no security flag was added. One background animation-review tab was closed during that first probe, another reason not to treat its normal-desktop startup as final. The final measurements ran after its closure.
+
+## Provisional budget and acceptance decision
+
+This is an engineering guardrail inferred from **two measured characters**, not a universal device limit.
+
+- Aim for roughly **100–175KB compressed per accepted character**, with explicit review above180KB. Current Sprinter119.2KB and Gargantua169.0KB establish the observed range. Avoid simply increasing resolution/frame count; keep authored information useful at battlefield scale.
+- Prefer160×120 registered cells and atlases in the measured1280×600–720 range, with edges≤2048 as a conservative packing target. Choose display bounds/alpha anchors per anatomy. Larger textures require a new measured review, not automatic acceptance.
+- Keep current initial imagery **under≈900KB** and constrained readiness **under≈8s** on this exact profile. The candidate is near that imagery ceiling. Future characters should not all be added to initial loading. An additional always-required atlas should justify approximately≤1s added readiness here; this one costs≈.85s. These thresholds are provisional tradeoffs, not user-experience promises.
+- One runtime Sprite per alien. No per-limb display objects, independent clock, per-enemy animation listeners or timers. Maintain sampled desktop p95≤20ms and<1% intervals over33.3ms in the same50-unit fixture; investigate material changes against matched baseline even if under a threshold.
+- Approximate decoded RGBA backing: Sprinter1280×720×4=3.52MiB; Gargantua1280×600×4=2.93MiB; total≈6.45MiB for these two raw pixel surfaces. These are arithmetic estimates, **not actual GPU/process-memory measurements**.
+- Defer future artwork when a mission/style does not need it, using required asset transactions and reliable readiness. Current missions all contain both pilots, so both are required before Begin. No risky late-wave loading is introduced. Static/procedural presentation is preferable if identity, contact readability, decode cost, texture stability or target-device behavior fails its gate. Failed required downloads remain visible/retryable rather than silently changing mission reliability.
+
+Accept the scoped two-pilot candidate with this documented startup cost. Do not authorize a full-roster rollout from a60Hz desktop fixture. Physical-phone frame time, memory pressure, thermals and long-session behavior remain unmeasured.
