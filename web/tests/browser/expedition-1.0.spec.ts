@@ -61,14 +61,30 @@ test("illustrated roster survives actual spawned combat, pause, art comparison, 
       atlases.push(r.url());
   });
   await page.goto("/");
+  let observedHeavyWarning = false;
+  const heavyWarnings: string[] = [];
+  await page.exposeFunction("recordHeavyWarning", (label: string) => {
+    if (label.includes("Gargantua")) {
+      observedHeavyWarning = true;
+      if (heavyWarnings.at(-1) !== label) heavyWarnings.push(label);
+    }
+  });
+  // Capture the transient public warning even while a slow control action runs.
+  await page.locator("#incoming-summary").evaluate((element) => {
+    const record = (window as Window & {recordHeavyWarning?: (label: string) => Promise<void>}).recordHeavyWarning!;
+    const read = () => { void record(element.textContent ?? ""); };
+    new MutationObserver(read).observe(element, {childList:true,characterData:true,subtree:true});
+    read();
+  });
   await page.locator("#start").click();
   await page.locator('[data-tower="astro"]').click();
   for (let lane = 1; lane <= 4; lane++)
     await page.getByRole("gridcell", { name: `Lane ${lane}, tile 1, empty`, exact: true }).click();
   await page.locator("#speed").click();
   const deadline = Date.now() + 90000;
-  while (Date.now() < deadline && (await page.locator("#wave-number").innerText()) !== "4") {
+  preparation: while (Date.now() < deadline && (await page.locator("#wave-number").innerText()) !== "4") {
     for (let lane = 1; lane <= 6; lane++) {
+      if (observedHeavyWarning) break preparation;
       const empty = page.getByRole("gridcell", { name: `Lane ${lane}, tile 1, empty`, exact: true });
       if ((await empty.count()) && Number(await page.locator("#credits").innerText()) >= 50) {
         await page.locator('[data-tower="astro"]').click();
@@ -78,6 +94,7 @@ test("illustrated roster survives actual spawned combat, pause, art comparison, 
     const covered = await page.getByRole("gridcell", { name: /tile 1, Astro Joe/ }).count();
     if (covered === 6) {
       for (const lane of [4, 1, 2, 3, 5, 6]) {
+        if (observedHeavyWarning) break preparation;
         const empty = page.getByRole("gridcell", { name: `Lane ${lane}, tile 2, empty`, exact: true });
         // Keep the price of a frontline barrier in reserve.
         if ((await empty.count()) && Number(await page.locator("#credits").innerText()) >= 135) {
@@ -91,8 +108,10 @@ test("illustrated roster survives actual spawned combat, pause, art comparison, 
   }
   await expect(page.locator("#wave-number")).toHaveText("4");
   await page.locator("#speed").click();
-  await expect(page.locator("#incoming-summary")).toContainText("Gargantua", { timeout: 45000 });
-  const heavyCell = page.getByRole("gridcell", { name: /^Lane 4, tile 9,/ });
+  await expect.poll(() => observedHeavyWarning, {timeout:45000}).toBe(true);
+  await info.attach("heavy-arrival-warning.json", {body:JSON.stringify(heavyWarnings),contentType:"application/json"});
+  // One tile behind the entry gives slow drivers time to prepare real contact.
+  const heavyCell = page.getByRole("gridcell", { name: /^Lane 4, tile 8,/ });
   const healthHistory: (number | null)[] = [];
   let previousHealth: number | null = null;
   let observedHeavyStrike = false;

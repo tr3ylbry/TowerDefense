@@ -12,8 +12,8 @@
 
  Test Files  13 passed (13)
       Tests  223 passed (223)
-   Start at  19:16:25
-   Duration  1.43s (tests 92%, transform 4%, import 3%, worker 1%)
+   Start at  19:40:11
+   Duration  1.35s (tests 90%, transform 5%, import 4%, worker 1%)
 
 
 > astronauts-vs-aliens-web@1.1.0 build
@@ -30,4 +30,4 @@ dist/assets/battlefield-C2iATBS7.js     20.04 kB │ gzip:   7.36 kB
 dist/assets/index-YngqPy86.js           93.60 kB │ gzip:  30.57 kB
 dist/assets/phaser-B_vcVLyb.js       1,367.08 kB │ gzip: 357.00 kB
 
-✓ built in 339ms
+✓ built in 320ms

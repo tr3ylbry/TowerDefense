@@ -19,5 +19,20 @@
     "unexpected": 0,
     "flaky": 0
   },
-  "replacementGate": "Full225 browser checks on the final pushed head, all engines/shards retained."
+  "replacementGate": "Full225 browser checks on the final pushed head, all engines/shards retained.",
+  "combatSynchronization": {
+    "failedRun": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41565460837",
+    "cause": "Robot purchase batch could miss the transient public Gargantua warning.",
+    "correction": "Observe public warning from mission start; retain warning and actual100-point strike assertions; barrier one tile behind entry, all controls/credits/spawns remain real.",
+    "localRevalidation": {
+      "startTime": "2026-11-03T02:40:13.677Z",
+      "duration": 102351.448,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "chromiumCpuRate": 4,
+    "webkitCpuRate": 1
+  }
 }

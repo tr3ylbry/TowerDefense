@@ -12,3 +12,5 @@ Agent qualitative review checks proportions/foot registration at actual battlefi
 [Final toolbar with FX enabled](toolbar-state-labels.png) and [both audio channels off](toolbar-audio-off.png) show the requested capitalization and distinct active/inactive colors. These are final production Chromium captures; pointer/touch state transitions are asserted in both Chromium and WebKit.
 
 [Completed chapter board](chapter-complete-board.png) and [Heart of the Swarm victory](heart-of-the-swarm-victory.png) come from the final72-case production journey. Public controls earn all six completions, then reload/replay and deliberately lose a replay without removing best stars. They are separate from the navigation-only unlocked profiling fixture.
+
+[Actual Gargantua contact](gargantua-contact.png) accompanies the synchronized production regression. Both Chromium at4× CPU and WebKit observe the real public arrival warning and barrier health1100→1000, followed by paused art/speed/motion/restart checks. No enemies, credits or clock are injected.

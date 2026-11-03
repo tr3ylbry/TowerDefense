@@ -1,0 +1,26 @@
+[
+  {
+    "project": "chromium",
+    "cpuThrottle": 4,
+    "heavy-arrival-warning.json": [
+      "L1 \u203a ManHunter in 2s \u00b7 L3 \u203a Scout in 4s \u00b7 L4 !! Gargantua in 5s",
+      "L1 \u203a ManHunter in 2s \u00b7 L3 \u203a Scout in 3s \u00b7 L4 !! Gargantua in 5s",
+      "L1 \u203a ManHunter in 1s \u00b7 L3 \u203a Scout in 3s \u00b7 L4 !! Gargantua in 5s"
+    ],
+    "lane-4-health.json": [
+      1100,
+      1000
+    ]
+  },
+  {
+    "project": "webkit",
+    "cpuThrottle": 1,
+    "heavy-arrival-warning.json": [
+      "L1 \u203a ManHunter in 2s \u00b7 L3 \u203a Scout in 4s \u00b7 L4 !! Gargantua in 5s"
+    ],
+    "lane-4-health.json": [
+      1100,
+      1000
+    ]
+  }
+]
