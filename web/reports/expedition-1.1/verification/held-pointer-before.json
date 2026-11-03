@@ -1,0 +1,223 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/node_modules/@playwright/test/cli.js",
+      "test",
+      "expedition-1.1.spec.ts",
+      "--grep",
+      "live HUD updates",
+      "--project=webkit",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/playwright.config.ts",
+    "rootDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "snapshotDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4175",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1792,
+            "height": 1120
+          },
+          "deviceScaleFactor": 2,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "expedition-1.1.spec.ts",
+      "file": "expedition-1.1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "live HUD updates preserve held pointer activation and control labels",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17168,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#speed')\nExpected: \u001b[32m\"\u001b[7m2\u001b[27m×\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m1\u001b[27m×\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#speed') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('#speed')\u001b[22m\n\u001b[2m    34 × locator resolved to <button id=\"speed\" aria-label=\"Switch to double speed\" title=\"Simulation speed, independent of difficulty\">1×</button>\u001b[22m\n\u001b[2m       - unexpected value \"1×\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#speed')\nExpected: \u001b[32m\"\u001b[7m2\u001b[27m×\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m1\u001b[27m×\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#speed') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('#speed')\u001b[22m\n\u001b[2m    34 × locator resolved to <button id=\"speed\" aria-label=\"Switch to double speed\" title=\"Simulation speed, independent of difficulty\">1×</button>\u001b[22m\n\u001b[2m       - unexpected value \"1×\"\u001b[22m\n\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser/expedition-1.1.spec.ts:23:42",
+                    "location": {
+                      "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser/expedition-1.1.spec.ts",
+                      "column": 42,
+                      "line": 23
+                    },
+                    "snippet": "  21 |     }));\n  22 |     await page.mouse.up();\n> 23 |     await expect(page.locator('#speed')).toHaveText(expected);\n     |                                          ^\n  24 |     expect(await page.evaluate(() =>\n  25 |       ['#speed', '#map-open-label', '#call-wave span'].map((selector, index) =>\n  26 |         document.querySelector(selector)!.firstChild === (window as Window & {controlLabelNodes?: Node[]}).controlLabelNodes![index]),"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser/expedition-1.1.spec.ts",
+                        "column": 42,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#speed')\nExpected: \u001b[32m\"\u001b[7m2\u001b[27m×\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m1\u001b[27m×\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#speed') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('#speed')\u001b[22m\n\u001b[2m    34 × locator resolved to <button id=\"speed\" aria-label=\"Switch to double speed\" title=\"Simulation speed, independent of difficulty\">1×</button>\u001b[22m\n\u001b[2m       - unexpected value \"1×\"\u001b[22m\n\n\n  21 |     }));\n  22 |     await page.mouse.up();\n> 23 |     await expect(page.locator('#speed')).toHaveText(expected);\n     |                                          ^\n  24 |     expect(await page.evaluate(() =>\n  25 |       ['#speed', '#map-open-label', '#call-wave span'].map((selector, index) =>\n  26 |         document.querySelector(selector)!.firstChild === (window as Window & {controlLabelNodes?: Node[]}).controlLabelNodes![index]),\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser/expedition-1.1.spec.ts:23:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T03:59:06.818Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results/expedition-1.1-live-HUD-up-886fd-tivation-and-control-labels-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results/expedition-1.1-live-HUD-up-886fd-tivation-and-control-labels-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser/expedition-1.1.spec.ts",
+                    "column": 42,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-67d906ae683cecb8faa8",
+          "file": "expedition-1.1.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T03:59:06.594Z",
+    "duration": 17717.199,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

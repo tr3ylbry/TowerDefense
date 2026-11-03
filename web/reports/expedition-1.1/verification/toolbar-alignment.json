@@ -1,0 +1,1103 @@
+{
+  "method": "Fresh production pages; actual bounds in normal/focused desktop, portrait and landscape; wrapped controls align within1px to destination left; all buttons contained and active landscape field fully visible.",
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "focused": false,
+      "bar": {
+        "left": 57.59375,
+        "right": 1222.40625,
+        "top": 257.578125,
+        "bottom": 320.578125,
+        "width": 1164.8125,
+        "height": 63
+      },
+      "location": {
+        "left": 57.59375,
+        "right": 489.28125,
+        "top": 257.578125,
+        "bottom": 301.578125,
+        "width": 431.6875,
+        "height": 44
+      },
+      "tools": {
+        "left": 503.28125,
+        "right": 1072.90625,
+        "top": 257.578125,
+        "bottom": 301.578125,
+        "width": 569.625,
+        "height": 44
+      },
+      "first": {
+        "left": 503.28125,
+        "right": 587.53125,
+        "top": 257.578125,
+        "bottom": 301.578125,
+        "width": 84.25,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 503.28125,
+          "right": 587.53125
+        },
+        {
+          "id": "focus-toggle",
+          "left": 607.53125,
+          "right": 652.296875
+        },
+        {
+          "id": "sound-toggle",
+          "left": 672.296875,
+          "right": 738.40625
+        },
+        {
+          "id": "music-toggle",
+          "left": 758.40625,
+          "right": 825.75
+        },
+        {
+          "id": "audio-mix",
+          "left": 845.75,
+          "right": 889.75
+        },
+        {
+          "id": "motion-toggle",
+          "left": 909.75,
+          "right": 1006.671875
+        },
+        {
+          "id": "restart",
+          "left": 1026.671875,
+          "right": 1072.90625
+        }
+      ],
+      "board": {
+        "left": 58.59375,
+        "right": 1221.40625,
+        "top": 435.765625,
+        "bottom": 1146.359375,
+        "width": 1162.8125,
+        "height": 710.59375
+      },
+      "pageWidth": 1280,
+      "viewportWidth": 1280,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "focused": true,
+      "bar": {
+        "left": 46,
+        "right": 1234,
+        "top": 12,
+        "bottom": 64,
+        "width": 1188,
+        "height": 52
+      },
+      "location": {
+        "left": 46,
+        "right": 300.25,
+        "top": 12,
+        "bottom": 56,
+        "width": 254.25,
+        "height": 44
+      },
+      "tools": {
+        "left": 314.25,
+        "right": 905.875,
+        "top": 12,
+        "bottom": 56,
+        "width": 591.625,
+        "height": 44
+      },
+      "first": {
+        "left": 314.25,
+        "right": 398.5,
+        "top": 12,
+        "bottom": 56,
+        "width": 84.25,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 314.25,
+          "right": 398.5
+        },
+        {
+          "id": "focus-toggle",
+          "left": 412.5,
+          "right": 457.265625
+        },
+        {
+          "id": "play-guide",
+          "left": 471.265625,
+          "right": 515.265625
+        },
+        {
+          "id": "sound-toggle",
+          "left": 529.265625,
+          "right": 595.375
+        },
+        {
+          "id": "music-toggle",
+          "left": 609.375,
+          "right": 676.71875
+        },
+        {
+          "id": "audio-mix",
+          "left": 690.71875,
+          "right": 734.71875
+        },
+        {
+          "id": "motion-toggle",
+          "left": 748.71875,
+          "right": 845.640625
+        },
+        {
+          "id": "restart",
+          "left": 859.640625,
+          "right": 905.875
+        }
+      ],
+      "board": {
+        "left": 312.734375,
+        "right": 967.265625,
+        "top": 140,
+        "bottom": 539.984375,
+        "width": 654.53125,
+        "height": 399.984375
+      },
+      "pageWidth": 1280,
+      "viewportWidth": 1280,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": false,
+      "bar": {
+        "left": 12,
+        "right": 378,
+        "top": 343.90625,
+        "bottom": 455.90625,
+        "width": 366,
+        "height": 112
+      },
+      "location": {
+        "left": 12,
+        "right": 296.046875,
+        "top": 343.90625,
+        "bottom": 387.90625,
+        "width": 284.046875,
+        "height": 44
+      },
+      "tools": {
+        "left": 12,
+        "right": 344,
+        "top": 395.90625,
+        "bottom": 441.90625,
+        "width": 332,
+        "height": 46
+      },
+      "first": {
+        "left": 12,
+        "right": 56,
+        "top": 395.90625,
+        "bottom": 439.90625,
+        "width": 44,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 12,
+          "right": 56
+        },
+        {
+          "id": "focus-toggle",
+          "left": 60,
+          "right": 104
+        },
+        {
+          "id": "sound-toggle",
+          "left": 108,
+          "right": 152
+        },
+        {
+          "id": "music-toggle",
+          "left": 156,
+          "right": 200
+        },
+        {
+          "id": "audio-mix",
+          "left": 204,
+          "right": 248
+        },
+        {
+          "id": "motion-toggle",
+          "left": 252,
+          "right": 296
+        },
+        {
+          "id": "restart",
+          "left": 300,
+          "right": 344
+        }
+      ],
+      "board": {
+        "left": 13,
+        "right": 377,
+        "top": 585.09375,
+        "bottom": 827.078125,
+        "width": 364,
+        "height": 241.984375
+      },
+      "pageWidth": 390,
+      "viewportWidth": 390,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": true,
+      "bar": {
+        "left": 12,
+        "right": 378,
+        "top": 10,
+        "bottom": 116,
+        "width": 366,
+        "height": 106
+      },
+      "location": {
+        "left": 12,
+        "right": 378,
+        "top": 10,
+        "bottom": 54,
+        "width": 366,
+        "height": 44
+      },
+      "tools": {
+        "left": 12,
+        "right": 378,
+        "top": 62,
+        "bottom": 108,
+        "width": 366,
+        "height": 46
+      },
+      "first": {
+        "left": 12,
+        "right": 56,
+        "top": 62,
+        "bottom": 106,
+        "width": 44,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 12,
+          "right": 56
+        },
+        {
+          "id": "focus-toggle",
+          "left": 58,
+          "right": 102
+        },
+        {
+          "id": "play-guide",
+          "left": 104,
+          "right": 148
+        },
+        {
+          "id": "sound-toggle",
+          "left": 150,
+          "right": 194
+        },
+        {
+          "id": "music-toggle",
+          "left": 196,
+          "right": 240
+        },
+        {
+          "id": "audio-mix",
+          "left": 242,
+          "right": 286
+        },
+        {
+          "id": "motion-toggle",
+          "left": 288,
+          "right": 332
+        },
+        {
+          "id": "restart",
+          "left": 334,
+          "right": 378
+        }
+      ],
+      "board": {
+        "left": 13,
+        "right": 377,
+        "top": 192,
+        "bottom": 414.4375,
+        "width": 364,
+        "height": 222.4375
+      },
+      "pageWidth": 390,
+      "viewportWidth": 390,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "focused": false,
+      "bar": {
+        "left": 25.3125,
+        "right": 818.6875,
+        "top": 215.9375,
+        "bottom": 336.9375,
+        "width": 793.375,
+        "height": 121
+      },
+      "location": {
+        "left": 25.3125,
+        "right": 457,
+        "top": 215.9375,
+        "bottom": 259.9375,
+        "width": 431.6875,
+        "height": 44
+      },
+      "tools": {
+        "left": 25.3125,
+        "right": 594.9375,
+        "top": 273.9375,
+        "bottom": 317.9375,
+        "width": 569.625,
+        "height": 44
+      },
+      "first": {
+        "left": 25.3125,
+        "right": 109.5625,
+        "top": 273.9375,
+        "bottom": 317.9375,
+        "width": 84.25,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 25.3125,
+          "right": 109.5625
+        },
+        {
+          "id": "focus-toggle",
+          "left": 129.5625,
+          "right": 174.328125
+        },
+        {
+          "id": "sound-toggle",
+          "left": 194.328125,
+          "right": 260.4375
+        },
+        {
+          "id": "music-toggle",
+          "left": 280.4375,
+          "right": 347.78125
+        },
+        {
+          "id": "audio-mix",
+          "left": 367.78125,
+          "right": 411.78125
+        },
+        {
+          "id": "motion-toggle",
+          "left": 431.78125,
+          "right": 528.703125
+        },
+        {
+          "id": "restart",
+          "left": 548.703125,
+          "right": 594.9375
+        }
+      ],
+      "board": {
+        "left": 26.3125,
+        "right": 817.6875,
+        "top": 452.125,
+        "bottom": 935.734375,
+        "width": 791.375,
+        "height": 483.609375
+      },
+      "pageWidth": 844,
+      "viewportWidth": 844,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "focused": true,
+      "bar": {
+        "left": 16,
+        "right": 828,
+        "top": 6,
+        "bottom": 50,
+        "width": 812,
+        "height": 44
+      },
+      "location": {
+        "left": 16,
+        "right": 258.859375,
+        "top": 6,
+        "bottom": 50,
+        "width": 242.859375,
+        "height": 44
+      },
+      "tools": {
+        "left": 266.859375,
+        "right": 646.859375,
+        "top": 6,
+        "bottom": 50,
+        "width": 380,
+        "height": 44
+      },
+      "first": {
+        "left": 266.859375,
+        "right": 310.859375,
+        "top": 6,
+        "bottom": 50,
+        "width": 44,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 266.859375,
+          "right": 310.859375
+        },
+        {
+          "id": "focus-toggle",
+          "left": 314.859375,
+          "right": 358.859375
+        },
+        {
+          "id": "play-guide",
+          "left": 362.859375,
+          "right": 406.859375
+        },
+        {
+          "id": "sound-toggle",
+          "left": 410.859375,
+          "right": 454.859375
+        },
+        {
+          "id": "music-toggle",
+          "left": 458.859375,
+          "right": 502.859375
+        },
+        {
+          "id": "audio-mix",
+          "left": 506.859375,
+          "right": 550.859375
+        },
+        {
+          "id": "motion-toggle",
+          "left": 554.859375,
+          "right": 598.859375
+        },
+        {
+          "id": "restart",
+          "left": 602.859375,
+          "right": 646.859375
+        }
+      ],
+      "board": {
+        "left": 205.1875,
+        "right": 638.8125,
+        "top": 114,
+        "bottom": 378.984375,
+        "width": 433.625,
+        "height": 264.984375
+      },
+      "pageWidth": 844,
+      "viewportWidth": 844,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "focused": false,
+      "bar": {
+        "left": 57.59375,
+        "right": 1222.40625,
+        "top": 256.578125,
+        "bottom": 319.578125,
+        "width": 1164.8125,
+        "height": 63
+      },
+      "location": {
+        "left": 57.59375,
+        "right": 490.140625,
+        "top": 256.578125,
+        "bottom": 300.578125,
+        "width": 432.546875,
+        "height": 44
+      },
+      "tools": {
+        "left": 504.140625,
+        "right": 1074,
+        "top": 256.578125,
+        "bottom": 300.578125,
+        "width": 569.859375,
+        "height": 44
+      },
+      "first": {
+        "left": 504.140625,
+        "right": 588.578125,
+        "top": 256.578125,
+        "bottom": 300.578125,
+        "width": 84.4375,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 504.140625,
+          "right": 588.578125
+        },
+        {
+          "id": "focus-toggle",
+          "left": 608.578125,
+          "right": 653.34375
+        },
+        {
+          "id": "sound-toggle",
+          "left": 673.34375,
+          "right": 739.5
+        },
+        {
+          "id": "music-toggle",
+          "left": 759.5,
+          "right": 826.84375
+        },
+        {
+          "id": "audio-mix",
+          "left": 846.84375,
+          "right": 890.84375
+        },
+        {
+          "id": "motion-toggle",
+          "left": 910.84375,
+          "right": 1007.765625
+        },
+        {
+          "id": "restart",
+          "left": 1027.765625,
+          "right": 1074
+        }
+      ],
+      "board": {
+        "left": 58.59375,
+        "right": 1221.40625,
+        "top": 434.765625,
+        "bottom": 1145.359375,
+        "width": 1162.8125,
+        "height": 710.59375
+      },
+      "pageWidth": 1280,
+      "viewportWidth": 1280,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "focused": true,
+      "bar": {
+        "left": 46,
+        "right": 1234,
+        "top": 12,
+        "bottom": 64,
+        "width": 1188,
+        "height": 52
+      },
+      "location": {
+        "left": 46,
+        "right": 300.59375,
+        "top": 12,
+        "bottom": 56,
+        "width": 254.59375,
+        "height": 44
+      },
+      "tools": {
+        "left": 314.59375,
+        "right": 906.453125,
+        "top": 12,
+        "bottom": 56,
+        "width": 591.859375,
+        "height": 44
+      },
+      "first": {
+        "left": 314.59375,
+        "right": 399.03125,
+        "top": 12,
+        "bottom": 56,
+        "width": 84.4375,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 314.59375,
+          "right": 399.03125
+        },
+        {
+          "id": "focus-toggle",
+          "left": 413.03125,
+          "right": 457.796875
+        },
+        {
+          "id": "play-guide",
+          "left": 471.796875,
+          "right": 515.796875
+        },
+        {
+          "id": "sound-toggle",
+          "left": 529.796875,
+          "right": 595.953125
+        },
+        {
+          "id": "music-toggle",
+          "left": 609.953125,
+          "right": 677.296875
+        },
+        {
+          "id": "audio-mix",
+          "left": 691.296875,
+          "right": 735.296875
+        },
+        {
+          "id": "motion-toggle",
+          "left": 749.296875,
+          "right": 846.21875
+        },
+        {
+          "id": "restart",
+          "left": 860.21875,
+          "right": 906.453125
+        }
+      ],
+      "board": {
+        "left": 312.734375,
+        "right": 967.265625,
+        "top": 140,
+        "bottom": 539.984375,
+        "width": 654.53125,
+        "height": 399.984375
+      },
+      "pageWidth": 1280,
+      "viewportWidth": 1280,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": false,
+      "bar": {
+        "left": 12,
+        "right": 378,
+        "top": 343.90625,
+        "bottom": 455.90625,
+        "width": 366,
+        "height": 112
+      },
+      "location": {
+        "left": 12,
+        "right": 296.46875,
+        "top": 343.90625,
+        "bottom": 387.90625,
+        "width": 284.46875,
+        "height": 44
+      },
+      "tools": {
+        "left": 12,
+        "right": 344,
+        "top": 395.90625,
+        "bottom": 441.90625,
+        "width": 332,
+        "height": 46
+      },
+      "first": {
+        "left": 12,
+        "right": 56,
+        "top": 395.90625,
+        "bottom": 439.90625,
+        "width": 44,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 12,
+          "right": 56
+        },
+        {
+          "id": "focus-toggle",
+          "left": 60,
+          "right": 104
+        },
+        {
+          "id": "sound-toggle",
+          "left": 108,
+          "right": 152
+        },
+        {
+          "id": "music-toggle",
+          "left": 156,
+          "right": 200
+        },
+        {
+          "id": "audio-mix",
+          "left": 204,
+          "right": 248
+        },
+        {
+          "id": "motion-toggle",
+          "left": 252,
+          "right": 296
+        },
+        {
+          "id": "restart",
+          "left": 300,
+          "right": 344
+        }
+      ],
+      "board": {
+        "left": 13,
+        "right": 377,
+        "top": 585.09375,
+        "bottom": 827.078125,
+        "width": 364,
+        "height": 241.984375
+      },
+      "pageWidth": 390,
+      "viewportWidth": 390,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "focused": true,
+      "bar": {
+        "left": 12,
+        "right": 378,
+        "top": 10,
+        "bottom": 116,
+        "width": 366,
+        "height": 106
+      },
+      "location": {
+        "left": 12,
+        "right": 378,
+        "top": 10,
+        "bottom": 54,
+        "width": 366,
+        "height": 44
+      },
+      "tools": {
+        "left": 12,
+        "right": 378,
+        "top": 62,
+        "bottom": 108,
+        "width": 366,
+        "height": 46
+      },
+      "first": {
+        "left": 12,
+        "right": 56,
+        "top": 62,
+        "bottom": 106,
+        "width": 44,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 12,
+          "right": 56
+        },
+        {
+          "id": "focus-toggle",
+          "left": 58,
+          "right": 102
+        },
+        {
+          "id": "play-guide",
+          "left": 104,
+          "right": 148
+        },
+        {
+          "id": "sound-toggle",
+          "left": 150,
+          "right": 194
+        },
+        {
+          "id": "music-toggle",
+          "left": 196,
+          "right": 240
+        },
+        {
+          "id": "audio-mix",
+          "left": 242,
+          "right": 286
+        },
+        {
+          "id": "motion-toggle",
+          "left": 288,
+          "right": 332
+        },
+        {
+          "id": "restart",
+          "left": 334,
+          "right": 378
+        }
+      ],
+      "board": {
+        "left": 13,
+        "right": 377,
+        "top": 192,
+        "bottom": 414.4375,
+        "width": 364,
+        "height": 222.4375
+      },
+      "pageWidth": 390,
+      "viewportWidth": 390,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "focused": false,
+      "bar": {
+        "left": 25.3125,
+        "right": 818.6875,
+        "top": 214.9375,
+        "bottom": 335.9375,
+        "width": 793.375,
+        "height": 121
+      },
+      "location": {
+        "left": 25.3125,
+        "right": 457.859375,
+        "top": 214.9375,
+        "bottom": 258.9375,
+        "width": 432.546875,
+        "height": 44
+      },
+      "tools": {
+        "left": 25.3125,
+        "right": 595.171875,
+        "top": 272.9375,
+        "bottom": 316.9375,
+        "width": 569.859375,
+        "height": 44
+      },
+      "first": {
+        "left": 25.3125,
+        "right": 109.75,
+        "top": 272.9375,
+        "bottom": 316.9375,
+        "width": 84.4375,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 25.3125,
+          "right": 109.75
+        },
+        {
+          "id": "focus-toggle",
+          "left": 129.75,
+          "right": 174.515625
+        },
+        {
+          "id": "sound-toggle",
+          "left": 194.515625,
+          "right": 260.671875
+        },
+        {
+          "id": "music-toggle",
+          "left": 280.671875,
+          "right": 348.015625
+        },
+        {
+          "id": "audio-mix",
+          "left": 368.015625,
+          "right": 412.015625
+        },
+        {
+          "id": "motion-toggle",
+          "left": 432.015625,
+          "right": 528.9375
+        },
+        {
+          "id": "restart",
+          "left": 548.9375,
+          "right": 595.171875
+        }
+      ],
+      "board": {
+        "left": 26.3125,
+        "right": 817.6875,
+        "top": 451.125,
+        "bottom": 934.734375,
+        "width": 791.375,
+        "height": 483.609375
+      },
+      "pageWidth": 844,
+      "viewportWidth": 844,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "focused": true,
+      "bar": {
+        "left": 16,
+        "right": 828,
+        "top": 6,
+        "bottom": 50,
+        "width": 812,
+        "height": 44
+      },
+      "location": {
+        "left": 16,
+        "right": 259.203125,
+        "top": 6,
+        "bottom": 50,
+        "width": 243.203125,
+        "height": 44
+      },
+      "tools": {
+        "left": 267.203125,
+        "right": 647.203125,
+        "top": 6,
+        "bottom": 50,
+        "width": 380,
+        "height": 44
+      },
+      "first": {
+        "left": 267.203125,
+        "right": 311.203125,
+        "top": 6,
+        "bottom": 50,
+        "width": 44,
+        "height": 44
+      },
+      "buttons": [
+        {
+          "id": "art-toggle",
+          "left": 267.203125,
+          "right": 311.203125
+        },
+        {
+          "id": "focus-toggle",
+          "left": 315.203125,
+          "right": 359.203125
+        },
+        {
+          "id": "play-guide",
+          "left": 363.203125,
+          "right": 407.203125
+        },
+        {
+          "id": "sound-toggle",
+          "left": 411.203125,
+          "right": 455.203125
+        },
+        {
+          "id": "music-toggle",
+          "left": 459.203125,
+          "right": 503.203125
+        },
+        {
+          "id": "audio-mix",
+          "left": 507.203125,
+          "right": 551.203125
+        },
+        {
+          "id": "motion-toggle",
+          "left": 555.203125,
+          "right": 599.203125
+        },
+        {
+          "id": "restart",
+          "left": 603.203125,
+          "right": 647.203125
+        }
+      ],
+      "board": {
+        "left": 205.1875,
+        "right": 638.8125,
+        "top": 114,
+        "bottom": 378.984375,
+        "width": 433.625,
+        "height": 264.984375
+      },
+      "pageWidth": 844,
+      "viewportWidth": 844,
+      "css": "http://127.0.0.1:4175/assets/index-Cqwd5TIX.css"
+    }
+  ]
+}

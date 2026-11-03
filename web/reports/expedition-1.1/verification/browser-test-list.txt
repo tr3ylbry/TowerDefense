@@ -21,13 +21,13 @@ Listing tests:
   [chromium] › expedition-0.5.spec.ts:199:3 › all nine illustrated defenders form a winning mixed deployment on nest
   [chromium] › expedition-0.6.spec.ts:41:1 › campaign board exposes six missions, lock reasons, briefings and keyboard navigation
   [chromium] › expedition-0.6.spec.ts:74:1 › public-control expedition completes all six missions, persists stars, replays and preserves a lost replay
-  [chromium] › expedition-0.6.spec.ts:250:1 › active campaign navigation is explicit and backgrounded dialogs never auto-resume
-  [chromium] › expedition-0.6.spec.ts:294:1 › campaign reset requires confirmation and isolates motion and other browser data
-  [chromium] › expedition-0.6.spec.ts:349:1 › blocked storage warns without interrupting campaign deployment
-  [chromium] › expedition-0.6.spec.ts:378:1 › partial corruption recovers valid stars and preserves the damaged original
-  [chromium] › expedition-0.6.spec.ts:406:1 › mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence
-  [chromium] › expedition-0.6.spec.ts:452:3 › campaign phone 390x844 supports cards, enlarged content, briefing and reset
-  [chromium] › expedition-0.6.spec.ts:452:3 › campaign phone 844x390 supports cards, enlarged content, briefing and reset
+  [chromium] › expedition-0.6.spec.ts:254:1 › active campaign navigation is explicit and backgrounded dialogs never auto-resume
+  [chromium] › expedition-0.6.spec.ts:298:1 › campaign reset requires confirmation and isolates motion and other browser data
+  [chromium] › expedition-0.6.spec.ts:353:1 › blocked storage warns without interrupting campaign deployment
+  [chromium] › expedition-0.6.spec.ts:382:1 › partial corruption recovers valid stars and preserves the damaged original
+  [chromium] › expedition-0.6.spec.ts:410:1 › mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence
+  [chromium] › expedition-0.6.spec.ts:456:3 › campaign phone 390x844 supports cards, enlarged content, briefing and reset
+  [chromium] › expedition-0.6.spec.ts:456:3 › campaign phone 844x390 supports cards, enlarged content, briefing and reset
   [chromium] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 1280x900
   [chromium] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 390x844
   [chromium] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 844x390
@@ -46,17 +46,18 @@ Listing tests:
   [chromium] › expedition-1.0.spec.ts:52:1 › illustrated roster survives actual spawned combat, pause, art comparison, speed, reduced motion and restarts
   [chromium] › expedition-1.0.spec.ts:191:1 › failed Gargantua atlas blocks readiness, retries cleanly and keeps other environments deferred
   [chromium] › expedition-1.0.spec.ts:217:1 › phone actions use centered vector icons and landscape overview shows every lane
-  [chromium] › expedition-1.1.spec.ts:6:1 › initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads
-  [chromium] › expedition-1.1.spec.ts:28:1 › Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence
-  [chromium] › expedition-1.1.spec.ts:69:1 › a pending music download can be canceled and retried with one active audio source across restart and destination changes
-  [chromium] › expedition-1.1.spec.ts:109:1 › Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund
-  [chromium] › expedition-1.1.spec.ts:136:3 › compact and tablet controls remain reachable with enlarged text at 320x568
-  [chromium] › expedition-1.1.spec.ts:136:3 › compact and tablet controls remain reachable with enlarged text at 768x1024
-  [chromium] › expedition-1.1.spec.ts:174:1 › Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads
-  [chromium] › expedition-1.1.spec.ts:201:1 › FX and Music recover independently from real output suspension and honor rapid latest-intent taps
-  [chromium] › expedition-1.1.spec.ts:249:5 › pointer toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
-  [chromium] › expedition-1.1.spec.ts:249:5 › touch toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
-  [chromium] › expedition-1.1.spec.ts:294:1 › dialog action rows and close icons stay centered on desktop, phone and landscape
+  [chromium] › expedition-1.1.spec.ts:6:1 › live HUD updates preserve held pointer activation and control labels
+  [chromium] › expedition-1.1.spec.ts:31:1 › initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads
+  [chromium] › expedition-1.1.spec.ts:53:1 › Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence
+  [chromium] › expedition-1.1.spec.ts:94:1 › a pending music download can be canceled and retried with one active audio source across restart and destination changes
+  [chromium] › expedition-1.1.spec.ts:134:1 › Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund
+  [chromium] › expedition-1.1.spec.ts:161:3 › compact and tablet controls remain reachable with enlarged text at 320x568
+  [chromium] › expedition-1.1.spec.ts:161:3 › compact and tablet controls remain reachable with enlarged text at 768x1024
+  [chromium] › expedition-1.1.spec.ts:199:1 › Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads
+  [chromium] › expedition-1.1.spec.ts:226:1 › FX and Music recover independently from real output suspension and honor rapid latest-intent taps
+  [chromium] › expedition-1.1.spec.ts:274:5 › pointer toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
+  [chromium] › expedition-1.1.spec.ts:274:5 › touch toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
+  [chromium] › expedition-1.1.spec.ts:323:1 › dialog action rows and close icons stay centered on desktop, phone and landscape
   [chromium] › mission.spec.ts:18:1 › deploy, pause without income, salvage, and restart through real controls
   [chromium] › mission.spec.ts:62:1 › keyboard crew selection and arrow-key placement
   [chromium] › mission.spec.ts:78:1 › fits a narrow viewport and persists reduced motion
@@ -96,13 +97,13 @@ Listing tests:
   [firefox] › expedition-0.5.spec.ts:199:3 › all nine illustrated defenders form a winning mixed deployment on nest
   [firefox] › expedition-0.6.spec.ts:41:1 › campaign board exposes six missions, lock reasons, briefings and keyboard navigation
   [firefox] › expedition-0.6.spec.ts:74:1 › public-control expedition completes all six missions, persists stars, replays and preserves a lost replay
-  [firefox] › expedition-0.6.spec.ts:250:1 › active campaign navigation is explicit and backgrounded dialogs never auto-resume
-  [firefox] › expedition-0.6.spec.ts:294:1 › campaign reset requires confirmation and isolates motion and other browser data
-  [firefox] › expedition-0.6.spec.ts:349:1 › blocked storage warns without interrupting campaign deployment
-  [firefox] › expedition-0.6.spec.ts:378:1 › partial corruption recovers valid stars and preserves the damaged original
-  [firefox] › expedition-0.6.spec.ts:406:1 › mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence
-  [firefox] › expedition-0.6.spec.ts:452:3 › campaign phone 390x844 supports cards, enlarged content, briefing and reset
-  [firefox] › expedition-0.6.spec.ts:452:3 › campaign phone 844x390 supports cards, enlarged content, briefing and reset
+  [firefox] › expedition-0.6.spec.ts:254:1 › active campaign navigation is explicit and backgrounded dialogs never auto-resume
+  [firefox] › expedition-0.6.spec.ts:298:1 › campaign reset requires confirmation and isolates motion and other browser data
+  [firefox] › expedition-0.6.spec.ts:353:1 › blocked storage warns without interrupting campaign deployment
+  [firefox] › expedition-0.6.spec.ts:382:1 › partial corruption recovers valid stars and preserves the damaged original
+  [firefox] › expedition-0.6.spec.ts:410:1 › mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence
+  [firefox] › expedition-0.6.spec.ts:456:3 › campaign phone 390x844 supports cards, enlarged content, briefing and reset
+  [firefox] › expedition-0.6.spec.ts:456:3 › campaign phone 844x390 supports cards, enlarged content, briefing and reset
   [firefox] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 1280x900
   [firefox] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 390x844
   [firefox] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 844x390
@@ -121,17 +122,18 @@ Listing tests:
   [firefox] › expedition-1.0.spec.ts:52:1 › illustrated roster survives actual spawned combat, pause, art comparison, speed, reduced motion and restarts
   [firefox] › expedition-1.0.spec.ts:191:1 › failed Gargantua atlas blocks readiness, retries cleanly and keeps other environments deferred
   [firefox] › expedition-1.0.spec.ts:217:1 › phone actions use centered vector icons and landscape overview shows every lane
-  [firefox] › expedition-1.1.spec.ts:6:1 › initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads
-  [firefox] › expedition-1.1.spec.ts:28:1 › Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence
-  [firefox] › expedition-1.1.spec.ts:69:1 › a pending music download can be canceled and retried with one active audio source across restart and destination changes
-  [firefox] › expedition-1.1.spec.ts:109:1 › Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund
-  [firefox] › expedition-1.1.spec.ts:136:3 › compact and tablet controls remain reachable with enlarged text at 320x568
-  [firefox] › expedition-1.1.spec.ts:136:3 › compact and tablet controls remain reachable with enlarged text at 768x1024
-  [firefox] › expedition-1.1.spec.ts:174:1 › Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads
-  [firefox] › expedition-1.1.spec.ts:201:1 › FX and Music recover independently from real output suspension and honor rapid latest-intent taps
-  [firefox] › expedition-1.1.spec.ts:249:5 › pointer toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
-  [firefox] › expedition-1.1.spec.ts:249:5 › touch toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
-  [firefox] › expedition-1.1.spec.ts:294:1 › dialog action rows and close icons stay centered on desktop, phone and landscape
+  [firefox] › expedition-1.1.spec.ts:6:1 › live HUD updates preserve held pointer activation and control labels
+  [firefox] › expedition-1.1.spec.ts:31:1 › initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads
+  [firefox] › expedition-1.1.spec.ts:53:1 › Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence
+  [firefox] › expedition-1.1.spec.ts:94:1 › a pending music download can be canceled and retried with one active audio source across restart and destination changes
+  [firefox] › expedition-1.1.spec.ts:134:1 › Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund
+  [firefox] › expedition-1.1.spec.ts:161:3 › compact and tablet controls remain reachable with enlarged text at 320x568
+  [firefox] › expedition-1.1.spec.ts:161:3 › compact and tablet controls remain reachable with enlarged text at 768x1024
+  [firefox] › expedition-1.1.spec.ts:199:1 › Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads
+  [firefox] › expedition-1.1.spec.ts:226:1 › FX and Music recover independently from real output suspension and honor rapid latest-intent taps
+  [firefox] › expedition-1.1.spec.ts:274:5 › pointer toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
+  [firefox] › expedition-1.1.spec.ts:274:5 › touch toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
+  [firefox] › expedition-1.1.spec.ts:323:1 › dialog action rows and close icons stay centered on desktop, phone and landscape
   [firefox] › mission.spec.ts:18:1 › deploy, pause without income, salvage, and restart through real controls
   [firefox] › mission.spec.ts:62:1 › keyboard crew selection and arrow-key placement
   [firefox] › mission.spec.ts:78:1 › fits a narrow viewport and persists reduced motion
@@ -171,13 +173,13 @@ Listing tests:
   [webkit] › expedition-0.5.spec.ts:199:3 › all nine illustrated defenders form a winning mixed deployment on nest
   [webkit] › expedition-0.6.spec.ts:41:1 › campaign board exposes six missions, lock reasons, briefings and keyboard navigation
   [webkit] › expedition-0.6.spec.ts:74:1 › public-control expedition completes all six missions, persists stars, replays and preserves a lost replay
-  [webkit] › expedition-0.6.spec.ts:250:1 › active campaign navigation is explicit and backgrounded dialogs never auto-resume
-  [webkit] › expedition-0.6.spec.ts:294:1 › campaign reset requires confirmation and isolates motion and other browser data
-  [webkit] › expedition-0.6.spec.ts:349:1 › blocked storage warns without interrupting campaign deployment
-  [webkit] › expedition-0.6.spec.ts:378:1 › partial corruption recovers valid stars and preserves the damaged original
-  [webkit] › expedition-0.6.spec.ts:406:1 › mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence
-  [webkit] › expedition-0.6.spec.ts:452:3 › campaign phone 390x844 supports cards, enlarged content, briefing and reset
-  [webkit] › expedition-0.6.spec.ts:452:3 › campaign phone 844x390 supports cards, enlarged content, briefing and reset
+  [webkit] › expedition-0.6.spec.ts:254:1 › active campaign navigation is explicit and backgrounded dialogs never auto-resume
+  [webkit] › expedition-0.6.spec.ts:298:1 › campaign reset requires confirmation and isolates motion and other browser data
+  [webkit] › expedition-0.6.spec.ts:353:1 › blocked storage warns without interrupting campaign deployment
+  [webkit] › expedition-0.6.spec.ts:382:1 › partial corruption recovers valid stars and preserves the damaged original
+  [webkit] › expedition-0.6.spec.ts:410:1 › mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence
+  [webkit] › expedition-0.6.spec.ts:456:3 › campaign phone 390x844 supports cards, enlarged content, briefing and reset
+  [webkit] › expedition-0.6.spec.ts:456:3 › campaign phone 844x390 supports cards, enlarged content, briefing and reset
   [webkit] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 1280x900
   [webkit] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 390x844
   [webkit] › expedition-0.7.spec.ts:8:3 › opening modes stay clear and reachable at 844x390
@@ -196,17 +198,18 @@ Listing tests:
   [webkit] › expedition-1.0.spec.ts:52:1 › illustrated roster survives actual spawned combat, pause, art comparison, speed, reduced motion and restarts
   [webkit] › expedition-1.0.spec.ts:191:1 › failed Gargantua atlas blocks readiness, retries cleanly and keeps other environments deferred
   [webkit] › expedition-1.0.spec.ts:217:1 › phone actions use centered vector icons and landscape overview shows every lane
-  [webkit] › expedition-1.1.spec.ts:6:1 › initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads
-  [webkit] › expedition-1.1.spec.ts:28:1 › Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence
-  [webkit] › expedition-1.1.spec.ts:69:1 › a pending music download can be canceled and retried with one active audio source across restart and destination changes
-  [webkit] › expedition-1.1.spec.ts:109:1 › Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund
-  [webkit] › expedition-1.1.spec.ts:136:3 › compact and tablet controls remain reachable with enlarged text at 320x568
-  [webkit] › expedition-1.1.spec.ts:136:3 › compact and tablet controls remain reachable with enlarged text at 768x1024
-  [webkit] › expedition-1.1.spec.ts:174:1 › Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads
-  [webkit] › expedition-1.1.spec.ts:201:1 › FX and Music recover independently from real output suspension and honor rapid latest-intent taps
-  [webkit] › expedition-1.1.spec.ts:249:5 › pointer toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
-  [webkit] › expedition-1.1.spec.ts:249:5 › touch toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
-  [webkit] › expedition-1.1.spec.ts:294:1 › dialog action rows and close icons stay centered on desktop, phone and landscape
+  [webkit] › expedition-1.1.spec.ts:6:1 › live HUD updates preserve held pointer activation and control labels
+  [webkit] › expedition-1.1.spec.ts:31:1 › initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads
+  [webkit] › expedition-1.1.spec.ts:53:1 › Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence
+  [webkit] › expedition-1.1.spec.ts:94:1 › a pending music download can be canceled and retried with one active audio source across restart and destination changes
+  [webkit] › expedition-1.1.spec.ts:134:1 › Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund
+  [webkit] › expedition-1.1.spec.ts:161:3 › compact and tablet controls remain reachable with enlarged text at 320x568
+  [webkit] › expedition-1.1.spec.ts:161:3 › compact and tablet controls remain reachable with enlarged text at 768x1024
+  [webkit] › expedition-1.1.spec.ts:199:1 › Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads
+  [webkit] › expedition-1.1.spec.ts:226:1 › FX and Music recover independently from real output suspension and honor rapid latest-intent taps
+  [webkit] › expedition-1.1.spec.ts:274:5 › pointer toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
+  [webkit] › expedition-1.1.spec.ts:274:5 › touch toggle appearance › enabled highlights follow state after repeated taps without moving the pointer
+  [webkit] › expedition-1.1.spec.ts:323:1 › dialog action rows and close icons stay centered on desktop, phone and landscape
   [webkit] › mission.spec.ts:18:1 › deploy, pause without income, salvage, and restart through real controls
   [webkit] › mission.spec.ts:62:1 › keyboard crew selection and arrow-key placement
   [webkit] › mission.spec.ts:78:1 › fits a narrow viewport and persists reduced motion
@@ -224,4 +227,4 @@ Listing tests:
   [webkit] › phone-polish.spec.ts:98:1 › ambient music is deferred, actually plays, stops, retries, and remains paused after backgrounding
   [webkit] › phone-polish.spec.ts:139:1 › independent Music and FX sliders share defaults and control real audio gains
   [webkit] › roster-motion.spec.ts:3:1 › all six illustrated aliens walk and attack on every environment with stable pause and reduced motion
-Total: 225 tests in 12 files
+Total: 228 tests in 12 files

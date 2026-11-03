@@ -331,7 +331,7 @@ h1 > span {
 }
 .mission-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 0 19px;
 }
@@ -1652,7 +1652,8 @@ dialog li {
   white-space: nowrap;
 }
 .mission-tools {
-  margin-left: auto;
+  margin-left: 0;
+  justify-content: flex-start;
   flex-shrink: 1;
   flex-wrap: wrap;
   min-width: 0;
@@ -2115,7 +2116,7 @@ dialog li {
   }
   .focused-play .mission-tools {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .focused-play .mission-tools .tool span {
     display: inline;
@@ -2593,7 +2594,7 @@ dialog li {
   .focused-play .location {
     width: auto;
     min-width: 0;
-    flex: 1 1 200px;
+    flex: 0 1 auto;
   }
   .focused-play .location h2 {
     font-size: 14px;
@@ -2610,7 +2611,7 @@ dialog li {
   .focused-play .mission-tools {
     width: auto;
     flex: 0 0 auto;
-    margin-left: auto;
+    margin-left: 0;
     gap: 4px;
   }
   .focused-play .mission-tools .tool span {

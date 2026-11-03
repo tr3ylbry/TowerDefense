@@ -167,6 +167,13 @@ app.innerHTML = `
 
 const get = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id) as T;
+// Preserve the hit-tested text node during a held pointer gesture in WebKit.
+function setControlLabel(element: HTMLElement, text: string): void {
+  const node = element.firstChild;
+  if (node instanceof Text && element.childNodes.length === 1) {
+    if (node.data !== text) node.data = text;
+  } else if (element.textContent !== text) element.textContent = text;
+}
 const start = get<HTMLButtonElement>("start");
 const pause = get<HTMLButtonElement>("pause");
 const overlay = get("overlay");
@@ -456,9 +463,9 @@ function render(state: Snapshot): void {
     "";
   const call = get<HTMLButtonElement>("call-wave");
   call.disabled = assetBusy || !upcoming?.canLaunch;
-  call.querySelector("span")!.textContent = upcoming?.canLaunch
+  setControlLabel(call.querySelector("span")!, upcoming?.canLaunch
     ? `+${upcoming.reward} credits`
-    : "N";
+    : "N");
   call.setAttribute(
     "aria-label",
     upcoming?.canLaunch
@@ -489,9 +496,9 @@ function render(state: Snapshot): void {
   document.title = `Astronauts vs Aliens — ${campaignMode ? mission.title : map.name}${hard ? " · Hard" : ""}`;
   grid.inert = assetBusy || state.phase !== "playing";
   get("location-name").textContent = campaignMode ? mission.title : map.name;
-  get("map-open-label").textContent = campaignMode
+  setControlLabel(get("map-open-label"), campaignMode
     ? "Mission Control"
-    : "Change Destination";
+    : "Change Destination");
   get("location-number").textContent = campaignMode
     ? String(mission.order).padStart(2, "0")
     : map.number;
@@ -519,7 +526,7 @@ function render(state: Snapshot): void {
     `${state.integrity} shields remaining`,
   );
   get("wave-number").textContent = String(state.wave);
-  get("speed").textContent = `${state.speed}×`;
+  setControlLabel(get("speed"), `${state.speed}×`);
   get("speed").setAttribute(
     "aria-label",
     `Switch to ${state.speed === 1 ? "double" : "normal"} speed`,

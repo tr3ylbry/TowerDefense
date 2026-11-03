@@ -19,7 +19,7 @@
     "unexpected": 0,
     "flaky": 0
   },
-  "replacementGate": "Full225 browser checks on the final pushed head, all engines/shards retained.",
+  "replacementGate": "Complete228 browser checks on final pushed head,76 per engine, retaining all previous tests and adding the held-pointer regression.",
   "combatSynchronization": {
     "failedRun": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41565460837",
     "cause": "Robot purchase batch could miss the transient public Gargantua warning.",
@@ -71,6 +71,34 @@
       "actionSlowMoMs": 500,
       "scope": "All six real three-star victories,18-star board, save/reload, receipts and lost replay; ordinary production preview/player controls.",
       "evidence": "slow-driver-campaign.json"
+    }
+  },
+  "controlLabelReliability": {
+    "failedRun": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41572100770",
+    "previousHead": "5d1687021b075e9fcd3749ab2ac68bc14a5b039c",
+    "priorResult": "Chromium75/75 and Firefox75/75; WebKit74/75 with held-pointer speed activation lost during live HUD updates.",
+    "rootCause": "Replacing interactive text nodes between mouse-down and mouse-up cancels WebKit click activation. A real-HUD held-pointer test reproduced1x remaining1x on the old production output.",
+    "fix": "Retain and update Text.data for speed, destination and wave-call captions; no simulation changes.",
+    "localFirefox": "Pinned Firefox157 installed successfully; macOS launch still fails before page creation with Could not find profile folder, matching the older environment probe. No browser security/preferences changed; full CI Firefox remains mandatory.",
+    "productionChanged": true,
+    "newGate": "76 cases per engine,228 complete browser checks, no skips.",
+    "redGreen": {
+      "before": "held-pointer-before.json: WebKit real-HUD held mouse-up remains1x, expected failure reproduced.",
+      "after": "held-pointer-after.json: Chromium and WebKit pass2/2, zero skipped/flaky/unexpected.",
+      "localAttempt": "held-pointer-local-attempt.json preserves the separate missing-Firefox-executable attempt rather than claiming local Firefox passed."
+    },
+    "finalProduction": {
+      "stats": {
+        "startTime": "2026-11-03T04:26:16.219Z",
+        "duration": 1351049.195,
+        "expected": 73,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "evidence": "production-chromium.json",
+      "toolbarIncluded": true,
+      "sourceOutputBinding": "reproducibility.json"
     }
   }
 }

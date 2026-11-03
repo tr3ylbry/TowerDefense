@@ -3,6 +3,31 @@ import { test, expect } from "@playwright/test";
 import { slowRuntime } from "./slow-runtime";
 test.beforeEach(slowRuntime);
 
+test('live HUD updates preserve held pointer activation and control labels', async ({page}) => {
+  await page.goto('/');
+  await page.locator('#start').click();
+  await page.evaluate(() => {
+    (window as Window & {controlLabelNodes?: Node[]}).controlLabelNodes =
+      ['#speed', '#map-open-label', '#call-wave span'].map(selector => document.querySelector(selector)!.firstChild!);
+  });
+  for (const expected of ['2×', '1×']) {
+    await page.locator('#speed').hover();
+    await page.mouse.down();
+    // Wait for real HUD telemetry while the pointer is held. No game clock,
+    // render callback or simulation state is injected.
+    await page.evaluate(() => new Promise<void>(resolve => {
+      const observer = new MutationObserver(() => { observer.disconnect(); resolve(); });
+      observer.observe(document.querySelector('#incoming-summary')!, {childList: true});
+    }));
+    await page.mouse.up();
+    await expect(page.locator('#speed')).toHaveText(expected);
+    expect(await page.evaluate(() =>
+      ['#speed', '#map-open-label', '#call-wave span'].map((selector, index) =>
+        document.querySelector(selector)!.firstChild === (window as Window & {controlLabelNodes?: Node[]}).controlLabelNodes![index]),
+    )).toEqual([true, true, true]);
+  }
+});
+
 test("initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads", async ({ page }) => {
   const requests: string[] = [];
   page.on("request", (r) => requests.push(new URL(r.url()).pathname));

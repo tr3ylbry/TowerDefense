@@ -2,7 +2,7 @@
   "date": "2026-11-02",
   "method": "Fresh Vite production output, not accumulating preview directories. Every file listed, including metadata and notices.",
   "fileCount": 121,
-  "totalBytes": 9626615,
+  "totalBytes": 9626791,
   "unexpectedDevelopmentFiles": [],
   "files": [
     {
@@ -576,19 +576,19 @@
       "sha256": "37d6a83187fb6bf694a70b6494a9fa34869e2b48801160b90aaeb3ceb52b49a2"
     },
     {
-      "file": "assets/battlefield-C2iATBS7.js",
+      "file": "assets/battlefield-DkcvYwft.js",
       "bytes": 20044,
-      "sha256": "30633cbe60689598f36baeb957c4be544565b75502bddbfa834dabd1ec26dfbb"
+      "sha256": "37532a862fc924ed14e4ec6b3267acc16cc454593d708f34e7bd035d5e9fa329"
     },
     {
-      "file": "assets/index-BnhXuJxh.css",
-      "bytes": 41868,
-      "sha256": "af5d23f30f32c46db22628b8df8d424ecf20e43c9fd7be9fc92fcab97c739907"
+      "file": "assets/index-CB-LP6FD.js",
+      "bytes": 93727,
+      "sha256": "406b4fecf7bd89c6f781cdd38483dc0d4e475a6fdc506d59d5d324fcaf33b124"
     },
     {
-      "file": "assets/index-YngqPy86.js",
-      "bytes": 93608,
-      "sha256": "0f52fd4c3182c7ae9e9378061b97acba1c791afe3d130955d6a978f7b81e539f"
+      "file": "assets/index-Cqwd5TIX.css",
+      "bytes": 41925,
+      "sha256": "be30a1f293b0484ad4df3f711fba82e5ff02adc5597eed6341b04015cbd33fba"
     },
     {
       "file": "assets/phaser-B_vcVLyb.js",
@@ -608,7 +608,7 @@
     {
       "file": "index.html",
       "bytes": 780,
-      "sha256": "02e138028173146e8d82096c99f5c969ed7bad6b66c2edd1b4ca00b6d1dae46f"
+      "sha256": "2ea9e34fbda37c65a7580b7157c0a6d28a2b3a6c335be86e8334453d1c27e8c2"
     }
   ]
 }

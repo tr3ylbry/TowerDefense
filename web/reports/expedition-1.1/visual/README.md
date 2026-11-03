@@ -1,5 +1,7 @@
 # Visual evidence and scope
 
+The final Text-node reliability fix changes input handling without changing layout or artwork. Earlier layout/toolbar captures remain representative; fresh actual-combat media and the refreshed production journey are bound to the current source/output hashes.
+
 - [Actual dense combat video](actual-dense-combat.webm) [two-second moving excerpt](actual-dense-excerpt.gif), and [gameplay screenshot](actual-dense-combat.png): final production Heart of the Swarm, public controls/earned-credit barriers/real spawns and wave calls. It intentionally ends in defeat while retaining a dense crowd for observation. No fake50-enemy state or injected win. Source hashes and raw rAF/hostile observations accompany the performance report.
 - [50-sprite roster](dense-50-roster.png): production-bundled visual fixture, all six illustrated aliens at world scale. It has no combat/collision and is separate from the gameplay recording.
 - [Centered destination actions](webkit-phone-centered-destinations.png) and [Field Guide action](webkit-phone-centered-field-guide.png): final WebKit viewport emulation,390×844 CSS pixels. Shared centered rows are also asserted for Credits, campaign briefing/footer, restart and reset, at desktop and844×390 landscape.
@@ -11,6 +13,8 @@ Agent qualitative review checks proportions/foot registration at actual battlefi
 
 [Final toolbar with FX enabled](toolbar-state-labels.png) and [both audio channels off](toolbar-audio-off.png) show the requested capitalization and distinct active/inactive colors. These are final production Chromium captures; pointer/touch state transitions are asserted in both Chromium and WebKit.
 
-[Completed chapter board](chapter-complete-board.png) and [Heart of the Swarm victory](heart-of-the-swarm-victory.png) come from the final72-case production journey. Public controls earn all six completions, then reload/replay and deliberately lose a replay without removing best stars. They are separate from the navigation-only unlocked profiling fixture.
+[Completed chapter board](chapter-complete-board.png) and [Heart of the Swarm victory](heart-of-the-swarm-victory.png) come from the final73-case production journey. Public controls earn all six completions, then reload/replay and deliberately lose a replay without removing best stars. They are separate from the navigation-only unlocked profiling fixture.
 
 [Actual Gargantua contact](gargantua-contact.png) accompanies the synchronized production regression. Both Chromium at4× CPU and WebKit observe the real public arrival warning and barrier health1100→1000, followed by paused art/speed/motion/restart checks. No enemies, credits or clock are injected.
+
+[Left-aligned controls in portrait](webkit-toolbar-left-portrait.png) and [compact landscape](webkit-toolbar-left-landscape.png) show the final owner-requested layout. `../verification/toolbar-alignment.json` retains twelve normal/focused bounds checks across Chromium/WebKit; `scripts/research/toolbar-alignment-1.1.mjs` reproduces them. These are engine emulations; the owner separately confirmed centered footer buttons and on/off colors on actual iPhone Safari before this last layout adjustment.

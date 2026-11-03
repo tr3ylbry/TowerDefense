@@ -1,6 +1,6 @@
 # Final matched production performance
 
-Frozen before: `b0ece92e4284ccb9919e5368cd18049a4d76a251` (Expedition 1.0), freshly built from its archived web tree. After: completed1.1 runtime, including audio recovery, state highlights, centered dialog actions and header capitalization. `source-sha256.json` binds runtime/art/package sources; final output hashes are in `../assessment/production-output.json`.
+Frozen before: `b0ece92e4284ccb9919e5368cd18049a4d76a251` (Expedition 1.0), freshly built from its archived web tree. After: completed1.1 runtime, including audio recovery, state highlights, centered dialog actions header capitalization and stable live control labels and left-aligned toolbar. `source-sha256.json` binds runtime/art/package sources; final output hashes are in `../assessment/production-output.json`.
 
 ## Cold loading
 
@@ -10,13 +10,13 @@ Installed headless Chrome 156.0.8078.74 on Apple M5/macOS;1280×900, serial alte
 | --- | ---: | ---: | --- |
 | Unique initial images |21|21|No required roster image disappears|
 | Initial image bodies |1,123,743B|917,115B|−206,628B /18.4%|
-| Total transfer including navigation |1,540,208B|1,334,215B|−205,993B /13.4%; includes final code/CSS|
+| Total transfer including navigation |1,540,208B|1,334,289B|−205,919B /13.4%; includes final code/CSS|
 | Requests including navigation |37|37|CSS portraits/Phaser revalidation entries included|
 | Unique request paths including navigation |28|28|Same count; smaller bodies|
-| Normal median ready |177.0ms|172.9ms|Small/noisy; no meaningful desktop speedup claim|
-| Constrained median ready |8,698.8ms|7,654.9ms|−1,043.9ms /12.0%|
+| Normal median ready |163.6ms|152.7ms|Small/noisy; no meaningful desktop speedup claim|
+| Constrained median ready |8,709.3ms|7,668.3ms|−1,041.0ms /12.0%|
 
-Normal before samples258.9/176.8/177.0ms, after166.1/191.2/172.9ms. Constrained before 8702.5/8688.2/8698.8ms, after 7647.8/7661.1/7654.9ms. This is a bounded desktop experiment, not a population estimate or real network guarantee.
+Normal before samples179.0/163.6/162.1ms, after152.7/156.8/151.0ms. Constrained before8700.4/8723.3/8709.3ms, after7668.3/7679.2/7664.8ms. This is a bounded desktop experiment, not a population estimate or real network guarantee.
 
 The nine192px maximum defender derivatives save206,628B at unchanged WebP quality 90 and world dimensions. Remaining initial image costs:699,038B six alien atlases,125,742B nine defenders,87,406B Canyon,4,929B five projectiles. All missions can spawn every alien; retaining complete readiness is simpler and safer than late-wave streaming. Guide portraits, other scenery/acid, Original comparison, previews and661,544B music remain deferred by actual use/gesture. The static-portrait preload removal175,992B already belonged to1.0.
 
@@ -30,7 +30,7 @@ The 8s target is regained in this profile. The 900,000B image target is still ex
 
 Each fixture has50 world-size aliens,51 display objects and10 textures including defaults. Median frame intervals remain16.7ms. Before p95 intervals17.5/17.0/16.9ms; after17.6/16.9/17.5ms; no sampled interval exceeds33.3ms. Sprite creation costs0.5–0.6ms and sampled pose-selection p95 is0.1ms (one0.2ms sample). Synchronous sheet parsing is recorded per sheet; it excludes deferred GPU upload. Six blob/image decode trials per image exclude fetch and include initialization. Ranger/Tree decode medians improve1.70→0.80ms and1.95→0.90ms; unchanged alien decodes vary about 4–8ms without a supported speedup conclusion. These measurements have coarse timing and a small sample, not phone performance claims.
 
-`actual-combat.json` separately observes the production Heart of the Swarm mission with public2× speed, earned-credit Asteroid barriers and legal early calls. An all-unlocked save is only navigation setup; no injected spawns, credits, wins or clock changes. Each build runs once until a legitimate defeat, roughly43 seconds. Both actual runs peak at 48 public hostiles. Median intervals are16.7ms; p95 is16.7ms before/16.8ms after, with 1/0 intervals above33.3ms. This small difference is not a rendering improvement claim. Raw whole-app rAF and the≥20-hostile dense subset include controller/screenshot/video overhead. The recording shows actual movement, contact, destruction and crowded lanes. Descriptive frame distributions and heap samples are not a controlled rendering or memory benchmark. Exact live peaks and percentiles are in that file.
+`actual-combat.json` separately observes the production Heart of the Swarm mission with public2× speed, earned-credit Asteroid barriers and legal early calls. An all-unlocked save is only navigation setup; no injected spawns, credits, wins or clock changes. Each build runs once until a legitimate defeat, roughly43 seconds. Both actual runs peak at 48 public hostiles. Median intervals are16.7ms; p95 is16.7ms before/16.7ms after, with 0/0 intervals above33.3ms. This small difference is not a rendering improvement claim. Raw whole-app rAF and the≥20-hostile dense subset include controller/screenshot/video overhead. The recording shows actual movement, contact, destruction and crowded lanes. Descriptive frame distributions and heap samples are not a controlled rendering or memory benchmark. Exact live peaks and percentiles are in that file.
 
 ## Cache, restarts and memory limits
 
