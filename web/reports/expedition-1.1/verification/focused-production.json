@@ -192,12 +192,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 652,
+                  "duration": 765,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:19.692Z",
+                  "startTime": "2026-11-03T02:16:28.568Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -226,12 +226,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 839,
+                  "duration": 789,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:21.227Z",
+                  "startTime": "2026-11-03T02:16:33.193Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -260,12 +260,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1433,
+                  "duration": 1564,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:22.075Z",
+                  "startTime": "2026-11-03T02:16:33.990Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -294,12 +294,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 560,
+                  "duration": 480,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:23.518Z",
+                  "startTime": "2026-11-03T02:16:35.564Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -309,7 +309,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-bc34afe7e0df6b8a718f",
           "file": "expedition-1.1.spec.ts",
-          "line": 107,
+          "line": 109,
           "column": 1
         },
         {
@@ -328,12 +328,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1050,
+                  "duration": 798,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:24.086Z",
+                  "startTime": "2026-11-03T02:16:36.049Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -343,7 +343,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-625af7444680f1e3eeef",
           "file": "expedition-1.1.spec.ts",
-          "line": 134,
+          "line": 136,
           "column": 3
         },
         {
@@ -362,12 +362,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 915,
+                  "duration": 811,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:25.143Z",
+                  "startTime": "2026-11-03T02:16:36.853Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -377,7 +377,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-72745c3ae8cfc5299c35",
           "file": "expedition-1.1.spec.ts",
-          "line": 134,
+          "line": 136,
           "column": 3
         },
         {
@@ -396,12 +396,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 30573,
+                  "duration": 31497,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:26.065Z",
+                  "startTime": "2026-11-03T02:16:37.670Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -417,7 +417,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-9c46c7ebd64f19b37642",
           "file": "expedition-1.1.spec.ts",
-          "line": 172,
+          "line": 174,
           "column": 1
         },
         {
@@ -436,12 +436,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 910,
+                  "duration": 876,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:29:56.646Z",
+                  "startTime": "2026-11-03T02:17:09.180Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -451,7 +451,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-7767bb5eb6d6ebe63050",
           "file": "expedition-1.1.spec.ts",
-          "line": 197,
+          "line": 201,
           "column": 1
         },
         {
@@ -470,12 +470,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2587,
+                  "duration": 2690,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:01.296Z",
+                  "startTime": "2026-11-03T02:17:13.552Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -485,7 +485,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-437b2ae19de341549bf0",
           "file": "expedition-1.1.spec.ts",
-          "line": 290,
+          "line": 294,
           "column": 1
         },
         {
@@ -504,12 +504,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 762,
+                  "duration": 711,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:07.872Z",
+                  "startTime": "2026-11-03T02:17:20.492Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -538,12 +538,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1264,
+                  "duration": 1200,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:09.104Z",
+                  "startTime": "2026-11-03T02:17:21.388Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -572,12 +572,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1700,
+                  "duration": 1537,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:10.380Z",
+                  "startTime": "2026-11-03T02:17:22.593Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -606,12 +606,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 683,
+                  "duration": 664,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:12.084Z",
+                  "startTime": "2026-11-03T02:17:24.135Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -621,7 +621,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-bee3982cce357b9a16d6",
           "file": "expedition-1.1.spec.ts",
-          "line": 107,
+          "line": 109,
           "column": 1
         },
         {
@@ -640,12 +640,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1031,
+                  "duration": 1006,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:12.772Z",
+                  "startTime": "2026-11-03T02:17:24.803Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -655,7 +655,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-a8951bd9da2a6164dcc3",
           "file": "expedition-1.1.spec.ts",
-          "line": 134,
+          "line": 136,
           "column": 3
         },
         {
@@ -674,12 +674,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 996,
+                  "duration": 942,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:13.807Z",
+                  "startTime": "2026-11-03T02:17:25.813Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -689,7 +689,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-6f37ababb35e7e1ca4ba",
           "file": "expedition-1.1.spec.ts",
-          "line": 134,
+          "line": 136,
           "column": 3
         },
         {
@@ -708,12 +708,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 30729,
+                  "duration": 30610,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:14.807Z",
+                  "startTime": "2026-11-03T02:17:26.760Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -729,7 +729,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-da1f943ef71f4d49a1fe",
           "file": "expedition-1.1.spec.ts",
-          "line": 172,
+          "line": 174,
           "column": 1
         },
         {
@@ -748,12 +748,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 994,
+                  "duration": 981,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:45.541Z",
+                  "startTime": "2026-11-03T02:17:57.374Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -763,7 +763,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-4531cb7636a86816de55",
           "file": "expedition-1.1.spec.ts",
-          "line": 197,
+          "line": 201,
           "column": 1
         },
         {
@@ -782,12 +782,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3534,
+                  "duration": 3792,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:50.422Z",
+                  "startTime": "2026-11-03T02:18:01.964Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -797,7 +797,7 @@
           ],
           "id": "9ef894ff0e58411dae6d-8f439fbd70985e96277c",
           "file": "expedition-1.1.spec.ts",
-          "line": 290,
+          "line": 294,
           "column": 1
         }
       ],
@@ -805,7 +805,7 @@
         {
           "title": "pointer toggle appearance",
           "file": "expedition-1.1.spec.ts",
-          "line": 243,
+          "line": 247,
           "column": 8,
           "specs": [
             {
@@ -824,12 +824,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1415,
+                      "duration": 1276,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-03T01:29:57.564Z",
+                      "startTime": "2026-11-03T02:17:10.062Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -839,7 +839,7 @@
               ],
               "id": "9ef894ff0e58411dae6d-b041d7f3bdbcfd91e9f5",
               "file": "expedition-1.1.spec.ts",
-              "line": 245,
+              "line": 249,
               "column": 5
             },
             {
@@ -858,12 +858,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1945,
+                      "duration": 1765,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-03T01:30:46.542Z",
+                      "startTime": "2026-11-03T02:17:58.360Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -873,7 +873,7 @@
               ],
               "id": "9ef894ff0e58411dae6d-d967c56c9ccbb300e420",
               "file": "expedition-1.1.spec.ts",
-              "line": 245,
+              "line": 249,
               "column": 5
             }
           ]
@@ -881,7 +881,7 @@
         {
           "title": "touch toggle appearance",
           "file": "expedition-1.1.spec.ts",
-          "line": 243,
+          "line": 247,
           "column": 8,
           "specs": [
             {
@@ -900,12 +900,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2305,
+                      "duration": 2200,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-03T01:29:58.984Z",
+                      "startTime": "2026-11-03T02:17:11.346Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -915,7 +915,7 @@
               ],
               "id": "9ef894ff0e58411dae6d-7e43f690bddea2544fd2",
               "file": "expedition-1.1.spec.ts",
-              "line": 245,
+              "line": 249,
               "column": 5
             },
             {
@@ -934,12 +934,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1926,
+                      "duration": 1830,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-11-03T01:30:48.492Z",
+                      "startTime": "2026-11-03T02:18:00.129Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -949,7 +949,7 @@
               ],
               "id": "9ef894ff0e58411dae6d-e7648bb5eedecd16cb0e",
               "file": "expedition-1.1.spec.ts",
-              "line": 245,
+              "line": 249,
               "column": 5
             }
           ]
@@ -978,12 +978,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1698,
+                  "duration": 1643,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:03.900Z",
+                  "startTime": "2026-11-03T02:17:16.256Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1012,12 +1012,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 670,
+                  "duration": 918,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:05.602Z",
+                  "startTime": "2026-11-03T02:17:17.904Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1046,12 +1046,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1174,
+                  "duration": 1198,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:06.277Z",
+                  "startTime": "2026-11-03T02:17:18.835Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1061,7 +1061,7 @@
           ],
           "id": "8d4b6a6c7cd8437c5d7a-94ba6fec53dd77768832",
           "file": "phone-polish.spec.ts",
-          "line": 137,
+          "line": 139,
           "column": 1
         },
         {
@@ -1080,12 +1080,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2129,
+                  "duration": 2108,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:53.966Z",
+                  "startTime": "2026-11-03T02:18:05.766Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1114,12 +1114,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 776,
+                  "duration": 1040,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:56.099Z",
+                  "startTime": "2026-11-03T02:18:07.878Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1148,12 +1148,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1542,
+                  "duration": 1383,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T01:30:56.880Z",
+                  "startTime": "2026-11-03T02:18:08.922Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1163,7 +1163,7 @@
           ],
           "id": "8d4b6a6c7cd8437c5d7a-24daee900c88b23249d7",
           "file": "phone-polish.spec.ts",
-          "line": 137,
+          "line": 139,
           "column": 1
         }
       ]
@@ -1171,8 +1171,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-03T01:29:19.453Z",
-    "duration": 99055.569,
+    "startTime": "2026-11-03T02:16:28.260Z",
+    "duration": 102128.928,
     "expected": 28,
     "skipped": 0,
     "unexpected": 0,

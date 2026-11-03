@@ -203,5 +203,36 @@
     "public/art/expedition/tank-animation.webp": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0",
     "public/art/expedition/tars.webp": "d535724f3f06cdc56bfd351ba43ec5b08769cecd64862806889a6172b666d4c0"
   },
-  "cleanCheckLog": "clean-typescript-build.txt"
+  "cleanCheckLog": "clean-typescript-build.txt",
+  "testHarnessSha256": {
+    "tests/assets.test.ts": "39150fc8e72318cb1afac4b6573ab73ba4b0b1ddc272220307c9888b156dfd63",
+    "tests/audio.test.ts": "702c08dd6fa76f8767a323c6f159c7837207adbba4b8ea30da4bba0c44608dad",
+    "tests/balance.test.ts": "d502f6d61947a869d7356d3ba3d71ff710da686c0c42af047fc4576c01306b97",
+    "tests/browser/expedition-0.3.spec.ts": "56932145ea998ded1bf80acf4a41005bb5634e4a283ca8de29d8ff58002e1477",
+    "tests/browser/expedition-0.4.spec.ts": "77947fc47a19f32417606801599e4bef338980cb8c27b7f7f6df44b3e2f575a3",
+    "tests/browser/expedition-0.5.spec.ts": "faa901517e981d25a3698876f40a67eae6c72da4dde0942c62fdf7c086f74ac4",
+    "tests/browser/expedition-0.6.spec.ts": "a03a71bb6c88c53e00d334c9ae3c66ec79102d188e9bfccade6b456a15c1fae1",
+    "tests/browser/expedition-0.7.spec.ts": "39adb50c741284b44c440d5b408b11f8f7bde67f55d6c8fb2db17627bcbb3d6f",
+    "tests/browser/expedition-0.8.spec.ts": "80b2348bb3e757e88d56c96a795b186a312b38ac600ba486087e50a101d5a92d",
+    "tests/browser/expedition-0.9.spec.ts": "9e52eb09bd3fd13c44624834badb1002e2aa66cc8d1c7d7b0faf0f36ca1c8a74",
+    "tests/browser/expedition-1.0.spec.ts": "46785ab4db64921c97b47f8a7504fd3d44651308b0e928c72d6003d762d1c359",
+    "tests/browser/expedition-1.1.spec.ts": "047355a792e61eb9f1db13afe5024563974bb8931585481065a36ed20a1b4e12",
+    "tests/browser/mission.spec.ts": "7a5c784ceb26d7d38f7ed05b9a91f2cad5a598708d40bc2b5ee5987f32d48e30",
+    "tests/browser/music-probe.ts": "c9eff528d9973368f8f6dac822823344166143906112e1b3ae95c13bb36bf90c",
+    "tests/browser/phone-polish.spec.ts": "848b739f9c52f0a4b4d92a446787efd4d85ea13dc242ef2d7bfb1389e6e32f7a",
+    "tests/browser/roster-motion.spec.ts": "5efe6a57d0202971b3981cf1486fa4c3a301744370a6cde5e51a297b0f0cc970",
+    "tests/browser/slow-runtime.ts": "6723b7cb065565cbc7cdbf9fbaa8c889dbf88b1f164817770e7121693d80c3ea",
+    "tests/campaign.test.ts": "66a5d77f5a9bad3be59d61ebd3dc50016e4e0fb2757cf03a7b9b2d3a8c52bd61",
+    "tests/delivery.test.ts": "31253e80a3da8dc1fd2e318ccc65f9a10eda0b503f356fd744cc2651ac18bf70",
+    "tests/economy.test.ts": "e7d2564d45fc5c09a1b33ff0cad18024ba07012c78a34b2e8671cee74d6c01e1",
+    "tests/expedition-0.9.test.ts": "9a5d36b04d55d71ff69955ab758308f636a756f7de502a6aa95c1302f417c1e1",
+    "tests/expedition-1.0.test.ts": "66408e36648254c2c87f2ed8d5f40ffd0b53ca5db0885c00a526900b864dd51b",
+    "tests/helpers/campaign-policy.ts": "c1b2409d345b4abf2db1a1d8c215b47520b4e03cf900b0ecac5a97d65e40ec21",
+    "tests/music.test.ts": "cc316d62b4b872a186cc8715409d697ccd3b9e7ccf5c2744d479a0aeb6ac5603",
+    "tests/refinement.test.ts": "1178361435df63d79466a8b428816ce5dece306d673fa5757bc39202b8a8b24e",
+    "tests/simulation.test.ts": "98d9b202f5ee70d0264a8dbc37a63fa5e58be32a71472270886433804cf0bdd4",
+    "tests/threats.test.ts": "e086b3af9bc99db46c3f4d5aece5c44fb732bcbab7d5fbb14925cb566ade73aa",
+    "tests/waves.test.ts": "62963fb41e25b64a05bee9b2784fdfa16a9808d70c21558606c249bd806fd2ff"
+  },
+  "portabilityFollowup": "Final strict/test check repeated after sample-based decode and mixed-height row assertions. All121 production outputs and measured runtime source hashes remain identical."
 }

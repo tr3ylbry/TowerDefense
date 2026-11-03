@@ -1,4 +1,4 @@
-import {observeMusic,readMusic} from "./music-probe";
+import {observeMusic,readMusic,expectDecodedLoop} from "./music-probe";
 import { test, expect } from "@playwright/test";
 import { slowRuntime } from "./slow-runtime";
 test.beforeEach(slowRuntime);
@@ -101,7 +101,9 @@ test("a pending music download can be canceled and retried with one active audio
     await page.locator("#music-toggle").click();
     await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "playing");
   }
-  expect(await readMusic(page)).toMatchObject({active:1,contexts:1,buffers:1,loop:true,duration:15});
+  const loop = await readMusic(page);
+  expect(loop).toMatchObject({active:1,contexts:1,buffers:1,loop:true});
+  expectDecodedLoop(loop);
 });
 
 test("Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund", async ({ page }) => {
@@ -186,9 +188,11 @@ test('Orbital Drift repeats on the sample clock across two real loop boundaries 
     for(let i=buffer.length-512;i<buffer.length+512;i++)seamEnergy+=rendered[i]**2;
     return {framesPerLoop:buffer.length,sampleRate:buffer.sampleRate,duration:buffer.duration,maxRepeatError:error,seamRms:Math.sqrt(seamEnergy/1024)};
   });
-  expect(integrity.duration).toBe(15);expect(integrity.maxRepeatError).toBeLessThan(.00001);expect(integrity.seamRms).toBeGreaterThan(.001);
+  expectDecodedLoop(integrity);expect(integrity.maxRepeatError).toBeLessThan(.00001);expect(integrity.seamRms).toBeGreaterThan(.001);
   await expect.poll(async()=> (await readMusic(page)).time,{timeout:40000}).toBeGreaterThan(30.1);
-  expect(await readMusic(page)).toMatchObject({created:1,active:1,contexts:1,buffers:1,loop:true,duration:15});
+  const loop = await readMusic(page);
+  expect(loop).toMatchObject({created:1,active:1,contexts:1,buffers:1,loop:true});
+  expectDecodedLoop(loop);
   expect(requests).toHaveLength(1);
   await expect(page.locator('#music-toggle')).toHaveAttribute('data-state','playing');
   await info.attach('loop-integrity.json',{body:JSON.stringify(integrity),contentType:'application/json'});
@@ -294,18 +298,27 @@ test('dialog action rows and close icons stay centered on desktop, phone and lan
     await group.scrollIntoViewIfNeeded();
     const geometry = await group.evaluate(element => {
       const bounds = element.getBoundingClientRect();
-      const rows: {top:number;left:number;right:number}[] = [];
+      const rows: {top:number;bottom:number;left:number;right:number}[] = [];
+      const items: {left:number;right:number}[] = [];
       for (const child of [...element.children]) {
         const rect = child.getBoundingClientRect();
         if (!rect.width || !rect.height) continue;
-        const row = rows.find(r => Math.abs(r.top - rect.top) < 1);
-        if (row) { row.left = Math.min(row.left, rect.left); row.right = Math.max(row.right, rect.right); }
-        else rows.push({top:rect.top,left:rect.left,right:rect.right});
+        items.push({left:rect.left,right:rect.right});
+        // Same-row buttons can differ in height or move vertically on hover.
+        const row = rows.find(r => Math.min(r.bottom, rect.bottom) > Math.max(r.top, rect.top));
+        if (row) {
+          row.top = Math.min(row.top, rect.top); row.bottom = Math.max(row.bottom, rect.bottom);
+          row.left = Math.min(row.left, rect.left); row.right = Math.max(row.right, rect.right);
+        } else rows.push({top:rect.top,bottom:rect.bottom,left:rect.left,right:rect.right});
       }
-      return {center:bounds.left+bounds.width/2,rows};
+      return {left:bounds.left,right:bounds.right,center:bounds.left+bounds.width/2,rows,items};
     });
     expect(geometry.rows.length).toBeGreaterThan(0);
     for (const row of geometry.rows) expect(Math.abs((row.left+row.right)/2-geometry.center)).toBeLessThan(1);
+    for (const item of geometry.items) {
+      expect(item.left).toBeGreaterThanOrEqual(geometry.left - 1);
+      expect(item.right).toBeLessThanOrEqual(geometry.right + 1);
+    }
   };
   for (const viewport of [{width:1280,height:900},{width:390,height:844},{width:844,height:390}]) {
     await page.setViewportSize(viewport);
@@ -313,6 +326,10 @@ test('dialog action rows and close icons stay centered on desktop, phone and lan
     await expect(page.locator('#start')).toBeEnabled();
     await page.locator('#map-open').click();
     await centered('#map-dialog .dialog-actions');
+    const mixedHeight = await page.addStyleTag({content:'#map-dialog #campaign-switch { min-height: 64px; }'});
+    await page.locator('#campaign-switch').hover();
+    await centered('#map-dialog .dialog-actions');
+    await mixedHeight.evaluate(element => element.parentNode?.removeChild(element));
     const close = page.locator('#map-dialog .dialog-close');
     await expect(close).toHaveCSS('align-items','center');
     await expect(close).toHaveCSS('justify-items','center');

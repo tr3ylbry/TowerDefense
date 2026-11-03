@@ -1,4 +1,4 @@
-import type { Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
 
 declare global {
   interface Window {
@@ -30,6 +30,15 @@ export async function readMusic(page: Page) {
     const latest=active.at(-1)??records.at(-1);
     return {created:records.length,active:active.length,contexts:new Set(records.map(r=>r.source.context)).size,buffers:new Set(records.map(r=>r.source.buffer)).size,
       time:latest?latest.source.context.currentTime-latest.startedAt:0,
-      loop:latest?.source.loop??false,duration:latest?.source.buffer?.duration??0};
+      loop:latest?.source.loop??false,duration:latest?.source.buffer?.duration??0,
+      framesPerLoop:latest?.source.buffer?.length??0,sampleRate:latest?.source.buffer?.sampleRate??0};
   });
+}
+
+/** Native decoders resample to the output rate; allow only one rounded sample. */
+export function expectDecodedLoop(loop: {framesPerLoop:number;sampleRate:number;duration:number}): void {
+  expect(loop.sampleRate).toBeGreaterThan(0);
+  expect(Number.isInteger(loop.framesPerLoop)).toBe(true);
+  expect(loop.duration).toBe(loop.framesPerLoop / loop.sampleRate);
+  expect(Math.abs(loop.framesPerLoop - 15 * loop.sampleRate)).toBeLessThanOrEqual(1);
 }

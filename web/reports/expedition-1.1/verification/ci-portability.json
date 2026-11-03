@@ -1,0 +1,23 @@
+{
+  "initialHead": "e40924d697e755c2cf0cdeb970ea98bf0185fd67",
+  "initialRun": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41562927953",
+  "decoderObservation": {
+    "engine": "hosted Linux WebKit",
+    "frames": 661499,
+    "sampleRate": 44100,
+    "durationSeconds": 14.999977324263039,
+    "sourceDurationSeconds": 15,
+    "differenceInSamples": 1
+  },
+  "rowCheck": "Top-edge equality misclassifies a row when centered buttons have differing heights or hover translation. Group by vertical overlap; retain strict1px horizontal center and bounds checks. Added64px mixed-height/hover stress.",
+  "productionChanged": false,
+  "localRevalidation": {
+    "startTime": "2026-11-03T02:16:28.260Z",
+    "duration": 102128.928,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "replacementGate": "Full225 browser checks on the final pushed head, all engines/shards retained."
+}

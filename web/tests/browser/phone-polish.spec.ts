@@ -1,4 +1,4 @@
-import {observeMusic,readMusic} from "./music-probe";
+import {observeMusic,readMusic,expectDecodedLoop} from "./music-probe";
 import { test, expect } from "@playwright/test";
 
 test("phone navigation aligns, crew stats support tap/keyboard/hover, and both art rosters stay registered", async ({ page }, info) => {
@@ -128,7 +128,9 @@ test("ambient music is deferred, actually plays, stops, retries, and remains pau
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "paused");
   await page.locator("#music-toggle").click();
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "playing");
-  expect(await readMusic(page)).toMatchObject({active:1,contexts:1,buffers:1,loop:true,duration:15});
+  const loop = await readMusic(page);
+  expect(loop).toMatchObject({active:1,contexts:1,buffers:1,loop:true});
+  expectDecodedLoop(loop);
   await expect(page.locator("#sound-toggle")).toHaveAttribute("aria-pressed", "false");
   expect(errors).toEqual([]);
 });

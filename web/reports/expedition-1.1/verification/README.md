@@ -7,7 +7,7 @@ Baseline: clean `b0ece92e4284ccb9919e5368cd18049a4d76a251`. Current runtime chan
 | Rules, strict TypeScript, production build |223 rules passed; `rule-typescript-build.txt`; no dependency changes|
 | Final focused independent production checks |28/28 Chromium/WebKit,0 skipped/flaky/unexpected; `focused-production.json`|
 | Continuous loop |Two real15s boundaries per engine, same active source/buffer/context and one fetch; `loop-integrity.json`: exact repeated decoded samples, nonzero seam energy|
-| Complete production Chromium journeys |72/72 passed,0 skipped/flaky/unexpected; `production-chromium.json`;18m02s, final independent production build|
+| Complete production Chromium journeys |72/72 passed,0 skipped/flaky/unexpected; `production-chromium.json`;18m02s, runtime identical to delivery; see portability note|
 | Complete three-engine CI |75 cases/engine,225 browser checks required across six existing shards; exact final-head run/conclusion supplied with delivery and visible in [Actions](https://github.com/tr3ylbry/TowerDefense/actions/workflows/browser.yml)|
 | Standalone parity |36 stepwise runs against frozen original browser revision5647f09; `standalone-parity.json`|
 | Preservation |248 illustrated poses/419 Original frames; hashes, proportional alpha registration and unchanged gameplay/campaign/save/pose sources in `preservation.json`|
@@ -55,3 +55,12 @@ Run `python3 -m unittest discover -s scripts -p test_animation_tools.py`, `pytho
 Final physical phone layout/audio/background/long-session results, live game screen-reader speech and five independent first-time sessions remain separate external evidence. Native AX/engine emulation are not substituted for them. See `../assessment/DEVICE_CHECKLIST.md`. No public deployment is part of this verification.
 
 Runtime commits: `5b64b83` (defender delivery) and `3096620` (audio/dialog/interface stabilization). The accompanying documentation/evidence commit completes the delivery. The exact pushed head and its complete CI run are reported at handoff; verify the Actions head SHA rather than assuming an earlier green run covers a later commit.
+
+
+## CI portability follow-up
+
+The first 1.1 run at `e40924d` ([Actions run41562927953](https://github.com/tr3ylbry/TowerDefense/actions/runs/41562927953)) exposed two test assumptions on hosted Linux. WebKit decoded the exact 15-second source as 661,499 samples at 44,100Hz: one resampled sample short. The WAV source remains exactly 15 seconds, verified by rule tests. Native decoded duration is now checked against its exact frame count/rate with at most one sample of resampling rounding, consistent with [decodeAudioData resampling](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData). Single active source/buffer/context, real 30.1-second playback, one fetch, exact offline repeated samples and nonzero seam energy are all retained.
+
+The row check incorrectly treated buttons as different rows when their top edges differed. Real center-aligned buttons can have different font/line heights or a 1px hover translation. Row grouping now uses vertical overlap; horizontal centering remains strictly within 1px, and every button must stay within the row's horizontal bounds. A 64px primary-button stress case and hover explicitly exercise this distinction. No CSS, audio transport, game rule, production asset or package changed in this follow-up. No test or engine is skipped. Both Firefox shards passed in that first run; the replacement final-head matrix must still run all engines.
+
+The 72-case production recording predates this test-only correction; its application source and 121 output-file hashes are identical to delivery. The refreshed 28-case production check validates the corrected assertions. Final CI provides every 75-case engine result on the exact pushed revision. Earlier passes are not presented as later test-harness execution.
