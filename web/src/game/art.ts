@@ -1,4 +1,5 @@
 import type { EnemyKind, MapKind, TowerKind } from "./content";
+import { DEFENDER_DELIVERY } from "./defender-delivery";
 
 export interface ExpeditionArt {
   key: string;
@@ -24,16 +25,20 @@ function cutout(
     foot,
   };
 }
+function defender(name: keyof typeof DEFENDER_DELIVERY, width: number): ExpeditionArt {
+  const { size, foot } = DEFENDER_DELIVERY[name];
+  return cutout(name, width, size[0], size[1], foot);
+}
 export const EXPEDITION_TOWERS: Record<TowerKind, ExpeditionArt> = {
-  astro: cutout("ranger", 80, 384, 357, 351 / 357),
-  bush: cutout("money-bush", 68, 384, 360, 328 / 360),
-  wall: cutout("asteroid", 82, 384, 304, 273 / 304),
-  zeus: cutout("moon-zeus", 90, 384, 341, 322 / 341),
-  explosive: cutout("explosive-astro-joe", 86, 384, 355, 351 / 355),
-  startrell: cutout("startrell-cluggins", 78, 384, 365, 355 / 365),
-  tars: cutout("tars", 67, 340, 384, 366 / 384),
-  tree: cutout("money-tree", 70, 339, 384, 376 / 384),
-  falcon: cutout("frontier-flagship-compact", 96, 384, 274, 267 / 274),
+  astro: defender("ranger", 80),
+  bush: defender("money-bush", 68),
+  wall: defender("asteroid", 82),
+  zeus: defender("moon-zeus", 90),
+  explosive: defender("explosive-astro-joe", 86),
+  startrell: defender("startrell-cluggins", 78),
+  tars: defender("tars", 67),
+  tree: defender("money-tree", 70),
+  falcon: defender("frontier-flagship-compact", 96),
 };
 export const EXPEDITION_ENEMIES: Record<EnemyKind, ExpeditionArt> = {
   scout: cutout("scout", 66, 384, 320, 294 / 320),

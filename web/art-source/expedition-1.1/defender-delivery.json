@@ -1,0 +1,252 @@
+{
+  "baseline": "b0ece92e4284ccb9919e5368cd18049a4d76a251",
+  "pillow": "12.2.0",
+  "libwebp": "1.6.0",
+  "operation": "192px proportional LANCZOS from preserved PNG; unchanged WebP quality90/method6/exact/alpha_quality100",
+  "scriptSha256": "7fcb993f7c20780e5fff599f82fff2386f063f209412985836050657c10e55c4",
+  "assets": [
+    {
+      "source": "public/art/expedition/ranger.png",
+      "file": "public/art/expedition/ranger.webp",
+      "sourceSize": [
+        512,
+        476
+      ],
+      "size": [
+        192,
+        179
+      ],
+      "bytes": 13752,
+      "sourceSha256": "d3880233055291293ff654d279fde01ea8005f3e8b3c6fa9a945e7ccf18a7139",
+      "sha256": "e7319df6d676ecebbbbd919f494c841a616282f041921330ec3b2d3e7d4f5a94",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        29,
+        3,
+        165,
+        176
+      ],
+      "foot": 0.9832402234636871,
+      "previousBytes": 38006,
+      "previousSha256": "afee735998096a71c76888ab4ee8cd3d3dc6218ffdd71abe7dd3d7552812ee17"
+    },
+    {
+      "source": "public/art/expedition/money-bush.png",
+      "file": "public/art/expedition/money-bush.webp",
+      "sourceSize": [
+        448,
+        420
+      ],
+      "size": [
+        192,
+        180
+      ],
+      "bytes": 13012,
+      "sourceSha256": "7ce948bbdb581ae350fefd0d67db5a337e27e4171255f81dfd27bed8ff28cd12",
+      "sha256": "da1b0ec967391fafe504685bcfcd7ffdbea2183e0a124e56df57a24bcc905833",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        10,
+        14,
+        185,
+        164
+      ],
+      "foot": 0.9111111111111111,
+      "previousBytes": 34948,
+      "previousSha256": "fec1ec7afa736ee3e84616ff28d818bcec9ec47f8cbd3f852908ad181943bb4d"
+    },
+    {
+      "source": "public/art/expedition/asteroid.png",
+      "file": "public/art/expedition/asteroid.webp",
+      "sourceSize": [
+        448,
+        355
+      ],
+      "size": [
+        192,
+        152
+      ],
+      "bytes": 11422,
+      "sourceSha256": "f799bcc8c8618b6c3c3a99f4cf5be3f049875e0719c70af24c444b04874087d9",
+      "sha256": "4d80a99ee0a4b950ecb1dd37c0455d9cb13a9f8c989421c91bc0bc1b9966fcc4",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        4,
+        18,
+        188,
+        137
+      ],
+      "foot": 0.9013157894736842,
+      "previousBytes": 33076,
+      "previousSha256": "5980eea037006d3ff8833038c156ec99f7144f7ec84346dd28cc0b639a39a78f"
+    },
+    {
+      "source": "public/art/expedition/moon-zeus.png",
+      "file": "public/art/expedition/moon-zeus.webp",
+      "sourceSize": [
+        448,
+        398
+      ],
+      "size": [
+        192,
+        171
+      ],
+      "bytes": 14722,
+      "sourceSha256": "a88d84c4c223af37a2eb3247a268f4507c66b76bc9e491a0024739ee86c5697e",
+      "sha256": "5c4e03db6e06cce36522387c242eb35928ffe569048f65d943ac907c629863c1",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        10,
+        13,
+        185,
+        162
+      ],
+      "foot": 0.9473684210526315,
+      "previousBytes": 37404,
+      "previousSha256": "654f24e38145043489da5a1c8f9219a5cfe2d9bec0f34622eaeb7ed62fcea64d"
+    },
+    {
+      "source": "art-source/expedition-0.5/startrell-original.png",
+      "file": "public/art/expedition/startrell-cluggins.webp",
+      "sourceSize": [
+        1287,
+        1222
+      ],
+      "size": [
+        192,
+        182
+      ],
+      "bytes": 13524,
+      "sourceSha256": "853a1fd9ccf62664bbc7c89b72af285d515cc3b7e455a4fcaf0dce3d6df99b47",
+      "sha256": "f4bb35c410ed257216c2997c83f6f280aac69a41767fd06aba2aa8b50645abfa",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        9,
+        4,
+        190,
+        177
+      ],
+      "foot": 0.9725274725274725,
+      "previousBytes": 32074,
+      "previousSha256": "cdcb9c496edfac275d74a9aebb5a3cdb7839f569daf12e37bb879a76c6fbec70"
+    },
+    {
+      "source": "public/art/expedition/tars.png",
+      "file": "public/art/expedition/tars.webp",
+      "sourceSize": [
+        453,
+        512
+      ],
+      "size": [
+        170,
+        192
+      ],
+      "bytes": 10438,
+      "sourceSha256": "d2c1ceffc99c4e2a0d964353e9388015dd158b30f3a7362b9952df3c02dc277f",
+      "sha256": "d535724f3f06cdc56bfd351ba43ec5b08769cecd64862806889a6172b666d4c0",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        11,
+        6,
+        165,
+        183
+      ],
+      "foot": 0.953125,
+      "previousBytes": 26458,
+      "previousSha256": "5f59f11cc2982440b98db01290e453e7e470d5e7e7d5f2ea5b442fbf87c2bd0c"
+    },
+    {
+      "source": "art-source/expedition-0.5/demo-original.png",
+      "file": "public/art/expedition/explosive-astro-joe.webp",
+      "sourceSize": [
+        1304,
+        1206
+      ],
+      "size": [
+        192,
+        178
+      ],
+      "bytes": 16820,
+      "sourceSha256": "b67fcf4fd4e4d018d4e8e6d43034bcda6ad0694a2d8a731c484a103ffec89036",
+      "sha256": "f19e2c5c4a10ed368270f2afb0277fe100a8fe02c561c073e84a351cf90787aa",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        3,
+        1,
+        190,
+        176
+      ],
+      "foot": 0.9887640449438202,
+      "previousBytes": 45474,
+      "previousSha256": "9d7035c25fd23b80ad130ff29b8fc1a376d3fde12490e82e4cdadb9f0ca13cec"
+    },
+    {
+      "source": "art-source/expedition-0.5/tree-original.png",
+      "file": "public/art/expedition/money-tree.webp",
+      "sourceSize": [
+        1178,
+        1335
+      ],
+      "size": [
+        169,
+        192
+      ],
+      "bytes": 17422,
+      "sourceSha256": "5faef74dc907029c0f2052eb94f5041d4b70cf98e88ea4f3f0faf6c54e0d8d4e",
+      "sha256": "b133e584710803d25cffc0f8b0b53db96cd0f573242eb8b48036fd43861413f8",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        18,
+        4,
+        152,
+        188
+      ],
+      "foot": 0.9791666666666666,
+      "previousBytes": 46416,
+      "previousSha256": "2d53b0bbf3e97aace919adfba1c0f425bf0f80d138c2db22955b9645be090906"
+    },
+    {
+      "source": "art-source/expedition-0.5/flagship-compact-original.png",
+      "file": "public/art/expedition/frontier-flagship-compact.webp",
+      "sourceSize": [
+        1484,
+        1060
+      ],
+      "size": [
+        192,
+        137
+      ],
+      "bytes": 14630,
+      "sourceSha256": "27494dbc75196a3db3259a9e9b80880fa5454234931277624cb3195020920cc5",
+      "sha256": "20747a8b515b71b8b0e574375063b49a3723f9092292cef6dd05aec2085e29aa",
+      "maximum": 192,
+      "quality": 90,
+      "alphaExactAfterResampling": true,
+      "alphaBounds32": [
+        2,
+        1,
+        190,
+        134
+      ],
+      "foot": 0.9781021897810219,
+      "previousBytes": 38514,
+      "previousSha256": "60a6411a5082688d3e67d078f1be17370605615d0e57606ccd77d9beb1490262"
+    }
+  ]
+}

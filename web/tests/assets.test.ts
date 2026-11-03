@@ -10,6 +10,7 @@ import {
 } from "../src/game/art";
 import { readFileSync } from "node:fs";
 import derivatives from "../art-source/expedition-0.5/derivatives.json";
+import delivery from "../art-source/expedition-1.1/defender-delivery.json";
 describe("mission asset plans", () => {
   it("starts with one environment and the full illustrated alien roster, without comparison sheets", () => {
     const plan = assetsFor(manifest, "canyon", "expedition");
@@ -84,7 +85,7 @@ describe("mission asset plans", () => {
       ...Object.values(EXPEDITION_TOWERS),
       ...Object.values(EXPEDITION_ENEMIES),
     ]) {
-      const record = derivatives.assets.find(
+      const record = [...delivery.assets, ...derivatives.assets].find(
         (x) => x.file === `public/art/${art.file}`,
       )!;
       expect(record).toBeDefined();
