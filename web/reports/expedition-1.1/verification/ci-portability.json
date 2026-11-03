@@ -34,5 +34,43 @@
     },
     "chromiumCpuRate": 4,
     "webkitCpuRate": 1
+  },
+  "hostedLatencyFollowup": {
+    "failedRun": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41568145213",
+    "touch": {
+      "cause": "The full combined toggle scenario exceeded45 seconds while still progressing; no completed action exceeded2.1 seconds. Its24 real taps each took roughly1 second on hosted Chromium.",
+      "correction": "90-second total case budget for both pointer/touch variants; individual actions and assertions still bounded at15 seconds; every cycle, color, pressed-state and keyboard assertion retained."
+    },
+    "campaign": {
+      "cause": "The robot built at2x while each card/tile click cost roughly1 second, losing one shield on Canyon Escalation.",
+      "correction": "Keep default1x during real purchases, then switch to2x after all defenses. All six3-star victories, best ratings, receipts, save/reload and lost-replay assertions retained; no injected game clock, money, enemies or state."
+    },
+    "productionChanged": false,
+    "toggleRevalidation": {
+      "stats": {
+        "startTime": "2026-11-03T03:11:28.756Z",
+        "duration": 49010.535,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "chromiumCpuRate": 4,
+      "webkitCpuRate": 1,
+      "evidence": "toggle-timing.json"
+    },
+    "campaignRevalidation": {
+      "stats": {
+        "startTime": "2026-11-03T03:11:31.450Z",
+        "duration": 757294.8060000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actionSlowMoMs": 500,
+      "scope": "All six real three-star victories,18-star board, save/reload, receipts and lost replay; ordinary production preview/player controls.",
+      "evidence": "slow-driver-campaign.json"
+    }
   }
 }

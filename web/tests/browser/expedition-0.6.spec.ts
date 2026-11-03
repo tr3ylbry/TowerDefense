@@ -90,7 +90,9 @@ test("public-control expedition completes all six missions, persists stars, repl
     await prepare(page, id);
     if (index === 1) expect(artRequests.slice(before)).toEqual([]); // Same Canyon textures and thumbnails are reused.
     await page.locator("#start").click();
-    await page.locator("#speed").click();
+    // Build at normal speed: hosted pointer/scroll actions can take a second,
+    // so doubling the simulation here makes driver latency part of the strategy.
+    await expect(page.locator("#speed")).toHaveText("1×");
     const map = MISSIONS[id].environment;
     const columns = Array.from({ length: 6 }, (_, row) =>
       Array.from({ length: 9 }, (_, col) => col).filter(
@@ -120,6 +122,8 @@ test("public-control expedition completes all six missions, persists stars, repl
         );
         await buy(kind, row, legal[rank]);
       }
+    await page.locator("#speed").click();
+    await expect(page.locator("#speed")).toHaveText("2×");
     await expect(page.locator("#status")).toHaveText("Outpost secured", {
       timeout: 180000,
     });

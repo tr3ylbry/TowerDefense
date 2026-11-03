@@ -211,12 +211,12 @@
     "tests/browser/expedition-0.3.spec.ts": "56932145ea998ded1bf80acf4a41005bb5634e4a283ca8de29d8ff58002e1477",
     "tests/browser/expedition-0.4.spec.ts": "77947fc47a19f32417606801599e4bef338980cb8c27b7f7f6df44b3e2f575a3",
     "tests/browser/expedition-0.5.spec.ts": "faa901517e981d25a3698876f40a67eae6c72da4dde0942c62fdf7c086f74ac4",
-    "tests/browser/expedition-0.6.spec.ts": "a03a71bb6c88c53e00d334c9ae3c66ec79102d188e9bfccade6b456a15c1fae1",
+    "tests/browser/expedition-0.6.spec.ts": "7c3b9dc83a3a7d7397636c8d148fc66d2556e2450afd67690bd3391f0c103063",
     "tests/browser/expedition-0.7.spec.ts": "39adb50c741284b44c440d5b408b11f8f7bde67f55d6c8fb2db17627bcbb3d6f",
     "tests/browser/expedition-0.8.spec.ts": "80b2348bb3e757e88d56c96a795b186a312b38ac600ba486087e50a101d5a92d",
     "tests/browser/expedition-0.9.spec.ts": "9e52eb09bd3fd13c44624834badb1002e2aa66cc8d1c7d7b0faf0f36ca1c8a74",
     "tests/browser/expedition-1.0.spec.ts": "706ace25c1488b4ac071ebae5e566bbe6b0fd8fd0cb63535701ff5175097930d",
-    "tests/browser/expedition-1.1.spec.ts": "047355a792e61eb9f1db13afe5024563974bb8931585481065a36ed20a1b4e12",
+    "tests/browser/expedition-1.1.spec.ts": "d8e1f085d56adee53caa34cde85aa88eec94d2ba4776aa60b72733bf6ade54e2",
     "tests/browser/mission.spec.ts": "7a5c784ceb26d7d38f7ed05b9a91f2cad5a598708d40bc2b5ee5987f32d48e30",
     "tests/browser/music-probe.ts": "c9eff528d9973368f8f6dac822823344166143906112e1b3ae95c13bb36bf90c",
     "tests/browser/phone-polish.spec.ts": "848b739f9c52f0a4b4d92a446787efd4d85ea13dc242ef2d7bfb1389e6e32f7a",
@@ -235,5 +235,6 @@
     "tests/waves.test.ts": "62963fb41e25b64a05bee9b2784fdfa16a9808d70c21558606c249bd806fd2ff"
   },
   "portabilityFollowup": "Final strict/test check repeated after sample-based decode and mixed-height row assertions. All121 production outputs and measured runtime source hashes remain identical.",
-  "combatSynchronizationFollowup": "New real-warning observer/contact setup passed Chromium4x CPU and WebKit; game and all121 deployable files unchanged."
+  "combatSynchronizationFollowup": "New real-warning observer/contact setup passed Chromium4x CPU and WebKit; game and all121 deployable files unchanged.",
+  "hostedLatencyFollowup": "Final223-rule/strict/build check repeated in both workspace and clean installation after bounded toggle sequence and1x campaign setup corrections;121 output hashes and measured runtime sources remain identical."
 }

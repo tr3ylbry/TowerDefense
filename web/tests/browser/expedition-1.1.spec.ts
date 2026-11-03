@@ -247,6 +247,10 @@ for (const touch of [false, true]) {
   test.describe(touch ? 'touch toggle appearance' : 'pointer toggle appearance', () => {
     test.use({ hasTouch: touch, viewport: { width: touch ? 390 : 1280, height: 844 } });
     test('enabled highlights follow state after repeated taps without moving the pointer', async ({ page }) => {
+      // This deliberately repeats every toolbar control; hosted touch actions
+      // can each take a second. Bound individual actions without truncating the sequence.
+      test.setTimeout(90_000);
+      page.setDefaultTimeout(15_000);
       await page.emulateMedia({ reducedMotion: 'no-preference' });
       await page.goto('/');
       await expect(page.locator('#start')).toBeEnabled();
