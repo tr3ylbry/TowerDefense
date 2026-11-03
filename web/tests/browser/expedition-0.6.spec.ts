@@ -7,7 +7,7 @@ import type { MissionId } from "../../src/game/missions";
 
 async function openBoard(page: Page) {
   const campaign = await page.locator("#map-open").innerText();
-  if (campaign.includes("Mission control"))
+  if (campaign.includes("Mission Control"))
     await page.locator("#map-open").click();
   else if (await page.locator("#campaign-nav").isVisible())
     await page.locator("#campaign-nav").click();

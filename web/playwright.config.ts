@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 2,
   fullyParallel: true,
   reporter: process.env.CI ? "line" : "list",
-  use: { baseURL: "http://127.0.0.1:4173", trace: "retain-on-failure" },
+  use: { baseURL: process.env.AVA_TEST_URL ?? "http://127.0.0.1:4173", trace: "retain-on-failure" },
   projects: [
     {
       name: "chromium",
@@ -20,7 +20,7 @@ export default defineConfig({
     { name: "firefox", use: { ...devices["Desktop Firefox"] } },
     { name: "webkit", use: { ...devices["Desktop Safari"] } },
   ],
-  webServer: {
+  webServer: process.env.AVA_TEST_URL ? undefined : {
     command: "npm run dev -- --port 4173 --strictPort",
     url: "http://127.0.0.1:4173",
     reuseExistingServer: !process.env.CI,

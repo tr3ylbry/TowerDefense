@@ -116,7 +116,7 @@ test("offers retry when an art resource fails to load", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "We lost the transmission." }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Change destination" }).click();
+  await page.getByRole("button", { name: "Change Destination" }).click();
   await page
     .getByRole("button", { name: "Choose Sky Bridge", exact: true })
     .click();
@@ -135,7 +135,7 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
     page.getByRole("button", { name: "Begin mission" }),
   ).toBeEnabled();
   await expect(page.locator("[data-tower]")).toHaveCount(9);
-  await page.getByRole("button", { name: "Change destination" }).click();
+  await page.getByRole("button", { name: "Change Destination" }).click();
   await page
     .getByRole("button", { name: "Choose Sky Bridge", exact: true })
     .click();
@@ -165,14 +165,14 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
     page.getByRole("gridcell", { name: /Lane 2, tile 1, Astro Joe X/ }),
   ).toBeVisible();
   await expect(page.locator("#credits")).toHaveText("45");
-  await page.getByRole("button", { name: "Change destination" }).click();
+  await page.getByRole("button", { name: "Change Destination" }).click();
   await expect(page.locator("#map-warning")).toContainText(
     "resets your current deployment",
   );
   await page.getByRole("button", { name: "Keep current destination" }).click();
   await expect(page.locator("#overlay")).toBeHidden();
   await expect(page.locator("#credits")).toHaveText("45");
-  await page.getByRole("button", { name: "Change destination" }).click();
+  await page.getByRole("button", { name: "Change Destination" }).click();
   await page
     .getByRole("button", { name: "Choose The Nest", exact: true })
     .click();
@@ -195,7 +195,7 @@ test("deploys the expanded crew and selects the Falcon on The Nest", async ({
   await expect(
     page.getByRole("button", { name: "Begin mission" }),
   ).toBeEnabled();
-  await page.getByRole("button", { name: "Change destination" }).click();
+  await page.getByRole("button", { name: "Change Destination" }).click();
   await page
     .getByRole("button", { name: "Choose The Nest", exact: true })
     .click();
@@ -263,7 +263,7 @@ test("restored roster and destinations fit a narrow screen", async ({
   await expect(
     page.getByRole("button", { name: "Begin mission" }),
   ).toBeEnabled();
-  await page.getByRole("button", { name: "Change destination" }).click();
+  await page.getByRole("button", { name: "Change Destination" }).click();
   await page
     .getByRole("button", { name: "Choose The Nest", exact: true })
     .click();

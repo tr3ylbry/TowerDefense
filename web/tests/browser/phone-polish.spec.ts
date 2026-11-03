@@ -1,3 +1,4 @@
+import {observeMusic,readMusic} from "./music-probe";
 import { test, expect } from "@playwright/test";
 
 test("phone navigation aligns, crew stats support tap/keyboard/hover, and both art rosters stay registered", async ({ page }, info) => {
@@ -98,15 +99,7 @@ test("ambient music is deferred, actually plays, stops, retries, and remains pau
   const errors: string[] = [], requests: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   page.on("request", (request) => requests.push(request.url()));
-  await page.addInitScript(() => {
-    const play = HTMLMediaElement.prototype.play;
-    HTMLMediaElement.prototype.play = function () {
-      const observed = window as Window & { musicElements?: HTMLMediaElement[] };
-      observed.musicElements ??= [];
-      if (!observed.musicElements.includes(this)) observed.musicElements.push(this);
-      return play.call(this);
-    };
-  });
+  await observeMusic(page);
   await page.goto("/");
   await expect(page.locator("#start")).toBeEnabled();
   expect(requests.some((url) => url.includes("orbital-drift.wav"))).toBe(false);
@@ -116,13 +109,10 @@ test("ambient music is deferred, actually plays, stops, retries, and remains pau
   await page.unroute("**/orbital-drift.wav*");
   await page.locator("#music-toggle").click();
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "playing");
-  await expect.poll(() => page.evaluate(() => {
-    const elements = (window as Window & { musicElements?: HTMLMediaElement[] }).musicElements!;
-    return elements[0].currentTime;
-  })).toBeGreaterThan(0.1);
+  await expect.poll(async () => (await readMusic(page)).time).toBeGreaterThan(0.1);
   await page.locator("#music-toggle").click();
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "off");
-  expect(await page.evaluate(() => (window as Window & { musicElements?: HTMLMediaElement[] }).musicElements![0].paused)).toBe(true);
+  expect((await readMusic(page)).active).toBe(0);
   await page.locator("#music-toggle").click();
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "playing");
   // Browser visibility emulation only; no simulation state/clock edits.
@@ -138,10 +128,7 @@ test("ambient music is deferred, actually plays, stops, retries, and remains pau
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "paused");
   await page.locator("#music-toggle").click();
   await expect(page.locator("#music-toggle")).toHaveAttribute("data-state", "playing");
-  expect(await page.evaluate(() => {
-    const elements = (window as Window & { musicElements?: HTMLMediaElement[] }).musicElements!;
-    return { count: elements.length, loop: elements[0].loop, volume: elements[0].volume };
-  })).toEqual({ count: 1, loop: true, volume: 1 });
+  expect(await readMusic(page)).toMatchObject({active:1,contexts:1,buffers:1,loop:true,duration:15});
   await expect(page.locator("#sound-toggle")).toHaveAttribute("aria-pressed", "false");
   expect(errors).toEqual([]);
 });

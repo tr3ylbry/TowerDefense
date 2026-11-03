@@ -386,9 +386,16 @@ h1 > span {
 .tool span {
   font-size: 10px;
 }
-.tool:hover,
 .tool[aria-pressed="true"] {
   color: var(--mint);
+}
+.tool[aria-busy="true"] {
+  color: var(--orange);
+}
+@media (hover: hover) and (pointer: fine) {
+  .tool:not([aria-pressed]):hover {
+    color: var(--cream);
+  }
 }
 
 /* Contextual 0.4 advice appears only while an actual hostile has passed the guns. */
@@ -969,12 +976,23 @@ dialog li {
   border: 0;
   font-size: 25px;
   color: #a4bab5;
-  padding: 4px 8px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  line-height: 1;
 }
 .dialog-actions {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
-  justify-content: flex-end;
+  justify-content: center;
+}
+.dialog-actions > * {
+  max-width: 100%;
+  min-height: 44px;
 }
 .secondary-button {
   display: inline-flex;
@@ -1736,8 +1754,14 @@ dialog li {
 }
 .alien-guide article {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 14px;
+}
+.alien-guide article > div {
+  flex: 1 1 130px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .alien-portrait {
   flex: 0 0 64px;
@@ -2235,6 +2259,11 @@ dialog li {
   font-size: 11px;
   white-space: nowrap;
 }
+#field-zoom[aria-pressed="true"] {
+  color: var(--mint);
+  border-color: var(--mint);
+  background: #93d7bd12;
+}
 @media (min-width: 701px) {
   .focused-play .board-stack {
     max-width: calc((100svh - 425px) * 1080 / 660);
@@ -2722,7 +2751,7 @@ dialog li {
 .campaign-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 28px;
