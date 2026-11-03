@@ -1,0 +1,395 @@
+{
+  "browser": "156.0.8078.74",
+  "conditions": {
+    "host": "Apple M5 / macOS, headless installed Chrome (AVA_PROFILE_CHANNEL=chrome), serial fresh contexts; alternating frozen 0.9 / 1.0 production builds",
+    "normal": "No throttling",
+    "constrained": "4× CPU; 150 ms latency; 200000 B/s download, 75000 B/s upload",
+    "readiness": "MutationObserver of actual enabled Begin mission, performance.now from navigation"
+  },
+  "results": [
+    {
+      "variant": "before",
+      "constrained": false,
+      "sample": 0,
+      "readyMs": 268.90000009536743,
+      "resources": [
+        {
+          "path": "/assets/index-DwS2vSaD.js",
+          "transferSize": 30112,
+          "encodedBodySize": 29812
+        },
+        {
+          "path": "/assets/index-DJKwLXTT.css",
+          "transferSize": 9891,
+          "encodedBodySize": 9591
+        },
+        {
+          "path": "/art/manifest.json",
+          "transferSize": 2517,
+          "encodedBodySize": 2217
+        },
+        {
+          "path": "/assets/battlefield-DRVUVqq3.js",
+          "transferSize": 7632,
+          "encodedBodySize": 7332
+        },
+        {
+          "path": "/assets/phaser-B_vcVLyb.js",
+          "transferSize": 355626,
+          "encodedBodySize": 355326
+        },
+        {
+          "path": "/art/expedition/ranger.webp",
+          "transferSize": 38306,
+          "encodedBodySize": 38006
+        },
+        {
+          "path": "/art/expedition/money-bush.webp",
+          "transferSize": 35248,
+          "encodedBodySize": 34948
+        },
+        {
+          "path": "/art/expedition/asteroid.webp",
+          "transferSize": 33376,
+          "encodedBodySize": 33076
+        },
+        {
+          "path": "/art/expedition/moon-zeus.webp",
+          "transferSize": 37704,
+          "encodedBodySize": 37404
+        },
+        {
+          "path": "/art/expedition/startrell-cluggins.webp",
+          "transferSize": 32374,
+          "encodedBodySize": 32074
+        },
+        {
+          "path": "/art/expedition/tars.webp",
+          "transferSize": 26758,
+          "encodedBodySize": 26458
+        },
+        {
+          "path": "/art/expedition/explosive-astro-joe.webp",
+          "transferSize": 45774,
+          "encodedBodySize": 45474
+        },
+        {
+          "path": "/art/expedition/money-tree.webp",
+          "transferSize": 46716,
+          "encodedBodySize": 46416
+        },
+        {
+          "path": "/art/expedition/frontier-flagship-compact.webp",
+          "transferSize": 38814,
+          "encodedBodySize": 38514
+        },
+        {
+          "path": "/favicon.svg",
+          "transferSize": 607,
+          "encodedBodySize": 307
+        },
+        {
+          "path": "/art/expedition/canyon-0.5.webp",
+          "transferSize": 87706,
+          "encodedBodySize": 87406
+        },
+        {
+          "path": "/art/projectile-astro-joe-ammo.png",
+          "transferSize": 650,
+          "encodedBodySize": 350
+        },
+        {
+          "path": "/art/projectile-startrell-cluggins-ammo.png",
+          "transferSize": 1074,
+          "encodedBodySize": 774
+        },
+        {
+          "path": "/art/projectile-explosive-astro-joe-ammo.png",
+          "transferSize": 1872,
+          "encodedBodySize": 1572
+        },
+        {
+          "path": "/art/projectile-moon-zeus-ammo.png",
+          "transferSize": 1877,
+          "encodedBodySize": 1577
+        },
+        {
+          "path": "/art/projectile-tars-ammo.png",
+          "transferSize": 956,
+          "encodedBodySize": 656
+        },
+        {
+          "path": "/art/expedition/ranger.webp",
+          "transferSize": 300,
+          "encodedBodySize": 38006
+        },
+        {
+          "path": "/art/expedition/money-bush.webp",
+          "transferSize": 300,
+          "encodedBodySize": 34948
+        },
+        {
+          "path": "/art/expedition/asteroid.webp",
+          "transferSize": 300,
+          "encodedBodySize": 33076
+        },
+        {
+          "path": "/art/expedition/moon-zeus.webp",
+          "transferSize": 300,
+          "encodedBodySize": 37404
+        },
+        {
+          "path": "/art/expedition/explosive-astro-joe.webp",
+          "transferSize": 300,
+          "encodedBodySize": 45474
+        },
+        {
+          "path": "/art/expedition/startrell-cluggins.webp",
+          "transferSize": 300,
+          "encodedBodySize": 32074
+        },
+        {
+          "path": "/art/expedition/money-tree.webp",
+          "transferSize": 300,
+          "encodedBodySize": 46416
+        },
+        {
+          "path": "/art/expedition/tars.webp",
+          "transferSize": 300,
+          "encodedBodySize": 26458
+        },
+        {
+          "path": "/art/expedition/frontier-flagship-compact.webp",
+          "transferSize": 300,
+          "encodedBodySize": 38514
+        },
+        {
+          "path": "/art/expedition/scout-animation.webp",
+          "transferSize": 92606,
+          "encodedBodySize": 92306
+        },
+        {
+          "path": "/art/expedition/grunt-animation.webp",
+          "transferSize": 97396,
+          "encodedBodySize": 97096
+        },
+        {
+          "path": "/art/expedition/sprinter-animation.webp",
+          "transferSize": 119484,
+          "encodedBodySize": 119184
+        },
+        {
+          "path": "/art/expedition/manhunter-animation.webp",
+          "transferSize": 84818,
+          "encodedBodySize": 84518
+        },
+        {
+          "path": "/art/expedition/tank-animation.webp",
+          "transferSize": 137190,
+          "encodedBodySize": 136890
+        },
+        {
+          "path": "/art/expedition/gargantua-animation.webp",
+          "transferSize": 169344,
+          "encodedBodySize": 169044
+        }
+      ],
+      "imageCount": 21,
+      "imageEncodedBytes": 1123743,
+      "totalTransferBytes": 1539128,
+      "navigationTransferBytes": 1080
+    },
+    {
+      "variant": "before",
+      "constrained": true,
+      "sample": 0,
+      "readyMs": 8684.799999952316,
+      "resources": [
+        {
+          "path": "/assets/index-DwS2vSaD.js",
+          "transferSize": 30112,
+          "encodedBodySize": 29812
+        },
+        {
+          "path": "/assets/index-DJKwLXTT.css",
+          "transferSize": 9891,
+          "encodedBodySize": 9591
+        },
+        {
+          "path": "/art/manifest.json",
+          "transferSize": 2517,
+          "encodedBodySize": 2217
+        },
+        {
+          "path": "/assets/battlefield-DRVUVqq3.js",
+          "transferSize": 7632,
+          "encodedBodySize": 7332
+        },
+        {
+          "path": "/assets/phaser-B_vcVLyb.js",
+          "transferSize": 355626,
+          "encodedBodySize": 355326
+        },
+        {
+          "path": "/art/expedition/ranger.webp",
+          "transferSize": 38306,
+          "encodedBodySize": 38006
+        },
+        {
+          "path": "/art/expedition/money-bush.webp",
+          "transferSize": 35248,
+          "encodedBodySize": 34948
+        },
+        {
+          "path": "/art/expedition/asteroid.webp",
+          "transferSize": 33376,
+          "encodedBodySize": 33076
+        },
+        {
+          "path": "/art/expedition/moon-zeus.webp",
+          "transferSize": 37704,
+          "encodedBodySize": 37404
+        },
+        {
+          "path": "/art/expedition/explosive-astro-joe.webp",
+          "transferSize": 45774,
+          "encodedBodySize": 45474
+        },
+        {
+          "path": "/art/expedition/startrell-cluggins.webp",
+          "transferSize": 32374,
+          "encodedBodySize": 32074
+        },
+        {
+          "path": "/art/expedition/tars.webp",
+          "transferSize": 26758,
+          "encodedBodySize": 26458
+        },
+        {
+          "path": "/art/expedition/frontier-flagship-compact.webp",
+          "transferSize": 38814,
+          "encodedBodySize": 38514
+        },
+        {
+          "path": "/art/expedition/money-tree.webp",
+          "transferSize": 46716,
+          "encodedBodySize": 46416
+        },
+        {
+          "path": "/favicon.svg",
+          "transferSize": 607,
+          "encodedBodySize": 307
+        },
+        {
+          "path": "/art/expedition/canyon-0.5.webp",
+          "transferSize": 87706,
+          "encodedBodySize": 87406
+        },
+        {
+          "path": "/art/projectile-astro-joe-ammo.png",
+          "transferSize": 650,
+          "encodedBodySize": 350
+        },
+        {
+          "path": "/art/projectile-startrell-cluggins-ammo.png",
+          "transferSize": 1074,
+          "encodedBodySize": 774
+        },
+        {
+          "path": "/art/projectile-explosive-astro-joe-ammo.png",
+          "transferSize": 1872,
+          "encodedBodySize": 1572
+        },
+        {
+          "path": "/art/projectile-tars-ammo.png",
+          "transferSize": 956,
+          "encodedBodySize": 656
+        },
+        {
+          "path": "/art/projectile-moon-zeus-ammo.png",
+          "transferSize": 1877,
+          "encodedBodySize": 1577
+        },
+        {
+          "path": "/art/expedition/ranger.webp",
+          "transferSize": 300,
+          "encodedBodySize": 38006
+        },
+        {
+          "path": "/art/expedition/money-bush.webp",
+          "transferSize": 300,
+          "encodedBodySize": 34948
+        },
+        {
+          "path": "/art/expedition/asteroid.webp",
+          "transferSize": 300,
+          "encodedBodySize": 33076
+        },
+        {
+          "path": "/art/expedition/moon-zeus.webp",
+          "transferSize": 300,
+          "encodedBodySize": 37404
+        },
+        {
+          "path": "/art/expedition/explosive-astro-joe.webp",
+          "transferSize": 300,
+          "encodedBodySize": 45474
+        },
+        {
+          "path": "/art/expedition/startrell-cluggins.webp",
+          "transferSize": 300,
+          "encodedBodySize": 32074
+        },
+        {
+          "path": "/art/expedition/tars.webp",
+          "transferSize": 300,
+          "encodedBodySize": 26458
+        },
+        {
+          "path": "/art/expedition/money-tree.webp",
+          "transferSize": 300,
+          "encodedBodySize": 46416
+        },
+        {
+          "path": "/art/expedition/frontier-flagship-compact.webp",
+          "transferSize": 300,
+          "encodedBodySize": 38514
+        },
+        {
+          "path": "/art/expedition/scout-animation.webp",
+          "transferSize": 92606,
+          "encodedBodySize": 92306
+        },
+        {
+          "path": "/art/expedition/grunt-animation.webp",
+          "transferSize": 97396,
+          "encodedBodySize": 97096
+        },
+        {
+          "path": "/art/expedition/sprinter-animation.webp",
+          "transferSize": 119484,
+          "encodedBodySize": 119184
+        },
+        {
+          "path": "/art/expedition/manhunter-animation.webp",
+          "transferSize": 84818,
+          "encodedBodySize": 84518
+        },
+        {
+          "path": "/art/expedition/tank-animation.webp",
+          "transferSize": 137190,
+          "encodedBodySize": 136890
+        },
+        {
+          "path": "/art/expedition/gargantua-animation.webp",
+          "transferSize": 169344,
+          "encodedBodySize": 169044
+        }
+      ],
+      "imageCount": 21,
+      "imageEncodedBytes": 1123743,
+      "totalTransferBytes": 1539128,
+      "navigationTransferBytes": 1080
+    }
+  ]
+}

@@ -59,3 +59,12 @@ Orbital Drift is a new 15-second, 128 BPM synthesized composition, generated wit
 Scout, Grunt, ManHunter and Tank now use four additional built-in component edits of their own Expedition illustrations. [Exact prompts](art-source/expedition-1.0/roster/prompts.json), [generation IDs](art-source/expedition-1.0/roster/generation.json), raw outputs and per-kind conversion manifests retain their source chain. Offline baking creates40 poses per kind, served as1024×480 WebP atlases; no school assets are generation references or overwritten. All six illustrated aliens now articulate their limbs through the shared simulation-driven pose selector. The earlier static/pilot descriptions above are history.
 
 The Original registration generator also reads all419 animation frames and emits proportional alpha-union display metadata, fitting the visible union inside86×62 world pixels in100×74 lane cells. Original image bytes remain unchanged. The current raster inventory remains104 files:67 retained school derivatives with unresolved permissions,37 generated derivatives with recorded provenance.
+
+
+## Expedition 1.1 delivery and audio stabilization
+
+The nine defender WebPs are rebuilt as proportional 192px maximum derivatives from the same preserved PNG sources at unchanged quality90. [Current conversion manifest](art-source/expedition-1.1/defender-delivery.json), [delivery notes](public/art/expedition/README-1.1.md) and [script](scripts/prepare-delivery-1.1.py) retain source/output/script hashes, alpha bounds, foot registration and prior1.0 hashes. No source image, alien atlas, school file or historical conversion record is overwritten. All248 illustrated poses and419 Original frames remain intact.
+
+Orbital Drift and synthesized FX remain source-authored and default-off. Only their transport/recovery changes: music now repeats a cached decoded buffer on the audio sample clock, without a media-element restart gap. No new track, external sample or retained recording is added. The complete installed Phaser/eventemitter3 MIT notices ship in[THIRD_PARTY_NOTICES.txt](public/THIRD_PARTY_NOTICES.txt).
+
+The [current publication inventory](reports/expedition-1.1/assessment/PUBLICATION_ASSETS.md) distinguishes initial downloads, on-demand comparison and unused-but-shipped output. All67 retained school derivatives still lack asset-specific permission evidence. Attribution, generated provenance and dependency notices do not establish blanket rights. No Original comparison or historical asset is silently removed.

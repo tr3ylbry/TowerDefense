@@ -1,0 +1,27 @@
+src/crew-inspector.ts:39:    window.visualViewport?.addEventListener("resize", this.reposition);
+src/crew-inspector.ts:40:    window.visualViewport?.addEventListener("scroll", this.reposition);
+src/crew-inspector.ts:78:    window.visualViewport?.removeEventListener("resize", this.reposition);
+src/crew-inspector.ts:79:    window.visualViewport?.removeEventListener("scroll", this.reposition);
+src/crew-inspector.ts:92:    const viewport = window.visualViewport;
+src/audio.ts:8:  const session = (navigator as Navigator & { audioSession?: { type: string } }).audioSession;
+src/campaign/save.ts:74:  constructor(getStorage: () => StoragePort = () => localStorage) {
+src/main.ts:77:  const saved = localStorage.getItem("ava-reduced-motion");
+src/main.ts:112:app.innerHTML = `
+src/main.ts:115:    <nav aria-label="Main"><button id="campaign-nav" class="nav-button" aria-haspopup="dialog">Campaign ${actionArrow}</button><span id="mode-label" class="nav-active">Standalone</span><button id="guide-open" class="nav-button">Field Guide ${actionArrow}</button><a href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">The Original ${actionArrow}</a></nav>
+src/main.ts:151:  <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close aria-label="Close credits">×</button><span class="eyebrow">THE ORIGINAL CREW / 2019</span><h2 id="credits-title">Built together.<br>Explored further.</h2><p>The Original Astronauts vs Aliens was created for CSC 335 by <strong>Adrian Bao, Mauricio Herrera, Trey Bryant, and Tim Lukau.</strong></p><p>This browser edition is Trey's independent continuation, exploring animation, interaction, and game systems. Original art is retained from the school project; its external provenance is still being documented. Expedition artwork illustrates all three environments, nine defenders, and six alien types, with simulation-driven articulated motion. Frontier Flagship is an original interpretation of the school unit named Millennium Falcon; the original name and artwork remain in the school history. Use the art switch to compare the illustrations with the retained school assets.</p><div class="dialog-actions"><a class="primary-button" href="https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019" target="_blank" rel="noopener noreferrer">Explore the original project ${actionArrow}</a></div></dialog>
+src/main.ts:538:    pause.innerHTML =
+src/main.ts:615:      title.innerHTML = "Home is behind you.<br>Hold the line.";
+src/main.ts:624:      start.innerHTML = `<span>Begin mission</span>${actionArrow}`;
+src/main.ts:631:      start.innerHTML = `<span>Resume mission</span>${actionArrow}`;
+src/main.ts:635:      title.innerHTML =
+src/main.ts:676:      start.innerHTML = `<span>Play again</span>${actionArrow}`;
+src/main.ts:808:  get<HTMLDialogElement>("asset-dialog").showModal();
+src/main.ts:900:    localStorage.setItem("ava-reduced-motion", String(reducedMotion));
+src/main.ts:927:  activeDialog.showModal();
+src/main.ts:994:  activeDialog.showModal();
+src/main.ts:1050:  get<HTMLDialogElement>("campaign-reset-dialog").showModal(),
+src/main.ts:1173:      fetch(`${base}art/manifest.json`).then((response) => {
+src/main.ts:1213:        start.innerHTML = `<span>Begin mission</span>${actionArrow}`;
+src/main.ts:1235:  start.innerHTML =
+src/music.ts:21:    private fetchAudio: typeof fetch = (...args) => fetch(...args),
+src/music.ts:94:        return context.decodeAudioData(await response.arrayBuffer());

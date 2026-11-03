@@ -1,0 +1,22 @@
+[
+  {
+    "project": "chromium",
+    "result": {
+      "framesPerLoop": 661500,
+      "sampleRate": 44100,
+      "duration": 15,
+      "maxRepeatError": 0,
+      "seamRms": 0.19716754282477095
+    }
+  },
+  {
+    "project": "webkit",
+    "result": {
+      "framesPerLoop": 661500,
+      "sampleRate": 44100,
+      "duration": 15,
+      "maxRepeatError": 0,
+      "seamRms": 0.197162371277698
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-02",
+  "repository": "tr3ylbry/TowerDefense",
+  "defaultBranch": "modernization",
+  "fork": false,
+  "master": "d5ba2c76aa7cf287b4b89b10ff35cc15a24d09fb",
+  "schoolTagObject": "de94c0c5097af2a8e2f7662a8ff538136dbb4aa7",
+  "schoolTagType": "tag",
+  "scope": "Only the owner's modernization branch is changed. No master/tag/history rewrite or separate collaborator repository mutation.",
+  "sources": [
+    "https://github.com/tr3ylbry/TowerDefense",
+    "https://github.com/tr3ylbry/TowerDefense/tree/master",
+    "https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019"
+  ]
+}

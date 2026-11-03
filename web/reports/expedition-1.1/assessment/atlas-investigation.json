@@ -1,0 +1,523 @@
+{
+  "toolchain": {
+    "pillow": "12.2.0",
+    "webp": "1.6.0"
+  },
+  "method": "Same preserved 1.0 RGBA poses and original quality/method. No production write. Common crop across all frames plus transparent margin; row-major repacking keeps every pose.",
+  "decision": "Retain all six original atlases byte-for-byte. Cropping increases aggregate bytes; best per-kind repacking saves only about2.6KB and needs metadata/preview changes. Lower-quality encoding and pose deduplication are unnecessary complexity/quality tradeoffs for this milestone. Lossless trials for Scout/Sprinter were161216/233574B, larger than92306/119184B.",
+  "assets": [
+    {
+      "kind": "scout",
+      "baselineBytes": 92306,
+      "frames": 40,
+      "frameSize": [
+        128,
+        96
+      ],
+      "uniqueSourceFrames": 30,
+      "baselineSha256": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa",
+      "trials": [
+        {
+          "columns": 4,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            512,
+            960
+          ],
+          "bytes": 92836,
+          "alphaExact": true
+        },
+        {
+          "columns": 5,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            640,
+            768
+          ],
+          "bytes": 92804,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1024,
+            480
+          ],
+          "bytes": 92306,
+          "alphaExact": true
+        },
+        {
+          "columns": 10,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1280,
+            384
+          ],
+          "bytes": 91996,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            20,
+            4,
+            112,
+            92
+          ],
+          "dimensions": [
+            736,
+            440
+          ],
+          "bytes": 90544,
+          "alphaExact": true
+        }
+      ]
+    },
+    {
+      "kind": "grunt",
+      "baselineBytes": 97096,
+      "frames": 40,
+      "frameSize": [
+        128,
+        96
+      ],
+      "uniqueSourceFrames": 30,
+      "baselineSha256": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f",
+      "trials": [
+        {
+          "columns": 4,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            512,
+            960
+          ],
+          "bytes": 97826,
+          "alphaExact": true
+        },
+        {
+          "columns": 5,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            640,
+            768
+          ],
+          "bytes": 97676,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1024,
+            480
+          ],
+          "bytes": 97096,
+          "alphaExact": true
+        },
+        {
+          "columns": 10,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1280,
+            384
+          ],
+          "bytes": 96806,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            16,
+            4,
+            112,
+            88
+          ],
+          "dimensions": [
+            768,
+            420
+          ],
+          "bytes": 98156,
+          "alphaExact": true
+        }
+      ]
+    },
+    {
+      "kind": "sprinter",
+      "baselineBytes": 119184,
+      "frames": 48,
+      "frameSize": [
+        160,
+        120
+      ],
+      "uniqueSourceFrames": 40,
+      "baselineSha256": "fe5f8c066f78e5f8b01a5995279ec7bc22c5427929fd81271cf348241545269a",
+      "trials": [
+        {
+          "columns": 4,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            640,
+            1440
+          ],
+          "bytes": 119488,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            1280,
+            720
+          ],
+          "bytes": 119184,
+          "alphaExact": true
+        },
+        {
+          "columns": 16,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            2560,
+            360
+          ],
+          "bytes": 118346,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            20,
+            32,
+            144,
+            108
+          ],
+          "dimensions": [
+            992,
+            456
+          ],
+          "bytes": 118150,
+          "alphaExact": true
+        }
+      ]
+    },
+    {
+      "kind": "manhunter",
+      "baselineBytes": 84518,
+      "frames": 40,
+      "frameSize": [
+        128,
+        96
+      ],
+      "uniqueSourceFrames": 30,
+      "baselineSha256": "7a166ef6934c8fbeb0bf3d994fe4659c3b10634b361369278a5f570f4a93591b",
+      "trials": [
+        {
+          "columns": 4,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            512,
+            960
+          ],
+          "bytes": 85146,
+          "alphaExact": true
+        },
+        {
+          "columns": 5,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            640,
+            768
+          ],
+          "bytes": 84862,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1024,
+            480
+          ],
+          "bytes": 84518,
+          "alphaExact": true
+        },
+        {
+          "columns": 10,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1280,
+            384
+          ],
+          "bytes": 84070,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            24,
+            8,
+            116,
+            96
+          ],
+          "dimensions": [
+            736,
+            440
+          ],
+          "bytes": 85706,
+          "alphaExact": true
+        }
+      ]
+    },
+    {
+      "kind": "tank",
+      "baselineBytes": 136890,
+      "frames": 40,
+      "frameSize": [
+        128,
+        96
+      ],
+      "uniqueSourceFrames": 30,
+      "baselineSha256": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0",
+      "trials": [
+        {
+          "columns": 4,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            512,
+            960
+          ],
+          "bytes": 137590,
+          "alphaExact": true
+        },
+        {
+          "columns": 5,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            640,
+            768
+          ],
+          "bytes": 137522,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1024,
+            480
+          ],
+          "bytes": 136890,
+          "alphaExact": true
+        },
+        {
+          "columns": 10,
+          "crop": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "dimensions": [
+            1280,
+            384
+          ],
+          "bytes": 136574,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            12,
+            8,
+            124,
+            80
+          ],
+          "dimensions": [
+            896,
+            360
+          ],
+          "bytes": 142340,
+          "alphaExact": true
+        }
+      ]
+    },
+    {
+      "kind": "gargantua",
+      "baselineBytes": 169044,
+      "frames": 40,
+      "frameSize": [
+        160,
+        120
+      ],
+      "uniqueSourceFrames": 31,
+      "baselineSha256": "2d9d035bbbb8c99518c67d385a98921d4df5c04ab2f6191eb6b772c5fb3ea5e9",
+      "trials": [
+        {
+          "columns": 4,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            640,
+            1200
+          ],
+          "bytes": 169376,
+          "alphaExact": true
+        },
+        {
+          "columns": 5,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            800,
+            960
+          ],
+          "bytes": 170306,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            1280,
+            600
+          ],
+          "bytes": 169044,
+          "alphaExact": true
+        },
+        {
+          "columns": 10,
+          "crop": [
+            0,
+            0,
+            160,
+            120
+          ],
+          "dimensions": [
+            1600,
+            480
+          ],
+          "bytes": 168660,
+          "alphaExact": true
+        },
+        {
+          "columns": 8,
+          "crop": [
+            4,
+            8,
+            156,
+            112
+          ],
+          "dimensions": [
+            1216,
+            520
+          ],
+          "bytes": 169748,
+          "alphaExact": true
+        }
+      ]
+    }
+  ]
+}

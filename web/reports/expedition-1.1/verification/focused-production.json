@@ -1,0 +1,1181 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/expedition-1.1.spec.ts",
+      "tests/browser/phone-polish.spec.ts",
+      "--project=chromium",
+      "--project=webkit",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/playwright.config.ts",
+    "rootDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "snapshotDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4175",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "chrome"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "snapshotDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4175",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1792,
+            "height": 1120
+          },
+          "deviceScaleFactor": 2,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "expedition-1.1.spec.ts",
+      "file": "expedition-1.1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:19.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-12e1377609ddfc6a2d31",
+          "file": "expedition-1.1.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 839,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:21.227Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-c2090f8e57eec07e6021",
+          "file": "expedition-1.1.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "a pending music download can be canceled and retried with one active audio source across restart and destination changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1433,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:22.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-0feaa045873c3d61a536",
+          "file": "expedition-1.1.spec.ts",
+          "line": 69,
+          "column": 1
+        },
+        {
+          "title": "Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 560,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:23.518Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-bc34afe7e0df6b8a718f",
+          "file": "expedition-1.1.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "compact and tablet controls remain reachable with enlarged text at 320x568",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1050,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:24.086Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-625af7444680f1e3eeef",
+          "file": "expedition-1.1.spec.ts",
+          "line": 134,
+          "column": 3
+        },
+        {
+          "title": "compact and tablet controls remain reachable with enlarged text at 768x1024",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:25.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-72745c3ae8cfc5299c35",
+          "file": "expedition-1.1.spec.ts",
+          "line": 134,
+          "column": 3
+        },
+        {
+          "title": "Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:26.065Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "loop-integrity.json",
+                      "contentType": "application/json",
+                      "body": "eyJmcmFtZXNQZXJMb29wIjo2NjE1MDAsInNhbXBsZVJhdGUiOjQ0MTAwLCJkdXJhdGlvbiI6MTUsIm1heFJlcGVhdEVycm9yIjowLCJzZWFtUm1zIjowLjE5NzE2NzU0MjgyNDc3MDk1fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-9c46c7ebd64f19b37642",
+          "file": "expedition-1.1.spec.ts",
+          "line": 172,
+          "column": 1
+        },
+        {
+          "title": "FX and Music recover independently from real output suspension and honor rapid latest-intent taps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 910,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:29:56.646Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-7767bb5eb6d6ebe63050",
+          "file": "expedition-1.1.spec.ts",
+          "line": 197,
+          "column": 1
+        },
+        {
+          "title": "dialog action rows and close icons stay centered on desktop, phone and landscape",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:01.296Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-437b2ae19de341549bf0",
+          "file": "expedition-1.1.spec.ts",
+          "line": 290,
+          "column": 1
+        },
+        {
+          "title": "initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 762,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:07.872Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-42684945005c63dfe328",
+          "file": "expedition-1.1.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1264,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:09.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-7ecfac4e4ac4922e6846",
+          "file": "expedition-1.1.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "a pending music download can be canceled and retried with one active audio source across restart and destination changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:10.380Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-6d1ceead4572f658a829",
+          "file": "expedition-1.1.spec.ts",
+          "line": 69,
+          "column": 1
+        },
+        {
+          "title": "Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 683,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:12.084Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-bee3982cce357b9a16d6",
+          "file": "expedition-1.1.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "compact and tablet controls remain reachable with enlarged text at 320x568",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:12.772Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-a8951bd9da2a6164dcc3",
+          "file": "expedition-1.1.spec.ts",
+          "line": 134,
+          "column": 3
+        },
+        {
+          "title": "compact and tablet controls remain reachable with enlarged text at 768x1024",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 996,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:13.807Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-6f37ababb35e7e1ca4ba",
+          "file": "expedition-1.1.spec.ts",
+          "line": 134,
+          "column": 3
+        },
+        {
+          "title": "Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30729,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:14.807Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "loop-integrity.json",
+                      "contentType": "application/json",
+                      "body": "eyJmcmFtZXNQZXJMb29wIjo2NjE1MDAsInNhbXBsZVJhdGUiOjQ0MTAwLCJkdXJhdGlvbiI6MTUsIm1heFJlcGVhdEVycm9yIjowLCJzZWFtUm1zIjowLjE5NzE2MjM3MTI3NzY5OH0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-da1f943ef71f4d49a1fe",
+          "file": "expedition-1.1.spec.ts",
+          "line": 172,
+          "column": 1
+        },
+        {
+          "title": "FX and Music recover independently from real output suspension and honor rapid latest-intent taps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 994,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:45.541Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-4531cb7636a86816de55",
+          "file": "expedition-1.1.spec.ts",
+          "line": 197,
+          "column": 1
+        },
+        {
+          "title": "dialog action rows and close icons stay centered on desktop, phone and landscape",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3534,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:50.422Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ef894ff0e58411dae6d-8f439fbd70985e96277c",
+          "file": "expedition-1.1.spec.ts",
+          "line": 290,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "pointer toggle appearance",
+          "file": "expedition-1.1.spec.ts",
+          "line": 243,
+          "column": 8,
+          "specs": [
+            {
+              "title": "enabled highlights follow state after repeated taps without moving the pointer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1415,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T01:29:57.564Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9ef894ff0e58411dae6d-b041d7f3bdbcfd91e9f5",
+              "file": "expedition-1.1.spec.ts",
+              "line": 245,
+              "column": 5
+            },
+            {
+              "title": "enabled highlights follow state after repeated taps without moving the pointer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1945,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T01:30:46.542Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9ef894ff0e58411dae6d-d967c56c9ccbb300e420",
+              "file": "expedition-1.1.spec.ts",
+              "line": 245,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "touch toggle appearance",
+          "file": "expedition-1.1.spec.ts",
+          "line": 243,
+          "column": 8,
+          "specs": [
+            {
+              "title": "enabled highlights follow state after repeated taps without moving the pointer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2305,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T01:29:58.984Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9ef894ff0e58411dae6d-7e43f690bddea2544fd2",
+              "file": "expedition-1.1.spec.ts",
+              "line": 245,
+              "column": 5
+            },
+            {
+              "title": "enabled highlights follow state after repeated taps without moving the pointer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 45000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1926,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-03T01:30:48.492Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9ef894ff0e58411dae6d-e7648bb5eedecd16cb0e",
+              "file": "expedition-1.1.spec.ts",
+              "line": 245,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "phone-polish.spec.ts",
+      "file": "phone-polish.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "phone navigation aligns, crew stats support tap/keyboard/hover, and both art rosters stay registered",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1698,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:03.900Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d4b6a6c7cd8437c5d7a-743874e8bfdc13b3e955",
+          "file": "phone-polish.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "ambient music is deferred, actually plays, stops, retries, and remains paused after backgrounding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 670,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:05.602Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d4b6a6c7cd8437c5d7a-06e4eea9f8bd804bd343",
+          "file": "phone-polish.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "independent Music and FX sliders share defaults and control real audio gains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:06.277Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d4b6a6c7cd8437c5d7a-94ba6fec53dd77768832",
+          "file": "phone-polish.spec.ts",
+          "line": 137,
+          "column": 1
+        },
+        {
+          "title": "phone navigation aligns, crew stats support tap/keyboard/hover, and both art rosters stay registered",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2129,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:53.966Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d4b6a6c7cd8437c5d7a-ae0993210634156df607",
+          "file": "phone-polish.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "ambient music is deferred, actually plays, stops, retries, and remains paused after backgrounding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 776,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:56.099Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d4b6a6c7cd8437c5d7a-1ced03a9ffec2014caa9",
+          "file": "phone-polish.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "independent Music and FX sliders share defaults and control real audio gains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T01:30:56.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d4b6a6c7cd8437c5d7a-24daee900c88b23249d7",
+          "file": "phone-polish.spec.ts",
+          "line": 137,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T01:29:19.453Z",
+    "duration": 99055.569,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

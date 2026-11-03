@@ -1,0 +1,1895 @@
+{
+  "expedition/canyon": {
+    "images": [
+      {
+        "key": "expedition-canyon",
+        "file": "expedition/canyon-0.5.webp"
+      },
+      {
+        "key": "projectile-astro-joe-ammo",
+        "file": "projectile-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 350,
+        "source": "ammo/astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-explosive-astro-joe-ammo",
+        "file": "projectile-explosive-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1572,
+        "source": "ammo/explosive-astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-startrell-cluggins-ammo",
+        "file": "projectile-startrell-cluggins-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 774,
+        "source": "ammo/startrell-cluggins-ammo.png"
+      },
+      {
+        "key": "projectile-tars-ammo",
+        "file": "projectile-tars-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 656,
+        "source": "ammo/tars-ammo.png"
+      },
+      {
+        "key": "projectile-moon-zeus-ammo",
+        "file": "projectile-moon-zeus-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1577,
+        "source": "ammo/moon-zeus-ammo.png"
+      },
+      {
+        "key": "expedition-ranger",
+        "file": "expedition/ranger.webp",
+        "width": 80,
+        "height": 74.58333333333333,
+        "foot": 0.9832402234636871
+      },
+      {
+        "key": "expedition-money-bush",
+        "file": "expedition/money-bush.webp",
+        "width": 68,
+        "height": 63.75,
+        "foot": 0.9111111111111111
+      },
+      {
+        "key": "expedition-asteroid",
+        "file": "expedition/asteroid.webp",
+        "width": 82,
+        "height": 64.91666666666667,
+        "foot": 0.9013157894736842
+      },
+      {
+        "key": "expedition-moon-zeus",
+        "file": "expedition/moon-zeus.webp",
+        "width": 90,
+        "height": 80.15625,
+        "foot": 0.9473684210526315
+      },
+      {
+        "key": "expedition-explosive-astro-joe",
+        "file": "expedition/explosive-astro-joe.webp",
+        "width": 86,
+        "height": 79.72916666666667,
+        "foot": 0.9887640449438202
+      },
+      {
+        "key": "expedition-startrell-cluggins",
+        "file": "expedition/startrell-cluggins.webp",
+        "width": 78,
+        "height": 73.9375,
+        "foot": 0.9725274725274725
+      },
+      {
+        "key": "expedition-tars",
+        "file": "expedition/tars.webp",
+        "width": 67,
+        "height": 75.67058823529412,
+        "foot": 0.953125
+      },
+      {
+        "key": "expedition-money-tree",
+        "file": "expedition/money-tree.webp",
+        "width": 70,
+        "height": 79.5266272189349,
+        "foot": 0.9791666666666666
+      },
+      {
+        "key": "expedition-frontier-flagship-compact",
+        "file": "expedition/frontier-flagship-compact.webp",
+        "width": 96,
+        "height": 68.5,
+        "foot": 0.9781021897810219
+      }
+    ],
+    "sprites": [
+      {
+        "key": "expedition-scout-animation",
+        "file": "expedition/scout-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 96,
+        "height": 72,
+        "foot": 0.9270833333333334
+      },
+      {
+        "key": "expedition-grunt-animation",
+        "file": "expedition/grunt-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 112,
+        "height": 84,
+        "foot": 0.8854166666666666
+      },
+      {
+        "key": "expedition-sprinter-animation",
+        "file": "expedition/sprinter-animation.webp",
+        "frameWidth": 160,
+        "frameHeight": 120,
+        "frames": 48,
+        "fps": 0,
+        "width": 128,
+        "height": 96,
+        "foot": 0.875
+      },
+      {
+        "key": "expedition-manhunter-animation",
+        "file": "expedition/manhunter-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 112,
+        "height": 84,
+        "foot": 0.9375
+      },
+      {
+        "key": "expedition-tank-animation",
+        "file": "expedition/tank-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 128,
+        "height": 96,
+        "foot": 0.8125
+      },
+      {
+        "key": "expedition-gargantua-animation",
+        "file": "expedition/gargantua-animation.webp",
+        "frameWidth": 160,
+        "frameHeight": 120,
+        "frames": 40,
+        "fps": 0,
+        "width": 144,
+        "height": 108,
+        "foot": 0.8916666666666667
+      }
+    ]
+  },
+  "expedition/bridge": {
+    "images": [
+      {
+        "key": "expedition-bridge",
+        "file": "expedition/sky-bridge.webp"
+      },
+      {
+        "key": "projectile-astro-joe-ammo",
+        "file": "projectile-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 350,
+        "source": "ammo/astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-explosive-astro-joe-ammo",
+        "file": "projectile-explosive-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1572,
+        "source": "ammo/explosive-astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-startrell-cluggins-ammo",
+        "file": "projectile-startrell-cluggins-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 774,
+        "source": "ammo/startrell-cluggins-ammo.png"
+      },
+      {
+        "key": "projectile-tars-ammo",
+        "file": "projectile-tars-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 656,
+        "source": "ammo/tars-ammo.png"
+      },
+      {
+        "key": "projectile-moon-zeus-ammo",
+        "file": "projectile-moon-zeus-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1577,
+        "source": "ammo/moon-zeus-ammo.png"
+      },
+      {
+        "key": "expedition-acid-pool",
+        "file": "expedition/acid-pool.webp"
+      },
+      {
+        "key": "expedition-ranger",
+        "file": "expedition/ranger.webp",
+        "width": 80,
+        "height": 74.58333333333333,
+        "foot": 0.9832402234636871
+      },
+      {
+        "key": "expedition-money-bush",
+        "file": "expedition/money-bush.webp",
+        "width": 68,
+        "height": 63.75,
+        "foot": 0.9111111111111111
+      },
+      {
+        "key": "expedition-asteroid",
+        "file": "expedition/asteroid.webp",
+        "width": 82,
+        "height": 64.91666666666667,
+        "foot": 0.9013157894736842
+      },
+      {
+        "key": "expedition-moon-zeus",
+        "file": "expedition/moon-zeus.webp",
+        "width": 90,
+        "height": 80.15625,
+        "foot": 0.9473684210526315
+      },
+      {
+        "key": "expedition-explosive-astro-joe",
+        "file": "expedition/explosive-astro-joe.webp",
+        "width": 86,
+        "height": 79.72916666666667,
+        "foot": 0.9887640449438202
+      },
+      {
+        "key": "expedition-startrell-cluggins",
+        "file": "expedition/startrell-cluggins.webp",
+        "width": 78,
+        "height": 73.9375,
+        "foot": 0.9725274725274725
+      },
+      {
+        "key": "expedition-tars",
+        "file": "expedition/tars.webp",
+        "width": 67,
+        "height": 75.67058823529412,
+        "foot": 0.953125
+      },
+      {
+        "key": "expedition-money-tree",
+        "file": "expedition/money-tree.webp",
+        "width": 70,
+        "height": 79.5266272189349,
+        "foot": 0.9791666666666666
+      },
+      {
+        "key": "expedition-frontier-flagship-compact",
+        "file": "expedition/frontier-flagship-compact.webp",
+        "width": 96,
+        "height": 68.5,
+        "foot": 0.9781021897810219
+      }
+    ],
+    "sprites": [
+      {
+        "key": "expedition-scout-animation",
+        "file": "expedition/scout-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 96,
+        "height": 72,
+        "foot": 0.9270833333333334
+      },
+      {
+        "key": "expedition-grunt-animation",
+        "file": "expedition/grunt-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 112,
+        "height": 84,
+        "foot": 0.8854166666666666
+      },
+      {
+        "key": "expedition-sprinter-animation",
+        "file": "expedition/sprinter-animation.webp",
+        "frameWidth": 160,
+        "frameHeight": 120,
+        "frames": 48,
+        "fps": 0,
+        "width": 128,
+        "height": 96,
+        "foot": 0.875
+      },
+      {
+        "key": "expedition-manhunter-animation",
+        "file": "expedition/manhunter-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 112,
+        "height": 84,
+        "foot": 0.9375
+      },
+      {
+        "key": "expedition-tank-animation",
+        "file": "expedition/tank-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 128,
+        "height": 96,
+        "foot": 0.8125
+      },
+      {
+        "key": "expedition-gargantua-animation",
+        "file": "expedition/gargantua-animation.webp",
+        "frameWidth": 160,
+        "frameHeight": 120,
+        "frames": 40,
+        "fps": 0,
+        "width": 144,
+        "height": 108,
+        "foot": 0.8916666666666667
+      }
+    ]
+  },
+  "expedition/nest": {
+    "images": [
+      {
+        "key": "expedition-nest",
+        "file": "expedition/nest.webp"
+      },
+      {
+        "key": "projectile-astro-joe-ammo",
+        "file": "projectile-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 350,
+        "source": "ammo/astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-explosive-astro-joe-ammo",
+        "file": "projectile-explosive-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1572,
+        "source": "ammo/explosive-astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-startrell-cluggins-ammo",
+        "file": "projectile-startrell-cluggins-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 774,
+        "source": "ammo/startrell-cluggins-ammo.png"
+      },
+      {
+        "key": "projectile-tars-ammo",
+        "file": "projectile-tars-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 656,
+        "source": "ammo/tars-ammo.png"
+      },
+      {
+        "key": "projectile-moon-zeus-ammo",
+        "file": "projectile-moon-zeus-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1577,
+        "source": "ammo/moon-zeus-ammo.png"
+      },
+      {
+        "key": "expedition-acid-pool",
+        "file": "expedition/acid-pool.webp"
+      },
+      {
+        "key": "expedition-ranger",
+        "file": "expedition/ranger.webp",
+        "width": 80,
+        "height": 74.58333333333333,
+        "foot": 0.9832402234636871
+      },
+      {
+        "key": "expedition-money-bush",
+        "file": "expedition/money-bush.webp",
+        "width": 68,
+        "height": 63.75,
+        "foot": 0.9111111111111111
+      },
+      {
+        "key": "expedition-asteroid",
+        "file": "expedition/asteroid.webp",
+        "width": 82,
+        "height": 64.91666666666667,
+        "foot": 0.9013157894736842
+      },
+      {
+        "key": "expedition-moon-zeus",
+        "file": "expedition/moon-zeus.webp",
+        "width": 90,
+        "height": 80.15625,
+        "foot": 0.9473684210526315
+      },
+      {
+        "key": "expedition-explosive-astro-joe",
+        "file": "expedition/explosive-astro-joe.webp",
+        "width": 86,
+        "height": 79.72916666666667,
+        "foot": 0.9887640449438202
+      },
+      {
+        "key": "expedition-startrell-cluggins",
+        "file": "expedition/startrell-cluggins.webp",
+        "width": 78,
+        "height": 73.9375,
+        "foot": 0.9725274725274725
+      },
+      {
+        "key": "expedition-tars",
+        "file": "expedition/tars.webp",
+        "width": 67,
+        "height": 75.67058823529412,
+        "foot": 0.953125
+      },
+      {
+        "key": "expedition-money-tree",
+        "file": "expedition/money-tree.webp",
+        "width": 70,
+        "height": 79.5266272189349,
+        "foot": 0.9791666666666666
+      },
+      {
+        "key": "expedition-frontier-flagship-compact",
+        "file": "expedition/frontier-flagship-compact.webp",
+        "width": 96,
+        "height": 68.5,
+        "foot": 0.9781021897810219
+      }
+    ],
+    "sprites": [
+      {
+        "key": "expedition-scout-animation",
+        "file": "expedition/scout-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 96,
+        "height": 72,
+        "foot": 0.9270833333333334
+      },
+      {
+        "key": "expedition-grunt-animation",
+        "file": "expedition/grunt-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 112,
+        "height": 84,
+        "foot": 0.8854166666666666
+      },
+      {
+        "key": "expedition-sprinter-animation",
+        "file": "expedition/sprinter-animation.webp",
+        "frameWidth": 160,
+        "frameHeight": 120,
+        "frames": 48,
+        "fps": 0,
+        "width": 128,
+        "height": 96,
+        "foot": 0.875
+      },
+      {
+        "key": "expedition-manhunter-animation",
+        "file": "expedition/manhunter-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 112,
+        "height": 84,
+        "foot": 0.9375
+      },
+      {
+        "key": "expedition-tank-animation",
+        "file": "expedition/tank-animation.webp",
+        "frameWidth": 128,
+        "frameHeight": 96,
+        "frames": 40,
+        "fps": 0,
+        "width": 128,
+        "height": 96,
+        "foot": 0.8125
+      },
+      {
+        "key": "expedition-gargantua-animation",
+        "file": "expedition/gargantua-animation.webp",
+        "frameWidth": 160,
+        "frameHeight": 120,
+        "frames": 40,
+        "fps": 0,
+        "width": 144,
+        "height": 108,
+        "foot": 0.8916666666666667
+      }
+    ]
+  },
+  "original/canyon": {
+    "images": [
+      {
+        "key": "stage-one",
+        "file": "stage-one.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 41058,
+        "source": "general/stage-one-background.png"
+      },
+      {
+        "key": "projectile-astro-joe-ammo",
+        "file": "projectile-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 350,
+        "source": "ammo/astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-explosive-astro-joe-ammo",
+        "file": "projectile-explosive-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1572,
+        "source": "ammo/explosive-astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-startrell-cluggins-ammo",
+        "file": "projectile-startrell-cluggins-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 774,
+        "source": "ammo/startrell-cluggins-ammo.png"
+      },
+      {
+        "key": "projectile-tars-ammo",
+        "file": "projectile-tars-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 656,
+        "source": "ammo/tars-ammo.png"
+      },
+      {
+        "key": "projectile-moon-zeus-ammo",
+        "file": "projectile-moon-zeus-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1577,
+        "source": "ammo/moon-zeus-ammo.png"
+      }
+    ],
+    "sprites": [
+      {
+        "key": "astro-joe-idle",
+        "file": "astro-joe-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 4,
+        "fps": 5.882353,
+        "bytes": 2231,
+        "sources": [
+          "defenders/astro-joe.gif"
+        ]
+      },
+      {
+        "key": "astro-joe-fire",
+        "file": "astro-joe-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 2,
+        "fps": 5.882353,
+        "bytes": 1416,
+        "sources": [
+          "defenders/astro-joe-firing.gif"
+        ]
+      },
+      {
+        "key": "money-bush-idle",
+        "file": "money-bush-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 5,
+        "fps": 5,
+        "bytes": 1466,
+        "sources": [
+          "defenders/money-bush.gif"
+        ]
+      },
+      {
+        "key": "asteroid-idle",
+        "file": "asteroid-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 11,
+        "fps": 9.090909,
+        "bytes": 3511,
+        "sources": [
+          "defenders/asteroid.gif"
+        ]
+      },
+      {
+        "key": "moon-zeus-idle",
+        "file": "moon-zeus-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 7,
+        "fps": 12.5,
+        "bytes": 5698,
+        "sources": [
+          "defenders/moon-zeus.gif"
+        ]
+      },
+      {
+        "key": "moon-zeus-fire",
+        "file": "moon-zeus-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 12.5,
+        "bytes": 5457,
+        "sources": [
+          "defenders/moon-zeus-firing.gif"
+        ]
+      },
+      {
+        "key": "explosive-astro-joe-idle",
+        "file": "explosive-astro-joe-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 7.692308,
+        "bytes": 2898,
+        "sources": [
+          "defenders/explosive-astro-joe.gif"
+        ]
+      },
+      {
+        "key": "startrell-cluggins-idle",
+        "file": "startrell-cluggins-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 10,
+        "fps": 10,
+        "bytes": 5104,
+        "sources": [
+          "defenders/startrell-cluggins.gif"
+        ]
+      },
+      {
+        "key": "startrell-cluggins-fire",
+        "file": "startrell-cluggins-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 12.5,
+        "bytes": 4287,
+        "sources": [
+          "defenders/startrell-cluggins-firing.gif"
+        ]
+      },
+      {
+        "key": "tars-idle",
+        "file": "tars-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 10,
+        "fps": 5,
+        "bytes": 2887,
+        "sources": [
+          "defenders/tars.gif"
+        ]
+      },
+      {
+        "key": "tars-fire",
+        "file": "tars-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 5,
+        "bytes": 2175,
+        "sources": [
+          "defenders/tars-firing.gif"
+        ]
+      },
+      {
+        "key": "money-tree-idle",
+        "file": "money-tree-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 5,
+        "fps": 5.882353,
+        "bytes": 2926,
+        "sources": [
+          "defenders/money-tree.gif"
+        ]
+      },
+      {
+        "key": "millennium-falcon-idle",
+        "file": "millennium-falcon-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 12,
+        "fps": 25,
+        "bytes": 7061,
+        "sources": [
+          "defenders/spaceship.gif"
+        ]
+      },
+      {
+        "key": "millennium-falcon-fire",
+        "file": "millennium-falcon-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 11,
+        "fps": 25,
+        "bytes": 6853,
+        "sources": [
+          "defenders/spaceship-firing.gif"
+        ]
+      },
+      {
+        "key": "little-green-man-walk",
+        "file": "little-green-man-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 11.333333,
+        "bytes": 207696,
+        "sources": [
+          "aliens/littlegreenman-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "little-green-man-attack",
+        "file": "little-green-man-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 82258,
+        "sources": [
+          "aliens/littlegreenman-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "little-green-man-die",
+        "file": "little-green-man-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 15,
+        "fps": 8.823529,
+        "bytes": 69889,
+        "sources": [
+          "aliens/littlegreenman-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-walk",
+        "file": "grunt-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 113736,
+        "sources": [
+          "aliens/grunt-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-attack",
+        "file": "grunt-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 9,
+        "fps": 9,
+        "bytes": 67814,
+        "sources": [
+          "aliens/grunt-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-die",
+        "file": "grunt-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 85435,
+        "sources": [
+          "aliens/grunt-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-walk",
+        "file": "sprinter-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 22.666667,
+        "bytes": 213028,
+        "sources": [
+          "aliens/sprinter-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-attack",
+        "file": "sprinter-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 147641,
+        "sources": [
+          "aliens/sprinter-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-die",
+        "file": "sprinter-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 21,
+        "fps": 14,
+        "bytes": 125466,
+        "sources": [
+          "aliens/sprinter-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "manhunter-walk",
+        "file": "manhunter-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 33,
+        "fps": 25.384615,
+        "bytes": 458485,
+        "sources": [
+          "aliens/manhunter-walk-spritesheet.png"
+        ],
+        "columns": 17,
+        "rows": 2
+      },
+      {
+        "key": "manhunter-attack",
+        "file": "manhunter-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 33,
+        "fps": 22,
+        "bytes": 212311,
+        "sources": [
+          "aliens/manhunter-attack-spritesheet.png"
+        ],
+        "columns": 17,
+        "rows": 2
+      },
+      {
+        "key": "manhunter-die",
+        "file": "manhunter-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 21,
+        "fps": 14,
+        "bytes": 104295,
+        "sources": [
+          "aliens/manhunter-die-spritesheet.png"
+        ],
+        "sourceFrames": 22,
+        "sourceNote": "Original Java uses 21 of 22 frames; final source frame duplicates the preceding frame."
+      },
+      {
+        "key": "tank-walk",
+        "file": "tank-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 10,
+        "bytes": 228696,
+        "sources": [
+          "aliens/tank-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "tank-attack",
+        "file": "tank-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 9.444444,
+        "bytes": 134535,
+        "sources": [
+          "aliens/tank-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "tank-die",
+        "file": "tank-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 23,
+        "fps": 11.5,
+        "bytes": 143217,
+        "sources": [
+          "aliens/tank-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-walk",
+        "file": "gargantua-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 11.333333,
+        "bytes": 188051,
+        "sources": [
+          "aliens/gargantua-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-attack",
+        "file": "gargantua-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 8.666667,
+        "bytes": 87245,
+        "sources": [
+          "aliens/gargantua-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-die",
+        "file": "gargantua-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 8.666667,
+        "bytes": 96223,
+        "sources": [
+          "aliens/gargantua-die-spritesheet.png"
+        ]
+      }
+    ]
+  },
+  "original/bridge": {
+    "images": [
+      {
+        "key": "stage-two",
+        "file": "stage-two.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 35486,
+        "source": "general/stage-two-background.png"
+      },
+      {
+        "key": "projectile-astro-joe-ammo",
+        "file": "projectile-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 350,
+        "source": "ammo/astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-explosive-astro-joe-ammo",
+        "file": "projectile-explosive-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1572,
+        "source": "ammo/explosive-astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-startrell-cluggins-ammo",
+        "file": "projectile-startrell-cluggins-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 774,
+        "source": "ammo/startrell-cluggins-ammo.png"
+      },
+      {
+        "key": "projectile-tars-ammo",
+        "file": "projectile-tars-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 656,
+        "source": "ammo/tars-ammo.png"
+      },
+      {
+        "key": "projectile-moon-zeus-ammo",
+        "file": "projectile-moon-zeus-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1577,
+        "source": "ammo/moon-zeus-ammo.png"
+      },
+      {
+        "key": "acid-pool",
+        "file": "acid-pool.png",
+        "width": 512,
+        "height": 288,
+        "bytes": 69109,
+        "source": "general/acid-pool.png"
+      }
+    ],
+    "sprites": [
+      {
+        "key": "astro-joe-idle",
+        "file": "astro-joe-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 4,
+        "fps": 5.882353,
+        "bytes": 2231,
+        "sources": [
+          "defenders/astro-joe.gif"
+        ]
+      },
+      {
+        "key": "astro-joe-fire",
+        "file": "astro-joe-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 2,
+        "fps": 5.882353,
+        "bytes": 1416,
+        "sources": [
+          "defenders/astro-joe-firing.gif"
+        ]
+      },
+      {
+        "key": "money-bush-idle",
+        "file": "money-bush-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 5,
+        "fps": 5,
+        "bytes": 1466,
+        "sources": [
+          "defenders/money-bush.gif"
+        ]
+      },
+      {
+        "key": "asteroid-idle",
+        "file": "asteroid-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 11,
+        "fps": 9.090909,
+        "bytes": 3511,
+        "sources": [
+          "defenders/asteroid.gif"
+        ]
+      },
+      {
+        "key": "moon-zeus-idle",
+        "file": "moon-zeus-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 7,
+        "fps": 12.5,
+        "bytes": 5698,
+        "sources": [
+          "defenders/moon-zeus.gif"
+        ]
+      },
+      {
+        "key": "moon-zeus-fire",
+        "file": "moon-zeus-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 12.5,
+        "bytes": 5457,
+        "sources": [
+          "defenders/moon-zeus-firing.gif"
+        ]
+      },
+      {
+        "key": "explosive-astro-joe-idle",
+        "file": "explosive-astro-joe-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 7.692308,
+        "bytes": 2898,
+        "sources": [
+          "defenders/explosive-astro-joe.gif"
+        ]
+      },
+      {
+        "key": "startrell-cluggins-idle",
+        "file": "startrell-cluggins-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 10,
+        "fps": 10,
+        "bytes": 5104,
+        "sources": [
+          "defenders/startrell-cluggins.gif"
+        ]
+      },
+      {
+        "key": "startrell-cluggins-fire",
+        "file": "startrell-cluggins-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 12.5,
+        "bytes": 4287,
+        "sources": [
+          "defenders/startrell-cluggins-firing.gif"
+        ]
+      },
+      {
+        "key": "tars-idle",
+        "file": "tars-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 10,
+        "fps": 5,
+        "bytes": 2887,
+        "sources": [
+          "defenders/tars.gif"
+        ]
+      },
+      {
+        "key": "tars-fire",
+        "file": "tars-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 5,
+        "bytes": 2175,
+        "sources": [
+          "defenders/tars-firing.gif"
+        ]
+      },
+      {
+        "key": "money-tree-idle",
+        "file": "money-tree-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 5,
+        "fps": 5.882353,
+        "bytes": 2926,
+        "sources": [
+          "defenders/money-tree.gif"
+        ]
+      },
+      {
+        "key": "millennium-falcon-idle",
+        "file": "millennium-falcon-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 12,
+        "fps": 25,
+        "bytes": 7061,
+        "sources": [
+          "defenders/spaceship.gif"
+        ]
+      },
+      {
+        "key": "millennium-falcon-fire",
+        "file": "millennium-falcon-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 11,
+        "fps": 25,
+        "bytes": 6853,
+        "sources": [
+          "defenders/spaceship-firing.gif"
+        ]
+      },
+      {
+        "key": "little-green-man-walk",
+        "file": "little-green-man-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 11.333333,
+        "bytes": 207696,
+        "sources": [
+          "aliens/littlegreenman-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "little-green-man-attack",
+        "file": "little-green-man-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 82258,
+        "sources": [
+          "aliens/littlegreenman-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "little-green-man-die",
+        "file": "little-green-man-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 15,
+        "fps": 8.823529,
+        "bytes": 69889,
+        "sources": [
+          "aliens/littlegreenman-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-walk",
+        "file": "grunt-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 113736,
+        "sources": [
+          "aliens/grunt-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-attack",
+        "file": "grunt-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 9,
+        "fps": 9,
+        "bytes": 67814,
+        "sources": [
+          "aliens/grunt-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-die",
+        "file": "grunt-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 85435,
+        "sources": [
+          "aliens/grunt-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-walk",
+        "file": "sprinter-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 22.666667,
+        "bytes": 213028,
+        "sources": [
+          "aliens/sprinter-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-attack",
+        "file": "sprinter-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 147641,
+        "sources": [
+          "aliens/sprinter-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-die",
+        "file": "sprinter-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 21,
+        "fps": 14,
+        "bytes": 125466,
+        "sources": [
+          "aliens/sprinter-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "manhunter-walk",
+        "file": "manhunter-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 33,
+        "fps": 25.384615,
+        "bytes": 458485,
+        "sources": [
+          "aliens/manhunter-walk-spritesheet.png"
+        ],
+        "columns": 17,
+        "rows": 2
+      },
+      {
+        "key": "manhunter-attack",
+        "file": "manhunter-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 33,
+        "fps": 22,
+        "bytes": 212311,
+        "sources": [
+          "aliens/manhunter-attack-spritesheet.png"
+        ],
+        "columns": 17,
+        "rows": 2
+      },
+      {
+        "key": "manhunter-die",
+        "file": "manhunter-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 21,
+        "fps": 14,
+        "bytes": 104295,
+        "sources": [
+          "aliens/manhunter-die-spritesheet.png"
+        ],
+        "sourceFrames": 22,
+        "sourceNote": "Original Java uses 21 of 22 frames; final source frame duplicates the preceding frame."
+      },
+      {
+        "key": "tank-walk",
+        "file": "tank-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 10,
+        "bytes": 228696,
+        "sources": [
+          "aliens/tank-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "tank-attack",
+        "file": "tank-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 9.444444,
+        "bytes": 134535,
+        "sources": [
+          "aliens/tank-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "tank-die",
+        "file": "tank-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 23,
+        "fps": 11.5,
+        "bytes": 143217,
+        "sources": [
+          "aliens/tank-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-walk",
+        "file": "gargantua-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 11.333333,
+        "bytes": 188051,
+        "sources": [
+          "aliens/gargantua-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-attack",
+        "file": "gargantua-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 8.666667,
+        "bytes": 87245,
+        "sources": [
+          "aliens/gargantua-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-die",
+        "file": "gargantua-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 8.666667,
+        "bytes": 96223,
+        "sources": [
+          "aliens/gargantua-die-spritesheet.png"
+        ]
+      }
+    ]
+  },
+  "original/nest": {
+    "images": [
+      {
+        "key": "stage-three",
+        "file": "stage-three.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 29068,
+        "source": "general/stage-three-background.png"
+      },
+      {
+        "key": "projectile-astro-joe-ammo",
+        "file": "projectile-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 350,
+        "source": "ammo/astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-explosive-astro-joe-ammo",
+        "file": "projectile-explosive-astro-joe-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1572,
+        "source": "ammo/explosive-astro-joe-ammo.png"
+      },
+      {
+        "key": "projectile-startrell-cluggins-ammo",
+        "file": "projectile-startrell-cluggins-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 774,
+        "source": "ammo/startrell-cluggins-ammo.png"
+      },
+      {
+        "key": "projectile-tars-ammo",
+        "file": "projectile-tars-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 656,
+        "source": "ammo/tars-ammo.png"
+      },
+      {
+        "key": "projectile-moon-zeus-ammo",
+        "file": "projectile-moon-zeus-ammo.png",
+        "width": 96,
+        "height": 96,
+        "bytes": 1577,
+        "source": "ammo/moon-zeus-ammo.png"
+      },
+      {
+        "key": "acid-pool",
+        "file": "acid-pool.png",
+        "width": 512,
+        "height": 288,
+        "bytes": 69109,
+        "source": "general/acid-pool.png"
+      }
+    ],
+    "sprites": [
+      {
+        "key": "astro-joe-idle",
+        "file": "astro-joe-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 4,
+        "fps": 5.882353,
+        "bytes": 2231,
+        "sources": [
+          "defenders/astro-joe.gif"
+        ]
+      },
+      {
+        "key": "astro-joe-fire",
+        "file": "astro-joe-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 2,
+        "fps": 5.882353,
+        "bytes": 1416,
+        "sources": [
+          "defenders/astro-joe-firing.gif"
+        ]
+      },
+      {
+        "key": "money-bush-idle",
+        "file": "money-bush-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 5,
+        "fps": 5,
+        "bytes": 1466,
+        "sources": [
+          "defenders/money-bush.gif"
+        ]
+      },
+      {
+        "key": "asteroid-idle",
+        "file": "asteroid-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 11,
+        "fps": 9.090909,
+        "bytes": 3511,
+        "sources": [
+          "defenders/asteroid.gif"
+        ]
+      },
+      {
+        "key": "moon-zeus-idle",
+        "file": "moon-zeus-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 7,
+        "fps": 12.5,
+        "bytes": 5698,
+        "sources": [
+          "defenders/moon-zeus.gif"
+        ]
+      },
+      {
+        "key": "moon-zeus-fire",
+        "file": "moon-zeus-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 12.5,
+        "bytes": 5457,
+        "sources": [
+          "defenders/moon-zeus-firing.gif"
+        ]
+      },
+      {
+        "key": "explosive-astro-joe-idle",
+        "file": "explosive-astro-joe-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 7.692308,
+        "bytes": 2898,
+        "sources": [
+          "defenders/explosive-astro-joe.gif"
+        ]
+      },
+      {
+        "key": "startrell-cluggins-idle",
+        "file": "startrell-cluggins-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 10,
+        "fps": 10,
+        "bytes": 5104,
+        "sources": [
+          "defenders/startrell-cluggins.gif"
+        ]
+      },
+      {
+        "key": "startrell-cluggins-fire",
+        "file": "startrell-cluggins-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 12.5,
+        "bytes": 4287,
+        "sources": [
+          "defenders/startrell-cluggins-firing.gif"
+        ]
+      },
+      {
+        "key": "tars-idle",
+        "file": "tars-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 10,
+        "fps": 5,
+        "bytes": 2887,
+        "sources": [
+          "defenders/tars.gif"
+        ]
+      },
+      {
+        "key": "tars-fire",
+        "file": "tars-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 6,
+        "fps": 5,
+        "bytes": 2175,
+        "sources": [
+          "defenders/tars-firing.gif"
+        ]
+      },
+      {
+        "key": "money-tree-idle",
+        "file": "money-tree-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 5,
+        "fps": 5.882353,
+        "bytes": 2926,
+        "sources": [
+          "defenders/money-tree.gif"
+        ]
+      },
+      {
+        "key": "millennium-falcon-idle",
+        "file": "millennium-falcon-idle.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 12,
+        "fps": 25,
+        "bytes": 7061,
+        "sources": [
+          "defenders/spaceship.gif"
+        ]
+      },
+      {
+        "key": "millennium-falcon-fire",
+        "file": "millennium-falcon-fire.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 11,
+        "fps": 25,
+        "bytes": 6853,
+        "sources": [
+          "defenders/spaceship-firing.gif"
+        ]
+      },
+      {
+        "key": "little-green-man-walk",
+        "file": "little-green-man-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 11.333333,
+        "bytes": 207696,
+        "sources": [
+          "aliens/littlegreenman-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "little-green-man-attack",
+        "file": "little-green-man-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 82258,
+        "sources": [
+          "aliens/littlegreenman-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "little-green-man-die",
+        "file": "little-green-man-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 15,
+        "fps": 8.823529,
+        "bytes": 69889,
+        "sources": [
+          "aliens/littlegreenman-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-walk",
+        "file": "grunt-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 113736,
+        "sources": [
+          "aliens/grunt-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-attack",
+        "file": "grunt-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 9,
+        "fps": 9,
+        "bytes": 67814,
+        "sources": [
+          "aliens/grunt-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "grunt-die",
+        "file": "grunt-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 85435,
+        "sources": [
+          "aliens/grunt-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-walk",
+        "file": "sprinter-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 22.666667,
+        "bytes": 213028,
+        "sources": [
+          "aliens/sprinter-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-attack",
+        "file": "sprinter-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 13,
+        "bytes": 147641,
+        "sources": [
+          "aliens/sprinter-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "sprinter-die",
+        "file": "sprinter-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 21,
+        "fps": 14,
+        "bytes": 125466,
+        "sources": [
+          "aliens/sprinter-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "manhunter-walk",
+        "file": "manhunter-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 33,
+        "fps": 25.384615,
+        "bytes": 458485,
+        "sources": [
+          "aliens/manhunter-walk-spritesheet.png"
+        ],
+        "columns": 17,
+        "rows": 2
+      },
+      {
+        "key": "manhunter-attack",
+        "file": "manhunter-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 33,
+        "fps": 22,
+        "bytes": 212311,
+        "sources": [
+          "aliens/manhunter-attack-spritesheet.png"
+        ],
+        "columns": 17,
+        "rows": 2
+      },
+      {
+        "key": "manhunter-die",
+        "file": "manhunter-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 21,
+        "fps": 14,
+        "bytes": 104295,
+        "sources": [
+          "aliens/manhunter-die-spritesheet.png"
+        ],
+        "sourceFrames": 22,
+        "sourceNote": "Original Java uses 21 of 22 frames; final source frame duplicates the preceding frame."
+      },
+      {
+        "key": "tank-walk",
+        "file": "tank-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 10,
+        "bytes": 228696,
+        "sources": [
+          "aliens/tank-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "tank-attack",
+        "file": "tank-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 9.444444,
+        "bytes": 134535,
+        "sources": [
+          "aliens/tank-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "tank-die",
+        "file": "tank-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 23,
+        "fps": 11.5,
+        "bytes": 143217,
+        "sources": [
+          "aliens/tank-die-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-walk",
+        "file": "gargantua-walk.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 17,
+        "fps": 11.333333,
+        "bytes": 188051,
+        "sources": [
+          "aliens/gargantua-walk-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-attack",
+        "file": "gargantua-attack.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 8.666667,
+        "bytes": 87245,
+        "sources": [
+          "aliens/gargantua-attack-spritesheet.png"
+        ]
+      },
+      {
+        "key": "gargantua-die",
+        "file": "gargantua-die.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 13,
+        "fps": 8.666667,
+        "bytes": 96223,
+        "sources": [
+          "aliens/gargantua-die-spritesheet.png"
+        ]
+      }
+    ]
+  }
+}

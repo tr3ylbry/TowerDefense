@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "name": "astronauts-vs-aliens-web",
+  "dependencies": {
+    "phaser": {
+      "version": "4.2.1",
+      "resolved": "https://registry.npmjs.org/phaser/-/phaser-4.2.1.tgz",
+      "overridden": false,
+      "dependencies": {
+        "eventemitter3": {
+          "version": "5.0.4",
+          "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.4.tgz",
+          "overridden": false
+        }
+      }
+    }
+  }
+}

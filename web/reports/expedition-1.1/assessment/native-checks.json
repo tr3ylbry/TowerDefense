@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-02",
+  "target": "Native macOS Safari; fresh1.1 production preview at127.0.0.1:4175",
+  "scope": "Before the later owner-requested sample-clock music transport and compact keyboard follow-up; no final transport/phone/AT claim.",
+  "verified": [
+    "Begin mission and public tile deployment; Lane1 tile1 AstroJoe260health",
+    "Mix native dialog with FX Volume / Music Volume65% native label/value details",
+    "Escape resumes mission that Mix paused and returns focus to Mix",
+    "Opening/closing Mix from an already-paused mission keeps it paused"
+  ],
+  "evidence": "../visual/native-safari-mix.png",
+  "notVerified": [
+    "Native smooth-loop playback after later transport change",
+    "Native Unit Stats interaction (operation interrupted before result)",
+    "Live VoiceOver game speech",
+    "Physical iPhone final build and frame times"
+  ],
+  "cleanup": "Closed only agent-created game tab; original Apple tab preserved; no OS preference or VoiceOver change.",
+  "laterTransportAndColorCheck": {
+    "scope": "After sample-clock/FX recovery/state-color changes, before final centered action rows/header capitalization. Native Safari AX and screenshot only; owner took over before completion.",
+    "verified": [
+      "Native Music on and FX on state labels",
+      "Native Music off after deliberate toggle"
+    ],
+    "evidence": "../visual/native-audio-on.png",
+    "notVerified": [
+      "Final native FX-off state before control interruption",
+      "Audible native speaker-loop judgement",
+      "Native Unit Stats",
+      "Final footer/capitalization source"
+    ],
+    "cleanup": "Owner took over the agent-created game tab; it was left available. Original Apple tab and OS settings preserved."
+  }
+}
