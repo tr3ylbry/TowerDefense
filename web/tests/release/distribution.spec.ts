@@ -8,7 +8,7 @@ for (const viewport of [{width:1280,height:900},{width:390,height:844},{width:84
     await page.setViewportSize(viewport);
     await page.emulateMedia({reducedMotion:'no-preference'});
     const requests:string[]=[],errors:string[]=[],badResponses:string[]=[];
-    page.on('request',r=>requests.push(new URL(r.url()).pathname));
+    page.on('request',r=>requests.push(r.url()));
     page.on('pageerror',e=>errors.push(e.message));
     page.on('response',r=>{if(r.status()>=400)badResponses.push(r.url());});
     await page.goto('/'); await expect(page.locator('#start')).toBeEnabled();
@@ -61,7 +61,15 @@ for (const viewport of [{width:1280,height:900},{width:390,height:844},{width:84
     }
     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});
     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');
-    for(const path of requests)expect(path==='/'||allowed.has(path)||/^\/assets\/[\w-]+\.(css|js)$/.test(path),path).toBe(true);
+    for(const raw of requests) {
+      const url=new URL(raw);
+      expect(url.origin,raw).toBe(new URL(page.url()).origin);
+      // Phaser decodes the authored SVGs through same-origin native image Blob URLs.
+      // These are local image decodes, not HTTP requests to unapproved asset paths.
+      if(url.protocol==='blob:')continue;
+      const path=url.pathname;
+      expect(path==='/'||allowed.has(path)||/^\/assets\/[\w-]+\.(css|js)$/.test(path),path).toBe(true);
+    }
     expect(errors).toEqual([]);expect(badResponses).toEqual([]);
     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});
   });

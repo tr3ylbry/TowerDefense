@@ -112,7 +112,9 @@ for (const {map, hard} of [
     ).toBe(Number(await page.locator("#receipt-balance").innerText()));
     if (hard) {
       expect(await page.evaluate(() => localStorage.getItem("ava-campaign"))).toBeNull();
-      await expect(page.locator("#mission-rating")).toContainText("Hard");
+      await expect(page.locator("#overlay-title")).toHaveText("First Contact · Hard secured.");
+      await expect(page.locator("#mission-rating")).toBeHidden();
+      await expect(page.locator("#campaign-next")).toBeHidden();
     }
     expect(errors).toEqual([]);
   });
