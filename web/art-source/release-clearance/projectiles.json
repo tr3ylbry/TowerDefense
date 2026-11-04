@@ -1,0 +1,89 @@
+{
+  "method": "Independently source-authored SVG geometry. No external source image, font, recording, AI image or franchise reference.",
+  "authoringSource": "scripts/release/build-projectiles.py",
+  "palette": {
+    "outline": "#102330",
+    "cream": "#e7eae2",
+    "mint": "#93d7bd",
+    "coral": "#f3a17a",
+    "ice": "#91d7e0"
+  },
+  "presentationOnly": true,
+  "assets": [
+    {
+      "kind": "astro",
+      "file": "public/art/expedition/projectiles/astro.svg",
+      "description": "Standard / cream-tipped mint slug",
+      "canvas": [
+        54,
+        54
+      ],
+      "worldDisplay": [
+        27,
+        27
+      ],
+      "bytes": 349,
+      "sha256": "15356dd1050adeccad850df26e5dc12bd140e4d0876aaa17a4c5d87734a54828"
+    },
+    {
+      "kind": "explosive",
+      "file": "public/art/expedition/projectiles/explosive.svg",
+      "description": "Explosive / coral hexagonal capsule",
+      "canvas": [
+        54,
+        54
+      ],
+      "worldDisplay": [
+        27,
+        27
+      ],
+      "bytes": 396,
+      "sha256": "e2ccfc8b02ce332604917a885cdc61540efec735b691925cc51ba6e9dd4d5f44"
+    },
+    {
+      "kind": "startrell",
+      "file": "public/art/expedition/projectiles/startrell.svg",
+      "description": "Rapid / staggered twin mint tracers",
+      "canvas": [
+        54,
+        54
+      ],
+      "worldDisplay": [
+        27,
+        27
+      ],
+      "bytes": 411,
+      "sha256": "cc55eaec1e97b452e4cc992d516ee2d18e1f8f2ccef62774a6e60c66a816e90f"
+    },
+    {
+      "kind": "tars",
+      "file": "public/art/expedition/projectiles/tars.svg",
+      "description": "Armor piercing / ice-blue split-fin needle",
+      "canvas": [
+        54,
+        54
+      ],
+      "worldDisplay": [
+        27,
+        27
+      ],
+      "bytes": 338,
+      "sha256": "463b2b05d72b898fcdcb0da68e6a8899c036249a86fcb4e56fbe89bc9f51cc08"
+    },
+    {
+      "kind": "zeus",
+      "file": "public/art/expedition/projectiles/zeus.svg",
+      "description": "Plasma / cyan containment ring and luminous core",
+      "canvas": [
+        54,
+        54
+      ],
+      "worldDisplay": [
+        27,
+        27
+      ],
+      "bytes": 417,
+      "sha256": "b58942071f45884a5d62de23874a7fdf7d4591375a6ca0ddab1e818a638e1ba9"
+    }
+  ]
+}

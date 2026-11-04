@@ -696,6 +696,26 @@
       "height": 70,
       "bytes": 10750,
       "source": "general/removeX.jpg"
+    },
+    {
+      "key": "expedition-projectile-astro",
+      "file": "expedition/projectiles/astro.svg"
+    },
+    {
+      "key": "expedition-projectile-explosive",
+      "file": "expedition/projectiles/explosive.svg"
+    },
+    {
+      "key": "expedition-projectile-startrell",
+      "file": "expedition/projectiles/startrell.svg"
+    },
+    {
+      "key": "expedition-projectile-tars",
+      "file": "expedition/projectiles/tars.svg"
+    },
+    {
+      "key": "expedition-projectile-zeus",
+      "file": "expedition/projectiles/zeus.svg"
     }
   ]
 }

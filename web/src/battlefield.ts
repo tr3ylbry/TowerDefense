@@ -1,5 +1,6 @@
 import { ORIGINAL_REGISTRATION } from "./game/original-registration";
 import Phaser from "phaser";
+import { EXPEDITION_PROJECTILES } from "./game/projectile-art";
 import {
   AMMO,
   COLS,
@@ -801,11 +802,15 @@ export function mountBattlefield(options: Options): Battlefield {
         let sprite = bulletSprites.get(projectile.id);
         if (!sprite) {
           sprite = this.add
-            .image(0, 0, AMMO[projectile.ammo].sprite)
+            .image(0, 0, options.artStyle() === "expedition"
+              ? EXPEDITION_PROJECTILES[projectile.ammo].key : AMMO[projectile.ammo].sprite)
             .setDisplaySize(27, 27)
             .setDepth(6);
           bulletSprites.set(projectile.id, sprite);
         }
+        const texture = options.artStyle() === "expedition"
+          ? EXPEDITION_PROJECTILES[projectile.ammo].key : AMMO[projectile.ammo].sprite;
+        if (sprite.texture.key !== texture) sprite.setTexture(texture).setDisplaySize(27, 27);
         sprite.setPosition(
           worldX(
             projectile.previousX +

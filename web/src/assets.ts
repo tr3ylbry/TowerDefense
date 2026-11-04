@@ -1,5 +1,6 @@
 import { AMMO, ENEMIES, MAPS, TOWERS } from "./game/content";
 import type { MapKind, EnemyKind, TowerKind } from "./game/content";
+import { EXPEDITION_PROJECTILES } from "./game/projectile-art";
 import { ALIEN_ANIMATIONS } from "./game/alien-animation";
 import {
   EXPEDITION_ENEMIES,
@@ -60,7 +61,8 @@ export function assetsFor(
     if (!background) throw Error("Missing environment");
     images.push(background);
   }
-  for (const ammo of Object.values(AMMO)) image(ammo.sprite);
+  for (const [kind, ammo] of Object.entries(AMMO))
+    image(style === "expedition" ? EXPEDITION_PROJECTILES[kind as keyof typeof AMMO].key : ammo.sprite);
   if (map !== "canyon") {
     if (style === "expedition") images.push(EXPEDITION_ACID);
     else image("acid-pool");
