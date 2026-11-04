@@ -1,0 +1,14 @@
+ASTRONAUTS VS ALIENS — EXPEDITION
+Original CSC 335 school project (2019): Adrian Bao, Mauricio Herrera, Trey Bryant, Tim Lukau.
+Independent browser continuation: Trey Bryant, with documented AI-assisted development and artwork.
+The complete original source, school artwork and contributor history are preserved at:
+https://github.com/tr3ylbry/TowerDefense/tree/school-project-2019
+
+Expedition illustrations and articulated atlases: generation and derivation records in web/art-source/.
+Expedition projectiles: independently source-authored SVG geometry; scripts/release/build-projectiles.py.
+Orbital Drift and game effects: original source-synthesized audio; no third-party recordings or samples.
+Runtime dependency licenses: THIRD_PARTY_NOTICES.txt.
+
+This engineering candidate excludes historical school artwork. Attribution is not permission.
+There is no blanket license or rights-clearance claim for the original project or this candidate.
+Contributor permissions, generation terms and retained identities require owner review before publication.

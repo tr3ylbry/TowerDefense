@@ -1,2 +1,7 @@
 # Offline Python image tooling
 scripts/__pycache__/
+
+# Local Expedition-only candidate and verification products
+dist-release/
+release-artifacts/
+.release-verification/
