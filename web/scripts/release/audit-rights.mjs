@@ -5,16 +5,18 @@ const web=path.resolve(import.meta.dirname,'../..');
 const output=path.resolve(web,process.env.AVA_RELEASE_EVIDENCE??'.release-verification');
 const old=JSON.parse(fs.readFileSync(path.join(web,'reports/expedition-1.1/assessment/publication-assets.json')));
 const inventory=JSON.parse(fs.readFileSync(path.join(output,'inventory.json')));
+const projectileSources=JSON.parse(fs.readFileSync(path.join(web,'art-source/release-clearance/projectiles.json'))).assets;
 const prior=new Map(old.assets.map(row=>[row.file,row]));
 const includedAssets=inventory.files.filter(row=>/^(art|audio)\//.test(row.file)).map(row=>{
  const origin=prior.get(`public/${row.file}`);
- const projectile=row.file.startsWith('art/expedition/projectiles/');
+ const projectile=projectileSources.some(asset=>asset.file===`public/${row.file}`&&asset.sha256===row.sha256);
  const audio=row.file==='audio/orbital-drift.wav';
  const tars=row.file==='art/expedition/tars.webp';
- return {...row,releaseIncluded:true,origin:origin?.category??(projectile?'Source-authored Expedition projectile':audio?'Source-authored Orbital Drift':'Source-authored manifest'),
-  sourceRecords:origin?.sourceRecords??[projectile?'art-source/release-clearance/projectiles.json':audio?'scripts/build-ambient-music.py':'scripts/release/assets.ts'],
-  classification:tars?4:origin?2:1,
-  licenseOrPermissionEvidence:origin?'Recorded independent generation/derivation; applicable publication terms/identity approval not supplied':'Retained source-authored geometry/audio/metadata; no external image, recording, font or sample',
+ const documented=projectile||audio||row.file==='art/manifest.json';
+ return {...row,releaseIncluded:true,origin:origin?.category??(projectile?'Source-authored Expedition projectile':audio?'Source-authored Orbital Drift':documented?'Source-authored manifest':'Unrecognized provenance; review required'),
+  sourceRecords:origin?.sourceRecords??[projectile?'art-source/release-clearance/projectiles.json':audio?'scripts/build-ambient-music.py':documented?'scripts/release/assets.ts':'No recognized source record'],
+  classification:tars?4:origin||!documented?2:1,
+  licenseOrPermissionEvidence:origin?'Recorded independent generation/derivation; applicable publication terms/identity approval not supplied':documented?'Retained source-authored geometry/audio/metadata; no external image, recording, font or sample':'No recognized provenance or permission record',
   outstanding:tars?'Retained TARS identity: owner naming/design decision required':origin?'Owner generation-terms/design review':'Contributor/code publication decision remains separate',
   recommendedDisposition:tars?'Approve a distinct public identity/design or obtain appropriate rights review before publication':origin?'Retain provenance and obtain owner publication review':'Retain source/provenance/attribution'};
 });

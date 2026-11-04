@@ -33,7 +33,14 @@ try {
   const raster=files.filter(f=>/\.(webp|png|jpg)$/.test(f.file));
   const atlases=files.filter(f=>/-animation\.webp$/.test(f.file));
   const audio=files.filter(f=>f.file.startsWith('audio/'));
-  const record={build:JSON.parse(fs.readFileSync(path.join(dist,'build-info.json'))),files,counts:{files:files.length,bytes:total(files),raster:raster.length,rasterBytes:total(raster),atlases:atlases.length,atlasBytes:total(atlases),audioBytes:total(audio),excludedRasters:exclusions.length,excludedBytes:total(exclusions),excludedSchool:exclusions.filter(a=>a.status==='unresolved').length},missing,unexpected,forbidden,exclusions};
+  const fullFiles=walk(path.join(web,'dist')).sort().map(file=>{const bytes=fs.readFileSync(file);return {file:path.relative(path.join(web,'dist'),file).split(path.sep).join('/'),bytes:bytes.length,sha256:sha(bytes)};});
+  const fullPaths=new Map(fullFiles.map(file=>[file.file,file]));
+  for(const asset of old.assets.filter(row=>row.status==='unresolved')) {
+    const row=fullPaths.get(asset.file.replace(/^public\//,''));
+    if(!row||row.sha256!==asset.sha256)throw Error(`Full comparison no longer preserves historical artwork: ${asset.file}`);
+  }
+  const fullComparison={files:fullFiles,counts:{files:fullFiles.length,bytes:total(fullFiles),raster:fullFiles.filter(f=>/\.(webp|png|jpg)$/.test(f.file)).length},excludedFilesVsFull:fullFiles.filter(f=>!actual.has(f.file))};
+  const record={fullComparison,build:JSON.parse(fs.readFileSync(path.join(dist,'build-info.json'))),files,counts:{files:files.length,bytes:total(files),raster:raster.length,rasterBytes:total(raster),atlases:atlases.length,atlasBytes:total(atlases),audioBytes:total(audio),excludedRasters:exclusions.length,excludedBytes:total(exclusions),excludedSchool:exclusions.filter(a=>a.status==='unresolved').length},missing,unexpected,forbidden,exclusions};
   fs.mkdirSync(output,{recursive:true});fs.writeFileSync(path.join(output,'inventory.json'),JSON.stringify(record,null,2)+'\n');
   fs.writeFileSync(path.join(output,'SHA256SUMS'),files.map(f=>`${f.sha256}  ${f.file}`).join('\n')+'\n');
   console.log(JSON.stringify(record.counts));
