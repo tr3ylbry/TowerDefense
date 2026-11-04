@@ -19,5 +19,13 @@ for kind,(description,shapes) in SHAPES.items():
     (ROOT/file).write_bytes(svg)
     assets.append({'kind':kind,'file':file,'description':description,'canvas':[54,54],'worldDisplay':[27,27], 'bytes':len(svg),'sha256':hashlib.sha256(svg).hexdigest()})
 record={'method':'Independently source-authored SVG geometry. No external source image, font, recording, AI image or franchise reference.', 'authoringSource':'scripts/release/build-projectiles.py', 'palette':{'outline':'#102330','cream':'#e7eae2','mint':'#93d7bd','coral':'#f3a17a','ice':'#91d7e0'},'presentationOnly':True,'assets':assets}
+# The same command restores full-comparison registrations after a legacy asset rebuild.
+manifest_path = ROOT/'public/art/manifest.json'
+manifest = json.loads(manifest_path.read_text())
+keys = {f'expedition-projectile-{kind}' for kind in SHAPES}
+manifest['images'] = [entry for entry in manifest['images'] if entry['key'] not in keys]
+manifest['images'].extend({'key':f'expedition-projectile-{a['kind']}',
+                           'file':a['file'].removeprefix('public/art/')} for a in assets)
+manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')
 (ROOT/'art-source/release-clearance/projectiles.json').write_text(json.dumps(record,indent=2)+'\n')
 print(f'{len(assets)} projectiles / {sum(a["bytes"] for a in assets)} SVG bytes')

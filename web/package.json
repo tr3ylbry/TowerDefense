@@ -17,7 +17,7 @@
     "preview:release": "vite preview --outDir dist-release --host 127.0.0.1",
     "verify:release:assets": "node scripts/release/verify.mjs && node scripts/release/audit-rights.mjs",
     "test:release": "playwright test --config=playwright.release.config.ts",
-    "verify:release": "npm run check && npm run build:release && npm run verify:release:assets && node scripts/release/standalone-parity.cjs && python3 scripts/release/verify-preservation.py && npm run test:release",
+    "verify:release": "npm run check && npm run build:release && npm run verify:release:assets && node scripts/release/standalone-parity.cjs && python3 scripts/release/verify-preservation.py && python3 scripts/test_animation_tools.py && npm run test:release",
     "package:release": "python3 scripts/release/create-artifact.py"
   },
   "dependencies": {

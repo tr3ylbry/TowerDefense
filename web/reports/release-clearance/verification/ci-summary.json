@@ -1,0 +1,141 @@
+{
+  "sourceRevision": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+  "runId": 41757618436,
+  "runUrl": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436",
+  "conclusion": "success",
+  "fullDevelopment": [
+    {
+      "id": 126337350140,
+      "name": "verify (firefox, 1)",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 38,
+      "duration": "19.8m",
+      "rules": 228
+    },
+    {
+      "id": 126337350414,
+      "name": "verify (webkit, 1)",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 38,
+      "duration": "22.8m",
+      "rules": 228
+    },
+    {
+      "id": 126337350482,
+      "name": "verify (firefox, 2)",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 38,
+      "duration": "5.1m",
+      "rules": 228
+    },
+    {
+      "id": 126337350510,
+      "name": "verify (chromium, 1)",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 38,
+      "duration": "30.0m",
+      "rules": 228
+    },
+    {
+      "id": 126337350582,
+      "name": "verify (chromium, 2)",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 38,
+      "duration": "11.8m",
+      "rules": 228
+    },
+    {
+      "id": 126337351200,
+      "name": "verify (webkit, 2)",
+      "status": "completed",
+      "conclusion": "success",
+      "passed": 38,
+      "duration": "7.4m",
+      "rules": 228
+    }
+  ],
+  "fullDevelopmentPassed": 228,
+  "releasePassed": 183,
+  "totalBrowserChecks": 411,
+  "uniqueRuleTests": 228,
+  "jobs": [
+    {
+      "id": 126337350140,
+      "name": "verify (firefox, 1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350414,
+      "name": "verify (webkit, 1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350481,
+      "name": "expedition-release (webkit, 1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350482,
+      "name": "verify (firefox, 2)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350510,
+      "name": "verify (chromium, 1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350516,
+      "name": "expedition-release (chromium, 2)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350534,
+      "name": "expedition-release (chromium, 1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350558,
+      "name": "expedition-release (firefox, 1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350563,
+      "name": "expedition-release (webkit, 2)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350582,
+      "name": "verify (chromium, 2)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337350584,
+      "name": "expedition-release (firefox, 2)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 126337351200,
+      "name": "verify (webkit, 2)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "scope": "All12 jobs pass at this exact implementation revision. Full browser files/tests/runtime unchanged in the documentation handoff; a stricter output chunk guard and report/diagnostic scripts are additional verification-only changes."
+}

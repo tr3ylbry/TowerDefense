@@ -1,0 +1,1360 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.22.2/x64/bin/node",
+      "/home/runner/work/TowerDefense/TowerDefense/web/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.release.config.ts",
+      "--project=firefox",
+      "--shard=2/2",
+      "--reporter=line,json"
+    ],
+    "configFile": "/home/runner/work/TowerDefense/TowerDefense/web/playwright.release.config.ts",
+    "rootDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+      },
+      "gitCommit": {
+        "shortHash": "6c3734e",
+        "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "subject": "Fetch frozen history for release parity and preservation checks",
+        "body": "Fetch frozen history for release parity and preservation checks\n",
+        "author": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "committer": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "branch": "modernization"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "snapshotDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4181",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": {
+      "current": 2,
+      "total": 2
+    },
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser/expedition-0.9.spec.ts",
+      "file": "browser/expedition-0.9.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failed pilot atlas uses the existing retry path and defers other environments",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2774,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:26.043Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-0d7fe0d4d6c290d66c4c",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 180,
+          "column": 1
+        },
+        {
+          "title": "Hard is opt-in and clearly distinguished from speed at 1280px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:29.464Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-4edbd5ceeec1cebd596c",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 209,
+          "column": 3
+        },
+        {
+          "title": "Hard is opt-in and clearly distinguished from speed at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:32.715Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-f1a6767342ca399b9d2e",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 209,
+          "column": 3
+        },
+        {
+          "title": "earned Hard win and deliberate loss keep Normal progress isolated, then Normal can award stars",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 200000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 101394,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:34.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-ce83c99aaa2c68d94763",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 244,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-1.0.spec.ts",
+      "file": "browser/expedition-1.0.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failed Gargantua atlas blocks readiness, retries cleanly and keeps other environments deferred",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1658,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:16.416Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcd73ebf08a990e56bd3-85fc0abfc2d9199ef82a",
+          "file": "browser/expedition-1.0.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "phone actions use centered vector icons and landscape overview shows every lane",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:18.088Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcd73ebf08a990e56bd3-8bc0d24f842ed797f293",
+          "file": "browser/expedition-1.0.spec.ts",
+          "line": 217,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-1.1.spec.ts",
+      "file": "browser/expedition-1.1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "dialog action rows and close icons stay centered on desktop, phone and landscape",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11001,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:21.120Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-085f288a6985c04c6bc8",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 323,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/mission.spec.ts",
+      "file": "browser/mission.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "deploy, pause without income, salvage, and restart through real controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7361,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:32.581Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-a0f1c2b22a4a72f5ccef",
+          "file": "browser/mission.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "keyboard crew selection and arrow-key placement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:39.958Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-17bc99616f9f72790509",
+          "file": "browser/mission.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "fits a narrow viewport and persists reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:41.043Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-62cb39a92f757f17dc0d",
+          "file": "browser/mission.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "offers retry when an art resource fails to load",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1264,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:42.546Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-1352ddcfa16ed767adb5",
+          "file": "browser/mission.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "plays both restored maps, blocks acid placement, and resets a live mission safely",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2808,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:43.821Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-fcea0150e15c6abce08b",
+          "file": "browser/mission.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "deploys the expanded crew and selects the Falcon on The Nest",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2053,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:46.640Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-d59db2a067f9f4528210",
+          "file": "browser/mission.spec.ts",
+          "line": 189,
+          "column": 1
+        },
+        {
+          "title": "field guide documents all six original invaders and resumes the game",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:48.706Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-139e32273a3373ac5349",
+          "file": "browser/mission.spec.ts",
+          "line": 236,
+          "column": 1
+        },
+        {
+          "title": "restored roster and destinations fit a narrow screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1319,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:50.047Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-103913712cad630a487e",
+          "file": "browser/mission.spec.ts",
+          "line": 258,
+          "column": 1
+        },
+        {
+          "title": "phone overview shows the entire field and scrolls the crew to keyboard selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:51.375Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-a3092a8b4fcd01a9cb60",
+          "file": "browser/mission.spec.ts",
+          "line": 369,
+          "column": 1
+        },
+        {
+          "title": "keyboard wave call awards once, warns from the changed schedule, and pauses safely",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:53.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-eb31f38ea56051e406cc",
+          "file": "browser/mission.spec.ts",
+          "line": 397,
+          "column": 1
+        },
+        {
+          "title": "phone zoom and every crew card remain usable with complete unit details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2083,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:05.732Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-e9fc9e9f4ababbaed8c0",
+          "file": "browser/mission.spec.ts",
+          "line": 450,
+          "column": 1
+        },
+        {
+          "title": "missing Expedition artwork uses the same recoverable loading failure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 743,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:07.825Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-7160dddf89dce90846be",
+          "file": "browser/mission.spec.ts",
+          "line": 504,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/phone-polish.spec.ts",
+      "file": "browser/phone-polish.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ambient music is deferred, actually plays, stops, retries, and remains paused after backgrounding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3570,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:08.587Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e47b83173683f81d604-dc7e2bf8df83509c7ce1",
+          "file": "browser/phone-polish.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "independent Music and FX sliders share defaults and control real audio gains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3696,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:12.170Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e47b83173683f81d604-9bb0f0b952696e87f947",
+          "file": "browser/phone-polish.spec.ts",
+          "line": 139,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "release/combat.spec.ts",
+      "file": "release/combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 59860,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:15.886Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-2d33944d8631afc4a796",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on bridge Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 77290,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:03:15.760Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-0783cabc225418c577d1",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on nest Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 84948,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:33.065Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-4034fb59e3a77b7987a9",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Hard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 61691,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:05:58.026Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-63c28ebda0b8e46b69a3",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "release/distribution.spec.ts",
+      "file": "release/distribution.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release resources, semantics and left aligned controls at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7855,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:06:59.743Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYXZpY29uLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-ce505cb204782e18ff97",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:07:07.615Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYXZpY29uLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-bf0560debe4ad8743b48",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4950,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:07:12.014Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYXZpY29uLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-b282f5daffefeaf89601",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release projectile loading failure retries without historical fallback or missing controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1383,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:07:16.974Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-c6b73259cf787522dd80",
+          "file": "release/distribution.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "release music and FX controls retain separate off/default states and single-source playback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3304,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:07:18.370Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-25fce7f6ac3fe8b859e6",
+          "file": "release/distribution.spec.ts",
+          "line": 90,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T01:59:23.851Z",
+    "duration": 478284.28500000003,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,1360 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.22.1/x64/bin/node",
+      "/home/runner/work/TowerDefense/TowerDefense/web/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.release.config.ts",
+      "--project=chromium",
+      "--shard=2/2",
+      "--reporter=line,json"
+    ],
+    "configFile": "/home/runner/work/TowerDefense/TowerDefense/web/playwright.release.config.ts",
+    "rootDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+      },
+      "gitCommit": {
+        "shortHash": "6c3734e",
+        "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "subject": "Fetch frozen history for release parity and preservation checks",
+        "body": "Fetch frozen history for release parity and preservation checks\n",
+        "author": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "committer": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "branch": "modernization"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "snapshotDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4181",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": {
+      "current": 2,
+      "total": 2
+    },
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser/expedition-0.9.spec.ts",
+      "file": "browser/expedition-0.9.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failed pilot atlas uses the existing retry path and defers other environments",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:33.397Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-baffddc8d0e66be21d20",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 180,
+          "column": 1
+        },
+        {
+          "title": "Hard is opt-in and clearly distinguished from speed at 1280px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10313,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:35.725Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-92135f06a0c81ea9d0dd",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 209,
+          "column": 3
+        },
+        {
+          "title": "Hard is opt-in and clearly distinguished from speed at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15756,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:46.063Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-3b47b3c60a36a23d21c4",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 209,
+          "column": 3
+        },
+        {
+          "title": "earned Hard win and deliberate loss keep Normal progress isolated, then Normal can award stars",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 200000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 143895,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:01.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "482e8728eb94a18c8316-cc896df08bd62a0bbf59",
+          "file": "browser/expedition-0.9.spec.ts",
+          "line": 244,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-1.0.spec.ts",
+      "file": "browser/expedition-1.0.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failed Gargantua atlas blocks readiness, retries cleanly and keeps other environments deferred",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1855,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:25.813Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcd73ebf08a990e56bd3-99b288077efb313d6f65",
+          "file": "browser/expedition-1.0.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "phone actions use centered vector icons and landscape overview shows every lane",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20009,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:27.711Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dcd73ebf08a990e56bd3-6c8e1234b6b383da4649",
+          "file": "browser/expedition-1.0.spec.ts",
+          "line": 217,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-1.1.spec.ts",
+      "file": "browser/expedition-1.1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "dialog action rows and close icons stay centered on desktop, phone and landscape",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 58720,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:02:48.342Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-566e66623349c26665c5",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 323,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/mission.spec.ts",
+      "file": "browser/mission.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "deploy, pause without income, salvage, and restart through real controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:03:47.196Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-d2d41ce9f95d31436b4c",
+          "file": "browser/mission.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "keyboard crew selection and arrow-key placement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:02.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-b7b385e029a5f07d6375",
+          "file": "browser/mission.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "fits a narrow viewport and persists reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5166,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:05.608Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-73918a856444298b8edb",
+          "file": "browser/mission.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "offers retry when an art resource fails to load",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1087,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:10.804Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-8c24421db01cdb1966b0",
+          "file": "browser/mission.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "plays both restored maps, blocks acid placement, and resets a live mission safely",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:11.912Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-3a966b382e114778c8c2",
+          "file": "browser/mission.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "deploys the expanded crew and selects the Falcon on The Nest",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8353,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:25.230Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-c7eddad18e1ae2cb61d2",
+          "file": "browser/mission.spec.ts",
+          "line": 189,
+          "column": 1
+        },
+        {
+          "title": "field guide documents all six original invaders and resumes the game",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4781,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:33.595Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-880a16f5f3d081e853bb",
+          "file": "browser/mission.spec.ts",
+          "line": 236,
+          "column": 1
+        },
+        {
+          "title": "restored roster and destinations fit a narrow screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:38.390Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-513651c6dedee8fddebd",
+          "file": "browser/mission.spec.ts",
+          "line": 258,
+          "column": 1
+        },
+        {
+          "title": "phone overview shows the entire field and scrolls the crew to keyboard selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4849,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:44.991Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-49b0b4edeb4070019a68",
+          "file": "browser/mission.spec.ts",
+          "line": 369,
+          "column": 1
+        },
+        {
+          "title": "keyboard wave call awards once, warns from the changed schedule, and pauses safely",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24769,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:04:49.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-890860f29fedd63e548b",
+          "file": "browser/mission.spec.ts",
+          "line": 397,
+          "column": 1
+        },
+        {
+          "title": "phone zoom and every crew card remain usable with complete unit details",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17498,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:05:14.652Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-682e67139fe285d8682f",
+          "file": "browser/mission.spec.ts",
+          "line": 450,
+          "column": 1
+        },
+        {
+          "title": "missing Expedition artwork uses the same recoverable loading failure",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 773,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:05:32.176Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3e76f6d34c7bbce89541-c1949a90d46a4eb8e5d1",
+          "file": "browser/mission.spec.ts",
+          "line": 504,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/phone-polish.spec.ts",
+      "file": "browser/phone-polish.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ambient music is deferred, actually plays, stops, retries, and remains paused after backgrounding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:05:32.972Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e47b83173683f81d604-36e743d2859bf4dfcd17",
+          "file": "browser/phone-polish.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "independent Music and FX sliders share defaults and control real audio gains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16014,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:05:38.407Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e47b83173683f81d604-5ad47ca972694560fee5",
+          "file": "browser/phone-polish.spec.ts",
+          "line": 139,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "release/combat.spec.ts",
+      "file": "release/combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 76021,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:05:54.454Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-2b58911f754f3cf6ea11",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on bridge Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 93559,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:07:10.494Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-5edb387ec233bdb374c5",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on nest Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 101608,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:08:44.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-d50121f791a3f40233f1",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Hard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 78984,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:10:25.710Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-ba68c12ee3653deea82b",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "release/distribution.spec.ts",
+      "file": "release/distribution.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release resources, semantics and left aligned controls at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25386,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:11:44.747Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yMjRjMTA5OC1kNDEwLTQxODgtYmYxYS1iODVmNzBlN2M4ZjUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wMmI4ZGI3My01ZmU3LTRkMjItYTZmOC1kMzAzMmM5YjJlNDEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xMjMzN2FlZS02OWMxLTRhOTMtOGMyZS1lNzNmMDA5NzU4MGIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yMmIyMDJhZC02ZmUyLTQ5NjEtYmMzMi1mOTg5ODYyNGFkZWMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85YTMxOWI5My0xNDQwLTQ1YjAtOTRkNS0xZDZiM2ZkNWI2MmYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mNGY1NzM0MC1kYjhkLTRjNjItYmE4NC1iMDVmYjYzMGM5YTQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xM2VhNWIyYi1jZDU1LTQ0ODQtYjY4NC0wZGIxZTJkODM2NmEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lYTM3NjliOS0xY2NmLTQ5M2MtYmNhMi1kZDRjMGMxZDE1NzAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85ZThlNzg3OS1jNmE2LTQ2MzUtYTNiNC0wZDUxMmQ5NzMzZDAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iZDhkOWVlOC1hNzA3LTQ3OTctOTJlOS0yMGViMjcxZDUzMmUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85NmFhYTk5Yy0zOGRjLTQ0NTgtOTgyNS04YTVkZDc0NDFhZWMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wYTA4MDcxOC1jNGJmLTRlYTMtYTI5NC02YTQxMzYzNmYzMGMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS81M2JmOWIzNC1hMmMxLTRjMzktOTU1ZC0zYzFlMWQ2Y2FjMTAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8zNzExM2YyNS00Y2E3LTQ1YzEtOGQ1My1iMmUzMmJhN2RjOTMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS84ZDk4NWNkNS1hMjhkLTRmZTgtOWNjOS05NjU0YTA5OGEyMmIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mOGQ2ODQ1NC1iZTI3LTQ4YzItYWVlYi1iMjg3M2VmOWNhNDkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iNzljZGZmNS02YjBjLTQ1NWYtOTUyMi0zNTkzOTIxMTRkMDciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jYTZiNjM5YS0zOTVlLTQyOTktYWRhYi0xNDhiZGJjMDE1YWEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYzk4NjMyMC0yMDFlLTQ4ZTctYjNkNC04ZTNkYWRmYTY1NDAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yMjFkNjZjNC1jMGQyLTQwYWMtOThkYS1iN2Y2NTllMGIxNjAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jY2E5ZTZlMS0wMWE2LTRlMWEtYjlmMC1jNGJmMDRlMDQ5MDciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzg2NzRjMDVmLTljOTctNDc2YS1iYWNmLTk2YmJmODE1MWJlYyIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2YyNDEzYmM1LWQ0MTctNDNmMS05NTIyLWJmOWM0MWRlZTA0YyIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzdlNzBlYmViLTY1YWYtNGUxZC1hOGYyLTJhMzczZmEwYTkwNSIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-65f2e0d252d95cfc93fb",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 41368,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:10.147Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xOTFjM2JkMC1iNTUyLTRkMjMtOWZlNy0yZWQ4ZDZmM2UxN2YiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82OGU2ZTdiMy00ZGY5LTQ2ZDMtYTIwNy04MjMzMTIyMDAxMTMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8zMDg1ZjI1MC0zZWI4LTRjNzQtODYzOS0xMjdjOTlmMDg0ODYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85Zjk3OTQ0Mi0xZjM2LTQyNWMtYjE4MS1iZmI0NzRhNGIxOTkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS81MTg1ZjljZi0zMGY0LTQ1N2UtOWExNC0xOTY3NjE0MDE5YWEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82M2M3NThjMy1mMDEyLTRlMjEtOTQ2MS1mYTk3OTc4OTgyN2EiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9kYmY2YzY0My1lZDQ4LTQwNmMtYTExMS1kYTg5M2UzYmRlMWMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82YTgyYjQyOS1mNzU1LTQwOGMtOWEyMi04MGNiYmY3ZTE0MjIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iNWIzMDdmMy05YzMxLTQ2Y2YtOWRlMS1lN2JhMzVlOTBiNzAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lMzU3OGUzMy04YjdkLTQ5OWYtOGIxYi0xZjg3NWJjZDY3OTUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9kZmNhNTlhOS0wZjQ3LTQzMzctYjJhNy0zMDYxNjg2Y2FjODgiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82MmQ2NGRjYS0yOTVkLTRjOGQtODlhYy1kZmVhNmI0MjE4ZTEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85YmZmN2YzOC0xMGZiLTQ3YjktYWZjNi01ZjE4OWQ5MDNlZDYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lYjE4ZmFmNS0xZDdlLTRlYmUtOGQzNy1kNWM3YTUxN2I3MDIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85NTUzMmJmMS1mNWNlLTQ2MjYtODU2ZS0zN2VhZTA5N2EwODIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lOWM1ZjFlMi03MDRkLTRhZDQtYTYxOC1mNWRhYTcyY2EzNDkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wMTNiYjNlZC0xMjZjLTQyYWQtYjA2My0wOTAxMDVjMTJmMGQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8zOTgwZDBkMy0wNzM5LTRlN2UtODZjNS1hNGExMTFjNGQ4NmYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS80ZTBhZjZjNC02MWI2LTQ4ZDUtOWI1ZS0yYjRiNzhmOGMxNzgiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS80Y2ZiMjUyNC1lNDgzLTQwZDItYmI2OC04N2FiMjAyN2IyY2IiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xNTY0OTQ4NC02MmJkLTRjYmEtYjM5OS1iZDNkM2U1MDAzM2QiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzE1YWFjMmE3LWQ2ZWUtNDk5OS1hNjVkLWVmZTJmNTA5M2U0NSIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzFkMTg0MTdjLThlNjctNDJjNC1hZDNkLTFmZDZlMjA3MWFiNSIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzk1ZGMwNDRhLWFlYTItNDAwNy1iMzYzLWMzMzkwZWNjMGJiZCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-3ed89422893eb0fbb7e7",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 41227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:51.528Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85MGVjNjUzMC03MmYzLTQzYTMtOGY1Ny0yN2IyNGJiNGZlMjEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYWExNzE3Mi1mODM5LTRmNTQtYWU0ZS0wYjNmMzg2YmM3OGYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mZGE4NmJjZi03OGMyLTQ3MTctYjNhMC0xNmNhNDg4Mjc2Y2EiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS84MWRkNWYzZS0yZDRjLTRjZDMtYjIwYi04OWM4NDgxZmY2OWQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS81YWJhOGNmOC0wMTFmLTQ1ZTctYjQ2Zi1jN2RiNmMzYjU1ZTciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xNDI5NmMxMC03N2E1LTRlNWUtYjk0NS0zYmFmZjJjZDUwY2QiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xOTlmZjY5Ny1kM2EwLTRhYmYtYWY2Ny0zYWQ0NDM4YWYxOWYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hZDY2ZTBhOC0yNmZhLTRmN2EtOWYwNC03ZDdkN2NjYTFlZDIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wMzcyNjY1Yy00ZmI2LTRkMjktYmFhZC0yNjVkY2M5NDljNDciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lYmIzNjg1Yy0yMjI0LTQxZjItOTlmMS1kYjBiMDVhMzE2NjAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iNDdhZmFjZS1iOTQ3LTQxN2EtODBjYy04ZWZmYzNhMzg0NGMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS83Y2QxYjU0OC02YjlhLTQ2OTYtOWFmMy03YjA1ZmQxMzA1MjQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iYzI1M2Q3OC0zOGY1LTRhOTctOWY0OS05M2I4MDVmYzYwYzkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xNjgwYmJmZi03NTNiLTQzM2EtYmUwYi02YmM5N2IyMWM4ZGEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jN2M5MjY0MC1iMTZkLTRiMGYtODU5Yi0yYWM1YWExMTlkMmQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yODRjNzM1Ny0xOWI3LTQwZWUtYjdkZC00YmU0ZmYxNjcxNTUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS84OWE2MmY1Ni0wZDdkLTQwOGQtOWY0OC0xZjU2ZDRmMmRjMWYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xZTcyNzBjNC1lZWUyLTQ5YmYtOTg2Zi1iZDllZGMxYjEyM2UiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8zZjViMzI5YS02ODkyLTRhNDgtOGFkMi1jNDdlZDBlOWI2ZmUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jZmJiYTFkNi1hYTBhLTQ4ZjAtYjE2NC03ZDliMTU2OGZiYTUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yM2FiMmUxMi05ZDlmLTQwOTctOTcyMC0xMzBjYzc5NTgyNDkiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzg0ZjUwNWM3LTRmMWMtNGYzMS05OTY0LTI1YzVjNGI4NmJhNiIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2EyOGE5MDRkLWUzNzUtNDc4My1hZmJkLTMzMmNhODIyYzI1MiIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzk0ZTQyZGRmLTA1Y2YtNGNmMy1iY2QxLTM5MWI5MjQ0YTlmOCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-64850f4f2da4da57edf9",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release projectile loading failure retries without historical fallback or missing controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1879,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:13:32.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-885718951c41d1c40460",
+          "file": "release/distribution.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "release music and FX controls retain separate off/default states and single-source playback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3504,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:13:34.657Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-1df9b14b696ad3dbb746",
+          "file": "release/distribution.spec.ts",
+          "line": 90,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T01:59:31.102Z",
+    "duration": 847567.042,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

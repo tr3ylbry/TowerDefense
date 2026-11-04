@@ -1,0 +1,377 @@
+{
+  "historicalRastersPreserved": [
+    {
+      "file": "public/art/acid-pool.png",
+      "sha256": "358b69b88b663bb94940634fe71e3817e44e4ceaf9d8aa9499bb76a2dd125f93"
+    },
+    {
+      "file": "public/art/alien-sample.png",
+      "sha256": "4a2ba3bda3acd487aed6e299ce2291e039b2b55884dc7f2e23055999a32354c9"
+    },
+    {
+      "file": "public/art/asteroid-idle.png",
+      "sha256": "c8b0b341db4ff04ce9b8ff191c7f59a0afcd121657983aa031f1d47f269d23cd"
+    },
+    {
+      "file": "public/art/astro-joe-alt-idle.png",
+      "sha256": "507d1fea9528d014b7826b2bc0f5479679757a64185aa4357c8866c50da9c881"
+    },
+    {
+      "file": "public/art/astro-joe-fire.png",
+      "sha256": "bd51b3f15a799da8a8039777db3ce93260f7d0e15e04f3cc03139e78c12fe2d5"
+    },
+    {
+      "file": "public/art/astro-joe-idle.png",
+      "sha256": "d8e6868f3e0f6cb8cb2ee9dc83fbb930ce4b4602d8fe035482719b18f1a452ce"
+    },
+    {
+      "file": "public/art/explosive-astro-joe-idle.png",
+      "sha256": "7406cb54b48ada28656162fa61f69a8ec7d6e9832f2c038de93f26a0b63e3b18"
+    },
+    {
+      "file": "public/art/game-over-menu.webp",
+      "sha256": "8ba258cac10b4d90ab18ab2dbb0feb4eadaecb09e2a710c5b095980c980ba7d9"
+    },
+    {
+      "file": "public/art/game-over-title.png",
+      "sha256": "08ad7e96e223b819398094974137c559561829eee6ee68b3bef3332a82e9d9fe"
+    },
+    {
+      "file": "public/art/game-title.png",
+      "sha256": "77abfbca6a93f03af5c5edf8d3fc049ae62c99bec72ece72e7c643ece5b20374"
+    },
+    {
+      "file": "public/art/gargantua-attack.png",
+      "sha256": "1659a4d5b279f889cc86a5ae86e995138f3c9715706922dea3feefc9ed1c0921"
+    },
+    {
+      "file": "public/art/gargantua-die.png",
+      "sha256": "0bc059319afd16729377c229357c5b57f89411d54ef4b4dfb5998a9c6f18e703"
+    },
+    {
+      "file": "public/art/gargantua-walk.png",
+      "sha256": "913c266b8088af8cc63602b31dc00dcdea623f33d4c7cbb89494702fce75a446"
+    },
+    {
+      "file": "public/art/green-circle.png",
+      "sha256": "bbe9426be02251a8464f74ab80670a91aec16f9e30ab281d93c3130ef2683c8e"
+    },
+    {
+      "file": "public/art/grunt-attack.png",
+      "sha256": "ddabf32a52e88a14135aed39b5fabbe9a1f0672c1830eecef46ad5d105ab1680"
+    },
+    {
+      "file": "public/art/grunt-die.png",
+      "sha256": "13d2c49215e7cc423596a25b566d05f78fa57c2af645827a4826fe84860723ff"
+    },
+    {
+      "file": "public/art/grunt-walk.png",
+      "sha256": "45f57d2322c3ed621d9cf3c0ea1a9036604c1b4cd7ef01d74e6c5efb865c5110"
+    },
+    {
+      "file": "public/art/little-green-man-attack.png",
+      "sha256": "795128d7221c3d6d13d8f04c0121e078eb7e6111df1251d70f3f4affc2b74444"
+    },
+    {
+      "file": "public/art/little-green-man-die.png",
+      "sha256": "4bab5426349fdc6301ead9c48003d5b1295ffc1e71256dbfbcfc6b1b371244b9"
+    },
+    {
+      "file": "public/art/little-green-man-walk.png",
+      "sha256": "0770f620e80d5ccc349a7c5024bb97d487d323fb7678863e56018cf47357c5c0"
+    },
+    {
+      "file": "public/art/manhunter-attack.png",
+      "sha256": "ff08320ebccecfc75d971a27bd0f5f7cc95011052bde4af92e7cf766b82575c3"
+    },
+    {
+      "file": "public/art/manhunter-die.png",
+      "sha256": "4ff72a436be84b9db15b72239a478efae32ebb2eec3f2e66e4b5212257f6a9b3"
+    },
+    {
+      "file": "public/art/manhunter-walk.png",
+      "sha256": "33a90546d7a0db1eeeac53eec2a1105a78c8d0163d822e7acad55b5d23e90ae2"
+    },
+    {
+      "file": "public/art/millennium-falcon-fire.png",
+      "sha256": "e154efc0711312b65e8a6507038e9f128eb588a4e1421dd5d5aacd3369b17e57"
+    },
+    {
+      "file": "public/art/millennium-falcon-idle.png",
+      "sha256": "0800f21132c036abea676b10c1606030c49a86db8c5aae63f45aeddc651cd6ce"
+    },
+    {
+      "file": "public/art/money-bush-idle.png",
+      "sha256": "cc2b1b7fe8bf95cdc25c3d34b8a092239df168ef263ab176431d24ea31a443f0"
+    },
+    {
+      "file": "public/art/money-tree-idle.png",
+      "sha256": "0efddb3f7243b8fe7f96cfd0726a032941f17dd82527b7bdd715c545f1f1cc2e"
+    },
+    {
+      "file": "public/art/moon-menu.webp",
+      "sha256": "536dd7372edaede1bbec4a2480d7947176f3284d2e45e3a1e3b3e1247ed4e289"
+    },
+    {
+      "file": "public/art/moon-zeus-fire.png",
+      "sha256": "6883e6777e12a5fc742b82654458a431eaba75cedc2a83264e1fe090f7a470e2"
+    },
+    {
+      "file": "public/art/moon-zeus-idle.png",
+      "sha256": "69e7661679ce6ad74f503a9fbfc0a596056ab8f1c11f7d3489de961839386e6c"
+    },
+    {
+      "file": "public/art/pause-menu.webp",
+      "sha256": "d251df5009606f4d1252ab9ab6af08f6a4f0c075e160ff269052458f6d105f35"
+    },
+    {
+      "file": "public/art/placement-square-copy.png",
+      "sha256": "4060e25f16d2be11ce6fc774717f1dc504e977cfc0bb266de900302f4784ced0"
+    },
+    {
+      "file": "public/art/placement-square.png",
+      "sha256": "0b8d50e768839539171b92dfe59376f811628ed65527df0bd1be63b53204344f"
+    },
+    {
+      "file": "public/art/portrait-asteroid.png",
+      "sha256": "160e81005f045a89f3cba4cd6b968b418f24b648aaf61d5a80c9c9ab193c1e7a"
+    },
+    {
+      "file": "public/art/portrait-astro-joe.png",
+      "sha256": "691f03fc2d92c4977ccb683220a511829c26a79f5f30154bc8816ed000d4d3c5"
+    },
+    {
+      "file": "public/art/portrait-explosive-astro-joe.png",
+      "sha256": "5790869ad5af4a6d4af9750f38bad2aa27d9ef917e41aae3310a2c21d6a5d5c0"
+    },
+    {
+      "file": "public/art/portrait-millennium-falcon.png",
+      "sha256": "c0b9ccbeb68b788b281de1b22c2e0d0eb394afe3d05a8b1c84f62b8f3a5b45ff"
+    },
+    {
+      "file": "public/art/portrait-money-bush.png",
+      "sha256": "8daf06e568f8ce81314a63863d85ada4796132a42652f1e2411fcadfd091de80"
+    },
+    {
+      "file": "public/art/portrait-money-tree.png",
+      "sha256": "591b5d672a5f044cd67e4ef91a5525a2186cc8fe791c3793741c4c11b7ade1f7"
+    },
+    {
+      "file": "public/art/portrait-moon-zeus.png",
+      "sha256": "a34e35c4fcc0192161c8059a87ee0a163b8f7b08fe9e59a99c428b02162461d0"
+    },
+    {
+      "file": "public/art/portrait-spaceship.png",
+      "sha256": "25e0d18c55a7cf9a3c49fb905e4fd95997bbea1951f67c20c6f0a7001155c04b"
+    },
+    {
+      "file": "public/art/portrait-standing-startrell-cluggins.png",
+      "sha256": "dcb502f28682195e4688f85805cebc60828bf24e9ddab3f3b22d62897e4207dd"
+    },
+    {
+      "file": "public/art/portrait-startrell-cluggins.png",
+      "sha256": "82d3b29ece855325c75877cde37e46e602f343e5f362da0450311efcab6ec9a2"
+    },
+    {
+      "file": "public/art/portrait-tars.png",
+      "sha256": "41e6fdf9de3ae190311dfddd8371b1a3c5b4366c53337008b79950792acf6dd5"
+    },
+    {
+      "file": "public/art/projectile-astro-joe-ammo.png",
+      "sha256": "dfe82f602383606c8055c3483096677494a7669627e1b60ed15babc7aec0329e"
+    },
+    {
+      "file": "public/art/projectile-explosive-astro-joe-ammo.png",
+      "sha256": "c35b0b26451b08e84afebe17bd43bc0ab518c75d07ea6fe372e6dfb0c7117089"
+    },
+    {
+      "file": "public/art/projectile-moon-zeus-ammo.png",
+      "sha256": "06b45111a17fc7919d898704969510e7ad2aa33845fc96030f3cbc37f349b6ef"
+    },
+    {
+      "file": "public/art/projectile-startrell-cluggins-ammo.png",
+      "sha256": "145eda29fb25b2b952d6bbfe12752af9d5bfd7e8804f6037cfa6010001bfc893"
+    },
+    {
+      "file": "public/art/projectile-tars-ammo.png",
+      "sha256": "7160e557cb714ddf30a36244fedf8836b2f70fc74f651a9a981daf0bee225976"
+    },
+    {
+      "file": "public/art/remove-x.png",
+      "sha256": "a1e0967284f79edeaa1e7568e29940bdb0455122c95012cf9b8a094ec4bad041"
+    },
+    {
+      "file": "public/art/space-ambient-idle.png",
+      "sha256": "52de2371d98ec695f531733fdfd37eff886bed367a3ea8bf6889ad642d17131f"
+    },
+    {
+      "file": "public/art/spacebucks-image.png",
+      "sha256": "67d0d04ff50661ec6c72a2001fe9faa36786b873c57ec2f271ec9b27e51c4ce2"
+    },
+    {
+      "file": "public/art/sprinter-attack.png",
+      "sha256": "0dee19107fa5449640f0869e6acec7873b331cdb4b0db8b992063873e49305bd"
+    },
+    {
+      "file": "public/art/sprinter-die.png",
+      "sha256": "0bdd336dc9e3e4a7eede138c15ef4f8ea2b566a85fe68bf7c7131ec1225326de"
+    },
+    {
+      "file": "public/art/sprinter-walk.png",
+      "sha256": "ac94405300f3633e603a46cd834b2f265777576c0c8735c4ed80c9fa41f41cad"
+    },
+    {
+      "file": "public/art/stage-one.webp",
+      "sha256": "ef76fb4d334480ed1f258322c2dcba0d26a8369e1940cf2d47e8fbb3190634ff"
+    },
+    {
+      "file": "public/art/stage-three.webp",
+      "sha256": "f8a9b2aa0f9c73074792dce9c96626604bcc778a67aaa12345880ac84090b27c"
+    },
+    {
+      "file": "public/art/stage-two.webp",
+      "sha256": "c6c83affec3960d74af8602be2ab309b8d6afc0fa1590948183b58d1705e9b1a"
+    },
+    {
+      "file": "public/art/startrell-cluggins-fire.png",
+      "sha256": "872ac5f1b41a61066a1988dceeae635a24ecdcdcb0491669a0ea7323e4b8ed6b"
+    },
+    {
+      "file": "public/art/startrell-cluggins-idle.png",
+      "sha256": "a023941adeb6ee791de94ee5e62d197e006a602c9ab386a6c697e73e506d41b0"
+    },
+    {
+      "file": "public/art/tank-attack.png",
+      "sha256": "ab83666a78bed550a978dd55435fb3ebe3bdb0466382f6ea5b311e90ac9eb27c"
+    },
+    {
+      "file": "public/art/tank-die.png",
+      "sha256": "dcb19d220a168d5127fd763211ee27be1157588ef71cd655789be7e38ecd3ad2"
+    },
+    {
+      "file": "public/art/tank-walk.png",
+      "sha256": "effce9c98bb152a936f80a39f7e9ede9b7e229633ccde68da92719c672f27eab"
+    },
+    {
+      "file": "public/art/tars-fire.png",
+      "sha256": "af7121a2563f2962e24f643d463efd59a2e74f3bad4d98348091dc2ce3380594"
+    },
+    {
+      "file": "public/art/tars-idle.png",
+      "sha256": "5eac7103a91aa0f667515ee00cfdbbe44c7beae38eac5cde0ca429eea87b8c95"
+    },
+    {
+      "file": "public/art/winning-menu.webp",
+      "sha256": "e0683eb0e98679915924effc92d4098c94e85d7b3971ffc7cf4455cca1a70dca"
+    },
+    {
+      "file": "public/art/winning-title.png",
+      "sha256": "37d6a83187fb6bf694a70b6494a9fa34869e2b48801160b90aaeb3ceb52b49a2"
+    }
+  ],
+  "baseline": "4507737204724009d4a9d72c9626993541a27d26",
+  "unchangedRuleCampaignAndPoseSources": {
+    "src/game/alien-animation.ts": "8dc2fcc59b2aefe0df809e518286b11479d21fd6c8480f0f67d9fbef90f830f2",
+    "src/game/challenges.ts": "d0562a2bc8a85665cce60417c0286d7855c26649b0b7bca8f91a2e4f7f381d3e",
+    "src/game/combat.ts": "adca35274cd4ebe99ebdf5e093a7c33e19dff13d3836be1203449fd29653d0d3",
+    "src/game/content.ts": "cfdf758fbbaaa867ef06cab073f46045c005827e6964ca4caa775976fdbda281",
+    "src/game/environments.ts": "837383a00b648e0a61035703ac40511e1b9da4b25ed4eabb497bf975a909ae60",
+    "src/game/missions.ts": "9de6d66f913dda5623fcc7101ccca32d22e93b21e9705ae880988351c7a7cc7f",
+    "src/game/original-portraits.ts": "01e480f1a107c8f14dd474d2db91f745887195e6126d246a942f571ad7209ca0",
+    "src/game/original-registration.ts": "a2710511b3020ae1b7cc78eb84b1ac8b23b095f6cccd464a51a4d1a37e34d6d2",
+    "src/game/simulation.ts": "ca973b869b3a67a80a8267b3e075d0d6957c788b040ef28873f80a7c9320f07c",
+    "src/game/threats.ts": "94067a746614a70ff6e552ff48df99cc60436e1e7a8195f870b07e439187d725",
+    "src/game/validate-content.ts": "57ad43ee7bbfc805d420479bba8f5c887e2aa7c31e96c060d42f1b94f8255edf",
+    "src/game/waves.ts": "6eb58de1f8431e53fb54a4922164e47e73c0cb84a604a48c33ec5f3f8b7b54fe",
+    "src/campaign/board.ts": "9b772591ac1ae160bcaf98fabd741d41deca20d309155ecb53861e72aca40005",
+    "src/campaign/progress.ts": "d446ecd5db972773fc928d99fc769b0a1fd15c74cbabd422f5e75e4c05c30aed",
+    "src/campaign/save.ts": "d5ce0c5b4158695eda1a25f299d8f19c27426c43abcd5dfd79043b70288e74cd"
+  },
+  "atlases": [
+    {
+      "kind": "scout",
+      "frames": 40,
+      "bytes": 92306,
+      "sha256": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa",
+      "alphaExact": true,
+      "geometryUnchanged": true
+    },
+    {
+      "kind": "grunt",
+      "frames": 40,
+      "bytes": 97096,
+      "sha256": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f",
+      "alphaExact": true,
+      "geometryUnchanged": true
+    },
+    {
+      "kind": "sprinter",
+      "frames": 48,
+      "bytes": 119184,
+      "sha256": "fe5f8c066f78e5f8b01a5995279ec7bc22c5427929fd81271cf348241545269a",
+      "alphaExact": true,
+      "geometryUnchanged": true
+    },
+    {
+      "kind": "manhunter",
+      "frames": 40,
+      "bytes": 84518,
+      "sha256": "7a166ef6934c8fbeb0bf3d994fe4659c3b10634b361369278a5f570f4a93591b",
+      "alphaExact": true,
+      "geometryUnchanged": true
+    },
+    {
+      "kind": "tank",
+      "frames": 40,
+      "bytes": 136890,
+      "sha256": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0",
+      "alphaExact": true,
+      "geometryUnchanged": true
+    },
+    {
+      "kind": "gargantua",
+      "frames": 40,
+      "bytes": 169044,
+      "sha256": "2d9d035bbbb8c99518c67d385a98921d4df5c04ab2f6191eb6b772c5fb3ea5e9",
+      "alphaExact": true,
+      "geometryUnchanged": true
+    }
+  ],
+  "originalFramesValidated": 419,
+  "originalFilesUnchanged": {
+    "public/art/astro-joe-idle.png": "d8e6868f3e0f6cb8cb2ee9dc83fbb930ce4b4602d8fe035482719b18f1a452ce",
+    "public/art/astro-joe-fire.png": "bd51b3f15a799da8a8039777db3ce93260f7d0e15e04f3cc03139e78c12fe2d5",
+    "public/art/money-bush-idle.png": "cc2b1b7fe8bf95cdc25c3d34b8a092239df168ef263ab176431d24ea31a443f0",
+    "public/art/asteroid-idle.png": "c8b0b341db4ff04ce9b8ff191c7f59a0afcd121657983aa031f1d47f269d23cd",
+    "public/art/moon-zeus-idle.png": "69e7661679ce6ad74f503a9fbfc0a596056ab8f1c11f7d3489de961839386e6c",
+    "public/art/moon-zeus-fire.png": "6883e6777e12a5fc742b82654458a431eaba75cedc2a83264e1fe090f7a470e2",
+    "public/art/explosive-astro-joe-idle.png": "7406cb54b48ada28656162fa61f69a8ec7d6e9832f2c038de93f26a0b63e3b18",
+    "public/art/startrell-cluggins-idle.png": "a023941adeb6ee791de94ee5e62d197e006a602c9ab386a6c697e73e506d41b0",
+    "public/art/startrell-cluggins-fire.png": "872ac5f1b41a61066a1988dceeae635a24ecdcdcb0491669a0ea7323e4b8ed6b",
+    "public/art/tars-idle.png": "5eac7103a91aa0f667515ee00cfdbbe44c7beae38eac5cde0ca429eea87b8c95",
+    "public/art/tars-fire.png": "af7121a2563f2962e24f643d463efd59a2e74f3bad4d98348091dc2ce3380594",
+    "public/art/money-tree-idle.png": "0efddb3f7243b8fe7f96cfd0726a032941f17dd82527b7bdd715c545f1f1cc2e",
+    "public/art/millennium-falcon-idle.png": "0800f21132c036abea676b10c1606030c49a86db8c5aae63f45aeddc651cd6ce",
+    "public/art/millennium-falcon-fire.png": "e154efc0711312b65e8a6507038e9f128eb588a4e1421dd5d5aacd3369b17e57",
+    "public/art/little-green-man-walk.png": "0770f620e80d5ccc349a7c5024bb97d487d323fb7678863e56018cf47357c5c0",
+    "public/art/little-green-man-attack.png": "795128d7221c3d6d13d8f04c0121e078eb7e6111df1251d70f3f4affc2b74444",
+    "public/art/little-green-man-die.png": "4bab5426349fdc6301ead9c48003d5b1295ffc1e71256dbfbcfc6b1b371244b9",
+    "public/art/grunt-walk.png": "45f57d2322c3ed621d9cf3c0ea1a9036604c1b4cd7ef01d74e6c5efb865c5110",
+    "public/art/grunt-attack.png": "ddabf32a52e88a14135aed39b5fabbe9a1f0672c1830eecef46ad5d105ab1680",
+    "public/art/grunt-die.png": "13d2c49215e7cc423596a25b566d05f78fa57c2af645827a4826fe84860723ff",
+    "public/art/sprinter-walk.png": "ac94405300f3633e603a46cd834b2f265777576c0c8735c4ed80c9fa41f41cad",
+    "public/art/sprinter-attack.png": "0dee19107fa5449640f0869e6acec7873b331cdb4b0db8b992063873e49305bd",
+    "public/art/sprinter-die.png": "0bdd336dc9e3e4a7eede138c15ef4f8ea2b566a85fe68bf7c7131ec1225326de",
+    "public/art/manhunter-walk.png": "33a90546d7a0db1eeeac53eec2a1105a78c8d0163d822e7acad55b5d23e90ae2",
+    "public/art/manhunter-attack.png": "ff08320ebccecfc75d971a27bd0f5f7cc95011052bde4af92e7cf766b82575c3",
+    "public/art/manhunter-die.png": "4ff72a436be84b9db15b72239a478efae32ebb2eec3f2e66e4b5212257f6a9b3",
+    "public/art/tank-walk.png": "effce9c98bb152a936f80a39f7e9ede9b7e229633ccde68da92719c672f27eab",
+    "public/art/tank-attack.png": "ab83666a78bed550a978dd55435fb3ebe3bdb0466382f6ea5b311e90ac9eb27c",
+    "public/art/tank-die.png": "dcb19d220a168d5127fd763211ee27be1157588ef71cd655789be7e38ecd3ad2",
+    "public/art/gargantua-walk.png": "913c266b8088af8cc63602b31dc00dcdea623f33d4c7cbb89494702fce75a446",
+    "public/art/gargantua-attack.png": "1659a4d5b279f889cc86a5ae86e995138f3c9715706922dea3feefc9ed1c0921",
+    "public/art/gargantua-die.png": "0bc059319afd16729377c229357c5b57f89411d54ef4b4dfb5998a9c6f18e703"
+  },
+  "originalFit": "Every alpha>=32 frame remains proportional within86x62 world pixels inside100x74 cells; same runtime registration.",
+  "schoolTreeUnchanged": true
+}

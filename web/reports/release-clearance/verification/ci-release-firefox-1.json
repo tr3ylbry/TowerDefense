@@ -1,0 +1,1382 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.22.1/x64/bin/node",
+      "/home/runner/work/TowerDefense/TowerDefense/web/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.release.config.ts",
+      "--project=firefox",
+      "--shard=1/2",
+      "--reporter=line,json"
+    ],
+    "configFile": "/home/runner/work/TowerDefense/TowerDefense/web/playwright.release.config.ts",
+    "rootDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+      },
+      "gitCommit": {
+        "shortHash": "6c3734e",
+        "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "subject": "Fetch frozen history for release parity and preservation checks",
+        "body": "Fetch frozen history for release parity and preservation checks\n",
+        "author": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "committer": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "branch": "modernization"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "snapshotDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4181",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": {
+      "current": 1,
+      "total": 2
+    },
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser/expedition-0.3.spec.ts",
+      "file": "browser/expedition-0.3.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failed destination resources preserve the existing map and a retry prepares a fresh destination",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:17.377Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8773683edde91fd4911b-69ae785fc92ee6392dec",
+          "file": "browser/expedition-0.3.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "audio can be enabled and disabled by a user gesture",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 991,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:20.732Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8773683edde91fd4911b-3444a293cf6b31f89e70",
+          "file": "browser/expedition-0.3.spec.ts",
+          "line": 264,
+          "column": 1
+        },
+        {
+          "title": "mission receipts explain actual spending and reset with the mission",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:21.733Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8773683edde91fd4911b-d481b2941f08075cc2ca",
+          "file": "browser/expedition-0.3.spec.ts",
+          "line": 290,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.4.spec.ts",
+      "file": "browser/expedition-0.4.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "late legal deployment explains passed direct fire, supports rescue, and clears on restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13443,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:46.083Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f1fc5de4978160d54323-2ea113ecc9704aa970c9",
+          "file": "browser/expedition-0.4.spec.ts",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "Nest advertises paired relays before an optional early call",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14040,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:59.536Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f1fc5de4978160d54323-255ed9232c7ae43ebc85",
+          "file": "browser/expedition-0.4.spec.ts",
+          "line": 136,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.5.spec.ts",
+      "file": "browser/expedition-0.5.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ordinary dialogs never resume a mission after backgrounding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:13.598Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d499498b9b2afd8eb990-a8261134f19916ef3627",
+          "file": "browser/expedition-0.5.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "phone controls and the complete roster remain reachable under enlarged page content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1949,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:17.756Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d499498b9b2afd8eb990-f8b41ce2ee127204896b",
+          "file": "browser/expedition-0.5.spec.ts",
+          "line": 144,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.6.spec.ts",
+      "file": "browser/expedition-0.6.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "campaign board exposes six missions, lock reasons, briefings and keyboard navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1546,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:19.723Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-b076c95927bddda9b3ae",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "public-control expedition completes all six missions, persists stars, replays and preserves a lost replay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 1200000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 716320,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:21.280Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-cb39d468476bfd358846",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 74,
+          "column": 1
+        },
+        {
+          "title": "active campaign navigation is explicit and backgrounded dialogs never auto-resume",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2781,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:17.612Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-0d503d62af09c9fbd1db",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 254,
+          "column": 1
+        },
+        {
+          "title": "campaign reset requires confirmation and isolates motion and other browser data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24545,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:20.404Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-b0c3d22d67544e617387",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 298,
+          "column": 1
+        },
+        {
+          "title": "blocked storage warns without interrupting campaign deployment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1528,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:44.958Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-2aacf5f6807b20abaf38",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 353,
+          "column": 1
+        },
+        {
+          "title": "partial corruption recovers valid stars and preserves the damaged original",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 801,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:46.495Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-d74ed891980e2e5652b3",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 382,
+          "column": 1
+        },
+        {
+          "title": "mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2380,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:47.305Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-0071172bae20d377badc",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 410,
+          "column": 1
+        },
+        {
+          "title": "campaign phone 390x844 supports cards, enlarged content, briefing and reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1337,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:49.693Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-b3f03488be98c7216599",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 456,
+          "column": 3
+        },
+        {
+          "title": "campaign phone 844x390 supports cards, enlarged content, briefing and reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1284,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:51.041Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-736a7ce3e51d2f380ba0",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 456,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.7.spec.ts",
+      "file": "browser/expedition-0.7.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "opening modes stay clear and reachable at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2179,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:52.341Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-3293eb618864f136ebbb",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "opening modes stay clear and reachable at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:54.529Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-675d2ff5c3ed98119945",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "opening modes stay clear and reachable at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:56.089Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-90af298d9d9804960c32",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "replay guidance distinguishes improving shields from an already complete rating",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1817,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:57.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-f75fad34301e0cf6e81c",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "real breaches announce shield loss, results describe replay, and replay clears that description",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23918,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:12:59.531Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-8e5896b84e764a2cca44",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.8.spec.ts",
+      "file": "browser/expedition-0.8.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "wave decisions remain clear and time controls centered at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19264,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:13:23.462Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "800733fbe6eae086d450-ce319955bf4b4ae99372",
+          "file": "browser/expedition-0.8.spec.ts",
+          "line": 10,
+          "column": 3
+        },
+        {
+          "title": "wave decisions remain clear and time controls centered at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19106,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:13:42.737Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "800733fbe6eae086d450-9bf603d2123a7ca4401a",
+          "file": "browser/expedition-0.8.spec.ts",
+          "line": 10,
+          "column": 3
+        },
+        {
+          "title": "wave decisions remain clear and time controls centered at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19156,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:01.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "800733fbe6eae086d450-41cd0c41b49ac7fa718d",
+          "file": "browser/expedition-0.8.spec.ts",
+          "line": 10,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-1.1.spec.ts",
+      "file": "browser/expedition-1.1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "live HUD updates preserve held pointer activation and control labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:21.030Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-262c3825e802518b9d55",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 813,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:23.391Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-4b454e6fd77faf3b0488",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2018,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:24.214Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-8c17ba783cb49bbf8c71",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "a pending music download can be canceled and retried with one active audio source across restart and destination changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4164,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:26.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-16defbf85fe51a2ff11d",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:30.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-7528e0aae6495f2df457",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 134,
+          "column": 1
+        },
+        {
+          "title": "Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31461,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:31.586Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "loop-integrity.json",
+                      "contentType": "application/json",
+                      "body": "eyJmcmFtZXNQZXJMb29wIjo3MjAwMDAsInNhbXBsZVJhdGUiOjQ4MDAwLCJkdXJhdGlvbiI6MTUsIm1heFJlcGVhdEVycm9yIjowLCJzZWFtUm1zIjowLjE5OTc0MDQwMTY3MTI2NzA1fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-9c82139f0454fcb4faaa",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 199,
+          "column": 1
+        },
+        {
+          "title": "FX and Music recover independently from real output suspension and honor rapid latest-intent taps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:15:03.057Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-e712c7d4f7803c94a31a",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 226,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T01:59:15.779Z",
+    "duration": 951473.55,
+    "expected": 31,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,5 +1,9 @@
 # Expedition art direction
 
+## Expedition-only candidate boundary
+
+The current Expedition mode uses the independently illustrated Canyon, Sky Bridge, Nest and acid assets in `src/game/art.ts`; retained school scenery is confined to full-mode Original comparison. Earlier prototype notes below describe their historical stages. The release candidate uses five new source-authored projectile SVGs with navy outlines, cream/mint/coral/ice silhouettes and the unchanged27×27 world footprint. [Release provenance](../art-source/release-clearance/projectiles.json) and [rights/identity decisions](../reports/release-clearance/assessment/RIGHTS.md) record the current distribution boundary; TARS naming/design review remains pending. Full development comparison and all original pixels stay preserved.
+
 ## Expedition 1.0 articulated pilots
 
 Sprinter retains 48 poses with smoother swing contact, restrained weight transfer and eased attack recovery. Gargantua adds 40 poses using a broad quadrupedal four-beat gait and a body-driven strike. Preserve each character's painted face, palette, silhouette, lighting and foot grounding. They share offline production utilities and runtime state selection, but use different anatomical rigs. Static portraits/fallbacks and Original comparison remain. [Architecture](ANIMATION_ARCHITECTURE.md), [source/provenance](../art-source/expedition-1.0/prompts.md), [animated evidence](../reports/expedition-1.0/visual/README.md) and [budget](../reports/expedition-1.0/performance/README.md) record the acceptance and limitations. Human movement preference remains pending.

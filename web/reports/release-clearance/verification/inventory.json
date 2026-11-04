@@ -1,0 +1,3298 @@
+{
+  "fullComparison": {
+    "files": [
+      {
+        "file": "CREDITS.txt",
+        "bytes": 1053,
+        "sha256": "a928e4fb4957aa372d4ea5873bd4a93346e9f7253b87a54469af433b718e70a4"
+      },
+      {
+        "file": "THIRD_PARTY_NOTICES.txt",
+        "bytes": 2397,
+        "sha256": "1458f347f571583b6ff1795b18946c481badbe37e642a574676756e2491212e1"
+      },
+      {
+        "file": "art/acid-pool.png",
+        "bytes": 69109,
+        "sha256": "358b69b88b663bb94940634fe71e3817e44e4ceaf9d8aa9499bb76a2dd125f93"
+      },
+      {
+        "file": "art/alien-sample.png",
+        "bytes": 28957,
+        "sha256": "4a2ba3bda3acd487aed6e299ce2291e039b2b55884dc7f2e23055999a32354c9"
+      },
+      {
+        "file": "art/asteroid-idle.png",
+        "bytes": 3511,
+        "sha256": "c8b0b341db4ff04ce9b8ff191c7f59a0afcd121657983aa031f1d47f269d23cd"
+      },
+      {
+        "file": "art/astro-joe-alt-idle.png",
+        "bytes": 2232,
+        "sha256": "507d1fea9528d014b7826b2bc0f5479679757a64185aa4357c8866c50da9c881"
+      },
+      {
+        "file": "art/astro-joe-fire.png",
+        "bytes": 1416,
+        "sha256": "bd51b3f15a799da8a8039777db3ce93260f7d0e15e04f3cc03139e78c12fe2d5"
+      },
+      {
+        "file": "art/astro-joe-idle.png",
+        "bytes": 2231,
+        "sha256": "d8e6868f3e0f6cb8cb2ee9dc83fbb930ce4b4602d8fe035482719b18f1a452ce"
+      },
+      {
+        "file": "art/expedition/README-0.2.md",
+        "bytes": 11604,
+        "sha256": "2a5135106e9cada407141007bdcc9b436562e7b4faf0bd6939ce61d598c168be"
+      },
+      {
+        "file": "art/expedition/README-0.3.md",
+        "bytes": 19319,
+        "sha256": "efa15b2209d13f4ff0dea6487e9c7d810e1d93b7ec6eb744d80b412a4ee28b19"
+      },
+      {
+        "file": "art/expedition/README-0.4.md",
+        "bytes": 15233,
+        "sha256": "8f3b617b8b7f95cb5c4fe427608af1ca141db3600029b12e01a9a06c3c5c5cce"
+      },
+      {
+        "file": "art/expedition/README-0.5.md",
+        "bytes": 6834,
+        "sha256": "2fb8d8e56da9cf2765f050f1922c559a32acb03da0aba572e2c25583c19ee08b"
+      },
+      {
+        "file": "art/expedition/README-0.9.md",
+        "bytes": 1582,
+        "sha256": "425f529c3821ba411da016f48f40f8b01454a473ee0c0770b68feb4eab80fd35"
+      },
+      {
+        "file": "art/expedition/README-1.0.md",
+        "bytes": 2368,
+        "sha256": "4ed7729aeae028f9a118c08adb2829448c1408bf2496854eb0ec5be44c1ac073"
+      },
+      {
+        "file": "art/expedition/README-1.1.md",
+        "bytes": 1456,
+        "sha256": "316dc5bcc478393af70a0eedd76551ee5bd6fb77c6a3d00db01fcb667eb952b2"
+      },
+      {
+        "file": "art/expedition/README.md",
+        "bytes": 10862,
+        "sha256": "ee69fe317b5ca666b080e892a8f0820fe80e12a3fad89841391db71c7c3fd58a"
+      },
+      {
+        "file": "art/expedition/acid-pool.webp",
+        "bytes": 12356,
+        "sha256": "49d869220f774c964732ff0d9bf61754c78f85f7e1fdc636f1933d6701f6ef54"
+      },
+      {
+        "file": "art/expedition/asteroid.png",
+        "bytes": 205148,
+        "sha256": "f799bcc8c8618b6c3c3a99f4cf5be3f049875e0719c70af24c444b04874087d9"
+      },
+      {
+        "file": "art/expedition/asteroid.webp",
+        "bytes": 11422,
+        "sha256": "4d80a99ee0a4b950ecb1dd37c0455d9cb13a9f8c989421c91bc0bc1b9966fcc4"
+      },
+      {
+        "file": "art/expedition/canyon-0.5.webp",
+        "bytes": 87406,
+        "sha256": "76d137f375f21088f029ab0e0e33b8b9ad344632b2e2a33d6bca81ed5ef55503"
+      },
+      {
+        "file": "art/expedition/canyon.webp",
+        "bytes": 159894,
+        "sha256": "247a02aef7e634fd912c3122dd249807eb7b1ba7c9fefeadacbe9f8a79a6a2a5"
+      },
+      {
+        "file": "art/expedition/explosive-astro-joe.webp",
+        "bytes": 16820,
+        "sha256": "f19e2c5c4a10ed368270f2afb0277fe100a8fe02c561c073e84a351cf90787aa"
+      },
+      {
+        "file": "art/expedition/frontier-flagship-compact.webp",
+        "bytes": 14630,
+        "sha256": "20747a8b515b71b8b0e574375063b49a3723f9092292cef6dd05aec2085e29aa"
+      },
+      {
+        "file": "art/expedition/gargantua-animation.webp",
+        "bytes": 169044,
+        "sha256": "2d9d035bbbb8c99518c67d385a98921d4df5c04ab2f6191eb6b772c5fb3ea5e9"
+      },
+      {
+        "file": "art/expedition/gargantua.png",
+        "bytes": 240916,
+        "sha256": "6ab8c98702a97ebe798d305808e440dff7b9f91638ab09719b74b9d69b0d111f"
+      },
+      {
+        "file": "art/expedition/gargantua.webp",
+        "bytes": 34280,
+        "sha256": "f166c8754cae02c7a69e8c8cef0a108a4323dd6dd90e244c0627160eb289e7d6"
+      },
+      {
+        "file": "art/expedition/grunt-animation.webp",
+        "bytes": 97096,
+        "sha256": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f"
+      },
+      {
+        "file": "art/expedition/grunt.png",
+        "bytes": 216649,
+        "sha256": "91e7b5409b992c2c8a13d8b2e33a14d4c1971e8e812d990a9d61d17bfedf6fd2"
+      },
+      {
+        "file": "art/expedition/grunt.webp",
+        "bytes": 28422,
+        "sha256": "a483ff0aa92c2636775532245bd2c186e5697f2ffd13b8f03204d4420a296f1c"
+      },
+      {
+        "file": "art/expedition/manhunter-animation.webp",
+        "bytes": 84518,
+        "sha256": "7a166ef6934c8fbeb0bf3d994fe4659c3b10634b361369278a5f570f4a93591b"
+      },
+      {
+        "file": "art/expedition/manhunter.png",
+        "bytes": 216942,
+        "sha256": "5ce2b614cfa74ca98d43a014a8c6d7ef0fb7b971aa5fd51921f7aa7f70434c4d"
+      },
+      {
+        "file": "art/expedition/manhunter.webp",
+        "bytes": 34402,
+        "sha256": "1a4d5c55909c81c0b4f1d23cd5935e8fe521879d07ae67c2814fbb8acc0cdb24"
+      },
+      {
+        "file": "art/expedition/money-bush.png",
+        "bytes": 201472,
+        "sha256": "7ce948bbdb581ae350fefd0d67db5a337e27e4171255f81dfd27bed8ff28cd12"
+      },
+      {
+        "file": "art/expedition/money-bush.webp",
+        "bytes": 13012,
+        "sha256": "da1b0ec967391fafe504685bcfcd7ffdbea2183e0a124e56df57a24bcc905833"
+      },
+      {
+        "file": "art/expedition/money-tree.webp",
+        "bytes": 17422,
+        "sha256": "b133e584710803d25cffc0f8b0b53db96cd0f573242eb8b48036fd43861413f8"
+      },
+      {
+        "file": "art/expedition/moon-zeus.png",
+        "bytes": 200985,
+        "sha256": "a88d84c4c223af37a2eb3247a268f4507c66b76bc9e491a0024739ee86c5697e"
+      },
+      {
+        "file": "art/expedition/moon-zeus.webp",
+        "bytes": 14722,
+        "sha256": "5c4e03db6e06cce36522387c242eb35928ffe569048f65d943ac907c629863c1"
+      },
+      {
+        "file": "art/expedition/nest.webp",
+        "bytes": 82124,
+        "sha256": "04e6db04a97e5be784c08ce578aee8730e9fb1299e1b47bc1175bb9de9502677"
+      },
+      {
+        "file": "art/expedition/plated-crawler.png",
+        "bytes": 229934,
+        "sha256": "cbbfb070969e066c4f4af081ee822adfc43e503e83bc79a1d62e8ecf438037e5"
+      },
+      {
+        "file": "art/expedition/plated-crawler.webp",
+        "bytes": 33552,
+        "sha256": "96a0b0a9a7e87f7c086cb7ef1eefaddec004eb9e05821047b4076696b8be723d"
+      },
+      {
+        "file": "art/expedition/projectiles/astro.svg",
+        "bytes": 349,
+        "sha256": "15356dd1050adeccad850df26e5dc12bd140e4d0876aaa17a4c5d87734a54828"
+      },
+      {
+        "file": "art/expedition/projectiles/explosive.svg",
+        "bytes": 396,
+        "sha256": "e2ccfc8b02ce332604917a885cdc61540efec735b691925cc51ba6e9dd4d5f44"
+      },
+      {
+        "file": "art/expedition/projectiles/startrell.svg",
+        "bytes": 411,
+        "sha256": "cc55eaec1e97b452e4cc992d516ee2d18e1f8f2ccef62774a6e60c66a816e90f"
+      },
+      {
+        "file": "art/expedition/projectiles/tars.svg",
+        "bytes": 338,
+        "sha256": "463b2b05d72b898fcdcb0da68e6a8899c036249a86fcb4e56fbe89bc9f51cc08"
+      },
+      {
+        "file": "art/expedition/projectiles/zeus.svg",
+        "bytes": 417,
+        "sha256": "b58942071f45884a5d62de23874a7fdf7d4591375a6ca0ddab1e818a638e1ba9"
+      },
+      {
+        "file": "art/expedition/ranger.png",
+        "bytes": 238090,
+        "sha256": "d3880233055291293ff654d279fde01ea8005f3e8b3c6fa9a945e7ccf18a7139"
+      },
+      {
+        "file": "art/expedition/ranger.webp",
+        "bytes": 13752,
+        "sha256": "e7319df6d676ecebbbbd919f494c841a616282f041921330ec3b2d3e7d4f5a94"
+      },
+      {
+        "file": "art/expedition/scout-animation.webp",
+        "bytes": 92306,
+        "sha256": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa"
+      },
+      {
+        "file": "art/expedition/scout.png",
+        "bytes": 137235,
+        "sha256": "f052710cd668ad1479ea864e1cb67374549a346dfe6ae909947123cb271123f4"
+      },
+      {
+        "file": "art/expedition/scout.webp",
+        "bytes": 24216,
+        "sha256": "0b1b82cb1e84b9ccc5a2edce0bd2dc0972f21e5208e81ace2a7c8b44067a5f76"
+      },
+      {
+        "file": "art/expedition/sky-bridge.webp",
+        "bytes": 109530,
+        "sha256": "d640371c373e97c205abd5699b993ed0e9ea5009edd1abc0fd91ae5942bcd79d"
+      },
+      {
+        "file": "art/expedition/sprinter-animation.webp",
+        "bytes": 119184,
+        "sha256": "fe5f8c066f78e5f8b01a5995279ec7bc22c5427929fd81271cf348241545269a"
+      },
+      {
+        "file": "art/expedition/sprinter.png",
+        "bytes": 110599,
+        "sha256": "64faa4cc8d333c3d38d91bb729cc1846f27bbbdc3f2daf68c0fe999b1cea9ce1"
+      },
+      {
+        "file": "art/expedition/sprinter.webp",
+        "bytes": 21120,
+        "sha256": "a2b3298b3542d3fec5f5dd64ab940cdd4e6844b13b99d254cbe38c35cd044f40"
+      },
+      {
+        "file": "art/expedition/startrell-cluggins.webp",
+        "bytes": 13524,
+        "sha256": "f4bb35c410ed257216c2997c83f6f280aac69a41767fd06aba2aa8b50645abfa"
+      },
+      {
+        "file": "art/expedition/tank-animation.webp",
+        "bytes": 136890,
+        "sha256": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0"
+      },
+      {
+        "file": "art/expedition/tars.png",
+        "bytes": 177912,
+        "sha256": "d2c1ceffc99c4e2a0d964353e9388015dd158b30f3a7362b9952df3c02dc277f"
+      },
+      {
+        "file": "art/expedition/tars.webp",
+        "bytes": 10438,
+        "sha256": "d535724f3f06cdc56bfd351ba43ec5b08769cecd64862806889a6172b666d4c0"
+      },
+      {
+        "file": "art/explosive-astro-joe-idle.png",
+        "bytes": 2898,
+        "sha256": "7406cb54b48ada28656162fa61f69a8ec7d6e9832f2c038de93f26a0b63e3b18"
+      },
+      {
+        "file": "art/game-over-menu.webp",
+        "bytes": 27944,
+        "sha256": "8ba258cac10b4d90ab18ab2dbb0feb4eadaecb09e2a710c5b095980c980ba7d9"
+      },
+      {
+        "file": "art/game-over-title.png",
+        "bytes": 17944,
+        "sha256": "08ad7e96e223b819398094974137c559561829eee6ee68b3bef3332a82e9d9fe"
+      },
+      {
+        "file": "art/game-title.png",
+        "bytes": 33864,
+        "sha256": "77abfbca6a93f03af5c5edf8d3fc049ae62c99bec72ece72e7c643ece5b20374"
+      },
+      {
+        "file": "art/gargantua-attack.png",
+        "bytes": 87245,
+        "sha256": "1659a4d5b279f889cc86a5ae86e995138f3c9715706922dea3feefc9ed1c0921"
+      },
+      {
+        "file": "art/gargantua-die.png",
+        "bytes": 96223,
+        "sha256": "0bc059319afd16729377c229357c5b57f89411d54ef4b4dfb5998a9c6f18e703"
+      },
+      {
+        "file": "art/gargantua-walk.png",
+        "bytes": 188051,
+        "sha256": "913c266b8088af8cc63602b31dc00dcdea623f33d4c7cbb89494702fce75a446"
+      },
+      {
+        "file": "art/green-circle.png",
+        "bytes": 17653,
+        "sha256": "bbe9426be02251a8464f74ab80670a91aec16f9e30ab281d93c3130ef2683c8e"
+      },
+      {
+        "file": "art/grunt-attack.png",
+        "bytes": 67814,
+        "sha256": "ddabf32a52e88a14135aed39b5fabbe9a1f0672c1830eecef46ad5d105ab1680"
+      },
+      {
+        "file": "art/grunt-die.png",
+        "bytes": 85435,
+        "sha256": "13d2c49215e7cc423596a25b566d05f78fa57c2af645827a4826fe84860723ff"
+      },
+      {
+        "file": "art/grunt-walk.png",
+        "bytes": 113736,
+        "sha256": "45f57d2322c3ed621d9cf3c0ea1a9036604c1b4cd7ef01d74e6c5efb865c5110"
+      },
+      {
+        "file": "art/little-green-man-attack.png",
+        "bytes": 82258,
+        "sha256": "795128d7221c3d6d13d8f04c0121e078eb7e6111df1251d70f3f4affc2b74444"
+      },
+      {
+        "file": "art/little-green-man-die.png",
+        "bytes": 69889,
+        "sha256": "4bab5426349fdc6301ead9c48003d5b1295ffc1e71256dbfbcfc6b1b371244b9"
+      },
+      {
+        "file": "art/little-green-man-walk.png",
+        "bytes": 207696,
+        "sha256": "0770f620e80d5ccc349a7c5024bb97d487d323fb7678863e56018cf47357c5c0"
+      },
+      {
+        "file": "art/manhunter-attack.png",
+        "bytes": 212311,
+        "sha256": "ff08320ebccecfc75d971a27bd0f5f7cc95011052bde4af92e7cf766b82575c3"
+      },
+      {
+        "file": "art/manhunter-die.png",
+        "bytes": 104295,
+        "sha256": "4ff72a436be84b9db15b72239a478efae32ebb2eec3f2e66e4b5212257f6a9b3"
+      },
+      {
+        "file": "art/manhunter-walk.png",
+        "bytes": 458485,
+        "sha256": "33a90546d7a0db1eeeac53eec2a1105a78c8d0163d822e7acad55b5d23e90ae2"
+      },
+      {
+        "file": "art/manifest.json",
+        "bytes": 16898,
+        "sha256": "686eba6e8d8de6e7dbbfffd5b5a44a005b5e7d985fb99b5996a1e0b5224d6ab8"
+      },
+      {
+        "file": "art/millennium-falcon-fire.png",
+        "bytes": 6853,
+        "sha256": "e154efc0711312b65e8a6507038e9f128eb588a4e1421dd5d5aacd3369b17e57"
+      },
+      {
+        "file": "art/millennium-falcon-idle.png",
+        "bytes": 7061,
+        "sha256": "0800f21132c036abea676b10c1606030c49a86db8c5aae63f45aeddc651cd6ce"
+      },
+      {
+        "file": "art/money-bush-idle.png",
+        "bytes": 1466,
+        "sha256": "cc2b1b7fe8bf95cdc25c3d34b8a092239df168ef263ab176431d24ea31a443f0"
+      },
+      {
+        "file": "art/money-tree-idle.png",
+        "bytes": 2926,
+        "sha256": "0efddb3f7243b8fe7f96cfd0726a032941f17dd82527b7bdd715c545f1f1cc2e"
+      },
+      {
+        "file": "art/moon-menu.webp",
+        "bytes": 13672,
+        "sha256": "536dd7372edaede1bbec4a2480d7947176f3284d2e45e3a1e3b3e1247ed4e289"
+      },
+      {
+        "file": "art/moon-zeus-fire.png",
+        "bytes": 5457,
+        "sha256": "6883e6777e12a5fc742b82654458a431eaba75cedc2a83264e1fe090f7a470e2"
+      },
+      {
+        "file": "art/moon-zeus-idle.png",
+        "bytes": 5698,
+        "sha256": "69e7661679ce6ad74f503a9fbfc0a596056ab8f1c11f7d3489de961839386e6c"
+      },
+      {
+        "file": "art/pause-menu.webp",
+        "bytes": 24548,
+        "sha256": "d251df5009606f4d1252ab9ab6af08f6a4f0c075e160ff269052458f6d105f35"
+      },
+      {
+        "file": "art/placement-square-copy.png",
+        "bytes": 2222,
+        "sha256": "4060e25f16d2be11ce6fc774717f1dc504e977cfc0bb266de900302f4784ced0"
+      },
+      {
+        "file": "art/placement-square.png",
+        "bytes": 2993,
+        "sha256": "0b8d50e768839539171b92dfe59376f811628ed65527df0bd1be63b53204344f"
+      },
+      {
+        "file": "art/portrait-asteroid.png",
+        "bytes": 1611,
+        "sha256": "160e81005f045a89f3cba4cd6b968b418f24b648aaf61d5a80c9c9ab193c1e7a"
+      },
+      {
+        "file": "art/portrait-astro-joe.png",
+        "bytes": 13240,
+        "sha256": "691f03fc2d92c4977ccb683220a511829c26a79f5f30154bc8816ed000d4d3c5"
+      },
+      {
+        "file": "art/portrait-explosive-astro-joe.png",
+        "bytes": 12864,
+        "sha256": "5790869ad5af4a6d4af9750f38bad2aa27d9ef917e41aae3310a2c21d6a5d5c0"
+      },
+      {
+        "file": "art/portrait-millennium-falcon.png",
+        "bytes": 34239,
+        "sha256": "c0b9ccbeb68b788b281de1b22c2e0d0eb394afe3d05a8b1c84f62b8f3a5b45ff"
+      },
+      {
+        "file": "art/portrait-money-bush.png",
+        "bytes": 5843,
+        "sha256": "8daf06e568f8ce81314a63863d85ada4796132a42652f1e2411fcadfd091de80"
+      },
+      {
+        "file": "art/portrait-money-tree.png",
+        "bytes": 17819,
+        "sha256": "591b5d672a5f044cd67e4ef91a5525a2186cc8fe791c3793741c4c11b7ade1f7"
+      },
+      {
+        "file": "art/portrait-moon-zeus.png",
+        "bytes": 28205,
+        "sha256": "a34e35c4fcc0192161c8059a87ee0a163b8f7b08fe9e59a99c428b02162461d0"
+      },
+      {
+        "file": "art/portrait-spaceship.png",
+        "bytes": 24430,
+        "sha256": "25e0d18c55a7cf9a3c49fb905e4fd95997bbea1951f67c20c6f0a7001155c04b"
+      },
+      {
+        "file": "art/portrait-standing-startrell-cluggins.png",
+        "bytes": 25050,
+        "sha256": "dcb502f28682195e4688f85805cebc60828bf24e9ddab3f3b22d62897e4207dd"
+      },
+      {
+        "file": "art/portrait-startrell-cluggins.png",
+        "bytes": 25141,
+        "sha256": "82d3b29ece855325c75877cde37e46e602f343e5f362da0450311efcab6ec9a2"
+      },
+      {
+        "file": "art/portrait-tars.png",
+        "bytes": 3677,
+        "sha256": "41e6fdf9de3ae190311dfddd8371b1a3c5b4366c53337008b79950792acf6dd5"
+      },
+      {
+        "file": "art/projectile-astro-joe-ammo.png",
+        "bytes": 350,
+        "sha256": "dfe82f602383606c8055c3483096677494a7669627e1b60ed15babc7aec0329e"
+      },
+      {
+        "file": "art/projectile-explosive-astro-joe-ammo.png",
+        "bytes": 1572,
+        "sha256": "c35b0b26451b08e84afebe17bd43bc0ab518c75d07ea6fe372e6dfb0c7117089"
+      },
+      {
+        "file": "art/projectile-moon-zeus-ammo.png",
+        "bytes": 1577,
+        "sha256": "06b45111a17fc7919d898704969510e7ad2aa33845fc96030f3cbc37f349b6ef"
+      },
+      {
+        "file": "art/projectile-startrell-cluggins-ammo.png",
+        "bytes": 774,
+        "sha256": "145eda29fb25b2b952d6bbfe12752af9d5bfd7e8804f6037cfa6010001bfc893"
+      },
+      {
+        "file": "art/projectile-tars-ammo.png",
+        "bytes": 656,
+        "sha256": "7160e557cb714ddf30a36244fedf8836b2f70fc74f651a9a981daf0bee225976"
+      },
+      {
+        "file": "art/remove-x.png",
+        "bytes": 10750,
+        "sha256": "a1e0967284f79edeaa1e7568e29940bdb0455122c95012cf9b8a094ec4bad041"
+      },
+      {
+        "file": "art/space-ambient-idle.png",
+        "bytes": 275503,
+        "sha256": "52de2371d98ec695f531733fdfd37eff886bed367a3ea8bf6889ad642d17131f"
+      },
+      {
+        "file": "art/spacebucks-image.png",
+        "bytes": 28280,
+        "sha256": "67d0d04ff50661ec6c72a2001fe9faa36786b873c57ec2f271ec9b27e51c4ce2"
+      },
+      {
+        "file": "art/sprinter-attack.png",
+        "bytes": 147641,
+        "sha256": "0dee19107fa5449640f0869e6acec7873b331cdb4b0db8b992063873e49305bd"
+      },
+      {
+        "file": "art/sprinter-die.png",
+        "bytes": 125466,
+        "sha256": "0bdd336dc9e3e4a7eede138c15ef4f8ea2b566a85fe68bf7c7131ec1225326de"
+      },
+      {
+        "file": "art/sprinter-walk.png",
+        "bytes": 213028,
+        "sha256": "ac94405300f3633e603a46cd834b2f265777576c0c8735c4ed80c9fa41f41cad"
+      },
+      {
+        "file": "art/stage-one.webp",
+        "bytes": 41058,
+        "sha256": "ef76fb4d334480ed1f258322c2dcba0d26a8369e1940cf2d47e8fbb3190634ff"
+      },
+      {
+        "file": "art/stage-three.webp",
+        "bytes": 29068,
+        "sha256": "f8a9b2aa0f9c73074792dce9c96626604bcc778a67aaa12345880ac84090b27c"
+      },
+      {
+        "file": "art/stage-two.webp",
+        "bytes": 35486,
+        "sha256": "c6c83affec3960d74af8602be2ab309b8d6afc0fa1590948183b58d1705e9b1a"
+      },
+      {
+        "file": "art/startrell-cluggins-fire.png",
+        "bytes": 4287,
+        "sha256": "872ac5f1b41a61066a1988dceeae635a24ecdcdcb0491669a0ea7323e4b8ed6b"
+      },
+      {
+        "file": "art/startrell-cluggins-idle.png",
+        "bytes": 5104,
+        "sha256": "a023941adeb6ee791de94ee5e62d197e006a602c9ab386a6c697e73e506d41b0"
+      },
+      {
+        "file": "art/tank-attack.png",
+        "bytes": 134535,
+        "sha256": "ab83666a78bed550a978dd55435fb3ebe3bdb0466382f6ea5b311e90ac9eb27c"
+      },
+      {
+        "file": "art/tank-die.png",
+        "bytes": 143217,
+        "sha256": "dcb19d220a168d5127fd763211ee27be1157588ef71cd655789be7e38ecd3ad2"
+      },
+      {
+        "file": "art/tank-walk.png",
+        "bytes": 228696,
+        "sha256": "effce9c98bb152a936f80a39f7e9ede9b7e229633ccde68da92719c672f27eab"
+      },
+      {
+        "file": "art/tars-fire.png",
+        "bytes": 2175,
+        "sha256": "af7121a2563f2962e24f643d463efd59a2e74f3bad4d98348091dc2ce3380594"
+      },
+      {
+        "file": "art/tars-idle.png",
+        "bytes": 2887,
+        "sha256": "5eac7103a91aa0f667515ee00cfdbbe44c7beae38eac5cde0ca429eea87b8c95"
+      },
+      {
+        "file": "art/winning-menu.webp",
+        "bytes": 28550,
+        "sha256": "e0683eb0e98679915924effc92d4098c94e85d7b3971ffc7cf4455cca1a70dca"
+      },
+      {
+        "file": "art/winning-title.png",
+        "bytes": 18528,
+        "sha256": "37d6a83187fb6bf694a70b6494a9fa34869e2b48801160b90aaeb3ceb52b49a2"
+      },
+      {
+        "file": "assets/battlefield-RRIiGydq.js",
+        "bytes": 20669,
+        "sha256": "df7fa7af3022ba2588514a68fca3bb660f7696101433fb87522e65c737415f9d"
+      },
+      {
+        "file": "assets/index-CCaF18cB.js",
+        "bytes": 93787,
+        "sha256": "61d8fbff7e56d016434edb8f723cf438cc552be3ee71019cf07f063c31467d49"
+      },
+      {
+        "file": "assets/index-Cqwd5TIX.css",
+        "bytes": 41925,
+        "sha256": "be30a1f293b0484ad4df3f711fba82e5ff02adc5597eed6341b04015cbd33fba"
+      },
+      {
+        "file": "assets/phaser-B_vcVLyb.js",
+        "bytes": 1367089,
+        "sha256": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+      },
+      {
+        "file": "audio/orbital-drift.wav",
+        "bytes": 661544,
+        "sha256": "4eb6a565197b899028f29ad0fa7ce473f715a36d95e6914d521835fc3f7b314f"
+      },
+      {
+        "file": "favicon.svg",
+        "bytes": 307,
+        "sha256": "1476d5f2261a0b759a0bbdeab4c3dd86848e507fb482415936e2dbc65acea82b"
+      },
+      {
+        "file": "index.html",
+        "bytes": 780,
+        "sha256": "371c738de0f86ea3b86fae964f5340d79acdcd187e048545c1c553990645e331"
+      }
+    ],
+    "counts": {
+      "files": 127,
+      "bytes": 9630982,
+      "raster": 104
+    },
+    "excludedFilesVsFull": [
+      {
+        "file": "art/acid-pool.png",
+        "bytes": 69109,
+        "sha256": "358b69b88b663bb94940634fe71e3817e44e4ceaf9d8aa9499bb76a2dd125f93"
+      },
+      {
+        "file": "art/alien-sample.png",
+        "bytes": 28957,
+        "sha256": "4a2ba3bda3acd487aed6e299ce2291e039b2b55884dc7f2e23055999a32354c9"
+      },
+      {
+        "file": "art/asteroid-idle.png",
+        "bytes": 3511,
+        "sha256": "c8b0b341db4ff04ce9b8ff191c7f59a0afcd121657983aa031f1d47f269d23cd"
+      },
+      {
+        "file": "art/astro-joe-alt-idle.png",
+        "bytes": 2232,
+        "sha256": "507d1fea9528d014b7826b2bc0f5479679757a64185aa4357c8866c50da9c881"
+      },
+      {
+        "file": "art/astro-joe-fire.png",
+        "bytes": 1416,
+        "sha256": "bd51b3f15a799da8a8039777db3ce93260f7d0e15e04f3cc03139e78c12fe2d5"
+      },
+      {
+        "file": "art/astro-joe-idle.png",
+        "bytes": 2231,
+        "sha256": "d8e6868f3e0f6cb8cb2ee9dc83fbb930ce4b4602d8fe035482719b18f1a452ce"
+      },
+      {
+        "file": "art/expedition/README-0.2.md",
+        "bytes": 11604,
+        "sha256": "2a5135106e9cada407141007bdcc9b436562e7b4faf0bd6939ce61d598c168be"
+      },
+      {
+        "file": "art/expedition/README-0.3.md",
+        "bytes": 19319,
+        "sha256": "efa15b2209d13f4ff0dea6487e9c7d810e1d93b7ec6eb744d80b412a4ee28b19"
+      },
+      {
+        "file": "art/expedition/README-0.4.md",
+        "bytes": 15233,
+        "sha256": "8f3b617b8b7f95cb5c4fe427608af1ca141db3600029b12e01a9a06c3c5c5cce"
+      },
+      {
+        "file": "art/expedition/README-0.5.md",
+        "bytes": 6834,
+        "sha256": "2fb8d8e56da9cf2765f050f1922c559a32acb03da0aba572e2c25583c19ee08b"
+      },
+      {
+        "file": "art/expedition/README-0.9.md",
+        "bytes": 1582,
+        "sha256": "425f529c3821ba411da016f48f40f8b01454a473ee0c0770b68feb4eab80fd35"
+      },
+      {
+        "file": "art/expedition/README-1.0.md",
+        "bytes": 2368,
+        "sha256": "4ed7729aeae028f9a118c08adb2829448c1408bf2496854eb0ec5be44c1ac073"
+      },
+      {
+        "file": "art/expedition/README-1.1.md",
+        "bytes": 1456,
+        "sha256": "316dc5bcc478393af70a0eedd76551ee5bd6fb77c6a3d00db01fcb667eb952b2"
+      },
+      {
+        "file": "art/expedition/README.md",
+        "bytes": 10862,
+        "sha256": "ee69fe317b5ca666b080e892a8f0820fe80e12a3fad89841391db71c7c3fd58a"
+      },
+      {
+        "file": "art/expedition/asteroid.png",
+        "bytes": 205148,
+        "sha256": "f799bcc8c8618b6c3c3a99f4cf5be3f049875e0719c70af24c444b04874087d9"
+      },
+      {
+        "file": "art/expedition/canyon.webp",
+        "bytes": 159894,
+        "sha256": "247a02aef7e634fd912c3122dd249807eb7b1ba7c9fefeadacbe9f8a79a6a2a5"
+      },
+      {
+        "file": "art/expedition/gargantua.png",
+        "bytes": 240916,
+        "sha256": "6ab8c98702a97ebe798d305808e440dff7b9f91638ab09719b74b9d69b0d111f"
+      },
+      {
+        "file": "art/expedition/grunt.png",
+        "bytes": 216649,
+        "sha256": "91e7b5409b992c2c8a13d8b2e33a14d4c1971e8e812d990a9d61d17bfedf6fd2"
+      },
+      {
+        "file": "art/expedition/manhunter.png",
+        "bytes": 216942,
+        "sha256": "5ce2b614cfa74ca98d43a014a8c6d7ef0fb7b971aa5fd51921f7aa7f70434c4d"
+      },
+      {
+        "file": "art/expedition/money-bush.png",
+        "bytes": 201472,
+        "sha256": "7ce948bbdb581ae350fefd0d67db5a337e27e4171255f81dfd27bed8ff28cd12"
+      },
+      {
+        "file": "art/expedition/moon-zeus.png",
+        "bytes": 200985,
+        "sha256": "a88d84c4c223af37a2eb3247a268f4507c66b76bc9e491a0024739ee86c5697e"
+      },
+      {
+        "file": "art/expedition/plated-crawler.png",
+        "bytes": 229934,
+        "sha256": "cbbfb070969e066c4f4af081ee822adfc43e503e83bc79a1d62e8ecf438037e5"
+      },
+      {
+        "file": "art/expedition/ranger.png",
+        "bytes": 238090,
+        "sha256": "d3880233055291293ff654d279fde01ea8005f3e8b3c6fa9a945e7ccf18a7139"
+      },
+      {
+        "file": "art/expedition/scout.png",
+        "bytes": 137235,
+        "sha256": "f052710cd668ad1479ea864e1cb67374549a346dfe6ae909947123cb271123f4"
+      },
+      {
+        "file": "art/expedition/sprinter.png",
+        "bytes": 110599,
+        "sha256": "64faa4cc8d333c3d38d91bb729cc1846f27bbbdc3f2daf68c0fe999b1cea9ce1"
+      },
+      {
+        "file": "art/expedition/tars.png",
+        "bytes": 177912,
+        "sha256": "d2c1ceffc99c4e2a0d964353e9388015dd158b30f3a7362b9952df3c02dc277f"
+      },
+      {
+        "file": "art/explosive-astro-joe-idle.png",
+        "bytes": 2898,
+        "sha256": "7406cb54b48ada28656162fa61f69a8ec7d6e9832f2c038de93f26a0b63e3b18"
+      },
+      {
+        "file": "art/game-over-menu.webp",
+        "bytes": 27944,
+        "sha256": "8ba258cac10b4d90ab18ab2dbb0feb4eadaecb09e2a710c5b095980c980ba7d9"
+      },
+      {
+        "file": "art/game-over-title.png",
+        "bytes": 17944,
+        "sha256": "08ad7e96e223b819398094974137c559561829eee6ee68b3bef3332a82e9d9fe"
+      },
+      {
+        "file": "art/game-title.png",
+        "bytes": 33864,
+        "sha256": "77abfbca6a93f03af5c5edf8d3fc049ae62c99bec72ece72e7c643ece5b20374"
+      },
+      {
+        "file": "art/gargantua-attack.png",
+        "bytes": 87245,
+        "sha256": "1659a4d5b279f889cc86a5ae86e995138f3c9715706922dea3feefc9ed1c0921"
+      },
+      {
+        "file": "art/gargantua-die.png",
+        "bytes": 96223,
+        "sha256": "0bc059319afd16729377c229357c5b57f89411d54ef4b4dfb5998a9c6f18e703"
+      },
+      {
+        "file": "art/gargantua-walk.png",
+        "bytes": 188051,
+        "sha256": "913c266b8088af8cc63602b31dc00dcdea623f33d4c7cbb89494702fce75a446"
+      },
+      {
+        "file": "art/green-circle.png",
+        "bytes": 17653,
+        "sha256": "bbe9426be02251a8464f74ab80670a91aec16f9e30ab281d93c3130ef2683c8e"
+      },
+      {
+        "file": "art/grunt-attack.png",
+        "bytes": 67814,
+        "sha256": "ddabf32a52e88a14135aed39b5fabbe9a1f0672c1830eecef46ad5d105ab1680"
+      },
+      {
+        "file": "art/grunt-die.png",
+        "bytes": 85435,
+        "sha256": "13d2c49215e7cc423596a25b566d05f78fa57c2af645827a4826fe84860723ff"
+      },
+      {
+        "file": "art/grunt-walk.png",
+        "bytes": 113736,
+        "sha256": "45f57d2322c3ed621d9cf3c0ea1a9036604c1b4cd7ef01d74e6c5efb865c5110"
+      },
+      {
+        "file": "art/little-green-man-attack.png",
+        "bytes": 82258,
+        "sha256": "795128d7221c3d6d13d8f04c0121e078eb7e6111df1251d70f3f4affc2b74444"
+      },
+      {
+        "file": "art/little-green-man-die.png",
+        "bytes": 69889,
+        "sha256": "4bab5426349fdc6301ead9c48003d5b1295ffc1e71256dbfbcfc6b1b371244b9"
+      },
+      {
+        "file": "art/little-green-man-walk.png",
+        "bytes": 207696,
+        "sha256": "0770f620e80d5ccc349a7c5024bb97d487d323fb7678863e56018cf47357c5c0"
+      },
+      {
+        "file": "art/manhunter-attack.png",
+        "bytes": 212311,
+        "sha256": "ff08320ebccecfc75d971a27bd0f5f7cc95011052bde4af92e7cf766b82575c3"
+      },
+      {
+        "file": "art/manhunter-die.png",
+        "bytes": 104295,
+        "sha256": "4ff72a436be84b9db15b72239a478efae32ebb2eec3f2e66e4b5212257f6a9b3"
+      },
+      {
+        "file": "art/manhunter-walk.png",
+        "bytes": 458485,
+        "sha256": "33a90546d7a0db1eeeac53eec2a1105a78c8d0163d822e7acad55b5d23e90ae2"
+      },
+      {
+        "file": "art/millennium-falcon-fire.png",
+        "bytes": 6853,
+        "sha256": "e154efc0711312b65e8a6507038e9f128eb588a4e1421dd5d5aacd3369b17e57"
+      },
+      {
+        "file": "art/millennium-falcon-idle.png",
+        "bytes": 7061,
+        "sha256": "0800f21132c036abea676b10c1606030c49a86db8c5aae63f45aeddc651cd6ce"
+      },
+      {
+        "file": "art/money-bush-idle.png",
+        "bytes": 1466,
+        "sha256": "cc2b1b7fe8bf95cdc25c3d34b8a092239df168ef263ab176431d24ea31a443f0"
+      },
+      {
+        "file": "art/money-tree-idle.png",
+        "bytes": 2926,
+        "sha256": "0efddb3f7243b8fe7f96cfd0726a032941f17dd82527b7bdd715c545f1f1cc2e"
+      },
+      {
+        "file": "art/moon-menu.webp",
+        "bytes": 13672,
+        "sha256": "536dd7372edaede1bbec4a2480d7947176f3284d2e45e3a1e3b3e1247ed4e289"
+      },
+      {
+        "file": "art/moon-zeus-fire.png",
+        "bytes": 5457,
+        "sha256": "6883e6777e12a5fc742b82654458a431eaba75cedc2a83264e1fe090f7a470e2"
+      },
+      {
+        "file": "art/moon-zeus-idle.png",
+        "bytes": 5698,
+        "sha256": "69e7661679ce6ad74f503a9fbfc0a596056ab8f1c11f7d3489de961839386e6c"
+      },
+      {
+        "file": "art/pause-menu.webp",
+        "bytes": 24548,
+        "sha256": "d251df5009606f4d1252ab9ab6af08f6a4f0c075e160ff269052458f6d105f35"
+      },
+      {
+        "file": "art/placement-square-copy.png",
+        "bytes": 2222,
+        "sha256": "4060e25f16d2be11ce6fc774717f1dc504e977cfc0bb266de900302f4784ced0"
+      },
+      {
+        "file": "art/placement-square.png",
+        "bytes": 2993,
+        "sha256": "0b8d50e768839539171b92dfe59376f811628ed65527df0bd1be63b53204344f"
+      },
+      {
+        "file": "art/portrait-asteroid.png",
+        "bytes": 1611,
+        "sha256": "160e81005f045a89f3cba4cd6b968b418f24b648aaf61d5a80c9c9ab193c1e7a"
+      },
+      {
+        "file": "art/portrait-astro-joe.png",
+        "bytes": 13240,
+        "sha256": "691f03fc2d92c4977ccb683220a511829c26a79f5f30154bc8816ed000d4d3c5"
+      },
+      {
+        "file": "art/portrait-explosive-astro-joe.png",
+        "bytes": 12864,
+        "sha256": "5790869ad5af4a6d4af9750f38bad2aa27d9ef917e41aae3310a2c21d6a5d5c0"
+      },
+      {
+        "file": "art/portrait-millennium-falcon.png",
+        "bytes": 34239,
+        "sha256": "c0b9ccbeb68b788b281de1b22c2e0d0eb394afe3d05a8b1c84f62b8f3a5b45ff"
+      },
+      {
+        "file": "art/portrait-money-bush.png",
+        "bytes": 5843,
+        "sha256": "8daf06e568f8ce81314a63863d85ada4796132a42652f1e2411fcadfd091de80"
+      },
+      {
+        "file": "art/portrait-money-tree.png",
+        "bytes": 17819,
+        "sha256": "591b5d672a5f044cd67e4ef91a5525a2186cc8fe791c3793741c4c11b7ade1f7"
+      },
+      {
+        "file": "art/portrait-moon-zeus.png",
+        "bytes": 28205,
+        "sha256": "a34e35c4fcc0192161c8059a87ee0a163b8f7b08fe9e59a99c428b02162461d0"
+      },
+      {
+        "file": "art/portrait-spaceship.png",
+        "bytes": 24430,
+        "sha256": "25e0d18c55a7cf9a3c49fb905e4fd95997bbea1951f67c20c6f0a7001155c04b"
+      },
+      {
+        "file": "art/portrait-standing-startrell-cluggins.png",
+        "bytes": 25050,
+        "sha256": "dcb502f28682195e4688f85805cebc60828bf24e9ddab3f3b22d62897e4207dd"
+      },
+      {
+        "file": "art/portrait-startrell-cluggins.png",
+        "bytes": 25141,
+        "sha256": "82d3b29ece855325c75877cde37e46e602f343e5f362da0450311efcab6ec9a2"
+      },
+      {
+        "file": "art/portrait-tars.png",
+        "bytes": 3677,
+        "sha256": "41e6fdf9de3ae190311dfddd8371b1a3c5b4366c53337008b79950792acf6dd5"
+      },
+      {
+        "file": "art/projectile-astro-joe-ammo.png",
+        "bytes": 350,
+        "sha256": "dfe82f602383606c8055c3483096677494a7669627e1b60ed15babc7aec0329e"
+      },
+      {
+        "file": "art/projectile-explosive-astro-joe-ammo.png",
+        "bytes": 1572,
+        "sha256": "c35b0b26451b08e84afebe17bd43bc0ab518c75d07ea6fe372e6dfb0c7117089"
+      },
+      {
+        "file": "art/projectile-moon-zeus-ammo.png",
+        "bytes": 1577,
+        "sha256": "06b45111a17fc7919d898704969510e7ad2aa33845fc96030f3cbc37f349b6ef"
+      },
+      {
+        "file": "art/projectile-startrell-cluggins-ammo.png",
+        "bytes": 774,
+        "sha256": "145eda29fb25b2b952d6bbfe12752af9d5bfd7e8804f6037cfa6010001bfc893"
+      },
+      {
+        "file": "art/projectile-tars-ammo.png",
+        "bytes": 656,
+        "sha256": "7160e557cb714ddf30a36244fedf8836b2f70fc74f651a9a981daf0bee225976"
+      },
+      {
+        "file": "art/remove-x.png",
+        "bytes": 10750,
+        "sha256": "a1e0967284f79edeaa1e7568e29940bdb0455122c95012cf9b8a094ec4bad041"
+      },
+      {
+        "file": "art/space-ambient-idle.png",
+        "bytes": 275503,
+        "sha256": "52de2371d98ec695f531733fdfd37eff886bed367a3ea8bf6889ad642d17131f"
+      },
+      {
+        "file": "art/spacebucks-image.png",
+        "bytes": 28280,
+        "sha256": "67d0d04ff50661ec6c72a2001fe9faa36786b873c57ec2f271ec9b27e51c4ce2"
+      },
+      {
+        "file": "art/sprinter-attack.png",
+        "bytes": 147641,
+        "sha256": "0dee19107fa5449640f0869e6acec7873b331cdb4b0db8b992063873e49305bd"
+      },
+      {
+        "file": "art/sprinter-die.png",
+        "bytes": 125466,
+        "sha256": "0bdd336dc9e3e4a7eede138c15ef4f8ea2b566a85fe68bf7c7131ec1225326de"
+      },
+      {
+        "file": "art/sprinter-walk.png",
+        "bytes": 213028,
+        "sha256": "ac94405300f3633e603a46cd834b2f265777576c0c8735c4ed80c9fa41f41cad"
+      },
+      {
+        "file": "art/stage-one.webp",
+        "bytes": 41058,
+        "sha256": "ef76fb4d334480ed1f258322c2dcba0d26a8369e1940cf2d47e8fbb3190634ff"
+      },
+      {
+        "file": "art/stage-three.webp",
+        "bytes": 29068,
+        "sha256": "f8a9b2aa0f9c73074792dce9c96626604bcc778a67aaa12345880ac84090b27c"
+      },
+      {
+        "file": "art/stage-two.webp",
+        "bytes": 35486,
+        "sha256": "c6c83affec3960d74af8602be2ab309b8d6afc0fa1590948183b58d1705e9b1a"
+      },
+      {
+        "file": "art/startrell-cluggins-fire.png",
+        "bytes": 4287,
+        "sha256": "872ac5f1b41a61066a1988dceeae635a24ecdcdcb0491669a0ea7323e4b8ed6b"
+      },
+      {
+        "file": "art/startrell-cluggins-idle.png",
+        "bytes": 5104,
+        "sha256": "a023941adeb6ee791de94ee5e62d197e006a602c9ab386a6c697e73e506d41b0"
+      },
+      {
+        "file": "art/tank-attack.png",
+        "bytes": 134535,
+        "sha256": "ab83666a78bed550a978dd55435fb3ebe3bdb0466382f6ea5b311e90ac9eb27c"
+      },
+      {
+        "file": "art/tank-die.png",
+        "bytes": 143217,
+        "sha256": "dcb19d220a168d5127fd763211ee27be1157588ef71cd655789be7e38ecd3ad2"
+      },
+      {
+        "file": "art/tank-walk.png",
+        "bytes": 228696,
+        "sha256": "effce9c98bb152a936f80a39f7e9ede9b7e229633ccde68da92719c672f27eab"
+      },
+      {
+        "file": "art/tars-fire.png",
+        "bytes": 2175,
+        "sha256": "af7121a2563f2962e24f643d463efd59a2e74f3bad4d98348091dc2ce3380594"
+      },
+      {
+        "file": "art/tars-idle.png",
+        "bytes": 2887,
+        "sha256": "5eac7103a91aa0f667515ee00cfdbbe44c7beae38eac5cde0ca429eea87b8c95"
+      },
+      {
+        "file": "art/winning-menu.webp",
+        "bytes": 28550,
+        "sha256": "e0683eb0e98679915924effc92d4098c94e85d7b3971ffc7cf4455cca1a70dca"
+      },
+      {
+        "file": "art/winning-title.png",
+        "bytes": 18528,
+        "sha256": "37d6a83187fb6bf694a70b6494a9fa34869e2b48801160b90aaeb3ceb52b49a2"
+      },
+      {
+        "file": "assets/battlefield-RRIiGydq.js",
+        "bytes": 20669,
+        "sha256": "df7fa7af3022ba2588514a68fca3bb660f7696101433fb87522e65c737415f9d"
+      },
+      {
+        "file": "assets/index-CCaF18cB.js",
+        "bytes": 93787,
+        "sha256": "61d8fbff7e56d016434edb8f723cf438cc552be3ee71019cf07f063c31467d49"
+      }
+    ]
+  },
+  "build": {
+    "distribution": "expedition-only-rc.1",
+    "dirtyAtBuild": false,
+    "sourceRevision": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+    "webTree": "3617541666718aa7c920624590eb5bf5f7a6bad7"
+  },
+  "files": [
+    {
+      "file": "CREDITS.txt",
+      "bytes": 1053,
+      "sha256": "a928e4fb4957aa372d4ea5873bd4a93346e9f7253b87a54469af433b718e70a4"
+    },
+    {
+      "file": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 2397,
+      "sha256": "1458f347f571583b6ff1795b18946c481badbe37e642a574676756e2491212e1"
+    },
+    {
+      "file": "art/expedition/acid-pool.webp",
+      "bytes": 12356,
+      "sha256": "49d869220f774c964732ff0d9bf61754c78f85f7e1fdc636f1933d6701f6ef54"
+    },
+    {
+      "file": "art/expedition/asteroid.webp",
+      "bytes": 11422,
+      "sha256": "4d80a99ee0a4b950ecb1dd37c0455d9cb13a9f8c989421c91bc0bc1b9966fcc4"
+    },
+    {
+      "file": "art/expedition/canyon-0.5.webp",
+      "bytes": 87406,
+      "sha256": "76d137f375f21088f029ab0e0e33b8b9ad344632b2e2a33d6bca81ed5ef55503"
+    },
+    {
+      "file": "art/expedition/explosive-astro-joe.webp",
+      "bytes": 16820,
+      "sha256": "f19e2c5c4a10ed368270f2afb0277fe100a8fe02c561c073e84a351cf90787aa"
+    },
+    {
+      "file": "art/expedition/frontier-flagship-compact.webp",
+      "bytes": 14630,
+      "sha256": "20747a8b515b71b8b0e574375063b49a3723f9092292cef6dd05aec2085e29aa"
+    },
+    {
+      "file": "art/expedition/gargantua-animation.webp",
+      "bytes": 169044,
+      "sha256": "2d9d035bbbb8c99518c67d385a98921d4df5c04ab2f6191eb6b772c5fb3ea5e9"
+    },
+    {
+      "file": "art/expedition/gargantua.webp",
+      "bytes": 34280,
+      "sha256": "f166c8754cae02c7a69e8c8cef0a108a4323dd6dd90e244c0627160eb289e7d6"
+    },
+    {
+      "file": "art/expedition/grunt-animation.webp",
+      "bytes": 97096,
+      "sha256": "7a238845016de9d1588e2b9a6036155aec5eea67b6b455168249a6fe806eba7f"
+    },
+    {
+      "file": "art/expedition/grunt.webp",
+      "bytes": 28422,
+      "sha256": "a483ff0aa92c2636775532245bd2c186e5697f2ffd13b8f03204d4420a296f1c"
+    },
+    {
+      "file": "art/expedition/manhunter-animation.webp",
+      "bytes": 84518,
+      "sha256": "7a166ef6934c8fbeb0bf3d994fe4659c3b10634b361369278a5f570f4a93591b"
+    },
+    {
+      "file": "art/expedition/manhunter.webp",
+      "bytes": 34402,
+      "sha256": "1a4d5c55909c81c0b4f1d23cd5935e8fe521879d07ae67c2814fbb8acc0cdb24"
+    },
+    {
+      "file": "art/expedition/money-bush.webp",
+      "bytes": 13012,
+      "sha256": "da1b0ec967391fafe504685bcfcd7ffdbea2183e0a124e56df57a24bcc905833"
+    },
+    {
+      "file": "art/expedition/money-tree.webp",
+      "bytes": 17422,
+      "sha256": "b133e584710803d25cffc0f8b0b53db96cd0f573242eb8b48036fd43861413f8"
+    },
+    {
+      "file": "art/expedition/moon-zeus.webp",
+      "bytes": 14722,
+      "sha256": "5c4e03db6e06cce36522387c242eb35928ffe569048f65d943ac907c629863c1"
+    },
+    {
+      "file": "art/expedition/nest.webp",
+      "bytes": 82124,
+      "sha256": "04e6db04a97e5be784c08ce578aee8730e9fb1299e1b47bc1175bb9de9502677"
+    },
+    {
+      "file": "art/expedition/plated-crawler.webp",
+      "bytes": 33552,
+      "sha256": "96a0b0a9a7e87f7c086cb7ef1eefaddec004eb9e05821047b4076696b8be723d"
+    },
+    {
+      "file": "art/expedition/projectiles/astro.svg",
+      "bytes": 349,
+      "sha256": "15356dd1050adeccad850df26e5dc12bd140e4d0876aaa17a4c5d87734a54828"
+    },
+    {
+      "file": "art/expedition/projectiles/explosive.svg",
+      "bytes": 396,
+      "sha256": "e2ccfc8b02ce332604917a885cdc61540efec735b691925cc51ba6e9dd4d5f44"
+    },
+    {
+      "file": "art/expedition/projectiles/startrell.svg",
+      "bytes": 411,
+      "sha256": "cc55eaec1e97b452e4cc992d516ee2d18e1f8f2ccef62774a6e60c66a816e90f"
+    },
+    {
+      "file": "art/expedition/projectiles/tars.svg",
+      "bytes": 338,
+      "sha256": "463b2b05d72b898fcdcb0da68e6a8899c036249a86fcb4e56fbe89bc9f51cc08"
+    },
+    {
+      "file": "art/expedition/projectiles/zeus.svg",
+      "bytes": 417,
+      "sha256": "b58942071f45884a5d62de23874a7fdf7d4591375a6ca0ddab1e818a638e1ba9"
+    },
+    {
+      "file": "art/expedition/ranger.webp",
+      "bytes": 13752,
+      "sha256": "e7319df6d676ecebbbbd919f494c841a616282f041921330ec3b2d3e7d4f5a94"
+    },
+    {
+      "file": "art/expedition/scout-animation.webp",
+      "bytes": 92306,
+      "sha256": "77d8d7e04683f8b9b6ea3be0fe7368416e0f7c7c9f0592ee6099b6025de4e1aa"
+    },
+    {
+      "file": "art/expedition/scout.webp",
+      "bytes": 24216,
+      "sha256": "0b1b82cb1e84b9ccc5a2edce0bd2dc0972f21e5208e81ace2a7c8b44067a5f76"
+    },
+    {
+      "file": "art/expedition/sky-bridge.webp",
+      "bytes": 109530,
+      "sha256": "d640371c373e97c205abd5699b993ed0e9ea5009edd1abc0fd91ae5942bcd79d"
+    },
+    {
+      "file": "art/expedition/sprinter-animation.webp",
+      "bytes": 119184,
+      "sha256": "fe5f8c066f78e5f8b01a5995279ec7bc22c5427929fd81271cf348241545269a"
+    },
+    {
+      "file": "art/expedition/sprinter.webp",
+      "bytes": 21120,
+      "sha256": "a2b3298b3542d3fec5f5dd64ab940cdd4e6844b13b99d254cbe38c35cd044f40"
+    },
+    {
+      "file": "art/expedition/startrell-cluggins.webp",
+      "bytes": 13524,
+      "sha256": "f4bb35c410ed257216c2997c83f6f280aac69a41767fd06aba2aa8b50645abfa"
+    },
+    {
+      "file": "art/expedition/tank-animation.webp",
+      "bytes": 136890,
+      "sha256": "5c6a040ccaa149c12c6ac8b165530680fe57668185c057fb1e5266439003f8f0"
+    },
+    {
+      "file": "art/expedition/tars.webp",
+      "bytes": 10438,
+      "sha256": "d535724f3f06cdc56bfd351ba43ec5b08769cecd64862806889a6172b666d4c0"
+    },
+    {
+      "file": "art/manifest.json",
+      "bytes": 455,
+      "sha256": "974acf1f5ece8e78d1e714e6d37cafe5167253115bb1a2f9fbe01982f08e99e6"
+    },
+    {
+      "file": "assets/battlefield-CPcCue2K.js",
+      "bytes": 20669,
+      "sha256": "46af04d04adc1343569268151628613f8537c1be1b906608b28511a1624591b4"
+    },
+    {
+      "file": "assets/index-C4YVlyKk.js",
+      "bytes": 93698,
+      "sha256": "720bab6c81ed91cff8b1b25a75d24bedfb91f8c50e5f42284180c9bf5eefb96c"
+    },
+    {
+      "file": "assets/index-Cqwd5TIX.css",
+      "bytes": 41925,
+      "sha256": "be30a1f293b0484ad4df3f711fba82e5ff02adc5597eed6341b04015cbd33fba"
+    },
+    {
+      "file": "assets/phaser-B_vcVLyb.js",
+      "bytes": 1367089,
+      "sha256": "17aeb2e52266668277dd74461549e78fcb3de1885196f307d6ddb61fc7135276"
+    },
+    {
+      "file": "audio/orbital-drift.wav",
+      "bytes": 661544,
+      "sha256": "4eb6a565197b899028f29ad0fa7ce473f715a36d95e6914d521835fc3f7b314f"
+    },
+    {
+      "file": "build-info.json",
+      "bytes": 191,
+      "sha256": "cbef3cf76283ac451c8e3a59985c623514b18d8429233bc3b35b23b2c2eb5690"
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 307,
+      "sha256": "1476d5f2261a0b759a0bbdeab4c3dd86848e507fb482415936e2dbc65acea82b"
+    },
+    {
+      "file": "index.html",
+      "bytes": 780,
+      "sha256": "e105663c36ead3d8d4d9137eeb0f05df7775135cd175e621d51e94eef5135a01"
+    }
+  ],
+  "counts": {
+    "files": 41,
+    "bytes": 3484207,
+    "raster": 25,
+    "rasterBytes": 1292188,
+    "atlases": 6,
+    "atlasBytes": 699038,
+    "audioBytes": 661544,
+    "excludedRasters": 79,
+    "excludedBytes": 6061176,
+    "excludedSchool": 67
+  },
+  "missing": [],
+  "unexpected": [],
+  "forbidden": [],
+  "exclusions": [
+    {
+      "file": "public/art/acid-pool.png",
+      "bytes": 69109,
+      "sha256": "358b69b88b663bb94940634fe71e3817e44e4ceaf9d8aa9499bb76a2dd125f93",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/acid-pool.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/alien-sample.png",
+      "bytes": 28957,
+      "sha256": "4a2ba3bda3acd487aed6e299ce2291e039b2b55884dc7f2e23055999a32354c9",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/alien-sample.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/asteroid-idle.png",
+      "bytes": 3511,
+      "sha256": "c8b0b341db4ff04ce9b8ff191c7f59a0afcd121657983aa031f1d47f269d23cd",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/asteroid.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/astro-joe-alt-idle.png",
+      "bytes": 2232,
+      "sha256": "507d1fea9528d014b7826b2bc0f5479679757a64185aa4357c8866c50da9c881",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/astro-joe-gif.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/astro-joe-fire.png",
+      "bytes": 1416,
+      "sha256": "bd51b3f15a799da8a8039777db3ce93260f7d0e15e04f3cc03139e78c12fe2d5",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/astro-joe-firing.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/astro-joe-idle.png",
+      "bytes": 2231,
+      "sha256": "d8e6868f3e0f6cb8cb2ee9dc83fbb930ce4b4602d8fe035482719b18f1a452ce",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/astro-joe.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/expedition/asteroid.png",
+      "bytes": 205148,
+      "sha256": "f799bcc8c8618b6c3c3a99f4cf5be3f049875e0719c70af24c444b04874087d9",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.4.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/canyon.webp",
+      "bytes": 159894,
+      "sha256": "247a02aef7e634fd912c3122dd249807eb7b1ba7c9fefeadacbe9f8a79a6a2a5",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/gargantua.png",
+      "bytes": 240916,
+      "sha256": "6ab8c98702a97ebe798d305808e440dff7b9f91638ab09719b74b9d69b0d111f",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.3.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/grunt.png",
+      "bytes": 216649,
+      "sha256": "91e7b5409b992c2c8a13d8b2e33a14d4c1971e8e812d990a9d61d17bfedf6fd2",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.2.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/manhunter.png",
+      "bytes": 216942,
+      "sha256": "5ce2b614cfa74ca98d43a014a8c6d7ef0fb7b971aa5fd51921f7aa7f70434c4d",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.3.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/money-bush.png",
+      "bytes": 201472,
+      "sha256": "7ce948bbdb581ae350fefd0d67db5a337e27e4171255f81dfd27bed8ff28cd12",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.4.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/moon-zeus.png",
+      "bytes": 200985,
+      "sha256": "a88d84c4c223af37a2eb3247a268f4507c66b76bc9e491a0024739ee86c5697e",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.4.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/plated-crawler.png",
+      "bytes": 229934,
+      "sha256": "cbbfb070969e066c4f4af081ee822adfc43e503e83bc79a1d62e8ecf438037e5",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/ranger.png",
+      "bytes": 238090,
+      "sha256": "d3880233055291293ff654d279fde01ea8005f3e8b3c6fa9a945e7ccf18a7139",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/scout.png",
+      "bytes": 137235,
+      "sha256": "f052710cd668ad1479ea864e1cb67374549a346dfe6ae909947123cb271123f4",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.2.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/sprinter.png",
+      "bytes": 110599,
+      "sha256": "64faa4cc8d333c3d38d91bb729cc1846f27bbbdc3f2daf68c0fe999b1cea9ce1",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.3.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/expedition/tars.png",
+      "bytes": 177912,
+      "sha256": "d2c1ceffc99c4e2a0d964353e9388015dd158b30f3a7362b9952df3c02dc277f",
+      "category": "Expedition generated illustration/derivative",
+      "sourceRecords": [
+        "public/art/expedition/README-0.2.md"
+      ],
+      "knownOwnership": "Built-in OpenAI generation recorded for this independent continuation",
+      "documentedPermission": "Generation prompts/source hashes recorded; not blanket third-party clearance",
+      "status": "provenance recorded; publication review pending",
+      "usage": "Expedition renderer/portraits or retained earlier derivative",
+      "recommendedDisposition": "Retain prompts and hashes; review identity and applicable publication terms; do not infer permissions for school assets",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Unused generated derivative/source-size output"
+    },
+    {
+      "file": "public/art/explosive-astro-joe-idle.png",
+      "bytes": 2898,
+      "sha256": "7406cb54b48ada28656162fa61f69a8ec7d6e9832f2c038de93f26a0b63e3b18",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/explosive-astro-joe.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/game-over-menu.webp",
+      "bytes": 27944,
+      "sha256": "8ba258cac10b4d90ab18ab2dbb0feb4eadaecb09e2a710c5b095980c980ba7d9",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/game-over-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/game-over-title.png",
+      "bytes": 17944,
+      "sha256": "08ad7e96e223b819398094974137c559561829eee6ee68b3bef3332a82e9d9fe",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/game-over-title.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/game-title.png",
+      "bytes": 33864,
+      "sha256": "77abfbca6a93f03af5c5edf8d3fc049ae62c99bec72ece72e7c643ece5b20374",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/game-title.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/gargantua-attack.png",
+      "bytes": 87245,
+      "sha256": "1659a4d5b279f889cc86a5ae86e995138f3c9715706922dea3feefc9ed1c0921",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/gargantua-attack-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/gargantua-die.png",
+      "bytes": 96223,
+      "sha256": "0bc059319afd16729377c229357c5b57f89411d54ef4b4dfb5998a9c6f18e703",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/gargantua-die-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/gargantua-walk.png",
+      "bytes": 188051,
+      "sha256": "913c266b8088af8cc63602b31dc00dcdea623f33d4c7cbb89494702fce75a446",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/gargantua-walk-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/green-circle.png",
+      "bytes": 17653,
+      "sha256": "bbe9426be02251a8464f74ab80670a91aec16f9e30ab281d93c3130ef2683c8e",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/green-circle.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/grunt-attack.png",
+      "bytes": 67814,
+      "sha256": "ddabf32a52e88a14135aed39b5fabbe9a1f0672c1830eecef46ad5d105ab1680",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/grunt-attack-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/grunt-die.png",
+      "bytes": 85435,
+      "sha256": "13d2c49215e7cc423596a25b566d05f78fa57c2af645827a4826fe84860723ff",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/grunt-die-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/grunt-walk.png",
+      "bytes": 113736,
+      "sha256": "45f57d2322c3ed621d9cf3c0ea1a9036604c1b4cd7ef01d74e6c5efb865c5110",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/grunt-walk-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/little-green-man-attack.png",
+      "bytes": 82258,
+      "sha256": "795128d7221c3d6d13d8f04c0121e078eb7e6111df1251d70f3f4affc2b74444",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/littlegreenman-attack-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/little-green-man-die.png",
+      "bytes": 69889,
+      "sha256": "4bab5426349fdc6301ead9c48003d5b1295ffc1e71256dbfbcfc6b1b371244b9",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/littlegreenman-die-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/little-green-man-walk.png",
+      "bytes": 207696,
+      "sha256": "0770f620e80d5ccc349a7c5024bb97d487d323fb7678863e56018cf47357c5c0",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/littlegreenman-walk-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/manhunter-attack.png",
+      "bytes": 212311,
+      "sha256": "ff08320ebccecfc75d971a27bd0f5f7cc95011052bde4af92e7cf766b82575c3",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/manhunter-attack-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/manhunter-die.png",
+      "bytes": 104295,
+      "sha256": "4ff72a436be84b9db15b72239a478efae32ebb2eec3f2e66e4b5212257f6a9b3",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/manhunter-die-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/manhunter-walk.png",
+      "bytes": 458485,
+      "sha256": "33a90546d7a0db1eeeac53eec2a1105a78c8d0163d822e7acad55b5d23e90ae2",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/manhunter-walk-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/millennium-falcon-fire.png",
+      "bytes": 6853,
+      "sha256": "e154efc0711312b65e8a6507038e9f128eb588a4e1421dd5d5aacd3369b17e57",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/spaceship-firing.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/millennium-falcon-idle.png",
+      "bytes": 7061,
+      "sha256": "0800f21132c036abea676b10c1606030c49a86db8c5aae63f45aeddc651cd6ce",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/spaceship.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/money-bush-idle.png",
+      "bytes": 1466,
+      "sha256": "cc2b1b7fe8bf95cdc25c3d34b8a092239df168ef263ab176431d24ea31a443f0",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/money-bush.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/money-tree-idle.png",
+      "bytes": 2926,
+      "sha256": "0efddb3f7243b8fe7f96cfd0726a032941f17dd82527b7bdd715c545f1f1cc2e",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/money-tree.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/moon-menu.webp",
+      "bytes": 13672,
+      "sha256": "536dd7372edaede1bbec4a2480d7947176f3284d2e45e3a1e3b3e1247ed4e289",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/moon-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/moon-zeus-fire.png",
+      "bytes": 5457,
+      "sha256": "6883e6777e12a5fc742b82654458a431eaba75cedc2a83264e1fe090f7a470e2",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/moon-zeus-firing.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/moon-zeus-idle.png",
+      "bytes": 5698,
+      "sha256": "69e7661679ce6ad74f503a9fbfc0a596056ab8f1c11f7d3489de961839386e6c",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/moon-zeus.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/pause-menu.webp",
+      "bytes": 24548,
+      "sha256": "d251df5009606f4d1252ab9ab6af08f6a4f0c075e160ff269052458f6d105f35",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/pause-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/placement-square-copy.png",
+      "bytes": 2222,
+      "sha256": "4060e25f16d2be11ce6fc774717f1dc504e977cfc0bb266de900302f4784ced0",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/placement-square copy.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/placement-square.png",
+      "bytes": 2993,
+      "sha256": "0b8d50e768839539171b92dfe59376f811628ed65527df0bd1be63b53204344f",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/placement-square.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-asteroid.png",
+      "bytes": 1611,
+      "sha256": "160e81005f045a89f3cba4cd6b968b418f24b648aaf61d5a80c9c9ab193c1e7a",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/asteroid.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-astro-joe.png",
+      "bytes": 13240,
+      "sha256": "691f03fc2d92c4977ccb683220a511829c26a79f5f30154bc8816ed000d4d3c5",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/astro-joe.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-explosive-astro-joe.png",
+      "bytes": 12864,
+      "sha256": "5790869ad5af4a6d4af9750f38bad2aa27d9ef917e41aae3310a2c21d6a5d5c0",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/explosive-astro-joe.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-millennium-falcon.png",
+      "bytes": 34239,
+      "sha256": "c0b9ccbeb68b788b281de1b22c2e0d0eb394afe3d05a8b1c84f62b8f3a5b45ff",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/millennium-falcon.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-money-bush.png",
+      "bytes": 5843,
+      "sha256": "8daf06e568f8ce81314a63863d85ada4796132a42652f1e2411fcadfd091de80",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/money-bush.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-money-tree.png",
+      "bytes": 17819,
+      "sha256": "591b5d672a5f044cd67e4ef91a5525a2186cc8fe791c3793741c4c11b7ade1f7",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/money-tree.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-moon-zeus.png",
+      "bytes": 28205,
+      "sha256": "a34e35c4fcc0192161c8059a87ee0a163b8f7b08fe9e59a99c428b02162461d0",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/moon-zeus.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-spaceship.png",
+      "bytes": 24430,
+      "sha256": "25e0d18c55a7cf9a3c49fb905e4fd95997bbea1951f67c20c6f0a7001155c04b",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/spaceship.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-standing-startrell-cluggins.png",
+      "bytes": 25050,
+      "sha256": "dcb502f28682195e4688f85805cebc60828bf24e9ddab3f3b22d62897e4207dd",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/standing-startrell-cluggins.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-startrell-cluggins.png",
+      "bytes": 25141,
+      "sha256": "82d3b29ece855325c75877cde37e46e602f343e5f362da0450311efcab6ec9a2",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/startrell-cluggins.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/portrait-tars.png",
+      "bytes": 3677,
+      "sha256": "41e6fdf9de3ae190311dfddd8371b1a3c5b4366c53337008b79950792acf6dd5",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/tars.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/projectile-astro-joe-ammo.png",
+      "bytes": 350,
+      "sha256": "dfe82f602383606c8055c3483096677494a7669627e1b60ed15babc7aec0329e",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/ammo/astro-joe-ammo.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Expedition and Original projectile",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": true,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Initial Expedition Canyon; also reused from cache",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/projectile-explosive-astro-joe-ammo.png",
+      "bytes": 1572,
+      "sha256": "c35b0b26451b08e84afebe17bd43bc0ab518c75d07ea6fe372e6dfb0c7117089",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/ammo/explosive-astro-joe-ammo.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Expedition and Original projectile",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": true,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Initial Expedition Canyon; also reused from cache",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/projectile-moon-zeus-ammo.png",
+      "bytes": 1577,
+      "sha256": "06b45111a17fc7919d898704969510e7ad2aa33845fc96030f3cbc37f349b6ef",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/ammo/moon-zeus-ammo.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Expedition and Original projectile",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": true,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Initial Expedition Canyon; also reused from cache",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/projectile-startrell-cluggins-ammo.png",
+      "bytes": 774,
+      "sha256": "145eda29fb25b2b952d6bbfe12752af9d5bfd7e8804f6037cfa6010001bfc893",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/ammo/startrell-cluggins-ammo.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Expedition and Original projectile",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": true,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Initial Expedition Canyon; also reused from cache",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/projectile-tars-ammo.png",
+      "bytes": 656,
+      "sha256": "7160e557cb714ddf30a36244fedf8836b2f70fc74f651a9a981daf0bee225976",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/ammo/tars-ammo.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Expedition and Original projectile",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": true,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Initial Expedition Canyon; also reused from cache",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/remove-x.png",
+      "bytes": 10750,
+      "sha256": "a1e0967284f79edeaa1e7568e29940bdb0455122c95012cf9b8a094ec4bad041",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/removeX.jpg"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/space-ambient-idle.png",
+      "bytes": 275503,
+      "sha256": "52de2371d98ec695f531733fdfd37eff886bed367a3ea8bf6889ad642d17131f",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/space-gif.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/spacebucks-image.png",
+      "bytes": 28280,
+      "sha256": "67d0d04ff50661ec6c72a2001fe9faa36786b873c57ec2f271ec9b27e51c4ce2",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/spacebucks-image.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/sprinter-attack.png",
+      "bytes": 147641,
+      "sha256": "0dee19107fa5449640f0869e6acec7873b331cdb4b0db8b992063873e49305bd",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/sprinter-attack-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/sprinter-die.png",
+      "bytes": 125466,
+      "sha256": "0bdd336dc9e3e4a7eede138c15ef4f8ea2b566a85fe68bf7c7131ec1225326de",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/sprinter-die-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/sprinter-walk.png",
+      "bytes": 213028,
+      "sha256": "ac94405300f3633e603a46cd834b2f265777576c0c8735c4ed80c9fa41f41cad",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/sprinter-walk-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/stage-one.webp",
+      "bytes": 41058,
+      "sha256": "ef76fb4d334480ed1f258322c2dcba0d26a8369e1940cf2d47e8fbb3190634ff",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/stage-one-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/stage-three.webp",
+      "bytes": 29068,
+      "sha256": "f8a9b2aa0f9c73074792dce9c96626604bcc778a67aaa12345880ac84090b27c",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/stage-three-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/stage-two.webp",
+      "bytes": 35486,
+      "sha256": "c6c83affec3960d74af8602be2ab309b8d6afc0fa1590948183b58d1705e9b1a",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/stage-two-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/startrell-cluggins-fire.png",
+      "bytes": 4287,
+      "sha256": "872ac5f1b41a61066a1988dceeae635a24ecdcdcb0491669a0ea7323e4b8ed6b",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/startrell-cluggins-firing.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/startrell-cluggins-idle.png",
+      "bytes": 5104,
+      "sha256": "a023941adeb6ee791de94ee5e62d197e006a602c9ab386a6c697e73e506d41b0",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/startrell-cluggins.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/tank-attack.png",
+      "bytes": 134535,
+      "sha256": "ab83666a78bed550a978dd55435fb3ebe3bdb0466382f6ea5b311e90ac9eb27c",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/tank-attack-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/tank-die.png",
+      "bytes": 143217,
+      "sha256": "dcb19d220a168d5127fd763211ee27be1157588ef71cd655789be7e38ecd3ad2",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/tank-die-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/tank-walk.png",
+      "bytes": 228696,
+      "sha256": "effce9c98bb152a936f80a39f7e9ede9b7e229633ccde68da92719c672f27eab",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/aliens/tank-walk-spritesheet.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/tars-fire.png",
+      "bytes": 2175,
+      "sha256": "af7121a2563f2962e24f643d463efd59a2e74f3bad4d98348091dc2ce3380594",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/tars-firing.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/tars-idle.png",
+      "bytes": 2887,
+      "sha256": "5eac7103a91aa0f667515ee00cfdbbe44c7beae38eac5cde0ca429eea87b8c95",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/defenders/tars.gif"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": true,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "On demand: selected destination, Original comparison or Field Guide",
+      "unnecessaryToCurrentPlayerBuild": false,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/winning-menu.webp",
+      "bytes": 28550,
+      "sha256": "e0683eb0e98679915924effc92d4098c94e85d7b3971ffc7cf4455cca1a70dca",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/winning-background.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    },
+    {
+      "file": "public/art/winning-title.png",
+      "bytes": 18528,
+      "sha256": "37d6a83187fb6bf694a70b6494a9fa34869e2b48801160b90aaeb3ceb52b49a2",
+      "category": "retained school-project derivative",
+      "sourceRecords": [
+        "../assets/general/winning-title.png"
+      ],
+      "knownOwnership": "Original team project custody; individual image creators/rights holders not established by repository",
+      "documentedPermission": "No separate license or image/music permission record found",
+      "status": "unresolved",
+      "usage": "Original comparison, previews or retained unused public file; not all are requested during play",
+      "recommendedDisposition": "Obtain asset-specific provenance and permission or replace/exclude from future public delivery; preserve original repository history",
+      "shippedInProduction": true,
+      "initialCanyonDownload": false,
+      "actualUse": {
+        "battlefield": false,
+        "fieldGuide": false,
+        "missionPreview": false
+      },
+      "loading": "Not referenced by current player UI or loader plans; copied by public directory",
+      "unnecessaryToCurrentPlayerBuild": true,
+      "releaseIncluded": false,
+      "reason": "Historical school derivative; permission absent"
+    }
+  ]
+}

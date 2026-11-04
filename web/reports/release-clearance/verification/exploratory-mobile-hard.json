@@ -1,0 +1,614 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.release.config.ts",
+      "--project=chromium",
+      "--workers=1",
+      "tests/release/",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/playwright.release.config.ts",
+    "rootDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "snapshotDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4181",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "chrome"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "release/combat.spec.ts",
+      "file": "release/combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 58717,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:46:14.987Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-2b58911f754f3cf6ea11",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on bridge Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 75299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:47:14.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-5edb387ec233bdb374c5",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on nest Normal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 83080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:48:29.492Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-d50121f791a3f40233f1",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Hard",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 76288,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#mission-rating')\nExpected substring: \u001b[32m\"Hard\"\u001b[39m\nReceived string:    \u001b[31m\"\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#mission-rating') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mission-rating')\u001b[22m\n\u001b[2m    34 × locator resolved to <p hidden=\"\" id=\"mission-rating\" class=\"mission-rating\"></p>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#mission-rating')\nExpected substring: \u001b[32m\"Hard\"\u001b[39m\nReceived string:    \u001b[31m\"\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#mission-rating') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mission-rating')\u001b[22m\n\u001b[2m    34 × locator resolved to <p hidden=\"\" id=\"mission-rating\" class=\"mission-rating\"></p>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/combat.spec.ts:115:53",
+                    "location": {
+                      "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/combat.spec.ts",
+                      "column": 53,
+                      "line": 115
+                    },
+                    "snippet": "  113 |     if (hard) {\n  114 |       expect(await page.evaluate(() => localStorage.getItem(\"ava-campaign\"))).toBeNull();\n> 115 |       await expect(page.locator(\"#mission-rating\")).toContainText(\"Hard\");\n      |                                                     ^\n  116 |     }\n  117 |     expect(errors).toEqual([]);\n  118 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/combat.spec.ts",
+                        "column": 53,
+                        "line": 115
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#mission-rating')\nExpected substring: \u001b[32m\"Hard\"\u001b[39m\nReceived string:    \u001b[31m\"\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#mission-rating') with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mission-rating')\u001b[22m\n\u001b[2m    34 × locator resolved to <p hidden=\"\" id=\"mission-rating\" class=\"mission-rating\"></p>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n  113 |     if (hard) {\n  114 |       expect(await page.evaluate(() => localStorage.getItem(\"ava-campaign\"))).toBeNull();\n> 115 |       await expect(page.locator(\"#mission-rating\")).toContainText(\"Hard\");\n      |                                                     ^\n  116 |     }\n  117 |     expect(errors).toEqual([]);\n  118 |   });\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/combat.spec.ts:115:53"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:49:52.582Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-combat-release-mix-04a52-ile-families-on-canyon-Hard-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-combat-release-mix-04a52-ile-families-on-canyon-Hard-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/combat.spec.ts",
+                    "column": 53,
+                    "line": 115
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-ba68c12ee3653deea82b",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "release/distribution.spec.ts",
+      "file": "release/distribution.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release resources, semantics and left aligned controls at 1280x900",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1772,
+                  "error": {
+                    "message": "Error: http://127.0.0.1:4181/43943641-d8b0-4804-94d6-9645ca348aac\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: http://127.0.0.1:4181/43943641-d8b0-4804-94d6-9645ca348aac\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts:64:118",
+                    "location": {
+                      "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                      "column": 118,
+                      "line": 64
+                    },
+                    "snippet": "  62 |     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});\n  63 |     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');\n> 64 |     for(const path of requests)expect(path==='/'||allowed.has(path)||/^\\/assets\\/[\\w-]+\\.(css|js)$/.test(path),path).toBe(true);\n     |                                                                                                                      ^\n  65 |     expect(errors).toEqual([]);expect(badResponses).toEqual([]);\n  66 |     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});\n  67 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                        "column": 118,
+                        "line": 64
+                      },
+                      "message": "Error: http://127.0.0.1:4181/43943641-d8b0-4804-94d6-9645ca348aac\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  62 |     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});\n  63 |     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');\n> 64 |     for(const path of requests)expect(path==='/'||allowed.has(path)||/^\\/assets\\/[\\w-]+\\.(css|js)$/.test(path),path).toBe(true);\n     |                                                                                                                      ^\n  65 |     expect(errors).toEqual([]);expect(badResponses).toEqual([]);\n  66 |     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});\n  67 |   });\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts:64:118"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:51:10.962Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-distribution-relea-ba2ac-ligned-controls-at-1280x900-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-distribution-relea-ba2ac-ligned-controls-at-1280x900-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                    "column": 118,
+                    "line": 64
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-65f2e0d252d95cfc93fb",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 390x844",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1627,
+                  "error": {
+                    "message": "Error: http://127.0.0.1:4181/8e8ee171-d191-465f-8a59-cd9239afdc07\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: http://127.0.0.1:4181/8e8ee171-d191-465f-8a59-cd9239afdc07\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts:64:118",
+                    "location": {
+                      "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                      "column": 118,
+                      "line": 64
+                    },
+                    "snippet": "  62 |     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});\n  63 |     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');\n> 64 |     for(const path of requests)expect(path==='/'||allowed.has(path)||/^\\/assets\\/[\\w-]+\\.(css|js)$/.test(path),path).toBe(true);\n     |                                                                                                                      ^\n  65 |     expect(errors).toEqual([]);expect(badResponses).toEqual([]);\n  66 |     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});\n  67 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                        "column": 118,
+                        "line": 64
+                      },
+                      "message": "Error: http://127.0.0.1:4181/8e8ee171-d191-465f-8a59-cd9239afdc07\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  62 |     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});\n  63 |     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');\n> 64 |     for(const path of requests)expect(path==='/'||allowed.has(path)||/^\\/assets\\/[\\w-]+\\.(css|js)$/.test(path),path).toBe(true);\n     |                                                                                                                      ^\n  65 |     expect(errors).toEqual([]);expect(badResponses).toEqual([]);\n  66 |     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});\n  67 |   });\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts:64:118"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:51:13.535Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-distribution-relea-b1a67-aligned-controls-at-390x844-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-distribution-relea-b1a67-aligned-controls-at-390x844-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                    "column": 118,
+                    "line": 64
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-3ed89422893eb0fbb7e7",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 844x390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1579,
+                  "error": {
+                    "message": "Error: http://127.0.0.1:4181/5878eb18-fea6-4238-8bb6-04d08ce38301\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: http://127.0.0.1:4181/5878eb18-fea6-4238-8bb6-04d08ce38301\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts:64:118",
+                    "location": {
+                      "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                      "column": 118,
+                      "line": 64
+                    },
+                    "snippet": "  62 |     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});\n  63 |     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');\n> 64 |     for(const path of requests)expect(path==='/'||allowed.has(path)||/^\\/assets\\/[\\w-]+\\.(css|js)$/.test(path),path).toBe(true);\n     |                                                                                                                      ^\n  65 |     expect(errors).toEqual([]);expect(badResponses).toEqual([]);\n  66 |     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});\n  67 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                        "column": 118,
+                        "line": 64
+                      },
+                      "message": "Error: http://127.0.0.1:4181/5878eb18-fea6-4238-8bb6-04d08ce38301\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  62 |     await page.screenshot({path:info.outputPath('release-controls.png'),fullPage:true});\n  63 |     const allowed=new Set(releaseFiles().map(f=>`/${f}`));allowed.add('/art/manifest.json');\n> 64 |     for(const path of requests)expect(path==='/'||allowed.has(path)||/^\\/assets\\/[\\w-]+\\.(css|js)$/.test(path),path).toBe(true);\n     |                                                                                                                      ^\n  65 |     expect(errors).toEqual([]);expect(badResponses).toEqual([]);\n  66 |     await info.attach('actual-runtime-requests',{body:JSON.stringify([...new Set(requests)],null,2),contentType:'application/json'});\n  67 |   });\n    at /Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts:64:118"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:51:15.731Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-distribution-relea-c73fe-aligned-controls-at-844x390-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results/release-distribution-relea-c73fe-aligned-controls-at-844x390-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests/release/distribution.spec.ts",
+                    "column": 118,
+                    "line": 64
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-64850f4f2da4da57edf9",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release projectile loading failure retries without historical fallback or missing controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 580,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:51:17.878Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-885718951c41d1c40460",
+          "file": "release/distribution.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "release music and FX controls retain separate off/default states and single-source playback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:51:18.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-1df9b14b696ad3dbb746",
+          "file": "release/distribution.spec.ts",
+          "line": 82,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T01:46:14.814Z",
+    "duration": 304689.237,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

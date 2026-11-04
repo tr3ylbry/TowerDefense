@@ -1,0 +1,1382 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.22.1/x64/bin/node",
+      "/home/runner/work/TowerDefense/TowerDefense/web/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.release.config.ts",
+      "--project=chromium",
+      "--shard=1/2",
+      "--reporter=line,json"
+    ],
+    "configFile": "/home/runner/work/TowerDefense/TowerDefense/web/playwright.release.config.ts",
+    "rootDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+      },
+      "gitCommit": {
+        "shortHash": "6c3734e",
+        "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+        "subject": "Fetch frozen history for release parity and preservation checks",
+        "body": "Fetch frozen history for release parity and preservation checks\n",
+        "author": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "committer": {
+          "name": "Trey Bryant",
+          "email": "40212309+tr3ylbry@users.noreply.github.com",
+          "time": 1793757481000
+        },
+        "branch": "modernization"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/home/runner/work/TowerDefense/TowerDefense/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/tr3ylbry/TowerDefense/commit/6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "commitHash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "buildHref": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436"
+          },
+          "gitCommit": {
+            "shortHash": "6c3734e",
+            "hash": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+            "subject": "Fetch frozen history for release parity and preservation checks",
+            "body": "Fetch frozen history for release parity and preservation checks\n",
+            "author": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "committer": {
+              "name": "Trey Bryant",
+              "email": "40212309+tr3ylbry@users.noreply.github.com",
+              "time": 1793757481000
+            },
+            "branch": "modernization"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "snapshotDir": "/home/runner/work/TowerDefense/TowerDefense/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4181",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": {
+      "current": 1,
+      "total": 2
+    },
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser/expedition-0.3.spec.ts",
+      "file": "browser/expedition-0.3.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "failed destination resources preserve the existing map and a retry prepares a fresh destination",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7280,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:21.140Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8773683edde91fd4911b-185ae2312d75931cdf63",
+          "file": "browser/expedition-0.3.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "audio can be enabled and disabled by a user gesture",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4373,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:28.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8773683edde91fd4911b-0a7feab57137128099f4",
+          "file": "browser/expedition-0.3.spec.ts",
+          "line": 264,
+          "column": 1
+        },
+        {
+          "title": "mission receipts explain actual spending and reset with the mission",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 75000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 40238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:59:33.021Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8773683edde91fd4911b-4f1942dc89ba4d50d41e",
+          "file": "browser/expedition-0.3.spec.ts",
+          "line": 290,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.4.spec.ts",
+      "file": "browser/expedition-0.4.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "late legal deployment explains passed direct fire, supports rescue, and clears on restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:13.296Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f1fc5de4978160d54323-71ba5fe69896fc91a657",
+          "file": "browser/expedition-0.4.spec.ts",
+          "line": 60,
+          "column": 1
+        },
+        {
+          "title": "Nest advertises paired relays before an optional early call",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:00:44.145Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f1fc5de4978160d54323-010d8768749da8b2ee66",
+          "file": "browser/expedition-0.4.spec.ts",
+          "line": 136,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.5.spec.ts",
+      "file": "browser/expedition-0.5.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ordinary dialogs never resume a mission after backgrounding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19529,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:05.916Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d499498b9b2afd8eb990-9ef8107e0a8cd40b260f",
+          "file": "browser/expedition-0.5.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "phone controls and the complete roster remain reachable under enlarged page content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14909,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:25.458Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d499498b9b2afd8eb990-103f9da8be203b6d73a6",
+          "file": "browser/expedition-0.5.spec.ts",
+          "line": 144,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.6.spec.ts",
+      "file": "browser/expedition-0.6.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "campaign board exposes six missions, lock reasons, briefings and keyboard navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4142,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:40.395Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-b6f4d7a217b5ba01617a",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "public-control expedition completes all six missions, persists stars, replays and preserves a lost replay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 1200000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 776502,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:01:44.555Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-3152b347ef9b5dd35bb7",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 74,
+          "column": 1
+        },
+        {
+          "title": "active campaign navigation is explicit and backgrounded dialogs never auto-resume",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:41.079Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-f442a243c014d980f6d2",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 254,
+          "column": 1
+        },
+        {
+          "title": "campaign reset requires confirmation and isolates motion and other browser data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36928,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:14:52.338Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-2cf7922161fecb88775f",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 298,
+          "column": 1
+        },
+        {
+          "title": "blocked storage warns without interrupting campaign deployment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:15:29.281Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-290516932ad06ff22a50",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 353,
+          "column": 1
+        },
+        {
+          "title": "partial corruption recovers valid stars and preserves the damaged original",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1755,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:15:33.475Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-322eb9446bfb35821c67",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 382,
+          "column": 1
+        },
+        {
+          "title": "mission transitions retain the current campaign on failed artwork, support retry and stay paused after absence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10358,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:15:35.248Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-2df8ae5a5bf1e9a4b9b5",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 410,
+          "column": 1
+        },
+        {
+          "title": "campaign phone 390x844 supports cards, enlarged content, briefing and reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:15:45.616Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-fa5ec96711bda21c7303",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 456,
+          "column": 3
+        },
+        {
+          "title": "campaign phone 844x390 supports cards, enlarged content, briefing and reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8346,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:15:53.451Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "090d8c0e543a669991b7-5084fc88d6db3a3fbde9",
+          "file": "browser/expedition-0.6.spec.ts",
+          "line": 456,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.7.spec.ts",
+      "file": "browser/expedition-0.7.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "opening modes stay clear and reachable at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5123,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:16:01.815Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-f732d62caad08ecdc4d0",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "opening modes stay clear and reachable at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9865,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:16:06.948Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-78ac47c1a756c9606ff4",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "opening modes stay clear and reachable at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10114,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:16:16.821Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-e2525885504f5c9e63e8",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 8,
+          "column": 3
+        },
+        {
+          "title": "replay guidance distinguishes improving shields from an already complete rating",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1969,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:16:26.951Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-dba0777a742247b30c92",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "real breaches announce shield loss, results describe replay, and replay clears that description",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31629,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:16:28.935Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1cd1d2c6a3fd1d991087-038cea50ce87a424e8cf",
+          "file": "browser/expedition-0.7.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-0.8.spec.ts",
+      "file": "browser/expedition-0.8.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "wave decisions remain clear and time controls centered at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36110,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:17:00.590Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "800733fbe6eae086d450-fbe84f5575cf8d581b2d",
+          "file": "browser/expedition-0.8.spec.ts",
+          "line": 10,
+          "column": 3
+        },
+        {
+          "title": "wave decisions remain clear and time controls centered at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34910,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:17:36.718Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "800733fbe6eae086d450-d2db693c6a1c66222b08",
+          "file": "browser/expedition-0.8.spec.ts",
+          "line": 10,
+          "column": 3
+        },
+        {
+          "title": "wave decisions remain clear and time controls centered at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 35212,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:18:11.650Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "800733fbe6eae086d450-f87e3dc161d686d5e591",
+          "file": "browser/expedition-0.8.spec.ts",
+          "line": 10,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "browser/expedition-1.1.spec.ts",
+      "file": "browser/expedition-1.1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "live HUD updates preserve held pointer activation and control labels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6770,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:18:46.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-414e1dfbc1239a5c1450",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "initial delivery uses right-sized defenders and retains all six atlases without guide or audio downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2035,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:18:53.679Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-b33d87209c5d2e9ca930",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "Mix owns only its running pause across rapid reopen, native Escape, destination changes and absence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13711,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:18:55.730Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-4dda4853a9800d790772",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "a pending music download can be canceled and retried with one active audio source across restart and destination changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14775,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:19:09.454Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-eea2ea1598fa6b21fc35",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "Unit Stats stays nonmodal during play and keyboard Salvage gives only a valid refund",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:19:24.260Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-b9f70d467bad5f0715c0",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 134,
+          "column": 1
+        },
+        {
+          "title": "Orbital Drift repeats on the sample clock across two real loop boundaries without new sources or downloads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34325,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:19:31.567Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "loop-integrity.json",
+                      "contentType": "application/json",
+                      "body": "eyJmcmFtZXNQZXJMb29wIjo2NjE1MDAsInNhbXBsZVJhdGUiOjQ0MTAwLCJkdXJhdGlvbiI6MTUsIm1heFJlcGVhdEVycm9yIjowLCJzZWFtUm1zIjowLjE5NzE2NzU0Mzk5Mjc5NzQ2fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-fa859a488bb6f6d6b96c",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 199,
+          "column": 1
+        },
+        {
+          "title": "FX and Music recover independently from real output suspension and honor rapid latest-intent taps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6304,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T02:20:05.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cbf3501ec2cfb140adce-033a4ea64a7a9a36c9f5",
+          "file": "browser/expedition-1.1.spec.ts",
+          "line": 226,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T01:59:19.558Z",
+    "duration": 1253938.685,
+    "expected": 31,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

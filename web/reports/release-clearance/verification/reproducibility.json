@@ -1,0 +1,48 @@
+{
+  "revision": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+  "webTree": "3617541666718aa7c920624590eb5bf5f7a6bad7",
+  "node": "v24.14.1",
+  "lockfileSha256": "a412dde731544b1f48e52fdf46c4b17393c4f34543fb2d16026db24d8be0dedf",
+  "freshInstall": "npm ci in isolated exact-revision checkout; lockfile identical to implementation checkout",
+  "repeatedBuildFilesEqual": true,
+  "fileCount": 41,
+  "repeatedArchiveEqual": true,
+  "archive": {
+    "archive": "astronauts-vs-aliens-expedition-rc.1-6c3734e61c61.zip",
+    "bytes": 2302000,
+    "sha256": "5ca1a0c2215bc9181cf3f7fedb4b724b2eda982eedaf6f8be7658fd6f098e29f"
+  },
+  "negativeChecks": [
+    {
+      "name": "Dirty source refused",
+      "passed": true,
+      "exitCode": 1,
+      "expectedMessage": "Refusing to label a dirty tree"
+    },
+    {
+      "name": "Stale revision refused",
+      "passed": true,
+      "exitCode": 1,
+      "expectedMessage": "differs from HEAD"
+    },
+    {
+      "name": "Dirty-at-build state refused after source is clean",
+      "passed": true,
+      "exitCode": 1,
+      "expectedMessage": "built with uncommitted source"
+    },
+    {
+      "name": "Unexpected output fails allowlist",
+      "passed": true,
+      "exitCode": 1,
+      "expectedMessage": "__release-output-canary.txt"
+    },
+    {
+      "name": "Stale hashed code chunk rejected",
+      "passed": true,
+      "exitCode": 1,
+      "verifierSha256": "6a64cc8ea9d4d6798f3e01b696d65ac0ec1fef0aedf649d27c2f291e57fefc1e",
+      "scope": "Strengthened verifier in final documentation/verification commit; no runtime asset change."
+    }
+  ]
+}

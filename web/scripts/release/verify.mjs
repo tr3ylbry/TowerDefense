@@ -22,13 +22,15 @@ try {
   const files=walk(dist).sort().map(file=>{const bytes=fs.readFileSync(file);return {file:path.relative(dist,file).split(path.sep).join('/'),bytes:bytes.length,sha256:sha(bytes)};});
   const actual=new Set(files.map(f=>f.file));
   const unexpected=files.filter(f=>!expected.has(f.file)&&!/^assets\/(index-[\w-]+\.(js|css)|battlefield-[\w-]+\.js|phaser-[\w-]+\.js)$/.test(f.file));
+  const chunkRoles=[/^assets\/index-[\w-]+\.js$/, /^assets\/index-[\w-]+\.css$/, /^assets\/battlefield-[\w-]+\.js$/, /^assets\/phaser-[\w-]+\.js$/];
+  const ambiguousChunks=chunkRoles.filter(role=>files.filter(f=>role.test(f.file)).length!==1).map(String);
   const missing=[...expected].filter(f=>!actual.has(f));
   const manifest=JSON.parse(fs.readFileSync(path.join(dist,'art/manifest.json')));
   if(JSON.stringify(manifest)!==JSON.stringify(releaseManifest))throw Error('Distribution manifest differs from explicit release manifest');
   const old=JSON.parse(fs.readFileSync(path.join(web,'reports/expedition-1.1/assessment/publication-assets.json')));
   const exclusions=old.assets.filter(a=>!actual.has(a.file.replace(/^public\//,''))).map(a=>({...a,releaseIncluded:false,reason:a.status==='unresolved'?'Historical school derivative; permission absent':a.unnecessaryToCurrentPlayerBuild?'Unused generated derivative/source-size output':'Unexpected exclusion'}));
   const forbidden=old.assets.filter(a=>a.status==='unresolved'&&actual.has(a.file.replace(/^public\//,'')));
-  if(missing.length||unexpected.length||forbidden.length)throw Error(JSON.stringify({missing,unexpected,forbidden}));
+  if(missing.length||unexpected.length||forbidden.length||ambiguousChunks.length)throw Error(JSON.stringify({missing,unexpected,forbidden,ambiguousChunks}));
   const total=rows=>rows.reduce((n,r)=>n+r.bytes,0);
   const raster=files.filter(f=>/\.(webp|png|jpg)$/.test(f.file));
   const atlases=files.filter(f=>/-animation\.webp$/.test(f.file));

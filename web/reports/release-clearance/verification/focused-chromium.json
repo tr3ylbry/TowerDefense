@@ -1,0 +1,324 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config=playwright.release.config.ts",
+      "--project=chromium",
+      "--workers=1",
+      "tests/release/",
+      "--grep",
+      "release resources|canyon Hard",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/playwright.release.config.ts",
+    "rootDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      },
+      {
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": {},
+        "outputDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/.release-verification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "snapshotDir": "/Users/Tr3y/Documents/ChatGPT/Astronauts Vs Aliens Game/modernization/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser/**/*.spec.ts",
+          "release/**/*.spec.ts"
+        ],
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4181",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "chrome"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "release/combat.spec.ts",
+      "file": "release/combat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release mixed roster wins with all five new projectile families on canyon Hard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 60115,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:53:36.933Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f62ba53341945ba2d062-ba68c12ee3653deea82b",
+          "file": "release/combat.spec.ts",
+          "line": 8,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "release/distribution.spec.ts",
+      "file": "release/distribution.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "release resources, semantics and left aligned controls at 1280x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1813,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:54:37.593Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYXZpY29uLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82M2MyNTdiMy1lODE5LTRjY2MtOWU0Zi00YmRkZGUxNjgyOTAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wYmNlNTA5Yy1mYzkxLTQ1NTgtODczOS1jOGZlNDA4YTgzOTIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9kODAxYmQ0ZC1kNmQyLTRjNGQtYmE4ZC0wN2Q3NjI4YzIwOWMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82NDY5NWIwMC0wYWM5LTRhNjQtODdhMC1mMjcyZDA2ZDRiZGEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hYmQyNzYyNS0wODk3LTRmMTItODg1OC05YmYyN2YyODFhMDUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS80OTE2Y2Q2Ny0wMGI5LTQ5OGUtOWY5My03YjhmOWE1NmNiNjciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS84Zjk1ODQ5ZS00ZTdhLTQzYWUtYTdiNS1iYzg0NDU0NjI4ZDUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iMjA0MDlkZi1lMzMxLTQyZWQtOGI5My1hZmRmMGI3NzEzZjAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hMzcxMmExYi05OTNhLTRlNDEtYjVhNy1iZWI0OTdlMmYyNTEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hNTVhNTEwZC0xZTcyLTQxMmMtOWRiMC1kNjY5ODMzYWUzMGYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hYTc5ZmJlOC0yOWEzLTRkYmEtODU2NC0wYTQzMTA5NjE5OTYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85N2RkNjU3OS1kODIzLTQzYTUtYWNmNS1hYmYzZGM5OTY2ZDMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS83N2EzOTVlMC1kZjViLTQ4NGItYmRlZi1iMmU0ZjRiNzk4YzIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iODJmYTY3MC0xZDk0LTRmMmUtOWVhOS1kZDhhODZmYWVmNTMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yOWIxY2JiNy00ODY1LTQ4ZDYtOTg4MS0wMWQxOTllYWU5NDYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mNTU1OWIyMy1kNmYyLTQwOWYtODlmMy02NWQ2Zjk4NzA4YjIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iMDFlNTFhNi01NTBhLTRmNjItYTY5Zi02MzBkN2I5YzM4NTciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lMDUzYTdiNy0wMWU5LTQ3ZjktYjQzNi1jZjg3OTIyOTc2NWQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iZjIwOGNlYy1jMDdmLTQ4YmEtYTExNi1jOGQxMzAyYmZjMjQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8zNTNkMWVkMi0yNmFiLTQ2NTctODVhNC1iM2FkYTgyMDI2NTUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS80MTdiY2I4OS1kMzJhLTRkOTYtODkzNC0yNGVmN2U5Y2Q1NTMiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2RiZGIyZjA3LTQ0MGYtNGJlMy1hMDVkLWU2YmJhYmE1N2IzYyIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2I2ZDYzZTAwLWIzMmMtNDE5My04NDgzLWM4MjlkZWU3MGE2YiIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzQ2OWMzOWM0LTUwZmItNDU1MC04ZDA0LTBkMzkxZDJlMzQ5ZSIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-65f2e0d252d95cfc93fb",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1368,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:54:39.414Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYXZpY29uLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lNzM3ZTM4NS01ZjRiLTQxMjYtOWNjMi1jZjU4ZDhmMjJmYzUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jMTU0NDIxZi1hZTQ2LTRhMDYtOTEwYi03YmVlZDg3NGJiMTIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jZTViNTMwYy01M2M5LTRkMmEtYTJkOC00YzJiM2Y4MjlkMzIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82YTI4NWViNC00OTlkLTQyMGItYWQzMC1jNDk0NDY5ODUxMzMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS80NGU1MWVmMC0wMTViLTRmZjMtYjUzNS0yZTZiYjA1OWExOWEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wOTUwNzNjNy01NmE2LTQ2ODgtYTc4Ni0wZDgyZTc5YmMzZmEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yZmYyNjcyMS1mYTEzLTQ4MjQtYjQzZS0xNGJlNjJiNzFjNTMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yZTY4NTBmMi0wMGU4LTQ1OTctYjVmZS03MDk1MDEzMjhmYjUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85YzQ3ODM0Ny05ZjRlLTQ3ZjItOTljNy1lODIyYTZjNTg1YjkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wMGFjMjU0MS1lNDZhLTRkMmMtYjRiZC0xMTM4YTczYzZlOTciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iYWJjNzBhMy0wMDI5LTQ0M2MtODM0NS1hYWZjODNhZmNkNGYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS80ZTdiMzc1ZS0xNDBmLTQxZDctOGJkYS03OGQ3NmQ5ZTZjZGMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wNmY3NjA1MS00M2FkLTQ0ZDgtYTQ5Ny0zYTBlMjQzYjA4MmUiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lMGI5MWFmOS02ZjA5LTQzZmUtOWY0Zi1lNmQ0NzQ3NjMxNjQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS84OTMwOTFhYS1lMzZiLTQzOWItOGY5OS1jMGIxZmNmMWJhOGYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9kYjRjNmU0Ni04NmQ2LTRiMDctYWE4MC04YTJkZDI4MjdmZWIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82Y2VhODJiMC1kODU5LTRiNDktOGJhYS0yMTI4NmE4MDUzNjEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xYzJjYTBiYS0yYTE4LTRhYjEtYmU2Zi0zN2UzNjZiZDQ2MDciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hNGY0YzUyMS0wZDIzLTRjNDEtYWE1Ni01ZjFhZWIwNjk1NTkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS83ZDNiMDY4Yy1hMDYyLTQ0ZjItOWU1My1kY2Q0MjBhOWJlOTEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mZmY1Y2E2MS0zZjA5LTRlMjctYjg1Ny1jZTRjMWQ2YTQyNmMiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2NhZTZmYjg1LTYwNGQtNDYwNC05OGZiLWZkNWYyYjA0ZjA0MiIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzI1Y2Q2NGYxLWM1ZDUtNGNjNS1hZjMzLWU1OGY4MTI5YTVjZiIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2Q3ZGZiZGVlLTI4ZDEtNDcyNi04OThhLTRmNTUyZjNkOTJiMyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-3ed89422893eb0fbb7e7",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        },
+        {
+          "title": "release resources, semantics and left aligned controls at 844x390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T01:54:40.789Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "actual-runtime-requests",
+                      "contentType": "application/json",
+                      "body": "WwogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9pbmRleC1DNFlWbHlLay5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvaW5kZXgtQ3F3ZDVUSVguY3NzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9tYW5pZmVzdC5qc29uIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2Fzc2V0cy9iYXR0bGVmaWVsZC1DUGNDdWUySy5qcyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hc3NldHMvcGhhc2VyLUJfdmNWTHliLmpzIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Jhbmdlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vbmV5LWJ1c2gud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hc3Rlcm9pZC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL21vb24temV1cy53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2V4cGxvc2l2ZS1hc3Ryby1qb2Uud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zdGFydHJlbGwtY2x1Z2dpbnMud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi90YXJzLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vbW9uZXktdHJlZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2Zyb250aWVyLWZsYWdzaGlwLWNvbXBhY3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mYXZpY29uLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9jYW55b24tMC41LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvYXN0cm8uc3ZnIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL3Byb2plY3RpbGVzL2V4cGxvc2l2ZS5zdmciLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vcHJvamVjdGlsZXMvc3RhcnRyZWxsLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy90YXJzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wcm9qZWN0aWxlcy96ZXVzLnN2ZyIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9ncnVudC1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zcHJpbnRlci1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXItYW5pbWF0aW9uLndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vdGFuay1hbmltYXRpb24ud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9nYXJnYW50dWEtYW5pbWF0aW9uLndlYnAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9mMmUyZWNjMy1kNzExLTQ5ODctYmEyMS1jNGQzNzg1NTNiNzEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85NDEzOGFmMC05OTkzLTRjZDMtOWU0Ny0yNWJjY2Q1ZGFjYmMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82NmVkYjdhZS01MTJmLTQ0YTEtODQwYi1jYjczNTE0MWJjMTciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82YzIzOGZkNi05ZjJmLTQ1YmItYmE4My0wOTIwNmQ0Zjk5ZmMiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hNzlhZGQ0Zi02MjRiLTQ3ZjAtYTNmZC1lOTM2NDExYzQ3MmEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8zM2E3NDJmNS03ZjYzLTQ3M2ItOGZiOC05ZGMxY2VjZDRiODkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wMDcwOWZmNy05OWM5LTQyZjktYjc5YS02ZmI1ZjBhYzdiMTEiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iMTQ2NTExMi0zZWVhLTQxM2ItYjRmNS0yNmI1NjM5ZWI5NzAiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9lOTkwZTMwNC1lNmRmLTQ1MmYtOWRhOC1jM2I0ODI5MjExZDciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wZmQyMzdiMC1lNWJjLTQ4MGMtYjgzMS1iOTkyMzMyZjQxZDQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS81MjFlYmNlNC02OWI3LTQxMzQtOTRlMi00ZDgwYmNjYTllOTkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS82NjY2YTVlZi0zOGY2LTQ0ZmEtODk0ZS1iMGIyNjdjZjNjYzkiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8yOTU5ZDgyYy00N2Q0LTQ4NmEtYjMzMy1lMDU5MTI0YjY3MmYiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8xMDNmMDVhOC1mMjAxLTRjYjAtODMwZC0zMmQzZGMxN2IyY2MiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9iYTRhY2E4Mi1iNWRiLTRiYmQtYWQ3My03NmFjZGNkM2UxNmIiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9jZDM0ODk4NC1mNjUzLTRkNjMtYmIzYy1kZTM1NWJiMmJlOTciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9kYWY4NzY2MS0yY2ZhLTRiNWYtYmRkNC00YjVkYTMwMGFmMjciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS81ZGYzNTZlNC05YTZmLTQ3OTEtYTJhMi00YjVkM2Y5Y2ZjYTciLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS8wMDJkNjg0NS05NGFjLTQzNjAtODUwMi02NzgxNTJlMzI4MzQiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS81NTdmMzg2My02YzY5LTRkNTMtYmVkMy0wNTEwZmRjNzc0M2EiLAogICJibG9iOmh0dHA6Ly8xMjcuMC4wLjE6NDE4MS85MDE4ZWM4YS1lZDYxLTQ2NTAtOWRlYS01MDNiY2UxZGM4MTIiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXVkaW8vb3JiaXRhbC1kcmlmdC53YXY/dj0xMjgiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc2t5LWJyaWRnZS53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL25lc3Qud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9hY2lkLXBvb2wud2VicCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxL2FkZDE4YTc5LWVkMmYtNDczMS1hODM4LTc4MTdiMDA5NmYzOCIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzZjMmJhMjZjLWE1ZDAtNDg2Mi05MzYwLTVjNjZlMTczODBmYiIsCiAgImJsb2I6aHR0cDovLzEyNy4wLjAuMTo0MTgxLzk2MjA3ZWQwLTEyYzctNDdlZS1hYmFkLTk1ODJmYzY0M2VkOSIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9zY291dC53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dydW50LndlYnAiLAogICJodHRwOi8vMTI3LjAuMC4xOjQxODEvYXJ0L2V4cGVkaXRpb24vc3ByaW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9tYW5odW50ZXIud2VicCIsCiAgImh0dHA6Ly8xMjcuMC4wLjE6NDE4MS9hcnQvZXhwZWRpdGlvbi9wbGF0ZWQtY3Jhd2xlci53ZWJwIiwKICAiaHR0cDovLzEyNy4wLjAuMTo0MTgxL2FydC9leHBlZGl0aW9uL2dhcmdhbnR1YS53ZWJwIgpd"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "44fac9801dce3af4aa25-64850f4f2da4da57edf9",
+          "file": "release/distribution.spec.ts",
+          "line": 6,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T01:53:36.718Z",
+    "duration": 76611.571,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

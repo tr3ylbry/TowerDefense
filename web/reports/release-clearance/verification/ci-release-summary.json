@@ -1,0 +1,93 @@
+{
+  "runId": 41757618436,
+  "runUrl": "https://github.com/tr3ylbry/TowerDefense/actions/runs/41757618436",
+  "sourceRevision": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+  "releaseMatrix": [
+    {
+      "name": "chromium-1",
+      "source": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+      "stats": {
+        "startTime": "2026-11-04T01:59:19.558Z",
+        "duration": 1253938.685,
+        "expected": 31,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "filesEqualToCleanMacBuild": true,
+      "fileCount": 41
+    },
+    {
+      "name": "chromium-2",
+      "source": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+      "stats": {
+        "startTime": "2026-11-04T01:59:31.102Z",
+        "duration": 847567.042,
+        "expected": 30,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "filesEqualToCleanMacBuild": true,
+      "fileCount": 41
+    },
+    {
+      "name": "firefox-1",
+      "source": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+      "stats": {
+        "startTime": "2026-11-04T01:59:15.779Z",
+        "duration": 951473.55,
+        "expected": 31,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "filesEqualToCleanMacBuild": true,
+      "fileCount": 41
+    },
+    {
+      "name": "firefox-2",
+      "source": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+      "stats": {
+        "startTime": "2026-11-04T01:59:23.851Z",
+        "duration": 478284.28500000003,
+        "expected": 30,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "filesEqualToCleanMacBuild": true,
+      "fileCount": 41
+    },
+    {
+      "name": "webkit-1",
+      "source": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+      "stats": {
+        "startTime": "2026-11-04T01:59:34.999Z",
+        "duration": 1131359.5050000001,
+        "expected": 31,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "filesEqualToCleanMacBuild": true,
+      "fileCount": 41
+    },
+    {
+      "name": "webkit-2",
+      "source": "6c3734e61c6120e34646e902f327a5e68f56d0b9",
+      "stats": {
+        "startTime": "2026-11-04T01:59:56.132Z",
+        "duration": 752469.425,
+        "expected": 30,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "filesEqualToCleanMacBuild": true,
+      "fileCount": 41
+    }
+  ],
+  "releasePassed": 183,
+  "scope": "Completed release production matrix; full-development matrix recorded separately when complete. Actual same-revision CI inventories from all six Linux jobs match every one of the clean Mac build files."
+}

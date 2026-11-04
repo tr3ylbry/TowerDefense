@@ -153,3 +153,19 @@ The opening screen identifies Standalone as untracked and offers Campaign direct
 All six illustrated aliens have simulation-driven walk/idle/contact poses. Both artwork styles use compact single-line defender cards (including **Astro Joe X**); Original actors are proportionally registered inside their lane cells across all419 frames. **Unit Stats** is a structured hover/tap/keyboard inspector; Salvage is beside Enlarge/Overview below the field. **Field Guide** and **The Original** stay horizontal and aligned.
 
 FX and Music have independent65% default volume sliders. Music is a new original128BPM synthesized loop, deferred/default-off. Opening **Mix** pauses play; closing resumes only if that dialog paused a present running mission. A previously paused or backgrounded mission stays paused. Local rules/strict build:223 tests; the complete suite contains76 scenarios per engine across Chromium/Firefox/WebKit. Exact final-head CI and independent production results belong to the1.1 verification/delivery. Final phone audio/color/landscape, live game screen-reader speech, five independent players and asset permissions remain explicit external checks.
+
+## Expedition-only distribution candidate
+
+Normal `npm run dev` / `npm run build` keep the complete Original/Expedition comparison. The separate `npm run build:release` writes **`dist-release/`**, with no historical school artwork or Original-art control. It uses the same simulation, missions, saves and audio. Standalone still means the three playable environments; it does not imply school art. The Original repository/team links remain working historical references.
+
+```
+npm ci
+npm run verify:release
+npm run preview:release
+```
+
+Verification requires the pinned Playwright browsers (`npx playwright install --with-deps`) and Python 3/Pillow for existing image-preservation tooling. `verify:release` checks both builds, rules/types, exact release inventory/exclusions, frozen standalone parity, all 248 poses/419 preserved Original frames, and actual release production journeys in Chromium/Firefox/WebKit. The complete existing development matrix remains `npm run test:e2e`; release-specific selection does not delete or skip those tests.
+
+A Git checkout supplies build provenance. After committing and rebuilding from a clean exact revision, `npm run package:release` creates a deterministic local RC ZIP, source/build inventory and SHA-256 in ignored `release-artifacts/`. It refuses a dirty tree or stale build. Ship only the ZIP's `site/` contents when publication is separately authorized. Preserve relative `assets/`, `art/`, `audio/`, the manifest, build info, credits and notices; serve correct JS/CSS/SVG/WebP/WAV types. Default Vite base is relative, suitable for a subsection with a trailing slash. No backend, account, environment secret, CDN or remote font is required. Hosting must allow same-origin media/resources; use revalidation for HTML, `build-info.json`, manifests and unhashed art/audio, and long immutable caching only for hashed code chunks. A new origin has separate browser-local progress. There is no cross-origin/cloud-save migration.
+
+The candidate is **not publication authorization**. See [release sprint report](docs/RELEASE_CLEARANCE_SPRINT.md), [rights/identity decisions](reports/release-clearance/assessment/RIGHTS.md) and [the existing-kit handoff](playtest/RELEASE_HANDOFF.md). TARS identity, included generation terms/designs, team publication rights, independent participants, real devices, spoken assistive technology and Treydmark hosting approval remain distinct decisions. No public GitHub Release or deployment is created by these scripts.
