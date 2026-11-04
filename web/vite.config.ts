@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
           source: JSON.stringify(releaseManifest) + "\n" });
         this.emitFile({ type: "asset", fileName: "build-info.json", source: JSON.stringify({
           distribution: "expedition-only-rc.1",
+          dirtyAtBuild: execFileSync("git", ["status", "--porcelain"], { encoding: "utf8" }).trim().length > 0,
           sourceRevision: execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
           webTree: execFileSync("git", ["rev-parse", "HEAD:web"], { encoding: "utf8" }).trim(),
         }, null, 2) + "\n" });

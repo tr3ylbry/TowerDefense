@@ -15,7 +15,7 @@
     "check": "npm run test && npm run build",
     "build:release": "tsc --noEmit && vite build --mode expedition-release",
     "preview:release": "vite preview --outDir dist-release --host 127.0.0.1",
-    "verify:release:assets": "node scripts/release/verify.mjs",
+    "verify:release:assets": "node scripts/release/verify.mjs && node scripts/release/audit-rights.mjs",
     "test:release": "playwright test --config=playwright.release.config.ts",
     "verify:release": "npm run check && npm run build:release && npm run verify:release:assets && node scripts/release/standalone-parity.cjs && python3 scripts/release/verify-preservation.py && npm run test:release",
     "package:release": "python3 scripts/release/create-artifact.py"

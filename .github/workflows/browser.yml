@@ -109,6 +109,7 @@ jobs:
           path: |
             web/.release-verification/inventory.json
             web/.release-verification/SHA256SUMS
+            web/.release-verification/rights-inventory.json
             web/.release-verification/standalone-parity.json
             web/.release-verification/preservation.json
             web/.release-verification/browser.json

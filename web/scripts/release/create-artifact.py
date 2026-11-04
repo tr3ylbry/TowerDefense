@@ -8,6 +8,8 @@ if run('git', 'status', '--porcelain'):
 revision = run('git', 'rev-parse', 'HEAD')
 dist = ROOT/'dist-release'
 info = json.loads((dist/'build-info.json').read_text())
+if info.get('dirtyAtBuild', True):
+    raise SystemExit('Candidate was built with uncommitted source. Rebuild from the clean exact revision.')
 if info['sourceRevision'] != revision:
     raise SystemExit('Candidate build revision differs from HEAD. Rebuild the release target.')
 subprocess.run(['node', 'scripts/release/verify.mjs'], cwd=ROOT, check=True)
