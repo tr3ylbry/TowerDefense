@@ -2,6 +2,8 @@
 
 ## Browser modernization
 
+The current browser robot is **Augie**. The Expedition-only **RC.2** successor keeps the original project intact; see the [release finalization report and owner checklist](web/docs/RELEASE_FINALIZATION.md). Earlier milestone reports retain their historical names.
+
 The playable TypeScript/Phaser edition lives in [`web/`](web/README.md). **Expedition 1.1** reduces initial imagery by 18.4%, improves Mix/audio recovery and continuous music looping, corrects toggle-state styling and compact layouts, and audits the engineering release candidate. The nine defenders, six articulated aliens, six campaign missions, optional First Contact Hard, version-1 saves and three standalone missions are preserved. See the [1.1 report/readiness decisions](web/docs/EXPEDITION_1_1.md), [performance evidence](web/reports/expedition-1.1/performance/README.md), [verification](web/reports/expedition-1.1/verification/README.md) and [publication inventory](web/reports/expedition-1.1/assessment/PUBLICATION_ASSETS.md). Final device/live assistive-technology checks, independent players and retained-art permissions remain outstanding. Original school source/assets, contributor credits and history remain preserved. Hosting is separate.
 
 ```sh

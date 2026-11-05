@@ -11,14 +11,15 @@ const includedAssets=inventory.files.filter(row=>/^(art|audio)\//.test(row.file)
  const origin=prior.get(`public/${row.file}`);
  const projectile=projectileSources.some(asset=>asset.file===`public/${row.file}`&&asset.sha256===row.sha256);
  const audio=row.file==='audio/orbital-drift.wav';
- const tars=row.file==='art/expedition/tars.webp';
+ const robot=row.file==='art/expedition/tars.webp';
  const documented=projectile||audio||row.file==='art/manifest.json';
  return {...row,releaseIncluded:true,origin:origin?.category??(projectile?'Source-authored Expedition projectile':audio?'Source-authored Orbital Drift':documented?'Source-authored manifest':'Unrecognized provenance; review required'),
   sourceRecords:origin?.sourceRecords??[projectile?'art-source/release-clearance/projectiles.json':audio?'scripts/build-ambient-music.py':documented?'scripts/release/assets.ts':'No recognized source record'],
-  classification:tars?4:origin||!documented?2:1,
+  ...(robot?{publicIdentity:'Augie',stableInternalKey:'tars',identityDecision:'Owner selected Augie; independent cabin/legs/tools design reviewed unchanged',identityRecord:'art-source/release-finalization/augie.json'}:{}),
+  classification:origin||!documented?2:1,
   licenseOrPermissionEvidence:origin?'Recorded independent generation/derivation; applicable publication terms/identity approval not supplied':documented?'Retained source-authored geometry/audio/metadata; no external image, recording, font or sample':'No recognized provenance or permission record',
-  outstanding:tars?'Retained TARS identity: owner naming/design decision required':origin?'Owner generation-terms/design review':'Contributor/code publication decision remains separate',
-  recommendedDisposition:tars?'Approve a distinct public identity/design or obtain appropriate rights review before publication':origin?'Retain provenance and obtain owner publication review':'Retain source/provenance/attribution'};
+  outstanding:origin?'Owner generation-terms/design acceptance; contributor/publication scope remains separate':'Contributor/code publication decision remains separate',
+  recommendedDisposition:origin?'Retain provenance and obtain owner publication review':'Retain source/provenance/attribution'};
 });
 const result={sourceBuild:inventory.build,notLegalClearance:true,
  classificationKey:{1:'Documented and apparently usable',2:'Requires additional permission or rights review',3:'Excluded from release build',4:'Replacement recommended'},

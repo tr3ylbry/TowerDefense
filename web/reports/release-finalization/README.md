@@ -1,0 +1,5 @@
+# RC.2 evidence boundaries
+
+The predecessor [release-clearance evidence](../release-clearance/) remains unchanged. [baseline.json](baseline.json) pins the rc.1 local archive/metadata hashes. [RIGHTS.md](RIGHTS.md) is the current identity/contributor/terms assessment, with an unsent draft; [the finalization report](../../docs/RELEASE_FINALIZATION.md) contains the single owner checklist.
+
+New exact-revision build products and test receipts are generated into ignored `.release-verification/` and `release-artifacts/`, with CI retaining each engine/shard's actual JSON and inventory. The final local `VERIFICATION-rc.2.json` identifies the delivered Git revision, run URL, all job outcomes, archive checksum, clean reproduction and actual extracted-archive results. The version/revision-named candidate JSON enumerates every output file and its checksum. These generated records avoid embedding a containing commit's future hash in committed documentation. No prior milestone result is relabeled as a new Augie test.

@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-05",
+  "publicName": "Augie",
+  "legacyInternalKey": "tars",
+  "ownerNamingDecision": "Final current-release identity supplied by owner; not pending a new naming decision",
+  "role": "Durable armor-piercing robotic defender",
+  "visualReview": {
+    "method": "Inspected preserved full-resolution source with view_image; cross-checked recorded original prompt and production derivative",
+    "observedFeatures": [
+      "single cabin-shaped service torso",
+      "cream/navy/mint panels and carry handle",
+      "recessed amber optical sensor",
+      "two separate short jointed legs with broad feet",
+      "asymmetric precision tool arm and folded service gripper"
+    ],
+    "assessment": "Distinct independent utility-robot silhouette; no concrete need to redraw. No four-block pivoting slab structure or franchise lettering observed. Engineering visual assessment, not legal clearance.",
+    "decision": "Retain existing illustration and provenance unchanged"
+  },
+  "historicalPrompt": "public/art/expedition/README-0.2.md",
+  "conversion": "art-source/expedition-1.1/defender-delivery.json",
+  "assets": [
+    {
+      "file": "art-source/expedition-0.2/tars-original.png",
+      "sha256": "c267efa5fc238123b3c5a97bb70665c23565a7921bcdba90696dd8e75b26623e"
+    },
+    {
+      "file": "public/art/expedition/tars.png",
+      "sha256": "d2c1ceffc99c4e2a0d964353e9388015dd158b30f3a7362b9952df3c02dc277f"
+    },
+    {
+      "file": "public/art/expedition/tars.webp",
+      "sha256": "d535724f3f06cdc56bfd351ba43ec5b08769cecd64862806889a6172b666d4c0"
+    }
+  ],
+  "remaining": "Owner acceptance of included designs and applicable generation-service agreement; contributor/distribution scope remains separate"
+}

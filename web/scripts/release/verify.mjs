@@ -19,6 +19,9 @@ try {
   const {releaseFiles,releaseManifest}=require(path.join(temporary,'compiled/scripts/release/assets.js'));
   const expected=new Set([...releaseFiles(),'art/manifest.json','index.html','build-info.json']);
   const dist=path.join(web,'dist-release');
+  const candidate=JSON.parse(fs.readFileSync(path.join(web,'scripts/release/candidate.json')));
+  const build=JSON.parse(fs.readFileSync(path.join(dist,'build-info.json')));
+  if(build.distribution!==`expedition-only-${candidate.identifier}`)throw Error('Release candidate identifier differs from configuration');
   const files=walk(dist).sort().map(file=>{const bytes=fs.readFileSync(file);return {file:path.relative(dist,file).split(path.sep).join('/'),bytes:bytes.length,sha256:sha(bytes)};});
   const actual=new Set(files.map(f=>f.file));
   const unexpected=files.filter(f=>!expected.has(f.file)&&!/^assets\/(index-[\w-]+\.(js|css)|battlefield-[\w-]+\.js|phaser-[\w-]+\.js)$/.test(f.file));
@@ -31,6 +34,11 @@ try {
   const exclusions=old.assets.filter(a=>!actual.has(a.file.replace(/^public\//,''))).map(a=>({...a,releaseIncluded:false,reason:a.status==='unresolved'?'Historical school derivative; permission absent':a.unnecessaryToCurrentPlayerBuild?'Unused generated derivative/source-size output':'Unexpected exclusion'}));
   const forbidden=old.assets.filter(a=>a.status==='unresolved'&&actual.has(a.file.replace(/^public\//,'')));
   if(missing.length||unexpected.length||forbidden.length||ambiguousChunks.length)throw Error(JSON.stringify({missing,unexpected,forbidden,ambiguousChunks}));
+  // Lowercase compatibility keys/filenames and clearly historical source records are allowed.
+  // This production candidate ships no historical documents; its executable/public copy
+  // must not retain the previous capitalized playable identity.
+  const identityLeaks=files.filter(f=>/\.(js|html|json|txt)$/.test(f.file)&&/\bTARS\b/.test(fs.readFileSync(path.join(dist,f.file),'utf8')));
+  if(identityLeaks.length)throw Error(`Previous public robot identity in release output: ${identityLeaks.map(f=>f.file).join(', ')}`);
   const total=rows=>rows.reduce((n,r)=>n+r.bytes,0);
   const raster=files.filter(f=>/\.(webp|png|jpg)$/.test(f.file));
   const atlases=files.filter(f=>/-animation\.webp$/.test(f.file));

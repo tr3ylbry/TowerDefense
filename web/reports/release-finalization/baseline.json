@@ -1,0 +1,20 @@
+{
+  "sourceRevision": "82f311315f1860899f88cedae9005658b5fad8ae",
+  "preservedLocalEvidence": [
+    {
+      "file": "release-artifacts/candidate.json",
+      "bytes": 7569,
+      "sha256": "0b74c3627a9e858feb8c92c699264184a08ff349cf1b119f2a7f4e3d6184e695"
+    },
+    {
+      "file": "release-artifacts/VERIFICATION.json",
+      "bytes": 12975,
+      "sha256": "dc81bd89009c913323098d13ddce5bdf362ea04ebf50bca33813bae44c3238fa"
+    },
+    {
+      "file": "release-artifacts/astronauts-vs-aliens-expedition-rc.1-82f311315f18.zip",
+      "bytes": 2301996,
+      "sha256": "d9ade5b5eb2bba228726f8e418b41095f3e8adfb59d83cdc71a092f2fb8a941c"
+    }
+  ]
+}
