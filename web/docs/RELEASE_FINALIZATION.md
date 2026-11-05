@@ -44,6 +44,8 @@ Use `npm ci`, install the pinned Playwright browsers, then run `npm run verify:r
 
 Audio regressions retain real decoded seamless looping, default-off FX/Music, both 65% defaults, independent gains, toggle state, retry/interruption and Mix pause ownership. Responsive/accessibility regressions retain desktop/tablet/portrait/landscape, text enlargement, touch targets, keyboard/focus, live-region semantics, reduced motion and result controls. Browser emulation is technical regression evidence, not physical-device or heard-speech validation.
 
+The first finalization CI attempt at `8d908e1` exposed a stale phone-test expectation for the robot’s previous description. The UI already showed Augie and the intended new copy; the expectation was updated to that exact copy while retaining the same scrolling, bounds and placement assertions. This superseded run is not final-pass evidence.
+
 The final containing Git revision cannot embed its own future commit/archive hash. Exact final results therefore live beside the versioned local candidate in `release-artifacts/VERIFICATION-rc.2.json`, including the exact CI URL/revision, all job conclusions, source/output hashes, independent extracted-archive checks and reproducibility comparison. The final delivery links that exact run. The [workflow](https://github.com/tr3ylbry/TowerDefense/actions/workflows/browser.yml?query=branch%3Amodernization) retains raw per-shard JSON, actual release/full inventories, rights, provenance and preservation evidence. This document describes required coverage; only completed exact-revision receipts establish its final pass status.
 
 ## Independent archive and reproduction

@@ -379,7 +379,7 @@ test("phone overview shows the entire field and scrolls the crew to keyboard sel
   expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(390);
   await page.keyboard.press("7");
   await expect(page.locator("#selected-detail")).toContainText(
-    "Piercing rounds ignore Tank plating",
+    "Precision armor-piercing rounds ignore Tank plating.",
   );
   const crew = await page.locator('[data-tower="tars"]').boundingBox();
   expect(crew!.x).toBeGreaterThanOrEqual(0);
