@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import candidate from "../../scripts/release/candidate.json" with { type: "json" };
 import { releaseFiles } from "../../scripts/release/assets";
 import { observeMusic, readMusic } from "../browser/music-probe";
 
@@ -13,7 +14,8 @@ for (const viewport of [{width:1280,height:900},{width:390,height:844},{width:84
     page.on('response',r=>{if(r.status()>=400)badResponses.push(r.url());});
     await page.goto('/'); await expect(page.locator('#start')).toBeEnabled();
     const build=await (await page.request.get('/build-info.json')).json();
-    expect(build.distribution).toBe('expedition-only-rc.1');
+    expect(build.distribution).toBe(`expedition-only-${candidate.identifier}`);
+    expect(build.dirtyAtBuild).toBe(false);
     expect(build.sourceRevision).toMatch(/^[a-f0-9]{40}$/);
     await expect(page.locator('#art-toggle')).toHaveCount(0);
     await expect(page.locator('.crew-card')).toHaveCount(9);
