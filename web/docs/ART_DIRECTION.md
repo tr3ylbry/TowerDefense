@@ -2,7 +2,7 @@
 
 ## Expedition-only candidate boundary
 
-The current Expedition mode uses the independently illustrated Canyon, Sky Bridge, Nest and acid assets in `src/game/art.ts`; retained school scenery is confined to full-mode Original comparison. Earlier prototype notes below describe their historical stages. The release candidate uses five new source-authored projectile SVGs with navy outlines, cream/mint/coral/ice silhouettes and the unchanged27×27 world footprint. [Release provenance](../art-source/release-clearance/projectiles.json) and [rights/identity decisions](../reports/release-clearance/assessment/RIGHTS.md) record the current distribution boundary; TARS naming/design review remains pending. Full development comparison and all original pixels stay preserved.
+The current Expedition mode uses the independently illustrated Canyon, Sky Bridge, Nest and acid assets in `src/game/art.ts`; retained school scenery is confined to full-mode Original comparison. Earlier prototype notes below describe their historical stages. The release candidate uses five new source-authored projectile SVGs with navy outlines, cream/mint/coral/ice silhouettes and the unchanged27×27 world footprint. [Release provenance](../art-source/release-clearance/projectiles.json) and [current rights/identity decisions](../reports/release-finalization/RIGHTS.md) record the distribution boundary. The owner selected **Augie**; the existing independent utility-robot design was reviewed and retained. Design acceptance and applicable generation terms remain owner review items. Earlier milestone notes and generation prompts retain historical names. Full development comparison and all original pixels stay preserved.
 
 ## Expedition 1.0 articulated pilots
 
@@ -30,7 +30,7 @@ Biome decoration stays outside the playable rectangle or at very low contrast. P
 ## Silhouettes and materials
 
 - Astro: rounded helmet, cream/mint suit, compact right-facing tool; welcoming expedition identity.
-- TARS: tall boxy utility robot, distinct sensor and right-facing precision tool; preserve readable negative space between tool and body.
+- Augie (`tars` asset key): tall boxy utility robot, distinct sensor and right-facing precision tool; preserve readable negative space between tool and body.
 - Scout: small lime/olive runner, oversized expressive eye and clear spines; light/unarmored.
 - Grunt: broader purple/teal body, heavy forelimbs, limited copper shoulder/back plates; sturdier silhouette without implying Tank-level mechanical armor.
 - Tank: low wide crawler, overlapping copper shell and amber eye; armor is recognizable from shape and the persistent shield outline.
@@ -46,7 +46,7 @@ Use a side-on or very slightly elevated lane camera. Defenders face right; alien
 
 The grid is 100×74 world units per cell. Place visible feet on a shared ground line 29 units below the lane center. Static cutouts retain their transparent padding; `src/game/art.ts` records proportional display dimensions and a per-image foot origin. This fixes grounding without destructive cropping or stretching.
 
-Approximate static cutout bounds: ranger 80×74, TARS 67×76, Scout 66×55, Grunt 86×71, Tank 108×72, Sprinter 102×68, ManHunter 96×88, Gargantua 122×89. Animated padded display cells are Sprinter128×96 and Gargantua144×108; alpha/ground anchors keep their visible masses registered. The Scout should look lighter than the Grunt; the Tank is wider and lower rather than simply taller. Legacy sprites retain their own animation sheets, using the same ground line. Giant enemies can extend above their lane, but health bars and ground cues must remain attributable to the correct row.
+Approximate static cutout bounds: ranger 80×74, Augie 67×76, Scout 66×55, Grunt 86×71, Tank 108×72, Sprinter 102×68, ManHunter 96×88, Gargantua 122×89. Animated padded display cells are Sprinter128×96 and Gargantua144×108; alpha/ground anchors keep their visible masses registered. The Scout should look lighter than the Grunt; the Tank is wider and lower rather than simply taller. Legacy sprites retain their own animation sheets, using the same ground line. Giant enemies can extend above their lane, but health bars and ground cues must remain attributable to the correct row.
 
 ## Existing prototype evaluation
 
