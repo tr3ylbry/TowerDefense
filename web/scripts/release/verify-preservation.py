@@ -6,13 +6,23 @@ ROOT=Path(__file__).resolve().parents[2]
 BASE='4507737204724009d4a9d72c9626993541a27d26'
 sha=lambda b:hashlib.sha256(b).hexdigest()
 unchanged={}
+presentation=json.loads((ROOT/'art-source/release-finalization/presentation-changes.json').read_text())
+assert presentation['baseline']==BASE
+assert (ROOT/'src/game/identity.ts').read_text()==presentation['addedIdentitySource']
+reviewed={}
 for directory in ['src/game','src/campaign']:
  for p in sorted((ROOT/directory).glob('*.ts')):
-  if p.name in {'art.ts','defender-delivery.ts','projectile-art.ts'}:continue
+  if p.name in {'art.ts','defender-delivery.ts','projectile-art.ts','identity.ts'}:continue
   relative=str(p.relative_to(ROOT))
   old=subprocess.check_output(['git','show',f'{BASE}:web/{relative}'],cwd=ROOT)
-  assert old==p.read_bytes(),relative
-  unchanged[relative]=sha(old)
+  expected=old.decode()
+  for change in presentation['changes'].get(relative,[]):
+   assert expected.count(change['before'])==1,relative
+   expected=expected.replace(change['before'],change['after'],1)
+  assert expected.encode()==p.read_bytes(),relative
+  if relative in presentation['changes']:
+   reviewed[relative]={'baselineSha256':sha(old),'currentSha256':sha(p.read_bytes()),'onlyExactReviewedPresentationChanges':True}
+  else:unchanged[relative]=sha(old)
 atlases=[]
 for kind in ['scout','grunt','sprinter','manhunter','tank','gargantua']:
  record=json.loads((ROOT/f'art-source/expedition-1.0/{kind}-conversion.json').read_text())
@@ -49,8 +59,8 @@ for asset in json.loads((ROOT/'reports/expedition-1.1/assessment/publication-ass
  p=ROOT/asset['file'];data=p.read_bytes()
  assert data==subprocess.check_output(['git','show',f"{BASE}:web/{asset['file']}"],cwd=ROOT)
  school_assets.append({'file':asset['file'],'sha256':sha(data)})
-result={'historicalRastersPreserved':school_assets,'baseline':BASE,'unchangedRuleCampaignAndPoseSources':unchanged,'atlases':atlases,'originalFramesValidated':frames,'originalFilesUnchanged':original_files,'originalFit':'Every alpha>=32 frame remains proportional within86x62 world pixels inside100x74 cells; same runtime registration.','schoolTreeUnchanged':True}
+result={'historicalRastersPreserved':school_assets,'baseline':BASE,'unchangedRuleCampaignAndPoseSources':unchanged,'reviewedPresentationOnlySources':reviewed,'atlases':atlases,'originalFramesValidated':frames,'originalFilesUnchanged':original_files,'originalFit':'Every alpha>=32 frame remains proportional within86x62 world pixels inside100x74 cells; same runtime registration.','schoolTreeUnchanged':True}
 OUT=ROOT/os.environ.get('AVA_RELEASE_EVIDENCE','.release-verification')
 OUT.mkdir(parents=True,exist_ok=True)
 (OUT/'preservation.json').write_text(json.dumps(result,indent=2)+'\n')
-print('Rules/campaign/save/pose sources unchanged;',sum(r['frames'] for r in atlases),'illustrated poses and',frames,'original frames verified')
+print('Rules/campaign/save/pose sources preserved with exact reviewed identity-copy changes;',sum(r['frames'] for r in atlases),'illustrated poses and',frames,'original frames verified')

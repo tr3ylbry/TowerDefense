@@ -71,6 +71,15 @@ try {
   validateContent();
   const oldExplosiveName = oldContent.TOWERS.explosive.name;
   oldContent.TOWERS.explosive.name = content.TOWERS.explosive.name;
+  // Exact display-copy updates only; every gameplay field remains deeply compared.
+  assert.equal(oldContent.TOWERS.tars.name, "TARS");
+  assert.equal(content.TOWERS.tars.name, "Augie");
+  assert.equal(oldContent.TOWERS.tars.description, "Piercing rounds ignore Tank plating.");
+  assert.equal(content.TOWERS.tars.description, "Precision armor-piercing rounds ignore Tank plating.");
+  oldContent.TOWERS.tars.name = content.TOWERS.tars.name;
+  oldContent.TOWERS.tars.description = content.TOWERS.tars.description;
+  assert.equal(content.ENEMIES.tank.description, oldContent.ENEMIES.tank.description.replace("TARS", "Augie"));
+  oldContent.ENEMIES.tank.description = content.ENEMIES.tank.description;
   for (const key of [
     "TOWERS",
     "ENEMIES",
@@ -156,6 +165,6 @@ try {
       reference.restart();
       compare();
     }
-  fs.writeFileSync(path.join(out,"standalone-parity.json"),JSON.stringify({baseline,definitionParity:true,displayNameOnly:{before:oldExplosiveName,after:content.TOWERS.explosive.name},scheduleComparisons:36,stepwiseRuns:parity,sourceSha256:hashes},null,2)+"\n");
+  fs.writeFileSync(path.join(out,"standalone-parity.json"),JSON.stringify({baseline,definitionParity:true,presentationOnly:{explosive:{before:oldExplosiveName,after:content.TOWERS.explosive.name},robot:{before:"TARS",after:"Augie",description:"Precision armor-piercing rounds ignore Tank plating."},tankGuidance:"TARS → Augie"},scheduleComparisons:36,stepwiseRuns:parity,sourceSha256:hashes},null,2)+"\n");
   console.log(JSON.stringify({originalParityRuns:parity.length}));
 } finally { fs.rmSync(temporary,{recursive:true,force:true}); }

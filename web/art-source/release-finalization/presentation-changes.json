@@ -1,0 +1,49 @@
+{
+  "baseline": "4507737204724009d4a9d72c9626993541a27d26",
+  "scope": "Exact presentation-only replacements; all remaining rule, mission and campaign source bytes must equal the frozen baseline.",
+  "changes": {
+    "src/game/content.ts": [
+      {
+        "before": "import { MISSIONS, STANDALONE_MISSIONS } from \"./missions\";\n",
+        "after": "import { MISSIONS, STANDALONE_MISSIONS } from \"./missions\";\nimport { ROBOT_NAME } from \"./identity\";\n"
+      },
+      {
+        "before": "    name: \"TARS\",\n",
+        "after": "    name: ROBOT_NAME,\n"
+      },
+      {
+        "before": "      \"Plating absorbs 80% of ordinary fire. TARS ignores it; plasma and explosives partially pierce it.\",\n",
+        "after": "      `Plating absorbs 80% of ordinary fire. ${ROBOT_NAME} ignores it; plasma and explosives partially pierce it.`,\n"
+      },
+      {
+        "before": "    description: \"Piercing rounds ignore Tank plating.\",\n",
+        "after": "    description: \"Precision armor-piercing rounds ignore Tank plating.\",\n"
+      }
+    ],
+    "src/game/missions.ts": [
+      {
+        "before": "import type { Wave } from \"./content\";\n",
+        "after": "import type { Wave } from \"./content\";\nimport { ROBOT_NAME } from \"./identity\";\n"
+      },
+      {
+        "before": "      \"Astro Joe opens cheaply. Income supports your formation; bring TARS or plasma for Tanks.\",\n",
+        "after": "      `Astro Joe opens cheaply. Income supports your formation; bring ${ROBOT_NAME} or plasma for Tanks.`,\n"
+      },
+      {
+        "before": "      \"Plan firing lines to the left of the acid. Barriers buy time; TARS ignores Tank plating.\",\n",
+        "after": "      `Plan firing lines to the left of the acid. Barriers buy time; ${ROBOT_NAME} ignores Tank plating.`,\n"
+      }
+    ],
+    "src/game/challenges.ts": [
+      {
+        "before": "import type { Wave } from \"./content\";\n",
+        "after": "import type { Wave } from \"./content\";\nimport { ROBOT_NAME } from \"./identity\";\n"
+      },
+      {
+        "before": "          \"Compact relay: six lanes, then reinforcements at +5s. Tanks resist ordinary fire: TARS ignores plating; plasma and shells partly pierce it. Keep reserve fire.\",\n",
+        "after": "          `Compact relay: six lanes, then reinforcements at +5s. Tanks resist ordinary fire: ${ROBOT_NAME} ignores plating; plasma and shells partly pierce it. Keep reserve fire.`,\n"
+      }
+    ]
+  },
+  "addedIdentitySource": "/** Public robot identity; legacy gameplay and asset keys remain stable. */\nexport const ROBOT_NAME = \"Augie\";\n"
+}

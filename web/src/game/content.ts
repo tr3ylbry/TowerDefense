@@ -1,6 +1,7 @@
 import { ENVIRONMENTS, ROWS, COLS } from "./environments";
 import type { MapKind } from "./environments";
 import { MISSIONS, STANDALONE_MISSIONS } from "./missions";
+import { ROBOT_NAME } from "./identity";
 import type { MissionId } from "./missions";
 export { ROWS, COLS };
 export type { MapKind };
@@ -139,9 +140,9 @@ export const TOWERS = {
     splashRadius: 0,
   },
   tars: {
-    name: "TARS",
+    name: ROBOT_NAME,
     role: "Armor piercing",
-    description: "Piercing rounds ignore Tank plating.",
+    description: "Precision armor-piercing rounds ignore Tank plating.",
     cost: 100,
     health: 450,
     damage: 48,
@@ -241,7 +242,7 @@ export const ENEMIES = {
   tank: {
     name: "Tank",
     description:
-      "Plating absorbs 80% of ordinary fire. TARS ignores it; plasma and explosives partially pierce it.",
+      `Plating absorbs 80% of ordinary fire. ${ROBOT_NAME} ignores it; plasma and explosives partially pierce it.`,
     armor: 0.8,
     health: 650,
     speed: 0.26,

@@ -1,4 +1,5 @@
 import type { Wave } from "./content";
+import { ROBOT_NAME } from "./identity";
 import type { MapKind } from "./environments";
 
 export const DEFAULT_SEED = 3352019;
@@ -239,7 +240,7 @@ export const MISSIONS = {
     briefing:
       "Cover six lanes. Guns fire right: build to the left of approaching aliens. Protect at least one of three shields through four waves.",
     tactics:
-      "Astro Joe opens cheaply. Income supports your formation; bring TARS or plasma for Tanks.",
+      `Astro Joe opens cheaply. Income supports your formation; bring ${ROBOT_NAME} or plasma for Tanks.`,
     prerequisite: null,
     seed: DEFAULT_SEED,
     waves: canyonWaves,
@@ -332,7 +333,7 @@ export const MISSIONS = {
     briefing:
       "The bridge has twelve restricted tiles. Aliens cross acid freely; your crew must form up on safe ground.",
     tactics:
-      "Plan firing lines to the left of the acid. Barriers buy time; TARS ignores Tank plating.",
+      `Plan firing lines to the left of the acid. Barriers buy time; ${ROBOT_NAME} ignores Tank plating.`,
     prerequisite: "canyon-escalation",
     seed: DEFAULT_SEED,
     waves: bridgeWaves,

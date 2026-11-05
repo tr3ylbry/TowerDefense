@@ -155,7 +155,7 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
     .getByRole("gridcell", { name: "Lane 1, tile 1, empty", exact: true })
     .click();
   await expect(
-    page.getByRole("gridcell", { name: /Lane 1, tile 1, TARS/ }),
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, Augie/ }),
   ).toBeVisible();
   await page.keyboard.press("5");
   await page
@@ -179,7 +179,7 @@ test("plays both restored maps, blocks acid placement, and resets a live mission
   await expect(page.locator("#location-name")).toHaveText("The Nest");
   await expect(page.locator("#credits")).toHaveText("230");
   await expect(
-    page.getByRole("gridcell", { name: /Lane 1, tile 1, TARS/ }),
+    page.getByRole("gridcell", { name: /Lane 1, tile 1, Augie/ }),
   ).toHaveCount(0);
   await page.getByRole("button", { name: "Begin mission" }).click();
   await expect(page.locator(".blocked-cell")).toHaveCount(16);
@@ -390,7 +390,7 @@ test("phone overview shows the entire field and scrolls the crew to keyboard sel
     .getByRole("gridcell", { name: "Lane 6, tile 9, empty", exact: true })
     .click();
   await expect(
-    page.getByRole("gridcell", { name: /Lane 6, tile 9, TARS/ }),
+    page.getByRole("gridcell", { name: /Lane 6, tile 9, Augie/ }),
   ).toBeVisible();
 });
 

@@ -53,7 +53,7 @@ async function earnedArmorVictory(page: Page) {
       await expect(
         page.getByRole("gridcell", {
           name: new RegExp(
-            `^Lane ${slot.row + 1}, tile ${slot.col + 1}, (Astro Joe|TARS)`,
+            `^Lane ${slot.row + 1}, tile ${slot.col + 1}, (Astro Joe|Augie)`,
           ),
         }),
       ).toBeVisible();
